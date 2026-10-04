@@ -36,17 +36,17 @@
    "items": [
     {
      "name": "니트 폴로 · 네이비",
-     "color": "#2E3A55",
+     "color": "#2B3247",
      "role": "top"
     },
     {
      "name": "와이드 슬랙스 · 차콜",
-     "color": "#4A4A4D",
+     "color": "#45474B",
      "role": "bottom"
     },
     {
      "name": "로퍼 · 다크브라운",
-     "color": "#4B3326",
+     "color": "#4A3125",
      "role": "shoes"
     }
    ],
@@ -59,22 +59,22 @@
    "items": [
     {
      "name": "크루넥 티셔츠 · 그레이",
-     "color": "#B9B9B6",
+     "color": "#A9A9A6",
      "role": "top"
     },
     {
      "name": "셔츠 재킷 · 카키",
-     "color": "#7A7452",
+     "color": "#7B7553",
      "role": "outer"
     },
     {
      "name": "스트레이트 데님 · 블랙",
-     "color": "#2A2B2E",
+     "color": "#2F3134",
      "role": "bottom"
     },
     {
      "name": "스니커즈 · 블랙",
-     "color": "#222222",
+     "color": "#242424",
      "role": "shoes"
     }
    ],
@@ -87,17 +87,17 @@
    "items": [
     {
      "name": "옥스퍼드 셔츠 · 화이트",
-     "color": "#F7F7F4",
+     "color": "#F1EFE8",
      "role": "top"
     },
     {
      "name": "치노 팬츠 · 네이비",
-     "color": "#2F3B52",
+     "color": "#2E3850",
      "role": "bottom"
     },
     {
      "name": "스니커즈 · 그레이",
-     "color": "#9A9A96",
+     "color": "#9C9B97",
      "role": "shoes"
     }
    ],

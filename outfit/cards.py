@@ -4,7 +4,7 @@ from PIL import Image
 d=json.load(open(sys.argv[1],encoding='utf-8')); e=html.escape
 SK="#E6C3A0"
 sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__)))
-from figure import figure_svg
+from figure import figure_svg, fabric
 def figure(items, kind, uid='f'): return figure_svg(items, kind, uid)
 CSS='''*{box-sizing:border-box;margin:0;padding:0}body{font-family:"Noto Sans CJK KR",sans-serif;color:#1F1D1A}
 .card{width:540px;height:675px;padding:36px;position:relative;overflow:hidden}
@@ -24,17 +24,17 @@ def cover():
 <div style="background:#1F1D1A;color:#F4F1EC;border-radius:16px;padding:14px 18px;margin-top:14px;font-size:16px;line-height:1.55">{d["guide"].replace("<b>",'<b style="color:#E8C27A">')}</div></div>'''
 BG=["#E9EEF3","#ECEDE4","#E8E9EE"]
 def look(i,lk):
-    its="".join(f'<div style="display:flex;align-items:center;gap:10px;font-size:17px;padding:6px 0;border-bottom:1px solid #00000012"><span style="width:20px;height:20px;border-radius:5px;background:{it["color"]};border:1px solid #00000025;flex:none"></span>{e(it["name"])}</div>' for it in lk["items"])
+    its="".join(f'<div style="display:flex;align-items:center;gap:10px;font-size:17px;padding:6px 0;border-bottom:1px solid #00000012"><span style="width:20px;height:20px;border-radius:5px;background:{fabric(it["color"])};border:1px solid #00000025;flex:none"></span>{e(it["name"])}</div>' for it in lk["items"])
     return f'''<div class="card" style="background:{BG[i]}"><div class="no">0{i+2} / 04</div>
 <div class="kick">LOOK {"ABC"[i]}</div><div style="font-size:30px;font-weight:900;margin-top:4px">{e(lk["title"])}</div>
 <div style="display:flex;align-items:flex-end;gap:10px;margin-top:8px"><div style="flex:none;margin-left:-14px">{figure(lk["items"],lk.get("kind","tee"),"f%d"%i)}</div>
 <div style="flex:1;padding-bottom:26px">{its}<div style="font-size:14px;color:#5A554D;line-height:1.5;margin-top:14px;background:#ffffff90;border-radius:10px;padding:10px 12px">💡 {e(lk["tip"])}</div></div></div></div>'''
 cards=[cover()]+[look(i,l) for i,l in enumerate(d["looks"])]
 with sync_playwright() as p:
-    b=p.chromium.launch(); pg=b.new_page(viewport={"width":540,"height":675},device_scale_factor=1)
+    b=p.chromium.launch(); pg=b.new_page(viewport={"width":540,"height":675},device_scale_factor=2)
     for n,c in enumerate(cards):
         pg.set_content(f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{c}</body></html>')
         f=f'card{n+1}.png'; pg.screenshot(path=f,clip={"x":0,"y":0,"width":540,"height":675})
-        Image.open(f).convert('RGB').quantize(colors=32,dither=Image.Dither.NONE).save(f,optimize=True)
+        Image.open(f).convert('RGB').save(f,optimize=True)
     b.close()
 print("ok")

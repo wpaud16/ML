@@ -12,6 +12,14 @@ def shade(h, f):  # f<0 darker, f>0 lighter
     r, g, b = _rgb(h)
     if f < 0: return _hex(r*(1+f), g*(1+f), b*(1+f))
     return _hex(r+(255-r)*f, g+(255-g)*f, b+(255-b)*f)
+import colorsys
+def fabric(h):
+    # real-fabric look: less saturation, no pure black/white
+    r, g, b = [v/255 for v in _rgb(h)]
+    hh, l, sat = colorsys.rgb_to_hls(r, g, b)
+    sat *= 0.93; l = min(max(l, 0.12), 0.93)
+    r, g, b = colorsys.hls_to_rgb(hh, l, sat)
+    return _hex(r*255, g*255, b*255)
 def lum(h):
     r, g, b = _rgb(h); return (0.299*r + 0.587*g + 0.114*b)/255
 
@@ -46,13 +54,13 @@ def figure_svg(items, kind='tee', uid='f'):
     else: tt = kind if kind in ('shirt', 'polo') and itype(top) not in ('tee',) else 'tee'
     ot = itype(outer) if outer else None
     bt = itype(bot); st = itype(sh)
-    T, O, B, S = top['color'], (outer or {}).get('color'), bot['color'], sh['color']
+    T, O, B, S = fabric(top['color']), (fabric(outer['color']) if outer else None), fabric(bot['color']), fabric(sh['color'])
     defs, g = [], []
 
     def grad(name, c, dark=-0.22, light=0.10):
-        defs.append(f'<linearGradient id="{uid}{name}" x1="0" x2="1" y1="0" y2="0">'
-                    f'<stop offset="0" stop-color="{shade(c, dark)}"/><stop offset=".38" stop-color="{shade(c, light)}"/>'
-                    f'<stop offset=".62" stop-color="{c}"/><stop offset="1" stop-color="{shade(c, dark)}"/></linearGradient>')
+        defs.append(f'<linearGradient id="{uid}{name}" x1="0" x2="1" y1="0" y2=".35">'
+                    f'<stop offset="0" stop-color="{shade(c, dark*0.8)}"/><stop offset=".3" stop-color="{shade(c, light)}"/>'
+                    f'<stop offset=".55" stop-color="{c}"/><stop offset=".85" stop-color="{shade(c, dark*0.7)}"/><stop offset="1" stop-color="{shade(c, dark*1.2)}"/></linearGradient>')
         return f'url(#{uid}{name})'
     def pattern(name, kindp, c):
         lc = shade(c, -0.35) if lum(c) > 0.35 else shade(c, 0.35)
@@ -214,4 +222,11 @@ def figure_svg(items, kind='tee', uid='f'):
     g.append(f'<path d="M150 22 Q170 22 175 40" stroke="#4A423B" stroke-width="2" fill="none" opacity=".6"/>')
     g.append(f'<path d="M140 80 Q150 86 160 80" stroke="{SKIN_D}" stroke-width="1.6" fill="none" opacity=".5"/>')
 
-    return f'<svg viewBox="0 0 300 610" width="230" height="468"><defs>{"".join(defs)}</defs>{"".join(g)}</svg>'
+    defs.append(f'<filter id="{uid}grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="7" result="n"/>'
+                f'<feColorMatrix in="n" type="saturate" values="0" result="ng"/><feComponentTransfer in="ng" result="na"><feFuncA type="table" tableValues="0 .16"/></feComponentTransfer>'
+                f'<feComposite in="na" in2="SourceGraphic" operator="in" result="nc"/><feBlend in="SourceGraphic" in2="nc" mode="soft-light"/></filter>')
+    defs.append(f'<linearGradient id="{uid}light" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".10"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".10"/></linearGradient>')
+    defs.append(f'<mask id="{uid}m"><g filter="url(#{uid}white)">{"".join(g)}</g></mask>')
+    defs.append(f'<filter id="{uid}white"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>')
+    body = f'<g filter="url(#{uid}grain)">{"".join(g)}</g><rect x="0" y="0" width="300" height="610" fill="url(#{uid}light)" mask="url(#{uid}m)"/>'
+    return f'<svg viewBox="0 0 300 610" width="230" height="468"><defs>{"".join(defs)}</defs>{body}</svg>'
