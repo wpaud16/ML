@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""JM 경매 낙찰가 예측기 (엑스트라트리 · 앙상블) — 낙찰확률 50% 가격.
+"""JM 경매 낙찰가 예측기 (앙상블: 부스팅 + 군집별 회귀) — 보정된 낙찰확률.
 
 사용법 (같은 폴더에 auction_train.csv, auction_config.json 필요):
   python3 auction_predictor.py predict --danji a7BuFFg --auction C49LSPHG
-      -> JSON: 엑스트라트리·앙상블의 50% 가격(만원), 입력값 요약
-  python3 auction_predictor.py calibrate   # (개발용) 최근 12개월 롤링 오차로 50% 보정값 재계산
+      -> JSON: 낙찰확률 40/45/50/55/60% 입찰가(만원), 500만원 단위 입찰가별 낙찰확률, 입력값 요약
+  python3 auction_predictor.py calibrate   # (개발용) 월별 롤링 예측오차로 확률 곡선 재계산
+
+낙찰확률 = P(실제 낙찰가 < 내 입찰가). 최근 12개월 롤링 예측오차 분포(가우시안 커널, 폭 BW)로
+원확률을 구한 뒤, 2025-02 이후 1회 유찰 사건의 실제 결과로 맞춘 로지스틱 보정(a, b)을 적용한다.
 
 예측 대상 정보는 리치고 단지 페이지(https://m.richgo.ai/realty/danji/<danji>)의
 auctionInfo(해당 단지의 경매 목록)에서 auctionId로 찾아 읽는다.
@@ -17,13 +20,13 @@ import pandas as pd
 warnings.filterwarnings('ignore')
 try:
     from sklearn.linear_model import Ridge
-    from sklearn.ensemble import HistGradientBoostingRegressor, ExtraTreesRegressor
+    from sklearn.ensemble import HistGradientBoostingRegressor
     from sklearn.preprocessing import StandardScaler
     from sklearn.cluster import KMeans
 except ImportError:
     subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '--break-system-packages', 'scikit-learn'])
     from sklearn.linear_model import Ridge
-    from sklearn.ensemble import HistGradientBoostingRegressor, ExtraTreesRegressor
+    from sklearn.ensemble import HistGradientBoostingRegressor
     from sklearn.preprocessing import StandardScaler
     from sklearn.cluster import KMeans
 
@@ -99,7 +102,7 @@ POL = ['rate', 'rate_chg6', 'tohu', 'regulated', 'loan_ratio']
 S1 = S0 + ['age', 'l_hh', 'heat'] + POL
 S3 = S1 + ['jeonse', 'py_share', 'lag_m', 'l_mkt']
 S4 = S3 + ['mom3', 'mom6', 'mom12', 'dd24']
-MEMBERS = {'엑스트라트리': ('et', S3, None), '부스팅_감쇠': ('gb', S4, 365), '군집별회귀': ('cluster', S1, 365)}
+MEMBERS = {'부스팅_감쇠': ('gb', S4, 365), '군집별회귀': ('cluster', S1, 365)}
 ENSEMBLE = ['부스팅_감쇠', '군집별회귀']
 
 
@@ -110,9 +113,6 @@ def fit_predict(name, tr, te, T):
     sc = StandardScaler().fit(Xtr); Ztr, Zte = sc.transform(Xtr), sc.transform(Xte)
     y = tr.y.values
     wt = None if not decay else np.exp(-((pd.Timestamp(T) - tr.date).dt.days.values) / decay)
-    if kind == 'et':
-        return ExtraTreesRegressor(n_estimators=300, min_samples_leaf=8, max_features=0.6, random_state=0,
-                                   n_jobs=-1).fit(Xtr, y, sample_weight=wt).predict(Xte)
     if kind == 'gb':
         return HistGradientBoostingRegressor(max_iter=300, learning_rate=0.04, max_depth=3, min_samples_leaf=25,
                                              l2_regularization=2.0, random_state=0).fit(Xtr, y, sample_weight=wt).predict(Xte)
@@ -218,41 +218,87 @@ def target_row(danji, auction_id, df):
     return pd.DataFrame([row]), info
 
 
+BW = 0.012
+PROB_LEVELS = [40, 45, 50, 55, 60]
+
+
+def _logit(p):
+    p = np.clip(p, 1e-3, 1 - 1e-3); return np.log(p / (1 - p))
+
+
+def raw_prob(pool, g):
+    """P(residual < g) with a Gaussian-kernel-smoothed residual distribution; g = log(bid/mkt) - pred."""
+    from math import erf
+    z = (g - np.asarray(pool)) / BW
+    return float(np.mean(0.5 * (1 + np.vectorize(erf)(z / np.sqrt(2)))))
+
+
+def win_prob(pool, a, b, g):
+    return float(1 / (1 + np.exp(-(a * _logit(raw_prob(pool, g)) + b))))
+
+
 def predict(danji, auction_id):
     cfg = json.load(open(os.path.join(HERE, 'auction_config.json')))
     df = load_train()
     row, info = target_row(danji, auction_id, df)
     T = row.date.iloc[0]
-    logs = {m: float(fit_predict(m, df, row, T)[0]) for m in MEMBERS}
-    mkt = float(row.mkt.iloc[0])
-    et = mkt * np.exp(logs['엑스트라트리'] + cfg['median_resid']['엑스트라트리'])
-    en = mkt * np.exp(np.mean([logs[m] for m in ENSEMBLE]) + cfg['median_resid']['앙상블'])
+    c = float(np.mean([fit_predict(m, df, row, T)[0] for m in ENSEMBLE]))
+    mkt, low = float(row.mkt.iloc[0]), float(row.low.iloc[0])
+    pool, a, b = cfg['resid_pool'], cfg['calib_a'], cfg['calib_b']
+
+    def wp(bid):
+        return 0.0 if bid < low else win_prob(pool, a, b, np.log(bid / mkt) - c)
+
+    def price_at(q):  # bisection on bid (원), 1만원 precision
+        lo, hi = low, mkt * 1.5
+        for _ in range(60):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if wp(mid) < q else (lo, mid)
+        return max(low, hi)
+    prices = {f'{q}%': int(round(price_at(q / 100) / 1e4)) for q in PROB_LEVELS}
+    p25, p75 = price_at(0.25), price_at(0.75)
+    grid = np.arange(np.ceil(max(low, p25) / 5e6) * 5e6, p75 + 1, 5e6)
+    table = [dict(bid_manwon=int(g / 1e4), bid_eok=round(g / 1e8, 2), prob=int(round(wp(g) * 100))) for g in grid]
     warn = []
     if any(w in info['keyword'] for w in ['지분', '대항력', '유치권', '법정지상권', '선순위', '재매각', '별도등기', '대지권미등기']):
         warn.append('권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음')
     if info['appr_vs_sise'] < 0.6:
         warn.append('감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합')
-    out = dict(info, p50_extratrees_manwon=int(round(et / 1e4)), p50_ensemble_manwon=int(round(en / 1e4)),
-               p50_extratrees_eok=round(et / 1e8, 2), p50_ensemble_eok=round(en / 1e8, 2),
-               model_error_note='평균 오차 약 5.7% (2025-02~2026-10 롤링 검증)', warnings=warn)
+    out = dict(info, model='앙상블(부스팅+군집별회귀)',
+               bid_by_prob_manwon=prices,
+               bid_by_prob_eok={k: round(v / 1e4, 2) for k, v in prices.items()},
+               prob_by_bid_5m=table,
+               p50_ensemble_manwon=prices['50%'], p50_ensemble_eok=round(prices['50%'] / 1e4, 2),
+               model_error_note=f"평균 오차 약 {cfg['mape_recent']}% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+               warnings=warn)
     print(json.dumps(out, ensure_ascii=False))
 
 
-def calibrate():
+def calibrate(start='2024-01-01'):
     df = load_train()
-    origins = pd.date_range((df.date.max() - pd.DateOffset(months=12)).normalize().replace(day=1), df.date.max(), freq='MS')
-    res = {'엑스트라트리': [], '앙상블': []}
-    for T in origins:
+    df['m0'] = df.date.dt.to_period('M').dt.to_timestamp()
+    res = pd.Series(np.nan, index=df.index)
+    for T in pd.date_range(start, df.date.max(), freq='MS'):
         tr, te = df[df.date < T], df[(df.date >= T) & (df.date < T + pd.DateOffset(months=1))]
         if len(te) == 0: continue
-        p = {m: fit_predict(m, tr, te, T) for m in MEMBERS}
-        res['엑스트라트리'] += list(te.y.values - p['엑스트라트리'])
-        res['앙상블'] += list(te.y.values - np.mean([p[m] for m in ENSEMBLE], axis=0))
-    cfg = dict(built='2026-10-30', n_train=int(len(df)), n_resid=len(res['앙상블']),
-               median_resid={k: round(float(np.median(v)), 5) for k, v in res.items()},
-               mape_recent={k: round(float(np.mean(np.abs(np.exp(v) - 1))) * 100, 2) for k, v in res.items()})
+        res[te.index] = te.y.values - np.mean([fit_predict(m, tr, te, T) for m in ENSEMBLE], axis=0)
+    # calibration pairs: each 1회 유찰 case, prior-12-month pool, offsets -15%..+15%
+    offs = np.linspace(-.15, .15, 31); X, H = [], []
+    for i in df.index[(df.date >= pd.Timestamp(start) + pd.DateOffset(months=12)) & (df.fails == 1) & res.notna()]:
+        T = df.m0[i]; pool = res[(df.date < T) & (df.date >= T - pd.DateOffset(months=12)) & res.notna()].values
+        if len(pool) < 50: continue
+        for g in offs:
+            X.append(_logit(raw_prob(pool, g))); H.append(float(res[i] < g))
+    from sklearn.linear_model import LogisticRegression
+    lr = LogisticRegression(C=1e6).fit(np.array(X).reshape(-1, 1), H)
+    T0 = df.m0.max() + pd.DateOffset(months=1)
+    pool = res[(df.date >= T0 - pd.DateOffset(months=12)) & res.notna()]
+    cfg = dict(built=str(pd.Timestamp.today().date()), model='앙상블(부스팅+군집별회귀)', n_train=int(len(df)),
+               bw=BW, calib_a=round(float(lr.coef_[0][0]), 5), calib_b=round(float(lr.intercept_[0]), 5),
+               n_calib_pairs=len(H), mape_recent=round(float(np.mean(np.abs(np.exp(pool) - 1))) * 100, 2),
+               resid_pool=[round(float(x), 5) for x in pool.values])
     json.dump(cfg, open(os.path.join(HERE, 'auction_config.json'), 'w'), ensure_ascii=False, indent=1)
-    print(json.dumps(cfg, ensure_ascii=False))
+    print(json.dumps({k: v for k, v in cfg.items() if k != 'resid_pool'} | {'n_pool': len(cfg['resid_pool'])}, ensure_ascii=False))
 
 
 if __name__ == '__main__':
