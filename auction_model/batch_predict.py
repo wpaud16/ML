@@ -132,6 +132,78 @@ def find_danji(item, cache):
     return None, f'단지 못 찾음 (확인 {len(tried)}곳)'
 
 
+# ---------------- 모델 성적표: 예측했던 물건의 실제 결과 ----------------
+RESULTS_PATH = os.path.join(OUT_DIR, 'results.json')
+
+
+def auction_detail(aid):
+    raw = get('https://m.richgo.ai/auctionMobile/' + aid)
+    if not raw:
+        return None
+    return next_data(raw).get('auctionPageData') or None
+
+
+def band_of(actual, prices):
+    """실제 낙찰가가 앙상블 확률 가격표의 어느 구간인지."""
+    lv = [(40, prices['40%']), (45, prices['45%']), (50, prices['50%']), (55, prices['55%']), (60, prices['60%'])]
+    if actual < lv[0][1]: return '40% 미만'
+    if actual >= lv[-1][1]: return '60% 초과'
+    for (a, pa), (b, pb) in zip(lv, lv[1:]):
+        if pa <= actual < pb: return f'{a}~{b}%'
+    return '-'
+
+
+def update_results(today):
+    """과거 예측 파일에서 매각기일이 지난 물건을 골라 실제 결과를 기록 (입찰 전에 만든 예측만 사용)."""
+    res = json.load(open(RESULTS_PATH)) if os.path.exists(RESULTS_PATH) else {}
+    snaps = sorted(f for f in os.listdir(OUT_DIR) if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.json', f))
+    last_pred = {}   # (key, bidding_date) -> 그 기일 당일 또는 이전에 만든 마지막 예측
+    for fn in snaps:
+        d = fn[:10]
+        if d >= today: continue
+        snap = json.load(open(os.path.join(OUT_DIR, fn)))
+        for k, it in snap.get('items', {}).items():
+            bd = it.get('bidding_date') or ''
+            if not bd or d > bd: continue
+            last_pred[(k, bd)] = dict(it, pred_date=d)
+    for (k, bd), it in last_pred.items():
+        rid = f'{k}|{bd}'
+        if bd >= today or bd < str((datetime.fromisoformat(today) - timedelta(days=30)).date()): continue
+        if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지'): continue
+        page = auction_detail(it['auction_id'])
+        status, actual, bidders, second = '결과대기', None, None, None
+        if page:
+            st = page.get('itemStatus') or ''
+            if page.get('sellingPrice'):
+                status = '매각'; actual = int(page['sellingPrice'] / 1e4)
+                bidders = page.get('bidders'); second = int(page['secondHighBiddingPrice'] / 1e4) if page.get('secondHighBiddingPrice') else None
+            elif any(w in st for w in ['취하', '기각', '정지', '변경', '연기']):
+                status = next(w for w in ['취하', '기각', '정지', '변경', '연기'] if w in st)
+            elif (page.get('biddingDate') or '').startswith('9999') or st == '종료':
+                status = '취하'   # 매각가 없이 종료 = 취하·기각 등
+            elif (page.get('numberOfFailures') or 0) > (it.get('fails') or 0) or ((page.get('biddingDate') or '')[:10] > bd):
+                status = '유찰'
+        r = dict(key=k, danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
+                 bidding_date=bd, pred_date=it['pred_date'], low_manwon=it.get('low_manwon'),
+                 bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today)
+        if actual:
+            p50 = it['bid_by_prob_manwon']['50%']
+            r.update(actual_manwon=actual, bidders=bidders, second_manwon=second,
+                     diff_pct=round((actual / p50 - 1) * 100, 1), band=band_of(actual, it['bid_by_prob_manwon']))
+        res[rid] = r
+    json.dump(dict(sorted(res.items())), open(RESULTS_PATH, 'w'), ensure_ascii=False, indent=1)
+    lo = str((datetime.fromisoformat(today) - timedelta(days=7)).date())
+    recent = sorted([r for r in res.values() if lo <= r['bidding_date'] < today], key=lambda r: r['bidding_date'], reverse=True)
+    sold = [r for r in recent if r['status'] == '매각']
+    summ = dict(window=f'{lo}~{today}', n_checked=len(recent), n_sold=len(sold))
+    if sold:
+        e = [abs(r['diff_pct']) for r in sold]
+        summ.update(mean_abs_err_pct=round(sum(e) / len(e), 1), within_5pct=sum(x <= 5 for x in e),
+                    in_40_60=sum(r['band'] not in ('40% 미만', '60% 초과') for r in sold),
+                    above_p50=sum(r['diff_pct'] > 0 for r in sold))
+    return dict(summary=summ, items=recent)
+
+
 def main():
     now = datetime.now(KST)
     cache = json.load(open(MAP_PATH)) if os.path.exists(MAP_PATH) else {}
@@ -176,6 +248,10 @@ def main():
                counts=dict(predicted=len(items), skipped=len(skipped), failed=len(failed)),
                errors=errors, items=items, failed=failed, skipped=skipped)
     os.makedirs(OUT_DIR, exist_ok=True)
+    try:
+        out['recent_results'] = update_results(str(now.date()))
+    except Exception as e:
+        out['recent_results'] = dict(summary=dict(error=f'{type(e).__name__}: {e}'), items=[])
     for fn in ['latest.json', f'{now.date()}.json']:
         json.dump(out, open(os.path.join(OUT_DIR, fn), 'w'), ensure_ascii=False, indent=1)
     json.dump(dict(sorted(cache.items())), open(MAP_PATH, 'w'), ensure_ascii=False, indent=1)
