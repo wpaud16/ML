@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T10:24:35+09:00",
+ "generated_at": "2026-10-31T16:57:24+09:00",
  "date": "2026-10-31",
  "model": "앙상블(부스팅+군집별회귀)",
  "config_built": "2026-10-30",
@@ -9,7 +9,7 @@
  },
  "counts": {
   "predicted": 74,
-  "skipped": 95,
+  "skipped": 92,
   "failed": 13
  },
  "errors": [],
@@ -35,116 +35,121 @@
    "richgo_sise_eok": 11.142,
    "appr_vs_sise": 0.898,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 160,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 95887,
+     "45%": 96656,
+     "50%": 97463,
+     "55%": 98337,
+     "60%": 99272
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 95887,
-    "45%": 96656,
-    "50%": 97463,
-    "55%": 98337,
-    "60%": 99272
+    "40%": 93011,
+    "45%": 93756,
+    "50%": 94539,
+    "55%": 95387,
+    "60%": 96294
    },
    "bid_by_prob_eok": {
-    "40%": 9.59,
-    "45%": 9.67,
-    "50%": 9.75,
-    "55%": 9.83,
-    "60%": 9.93
+    "40%": 9.3,
+    "45%": 9.38,
+    "50%": 9.45,
+    "55%": 9.54,
+    "60%": 9.63
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 91000,
+     "bid_eok": 9.1,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 91500,
+     "bid_eok": 9.15,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 92000,
+     "bid_eok": 9.2,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 92500,
+     "bid_eok": 9.25,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 93000,
+     "bid_eok": 9.3,
+     "prob": 40
+    },
+    {
      "bid_manwon": 93500,
      "bid_eok": 9.35,
-     "prob": 26
+     "prob": 43
     },
     {
      "bid_manwon": 94000,
      "bid_eok": 9.4,
-     "prob": 28
+     "prob": 47
     },
     {
      "bid_manwon": 94500,
      "bid_eok": 9.45,
-     "prob": 31
+     "prob": 50
     },
     {
      "bid_manwon": 95000,
      "bid_eok": 9.5,
-     "prob": 34
+     "prob": 53
     },
     {
      "bid_manwon": 95500,
      "bid_eok": 9.55,
-     "prob": 37
+     "prob": 56
     },
     {
      "bid_manwon": 96000,
      "bid_eok": 9.6,
-     "prob": 41
+     "prob": 58
     },
     {
      "bid_manwon": 96500,
      "bid_eok": 9.65,
-     "prob": 44
+     "prob": 61
     },
     {
      "bid_manwon": 97000,
      "bid_eok": 9.7,
-     "prob": 47
+     "prob": 64
     },
     {
      "bid_manwon": 97500,
      "bid_eok": 9.75,
-     "prob": 50
+     "prob": 67
     },
     {
      "bid_manwon": 98000,
      "bid_eok": 9.8,
-     "prob": 53
+     "prob": 69
     },
     {
      "bid_manwon": 98500,
      "bid_eok": 9.85,
-     "prob": 56
-    },
-    {
-     "bid_manwon": 99000,
-     "bid_eok": 9.9,
-     "prob": 59
-    },
-    {
-     "bid_manwon": 99500,
-     "bid_eok": 9.95,
-     "prob": 61
-    },
-    {
-     "bid_manwon": 100000,
-     "bid_eok": 10.0,
-     "prob": 64
-    },
-    {
-     "bid_manwon": 100500,
-     "bid_eok": 10.05,
-     "prob": 67
-    },
-    {
-     "bid_manwon": 101000,
-     "bid_eok": 10.1,
-     "prob": 69
-    },
-    {
-     "bid_manwon": 101500,
-     "bid_eok": 10.15,
      "prob": 72
-    },
-    {
-     "bid_manwon": 102000,
-     "bid_eok": 10.2,
-     "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 97463,
-   "p50_ensemble_eok": 9.75,
+   "p50_ensemble_manwon": 94539,
+   "p50_ensemble_eok": 9.45,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(160세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경51453[1]": {
    "key": "2025타경51453[1]",
@@ -167,61 +172,56 @@
    "richgo_sise_eok": 6.855,
    "appr_vs_sise": 0.977,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 91,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 67000,
+     "45%": 67000,
+     "50%": 67319,
+     "55%": 67924,
+     "60%": 68569
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 67000,
     "45%": 67000,
-    "50%": 67319,
-    "55%": 67924,
-    "60%": 68569
+    "50%": 67000,
+    "55%": 67000,
+    "60%": 67000
    },
    "bid_by_prob_eok": {
     "40%": 6.7,
     "45%": 6.7,
-    "50%": 6.73,
-    "55%": 6.79,
-    "60%": 6.86
+    "50%": 6.7,
+    "55%": 6.7,
+    "60%": 6.7
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 67000,
      "bid_eok": 6.7,
-     "prob": 47
+     "prob": 64
     },
     {
      "bid_manwon": 67500,
      "bid_eok": 6.75,
-     "prob": 52
+     "prob": 68
     },
     {
      "bid_manwon": 68000,
      "bid_eok": 6.8,
-     "prob": 56
-    },
-    {
-     "bid_manwon": 68500,
-     "bid_eok": 6.85,
-     "prob": 59
-    },
-    {
-     "bid_manwon": 69000,
-     "bid_eok": 6.9,
-     "prob": 63
-    },
-    {
-     "bid_manwon": 69500,
-     "bid_eok": 6.95,
-     "prob": 67
-    },
-    {
-     "bid_manwon": 70000,
-     "bid_eok": 7.0,
-     "prob": 71
+     "prob": 72
     }
    ],
-   "p50_ensemble_manwon": 67319,
-   "p50_ensemble_eok": 6.73,
+   "p50_ensemble_manwon": 67000,
+   "p50_ensemble_eok": 6.7,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(91세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2024타경64236[1]": {
    "key": "2024타경64236[1]",
@@ -244,6 +244,18 @@
    "richgo_sise_eok": 18.24,
    "appr_vs_sise": 0.746,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 478,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 140746,
+     "45%": 141875,
+     "50%": 143059,
+     "55%": 144342,
+     "60%": 145714
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 140746,
     "45%": 141875,
@@ -395,7 +407,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2025타경51733[1]": {
    "key": "2025타경51733[1]",
@@ -418,87 +431,97 @@
    "richgo_sise_eok": 8.027,
    "appr_vs_sise": 1.0,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 96,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 64112,
+     "45%": 64626,
+     "50%": 65165,
+     "55%": 65750,
+     "60%": 66375
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 64112,
-    "45%": 64626,
-    "50%": 65165,
-    "55%": 65750,
-    "60%": 66375
+    "40%": 62188,
+    "45%": 62687,
+    "50%": 63210,
+    "55%": 63777,
+    "60%": 64384
    },
    "bid_by_prob_eok": {
-    "40%": 6.41,
-    "45%": 6.46,
-    "50%": 6.52,
-    "55%": 6.58,
-    "60%": 6.64
+    "40%": 6.22,
+    "45%": 6.27,
+    "50%": 6.32,
+    "55%": 6.38,
+    "60%": 6.44
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 61000,
+     "bid_eok": 6.1,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 61500,
+     "bid_eok": 6.15,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 62000,
+     "bid_eok": 6.2,
+     "prob": 38
+    },
+    {
      "bid_manwon": 62500,
      "bid_eok": 6.25,
-     "prob": 26
+     "prob": 43
     },
     {
      "bid_manwon": 63000,
      "bid_eok": 6.3,
-     "prob": 30
+     "prob": 48
     },
     {
      "bid_manwon": 63500,
      "bid_eok": 6.35,
-     "prob": 34
+     "prob": 53
     },
     {
      "bid_manwon": 64000,
      "bid_eok": 6.4,
-     "prob": 39
+     "prob": 57
     },
     {
      "bid_manwon": 64500,
      "bid_eok": 6.45,
-     "prob": 44
+     "prob": 61
     },
     {
      "bid_manwon": 65000,
      "bid_eok": 6.5,
-     "prob": 49
+     "prob": 65
     },
     {
      "bid_manwon": 65500,
      "bid_eok": 6.55,
-     "prob": 53
+     "prob": 69
     },
     {
      "bid_manwon": 66000,
      "bid_eok": 6.6,
-     "prob": 57
-    },
-    {
-     "bid_manwon": 66500,
-     "bid_eok": 6.65,
-     "prob": 61
-    },
-    {
-     "bid_manwon": 67000,
-     "bid_eok": 6.7,
-     "prob": 65
-    },
-    {
-     "bid_manwon": 67500,
-     "bid_eok": 6.75,
-     "prob": 69
-    },
-    {
-     "bid_manwon": 68000,
-     "bid_eok": 6.8,
      "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 65165,
-   "p50_ensemble_eok": 6.52,
+   "p50_ensemble_manwon": 63210,
+   "p50_ensemble_eok": 6.32,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(96세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
    ]
   },
   "2025타경51619[1]": {
@@ -515,13 +538,25 @@
    "danji_name": "현대리버빌1지구",
    "name": "현대리버빌1지구",
    "case": "2025타경51619",
-   "keyword": "토지거래허가구역,지분매각",
+   "keyword": "지분매각,토지거래허가구역",
    "pyeong": "61",
    "appr_eok": 8.81,
    "low_eok": 5.638,
    "richgo_sise_eok": 19.512,
    "appr_vs_sise": 0.452,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 557,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 131606,
+     "45%": 132662,
+     "50%": 133769,
+     "55%": 134969,
+     "60%": 136252
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 131606,
     "45%": 132662,
@@ -664,7 +699,8 @@
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
     "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
-   ]
+   ],
+   "notes": []
   },
   "2025타경52152[1]": {
    "key": "2025타경52152[1]",
@@ -680,13 +716,25 @@
    "danji_name": "가락금호",
    "name": "가락금호",
    "case": "2025타경52152",
-   "keyword": "토지거래허가구역,지분매각",
+   "keyword": "지분매각,토지거래허가구역",
    "pyeong": "32",
    "appr_eok": 5.34,
    "low_eok": 4.272,
    "richgo_sise_eok": 21.406,
    "appr_vs_sise": 0.249,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 915,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 134229,
+     "45%": 135305,
+     "50%": 136434,
+     "55%": 137658,
+     "60%": 138967
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 134229,
     "45%": 135305,
@@ -829,7 +877,8 @@
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
     "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
-   ]
+   ],
+   "notes": []
   },
   "2025타경52314[1]": {
    "key": "2025타경52314[1]",
@@ -845,13 +894,25 @@
    "danji_name": "올림픽선수기자촌",
    "name": "올림픽선수기자촌",
    "case": "2025타경52314",
-   "keyword": "토지거래허가구역,지분매각",
+   "keyword": "지분매각,토지거래허가구역",
    "pyeong": "34",
    "appr_eok": 15.6,
    "low_eok": 9.984,
    "richgo_sise_eok": 28.209,
    "appr_vs_sise": 0.553,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 5540,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 206780,
+     "45%": 208438,
+     "50%": 210177,
+     "55%": 212063,
+     "60%": 214079
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 206780,
     "45%": 208438,
@@ -1064,7 +1125,8 @@
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
     "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
-   ]
+   ],
+   "notes": []
   },
   "2025타경53415[1]": {
    "key": "2025타경53415[1]",
@@ -1087,156 +1149,166 @@
    "richgo_sise_eok": 17.091,
    "appr_vs_sise": 0.913,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 212,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 140175,
+     "45%": 141299,
+     "50%": 142478,
+     "55%": 143757,
+     "60%": 145123
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 140175,
-    "45%": 141299,
-    "50%": 142478,
-    "55%": 143757,
-    "60%": 145123
+    "40%": 135970,
+    "45%": 137060,
+    "50%": 138204,
+    "55%": 139444,
+    "60%": 140769
    },
    "bid_by_prob_eok": {
-    "40%": 14.02,
-    "45%": 14.13,
-    "50%": 14.25,
-    "55%": 14.38,
-    "60%": 14.51
+    "40%": 13.6,
+    "45%": 13.71,
+    "50%": 13.82,
+    "55%": 13.94,
+    "60%": 14.08
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 132500,
+     "bid_eok": 13.25,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 133000,
+     "bid_eok": 13.3,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 133500,
+     "bid_eok": 13.35,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 134000,
+     "bid_eok": 13.4,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 134500,
+     "bid_eok": 13.45,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 135000,
+     "bid_eok": 13.5,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 135500,
+     "bid_eok": 13.55,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 136000,
+     "bid_eok": 13.6,
+     "prob": 40
+    },
+    {
      "bid_manwon": 136500,
      "bid_eok": 13.65,
-     "prob": 25
+     "prob": 42
     },
     {
      "bid_manwon": 137000,
      "bid_eok": 13.7,
-     "prob": 27
+     "prob": 45
     },
     {
      "bid_manwon": 137500,
      "bid_eok": 13.75,
-     "prob": 29
+     "prob": 47
     },
     {
      "bid_manwon": 138000,
      "bid_eok": 13.8,
-     "prob": 31
+     "prob": 49
     },
     {
      "bid_manwon": 138500,
      "bid_eok": 13.85,
-     "prob": 33
+     "prob": 51
     },
     {
      "bid_manwon": 139000,
      "bid_eok": 13.9,
-     "prob": 35
+     "prob": 53
     },
     {
      "bid_manwon": 139500,
      "bid_eok": 13.95,
-     "prob": 37
+     "prob": 55
     },
     {
      "bid_manwon": 140000,
      "bid_eok": 14.0,
-     "prob": 39
+     "prob": 57
     },
     {
      "bid_manwon": 140500,
      "bid_eok": 14.05,
-     "prob": 41
+     "prob": 59
     },
     {
      "bid_manwon": 141000,
      "bid_eok": 14.1,
-     "prob": 44
+     "prob": 61
     },
     {
      "bid_manwon": 141500,
      "bid_eok": 14.15,
-     "prob": 46
+     "prob": 63
     },
     {
      "bid_manwon": 142000,
      "bid_eok": 14.2,
-     "prob": 48
+     "prob": 65
     },
     {
      "bid_manwon": 142500,
      "bid_eok": 14.25,
-     "prob": 50
+     "prob": 66
     },
     {
      "bid_manwon": 143000,
      "bid_eok": 14.3,
-     "prob": 52
+     "prob": 68
     },
     {
      "bid_manwon": 143500,
      "bid_eok": 14.35,
-     "prob": 54
+     "prob": 70
     },
     {
      "bid_manwon": 144000,
      "bid_eok": 14.4,
-     "prob": 56
+     "prob": 72
     },
     {
      "bid_manwon": 144500,
      "bid_eok": 14.45,
-     "prob": 58
-    },
-    {
-     "bid_manwon": 145000,
-     "bid_eok": 14.5,
-     "prob": 60
-    },
-    {
-     "bid_manwon": 145500,
-     "bid_eok": 14.55,
-     "prob": 61
-    },
-    {
-     "bid_manwon": 146000,
-     "bid_eok": 14.6,
-     "prob": 63
-    },
-    {
-     "bid_manwon": 146500,
-     "bid_eok": 14.65,
-     "prob": 65
-    },
-    {
-     "bid_manwon": 147000,
-     "bid_eok": 14.7,
-     "prob": 67
-    },
-    {
-     "bid_manwon": 147500,
-     "bid_eok": 14.75,
-     "prob": 69
-    },
-    {
-     "bid_manwon": 148000,
-     "bid_eok": 14.8,
-     "prob": 71
-    },
-    {
-     "bid_manwon": 148500,
-     "bid_eok": 14.85,
-     "prob": 72
-    },
-    {
-     "bid_manwon": 149000,
-     "bid_eok": 14.9,
      "prob": 74
     }
    ],
-   "p50_ensemble_manwon": 142478,
-   "p50_ensemble_eok": 14.25,
+   "p50_ensemble_manwon": 138204,
+   "p50_ensemble_eok": 13.82,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(212세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경52944[1]": {
    "key": "2025타경52944[1]",
@@ -1259,71 +1331,86 @@
    "richgo_sise_eok": 6.531,
    "appr_vs_sise": 0.959,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 281,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 53552,
+     "45%": 53981,
+     "50%": 54432,
+     "55%": 54920,
+     "60%": 55442
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 53552,
-    "45%": 53981,
-    "50%": 54432,
-    "55%": 54920,
-    "60%": 55442
+    "40%": 51945,
+    "45%": 52362,
+    "50%": 52799,
+    "55%": 53273,
+    "60%": 53779
    },
    "bid_by_prob_eok": {
-    "40%": 5.36,
-    "45%": 5.4,
-    "50%": 5.44,
-    "55%": 5.49,
-    "60%": 5.54
+    "40%": 5.19,
+    "45%": 5.24,
+    "50%": 5.28,
+    "55%": 5.33,
+    "60%": 5.38
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 51000,
+     "bid_eok": 5.1,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 51500,
+     "bid_eok": 5.15,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 52000,
+     "bid_eok": 5.2,
+     "prob": 41
+    },
+    {
      "bid_manwon": 52500,
      "bid_eok": 5.25,
-     "prob": 28
+     "prob": 47
     },
     {
      "bid_manwon": 53000,
      "bid_eok": 5.3,
-     "prob": 34
+     "prob": 52
     },
     {
      "bid_manwon": 53500,
      "bid_eok": 5.35,
-     "prob": 39
+     "prob": 57
     },
     {
      "bid_manwon": 54000,
      "bid_eok": 5.4,
-     "prob": 45
+     "prob": 62
     },
     {
      "bid_manwon": 54500,
      "bid_eok": 5.45,
-     "prob": 51
+     "prob": 67
     },
     {
      "bid_manwon": 55000,
      "bid_eok": 5.5,
-     "prob": 56
-    },
-    {
-     "bid_manwon": 55500,
-     "bid_eok": 5.55,
-     "prob": 61
-    },
-    {
-     "bid_manwon": 56000,
-     "bid_eok": 5.6,
-     "prob": 65
-    },
-    {
-     "bid_manwon": 56500,
-     "bid_eok": 5.65,
-     "prob": 70
+     "prob": 72
     }
    ],
-   "p50_ensemble_manwon": 54432,
-   "p50_ensemble_eok": 5.44,
+   "p50_ensemble_manwon": 52799,
+   "p50_ensemble_eok": 5.28,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(281세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2026타경20366[1]": {
    "key": "2026타경20366[1]",
@@ -1339,13 +1426,25 @@
    "danji_name": "신우아이딜2차",
    "name": "신우아이딜2차",
    "case": "2026타경20366",
-   "keyword": "HUG인수조건변경,대항력있는임차인,토지거래허가구역",
+   "keyword": "대항력있는임차인,HUG인수조건변경,토지거래허가구역",
    "pyeong": "24",
    "appr_eok": 2.16,
    "low_eok": 1.512,
    "richgo_sise_eok": 2.219,
    "appr_vs_sise": 0.974,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 593,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 18175,
+     "45%": 18320,
+     "50%": 18473,
+     "55%": 18639,
+     "60%": 18816
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 18175,
     "45%": 18320,
@@ -1382,7 +1481,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2024타경3470[1]": {
    "key": "2024타경3470[1]",
@@ -1405,6 +1505,18 @@
    "richgo_sise_eok": 11.642,
    "appr_vs_sise": 0.784,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1283,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 92501,
+     "45%": 93242,
+     "50%": 94021,
+     "55%": 94864,
+     "60%": 95766
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 92501,
     "45%": 93242,
@@ -1504,7 +1616,8 @@
    "p50_ensemble_manwon": 94021,
    "p50_ensemble_eok": 9.4,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경176[1]": {
    "key": "2026타경176[1]",
@@ -1527,6 +1640,18 @@
    "richgo_sise_eok": 5.505,
    "appr_vs_sise": 0.917,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 892,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 50500,
+     "45%": 50500,
+     "50%": 50758,
+     "55%": 51213,
+     "60%": 51700
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 50500,
     "45%": 50500,
@@ -1576,7 +1701,8 @@
    "p50_ensemble_manwon": 50758,
    "p50_ensemble_eok": 5.08,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20738[1]": {
    "key": "2026타경20738[1]",
@@ -1599,6 +1725,18 @@
    "richgo_sise_eok": 7.073,
    "appr_vs_sise": 0.895,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1100,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 57692,
+     "45%": 58155,
+     "50%": 58640,
+     "55%": 59166,
+     "60%": 59729
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 57692,
     "45%": 58155,
@@ -1668,7 +1806,8 @@
    "p50_ensemble_manwon": 58640,
    "p50_ensemble_eok": 5.86,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20998[1]": {
    "key": "2026타경20998[1]",
@@ -1691,6 +1830,18 @@
    "richgo_sise_eok": 7.004,
    "appr_vs_sise": 1.027,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 720,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 71900,
+     "45%": 71900,
+     "50%": 71900,
+     "55%": 71900,
+     "60%": 71900
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 71900,
     "45%": 71900,
@@ -1715,7 +1866,8 @@
    "p50_ensemble_manwon": 71900,
    "p50_ensemble_eok": 7.19,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20723[1]": {
    "key": "2026타경20723[1]",
@@ -1738,6 +1890,18 @@
    "richgo_sise_eok": 3.071,
    "appr_vs_sise": 1.133,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 711,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 26435,
+     "45%": 26647,
+     "50%": 26869,
+     "55%": 27110,
+     "60%": 27368
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 26435,
     "45%": 26647,
@@ -1782,7 +1946,8 @@
    "p50_ensemble_manwon": 26869,
    "p50_ensemble_eok": 2.69,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72645[1]": {
    "key": "2025타경72645[1]",
@@ -1805,6 +1970,18 @@
    "richgo_sise_eok": 4.812,
    "appr_vs_sise": 0.948,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 731,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 39293,
+     "45%": 39608,
+     "50%": 39938,
+     "55%": 40297,
+     "60%": 40680
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 39293,
     "45%": 39608,
@@ -1859,7 +2036,8 @@
    "p50_ensemble_manwon": 39938,
    "p50_ensemble_eok": 3.99,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72473[1]": {
    "key": "2025타경72473[1]",
@@ -1882,56 +2060,76 @@
    "richgo_sise_eok": 4.405,
    "appr_vs_sise": 0.94,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 291,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 35467,
+     "45%": 35752,
+     "50%": 36050,
+     "55%": 36374,
+     "60%": 36719
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 35467,
-    "45%": 35752,
-    "50%": 36050,
-    "55%": 36374,
-    "60%": 36719
+    "40%": 34403,
+    "45%": 34679,
+    "50%": 34969,
+    "55%": 35282,
+    "60%": 35618
    },
    "bid_by_prob_eok": {
-    "40%": 3.55,
-    "45%": 3.58,
-    "50%": 3.6,
-    "55%": 3.64,
-    "60%": 3.67
+    "40%": 3.44,
+    "45%": 3.47,
+    "50%": 3.5,
+    "55%": 3.53,
+    "60%": 3.56
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 33500,
+     "bid_eok": 3.35,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 34000,
+     "bid_eok": 3.4,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 34500,
+     "bid_eok": 3.45,
+     "prob": 42
+    },
+    {
      "bid_manwon": 35000,
      "bid_eok": 3.5,
-     "prob": 32
+     "prob": 51
     },
     {
      "bid_manwon": 35500,
      "bid_eok": 3.55,
-     "prob": 41
+     "prob": 58
     },
     {
      "bid_manwon": 36000,
      "bid_eok": 3.6,
-     "prob": 49
+     "prob": 66
     },
     {
      "bid_manwon": 36500,
      "bid_eok": 3.65,
-     "prob": 57
-    },
-    {
-     "bid_manwon": 37000,
-     "bid_eok": 3.7,
-     "prob": 64
-    },
-    {
-     "bid_manwon": 37500,
-     "bid_eok": 3.75,
-     "prob": 71
+     "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 36050,
-   "p50_ensemble_eok": 3.6,
+   "p50_ensemble_manwon": 34969,
+   "p50_ensemble_eok": 3.5,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(291세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경4623[1]": {
    "key": "2025타경4623[1]",
@@ -1954,6 +2152,18 @@
    "richgo_sise_eok": 2.454,
    "appr_vs_sise": 1.047,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 800,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 25700,
+     "45%": 25700,
+     "50%": 25700,
+     "55%": 25700,
+     "60%": 25700
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 25700,
     "45%": 25700,
@@ -1972,7 +2182,8 @@
    "p50_ensemble_manwon": 25700,
    "p50_ensemble_eok": 2.57,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2024타경82633[1]": {
    "key": "2024타경82633[1]",
@@ -1995,6 +2206,18 @@
    "richgo_sise_eok": 4.89,
    "appr_vs_sise": 1.207,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 424,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 23765,
+     "45%": 23956,
+     "50%": 24156,
+     "55%": 24372,
+     "60%": 24604
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 23765,
     "45%": 23956,
@@ -2036,7 +2259,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2025타경72306[1]": {
    "key": "2025타경72306[1]",
@@ -2059,6 +2283,18 @@
    "richgo_sise_eok": 2.632,
    "appr_vs_sise": 1.174,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 499,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 20567,
+     "45%": 20732,
+     "50%": 20905,
+     "55%": 21093,
+     "60%": 21293
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 20567,
     "45%": 20732,
@@ -2095,7 +2331,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2025타경72665[1]": {
    "key": "2025타경72665[1]",
@@ -2118,6 +2355,18 @@
    "richgo_sise_eok": 2.587,
    "appr_vs_sise": 1.028,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 476,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 21875,
+     "45%": 22051,
+     "50%": 22235,
+     "55%": 22434,
+     "60%": 22647
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 21875,
     "45%": 22051,
@@ -2157,7 +2406,8 @@
    "p50_ensemble_manwon": 22235,
    "p50_ensemble_eok": 2.22,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72726[1]": {
    "key": "2025타경72726[1]",
@@ -2180,6 +2430,18 @@
    "richgo_sise_eok": 3.215,
    "appr_vs_sise": 1.076,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 478,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 27480,
+     "45%": 27701,
+     "50%": 27932,
+     "55%": 28183,
+     "60%": 28450
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 27480,
     "45%": 27701,
@@ -2224,7 +2486,8 @@
    "p50_ensemble_manwon": 27932,
    "p50_ensemble_eok": 2.79,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2024타경80132[1]": {
    "key": "2024타경80132[1]",
@@ -2247,6 +2510,18 @@
    "richgo_sise_eok": 3.44,
    "appr_vs_sise": 1.052,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 429,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 36200,
+     "45%": 36200,
+     "50%": 36200,
+     "55%": 36200,
+     "60%": 36200
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 36200,
     "45%": 36200,
@@ -2265,7 +2540,8 @@
    "p50_ensemble_manwon": 36200,
    "p50_ensemble_eok": 3.62,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2023타경81282[1]": {
    "key": "2023타경81282[1]",
@@ -2288,6 +2564,18 @@
    "richgo_sise_eok": 2.315,
    "appr_vs_sise": 1.162,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 372,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 20131,
+     "45%": 20292,
+     "50%": 20462,
+     "55%": 20645,
+     "60%": 20842
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 20131,
     "45%": 20292,
@@ -2324,7 +2612,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2025타경4845[1]": {
    "key": "2025타경4845[1]",
@@ -2347,6 +2636,18 @@
    "richgo_sise_eok": 3.797,
    "appr_vs_sise": 0.935,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1080,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 35500,
+     "45%": 35500,
+     "50%": 35500,
+     "55%": 35602,
+     "60%": 35940
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 35500,
     "45%": 35500,
@@ -2381,7 +2682,8 @@
    "p50_ensemble_manwon": 35500,
    "p50_ensemble_eok": 3.55,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72550[1]": {
    "key": "2025타경72550[1]",
@@ -2404,6 +2706,18 @@
    "richgo_sise_eok": 3.117,
    "appr_vs_sise": 1.039,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1050,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 20361,
+     "45%": 20524,
+     "50%": 20695,
+     "55%": 20881,
+     "60%": 21079
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 20361,
     "45%": 20524,
@@ -2445,7 +2759,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2026타경51[1]": {
    "key": "2026타경51[1]",
@@ -2468,6 +2783,18 @@
    "richgo_sise_eok": 2.818,
    "appr_vs_sise": 1.068,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 491,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 30100,
+     "45%": 30100,
+     "50%": 30100,
+     "55%": 30100,
+     "60%": 30100
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 30100,
     "45%": 30100,
@@ -2486,7 +2813,8 @@
    "p50_ensemble_manwon": 30100,
    "p50_ensemble_eok": 3.01,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20239[1]": {
    "key": "2026타경20239[1]",
@@ -2509,6 +2837,18 @@
    "richgo_sise_eok": 7.844,
    "appr_vs_sise": 1.029,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1220,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 80700,
+     "45%": 80700,
+     "50%": 80700,
+     "55%": 80700,
+     "60%": 80700
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 80700,
     "45%": 80700,
@@ -2533,7 +2873,8 @@
    "p50_ensemble_manwon": 80700,
    "p50_ensemble_eok": 8.07,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경71830[1]": {
    "key": "2025타경71830[1]",
@@ -2556,6 +2897,18 @@
    "richgo_sise_eok": 5.142,
    "appr_vs_sise": 0.941,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1008,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 42716,
+     "45%": 43058,
+     "50%": 43418,
+     "55%": 43807,
+     "60%": 44224
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 42716,
     "45%": 43058,
@@ -2612,7 +2965,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2026타경20135[1]": {
    "key": "2026타경20135[1]",
@@ -2635,6 +2989,18 @@
    "richgo_sise_eok": 6.709,
    "appr_vs_sise": 1.04,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 473,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 56554,
+     "45%": 57008,
+     "50%": 57484,
+     "55%": 57999,
+     "60%": 58551
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 56554,
     "45%": 57008,
@@ -2704,7 +3070,8 @@
    "p50_ensemble_manwon": 57484,
    "p50_ensemble_eok": 5.75,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경17[1]": {
    "key": "2026타경17[1]",
@@ -2720,13 +3087,25 @@
    "danji_name": "별내신일유토빌",
    "name": "별내신일유토빌",
    "case": "2026타경17",
-   "keyword": "중복사건,토지거래허가구역",
+   "keyword": "토지거래허가구역,중복사건",
    "pyeong": "46",
    "appr_eok": 8.05,
    "low_eok": 5.635,
    "richgo_sise_eok": 8.221,
    "appr_vs_sise": 0.979,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 547,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 67254,
+     "45%": 67793,
+     "50%": 68359,
+     "55%": 68972,
+     "60%": 69628
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 67254,
     "45%": 67793,
@@ -2811,7 +3190,8 @@
    "p50_ensemble_manwon": 68359,
    "p50_ensemble_eok": 6.84,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20838[1]": {
    "key": "2026타경20838[1]",
@@ -2834,6 +3214,18 @@
    "richgo_sise_eok": 6.029,
    "appr_vs_sise": 1.042,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 434,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 62800,
+     "45%": 62800,
+     "50%": 62800,
+     "55%": 62800,
+     "60%": 62800
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 62800,
     "45%": 62800,
@@ -2852,7 +3244,8 @@
    "p50_ensemble_manwon": 62800,
    "p50_ensemble_eok": 6.28,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20392[1]": {
    "key": "2026타경20392[1]",
@@ -2875,6 +3268,18 @@
    "richgo_sise_eok": 6.499,
    "appr_vs_sise": 0.903,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1220,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 58700,
+     "45%": 59158,
+     "50%": 59652,
+     "55%": 60187,
+     "60%": 60759
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 58700,
     "45%": 59158,
@@ -2929,7 +3334,8 @@
    "p50_ensemble_manwon": 59652,
    "p50_ensemble_eok": 5.97,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2024타경80514[1]": {
    "key": "2024타경80514[1]",
@@ -2952,6 +3358,18 @@
    "richgo_sise_eok": 3.797,
    "appr_vs_sise": 1.043,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1080,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 32311,
+     "45%": 32570,
+     "50%": 32842,
+     "55%": 33136,
+     "60%": 33451
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 32311,
     "45%": 32570,
@@ -3003,7 +3421,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2023타경80463[1]": {
    "key": "2023타경80463[1]",
@@ -3026,6 +3445,18 @@
    "richgo_sise_eok": 7.088,
    "appr_vs_sise": 0.847,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 708,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 56313,
+     "45%": 56765,
+     "50%": 57239,
+     "55%": 57752,
+     "60%": 58301
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 56313,
     "45%": 56765,
@@ -3097,7 +3528,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2026타경20256[1]": {
    "key": "2026타경20256[1]",
@@ -3120,6 +3552,18 @@
    "richgo_sise_eok": 3.44,
    "appr_vs_sise": 1.061,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 429,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 36500,
+     "45%": 36500,
+     "50%": 36500,
+     "55%": 36500,
+     "60%": 36500
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 36500,
     "45%": 36500,
@@ -3144,7 +3588,8 @@
    "p50_ensemble_manwon": 36500,
    "p50_ensemble_eok": 3.65,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20029[1]": {
    "key": "2026타경20029[1]",
@@ -3160,13 +3605,25 @@
    "danji_name": "플루리움3단지",
    "name": "플루리움3단지",
    "case": "2026타경20029",
-   "keyword": "토지거래허가구역,지분매각",
+   "keyword": "지분매각,토지거래허가구역",
    "pyeong": "58",
    "appr_eok": 4.21,
    "low_eok": 2.063,
    "richgo_sise_eok": 8.531,
    "appr_vs_sise": 0.493,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1144,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 56312,
+     "45%": 56764,
+     "50%": 57237,
+     "55%": 57751,
+     "60%": 58300
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 56312,
     "45%": 56764,
@@ -3239,7 +3696,8 @@
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
     "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
-   ]
+   ],
+   "notes": []
   },
   "2025타경72646[1]": {
    "key": "2025타경72646[1]",
@@ -3262,6 +3720,18 @@
    "richgo_sise_eok": 4.949,
    "appr_vs_sise": 0.923,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 942,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 45700,
+     "45%": 45700,
+     "50%": 45700,
+     "55%": 45968,
+     "60%": 46405
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 45700,
     "45%": 45700,
@@ -3301,7 +3771,8 @@
    "p50_ensemble_manwon": 45700,
    "p50_ensemble_eok": 4.57,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72113[1]": {
    "key": "2025타경72113[1]",
@@ -3324,6 +3795,18 @@
    "richgo_sise_eok": 5.142,
    "appr_vs_sise": 0.963,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1008,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 42812,
+     "45%": 43156,
+     "50%": 43516,
+     "55%": 43906,
+     "60%": 44324
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 42812,
     "45%": 43156,
@@ -3383,7 +3866,8 @@
    "p50_ensemble_manwon": 43516,
    "p50_ensemble_eok": 4.35,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72160[1]": {
    "key": "2025타경72160[1]",
@@ -3399,13 +3883,25 @@
    "danji_name": "호평파라곤",
    "name": "호평파라곤",
    "case": "2025타경72160",
-   "keyword": "병합사건,중복사건,토지거래허가구역",
+   "keyword": "중복사건,토지거래허가구역,병합사건",
    "pyeong": "48",
    "appr_eok": 6.02,
    "low_eok": 4.214,
    "richgo_sise_eok": 5.846,
    "appr_vs_sise": 1.03,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1275,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 49205,
+     "45%": 49599,
+     "50%": 50013,
+     "55%": 50462,
+     "60%": 50941
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 49205,
     "45%": 49599,
@@ -3470,7 +3966,8 @@
    "p50_ensemble_manwon": 50013,
    "p50_ensemble_eok": 5.0,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경1884[1]": {
    "key": "2025타경1884[1]",
@@ -3493,6 +3990,18 @@
    "richgo_sise_eok": 2.588,
    "appr_vs_sise": 1.008,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 404,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 19375,
+     "45%": 19530,
+     "50%": 19693,
+     "55%": 19870,
+     "60%": 20058
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 19375,
     "45%": 19530,
@@ -3532,7 +4041,8 @@
    "p50_ensemble_manwon": 19693,
    "p50_ensemble_eok": 1.97,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72100[1]": {
    "key": "2025타경72100[1]",
@@ -3555,6 +4065,18 @@
    "richgo_sise_eok": 11.335,
    "appr_vs_sise": 0.9,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 467,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 102000,
+     "45%": 102365,
+     "50%": 103219,
+     "55%": 104146,
+     "60%": 105136
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 102000,
     "45%": 102365,
@@ -3639,7 +4161,8 @@
    "p50_ensemble_manwon": 103219,
    "p50_ensemble_eok": 10.32,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72126[1]": {
    "key": "2025타경72126[1]",
@@ -3662,6 +4185,18 @@
    "richgo_sise_eok": 4.25,
    "appr_vs_sise": 1.066,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1620,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 36881,
+     "45%": 37176,
+     "50%": 37487,
+     "55%": 37823,
+     "60%": 38183
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 36881,
     "45%": 37176,
@@ -3716,7 +4251,8 @@
    "p50_ensemble_manwon": 37487,
    "p50_ensemble_eok": 3.75,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72305[1]": {
    "key": "2025타경72305[1]",
@@ -3739,41 +4275,56 @@
    "richgo_sise_eok": 1.71,
    "appr_vs_sise": 1.117,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 170,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 14268,
+     "45%": 14383,
+     "50%": 14503,
+     "55%": 14633,
+     "60%": 14772
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 14268,
-    "45%": 14383,
-    "50%": 14503,
-    "55%": 14633,
-    "60%": 14772
+    "40%": 13840,
+    "45%": 13951,
+    "50%": 14068,
+    "55%": 14194,
+    "60%": 14329
    },
    "bid_by_prob_eok": {
-    "40%": 1.43,
-    "45%": 1.44,
-    "50%": 1.45,
-    "55%": 1.46,
-    "60%": 1.48
+    "40%": 1.38,
+    "45%": 1.4,
+    "50%": 1.41,
+    "55%": 1.42,
+    "60%": 1.43
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 13500,
+     "bid_eok": 1.35,
+     "prob": 26
+    },
+    {
      "bid_manwon": 14000,
      "bid_eok": 1.4,
-     "prob": 29
+     "prob": 47
     },
     {
      "bid_manwon": 14500,
      "bid_eok": 1.45,
-     "prob": 50
-    },
-    {
-     "bid_manwon": 15000,
-     "bid_eok": 1.5,
-     "prob": 68
+     "prob": 66
     }
    ],
-   "p50_ensemble_manwon": 14503,
-   "p50_ensemble_eok": 1.45,
+   "p50_ensemble_manwon": 14068,
+   "p50_ensemble_eok": 1.41,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(170세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경72349[1]": {
    "key": "2025타경72349[1]",
@@ -3796,6 +4347,18 @@
    "richgo_sise_eok": 5.778,
    "appr_vs_sise": 1.109,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 484,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 64100,
+     "45%": 64100,
+     "50%": 64100,
+     "55%": 64100,
+     "60%": 64100
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 64100,
     "45%": 64100,
@@ -3816,7 +4379,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2024타경71282[1]": {
    "key": "2024타경71282[1]",
@@ -3839,6 +4403,18 @@
    "richgo_sise_eok": 2.483,
    "appr_vs_sise": 0.983,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 811,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 20925,
+     "45%": 21093,
+     "50%": 21269,
+     "55%": 21460,
+     "60%": 21664
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 20925,
     "45%": 21093,
@@ -3880,7 +4456,68 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
+  },
+  "2025타경72444[1]": {
+   "key": "2025타경72444[1]",
+   "auction_id": "C20QTDQP",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 장현리 637 대명아파트 103동 2층 208호",
+   "appr_manwon": 18400,
+   "low_manwon": 18400,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 59.91,
+   "danji_id": "a8QcDyk",
+   "danji_name": "대명",
+   "name": "대명",
+   "case": "2025타경72444",
+   "keyword": "토지거래허가구역",
+   "pyeong": "24",
+   "appr_eok": 1.84,
+   "low_eok": 1.84,
+   "richgo_sise_eok": 1.867,
+   "appr_vs_sise": 0.986,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 405,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 18400,
+     "45%": 18400,
+     "50%": 18400,
+     "55%": 18400,
+     "60%": 18400
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 18400,
+    "45%": 18400,
+    "50%": 18400,
+    "55%": 18400,
+    "60%": 18400
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.84,
+    "45%": 1.84,
+    "50%": 1.84,
+    "55%": 1.84,
+    "60%": 1.84
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 18500,
+     "bid_eok": 1.85,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 18400,
+   "p50_ensemble_eok": 1.84,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": []
   },
   "2023타경4780[1]": {
    "key": "2023타경4780[1]",
@@ -3903,6 +4540,18 @@
    "richgo_sise_eok": 10.195,
    "appr_vs_sise": 0.736,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1085,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 86366,
+     "45%": 87059,
+     "50%": 87785,
+     "55%": 88573,
+     "60%": 89415
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 86366,
     "45%": 87059,
@@ -3997,7 +4646,8 @@
    "p50_ensemble_manwon": 87785,
    "p50_ensemble_eok": 8.78,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경3491[1]": {
    "key": "2025타경3491[1]",
@@ -4020,6 +4670,18 @@
    "richgo_sise_eok": 9.653,
    "appr_vs_sise": 0.952,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 753,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 91900,
+     "45%": 91900,
+     "50%": 91900,
+     "55%": 91900,
+     "60%": 91987
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 91900,
     "45%": 91900,
@@ -4069,7 +4731,8 @@
    "p50_ensemble_manwon": 91900,
    "p50_ensemble_eok": 9.19,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72296[1]": {
    "key": "2025타경72296[1]",
@@ -4092,6 +4755,18 @@
    "richgo_sise_eok": 4.051,
    "appr_vs_sise": 0.987,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 584,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 33963,
+     "45%": 34235,
+     "50%": 34521,
+     "55%": 34831,
+     "60%": 35162
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 33963,
     "45%": 34235,
@@ -4141,7 +4816,8 @@
    "p50_ensemble_manwon": 34521,
    "p50_ensemble_eok": 3.45,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72282[1]": {
    "key": "2025타경72282[1]",
@@ -4164,6 +4840,18 @@
    "richgo_sise_eok": 2.111,
    "appr_vs_sise": 1.241,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 352,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 19283,
+     "45%": 19438,
+     "50%": 19600,
+     "55%": 19776,
+     "60%": 19964
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 19283,
     "45%": 19438,
@@ -4203,7 +4891,8 @@
    "p50_ensemble_manwon": 19600,
    "p50_ensemble_eok": 1.96,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2024타경72971[1]": {
    "key": "2024타경72971[1]",
@@ -4226,6 +4915,18 @@
    "richgo_sise_eok": 3.394,
    "appr_vs_sise": 1.079,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 312,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 36600,
+     "45%": 36600,
+     "50%": 36600,
+     "55%": 36600,
+     "60%": 36600
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 36600,
     "45%": 36600,
@@ -4244,7 +4945,8 @@
    "p50_ensemble_manwon": 36600,
    "p50_ensemble_eok": 3.66,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경4562[1]": {
    "key": "2025타경4562[1]",
@@ -4267,6 +4969,18 @@
    "richgo_sise_eok": 3.215,
    "appr_vs_sise": 0.983,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 478,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 26779,
+     "45%": 26993,
+     "50%": 27218,
+     "55%": 27463,
+     "60%": 27724
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 26779,
     "45%": 26993,
@@ -4311,74 +5025,8 @@
    "p50_ensemble_manwon": 27218,
    "p50_ensemble_eok": 2.72,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
-  },
-  "2025타경4418[1]": {
-   "key": "2025타경4418[1]",
-   "auction_id": "C74INYMB",
-   "region": "경기 남양주시",
-   "address": "경기도 남양주시 오남읍 오남리 888 남양주오남두산위브아파트 101동 7층703호",
-   "appr_manwon": 34000,
-   "low_manwon": 23800,
-   "fails": 1,
-   "bidding_date": "2026-11-17",
-   "area": 84.99,
-   "danji_id": "a1JPksm",
-   "danji_name": "남양주오남두산위브",
-   "name": "남양주오남두산위브",
-   "case": "2025타경4418",
-   "keyword": "토지거래허가구역",
-   "pyeong": "32",
-   "appr_eok": 3.4,
-   "low_eok": 2.38,
-   "richgo_sise_eok": 3.367,
-   "appr_vs_sise": 1.01,
-   "model": "앙상블(부스팅+군집별회귀)",
-   "bid_by_prob_manwon": {
-    "40%": 27763,
-    "45%": 27986,
-    "50%": 28219,
-    "55%": 28473,
-    "60%": 28743
-   },
-   "bid_by_prob_eok": {
-    "40%": 2.78,
-    "45%": 2.8,
-    "50%": 2.82,
-    "55%": 2.85,
-    "60%": 2.87
-   },
-   "prob_by_bid_5m": [
-    {
-     "bid_manwon": 27500,
-     "bid_eok": 2.75,
-     "prob": 34
-    },
-    {
-     "bid_manwon": 28000,
-     "bid_eok": 2.8,
-     "prob": 45
-    },
-    {
-     "bid_manwon": 28500,
-     "bid_eok": 2.85,
-     "prob": 56
-    },
-    {
-     "bid_manwon": 29000,
-     "bid_eok": 2.9,
-     "prob": 65
-    },
-    {
-     "bid_manwon": 29500,
-     "bid_eok": 2.95,
-     "prob": 74
-    }
-   ],
-   "p50_ensemble_manwon": 28219,
-   "p50_ensemble_eok": 2.82,
-   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72429[1]": {
    "key": "2025타경72429[1]",
@@ -4401,51 +5049,66 @@
    "richgo_sise_eok": 3.813,
    "appr_vs_sise": 0.978,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 171,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 28512,
+     "45%": 28741,
+     "50%": 28981,
+     "55%": 29241,
+     "60%": 29519
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 28512,
-    "45%": 28741,
-    "50%": 28981,
-    "55%": 29241,
-    "60%": 29519
+    "40%": 27657,
+    "45%": 27879,
+    "50%": 28111,
+    "55%": 28364,
+    "60%": 28633
    },
    "bid_by_prob_eok": {
-    "40%": 2.85,
-    "45%": 2.87,
-    "50%": 2.9,
-    "55%": 2.92,
-    "60%": 2.95
+    "40%": 2.77,
+    "45%": 2.79,
+    "50%": 2.81,
+    "55%": 2.84,
+    "60%": 2.86
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 27000,
+     "bid_eok": 2.7,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 36
+    },
+    {
      "bid_manwon": 28000,
      "bid_eok": 2.8,
-     "prob": 29
+     "prob": 48
     },
     {
      "bid_manwon": 28500,
      "bid_eok": 2.85,
-     "prob": 40
+     "prob": 58
     },
     {
      "bid_manwon": 29000,
      "bid_eok": 2.9,
-     "prob": 50
-    },
-    {
-     "bid_manwon": 29500,
-     "bid_eok": 2.95,
-     "prob": 60
-    },
-    {
-     "bid_manwon": 30000,
-     "bid_eok": 3.0,
-     "prob": 69
+     "prob": 67
     }
    ],
-   "p50_ensemble_manwon": 28981,
-   "p50_ensemble_eok": 2.9,
+   "p50_ensemble_manwon": 28111,
+   "p50_ensemble_eok": 2.81,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(171세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경3712[1]": {
    "key": "2025타경3712[1]",
@@ -4461,59 +5124,74 @@
    "danji_name": "진접센트레빌시티2단지",
    "name": "진접센트레빌시티2단지",
    "case": "2025타경3712",
-   "keyword": "중복사건,대항력있는임차인,토지거래허가구역",
+   "keyword": "대항력있는임차인,토지거래허가구역,중복사건",
    "pyeong": "40",
    "appr_eok": 3.62,
    "low_eok": 2.534,
    "richgo_sise_eok": 3.482,
    "appr_vs_sise": 1.04,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 266,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 28377,
+     "45%": 28604,
+     "50%": 28843,
+     "55%": 29102,
+     "60%": 29379
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 28377,
-    "45%": 28604,
-    "50%": 28843,
-    "55%": 29102,
-    "60%": 29379
+    "40%": 27526,
+    "45%": 27746,
+    "50%": 27978,
+    "55%": 28229,
+    "60%": 28497
    },
    "bid_by_prob_eok": {
-    "40%": 2.84,
-    "45%": 2.86,
-    "50%": 2.88,
-    "55%": 2.91,
-    "60%": 2.94
+    "40%": 2.75,
+    "45%": 2.77,
+    "50%": 2.8,
+    "55%": 2.82,
+    "60%": 2.85
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 27000,
+     "bid_eok": 2.7,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 39
+    },
+    {
      "bid_manwon": 28000,
      "bid_eok": 2.8,
-     "prob": 32
+     "prob": 50
     },
     {
      "bid_manwon": 28500,
      "bid_eok": 2.85,
-     "prob": 43
+     "prob": 60
     },
     {
      "bid_manwon": 29000,
      "bid_eok": 2.9,
-     "prob": 53
-    },
-    {
-     "bid_manwon": 29500,
-     "bid_eok": 2.95,
-     "prob": 62
-    },
-    {
-     "bid_manwon": 30000,
-     "bid_eok": 3.0,
-     "prob": 71
+     "prob": 69
     }
    ],
-   "p50_ensemble_manwon": 28843,
-   "p50_ensemble_eok": 2.88,
+   "p50_ensemble_manwon": 27978,
+   "p50_ensemble_eok": 2.8,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(266세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
    ]
   },
   "2025타경3217[1]": {
@@ -4537,46 +5215,61 @@
    "richgo_sise_eok": 3.153,
    "appr_vs_sise": 1.081,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 278,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 23669,
+     "45%": 23858,
+     "50%": 24057,
+     "55%": 24273,
+     "60%": 24504
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 23669,
-    "45%": 23858,
-    "50%": 24057,
-    "55%": 24273,
-    "60%": 24504
+    "40%": 22959,
+    "45%": 23143,
+    "50%": 23336,
+    "55%": 23545,
+    "60%": 23769
    },
    "bid_by_prob_eok": {
-    "40%": 2.37,
-    "45%": 2.39,
-    "50%": 2.41,
-    "55%": 2.43,
-    "60%": 2.45
+    "40%": 2.3,
+    "45%": 2.31,
+    "50%": 2.33,
+    "55%": 2.35,
+    "60%": 2.38
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 22500,
+     "bid_eok": 2.25,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 23000,
+     "bid_eok": 2.3,
+     "prob": 41
+    },
+    {
      "bid_manwon": 23500,
      "bid_eok": 2.35,
-     "prob": 36
+     "prob": 54
     },
     {
      "bid_manwon": 24000,
      "bid_eok": 2.4,
-     "prob": 49
-    },
-    {
-     "bid_manwon": 24500,
-     "bid_eok": 2.45,
-     "prob": 60
-    },
-    {
-     "bid_manwon": 25000,
-     "bid_eok": 2.5,
-     "prob": 71
+     "prob": 65
     }
    ],
-   "p50_ensemble_manwon": 24057,
-   "p50_ensemble_eok": 2.41,
+   "p50_ensemble_manwon": 23336,
+   "p50_ensemble_eok": 2.33,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(278세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경3521[1]": {
    "key": "2025타경3521[1]",
@@ -4599,6 +5292,18 @@
    "richgo_sise_eok": 3.117,
    "appr_vs_sise": 0.978,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1050,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 25851,
+     "45%": 26058,
+     "50%": 26276,
+     "55%": 26511,
+     "60%": 26763
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 25851,
     "45%": 26058,
@@ -4643,7 +5348,8 @@
    "p50_ensemble_manwon": 26276,
    "p50_ensemble_eok": 2.63,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경3804[1]": {
    "key": "2025타경3804[1]",
@@ -4659,13 +5365,25 @@
    "danji_name": "마석대림",
    "name": "마석대림",
    "case": "2025타경3804",
-   "keyword": "중복사건,토지거래허가구역",
+   "keyword": "토지거래허가구역,중복사건",
    "pyeong": "48",
    "appr_eok": 3.95,
    "low_eok": 2.765,
    "richgo_sise_eok": 3.323,
    "appr_vs_sise": 1.189,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 370,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 28896,
+     "45%": 29127,
+     "50%": 29371,
+     "55%": 29634,
+     "60%": 29916
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 28896,
     "45%": 29127,
@@ -4710,7 +5428,8 @@
    "p50_ensemble_manwon": 29371,
    "p50_ensemble_eok": 2.94,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72445[1]": {
    "key": "2025타경72445[1]",
@@ -4733,6 +5452,18 @@
    "richgo_sise_eok": 8.419,
    "appr_vs_sise": 0.956,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 369,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 68398,
+     "45%": 68946,
+     "50%": 69522,
+     "55%": 70146,
+     "60%": 70812
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 68398,
     "45%": 68946,
@@ -4812,7 +5543,8 @@
    "p50_ensemble_manwon": 69522,
    "p50_ensemble_eok": 6.95,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경4739[1]": {
    "key": "2025타경4739[1]",
@@ -4835,6 +5567,18 @@
    "richgo_sise_eok": 5.005,
    "appr_vs_sise": 1.207,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 484,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 44540,
+     "45%": 44897,
+     "50%": 45272,
+     "55%": 45678,
+     "60%": 46112
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 44540,
     "45%": 44897,
@@ -4896,7 +5640,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   },
   "2025타경71278[1]": {
    "key": "2025타경71278[1]",
@@ -4912,44 +5657,54 @@
    "danji_name": "마석건영",
    "name": "마석건영",
    "case": "2025타경71278",
-   "keyword": "재매각,대항력있는임차인",
+   "keyword": "대항력있는임차인,재매각",
    "pyeong": "22",
    "appr_eok": 1.52,
    "low_eok": 0.365,
    "richgo_sise_eok": 1.47,
    "appr_vs_sise": 1.034,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 213,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 9656,
+     "45%": 9734,
+     "50%": 9815,
+     "55%": 9903,
+     "60%": 9997
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 9656,
-    "45%": 9734,
-    "50%": 9815,
-    "55%": 9903,
-    "60%": 9997
+    "40%": 9367,
+    "45%": 9442,
+    "50%": 9520,
+    "55%": 9606,
+    "60%": 9697
    },
    "bid_by_prob_eok": {
-    "40%": 0.97,
-    "45%": 0.97,
-    "50%": 0.98,
-    "55%": 0.99,
-    "60%": 1.0
+    "40%": 0.94,
+    "45%": 0.94,
+    "50%": 0.95,
+    "55%": 0.96,
+    "60%": 0.97
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 9500,
      "bid_eok": 0.95,
-     "prob": 30
-    },
-    {
-     "bid_manwon": 10000,
-     "bid_eok": 1.0,
-     "prob": 60
+     "prob": 49
     }
    ],
-   "p50_ensemble_manwon": 9815,
-   "p50_ensemble_eok": 0.98,
+   "p50_ensemble_manwon": 9520,
+   "p50_ensemble_eok": 0.95,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(213세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
    ]
   },
   "2025타경71670[1]": {
@@ -4973,37 +5728,52 @@
    "richgo_sise_eok": 1.24,
    "appr_vs_sise": 1.048,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 290,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 10246,
+     "45%": 10328,
+     "50%": 10414,
+     "55%": 10507,
+     "60%": 10607
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 10246,
-    "45%": 10328,
-    "50%": 10414,
-    "55%": 10507,
-    "60%": 10607
+    "40%": 9938,
+    "45%": 10018,
+    "50%": 10102,
+    "55%": 10192,
+    "60%": 10289
    },
    "bid_by_prob_eok": {
-    "40%": 1.02,
-    "45%": 1.03,
-    "50%": 1.04,
-    "55%": 1.05,
-    "60%": 1.06
+    "40%": 0.99,
+    "45%": 1.0,
+    "50%": 1.01,
+    "55%": 1.02,
+    "60%": 1.03
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 10000,
      "bid_eok": 1.0,
-     "prob": 26
+     "prob": 44
     },
     {
      "bid_manwon": 10500,
      "bid_eok": 1.05,
-     "prob": 55
+     "prob": 71
     }
    ],
-   "p50_ensemble_manwon": 10414,
-   "p50_ensemble_eok": 1.04,
+   "p50_ensemble_manwon": 10102,
+   "p50_ensemble_eok": 1.01,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(290세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
    ]
   },
   "2024타경82466[1]": {
@@ -5027,6 +5797,18 @@
    "richgo_sise_eok": 2.706,
    "appr_vs_sise": 1.146,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 467,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 24560,
+     "45%": 24757,
+     "50%": 24964,
+     "55%": 25188,
+     "60%": 25427
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 24560,
     "45%": 24757,
@@ -5071,7 +5853,8 @@
    "p50_ensemble_manwon": 24964,
    "p50_ensemble_eok": 2.5,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2024타경85724[1]": {
    "key": "2024타경85724[1]",
@@ -5094,6 +5877,18 @@
    "richgo_sise_eok": 4.427,
    "appr_vs_sise": 1.023,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1176,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 38481,
+     "45%": 38790,
+     "50%": 39113,
+     "55%": 39464,
+     "60%": 39839
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 38481,
     "45%": 38790,
@@ -5148,7 +5943,8 @@
    "p50_ensemble_manwon": 39113,
    "p50_ensemble_eok": 3.91,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2024타경85595[1]": {
    "key": "2024타경85595[1]",
@@ -5171,6 +5967,18 @@
    "richgo_sise_eok": 3.599,
    "appr_vs_sise": 0.981,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 607,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 35300,
+     "45%": 35300,
+     "50%": 35300,
+     "55%": 35543,
+     "60%": 35881
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 35300,
     "45%": 35300,
@@ -5205,7 +6013,8 @@
    "p50_ensemble_manwon": 35300,
    "p50_ensemble_eok": 3.53,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2024타경85724[2]": {
    "key": "2024타경85724[2]",
@@ -5228,6 +6037,18 @@
    "richgo_sise_eok": 3.457,
    "appr_vs_sise": 1.047,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1176,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 30497,
+     "45%": 30741,
+     "50%": 30998,
+     "55%": 31276,
+     "60%": 31573
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 30497,
     "45%": 30741,
@@ -5272,7 +6093,8 @@
    "p50_ensemble_manwon": 30998,
    "p50_ensemble_eok": 3.1,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2026타경20818[1]": {
    "key": "2026타경20818[1]",
@@ -5295,6 +6117,18 @@
    "richgo_sise_eok": 9.358,
    "appr_vs_sise": 1.007,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 921,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 81096,
+     "45%": 81746,
+     "50%": 82429,
+     "55%": 83168,
+     "60%": 83959
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 81096,
     "45%": 81746,
@@ -5389,7 +6223,8 @@
    "p50_ensemble_manwon": 82429,
    "p50_ensemble_eok": 8.24,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경72876[1]": {
    "key": "2025타경72876[1]",
@@ -5412,67 +6247,57 @@
    "richgo_sise_eok": 6.986,
    "appr_vs_sise": 0.978,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 209,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 68300,
+     "45%": 68300,
+     "50%": 68861,
+     "55%": 69479,
+     "60%": 70139
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 68300,
     "45%": 68300,
-    "50%": 68861,
-    "55%": 69479,
-    "60%": 70139
+    "50%": 68300,
+    "55%": 68300,
+    "60%": 68300
    },
    "bid_by_prob_eok": {
     "40%": 6.83,
     "45%": 6.83,
-    "50%": 6.89,
-    "55%": 6.95,
-    "60%": 7.01
+    "50%": 6.83,
+    "55%": 6.83,
+    "60%": 6.83
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 68500,
      "bid_eok": 6.85,
-     "prob": 47
+     "prob": 64
     },
     {
      "bid_manwon": 69000,
      "bid_eok": 6.9,
-     "prob": 51
+     "prob": 68
     },
     {
      "bid_manwon": 69500,
      "bid_eok": 6.95,
-     "prob": 55
-    },
-    {
-     "bid_manwon": 70000,
-     "bid_eok": 7.0,
-     "prob": 59
-    },
-    {
-     "bid_manwon": 70500,
-     "bid_eok": 7.05,
-     "prob": 63
-    },
-    {
-     "bid_manwon": 71000,
-     "bid_eok": 7.1,
-     "prob": 66
-    },
-    {
-     "bid_manwon": 71500,
-     "bid_eok": 7.15,
-     "prob": 70
-    },
-    {
-     "bid_manwon": 72000,
-     "bid_eok": 7.2,
-     "prob": 74
+     "prob": 72
     }
    ],
-   "p50_ensemble_manwon": 68861,
-   "p50_ensemble_eok": 6.89,
+   "p50_ensemble_manwon": 68300,
+   "p50_ensemble_eok": 6.83,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(209세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
    ]
   },
   "2025타경72849[1]": {
@@ -5496,81 +6321,71 @@
    "richgo_sise_eok": 8.129,
    "appr_vs_sise": 0.924,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 299,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 75934,
+     "45%": 76543,
+     "50%": 77182,
+     "55%": 77874,
+     "60%": 78614
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 75934,
-    "45%": 76543,
-    "50%": 77182,
-    "55%": 77874,
-    "60%": 78614
+    "40%": 75100,
+    "45%": 75100,
+    "50%": 75100,
+    "55%": 75538,
+    "60%": 76256
    },
    "bid_by_prob_eok": {
-    "40%": 7.59,
-    "45%": 7.65,
-    "50%": 7.72,
-    "55%": 7.79,
-    "60%": 7.86
+    "40%": 7.51,
+    "45%": 7.51,
+    "50%": 7.51,
+    "55%": 7.55,
+    "60%": 7.63
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 75500,
      "bid_eok": 7.55,
-     "prob": 36
+     "prob": 55
     },
     {
      "bid_manwon": 76000,
      "bid_eok": 7.6,
-     "prob": 41
+     "prob": 58
     },
     {
      "bid_manwon": 76500,
      "bid_eok": 7.65,
-     "prob": 45
+     "prob": 62
     },
     {
      "bid_manwon": 77000,
      "bid_eok": 7.7,
-     "prob": 49
+     "prob": 65
     },
     {
      "bid_manwon": 77500,
      "bid_eok": 7.75,
-     "prob": 52
+     "prob": 69
     },
     {
      "bid_manwon": 78000,
      "bid_eok": 7.8,
-     "prob": 56
-    },
-    {
-     "bid_manwon": 78500,
-     "bid_eok": 7.85,
-     "prob": 59
-    },
-    {
-     "bid_manwon": 79000,
-     "bid_eok": 7.9,
-     "prob": 63
-    },
-    {
-     "bid_manwon": 79500,
-     "bid_eok": 7.95,
-     "prob": 66
-    },
-    {
-     "bid_manwon": 80000,
-     "bid_eok": 8.0,
-     "prob": 69
-    },
-    {
-     "bid_manwon": 80500,
-     "bid_eok": 8.05,
-     "prob": 73
+     "prob": 72
     }
    ],
-   "p50_ensemble_manwon": 77182,
-   "p50_ensemble_eok": 7.72,
+   "p50_ensemble_manwon": 75100,
+   "p50_ensemble_eok": 7.51,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(299세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경72200[1]": {
    "key": "2025타경72200[1]",
@@ -5593,6 +6408,18 @@
    "richgo_sise_eok": 11.204,
    "appr_vs_sise": 0.919,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1077,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 91627,
+     "45%": 92362,
+     "50%": 93133,
+     "55%": 93968,
+     "60%": 94861
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 91627,
     "45%": 92362,
@@ -5697,7 +6524,8 @@
    "p50_ensemble_manwon": 93133,
    "p50_ensemble_eok": 9.31,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경71712[1]": {
    "key": "2025타경71712[1]",
@@ -5720,6 +6548,18 @@
    "richgo_sise_eok": 8.638,
    "appr_vs_sise": 0.813,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1229,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 76206,
+     "45%": 76817,
+     "50%": 77458,
+     "55%": 78153,
+     "60%": 78896
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 76206,
     "45%": 76817,
@@ -5809,7 +6649,8 @@
    "p50_ensemble_manwon": 77458,
    "p50_ensemble_eok": 7.75,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": []
   },
   "2025타경3675[1]": {
    "key": "2025타경3675[1]",
@@ -5832,66 +6673,61 @@
    "richgo_sise_eok": 6.567,
    "appr_vs_sise": 0.938,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 171,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 61751,
+     "45%": 62246,
+     "50%": 62765,
+     "55%": 63328,
+     "60%": 63930
+    }
+   },
    "bid_by_prob_manwon": {
-    "40%": 61751,
-    "45%": 62246,
-    "50%": 62765,
-    "55%": 63328,
-    "60%": 63930
+    "40%": 61600,
+    "45%": 61600,
+    "50%": 61600,
+    "55%": 61600,
+    "60%": 62012
    },
    "bid_by_prob_eok": {
-    "40%": 6.18,
-    "45%": 6.22,
-    "50%": 6.28,
-    "55%": 6.33,
-    "60%": 6.39
+    "40%": 6.16,
+    "45%": 6.16,
+    "50%": 6.16,
+    "55%": 6.16,
+    "60%": 6.2
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 62000,
      "bid_eok": 6.2,
-     "prob": 43
+     "prob": 60
     },
     {
      "bid_manwon": 62500,
      "bid_eok": 6.25,
-     "prob": 47
+     "prob": 64
     },
     {
      "bid_manwon": 63000,
      "bid_eok": 6.3,
-     "prob": 52
+     "prob": 68
     },
     {
      "bid_manwon": 63500,
      "bid_eok": 6.35,
-     "prob": 56
-    },
-    {
-     "bid_manwon": 64000,
-     "bid_eok": 6.4,
-     "prob": 61
-    },
-    {
-     "bid_manwon": 64500,
-     "bid_eok": 6.45,
-     "prob": 65
-    },
-    {
-     "bid_manwon": 65000,
-     "bid_eok": 6.5,
-     "prob": 69
-    },
-    {
-     "bid_manwon": 65500,
-     "bid_eok": 6.55,
      "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 62765,
-   "p50_ensemble_eok": 6.28,
+   "p50_ensemble_manwon": 61600,
+   "p50_ensemble_eok": 6.16,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-   "warnings": []
+   "warnings": [],
+   "notes": [
+    "소규모 단지(171세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ]
   },
   "2025타경72396[1]": {
    "key": "2025타경72396[1]",
@@ -5907,13 +6743,25 @@
    "danji_name": "하나",
    "name": "하나",
    "case": "2025타경72396",
-   "keyword": "토지거래허가구역,지분매각",
+   "keyword": "지분매각,토지거래허가구역",
    "pyeong": "31",
    "appr_eok": 3.99,
    "low_eok": 3.99,
    "richgo_sise_eok": 10.129,
    "appr_vs_sise": 0.394,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 686,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 74947,
+     "45%": 75548,
+     "50%": 76179,
+     "55%": 76863,
+     "60%": 77593
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 74947,
     "45%": 75548,
@@ -6006,7 +6854,8 @@
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
     "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
-   ]
+   ],
+   "notes": []
   },
   "2024타경80651[1]": {
    "key": "2024타경80651[1]",
@@ -6029,6 +6878,18 @@
    "richgo_sise_eok": 10.079,
    "appr_vs_sise": 1.123,
    "model": "앙상블(부스팅+군집별회귀)",
+   "households": 921,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 89298,
+     "45%": 90014,
+     "50%": 90765,
+     "55%": 91580,
+     "60%": 92450
+    }
+   },
    "bid_by_prob_manwon": {
     "40%": 89298,
     "45%": 90014,
@@ -6135,7 +6996,8 @@
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
-   ]
+   ],
+   "notes": []
   }
  },
  "failed": [
@@ -6198,6 +7060,18 @@
    "bidding_date": "2026-11-04",
    "area": 104.75,
    "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2026타경101131[1]",
+   "auction_id": "C23OSOIG",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1527-1 보미리즌빌아파트  2층201호",
+   "appr_manwon": 73500,
+   "low_manwon": 73500,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 130.47,
+   "reason": "단지 못 찾음 (확인 15곳)"
   },
   {
    "key": "2026타경100205[1]",
@@ -6282,19 +7156,6 @@
    "bidding_date": "",
    "area": 59.97,
    "reason": "단지 못 찾음 (확인 10곳)"
-  },
-  {
-   "key": "2025타경72093[1]",
-   "auction_id": "C09KFSMS",
-   "region": "경기 구리시",
-   "address": "경기도 구리시 수택동 628-25 미주아파트  6층602호",
-   "appr_manwon": 40900,
-   "low_manwon": 28630,
-   "fails": 1,
-   "bidding_date": "2026-11-19",
-   "area": 56.95,
-   "danji_id": "a9YcvSz",
-   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
   }
  ],
  "skipped": [
@@ -6345,18 +7206,6 @@
    "bidding_date": "2026-11-05",
    "area": 85,
    "reason": "예산초과"
-  },
-  {
-   "key": "2025타경2782[1]",
-   "auction_id": "C22FRBBC",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  12층1201호",
-   "appr_manwon": 327000,
-   "low_manwon": 209280,
-   "fails": 2,
-   "bidding_date": "2026-11-05",
-   "area": 22.37,
-   "reason": "면적미달"
   },
   {
    "key": "2026타경100530[1]",
@@ -6929,18 +7778,6 @@
    "reason": "면적미달"
   },
   {
-   "key": "2025타경51328[1]",
-   "auction_id": "C25NVEUS",
-   "region": "서울 광진구",
-   "address": "서울특별시 광진구 화양동 111-88 신원리브웰 화양동 주상복합  4층401호",
-   "appr_manwon": 21800,
-   "low_manwon": 13952,
-   "fails": 2,
-   "bidding_date": "",
-   "area": 16.92,
-   "reason": "면적미달"
-  },
-  {
    "key": "2025타경52237[1]",
    "auction_id": "C58JSTQT",
    "region": "서울 송파구",
@@ -7322,18 +8159,6 @@
    "fails": 1,
    "bidding_date": "2026-11-30",
    "area": 74.51,
-   "reason": "아파트 아님"
-  },
-  {
-   "key": "2025타경52550[1]",
-   "auction_id": "C44PHUQO",
-   "region": "경기 성남시 수정구",
-   "address": "경기도 성남시 수정구 심곡동 454 ",
-   "appr_manwon": 17098,
-   "low_manwon": 5864,
-   "fails": 3,
-   "bidding_date": "",
-   "area": null,
    "reason": "아파트 아님"
   },
   {
