@@ -220,6 +220,10 @@ def target_row(danji, auction_id, df):
 
 BW = 0.012
 PROB_LEVELS = [40, 45, 50, 55, 60]
+# 소규모 단지 보정 (2026-10-31): 2024-07~2026-10 롤링 백테스트에서 300세대 미만은 예측이 평균 1.5% 높고,
+# 모델 50% 가격 입찰 시 실제 낙찰률 59%·낙찰 시 평균 초과지불 7.0% → 예측가를 3% 낮추면 낙찰률 46%·초과지불 5.1%
+SMALL_HH = 300
+SMALL_ADJ = -0.03
 
 
 def _logit(p):
@@ -242,20 +246,24 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     df = load_train() if df is None else df
     row, info = target_row(danji, auction_id, df)
     T = row.date.iloc[0]
-    c = float(np.mean([fit_predict(m, df, row, T)[0] for m in ENSEMBLE]))
+    c_raw = float(np.mean([fit_predict(m, df, row, T)[0] for m in ENSEMBLE]))
     mkt, low = float(row.mkt.iloc[0]), float(row.low.iloc[0])
     pool, a, b = cfg['resid_pool'], cfg['calib_a'], cfg['calib_b']
+    hh = row.hh.iloc[0]
+    small = bool(pd.notna(hh) and hh < SMALL_HH)
+    c = c_raw + (np.log(1 + SMALL_ADJ) if small else 0.0)
 
-    def wp(bid):
-        return 0.0 if bid < low else win_prob(pool, a, b, np.log(bid / mkt) - c)
+    def wp(bid, cc=None):
+        return 0.0 if bid < low else win_prob(pool, a, b, np.log(bid / mkt) - (c if cc is None else cc))
 
-    def price_at(q):  # bisection on bid (원), 1만원 precision
+    def price_at(q, cc=None):  # bisection on bid (원), 1만원 precision
         lo, hi = low, mkt * 1.5
         for _ in range(60):
             mid = (lo + hi) / 2
-            lo, hi = (mid, hi) if wp(mid) < q else (lo, mid)
+            lo, hi = (mid, hi) if wp(mid, cc) < q else (lo, mid)
         return max(low, hi)
     prices = {f'{q}%': int(round(price_at(q / 100) / 1e4)) for q in PROB_LEVELS}
+    prices_raw = {f'{q}%': int(round(price_at(q / 100, c_raw) / 1e4)) for q in PROB_LEVELS} if small else prices
     p25, p75 = price_at(0.25), price_at(0.75)
     grid = np.arange(np.ceil(max(low, p25) / 5e6) * 5e6, p75 + 1, 5e6)
     table = [dict(bid_manwon=int(g / 1e4), bid_eok=round(g / 1e8, 2), prob=int(round(wp(g) * 100))) for g in grid]
@@ -264,13 +272,20 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
         warn.append('권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음')
     if info['appr_vs_sise'] < 0.6:
         warn.append('감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합')
+    notes = []
+    if small:
+        notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
+                     f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
+               households=None if pd.isna(hh) else int(hh),
+               small_danji_adj=dict(applied=small, adj_pct=SMALL_ADJ * 100 if small else 0.0,
+                                    bid_by_prob_manwon_raw=prices_raw),
                bid_by_prob_manwon=prices,
                bid_by_prob_eok={k: round(v / 1e4, 2) for k, v in prices.items()},
                prob_by_bid_5m=table,
                p50_ensemble_manwon=prices['50%'], p50_ensemble_eok=round(prices['50%'] / 1e4, 2),
                model_error_note=f"평균 오차 약 {cfg['mape_recent']}% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
-               warnings=warn)
+               warnings=warn, notes=notes)
     return out
 
 
