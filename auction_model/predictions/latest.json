@@ -1,0 +1,7601 @@
+{
+ "generated_at": "2026-10-31T09:22:21+09:00",
+ "date": "2026-10-31",
+ "model": "앙상블(부스팅+군집별회귀)",
+ "config_built": "2026-10-30",
+ "filters": {
+  "min_area": 54.0,
+  "max_low_manwon": 130000
+ },
+ "counts": {
+  "predicted": 76,
+  "skipped": 97,
+  "failed": 15
+ },
+ "errors": [],
+ "items": {
+  "2026타경50101[1]": {
+   "key": "2026타경50101[1]",
+   "auction_id": "C42BLWEB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 둔촌동 135-1 201동 10층1011호",
+   "appr_manwon": 100000,
+   "low_manwon": 80000,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 79.99,
+   "danji_id": "a5NIkDS",
+   "danji_name": "현대3차",
+   "name": "현대3차",
+   "case": "2026타경50101",
+   "keyword": "토지거래허가구역",
+   "pyeong": "27",
+   "appr_eok": 10.0,
+   "low_eok": 8.0,
+   "richgo_sise_eok": 11.142,
+   "appr_vs_sise": 0.898,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 95887,
+    "45%": 96656,
+    "50%": 97463,
+    "55%": 98337,
+    "60%": 99272
+   },
+   "bid_by_prob_eok": {
+    "40%": 9.59,
+    "45%": 9.67,
+    "50%": 9.75,
+    "55%": 9.83,
+    "60%": 9.93
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 93500,
+     "bid_eok": 9.35,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 94000,
+     "bid_eok": 9.4,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 94500,
+     "bid_eok": 9.45,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 95000,
+     "bid_eok": 9.5,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 95500,
+     "bid_eok": 9.55,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 96000,
+     "bid_eok": 9.6,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 96500,
+     "bid_eok": 9.65,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 97000,
+     "bid_eok": 9.7,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 97500,
+     "bid_eok": 9.75,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 98000,
+     "bid_eok": 9.8,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 98500,
+     "bid_eok": 9.85,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 99000,
+     "bid_eok": 9.9,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 99500,
+     "bid_eok": 9.95,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 100000,
+     "bid_eok": 10.0,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 100500,
+     "bid_eok": 10.05,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 101000,
+     "bid_eok": 10.1,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 101500,
+     "bid_eok": 10.15,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 102000,
+     "bid_eok": 10.2,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 97463,
+   "p50_ensemble_eok": 9.75,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경52013[1]": {
+   "key": "2025타경52013[1]",
+   "auction_id": "C56WSABF",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 상일동 514 고덕롯데캐슬베네루체 719동 3층304호",
+   "appr_manwon": 78500,
+   "low_manwon": 62800,
+   "fails": 1,
+   "bidding_date": "2026-10-31",
+   "area": 84.15,
+   "danji_id": "a3itVbo",
+   "danji_name": "고덕롯데캐슬베네루체",
+   "name": "고덕롯데캐슬베네루체",
+   "case": "2025타경52013",
+   "keyword": "재매각,토지거래허가구역,지분매각",
+   "pyeong": "33",
+   "appr_eok": 7.85,
+   "low_eok": 6.28,
+   "richgo_sise_eok": 19.398,
+   "appr_vs_sise": 0.405,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 136238,
+    "45%": 137330,
+    "50%": 138476,
+    "55%": 139719,
+    "60%": 141047
+   },
+   "bid_by_prob_eok": {
+    "40%": 13.62,
+    "45%": 13.73,
+    "50%": 13.85,
+    "55%": 13.97,
+    "60%": 14.1
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 133000,
+     "bid_eok": 13.3,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 133500,
+     "bid_eok": 13.35,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 134000,
+     "bid_eok": 13.4,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 134500,
+     "bid_eok": 13.45,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 135000,
+     "bid_eok": 13.5,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 135500,
+     "bid_eok": 13.55,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 136000,
+     "bid_eok": 13.6,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 136500,
+     "bid_eok": 13.65,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 137000,
+     "bid_eok": 13.7,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 137500,
+     "bid_eok": 13.75,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 138000,
+     "bid_eok": 13.8,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 138500,
+     "bid_eok": 13.85,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 139000,
+     "bid_eok": 13.9,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 139500,
+     "bid_eok": 13.95,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 140000,
+     "bid_eok": 14.0,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 140500,
+     "bid_eok": 14.05,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 141000,
+     "bid_eok": 14.1,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 141500,
+     "bid_eok": 14.15,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 142000,
+     "bid_eok": 14.2,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 142500,
+     "bid_eok": 14.25,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 143000,
+     "bid_eok": 14.3,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 143500,
+     "bid_eok": 14.35,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 144000,
+     "bid_eok": 14.4,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 144500,
+     "bid_eok": 14.45,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 145000,
+     "bid_eok": 14.5,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 138476,
+   "p50_ensemble_eok": 13.85,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
+    "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
+   ]
+  },
+  "2025타경51453[1]": {
+   "key": "2025타경51453[1]",
+   "auction_id": "C32EGJBE",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 중곡동 681 성원아파트 101동 19층1903호",
+   "appr_manwon": 67000,
+   "low_manwon": 67000,
+   "fails": 0,
+   "bidding_date": "2026-11-09",
+   "area": 84.98,
+   "danji_id": "a6QoIDI",
+   "danji_name": "성원",
+   "name": "성원",
+   "case": "2025타경51453",
+   "keyword": "중복사건",
+   "pyeong": "33",
+   "appr_eok": 6.7,
+   "low_eok": 6.7,
+   "richgo_sise_eok": 6.855,
+   "appr_vs_sise": 0.977,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 67000,
+    "45%": 67000,
+    "50%": 67319,
+    "55%": 67924,
+    "60%": 68569
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.7,
+    "45%": 6.7,
+    "50%": 6.73,
+    "55%": 6.79,
+    "60%": 6.86
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 67000,
+     "bid_eok": 6.7,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 67500,
+     "bid_eok": 6.75,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 68000,
+     "bid_eok": 6.8,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 68500,
+     "bid_eok": 6.85,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 69000,
+     "bid_eok": 6.9,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 69500,
+     "bid_eok": 6.95,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 70000,
+     "bid_eok": 7.0,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 67319,
+   "p50_ensemble_eok": 6.73,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경64236[1]": {
+   "key": "2024타경64236[1]",
+   "auction_id": "C77IQUQQ",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 양산로8길 24, 201동 13층1302호 (거여동,거여2단지동아아파트)",
+   "appr_manwon": 136000,
+   "low_manwon": 108800,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 134.88,
+   "danji_id": "a5hAvnp",
+   "danji_name": "거여2단지효성,동아",
+   "name": "거여2단지효성,동아",
+   "case": "2024타경64236",
+   "keyword": "재매각",
+   "pyeong": "47",
+   "appr_eok": 13.6,
+   "low_eok": 10.88,
+   "richgo_sise_eok": 18.24,
+   "appr_vs_sise": 0.746,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 140746,
+    "45%": 141875,
+    "50%": 143059,
+    "55%": 144342,
+    "60%": 145714
+   },
+   "bid_by_prob_eok": {
+    "40%": 14.07,
+    "45%": 14.19,
+    "50%": 14.31,
+    "55%": 14.43,
+    "60%": 14.57
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 137000,
+     "bid_eok": 13.7,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 137500,
+     "bid_eok": 13.75,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 138000,
+     "bid_eok": 13.8,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 138500,
+     "bid_eok": 13.85,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 139000,
+     "bid_eok": 13.9,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 139500,
+     "bid_eok": 13.95,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 140000,
+     "bid_eok": 14.0,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 140500,
+     "bid_eok": 14.05,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 141000,
+     "bid_eok": 14.1,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 141500,
+     "bid_eok": 14.15,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 142000,
+     "bid_eok": 14.2,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 142500,
+     "bid_eok": 14.25,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 143000,
+     "bid_eok": 14.3,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 143500,
+     "bid_eok": 14.35,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 144000,
+     "bid_eok": 14.4,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 144500,
+     "bid_eok": 14.45,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 145000,
+     "bid_eok": 14.5,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 145500,
+     "bid_eok": 14.55,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 146000,
+     "bid_eok": 14.6,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 146500,
+     "bid_eok": 14.65,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 147000,
+     "bid_eok": 14.7,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 147500,
+     "bid_eok": 14.75,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 148000,
+     "bid_eok": 14.8,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 148500,
+     "bid_eok": 14.85,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 149000,
+     "bid_eok": 14.9,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 149500,
+     "bid_eok": 14.95,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 143059,
+   "p50_ensemble_eok": 14.31,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경51733[1]": {
+   "key": "2025타경51733[1]",
+   "auction_id": "C11HQCKP",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 방이동 39-2 신동아타워  16층1607호",
+   "appr_manwon": 80300,
+   "low_manwon": 51392,
+   "fails": 2,
+   "bidding_date": "2026-11-09",
+   "area": 58.38,
+   "danji_id": "a9hbaiw",
+   "danji_name": "신동아타워",
+   "name": "신동아타워",
+   "case": "2025타경51733",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "24",
+   "appr_eok": 8.03,
+   "low_eok": 5.139,
+   "richgo_sise_eok": 8.027,
+   "appr_vs_sise": 1.0,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 64112,
+    "45%": 64626,
+    "50%": 65165,
+    "55%": 65750,
+    "60%": 66375
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.41,
+    "45%": 6.46,
+    "50%": 6.52,
+    "55%": 6.58,
+    "60%": 6.64
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 62500,
+     "bid_eok": 6.25,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 63000,
+     "bid_eok": 6.3,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 63500,
+     "bid_eok": 6.35,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 64000,
+     "bid_eok": 6.4,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 64500,
+     "bid_eok": 6.45,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 65000,
+     "bid_eok": 6.5,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 65500,
+     "bid_eok": 6.55,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 66000,
+     "bid_eok": 6.6,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 66500,
+     "bid_eok": 6.65,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 67000,
+     "bid_eok": 6.7,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 67500,
+     "bid_eok": 6.75,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 68000,
+     "bid_eok": 6.8,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 65165,
+   "p50_ensemble_eok": 6.52,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경51619[1]": {
+   "key": "2025타경51619[1]",
+   "auction_id": "C09FLFUR",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 풍납동 260 현대리버빌아파트 302동 603호",
+   "appr_manwon": 88100,
+   "low_manwon": 56384,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 167.08,
+   "danji_id": "a2KFvwc",
+   "danji_name": "현대리버빌1지구",
+   "name": "현대리버빌1지구",
+   "case": "2025타경51619",
+   "keyword": "토지거래허가구역,지분매각",
+   "pyeong": "61",
+   "appr_eok": 8.81,
+   "low_eok": 5.638,
+   "richgo_sise_eok": 19.512,
+   "appr_vs_sise": 0.452,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 131606,
+    "45%": 132662,
+    "50%": 133769,
+    "55%": 134969,
+    "60%": 136252
+   },
+   "bid_by_prob_eok": {
+    "40%": 13.16,
+    "45%": 13.27,
+    "50%": 13.38,
+    "55%": 13.5,
+    "60%": 13.63
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 128500,
+     "bid_eok": 12.85,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 129000,
+     "bid_eok": 12.9,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 129500,
+     "bid_eok": 12.95,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 130000,
+     "bid_eok": 13.0,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 130500,
+     "bid_eok": 13.05,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 131000,
+     "bid_eok": 13.1,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 131500,
+     "bid_eok": 13.15,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 132000,
+     "bid_eok": 13.2,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 132500,
+     "bid_eok": 13.25,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 133000,
+     "bid_eok": 13.3,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 133500,
+     "bid_eok": 13.35,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 134000,
+     "bid_eok": 13.4,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 134500,
+     "bid_eok": 13.45,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 135000,
+     "bid_eok": 13.5,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 135500,
+     "bid_eok": 13.55,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 136000,
+     "bid_eok": 13.6,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 136500,
+     "bid_eok": 13.65,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 137000,
+     "bid_eok": 13.7,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 137500,
+     "bid_eok": 13.75,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 138000,
+     "bid_eok": 13.8,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 138500,
+     "bid_eok": 13.85,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 139000,
+     "bid_eok": 13.9,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 139500,
+     "bid_eok": 13.95,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 140000,
+     "bid_eok": 14.0,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 133769,
+   "p50_ensemble_eok": 13.38,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
+    "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
+   ]
+  },
+  "2025타경52152[1]": {
+   "key": "2025타경52152[1]",
+   "auction_id": "C18KHZUH",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 가락동 95-1 가락금호아파트 101동 21층2106호",
+   "appr_manwon": 53400,
+   "low_manwon": 42720,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 85,
+   "danji_id": "a1Tupqc",
+   "danji_name": "가락금호",
+   "name": "가락금호",
+   "case": "2025타경52152",
+   "keyword": "토지거래허가구역,지분매각",
+   "pyeong": "32",
+   "appr_eok": 5.34,
+   "low_eok": 4.272,
+   "richgo_sise_eok": 21.406,
+   "appr_vs_sise": 0.249,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 134229,
+    "45%": 135305,
+    "50%": 136434,
+    "55%": 137658,
+    "60%": 138967
+   },
+   "bid_by_prob_eok": {
+    "40%": 13.42,
+    "45%": 13.53,
+    "50%": 13.64,
+    "55%": 13.77,
+    "60%": 13.9
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 131000,
+     "bid_eok": 13.1,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 131500,
+     "bid_eok": 13.15,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 132000,
+     "bid_eok": 13.2,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 132500,
+     "bid_eok": 13.25,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 133000,
+     "bid_eok": 13.3,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 133500,
+     "bid_eok": 13.35,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 134000,
+     "bid_eok": 13.4,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 134500,
+     "bid_eok": 13.45,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 135000,
+     "bid_eok": 13.5,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 135500,
+     "bid_eok": 13.55,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 136000,
+     "bid_eok": 13.6,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 136500,
+     "bid_eok": 13.65,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 137000,
+     "bid_eok": 13.7,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 137500,
+     "bid_eok": 13.75,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 138000,
+     "bid_eok": 13.8,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 138500,
+     "bid_eok": 13.85,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 139000,
+     "bid_eok": 13.9,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 139500,
+     "bid_eok": 13.95,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 140000,
+     "bid_eok": 14.0,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 140500,
+     "bid_eok": 14.05,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 141000,
+     "bid_eok": 14.1,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 141500,
+     "bid_eok": 14.15,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 142000,
+     "bid_eok": 14.2,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 142500,
+     "bid_eok": 14.25,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 136434,
+   "p50_ensemble_eok": 13.64,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
+    "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
+   ]
+  },
+  "2025타경52314[1]": {
+   "key": "2025타경52314[1]",
+   "auction_id": "C26IBHKQ",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 방이동 89 올림픽선수기자촌아파트 103동 16층1603호",
+   "appr_manwon": 156000,
+   "low_manwon": 99840,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 83.06,
+   "danji_id": "a7YZWFo",
+   "danji_name": "올림픽선수기자촌",
+   "name": "올림픽선수기자촌",
+   "case": "2025타경52314",
+   "keyword": "토지거래허가구역,지분매각",
+   "pyeong": "34",
+   "appr_eok": 15.6,
+   "low_eok": 9.984,
+   "richgo_sise_eok": 28.209,
+   "appr_vs_sise": 0.553,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 206780,
+    "45%": 208438,
+    "50%": 210177,
+    "55%": 212063,
+    "60%": 214079
+   },
+   "bid_by_prob_eok": {
+    "40%": 20.68,
+    "45%": 20.84,
+    "50%": 21.02,
+    "55%": 21.21,
+    "60%": 21.41
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 201500,
+     "bid_eok": 20.15,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 202000,
+     "bid_eok": 20.2,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 202500,
+     "bid_eok": 20.25,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 203000,
+     "bid_eok": 20.3,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 203500,
+     "bid_eok": 20.35,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 204000,
+     "bid_eok": 20.4,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 204500,
+     "bid_eok": 20.45,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 205000,
+     "bid_eok": 20.5,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 205500,
+     "bid_eok": 20.55,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 206000,
+     "bid_eok": 20.6,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 206500,
+     "bid_eok": 20.65,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 207000,
+     "bid_eok": 20.7,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 207500,
+     "bid_eok": 20.75,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 208000,
+     "bid_eok": 20.8,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 208500,
+     "bid_eok": 20.85,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 209000,
+     "bid_eok": 20.9,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 209500,
+     "bid_eok": 20.95,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 210000,
+     "bid_eok": 21.0,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 210500,
+     "bid_eok": 21.05,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 211000,
+     "bid_eok": 21.1,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 211500,
+     "bid_eok": 21.15,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 212000,
+     "bid_eok": 21.2,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 212500,
+     "bid_eok": 21.25,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 213000,
+     "bid_eok": 21.3,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 213500,
+     "bid_eok": 21.35,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 214000,
+     "bid_eok": 21.4,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 214500,
+     "bid_eok": 21.45,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 215000,
+     "bid_eok": 21.5,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 215500,
+     "bid_eok": 21.55,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 216000,
+     "bid_eok": 21.6,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 216500,
+     "bid_eok": 21.65,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 217000,
+     "bid_eok": 21.7,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 217500,
+     "bid_eok": 21.75,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 218000,
+     "bid_eok": 21.8,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 218500,
+     "bid_eok": 21.85,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 219000,
+     "bid_eok": 21.9,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 219500,
+     "bid_eok": 21.95,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 220000,
+     "bid_eok": 22.0,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 210177,
+   "p50_ensemble_eok": 21.02,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
+    "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
+   ]
+  },
+  "2025타경52944[1]": {
+   "key": "2025타경52944[1]",
+   "auction_id": "C32ZBXIJ",
+   "region": "경기 성남시 중원구",
+   "address": "경기도 성남시 중원구 하대원동 115-3 성원초원아파트 101동 4층402호",
+   "appr_manwon": 62600,
+   "low_manwon": 43820,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 84.97,
+   "danji_id": "a6ATCKQ",
+   "danji_name": "성원초원",
+   "name": "성원초원",
+   "case": "2025타경52944",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 6.26,
+   "low_eok": 4.382,
+   "richgo_sise_eok": 6.531,
+   "appr_vs_sise": 0.959,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 53552,
+    "45%": 53981,
+    "50%": 54432,
+    "55%": 54920,
+    "60%": 55442
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.36,
+    "45%": 5.4,
+    "50%": 5.44,
+    "55%": 5.49,
+    "60%": 5.54
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 52500,
+     "bid_eok": 5.25,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 53000,
+     "bid_eok": 5.3,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 53500,
+     "bid_eok": 5.35,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 54000,
+     "bid_eok": 5.4,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 54500,
+     "bid_eok": 5.45,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 55000,
+     "bid_eok": 5.5,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 55500,
+     "bid_eok": 5.55,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 56000,
+     "bid_eok": 5.6,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 56500,
+     "bid_eok": 5.65,
+     "prob": 70
+    }
+   ],
+   "p50_ensemble_manwon": 54432,
+   "p50_ensemble_eok": 5.44,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20366[1]": {
+   "key": "2026타경20366[1]",
+   "auction_id": "C17EFBEU",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 439 신우아이딜2차아파트 204동 1층101호",
+   "appr_manwon": 21600,
+   "low_manwon": 15120,
+   "fails": 2,
+   "bidding_date": "2026-11-04",
+   "area": 59.96,
+   "danji_id": "a0VQbOC",
+   "danji_name": "신우아이딜2차",
+   "name": "신우아이딜2차",
+   "case": "2026타경20366",
+   "keyword": "HUG인수조건변경,대항력있는임차인,토지거래허가구역",
+   "pyeong": "24",
+   "appr_eok": 2.16,
+   "low_eok": 1.512,
+   "richgo_sise_eok": 2.219,
+   "appr_vs_sise": 0.974,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 18175,
+    "45%": 18320,
+    "50%": 18473,
+    "55%": 18639,
+    "60%": 18816
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.82,
+    "45%": 1.83,
+    "50%": 1.85,
+    "55%": 1.86,
+    "60%": 1.88
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 18000,
+     "bid_eok": 1.8,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 18500,
+     "bid_eok": 1.85,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 19000,
+     "bid_eok": 1.9,
+     "prob": 65
+    }
+   ],
+   "p50_ensemble_manwon": 18473,
+   "p50_ensemble_eok": 1.85,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2024타경3470[1]": {
+   "key": "2024타경3470[1]",
+   "auction_id": "C38NAOQG",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 다산순환로 365, 5208동 27층2702호 (다산동,힐스테이트다산)",
+   "appr_manwon": 91300,
+   "low_manwon": 63910,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 84.69,
+   "danji_id": "a6NfBNI",
+   "danji_name": "힐스테이트다산",
+   "name": "힐스테이트다산",
+   "case": "2024타경3470",
+   "keyword": "",
+   "pyeong": "34",
+   "appr_eok": 9.13,
+   "low_eok": 6.391,
+   "richgo_sise_eok": 11.642,
+   "appr_vs_sise": 0.784,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 92501,
+    "45%": 93242,
+    "50%": 94021,
+    "55%": 94864,
+    "60%": 95766
+   },
+   "bid_by_prob_eok": {
+    "40%": 9.25,
+    "45%": 9.32,
+    "50%": 9.4,
+    "55%": 9.49,
+    "60%": 9.58
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 90500,
+     "bid_eok": 9.05,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 91000,
+     "bid_eok": 9.1,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 91500,
+     "bid_eok": 9.15,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 92000,
+     "bid_eok": 9.2,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 92500,
+     "bid_eok": 9.25,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 93000,
+     "bid_eok": 9.3,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 93500,
+     "bid_eok": 9.35,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 94000,
+     "bid_eok": 9.4,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 94500,
+     "bid_eok": 9.45,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 95000,
+     "bid_eok": 9.5,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 95500,
+     "bid_eok": 9.55,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 96000,
+     "bid_eok": 9.6,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 96500,
+     "bid_eok": 9.65,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 97000,
+     "bid_eok": 9.7,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 97500,
+     "bid_eok": 9.75,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 98000,
+     "bid_eok": 9.8,
+     "prob": 72
+    }
+   ],
+   "p50_ensemble_manwon": 94021,
+   "p50_ensemble_eok": 9.4,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경176[1]": {
+   "key": "2026타경176[1]",
+   "auction_id": "C49DRJUD",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 호평동 668 호평마을금강아파트 2105동 6층602호",
+   "appr_manwon": 50500,
+   "low_manwon": 50500,
+   "fails": 0,
+   "bidding_date": "2026-11-04",
+   "area": 84.97,
+   "danji_id": "a1bKpRi",
+   "danji_name": "호평마을금강",
+   "name": "호평마을금강",
+   "case": "2026타경176",
+   "keyword": "토지거래허가구역",
+   "pyeong": "35",
+   "appr_eok": 5.05,
+   "low_eok": 5.05,
+   "richgo_sise_eok": 5.505,
+   "appr_vs_sise": 0.917,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 50500,
+    "45%": 50500,
+    "50%": 50758,
+    "55%": 51213,
+    "60%": 51700
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.05,
+    "45%": 5.05,
+    "50%": 5.08,
+    "55%": 5.12,
+    "60%": 5.17
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 50500,
+     "bid_eok": 5.05,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 51000,
+     "bid_eok": 5.1,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 51500,
+     "bid_eok": 5.15,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 52000,
+     "bid_eok": 5.2,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 52500,
+     "bid_eok": 5.25,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 53000,
+     "bid_eok": 5.3,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 50758,
+   "p50_ensemble_eok": 5.08,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20738[1]": {
+   "key": "2026타경20738[1]",
+   "auction_id": "C80JEFKU",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 별내동 871 별내푸르지오 5203동 3층304호",
+   "appr_manwon": 63300,
+   "low_manwon": 44310,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 84.97,
+   "danji_id": "a4GJzMK",
+   "danji_name": "별내푸르지오",
+   "name": "별내푸르지오",
+   "case": "2026타경20738",
+   "keyword": "토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 6.33,
+   "low_eok": 4.431,
+   "richgo_sise_eok": 7.073,
+   "appr_vs_sise": 0.895,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 57692,
+    "45%": 58155,
+    "50%": 58640,
+    "55%": 59166,
+    "60%": 59729
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.77,
+    "45%": 5.82,
+    "50%": 5.86,
+    "55%": 5.92,
+    "60%": 5.97
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 56500,
+     "bid_eok": 5.65,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 57000,
+     "bid_eok": 5.7,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 57500,
+     "bid_eok": 5.75,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 58000,
+     "bid_eok": 5.8,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 58500,
+     "bid_eok": 5.85,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 59000,
+     "bid_eok": 5.9,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 59500,
+     "bid_eok": 5.95,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 60000,
+     "bid_eok": 6.0,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 60500,
+     "bid_eok": 6.05,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 61000,
+     "bid_eok": 6.1,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 58640,
+   "p50_ensemble_eok": 5.86,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20998[1]": {
+   "key": "2026타경20998[1]",
+   "auction_id": "C92LLJUK",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 별내동 872 남양주별내남광하우스토리 5314동 12층1204호",
+   "appr_manwon": 71900,
+   "low_manwon": 71900,
+   "fails": 0,
+   "bidding_date": "2026-11-04",
+   "area": 124.06,
+   "danji_id": "a7sMjCh",
+   "danji_name": "별내남광하우스토리",
+   "name": "별내남광하우스토리",
+   "case": "2026타경20998",
+   "keyword": "토지거래허가구역",
+   "pyeong": "45",
+   "appr_eok": 7.19,
+   "low_eok": 7.19,
+   "richgo_sise_eok": 7.004,
+   "appr_vs_sise": 1.027,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 71900,
+    "45%": 71900,
+    "50%": 71900,
+    "55%": 71900,
+    "60%": 71900
+   },
+   "bid_by_prob_eok": {
+    "40%": 7.19,
+    "45%": 7.19,
+    "50%": 7.19,
+    "55%": 7.19,
+    "60%": 7.19
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 72000,
+     "bid_eok": 7.2,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 71900,
+   "p50_ensemble_eok": 7.19,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20723[1]": {
+   "key": "2026타경20723[1]",
+   "auction_id": "C96HBOJB",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 464 금호어울림 114동 13층1302호",
+   "appr_manwon": 34800,
+   "low_manwon": 24360,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 84.97,
+   "danji_id": "a9gdjcQ",
+   "danji_name": "남양주오남금호어울림",
+   "name": "남양주오남금호어울림",
+   "case": "2026타경20723",
+   "keyword": "토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 3.48,
+   "low_eok": 2.436,
+   "richgo_sise_eok": 3.071,
+   "appr_vs_sise": 1.133,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 26435,
+    "45%": 26647,
+    "50%": 26869,
+    "55%": 27110,
+    "60%": 27368
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.64,
+    "45%": 2.66,
+    "50%": 2.69,
+    "55%": 2.71,
+    "60%": 2.74
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 26000,
+     "bid_eok": 2.6,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 26500,
+     "bid_eok": 2.65,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 27000,
+     "bid_eok": 2.7,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 28000,
+     "bid_eok": 2.8,
+     "prob": 72
+    }
+   ],
+   "p50_ensemble_manwon": 26869,
+   "p50_ensemble_eok": 2.69,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72645[1]": {
+   "key": "2025타경72645[1]",
+   "auction_id": "C17LEDWE",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 퇴계원읍 퇴계원리 232 성원아파트 106동 4층405호",
+   "appr_manwon": 45600,
+   "low_manwon": 31920,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.96,
+   "danji_id": "a1KWxeJ",
+   "danji_name": "성원",
+   "name": "성원",
+   "case": "2025타경72645",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 4.56,
+   "low_eok": 3.192,
+   "richgo_sise_eok": 4.812,
+   "appr_vs_sise": 0.948,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 39293,
+    "45%": 39608,
+    "50%": 39938,
+    "55%": 40297,
+    "60%": 40680
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.93,
+    "45%": 3.96,
+    "50%": 3.99,
+    "55%": 4.03,
+    "60%": 4.07
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 38500,
+     "bid_eok": 3.85,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 39000,
+     "bid_eok": 3.9,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 39500,
+     "bid_eok": 3.95,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 40000,
+     "bid_eok": 4.0,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 40500,
+     "bid_eok": 4.05,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 41000,
+     "bid_eok": 4.1,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 41500,
+     "bid_eok": 4.15,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 39938,
+   "p50_ensemble_eok": 3.99,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72473[1]": {
+   "key": "2025타경72473[1]",
+   "auction_id": "C23AASAH",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 퇴계원읍 퇴계원리 64 일신건영아파트 103동 12층1209호",
+   "appr_manwon": 41400,
+   "low_manwon": 28980,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.78,
+   "danji_id": "a3IuuSd",
+   "danji_name": "일신건영",
+   "name": "일신건영",
+   "case": "2025타경72473",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 4.14,
+   "low_eok": 2.898,
+   "richgo_sise_eok": 4.405,
+   "appr_vs_sise": 0.94,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 35467,
+    "45%": 35752,
+    "50%": 36050,
+    "55%": 36374,
+    "60%": 36719
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.55,
+    "45%": 3.58,
+    "50%": 3.6,
+    "55%": 3.64,
+    "60%": 3.67
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 35000,
+     "bid_eok": 3.5,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 35500,
+     "bid_eok": 3.55,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 36000,
+     "bid_eok": 3.6,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 36500,
+     "bid_eok": 3.65,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 37000,
+     "bid_eok": 3.7,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 37500,
+     "bid_eok": 3.75,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 36050,
+   "p50_ensemble_eok": 3.6,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경4623[1]": {
+   "key": "2025타경4623[1]",
+   "auction_id": "C26FFAWC",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 창현리 745 창현두산아파트 203동 17층1704호",
+   "appr_manwon": 25700,
+   "low_manwon": 25700,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 59.88,
+   "danji_id": "a1oyDxT",
+   "danji_name": "창현두산2단지",
+   "name": "창현두산2단지",
+   "case": "2025타경4623",
+   "keyword": "토지거래허가구역",
+   "pyeong": "23",
+   "appr_eok": 2.57,
+   "low_eok": 2.57,
+   "richgo_sise_eok": 2.454,
+   "appr_vs_sise": 1.047,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 25700,
+    "45%": 25700,
+    "50%": 25700,
+    "55%": 25700,
+    "60%": 25700
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.57,
+    "45%": 2.57,
+    "50%": 2.57,
+    "55%": 2.57,
+    "60%": 2.57
+   },
+   "prob_by_bid_5m": [],
+   "p50_ensemble_manwon": 25700,
+   "p50_ensemble_eok": 2.57,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경82633[1]": {
+   "key": "2024타경82633[1]",
+   "auction_id": "C35IQFFM",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 의안로 176, 2206동 7층701호 (평내동,평내마을중흥에스-클래스)",
+   "appr_manwon": 59000,
+   "low_manwon": 1166,
+   "fails": 11,
+   "bidding_date": "2026-11-05",
+   "area": 121.85,
+   "danji_id": "a6oRwUu",
+   "danji_name": "평내마을중흥에스-클래스3단지",
+   "name": "평내마을중흥에스-클래스3단지",
+   "case": "2024타경82633",
+   "keyword": "대항력있는임차인",
+   "pyeong": "47",
+   "appr_eok": 5.9,
+   "low_eok": 0.117,
+   "richgo_sise_eok": 4.89,
+   "appr_vs_sise": 1.207,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 23765,
+    "45%": 23956,
+    "50%": 24156,
+    "55%": 24372,
+    "60%": 24604
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.38,
+    "45%": 2.4,
+    "50%": 2.42,
+    "55%": 2.44,
+    "60%": 2.46
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 23500,
+     "bid_eok": 2.35,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 24000,
+     "bid_eok": 2.4,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 24500,
+     "bid_eok": 2.45,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 25000,
+     "bid_eok": 2.5,
+     "prob": 69
+    }
+   ],
+   "p50_ensemble_manwon": 24156,
+   "p50_ensemble_eok": 2.42,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경72306[1]": {
+   "key": "2025타경72306[1]",
+   "auction_id": "C35YEZRY",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 315-1 유호아파트 105동 10층1002호",
+   "appr_manwon": 30900,
+   "low_manwon": 15141,
+   "fails": 2,
+   "bidding_date": "2026-11-05",
+   "area": 84.99,
+   "danji_id": "a2jLMYX",
+   "danji_name": "유호",
+   "name": "유호",
+   "case": "2025타경72306",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "34",
+   "appr_eok": 3.09,
+   "low_eok": 1.514,
+   "richgo_sise_eok": 2.632,
+   "appr_vs_sise": 1.174,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 20567,
+    "45%": 20732,
+    "50%": 20905,
+    "55%": 21093,
+    "60%": 21293
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.06,
+    "45%": 2.07,
+    "50%": 2.09,
+    "55%": 2.11,
+    "60%": 2.13
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 20500,
+     "bid_eok": 2.05,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 21000,
+     "bid_eok": 2.1,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 21500,
+     "bid_eok": 2.15,
+     "prob": 65
+    }
+   ],
+   "p50_ensemble_manwon": 20905,
+   "p50_ensemble_eok": 2.09,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경72665[1]": {
+   "key": "2025타경72665[1]",
+   "auction_id": "C40MQKVF",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 425 신일해피트리아파트 103동 2층204호",
+   "appr_manwon": 26600,
+   "low_manwon": 18620,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.84,
+   "danji_id": "a3AsVSS",
+   "danji_name": "신일해피트리1단지",
+   "name": "신일해피트리1단지",
+   "case": "2025타경72665",
+   "keyword": "토지거래허가구역",
+   "pyeong": "35",
+   "appr_eok": 2.66,
+   "low_eok": 1.862,
+   "richgo_sise_eok": 2.587,
+   "appr_vs_sise": 1.028,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 21875,
+    "45%": 22051,
+    "50%": 22235,
+    "55%": 22434,
+    "60%": 22647
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.19,
+    "45%": 2.21,
+    "50%": 2.22,
+    "55%": 2.24,
+    "60%": 2.26
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 21500,
+     "bid_eok": 2.15,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 22000,
+     "bid_eok": 2.2,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 22500,
+     "bid_eok": 2.25,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 23000,
+     "bid_eok": 2.3,
+     "prob": 68
+    }
+   ],
+   "p50_ensemble_manwon": 22235,
+   "p50_ensemble_eok": 2.22,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72726[1]": {
+   "key": "2025타경72726[1]",
+   "auction_id": "C72YIEOD",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 녹촌리 555 신창현두산위브아파트 102동 2층202호",
+   "appr_manwon": 34600,
+   "low_manwon": 24220,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.87,
+   "danji_id": "a2gEsDv",
+   "danji_name": "신창현두산위브",
+   "name": "신창현두산위브",
+   "case": "2025타경72726",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 3.46,
+   "low_eok": 2.422,
+   "richgo_sise_eok": 3.215,
+   "appr_vs_sise": 1.076,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 27480,
+    "45%": 27701,
+    "50%": 27932,
+    "55%": 28183,
+    "60%": 28450
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.75,
+    "45%": 2.77,
+    "50%": 2.79,
+    "55%": 2.82,
+    "60%": 2.85
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 27000,
+     "bid_eok": 2.7,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 28000,
+     "bid_eok": 2.8,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 28500,
+     "bid_eok": 2.85,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 29000,
+     "bid_eok": 2.9,
+     "prob": 70
+    }
+   ],
+   "p50_ensemble_manwon": 27932,
+   "p50_ensemble_eok": 2.79,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경80132[1]": {
+   "key": "2024타경80132[1]",
+   "auction_id": "C85EBJHD",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 진건오남로797번길 22, 105동 5층504호 (오남1차청구아파트)",
+   "appr_manwon": 36200,
+   "low_manwon": 36200,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 119.27,
+   "danji_id": "a8GZcLo",
+   "danji_name": "오남청구1차",
+   "name": "오남청구1차",
+   "case": "2024타경80132",
+   "keyword": "",
+   "pyeong": "45",
+   "appr_eok": 3.62,
+   "low_eok": 3.62,
+   "richgo_sise_eok": 3.44,
+   "appr_vs_sise": 1.052,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 36200,
+    "45%": 36200,
+    "50%": 36200,
+    "55%": 36200,
+    "60%": 36200
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.62,
+    "45%": 3.62,
+    "50%": 3.62,
+    "55%": 3.62,
+    "60%": 3.62
+   },
+   "prob_by_bid_5m": [],
+   "p50_ensemble_manwon": 36200,
+   "p50_ensemble_eok": 3.62,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2023타경81282[1]": {
+   "key": "2023타경81282[1]",
+   "auction_id": "C87TMFCK",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 경춘로 1605, 103동 4층403호 (경성큰마을아파트)",
+   "appr_manwon": 26900,
+   "low_manwon": 18830,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.94,
+   "danji_id": "a4XdUcr",
+   "danji_name": "큰마을경성1단지",
+   "name": "큰마을경성1단지",
+   "case": "2023타경81282",
+   "keyword": "재매각",
+   "pyeong": "33",
+   "appr_eok": 2.69,
+   "low_eok": 1.883,
+   "richgo_sise_eok": 2.315,
+   "appr_vs_sise": 1.162,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 20131,
+    "45%": 20292,
+    "50%": 20462,
+    "55%": 20645,
+    "60%": 20842
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.01,
+    "45%": 2.03,
+    "50%": 2.05,
+    "55%": 2.06,
+    "60%": 2.08
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 20000,
+     "bid_eok": 2.0,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 20500,
+     "bid_eok": 2.05,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 21000,
+     "bid_eok": 2.1,
+     "prob": 64
+    }
+   ],
+   "p50_ensemble_manwon": 20462,
+   "p50_ensemble_eok": 2.05,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경4845[1]": {
+   "key": "2025타경4845[1]",
+   "auction_id": "C90FCFRZ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 금곡리 1107 부영사랑으로 1814동 1층104호",
+   "appr_manwon": 35500,
+   "low_manwon": 35500,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 84.99,
+   "danji_id": "a2Rpyhm",
+   "danji_name": "부영사랑으로",
+   "name": "부영사랑으로",
+   "case": "2025타경4845",
+   "keyword": "토지거래허가구역",
+   "pyeong": "35",
+   "appr_eok": 3.55,
+   "low_eok": 3.55,
+   "richgo_sise_eok": 3.797,
+   "appr_vs_sise": 0.935,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 35500,
+    "45%": 35500,
+    "50%": 35500,
+    "55%": 35602,
+    "60%": 35940
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.55,
+    "45%": 3.55,
+    "50%": 3.55,
+    "55%": 3.56,
+    "60%": 3.59
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 35500,
+     "bid_eok": 3.55,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 36000,
+     "bid_eok": 3.6,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 36500,
+     "bid_eok": 3.65,
+     "prob": 68
+    }
+   ],
+   "p50_ensemble_manwon": 35500,
+   "p50_ensemble_eok": 3.55,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72550[1]": {
+   "key": "2025타경72550[1]",
+   "auction_id": "C10DBKHR",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 평내동 562 평내마을주공아파트 1105동 17층 1704호",
+   "appr_manwon": 32400,
+   "low_manwon": 5445,
+   "fails": 5,
+   "bidding_date": "2026-11-10",
+   "area": 59.53,
+   "danji_id": "a2NvADN",
+   "danji_name": "평내와이즈힐",
+   "name": "평내와이즈힐",
+   "case": "2025타경72550",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "25",
+   "appr_eok": 3.24,
+   "low_eok": 0.545,
+   "richgo_sise_eok": 3.117,
+   "appr_vs_sise": 1.039,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 20361,
+    "45%": 20524,
+    "50%": 20695,
+    "55%": 20881,
+    "60%": 21079
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.04,
+    "45%": 2.05,
+    "50%": 2.07,
+    "55%": 2.09,
+    "60%": 2.11
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 20000,
+     "bid_eok": 2.0,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 20500,
+     "bid_eok": 2.05,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 21000,
+     "bid_eok": 2.1,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 21500,
+     "bid_eok": 2.15,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 20695,
+   "p50_ensemble_eok": 2.07,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2026타경51[1]": {
+   "key": "2026타경51[1]",
+   "auction_id": "C10NORMF",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 785 두산아파트 104동 13층1305호",
+   "appr_manwon": 30100,
+   "low_manwon": 30100,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 84.87,
+   "danji_id": "a0pURzM",
+   "danji_name": "두산1차",
+   "name": "두산1차",
+   "case": "2026타경51",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 3.01,
+   "low_eok": 3.01,
+   "richgo_sise_eok": 2.818,
+   "appr_vs_sise": 1.068,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 30100,
+    "45%": 30100,
+    "50%": 30100,
+    "55%": 30100,
+    "60%": 30100
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.01,
+    "45%": 3.01,
+    "50%": 3.01,
+    "55%": 3.01,
+    "60%": 3.01
+   },
+   "prob_by_bid_5m": [],
+   "p50_ensemble_manwon": 30100,
+   "p50_ensemble_eok": 3.01,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20239[1]": {
+   "key": "2026타경20239[1]",
+   "auction_id": "C13TLHBS",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 와부읍 덕소리 613 남양주덕소동부센트레빌 101동 6층 605호",
+   "appr_manwon": 80700,
+   "low_manwon": 80700,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 134.04,
+   "danji_id": "a7NzYUN",
+   "danji_name": "남양주덕소동부센트레빌",
+   "name": "남양주덕소동부센트레빌",
+   "case": "2026타경20239",
+   "keyword": "토지거래허가구역",
+   "pyeong": "50",
+   "appr_eok": 8.07,
+   "low_eok": 8.07,
+   "richgo_sise_eok": 7.844,
+   "appr_vs_sise": 1.029,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 80700,
+    "45%": 80700,
+    "50%": 80700,
+    "55%": 80700,
+    "60%": 80700
+   },
+   "bid_by_prob_eok": {
+    "40%": 8.07,
+    "45%": 8.07,
+    "50%": 8.07,
+    "55%": 8.07,
+    "60%": 8.07
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 81000,
+     "bid_eok": 8.1,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 80700,
+   "p50_ensemble_eok": 8.07,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경71830[1]": {
+   "key": "2025타경71830[1]",
+   "auction_id": "C30JKFMN",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 평내동 661 평내호평역대명루첸포레스티움 110동 11층1101호",
+   "appr_manwon": 48400,
+   "low_manwon": 33880,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 59.81,
+   "danji_id": "a4BiwXX",
+   "danji_name": "평내호평역대명루첸포레스티움",
+   "name": "평내호평역대명루첸포레스티움",
+   "case": "2025타경71830",
+   "keyword": "대지권미등기",
+   "pyeong": "25",
+   "appr_eok": 4.84,
+   "low_eok": 3.388,
+   "richgo_sise_eok": 5.142,
+   "appr_vs_sise": 0.941,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 42716,
+    "45%": 43058,
+    "50%": 43418,
+    "55%": 43807,
+    "60%": 44224
+   },
+   "bid_by_prob_eok": {
+    "40%": 4.27,
+    "45%": 4.31,
+    "50%": 4.34,
+    "55%": 4.38,
+    "60%": 4.42
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 42000,
+     "bid_eok": 4.2,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 42500,
+     "bid_eok": 4.25,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 43000,
+     "bid_eok": 4.3,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 43500,
+     "bid_eok": 4.35,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 44000,
+     "bid_eok": 4.4,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 44500,
+     "bid_eok": 4.45,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 45000,
+     "bid_eok": 4.5,
+     "prob": 69
+    }
+   ],
+   "p50_ensemble_manwon": 43418,
+   "p50_ensemble_eok": 4.34,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2026타경20135[1]": {
+   "key": "2026타경20135[1]",
+   "auction_id": "C31NEZNO",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 와부읍 덕소리 528-14 한솔강변마을아파트 101동 24층2403호",
+   "appr_manwon": 69800,
+   "low_manwon": 48860,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 80.22,
+   "danji_id": "a5FXVHA",
+   "danji_name": "한솔강변마을",
+   "name": "한솔강변마을",
+   "case": "2026타경20135",
+   "keyword": "토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 6.98,
+   "low_eok": 4.886,
+   "richgo_sise_eok": 6.709,
+   "appr_vs_sise": 1.04,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 56554,
+    "45%": 57008,
+    "50%": 57484,
+    "55%": 57999,
+    "60%": 58551
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.66,
+    "45%": 5.7,
+    "50%": 5.75,
+    "55%": 5.8,
+    "60%": 5.86
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 55500,
+     "bid_eok": 5.55,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 56000,
+     "bid_eok": 5.6,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 56500,
+     "bid_eok": 5.65,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 57000,
+     "bid_eok": 5.7,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 57500,
+     "bid_eok": 5.75,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 58000,
+     "bid_eok": 5.8,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 58500,
+     "bid_eok": 5.85,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 59000,
+     "bid_eok": 5.9,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 59500,
+     "bid_eok": 5.95,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 60000,
+     "bid_eok": 6.0,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 57484,
+   "p50_ensemble_eok": 5.75,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경17[1]": {
+   "key": "2026타경17[1]",
+   "auction_id": "C45GZYJD",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 별내동 1050 별내신일유토빌 3407동 3층303호",
+   "appr_manwon": 80500,
+   "low_manwon": 56350,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 122.76,
+   "danji_id": "a0ciVmA",
+   "danji_name": "별내신일유토빌",
+   "name": "별내신일유토빌",
+   "case": "2026타경17",
+   "keyword": "중복사건,토지거래허가구역",
+   "pyeong": "46",
+   "appr_eok": 8.05,
+   "low_eok": 5.635,
+   "richgo_sise_eok": 8.221,
+   "appr_vs_sise": 0.979,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 67254,
+    "45%": 67793,
+    "50%": 68359,
+    "55%": 68972,
+    "60%": 69628
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.73,
+    "45%": 6.78,
+    "50%": 6.84,
+    "55%": 6.9,
+    "60%": 6.96
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 65500,
+     "bid_eok": 6.55,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 66000,
+     "bid_eok": 6.6,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 66500,
+     "bid_eok": 6.65,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 67000,
+     "bid_eok": 6.7,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 67500,
+     "bid_eok": 6.75,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 68000,
+     "bid_eok": 6.8,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 68500,
+     "bid_eok": 6.85,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 69000,
+     "bid_eok": 6.9,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 69500,
+     "bid_eok": 6.95,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 70000,
+     "bid_eok": 7.0,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 70500,
+     "bid_eok": 7.05,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 71000,
+     "bid_eok": 7.1,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 71500,
+     "bid_eok": 7.15,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 68359,
+   "p50_ensemble_eok": 6.84,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20838[1]": {
+   "key": "2026타경20838[1]",
+   "auction_id": "C51OZHAV",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 금곡리 1075 신영지웰아파트 2001동 5층 504호",
+   "appr_manwon": 62800,
+   "low_manwon": 62800,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 128.71,
+   "danji_id": "a6XhOLl",
+   "danji_name": "신영지웰",
+   "name": "신영지웰",
+   "case": "2026타경20838",
+   "keyword": "중복사건",
+   "pyeong": "48",
+   "appr_eok": 6.28,
+   "low_eok": 6.28,
+   "richgo_sise_eok": 6.029,
+   "appr_vs_sise": 1.042,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 62800,
+    "45%": 62800,
+    "50%": 62800,
+    "55%": 62800,
+    "60%": 62800
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.28,
+    "45%": 6.28,
+    "50%": 6.28,
+    "55%": 6.28,
+    "60%": 6.28
+   },
+   "prob_by_bid_5m": [],
+   "p50_ensemble_manwon": 62800,
+   "p50_ensemble_eok": 6.28,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20392[1]": {
+   "key": "2026타경20392[1]",
+   "auction_id": "C52ODBIB",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 와부읍 덕소리 613 남양주덕소동부센트레빌 101동 2층 201호",
+   "appr_manwon": 58700,
+   "low_manwon": 58700,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 84.98,
+   "danji_id": "a7NzYUN",
+   "danji_name": "남양주덕소동부센트레빌",
+   "name": "남양주덕소동부센트레빌",
+   "case": "2026타경20392",
+   "keyword": "",
+   "pyeong": "34",
+   "appr_eok": 5.87,
+   "low_eok": 5.87,
+   "richgo_sise_eok": 6.499,
+   "appr_vs_sise": 0.903,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 58700,
+    "45%": 59158,
+    "50%": 59652,
+    "55%": 60187,
+    "60%": 60759
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.87,
+    "45%": 5.92,
+    "50%": 5.97,
+    "55%": 6.02,
+    "60%": 6.08
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 59000,
+     "bid_eok": 5.9,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 59500,
+     "bid_eok": 5.95,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 60000,
+     "bid_eok": 6.0,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 60500,
+     "bid_eok": 6.05,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 61000,
+     "bid_eok": 6.1,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 61500,
+     "bid_eok": 6.15,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 62000,
+     "bid_eok": 6.2,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 59652,
+   "p50_ensemble_eok": 5.97,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경80514[1]": {
+   "key": "2024타경80514[1]",
+   "auction_id": "C53CHPWP",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 해밀예당3로 38, 1819동 10층1003호 (부영사랑으로)",
+   "appr_manwon": 39600,
+   "low_manwon": 27720,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 84.99,
+   "danji_id": "a2Rpyhm",
+   "danji_name": "부영사랑으로",
+   "name": "부영사랑으로",
+   "case": "2024타경80514",
+   "keyword": "중복사건,재매각",
+   "pyeong": "35",
+   "appr_eok": 3.96,
+   "low_eok": 2.772,
+   "richgo_sise_eok": 3.797,
+   "appr_vs_sise": 1.043,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 32311,
+    "45%": 32570,
+    "50%": 32842,
+    "55%": 33136,
+    "60%": 33451
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.23,
+    "45%": 3.26,
+    "50%": 3.28,
+    "55%": 3.31,
+    "60%": 3.35
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 31500,
+     "bid_eok": 3.15,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 32000,
+     "bid_eok": 3.2,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 32500,
+     "bid_eok": 3.25,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 33000,
+     "bid_eok": 3.3,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 33500,
+     "bid_eok": 3.35,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 34000,
+     "bid_eok": 3.4,
+     "prob": 69
+    }
+   ],
+   "p50_ensemble_manwon": 32842,
+   "p50_ensemble_eok": 3.28,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2023타경80463[1]": {
+   "key": "2023타경80463[1]",
+   "auction_id": "C55TFBSY",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 미금로 24, 805동 14층1402호 (도농동,남양주 다산 롯데낙천대아파트)",
+   "appr_manwon": 60000,
+   "low_manwon": 42000,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 84.95,
+   "danji_id": "a4icvfr",
+   "danji_name": "남양주다산롯데낙천대",
+   "name": "남양주다산롯데낙천대",
+   "case": "2023타경80463",
+   "keyword": "재매각",
+   "pyeong": "34",
+   "appr_eok": 6.0,
+   "low_eok": 4.2,
+   "richgo_sise_eok": 7.088,
+   "appr_vs_sise": 0.847,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 56313,
+    "45%": 56765,
+    "50%": 57239,
+    "55%": 57752,
+    "60%": 58301
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.63,
+    "45%": 5.68,
+    "50%": 5.72,
+    "55%": 5.78,
+    "60%": 5.83
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 55000,
+     "bid_eok": 5.5,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 55500,
+     "bid_eok": 5.55,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 56000,
+     "bid_eok": 5.6,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 56500,
+     "bid_eok": 5.65,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 57000,
+     "bid_eok": 5.7,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 57500,
+     "bid_eok": 5.75,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 58000,
+     "bid_eok": 5.8,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 58500,
+     "bid_eok": 5.85,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 59000,
+     "bid_eok": 5.9,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 59500,
+     "bid_eok": 5.95,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 57239,
+   "p50_ensemble_eok": 5.72,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2026타경20256[1]": {
+   "key": "2026타경20256[1]",
+   "auction_id": "C67RTGGT",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 양지리 111-2 오남1차청구아파트 105동 4층403호",
+   "appr_manwon": 36500,
+   "low_manwon": 36500,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 119.27,
+   "danji_id": "a8GZcLo",
+   "danji_name": "오남청구1차",
+   "name": "오남청구1차",
+   "case": "2026타경20256",
+   "keyword": "토지거래허가구역",
+   "pyeong": "45",
+   "appr_eok": 3.65,
+   "low_eok": 3.65,
+   "richgo_sise_eok": 3.44,
+   "appr_vs_sise": 1.061,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 36500,
+    "45%": 36500,
+    "50%": 36500,
+    "55%": 36500,
+    "60%": 36500
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.65,
+    "45%": 3.65,
+    "50%": 3.65,
+    "55%": 3.65,
+    "60%": 3.65
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 36500,
+     "bid_eok": 3.65,
+     "prob": 88
+    }
+   ],
+   "p50_ensemble_manwon": 36500,
+   "p50_ensemble_eok": 3.65,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20029[1]": {
+   "key": "2026타경20029[1]",
+   "auction_id": "C70GPXLE",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 다산동 4002-1 플루리움 108동 8층 803호",
+   "appr_manwon": 42100,
+   "low_manwon": 20629,
+   "fails": 2,
+   "bidding_date": "2026-11-10",
+   "area": 162.45,
+   "danji_id": "a5URBzu",
+   "danji_name": "플루리움3단지",
+   "name": "플루리움3단지",
+   "case": "2026타경20029",
+   "keyword": "토지거래허가구역,지분매각",
+   "pyeong": "58",
+   "appr_eok": 4.21,
+   "low_eok": 2.063,
+   "richgo_sise_eok": 8.531,
+   "appr_vs_sise": 0.493,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 56312,
+    "45%": 56764,
+    "50%": 57237,
+    "55%": 57751,
+    "60%": 58300
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.63,
+    "45%": 5.68,
+    "50%": 5.72,
+    "55%": 5.78,
+    "60%": 5.83
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 55000,
+     "bid_eok": 5.5,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 55500,
+     "bid_eok": 5.55,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 56000,
+     "bid_eok": 5.6,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 56500,
+     "bid_eok": 5.65,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 57000,
+     "bid_eok": 5.7,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 57500,
+     "bid_eok": 5.75,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 58000,
+     "bid_eok": 5.8,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 58500,
+     "bid_eok": 5.85,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 59000,
+     "bid_eok": 5.9,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 59500,
+     "bid_eok": 5.95,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 57237,
+   "p50_ensemble_eok": 5.72,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
+    "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
+   ]
+  },
+  "2025타경72646[1]": {
+   "key": "2025타경72646[1]",
+   "auction_id": "C77BIRLH",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 평내동 599 평내마을중흥에스-클래스 2001동 2층 203호",
+   "appr_manwon": 45700,
+   "low_manwon": 45700,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 121.85,
+   "danji_id": "a9KRIZw",
+   "danji_name": "평내마을중흥에스-클래스1단지",
+   "name": "평내마을중흥에스-클래스1단지",
+   "case": "2025타경72646",
+   "keyword": "토지거래허가구역",
+   "pyeong": "47",
+   "appr_eok": 4.57,
+   "low_eok": 4.57,
+   "richgo_sise_eok": 4.949,
+   "appr_vs_sise": 0.923,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 45700,
+    "45%": 45700,
+    "50%": 45700,
+    "55%": 45968,
+    "60%": 46405
+   },
+   "bid_by_prob_eok": {
+    "40%": 4.57,
+    "45%": 4.57,
+    "50%": 4.57,
+    "55%": 4.6,
+    "60%": 4.64
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 46000,
+     "bid_eok": 4.6,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 46500,
+     "bid_eok": 4.65,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 47000,
+     "bid_eok": 4.7,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 47500,
+     "bid_eok": 4.75,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 45700,
+   "p50_ensemble_eok": 4.57,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72113[1]": {
+   "key": "2025타경72113[1]",
+   "auction_id": "C17YOFBP",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 평내동 661 평내호평역대명루첸포레스티움 108동 20층 2005호",
+   "appr_manwon": 49500,
+   "low_manwon": 34650,
+   "fails": 1,
+   "bidding_date": "2026-11-11",
+   "area": 59.81,
+   "danji_id": "a4BiwXX",
+   "danji_name": "평내호평역대명루첸포레스티움",
+   "name": "평내호평역대명루첸포레스티움",
+   "case": "2025타경72113",
+   "keyword": "",
+   "pyeong": "25",
+   "appr_eok": 4.95,
+   "low_eok": 3.465,
+   "richgo_sise_eok": 5.142,
+   "appr_vs_sise": 0.963,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 42812,
+    "45%": 43156,
+    "50%": 43516,
+    "55%": 43906,
+    "60%": 44324
+   },
+   "bid_by_prob_eok": {
+    "40%": 4.28,
+    "45%": 4.32,
+    "50%": 4.35,
+    "55%": 4.39,
+    "60%": 4.43
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 42000,
+     "bid_eok": 4.2,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 42500,
+     "bid_eok": 4.25,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 43000,
+     "bid_eok": 4.3,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 43500,
+     "bid_eok": 4.35,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 44000,
+     "bid_eok": 4.4,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 44500,
+     "bid_eok": 4.45,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 45000,
+     "bid_eok": 4.5,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 45500,
+     "bid_eok": 4.55,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 43516,
+   "p50_ensemble_eok": 4.35,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72160[1]": {
+   "key": "2025타경72160[1]",
+   "auction_id": "C19AWAFE",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 호평동 724 호평파라곤 113동 17층 1701호",
+   "appr_manwon": 60200,
+   "low_manwon": 42140,
+   "fails": 1,
+   "bidding_date": "2026-11-11",
+   "area": 130.64,
+   "danji_id": "a9jhOlZ",
+   "danji_name": "호평파라곤",
+   "name": "호평파라곤",
+   "case": "2025타경72160",
+   "keyword": "병합사건,중복사건,토지거래허가구역",
+   "pyeong": "48",
+   "appr_eok": 6.02,
+   "low_eok": 4.214,
+   "richgo_sise_eok": 5.846,
+   "appr_vs_sise": 1.03,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 49205,
+    "45%": 49599,
+    "50%": 50013,
+    "55%": 50462,
+    "60%": 50941
+   },
+   "bid_by_prob_eok": {
+    "40%": 4.92,
+    "45%": 4.96,
+    "50%": 5.0,
+    "55%": 5.05,
+    "60%": 5.09
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 48000,
+     "bid_eok": 4.8,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 48500,
+     "bid_eok": 4.85,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 49000,
+     "bid_eok": 4.9,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 49500,
+     "bid_eok": 4.95,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 50000,
+     "bid_eok": 5.0,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 50500,
+     "bid_eok": 5.05,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 51000,
+     "bid_eok": 5.1,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 51500,
+     "bid_eok": 5.15,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 52000,
+     "bid_eok": 5.2,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 50013,
+   "p50_ensemble_eok": 5.0,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경1884[1]": {
+   "key": "2025타경1884[1]",
+   "auction_id": "C24UWHEB",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진건읍 용정리 369-1 금강아파트 106동 1층103호",
+   "appr_manwon": 26100,
+   "low_manwon": 12789,
+   "fails": 2,
+   "bidding_date": "2026-11-11",
+   "area": 59.86,
+   "danji_id": "a4tgQTR",
+   "danji_name": "금강",
+   "name": "금강",
+   "case": "2025타경1884",
+   "keyword": "중복사건",
+   "pyeong": "24",
+   "appr_eok": 2.61,
+   "low_eok": 1.279,
+   "richgo_sise_eok": 2.588,
+   "appr_vs_sise": 1.008,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 19375,
+    "45%": 19530,
+    "50%": 19693,
+    "55%": 19870,
+    "60%": 20058
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.94,
+    "45%": 1.95,
+    "50%": 1.97,
+    "55%": 1.99,
+    "60%": 2.01
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 19000,
+     "bid_eok": 1.9,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 19500,
+     "bid_eok": 1.95,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 20000,
+     "bid_eok": 2.0,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 20500,
+     "bid_eok": 2.05,
+     "prob": 72
+    }
+   ],
+   "p50_ensemble_manwon": 19693,
+   "p50_ensemble_eok": 1.97,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72100[1]": {
+   "key": "2025타경72100[1]",
+   "auction_id": "C27OPZQB",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 다산동 6031 다산아이파크 2403동 15층 1502호",
+   "appr_manwon": 102000,
+   "low_manwon": 102000,
+   "fails": 0,
+   "bidding_date": "2026-11-11",
+   "area": 97.96,
+   "danji_id": "a6nLVOg",
+   "danji_name": "다산아이파크",
+   "name": "다산아이파크",
+   "case": "2025타경72100",
+   "keyword": "",
+   "pyeong": "38",
+   "appr_eok": 10.2,
+   "low_eok": 10.2,
+   "richgo_sise_eok": 11.335,
+   "appr_vs_sise": 0.9,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 102000,
+    "45%": 102365,
+    "50%": 103219,
+    "55%": 104146,
+    "60%": 105136
+   },
+   "bid_by_prob_eok": {
+    "40%": 10.2,
+    "45%": 10.24,
+    "50%": 10.32,
+    "55%": 10.41,
+    "60%": 10.51
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 102000,
+     "bid_eok": 10.2,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 102500,
+     "bid_eok": 10.25,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 103000,
+     "bid_eok": 10.3,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 103500,
+     "bid_eok": 10.35,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 104000,
+     "bid_eok": 10.4,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 104500,
+     "bid_eok": 10.45,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 105000,
+     "bid_eok": 10.5,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 105500,
+     "bid_eok": 10.55,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 106000,
+     "bid_eok": 10.6,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 106500,
+     "bid_eok": 10.65,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 107000,
+     "bid_eok": 10.7,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 107500,
+     "bid_eok": 10.75,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 108000,
+     "bid_eok": 10.8,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 103219,
+   "p50_ensemble_eok": 10.32,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72126[1]": {
+   "key": "2025타경72126[1]",
+   "auction_id": "C40AXGLD",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 묵현리 628 남양주두산위브트레지움 107동 25층 2504호",
+   "appr_manwon": 45300,
+   "low_manwon": 31710,
+   "fails": 1,
+   "bidding_date": "2026-11-11",
+   "area": 84.95,
+   "danji_id": "a5XppOm",
+   "danji_name": "남양주두산위브트레지움",
+   "name": "남양주두산위브트레지움",
+   "case": "2025타경72126",
+   "keyword": "",
+   "pyeong": "34",
+   "appr_eok": 4.53,
+   "low_eok": 3.171,
+   "richgo_sise_eok": 4.25,
+   "appr_vs_sise": 1.066,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 36881,
+    "45%": 37176,
+    "50%": 37487,
+    "55%": 37823,
+    "60%": 38183
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.69,
+    "45%": 3.72,
+    "50%": 3.75,
+    "55%": 3.78,
+    "60%": 3.82
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 36000,
+     "bid_eok": 3.6,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 36500,
+     "bid_eok": 3.65,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 37000,
+     "bid_eok": 3.7,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 37500,
+     "bid_eok": 3.75,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 38000,
+     "bid_eok": 3.8,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 38500,
+     "bid_eok": 3.85,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 39000,
+     "bid_eok": 3.9,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 37487,
+   "p50_ensemble_eok": 3.75,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72349[1]": {
+   "key": "2025타경72349[1]",
+   "auction_id": "C87YNBGZ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 호평동 680 호평마을중흥에스-클래스로하스 1905동 9층901호",
+   "appr_manwon": 64100,
+   "low_manwon": 64100,
+   "fails": 0,
+   "bidding_date": "2026-11-11",
+   "area": 158.71,
+   "danji_id": "a2OzJfL",
+   "danji_name": "호평마을중흥에스-클래스로하스",
+   "name": "호평마을중흥에스-클래스로하스",
+   "case": "2025타경72349",
+   "keyword": "대지권미등기,토지거래허가구역",
+   "pyeong": "56",
+   "appr_eok": 6.41,
+   "low_eok": 6.41,
+   "richgo_sise_eok": 5.778,
+   "appr_vs_sise": 1.109,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 64100,
+    "45%": 64100,
+    "50%": 64100,
+    "55%": 64100,
+    "60%": 64100
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.41,
+    "45%": 6.41,
+    "50%": 6.41,
+    "55%": 6.41,
+    "60%": 6.41
+   },
+   "prob_by_bid_5m": [],
+   "p50_ensemble_manwon": 64100,
+   "p50_ensemble_eok": 6.41,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2024타경71282[1]": {
+   "key": "2024타경71282[1]",
+   "auction_id": "C08HUHJQ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 창현로 60, 102동 5층 507호 (신명아파트)",
+   "appr_manwon": 24400,
+   "low_manwon": 17080,
+   "fails": 1,
+   "bidding_date": "2026-11-12",
+   "area": 59.95,
+   "danji_id": "a6xVFXW",
+   "danji_name": "창현신명",
+   "name": "창현신명",
+   "case": "2024타경71282",
+   "keyword": "재매각",
+   "pyeong": "23",
+   "appr_eok": 2.44,
+   "low_eok": 1.708,
+   "richgo_sise_eok": 2.483,
+   "appr_vs_sise": 0.983,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 20925,
+    "45%": 21093,
+    "50%": 21269,
+    "55%": 21460,
+    "60%": 21664
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.09,
+    "45%": 2.11,
+    "50%": 2.13,
+    "55%": 2.15,
+    "60%": 2.17
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 20500,
+     "bid_eok": 2.05,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 21000,
+     "bid_eok": 2.1,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 21500,
+     "bid_eok": 2.15,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 22000,
+     "bid_eok": 2.2,
+     "prob": 68
+    }
+   ],
+   "p50_ensemble_manwon": 21269,
+   "p50_ensemble_eok": 2.13,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2023타경4780[1]": {
+   "key": "2023타경4780[1]",
+   "auction_id": "C24MUCNB",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 다산순환로 300, 2101동 4층 404호 (다산동,다산반도유보라메이플타운)",
+   "appr_manwon": 75000,
+   "low_manwon": 75000,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 82.2,
+   "danji_id": "a0abFyU",
+   "danji_name": "다산반도유보라메이플타운",
+   "name": "다산반도유보라메이플타운",
+   "case": "2023타경4780",
+   "keyword": "",
+   "pyeong": "32",
+   "appr_eok": 7.5,
+   "low_eok": 7.5,
+   "richgo_sise_eok": 10.195,
+   "appr_vs_sise": 0.736,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 86366,
+    "45%": 87059,
+    "50%": 87785,
+    "55%": 88573,
+    "60%": 89415
+   },
+   "bid_by_prob_eok": {
+    "40%": 8.64,
+    "45%": 8.71,
+    "50%": 8.78,
+    "55%": 8.86,
+    "60%": 8.94
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 84500,
+     "bid_eok": 8.45,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 85000,
+     "bid_eok": 8.5,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 85500,
+     "bid_eok": 8.55,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 86000,
+     "bid_eok": 8.6,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 86500,
+     "bid_eok": 8.65,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 87000,
+     "bid_eok": 8.7,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 87500,
+     "bid_eok": 8.75,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 88000,
+     "bid_eok": 8.8,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 88500,
+     "bid_eok": 8.85,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 89000,
+     "bid_eok": 8.9,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 89500,
+     "bid_eok": 8.95,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 90000,
+     "bid_eok": 9.0,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 90500,
+     "bid_eok": 9.05,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 91000,
+     "bid_eok": 9.1,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 91500,
+     "bid_eok": 9.15,
+     "prob": 72
+    }
+   ],
+   "p50_ensemble_manwon": 87785,
+   "p50_ensemble_eok": 8.78,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경3491[1]": {
+   "key": "2025타경3491[1]",
+   "auction_id": "C36TCAYU",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 별내동 854 남양주별내아이파크 1604동 5층 502호",
+   "appr_manwon": 91900,
+   "low_manwon": 91900,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 141.44,
+   "danji_id": "a8sZzid",
+   "danji_name": "남양주별내아이파크",
+   "name": "남양주별내아이파크",
+   "case": "2025타경3491",
+   "keyword": "",
+   "pyeong": "51",
+   "appr_eok": 9.19,
+   "low_eok": 9.19,
+   "richgo_sise_eok": 9.653,
+   "appr_vs_sise": 0.952,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 91900,
+    "45%": 91900,
+    "50%": 91900,
+    "55%": 91900,
+    "60%": 91987
+   },
+   "bid_by_prob_eok": {
+    "40%": 9.19,
+    "45%": 9.19,
+    "50%": 9.19,
+    "55%": 9.19,
+    "60%": 9.2
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 92000,
+     "bid_eok": 9.2,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 92500,
+     "bid_eok": 9.25,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 93000,
+     "bid_eok": 9.3,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 93500,
+     "bid_eok": 9.35,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 94000,
+     "bid_eok": 9.4,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 94500,
+     "bid_eok": 9.45,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 91900,
+   "p50_ensemble_eok": 9.19,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72296[1]": {
+   "key": "2025타경72296[1]",
+   "auction_id": "C52TIQGT",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 891 오남아이파크 105동 4층 401호",
+   "appr_manwon": 40000,
+   "low_manwon": 28000,
+   "fails": 1,
+   "bidding_date": "2026-11-12",
+   "area": 84.96,
+   "danji_id": "a2yJCuP",
+   "danji_name": "오남아이파크",
+   "name": "오남아이파크",
+   "case": "2025타경72296",
+   "keyword": "토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 4.0,
+   "low_eok": 2.8,
+   "richgo_sise_eok": 4.051,
+   "appr_vs_sise": 0.987,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 33963,
+    "45%": 34235,
+    "50%": 34521,
+    "55%": 34831,
+    "60%": 35162
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.4,
+    "45%": 3.42,
+    "50%": 3.45,
+    "55%": 3.48,
+    "60%": 3.52
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 33500,
+     "bid_eok": 3.35,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 34000,
+     "bid_eok": 3.4,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 34500,
+     "bid_eok": 3.45,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 35000,
+     "bid_eok": 3.5,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 35500,
+     "bid_eok": 3.55,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 36000,
+     "bid_eok": 3.6,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 34521,
+   "p50_ensemble_eok": 3.45,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72282[1]": {
+   "key": "2025타경72282[1]",
+   "auction_id": "C65FVLJW",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 양지리 234 양지아파트 102동 6층 610호",
+   "appr_manwon": 26200,
+   "low_manwon": 18340,
+   "fails": 1,
+   "bidding_date": "2026-11-12",
+   "area": 84.9,
+   "danji_id": "a0JhUsp",
+   "danji_name": "양지",
+   "name": "양지",
+   "case": "2025타경72282",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 2.62,
+   "low_eok": 1.834,
+   "richgo_sise_eok": 2.111,
+   "appr_vs_sise": 1.241,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 19283,
+    "45%": 19438,
+    "50%": 19600,
+    "55%": 19776,
+    "60%": 19964
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.93,
+    "45%": 1.94,
+    "50%": 1.96,
+    "55%": 1.98,
+    "60%": 2.0
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 19000,
+     "bid_eok": 1.9,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 19500,
+     "bid_eok": 1.95,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 20000,
+     "bid_eok": 2.0,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 20500,
+     "bid_eok": 2.05,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 19600,
+   "p50_ensemble_eok": 1.96,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경72971[1]": {
+   "key": "2024타경72971[1]",
+   "auction_id": "C96TCSVO",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 수레로1233번길 11, 101동 3층 306호 (경향아파트)",
+   "appr_manwon": 36600,
+   "low_manwon": 36600,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 114.51,
+   "danji_id": "a6CRYXW",
+   "danji_name": "경향",
+   "name": "경향",
+   "case": "2024타경72971",
+   "keyword": "",
+   "pyeong": "41",
+   "appr_eok": 3.66,
+   "low_eok": 3.66,
+   "richgo_sise_eok": 3.394,
+   "appr_vs_sise": 1.079,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 36600,
+    "45%": 36600,
+    "50%": 36600,
+    "55%": 36600,
+    "60%": 36600
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.66,
+    "45%": 3.66,
+    "50%": 3.66,
+    "55%": 3.66,
+    "60%": 3.66
+   },
+   "prob_by_bid_5m": [],
+   "p50_ensemble_manwon": 36600,
+   "p50_ensemble_eok": 3.66,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경4562[1]": {
+   "key": "2025타경4562[1]",
+   "auction_id": "C45IZTDD",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 녹촌리 555 신창현두산위브아파트 106동 16층1601호",
+   "appr_manwon": 31600,
+   "low_manwon": 22120,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 84.87,
+   "danji_id": "a2gEsDv",
+   "danji_name": "신창현두산위브",
+   "name": "신창현두산위브",
+   "case": "2025타경4562",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 3.16,
+   "low_eok": 2.212,
+   "richgo_sise_eok": 3.215,
+   "appr_vs_sise": 0.983,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 26779,
+    "45%": 26993,
+    "50%": 27218,
+    "55%": 27463,
+    "60%": 27724
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.68,
+    "45%": 2.7,
+    "50%": 2.72,
+    "55%": 2.75,
+    "60%": 2.77
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 26500,
+     "bid_eok": 2.65,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 27000,
+     "bid_eok": 2.7,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 28000,
+     "bid_eok": 2.8,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 28500,
+     "bid_eok": 2.85,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 27218,
+   "p50_ensemble_eok": 2.72,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경4418[1]": {
+   "key": "2025타경4418[1]",
+   "auction_id": "C74INYMB",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 888 남양주오남두산위브아파트 101동 7층703호",
+   "appr_manwon": 34000,
+   "low_manwon": 23800,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 84.99,
+   "danji_id": "a1JPksm",
+   "danji_name": "남양주오남두산위브",
+   "name": "남양주오남두산위브",
+   "case": "2025타경4418",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 3.4,
+   "low_eok": 2.38,
+   "richgo_sise_eok": 3.367,
+   "appr_vs_sise": 1.01,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 27763,
+    "45%": 27986,
+    "50%": 28219,
+    "55%": 28473,
+    "60%": 28743
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.78,
+    "45%": 2.8,
+    "50%": 2.82,
+    "55%": 2.85,
+    "60%": 2.87
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 28000,
+     "bid_eok": 2.8,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 28500,
+     "bid_eok": 2.85,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 29000,
+     "bid_eok": 2.9,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 29500,
+     "bid_eok": 2.95,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 28219,
+   "p50_ensemble_eok": 2.82,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72429[1]": {
+   "key": "2025타경72429[1]",
+   "auction_id": "C99DJHMF",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 금곡동 612 금곡동명지해드는터 101동 1층102호",
+   "appr_manwon": 37300,
+   "low_manwon": 18277,
+   "fails": 2,
+   "bidding_date": "2026-11-17",
+   "area": 84.96,
+   "danji_id": "a3fwnWW",
+   "danji_name": "명지해드는터",
+   "name": "명지해드는터",
+   "case": "2025타경72429",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 3.73,
+   "low_eok": 1.828,
+   "richgo_sise_eok": 3.813,
+   "appr_vs_sise": 0.978,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 28512,
+    "45%": 28741,
+    "50%": 28981,
+    "55%": 29241,
+    "60%": 29519
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.85,
+    "45%": 2.87,
+    "50%": 2.9,
+    "55%": 2.92,
+    "60%": 2.95
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 28000,
+     "bid_eok": 2.8,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 28500,
+     "bid_eok": 2.85,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 29000,
+     "bid_eok": 2.9,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 29500,
+     "bid_eok": 2.95,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 30000,
+     "bid_eok": 3.0,
+     "prob": 69
+    }
+   ],
+   "p50_ensemble_manwon": 28981,
+   "p50_ensemble_eok": 2.9,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경3712[1]": {
+   "key": "2025타경3712[1]",
+   "auction_id": "C01LRKJR",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 부평리 756 진접센트레빌시티2단지 202동 1층102호",
+   "appr_manwon": 36200,
+   "low_manwon": 25340,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 101.98,
+   "danji_id": "a3ifUYu",
+   "danji_name": "진접센트레빌시티2단지",
+   "name": "진접센트레빌시티2단지",
+   "case": "2025타경3712",
+   "keyword": "중복사건,대항력있는임차인,토지거래허가구역",
+   "pyeong": "40",
+   "appr_eok": 3.62,
+   "low_eok": 2.534,
+   "richgo_sise_eok": 3.482,
+   "appr_vs_sise": 1.04,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 28377,
+    "45%": 28604,
+    "50%": 28843,
+    "55%": 29102,
+    "60%": 29379
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.84,
+    "45%": 2.86,
+    "50%": 2.88,
+    "55%": 2.91,
+    "60%": 2.94
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 28000,
+     "bid_eok": 2.8,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 28500,
+     "bid_eok": 2.85,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 29000,
+     "bid_eok": 2.9,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 29500,
+     "bid_eok": 2.95,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 30000,
+     "bid_eok": 3.0,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 28843,
+   "p50_ensemble_eok": 2.88,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경3217[1]": {
+   "key": "2025타경3217[1]",
+   "auction_id": "C23GWQHC",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 마석우리 599 신마석서희스타힐스 101동 5층501호",
+   "appr_manwon": 34100,
+   "low_manwon": 16709,
+   "fails": 2,
+   "bidding_date": "2026-11-18",
+   "area": 110.16,
+   "danji_id": "a3MSVod",
+   "danji_name": "신마석서희스타힐스",
+   "name": "신마석서희스타힐스",
+   "case": "2025타경3217",
+   "keyword": "토지거래허가구역",
+   "pyeong": "42",
+   "appr_eok": 3.41,
+   "low_eok": 1.671,
+   "richgo_sise_eok": 3.153,
+   "appr_vs_sise": 1.081,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 23669,
+    "45%": 23858,
+    "50%": 24057,
+    "55%": 24273,
+    "60%": 24504
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.37,
+    "45%": 2.39,
+    "50%": 2.41,
+    "55%": 2.43,
+    "60%": 2.45
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 23500,
+     "bid_eok": 2.35,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 24000,
+     "bid_eok": 2.4,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 24500,
+     "bid_eok": 2.45,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 25000,
+     "bid_eok": 2.5,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 24057,
+   "p50_ensemble_eok": 2.41,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경3521[1]": {
+   "key": "2025타경3521[1]",
+   "auction_id": "C45OPKPP",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 평내동 562 평내마을주공아파트 1108동 13층1301호",
+   "appr_manwon": 30500,
+   "low_manwon": 21350,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 59.53,
+   "danji_id": "a2NvADN",
+   "danji_name": "평내와이즈힐",
+   "name": "평내와이즈힐",
+   "case": "2025타경3521",
+   "keyword": "토지거래허가구역",
+   "pyeong": "25",
+   "appr_eok": 3.05,
+   "low_eok": 2.135,
+   "richgo_sise_eok": 3.117,
+   "appr_vs_sise": 0.978,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 25851,
+    "45%": 26058,
+    "50%": 26276,
+    "55%": 26511,
+    "60%": 26763
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.59,
+    "45%": 2.61,
+    "50%": 2.63,
+    "55%": 2.65,
+    "60%": 2.68
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 25500,
+     "bid_eok": 2.55,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 26000,
+     "bid_eok": 2.6,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 26500,
+     "bid_eok": 2.65,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 27000,
+     "bid_eok": 2.7,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 26276,
+   "p50_ensemble_eok": 2.63,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경3804[1]": {
+   "key": "2025타경3804[1]",
+   "auction_id": "C59UMCTR",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 마석우리 448-1 마석대림아파트 101동 8층804호",
+   "appr_manwon": 39500,
+   "low_manwon": 27650,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 134.52,
+   "danji_id": "a9LTCuq",
+   "danji_name": "마석대림",
+   "name": "마석대림",
+   "case": "2025타경3804",
+   "keyword": "중복사건,토지거래허가구역",
+   "pyeong": "48",
+   "appr_eok": 3.95,
+   "low_eok": 2.765,
+   "richgo_sise_eok": 3.323,
+   "appr_vs_sise": 1.189,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 28896,
+    "45%": 29127,
+    "50%": 29371,
+    "55%": 29634,
+    "60%": 29916
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.89,
+    "45%": 2.91,
+    "50%": 2.94,
+    "55%": 2.96,
+    "60%": 2.99
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 28500,
+     "bid_eok": 2.85,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 29000,
+     "bid_eok": 2.9,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 29500,
+     "bid_eok": 2.95,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 30000,
+     "bid_eok": 3.0,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 30500,
+     "bid_eok": 3.05,
+     "prob": 70
+    }
+   ],
+   "p50_ensemble_manwon": 29371,
+   "p50_ensemble_eok": 2.94,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72445[1]": {
+   "key": "2025타경72445[1]",
+   "auction_id": "C69JNCCU",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 별내동 1058 동익미라벨 3804동 4층405호",
+   "appr_manwon": 80500,
+   "low_manwon": 56350,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 101.38,
+   "danji_id": "a9dHQEW",
+   "danji_name": "동익미라벨38단지",
+   "name": "동익미라벨38단지",
+   "case": "2025타경72445",
+   "keyword": "토지거래허가구역",
+   "pyeong": "38",
+   "appr_eok": 8.05,
+   "low_eok": 5.635,
+   "richgo_sise_eok": 8.419,
+   "appr_vs_sise": 0.956,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 68398,
+    "45%": 68946,
+    "50%": 69522,
+    "55%": 70146,
+    "60%": 70812
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.84,
+    "45%": 6.89,
+    "50%": 6.95,
+    "55%": 7.01,
+    "60%": 7.08
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 67000,
+     "bid_eok": 6.7,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 67500,
+     "bid_eok": 6.75,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 68000,
+     "bid_eok": 6.8,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 68500,
+     "bid_eok": 6.85,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 69000,
+     "bid_eok": 6.9,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 69500,
+     "bid_eok": 6.95,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 70000,
+     "bid_eok": 7.0,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 70500,
+     "bid_eok": 7.05,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 71000,
+     "bid_eok": 7.1,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 71500,
+     "bid_eok": 7.15,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 72000,
+     "bid_eok": 7.2,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 72500,
+     "bid_eok": 7.25,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 69522,
+   "p50_ensemble_eok": 6.95,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경4739[1]": {
+   "key": "2025타경4739[1]",
+   "auction_id": "C03SDCAV",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 호평동 680 호평마을중흥에스-클래스로하스 1908동 20층2005호",
+   "appr_manwon": 60400,
+   "low_manwon": 42280,
+   "fails": 1,
+   "bidding_date": "2026-11-19",
+   "area": 132.86,
+   "danji_id": "a2OzJfL",
+   "danji_name": "호평마을중흥에스-클래스로하스",
+   "name": "호평마을중흥에스-클래스로하스",
+   "case": "2025타경4739",
+   "keyword": "대지권미등기,토지거래허가구역",
+   "pyeong": "47",
+   "appr_eok": 6.04,
+   "low_eok": 4.228,
+   "richgo_sise_eok": 5.005,
+   "appr_vs_sise": 1.207,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 44540,
+    "45%": 44897,
+    "50%": 45272,
+    "55%": 45678,
+    "60%": 46112
+   },
+   "bid_by_prob_eok": {
+    "40%": 4.45,
+    "45%": 4.49,
+    "50%": 4.53,
+    "55%": 4.57,
+    "60%": 4.61
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 43500,
+     "bid_eok": 4.35,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 44000,
+     "bid_eok": 4.4,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 44500,
+     "bid_eok": 4.45,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 45000,
+     "bid_eok": 4.5,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 45500,
+     "bid_eok": 4.55,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 46000,
+     "bid_eok": 4.6,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 46500,
+     "bid_eok": 4.65,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 47000,
+     "bid_eok": 4.7,
+     "prob": 70
+    }
+   ],
+   "p50_ensemble_manwon": 45272,
+   "p50_ensemble_eok": 4.53,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경71278[1]": {
+   "key": "2025타경71278[1]",
+   "auction_id": "C45NBYSA",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 묵현리 42-1 마석건영아파트  8층810호",
+   "appr_manwon": 15200,
+   "low_manwon": 3649,
+   "fails": 4,
+   "bidding_date": "2026-11-19",
+   "area": 59.76,
+   "danji_id": "a2ZqDsW",
+   "danji_name": "마석건영",
+   "name": "마석건영",
+   "case": "2025타경71278",
+   "keyword": "재매각,대항력있는임차인",
+   "pyeong": "22",
+   "appr_eok": 1.52,
+   "low_eok": 0.365,
+   "richgo_sise_eok": 1.47,
+   "appr_vs_sise": 1.034,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 9656,
+    "45%": 9734,
+    "50%": 9815,
+    "55%": 9903,
+    "60%": 9997
+   },
+   "bid_by_prob_eok": {
+    "40%": 0.97,
+    "45%": 0.97,
+    "50%": 0.98,
+    "55%": 0.99,
+    "60%": 1.0
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 9500,
+     "bid_eok": 0.95,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 10000,
+     "bid_eok": 1.0,
+     "prob": 60
+    }
+   ],
+   "p50_ensemble_manwon": 9815,
+   "p50_ensemble_eok": 0.98,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경71670[1]": {
+   "key": "2025타경71670[1]",
+   "auction_id": "C04THBGP",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 683-30 진주아파트 801동 5층511호",
+   "appr_manwon": 13000,
+   "low_manwon": 9100,
+   "fails": 1,
+   "bidding_date": "2026-10-31",
+   "area": 55.8,
+   "danji_id": "a4aabMg",
+   "danji_name": "진주8차",
+   "name": "진주8차",
+   "case": "2025타경71670",
+   "keyword": "재매각",
+   "pyeong": "20",
+   "appr_eok": 1.3,
+   "low_eok": 0.91,
+   "richgo_sise_eok": 1.24,
+   "appr_vs_sise": 1.048,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 10246,
+    "45%": 10328,
+    "50%": 10414,
+    "55%": 10507,
+    "60%": 10607
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.02,
+    "45%": 1.03,
+    "50%": 1.04,
+    "55%": 1.05,
+    "60%": 1.06
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 10000,
+     "bid_eok": 1.0,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 10500,
+     "bid_eok": 1.05,
+     "prob": 55
+    }
+   ],
+   "p50_ensemble_manwon": 10414,
+   "p50_ensemble_eok": 1.04,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2024타경83810[1]": {
+   "key": "2024타경83810[1]",
+   "auction_id": "C27KHING",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 호평로 149, 1901동 4층402호 (호평동,호평마을중흥에스-클래스로하스)",
+   "appr_manwon": 63900,
+   "low_manwon": 31311,
+   "fails": 2,
+   "bidding_date": "2026-10-31",
+   "area": 158.71,
+   "danji_id": "a2OzJfL",
+   "danji_name": "호평마을중흥에스-클래스로하스",
+   "name": "호평마을중흥에스-클래스로하스",
+   "case": "2024타경83810",
+   "keyword": "대항력있는임차인",
+   "pyeong": "56",
+   "appr_eok": 6.39,
+   "low_eok": 3.131,
+   "richgo_sise_eok": 5.778,
+   "appr_vs_sise": 1.106,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 44019,
+    "45%": 44372,
+    "50%": 44742,
+    "55%": 45144,
+    "60%": 45573
+   },
+   "bid_by_prob_eok": {
+    "40%": 4.4,
+    "45%": 4.44,
+    "50%": 4.47,
+    "55%": 4.51,
+    "60%": 4.56
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 43000,
+     "bid_eok": 4.3,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 43500,
+     "bid_eok": 4.35,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 44000,
+     "bid_eok": 4.4,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 44500,
+     "bid_eok": 4.45,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 45000,
+     "bid_eok": 4.5,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 45500,
+     "bid_eok": 4.55,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 46000,
+     "bid_eok": 4.6,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 46500,
+     "bid_eok": 4.65,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 44742,
+   "p50_ensemble_eok": 4.47,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2024타경6202[1]": {
+   "key": "2024타경6202[1]",
+   "auction_id": "C48LDTST",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 부평로 32, 109동 3층304호 (진접센트레빌시티1단지)",
+   "appr_manwon": 35600,
+   "low_manwon": 35600,
+   "fails": 0,
+   "bidding_date": "2026-10-31",
+   "area": 84.98,
+   "danji_id": "a9pNMhx",
+   "danji_name": "진접센트레빌시티1단지",
+   "name": "진접센트레빌시티1단지",
+   "case": "2024타경6202",
+   "keyword": "대항력있는임차인",
+   "pyeong": "34",
+   "appr_eok": 3.56,
+   "low_eok": 3.56,
+   "richgo_sise_eok": 3.457,
+   "appr_vs_sise": 1.03,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 35600,
+    "45%": 35600,
+    "50%": 35600,
+    "55%": 35600,
+    "60%": 35600
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.56,
+    "45%": 3.56,
+    "50%": 3.56,
+    "55%": 3.56,
+    "60%": 3.56
+   },
+   "prob_by_bid_5m": [],
+   "p50_ensemble_manwon": 35600,
+   "p50_ensemble_eok": 3.56,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경3729[1]": {
+   "key": "2025타경3729[1]",
+   "auction_id": "C96ACJJA",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 평내동 601 평내마을신명스카이뷰 1805동 6층604호",
+   "appr_manwon": 38300,
+   "low_manwon": 38300,
+   "fails": 0,
+   "bidding_date": "2026-10-31",
+   "area": 84.94,
+   "danji_id": "a8hwttU",
+   "danji_name": "평내마을신명스카이뷰",
+   "name": "평내마을신명스카이뷰",
+   "case": "2025타경3729",
+   "keyword": "중복사건,대항력있는임차인",
+   "pyeong": "33",
+   "appr_eok": 3.83,
+   "low_eok": 3.83,
+   "richgo_sise_eok": 3.728,
+   "appr_vs_sise": 1.027,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 38300,
+    "45%": 38300,
+    "50%": 38300,
+    "55%": 38300,
+    "60%": 38300
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.83,
+    "45%": 3.83,
+    "50%": 3.83,
+    "55%": 3.83,
+    "60%": 3.83
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 38500,
+     "bid_eok": 3.85,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 38300,
+   "p50_ensemble_eok": 3.83,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2024타경82466[1]": {
+   "key": "2024타경82466[1]",
+   "auction_id": "C11BRNVR",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 천마산로 65-2, 101동 20층2003호 (호평동,라인그린아파트)",
+   "appr_manwon": 31000,
+   "low_manwon": 21700,
+   "fails": 1,
+   "bidding_date": "2026-01-20",
+   "area": 84.68,
+   "danji_id": "a2RagqV",
+   "danji_name": "라인그린",
+   "name": "라인그린",
+   "case": "2024타경82466",
+   "keyword": "중복사건",
+   "pyeong": "31",
+   "appr_eok": 3.1,
+   "low_eok": 2.17,
+   "richgo_sise_eok": 2.706,
+   "appr_vs_sise": 1.146,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 24560,
+    "45%": 24757,
+    "50%": 24964,
+    "55%": 25188,
+    "60%": 25427
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.46,
+    "45%": 2.48,
+    "50%": 2.5,
+    "55%": 2.52,
+    "60%": 2.54
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 24000,
+     "bid_eok": 2.4,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 24500,
+     "bid_eok": 2.45,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 25000,
+     "bid_eok": 2.5,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 25500,
+     "bid_eok": 2.55,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 26000,
+     "bid_eok": 2.6,
+     "prob": 72
+    }
+   ],
+   "p50_ensemble_manwon": 24964,
+   "p50_ensemble_eok": 2.5,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경85724[1]": {
+   "key": "2024타경85724[1]",
+   "auction_id": "C06MTMJS",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 부평로 32, 114동 1층104호 (진접센트레빌시티1단지)",
+   "appr_manwon": 45300,
+   "low_manwon": 31710,
+   "fails": 1,
+   "bidding_date": "2026-01-21",
+   "area": 125.72,
+   "danji_id": "a9pNMhx",
+   "danji_name": "진접센트레빌시티1단지",
+   "name": "진접센트레빌시티1단지",
+   "case": "2024타경85724",
+   "keyword": "",
+   "pyeong": "47",
+   "appr_eok": 4.53,
+   "low_eok": 3.171,
+   "richgo_sise_eok": 4.427,
+   "appr_vs_sise": 1.023,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 38481,
+    "45%": 38790,
+    "50%": 39113,
+    "55%": 39464,
+    "60%": 39839
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.85,
+    "45%": 3.88,
+    "50%": 3.91,
+    "55%": 3.95,
+    "60%": 3.98
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 37500,
+     "bid_eok": 3.75,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 38000,
+     "bid_eok": 3.8,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 38500,
+     "bid_eok": 3.85,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 39000,
+     "bid_eok": 3.9,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 39500,
+     "bid_eok": 3.95,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 40000,
+     "bid_eok": 4.0,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 40500,
+     "bid_eok": 4.05,
+     "prob": 69
+    }
+   ],
+   "p50_ensemble_manwon": 39113,
+   "p50_ensemble_eok": 3.91,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경85595[1]": {
+   "key": "2024타경85595[1]",
+   "auction_id": "C46FVIIC",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 경춘로1350번길 34, 107동 8층804호 (평내동,효성타운아파트)",
+   "appr_manwon": 35300,
+   "low_manwon": 35300,
+   "fails": 0,
+   "bidding_date": "2026-01-21",
+   "area": 84.78,
+   "danji_id": "a1RFZig",
+   "danji_name": "효성타운",
+   "name": "효성타운",
+   "case": "2024타경85595",
+   "keyword": "",
+   "pyeong": "32",
+   "appr_eok": 3.53,
+   "low_eok": 3.53,
+   "richgo_sise_eok": 3.599,
+   "appr_vs_sise": 0.981,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 35300,
+    "45%": 35300,
+    "50%": 35300,
+    "55%": 35543,
+    "60%": 35881
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.53,
+    "45%": 3.53,
+    "50%": 3.53,
+    "55%": 3.55,
+    "60%": 3.59
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 35500,
+     "bid_eok": 3.55,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 36000,
+     "bid_eok": 3.6,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 36500,
+     "bid_eok": 3.65,
+     "prob": 69
+    }
+   ],
+   "p50_ensemble_manwon": 35300,
+   "p50_ensemble_eok": 3.53,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2024타경85724[2]": {
+   "key": "2024타경85724[2]",
+   "auction_id": "C49CNXYZ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 부평로 32, 111동 22층2201호 (진접센트레빌시티1단지)",
+   "appr_manwon": 36200,
+   "low_manwon": 25340,
+   "fails": 1,
+   "bidding_date": "2026-01-21",
+   "area": 84.98,
+   "danji_id": "a9pNMhx",
+   "danji_name": "진접센트레빌시티1단지",
+   "name": "진접센트레빌시티1단지",
+   "case": "2024타경85724",
+   "keyword": "",
+   "pyeong": "34",
+   "appr_eok": 3.62,
+   "low_eok": 2.534,
+   "richgo_sise_eok": 3.457,
+   "appr_vs_sise": 1.047,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 30497,
+    "45%": 30741,
+    "50%": 30998,
+    "55%": 31276,
+    "60%": 31573
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.05,
+    "45%": 3.07,
+    "50%": 3.1,
+    "55%": 3.13,
+    "60%": 3.16
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 30000,
+     "bid_eok": 3.0,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 30500,
+     "bid_eok": 3.05,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 31000,
+     "bid_eok": 3.1,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 31500,
+     "bid_eok": 3.15,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 32000,
+     "bid_eok": 3.2,
+     "prob": 67
+    }
+   ],
+   "p50_ensemble_manwon": 30998,
+   "p50_ensemble_eok": 3.1,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2026타경20818[1]": {
+   "key": "2026타경20818[1]",
+   "auction_id": "C91AITXP",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 갈매동 640 구리갈매푸르지오 709동 12층1201호",
+   "appr_manwon": 94200,
+   "low_manwon": 65940,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 99.6,
+   "danji_id": "a1zJcBd",
+   "danji_name": "구리갈매푸르지오",
+   "name": "구리갈매푸르지오",
+   "case": "2026타경20818",
+   "keyword": "토지거래허가구역",
+   "pyeong": "39",
+   "appr_eok": 9.42,
+   "low_eok": 6.594,
+   "richgo_sise_eok": 9.358,
+   "appr_vs_sise": 1.007,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 81096,
+    "45%": 81746,
+    "50%": 82429,
+    "55%": 83168,
+    "60%": 83959
+   },
+   "bid_by_prob_eok": {
+    "40%": 8.11,
+    "45%": 8.17,
+    "50%": 8.24,
+    "55%": 8.32,
+    "60%": 8.4
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 79000,
+     "bid_eok": 7.9,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 79500,
+     "bid_eok": 7.95,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 80000,
+     "bid_eok": 8.0,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 80500,
+     "bid_eok": 8.05,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 81000,
+     "bid_eok": 8.1,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 81500,
+     "bid_eok": 8.15,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 82000,
+     "bid_eok": 8.2,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 82500,
+     "bid_eok": 8.25,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 83000,
+     "bid_eok": 8.3,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 83500,
+     "bid_eok": 8.35,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 84000,
+     "bid_eok": 8.4,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 84500,
+     "bid_eok": 8.45,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 85000,
+     "bid_eok": 8.5,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 85500,
+     "bid_eok": 8.55,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 86000,
+     "bid_eok": 8.6,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 82429,
+   "p50_ensemble_eok": 8.24,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72876[1]": {
+   "key": "2025타경72876[1]",
+   "auction_id": "C15WNOGA",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 인창동 706 구리인창2차 동문굿모닝힐 201동 14층 1402호",
+   "appr_manwon": 68300,
+   "low_manwon": 68300,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 84.97,
+   "danji_id": "a6SgWzJ",
+   "danji_name": "구리인창동문굿모닝힐2차",
+   "name": "구리인창동문굿모닝힐2차",
+   "case": "2025타경72876",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 6.83,
+   "low_eok": 6.83,
+   "richgo_sise_eok": 6.986,
+   "appr_vs_sise": 0.978,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 68300,
+    "45%": 68300,
+    "50%": 68861,
+    "55%": 69479,
+    "60%": 70139
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.83,
+    "45%": 6.83,
+    "50%": 6.89,
+    "55%": 6.95,
+    "60%": 7.01
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 68500,
+     "bid_eok": 6.85,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 69000,
+     "bid_eok": 6.9,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 69500,
+     "bid_eok": 6.95,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 70000,
+     "bid_eok": 7.0,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 70500,
+     "bid_eok": 7.05,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 71000,
+     "bid_eok": 7.1,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 71500,
+     "bid_eok": 7.15,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 72000,
+     "bid_eok": 7.2,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 68861,
+   "p50_ensemble_eok": 6.89,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  },
+  "2025타경72849[1]": {
+   "key": "2025타경72849[1]",
+   "auction_id": "C16SBZGH",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 교문동 829 아차산어울림아파트 106동 2층202호",
+   "appr_manwon": 75100,
+   "low_manwon": 75100,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 84.85,
+   "danji_id": "a7hDijN",
+   "danji_name": "아차산어울림",
+   "name": "아차산어울림",
+   "case": "2025타경72849",
+   "keyword": "토지거래허가구역",
+   "pyeong": "35",
+   "appr_eok": 7.51,
+   "low_eok": 7.51,
+   "richgo_sise_eok": 8.129,
+   "appr_vs_sise": 0.924,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 75934,
+    "45%": 76543,
+    "50%": 77182,
+    "55%": 77874,
+    "60%": 78614
+   },
+   "bid_by_prob_eok": {
+    "40%": 7.59,
+    "45%": 7.65,
+    "50%": 7.72,
+    "55%": 7.79,
+    "60%": 7.86
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 75500,
+     "bid_eok": 7.55,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 76000,
+     "bid_eok": 7.6,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 76500,
+     "bid_eok": 7.65,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 77000,
+     "bid_eok": 7.7,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 77500,
+     "bid_eok": 7.75,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 78000,
+     "bid_eok": 7.8,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 78500,
+     "bid_eok": 7.85,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 79000,
+     "bid_eok": 7.9,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 79500,
+     "bid_eok": 7.95,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 80000,
+     "bid_eok": 8.0,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 80500,
+     "bid_eok": 8.05,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 77182,
+   "p50_ensemble_eok": 7.72,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72200[1]": {
+   "key": "2025타경72200[1]",
+   "auction_id": "C49LSPHG",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 교문동 808 덕현아파트 111동 12층 1203호",
+   "appr_manwon": 103000,
+   "low_manwon": 72100,
+   "fails": 1,
+   "bidding_date": "2026-11-11",
+   "area": 134.98,
+   "danji_id": "a7BuFFg",
+   "danji_name": "덕현",
+   "name": "덕현",
+   "case": "2025타경72200",
+   "keyword": "토지거래허가구역",
+   "pyeong": "47",
+   "appr_eok": 10.3,
+   "low_eok": 7.21,
+   "richgo_sise_eok": 11.204,
+   "appr_vs_sise": 0.919,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 91627,
+    "45%": 92362,
+    "50%": 93133,
+    "55%": 93968,
+    "60%": 94861
+   },
+   "bid_by_prob_eok": {
+    "40%": 9.16,
+    "45%": 9.24,
+    "50%": 9.31,
+    "55%": 9.4,
+    "60%": 9.49
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 89500,
+     "bid_eok": 8.95,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 90000,
+     "bid_eok": 9.0,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 90500,
+     "bid_eok": 9.05,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 91000,
+     "bid_eok": 9.1,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 91500,
+     "bid_eok": 9.15,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 92000,
+     "bid_eok": 9.2,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 92500,
+     "bid_eok": 9.25,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 93000,
+     "bid_eok": 9.3,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 93500,
+     "bid_eok": 9.35,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 94000,
+     "bid_eok": 9.4,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 94500,
+     "bid_eok": 9.45,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 95000,
+     "bid_eok": 9.5,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 95500,
+     "bid_eok": 9.55,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 96000,
+     "bid_eok": 9.6,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 96500,
+     "bid_eok": 9.65,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 97000,
+     "bid_eok": 9.7,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 97500,
+     "bid_eok": 9.75,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 93133,
+   "p50_ensemble_eok": 9.31,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경71712[1]": {
+   "key": "2025타경71712[1]",
+   "auction_id": "C24VPUNP",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 인창동 664-1 인창2단지주공아파트 202동 20층 2004호",
+   "appr_manwon": 70200,
+   "low_manwon": 70200,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 84.99,
+   "danji_id": "a0DOYhg",
+   "danji_name": "인창포레리움",
+   "name": "인창포레리움",
+   "case": "2025타경71712",
+   "keyword": "중복사건",
+   "pyeong": "32",
+   "appr_eok": 7.02,
+   "low_eok": 7.02,
+   "richgo_sise_eok": 8.638,
+   "appr_vs_sise": 0.813,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 76206,
+    "45%": 76817,
+    "50%": 77458,
+    "55%": 78153,
+    "60%": 78896
+   },
+   "bid_by_prob_eok": {
+    "40%": 7.62,
+    "45%": 7.68,
+    "50%": 7.75,
+    "55%": 7.82,
+    "60%": 7.89
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 74500,
+     "bid_eok": 7.45,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 75000,
+     "bid_eok": 7.5,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 75500,
+     "bid_eok": 7.55,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 76000,
+     "bid_eok": 7.6,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 76500,
+     "bid_eok": 7.65,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 77000,
+     "bid_eok": 7.7,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 77500,
+     "bid_eok": 7.75,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 78000,
+     "bid_eok": 7.8,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 78500,
+     "bid_eok": 7.85,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 79000,
+     "bid_eok": 7.9,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 79500,
+     "bid_eok": 7.95,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 80000,
+     "bid_eok": 8.0,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 80500,
+     "bid_eok": 8.05,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 81000,
+     "bid_eok": 8.1,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 77458,
+   "p50_ensemble_eok": 7.75,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경3675[1]": {
+   "key": "2025타경3675[1]",
+   "auction_id": "C34LJLTN",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 인창동 714 구리더샵그린포레2단지 203동 13층 1301호",
+   "appr_manwon": 61600,
+   "low_manwon": 61600,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 74.98,
+   "danji_id": "a9SiOKQ",
+   "danji_name": "구리더샵그린포레2단지",
+   "name": "구리더샵그린포레2단지",
+   "case": "2025타경3675",
+   "keyword": "토지거래허가구역",
+   "pyeong": "30",
+   "appr_eok": 6.16,
+   "low_eok": 6.16,
+   "richgo_sise_eok": 6.567,
+   "appr_vs_sise": 0.938,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 61751,
+    "45%": 62246,
+    "50%": 62765,
+    "55%": 63328,
+    "60%": 63930
+   },
+   "bid_by_prob_eok": {
+    "40%": 6.18,
+    "45%": 6.22,
+    "50%": 6.28,
+    "55%": 6.33,
+    "60%": 6.39
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 62000,
+     "bid_eok": 6.2,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 62500,
+     "bid_eok": 6.25,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 63000,
+     "bid_eok": 6.3,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 63500,
+     "bid_eok": 6.35,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 64000,
+     "bid_eok": 6.4,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 64500,
+     "bid_eok": 6.45,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 65000,
+     "bid_eok": 6.5,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 65500,
+     "bid_eok": 6.55,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 62765,
+   "p50_ensemble_eok": 6.28,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": []
+  },
+  "2025타경72396[1]": {
+   "key": "2025타경72396[1]",
+   "auction_id": "C39KXCWP",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 교문동 809-1 하나아파트 202동 3층 302호",
+   "appr_manwon": 39900,
+   "low_manwon": 39900,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 84.73,
+   "danji_id": "a0xwbiV",
+   "danji_name": "하나",
+   "name": "하나",
+   "case": "2025타경72396",
+   "keyword": "토지거래허가구역,지분매각",
+   "pyeong": "31",
+   "appr_eok": 3.99,
+   "low_eok": 3.99,
+   "richgo_sise_eok": 10.129,
+   "appr_vs_sise": 0.394,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 74947,
+    "45%": 75548,
+    "50%": 76179,
+    "55%": 76863,
+    "60%": 77593
+   },
+   "bid_by_prob_eok": {
+    "40%": 7.49,
+    "45%": 7.55,
+    "50%": 7.62,
+    "55%": 7.69,
+    "60%": 7.76
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 73000,
+     "bid_eok": 7.3,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 73500,
+     "bid_eok": 7.35,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 74000,
+     "bid_eok": 7.4,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 74500,
+     "bid_eok": 7.45,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 75000,
+     "bid_eok": 7.5,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 75500,
+     "bid_eok": 7.55,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 76000,
+     "bid_eok": 7.6,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 76500,
+     "bid_eok": 7.65,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 77000,
+     "bid_eok": 7.7,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 77500,
+     "bid_eok": 7.75,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 78000,
+     "bid_eok": 7.8,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 78500,
+     "bid_eok": 7.85,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 79000,
+     "bid_eok": 7.9,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 79500,
+     "bid_eok": 7.95,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 76179,
+   "p50_ensemble_eok": 7.62,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
+    "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
+   ]
+  },
+  "2024타경80651[1]": {
+   "key": "2024타경80651[1]",
+   "auction_id": "C63ZQGPM",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 갈매중앙로 16, 710동 18층1801호 (갈매동,구리갈매푸르지오)",
+   "appr_manwon": 113200,
+   "low_manwon": 79240,
+   "fails": 1,
+   "bidding_date": "2026-11-19",
+   "area": 113.22,
+   "danji_id": "a1zJcBd",
+   "danji_name": "구리갈매푸르지오",
+   "name": "구리갈매푸르지오",
+   "case": "2024타경80651",
+   "keyword": "대지권미등기",
+   "pyeong": "44",
+   "appr_eok": 11.32,
+   "low_eok": 7.924,
+   "richgo_sise_eok": 10.079,
+   "appr_vs_sise": 1.123,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "bid_by_prob_manwon": {
+    "40%": 89298,
+    "45%": 90014,
+    "50%": 90765,
+    "55%": 91580,
+    "60%": 92450
+   },
+   "bid_by_prob_eok": {
+    "40%": 8.93,
+    "45%": 9.0,
+    "50%": 9.08,
+    "55%": 9.16,
+    "60%": 9.24
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 87000,
+     "bid_eok": 8.7,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 87500,
+     "bid_eok": 8.75,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 88000,
+     "bid_eok": 8.8,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 88500,
+     "bid_eok": 8.85,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 89000,
+     "bid_eok": 8.9,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 89500,
+     "bid_eok": 8.95,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 90000,
+     "bid_eok": 9.0,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 90500,
+     "bid_eok": 9.05,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 91000,
+     "bid_eok": 9.1,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 91500,
+     "bid_eok": 9.15,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 92000,
+     "bid_eok": 9.2,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 92500,
+     "bid_eok": 9.25,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 93000,
+     "bid_eok": 9.3,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 93500,
+     "bid_eok": 9.35,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 94000,
+     "bid_eok": 9.4,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 94500,
+     "bid_eok": 9.45,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 95000,
+     "bid_eok": 9.5,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 90765,
+   "p50_ensemble_eok": 9.08,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ]
+  }
+ },
+ "failed": [
+  {
+   "key": "2025타경101733[1]",
+   "auction_id": "C33IVHBT",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성로 212, 31동 14층1401호 (개포동,은마아파트)",
+   "appr_manwon": 178000,
+   "low_manwon": 113920,
+   "fails": 4,
+   "bidding_date": "2026-11-04",
+   "area": 94.76,
+   "reason": "단지 못 찾음 (확인 29곳)"
+  },
+  {
+   "key": "2026타경100455[1]",
+   "auction_id": "C71OXPSC",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 45-5  3층301호",
+   "appr_manwon": 137000,
+   "low_manwon": 109600,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 63.36,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경2577[2]",
+   "auction_id": "C91OWAIN",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 신사동 593-21 장자울아파트  3층303호",
+   "appr_manwon": 118000,
+   "low_manwon": 94400,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 84.31,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경103542[1]",
+   "auction_id": "C24ICAWP",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 대치동 915-13 스카이써밋아파트  3층302호",
+   "appr_manwon": 166000,
+   "low_manwon": 106240,
+   "fails": 2,
+   "bidding_date": "2026-11-24",
+   "area": 120,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2026타경100088[1]",
+   "auction_id": "C67PVDRX",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1466-2 서초네스피아에이  6층601호",
+   "appr_manwon": 125000,
+   "low_manwon": 100000,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 104.75,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2026타경100205[1]",
+   "auction_id": "C42KIOBS",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 799-9 캐슬렉스  6층601호",
+   "appr_manwon": 190036,
+   "low_manwon": 121623,
+   "fails": 2,
+   "bidding_date": "2026-11-10",
+   "area": 105.78,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경103180[1]",
+   "auction_id": "C42ARMPU",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 980-45  10층1001호",
+   "appr_manwon": 244000,
+   "low_manwon": 124928,
+   "fails": 3,
+   "bidding_date": "2026-11-12",
+   "area": 227.97,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경51884[1]",
+   "auction_id": "C69VCKXB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 414-5 골드클래스  9층903호",
+   "appr_manwon": 60700,
+   "low_manwon": 31078,
+   "fails": 3,
+   "bidding_date": "2026-11-16",
+   "area": 59.91,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경53415[1]",
+   "auction_id": "C05UWOSS",
+   "region": "경기 성남시 분당구",
+   "address": "경기도 성남시 분당구 금곡동 202 분당하우스토리 103-1701호 ",
+   "appr_manwon": 156000,
+   "low_manwon": 109200,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 177.71,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2026타경20937[1]",
+   "auction_id": "C46YPOHX",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 양지리 620 오남쌍용스윗닷홈지티(1단지)아파트 106동 4층405호",
+   "appr_manwon": 32100,
+   "low_manwon": 32100,
+   "fails": 0,
+   "bidding_date": "2026-11-04",
+   "area": 84.88,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경72305[1]",
+   "auction_id": "C72WRFXS",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 내각리 736-1 우남아파트 다동 3층 302호",
+   "appr_manwon": 19100,
+   "low_manwon": 13370,
+   "fails": 1,
+   "bidding_date": "2026-11-11",
+   "area": 84.84,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경72451[1]",
+   "auction_id": "C20JFFHD",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 양지리 620 오남쌍용스윗닷홈지티(1단지)아파트 105동 3층 303호",
+   "appr_manwon": 33600,
+   "low_manwon": 33600,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 84.88,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경72339[1]",
+   "auction_id": "C82VNWCM",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 266 대한아파트 102동 14층 1405호",
+   "appr_manwon": 18600,
+   "low_manwon": 18600,
+   "fails": 0,
+   "bidding_date": "2026-11-12",
+   "area": 59.94,
+   "reason": "단지 못 찾음 (확인 18곳)"
+  },
+  {
+   "key": "2026타경20826[1]",
+   "auction_id": "C03IPYFS",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 화도읍 묵현리 47-3 마석엘아이지아파트 202동 10층1004호",
+   "appr_manwon": 24400,
+   "low_manwon": 24400,
+   "fails": 0,
+   "bidding_date": "",
+   "area": 59.97,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경72093[1]",
+   "auction_id": "C09KFSMS",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 수택동 628-25 미주아파트  6층602호",
+   "appr_manwon": 40900,
+   "low_manwon": 28630,
+   "fails": 1,
+   "bidding_date": "2026-11-19",
+   "area": 56.95,
+   "danji_id": "a9YcvSz",
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  }
+ ],
+ "skipped": [
+  {
+   "key": "2025타경103166[1]",
+   "auction_id": "C18BJCFO",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  14층1401호",
+   "appr_manwon": 313000,
+   "low_manwon": 250400,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 22.37,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경102969[1]",
+   "auction_id": "C03NDQOM",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 681-26 역삼동하나빌  6층602호",
+   "appr_manwon": 45200,
+   "low_manwon": 18513,
+   "fails": 4,
+   "bidding_date": "2026-11-05",
+   "area": 28.44,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경104308[1]",
+   "auction_id": "C04OZEQG",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 대치동 1027 래미안대치팰리스 104동 12층1201호",
+   "appr_manwon": 507000,
+   "low_manwon": 405600,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.98,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경104318[1]",
+   "auction_id": "C07SRLQR",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 청담동 67-1 청담린든그로브 104동 2층204호",
+   "appr_manwon": 340000,
+   "low_manwon": 340000,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 85,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경2782[1]",
+   "auction_id": "C22FRBBC",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  12층1201호",
+   "appr_manwon": 327000,
+   "low_manwon": 209280,
+   "fails": 2,
+   "bidding_date": "2026-11-05",
+   "area": 22.37,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2026타경100530[1]",
+   "auction_id": "C19XSUPK",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 757 역삼래미안 108동 1층102호",
+   "appr_manwon": 329000,
+   "low_manwon": 263200,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 80.87,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103165[4]",
+   "auction_id": "C37RSEGW",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 청담동 114-9 청담브르넨  5층502호",
+   "appr_manwon": 654000,
+   "low_manwon": 523200,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 171.6,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경100530[2]",
+   "auction_id": "C45BVLNI",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 755-4 역삼이편한세상 105동 1층104호",
+   "appr_manwon": 321000,
+   "low_manwon": 256800,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 84.99,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103932[1]",
+   "auction_id": "C77SOZTX",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 논현동 58-2 마일스디오빌  9층920호",
+   "appr_manwon": 41800,
+   "low_manwon": 10957,
+   "fails": 6,
+   "bidding_date": "2026-11-10",
+   "area": 36.29,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2026타경101303[1]",
+   "auction_id": "C77WEUSL",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 도곡동 467-17 타워팰리스 에프동 11층1104호",
+   "appr_manwon": 510000,
+   "low_manwon": 510000,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 159.44,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경101156[1]",
+   "auction_id": "C73QRRYR",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 828-28 역삼동이지소울리더  3층312호",
+   "appr_manwon": 24000,
+   "low_manwon": 19200,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 19.37,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2026타경101202[1]",
+   "auction_id": "C94TVYCL",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 727-9 요진와이시티미니  4층405호",
+   "appr_manwon": 18700,
+   "low_manwon": 14960,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 12.94,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경104735[2]",
+   "auction_id": "C12TVCLM",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  14층1402호",
+   "appr_manwon": 266000,
+   "low_manwon": 212800,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 15.82,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경104362[1]",
+   "auction_id": "C14VVNWA",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 청담동 43 청담우방아파트 101동 1702호",
+   "appr_manwon": 280000,
+   "low_manwon": 224000,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 118.53,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경104735[1]",
+   "auction_id": "C15WAZJE",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  8층801호",
+   "appr_manwon": 331000,
+   "low_manwon": 264800,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 22.37,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경103751[1]",
+   "auction_id": "C17NBBIO",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 146 삼성동포스코더샵  20층2002호",
+   "appr_manwon": 532000,
+   "low_manwon": 425600,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 199.2,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2024타경5531[1]",
+   "auction_id": "C59SHMMT",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 헌릉로590길 63, 514동 9층901호 (세곡동,강남데시앙파크)",
+   "appr_manwon": 187000,
+   "low_manwon": 149600,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 114.69,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103132[1]",
+   "auction_id": "C66LQEWC",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  19층1901호",
+   "appr_manwon": 699000,
+   "low_manwon": 559200,
+   "fails": 1,
+   "bidding_date": "2026-11-24",
+   "area": 96.26,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103942[1]",
+   "auction_id": "C64ICUON",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 720-25 디오빌역삼  12층1212호",
+   "appr_manwon": 32400,
+   "low_manwon": 25920,
+   "fails": 1,
+   "bidding_date": "2026-11-26",
+   "area": 30.03,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경2812[1]",
+   "auction_id": "C73ORPMX",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  16층1601호",
+   "appr_manwon": 327400,
+   "low_manwon": 209536,
+   "fails": 2,
+   "bidding_date": "2026-11-26",
+   "area": 22.37,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경103165[3]",
+   "auction_id": "C93DRMMS",
+   "address": "서울특별시 강남구 청담동 114-9 청담브르넨  1층101호",
+   "reason": "가격정보없음"
+  },
+  {
+   "key": "2026타경100316[1]",
+   "auction_id": "C43AWBJL",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 잠원동 162 반포센트럴자이 104동 22층2201호",
+   "appr_manwon": 525000,
+   "low_manwon": 420000,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 84.98,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103101[1]",
+   "auction_id": "C06XEOJA",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 999 월드빌라트  10층11층1002호",
+   "appr_manwon": 269000,
+   "low_manwon": 269000,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 261.49,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103618[1]",
+   "auction_id": "C49VKBBX",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 845-14 성지라빌레뜨 비동 5층502호",
+   "appr_manwon": 330000,
+   "low_manwon": 330000,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 216.36,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103954[1]",
+   "auction_id": "C78MBBQE",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 반포동 12 래미안원펜타스 102동 14층1403호",
+   "appr_manwon": 580000,
+   "low_manwon": 464000,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.73,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경100393[1]",
+   "auction_id": "C46QDYCY",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 3275 동부센트레빌 101동 18층1801호",
+   "appr_manwon": 323500,
+   "low_manwon": 258800,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 134.04,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경104590[1]",
+   "auction_id": "C57TSSWJ",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1686-9 서초교대이편한세상 101동 8층802호",
+   "appr_manwon": 346100,
+   "low_manwon": 276880,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 84.97,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경100434[1]",
+   "auction_id": "C58BOMOL",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 799-5 힐스나인빌리지  1층101호",
+   "appr_manwon": 247300,
+   "low_manwon": 197840,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": null,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2026타경100393[2]",
+   "auction_id": "C75NBWAX",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1455-9 경남아너스빌 101동 2층205호",
+   "appr_manwon": 223000,
+   "low_manwon": 178400,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 127.04,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경104617[1]",
+   "auction_id": "C69AIGOM",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1675-10 지에스타워주건축물제1동  지상6층601호",
+   "appr_manwon": 27100,
+   "low_manwon": 21680,
+   "fails": 1,
+   "bidding_date": "2026-11-12",
+   "area": 12.56,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경104699[1]",
+   "auction_id": "C35PPPDF",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1496-6 루컴즈힐서리풀 101동 4층404호",
+   "appr_manwon": 200000,
+   "low_manwon": 160000,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 83.92,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경103336[1]",
+   "auction_id": "C35LMMYV",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 805-1 라빌레뜨  1층101호",
+   "appr_manwon": 286000,
+   "low_manwon": 183040,
+   "fails": 2,
+   "bidding_date": "2026-11-24",
+   "area": 203.63,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경2485[1]",
+   "auction_id": "C97MAMXS",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 양재동 122-2 메르디안하우스  6층602호",
+   "appr_manwon": 221000,
+   "low_manwon": 176800,
+   "fails": 1,
+   "bidding_date": "2026-11-24",
+   "area": 206.12,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경100722[1]",
+   "auction_id": "C15RUGQU",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 847-34 방배대우유로카운티  1층105호",
+   "appr_manwon": 420000,
+   "low_manwon": 336000,
+   "fails": 1,
+   "bidding_date": "2026-12-02",
+   "area": 234.01,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경52458[1]",
+   "auction_id": "C31BKTMV",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  11층1103호",
+   "appr_manwon": 24000,
+   "low_manwon": 24000,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 14.01,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51375[1]",
+   "auction_id": "C48YNJNH",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차 13층 1305호",
+   "appr_manwon": 12100,
+   "low_manwon": 4956,
+   "fails": 4,
+   "bidding_date": "2026-11-09",
+   "area": 13.27,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2026타경50411[1]",
+   "auction_id": "C07ZLFYT",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  6층608호",
+   "appr_manwon": 11000,
+   "low_manwon": 7040,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 16.68,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경52148[1]",
+   "auction_id": "C14VAAKA",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  8층803호",
+   "appr_manwon": 23300,
+   "low_manwon": 18640,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 14.01,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경52354[1]",
+   "auction_id": "C56OKKIM",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 343-2 현대웰하임2단지  5층521호",
+   "appr_manwon": 8400,
+   "low_manwon": 5376,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 13.11,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51960[1]",
+   "auction_id": "C60FRBHY",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  14층1414호",
+   "appr_manwon": 12300,
+   "low_manwon": 9840,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 13.27,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2026타경50152[1]",
+   "auction_id": "C71RRXWS",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 457 청광플러스원큐브2차  17층1708호",
+   "appr_manwon": 10900,
+   "low_manwon": 8720,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 14.49,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경52220[1]",
+   "auction_id": "C97ZPREW",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 457 청광플러스원큐브2차  15층1504호",
+   "appr_manwon": 11000,
+   "low_manwon": 8800,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 14.49,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경52272[1]",
+   "auction_id": "C12SILHA",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  10층1014호",
+   "appr_manwon": 12000,
+   "low_manwon": 9600,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 13.27,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51291[1]",
+   "auction_id": "C39VYXRF",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  13층1306호",
+   "appr_manwon": 11300,
+   "low_manwon": 3702,
+   "fails": 5,
+   "bidding_date": "2026-11-23",
+   "area": 16.68,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51702[1]",
+   "auction_id": "C47IEVFB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 456-3 강동큐브  16층1604호",
+   "appr_manwon": 12700,
+   "low_manwon": 6502,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 12.49,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경52149[1]",
+   "auction_id": "C63TMBWB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  15층1504호",
+   "appr_manwon": 23600,
+   "low_manwon": 15104,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 14.04,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51117[1]",
+   "auction_id": "C68XOZZH",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 343-1 현대웰하임1단지  3층306호",
+   "appr_manwon": 13000,
+   "low_manwon": 3407,
+   "fails": 6,
+   "bidding_date": "2026-11-23",
+   "area": 16.96,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51389[1]",
+   "auction_id": "C61ENASP",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  11층1106호",
+   "appr_manwon": 12200,
+   "low_manwon": 6246,
+   "fails": 6,
+   "bidding_date": "2026-11-30",
+   "area": 13.27,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51173[1]",
+   "auction_id": "C75QUJHJ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 457-1 강동렘브란트  11층1106호",
+   "appr_manwon": 12600,
+   "low_manwon": 6451,
+   "fails": 7,
+   "bidding_date": "2026-11-30",
+   "area": 15.86,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2024타경61978[1]",
+   "auction_id": "C84DJETR",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호대로177길 40, 11층1108호 (길동,경지아리움)",
+   "appr_manwon": 19700,
+   "low_manwon": 15760,
+   "fails": 11,
+   "bidding_date": "2026-11-30",
+   "area": 13.45,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51965[1]",
+   "auction_id": "C17HBDLY",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  9층910호",
+   "appr_manwon": 10900,
+   "low_manwon": 5580,
+   "fails": 4,
+   "bidding_date": "",
+   "area": 16.68,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2024타경2085[1]",
+   "auction_id": "C99PIEQZ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호대로176길 10-12, 12층1203호",
+   "appr_manwon": 13800,
+   "low_manwon": 8832,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 11.64,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2024타경56181[1]",
+   "auction_id": "C14LXKAV",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 아차산로 552, 16동 2층202호 (광장동,광장극동아파트)",
+   "appr_manwon": 209200,
+   "low_manwon": 209200,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 156.91,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2023타경60534[1]",
+   "auction_id": "C00MBZPL",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 능동로 170, 4층405호 (화양동,신원리브웰 화양동 주상복합)",
+   "appr_manwon": 22700,
+   "low_manwon": 638,
+   "fails": 16,
+   "bidding_date": "2026-11-16",
+   "area": 20.66,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51328[1]",
+   "auction_id": "C25NVEUS",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 화양동 111-88 신원리브웰 화양동 주상복합  4층401호",
+   "appr_manwon": 21800,
+   "low_manwon": 13952,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 16.92,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경52237[1]",
+   "auction_id": "C58JSTQT",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 신천동 7-19 잠실시그마타워  21층2105호",
+   "appr_manwon": 280000,
+   "low_manwon": 224000,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 208.56,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경52183[1]",
+   "auction_id": "C12ABSRM",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 가락동 913 헬리오시티 318동 5층504호",
+   "appr_manwon": 279000,
+   "low_manwon": 223200,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 84.95,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경478[1]",
+   "auction_id": "C39VQJLB",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 오금동 619 송파호반베르디움더퍼스트 101동 20층2001호",
+   "appr_manwon": 171000,
+   "low_manwon": 136800,
+   "fails": 1,
+   "bidding_date": "2026-11-30",
+   "area": 101.46,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2025타경52704[5]",
+   "auction_id": "C10YLCKP",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 559-7 위례헤리움  1층108호",
+   "appr_manwon": 93300,
+   "low_manwon": 65310,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 46.8,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경4789[1]",
+   "auction_id": "C27ZTODK",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 신흥동 4124 신흥역시네마타워  2층202호",
+   "appr_manwon": 430800,
+   "low_manwon": 211092,
+   "fails": 2,
+   "bidding_date": "2026-11-02",
+   "area": 237.24,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경53409[2]",
+   "auction_id": "C29YICCC",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 616 대왕빌딩주건축물 1동 1층104호",
+   "appr_manwon": 73700,
+   "low_manwon": 51590,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 38.51,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52704[2]",
+   "auction_id": "C32WYGAW",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 559-7 위례헤리움  지층비105호",
+   "appr_manwon": 92000,
+   "low_manwon": 64400,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 93.94,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2026타경50292[2]",
+   "auction_id": "C34AMIRJ",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 562 아이페리온  1층120호",
+   "appr_manwon": 128000,
+   "low_manwon": 89600,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 49.2,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경53409[3]",
+   "auction_id": "C36CBYCW",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 616 대왕빌딩주건축물 1동 1층107호",
+   "appr_manwon": 72600,
+   "low_manwon": 50820,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 37.15,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52704[1]",
+   "auction_id": "C37JCZMX",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 559-7 위례헤리움  지층비104호",
+   "appr_manwon": 48600,
+   "low_manwon": 34020,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 48.48,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52704[4]",
+   "auction_id": "C49XROGC",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 559-7 위례헤리움  1층107호",
+   "appr_manwon": 42100,
+   "low_manwon": 29470,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 46.97,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경53409[1]",
+   "auction_id": "C64JNOWV",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 616 대왕빌딩주건축물 1동 1층102호",
+   "appr_manwon": 57600,
+   "low_manwon": 40320,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 30.11,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2024타경5112[1]",
+   "auction_id": "C83WJLRK",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 위례광장로 45, 1층102호",
+   "appr_manwon": 56000,
+   "low_manwon": 27440,
+   "fails": 2,
+   "bidding_date": "2026-11-02",
+   "area": 40.88,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경53290[1]",
+   "auction_id": "C85AQTTL",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 신흥동 3788-1 동호타운빌  2층201호",
+   "appr_manwon": 37100,
+   "low_manwon": 18179,
+   "fails": 2,
+   "bidding_date": "2026-11-02",
+   "area": 89.32,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2026타경50292[1]",
+   "auction_id": "C87GUWBI",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 562 아이페리온  1층121호",
+   "appr_manwon": 120000,
+   "low_manwon": 84000,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 46.74,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52704[3]",
+   "auction_id": "C99OKIVY",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 559-7 위례헤리움  지층비107호",
+   "appr_manwon": 84000,
+   "low_manwon": 58800,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 152.97,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경53390[1]",
+   "auction_id": "C20LIODG",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 금토동 산59-1 ",
+   "appr_manwon": 9262,
+   "low_manwon": 6483,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": null,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경3977[4]",
+   "auction_id": "C38BRUSB",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 572 현대지식산업센터성남고등  지하4층디-비407호",
+   "appr_manwon": 8700,
+   "low_manwon": 4263,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 24.36,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52839[1]",
+   "auction_id": "C57JQIGR",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 509-1 우성트램타워주건축물제1동  1층에이-122호",
+   "appr_manwon": 121900,
+   "low_manwon": 41811,
+   "fails": 3,
+   "bidding_date": "2026-11-16",
+   "area": 49.94,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경3977[2]",
+   "auction_id": "C61MZBBT",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 572 현대지식산업센터성남고등  4층에이-425호",
+   "appr_manwon": 37800,
+   "low_manwon": 18522,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 44.74,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경3977[1]",
+   "auction_id": "C79HUNBR",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 572 현대지식산업센터성남고등  4층에이-424호",
+   "appr_manwon": 33700,
+   "low_manwon": 16513,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 39.48,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경3977[3]",
+   "auction_id": "C84PSOSM",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 572 현대지식산업센터성남고등  지하4층디-비406호",
+   "appr_manwon": 8700,
+   "low_manwon": 4263,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 24.36,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2026타경50020[1]",
+   "auction_id": "C01CKAXV",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 태평동 3294  4층402호",
+   "appr_manwon": 31900,
+   "low_manwon": 15631,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 60.51,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2024타경67998[1]",
+   "auction_id": "C20RAHZC",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 시민로133번길 9, 7층702호 (신흥동,미래타운5차)",
+   "appr_manwon": 47700,
+   "low_manwon": 1347,
+   "fails": 10,
+   "bidding_date": "2026-11-23",
+   "area": 67.05,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52612[1]",
+   "auction_id": "C42LWPGN",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 시흥동 280-49 ",
+   "appr_manwon": 27584,
+   "low_manwon": 9461,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": null,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경51925[1]",
+   "auction_id": "C48PPGIO",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 수진동 4762-18 6층 601호",
+   "appr_manwon": 25700,
+   "low_manwon": 3023,
+   "fails": 6,
+   "bidding_date": "2026-11-23",
+   "area": 63.8,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52892[1]",
+   "auction_id": "C81HXJLB",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 단대동 190-10 ",
+   "appr_manwon": 105352,
+   "low_manwon": 51622,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 281.4,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52612[2]",
+   "auction_id": "C92TNGZM",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 시흥동 280-53 ",
+   "appr_manwon": 109804,
+   "low_manwon": 37662,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": null,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2026타경115[1]",
+   "auction_id": "C27GKVYA",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 593 더판교이룸  2층202호",
+   "appr_manwon": 108200,
+   "low_manwon": 53018,
+   "fails": 2,
+   "bidding_date": "2026-11-30",
+   "area": 126.4,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2026타경115[2]",
+   "auction_id": "C50GIRSP",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 고등동 593 더판교이룸  2층204호",
+   "appr_manwon": 108200,
+   "low_manwon": 53018,
+   "fails": 2,
+   "bidding_date": "2026-11-30",
+   "area": 126.4,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경3717[1]",
+   "auction_id": "C78FPCAW",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 창곡동 562 아이페리온  7층705호",
+   "appr_manwon": 125000,
+   "low_manwon": 61250,
+   "fails": 2,
+   "bidding_date": "2026-11-30",
+   "area": 167.28,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2026타경50199[1]",
+   "auction_id": "C79MVQKO",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 신흥동 2571 렉스타워1차 13층 1303호",
+   "appr_manwon": 46000,
+   "low_manwon": 32200,
+   "fails": 1,
+   "bidding_date": "2026-11-30",
+   "area": 74.51,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2025타경52550[1]",
+   "auction_id": "C44PHUQO",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 심곡동 454 ",
+   "appr_manwon": 17098,
+   "low_manwon": 5864,
+   "fails": 3,
+   "bidding_date": "",
+   "area": null,
+   "reason": "아파트 아님"
+  },
+  {
+   "key": "2026타경52[1]",
+   "auction_id": "C45DZZDJ",
+   "region": "경기 성남시 분당구",
+   "address": "경기도 성남시 분당구 이매동 100 이매촌삼성아파트 1015동 3층302호",
+   "appr_manwon": 162000,
+   "low_manwon": 162000,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 84.94,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경50816[1]",
+   "auction_id": "C64STUIR",
+   "region": "경기 성남시 분당구",
+   "address": "경기도 성남시 분당구 백현동 608 더샵판교퍼스트파크 107동 15층1502호",
+   "appr_manwon": 150000,
+   "low_manwon": 150000,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 84.97,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경50765[1]",
+   "auction_id": "C36PBQZC",
+   "region": "경기 성남시 분당구",
+   "address": "경기도 성남시 분당구 백현동 608 더샵판교퍼스트파크 104동 10층1004호",
+   "appr_manwon": 228000,
+   "low_manwon": 159600,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 129.83,
+   "reason": "예산초과"
+  },
+  {
+   "key": "2026타경20745[1]",
+   "auction_id": "C67VKHJE",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진건읍 용정리 855 진건주공2단지 201동 8층801호",
+   "appr_manwon": 19900,
+   "low_manwon": 13930,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 49.95,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경72706[1]",
+   "auction_id": "C44SHXNH",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 금곡리 1108 금강펜테리움아파트 1907동 14층1401호",
+   "appr_manwon": 50600,
+   "low_manwon": 35420,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": null,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경71740[1]",
+   "auction_id": "C96CIVJQ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 683-25 진주아파트 202동 1층105호",
+   "appr_manwon": 12500,
+   "low_manwon": 6125,
+   "fails": 2,
+   "bidding_date": "2026-11-11",
+   "area": 39.96,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2024타경5360[1]",
+   "auction_id": "C62QFBRJ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 해밀예당3로 68, 1906동 1층101호 (금강펜테리움아파트)",
+   "appr_manwon": 49700,
+   "low_manwon": 34790,
+   "fails": 1,
+   "bidding_date": "",
+   "area": null,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경72740[1]",
+   "auction_id": "C07DQXQZ",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 수택동 506-9  8층808호",
+   "appr_manwon": 24900,
+   "low_manwon": 17430,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 42.72,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경72387[1]",
+   "auction_id": "C25GZSNK",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 수택동 482-2 수택동성원상떼빌 101동 14층1413호",
+   "appr_manwon": 36200,
+   "low_manwon": 25340,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 53.28,
+   "reason": "면적미달"
+  }
+ ]
+}

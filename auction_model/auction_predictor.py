@@ -237,9 +237,9 @@ def win_prob(pool, a, b, g):
     return float(1 / (1 + np.exp(-(a * _logit(raw_prob(pool, g)) + b))))
 
 
-def predict(danji, auction_id):
-    cfg = json.load(open(os.path.join(HERE, 'auction_config.json')))
-    df = load_train()
+def predict_dict(danji, auction_id, df=None, cfg=None):
+    cfg = cfg or json.load(open(os.path.join(HERE, 'auction_config.json')))
+    df = load_train() if df is None else df
     row, info = target_row(danji, auction_id, df)
     T = row.date.iloc[0]
     c = float(np.mean([fit_predict(m, df, row, T)[0] for m in ENSEMBLE]))
@@ -271,7 +271,11 @@ def predict(danji, auction_id):
                p50_ensemble_manwon=prices['50%'], p50_ensemble_eok=round(prices['50%'] / 1e4, 2),
                model_error_note=f"평균 오차 약 {cfg['mape_recent']}% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
                warnings=warn)
-    print(json.dumps(out, ensure_ascii=False))
+    return out
+
+
+def predict(danji, auction_id):
+    print(json.dumps(predict_dict(danji, auction_id), ensure_ascii=False))
 
 
 def calibrate(start='2024-01-01'):
