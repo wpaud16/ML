@@ -1,4 +1,119 @@
 {
+ "2024타경6202[1]|2026-11-01": {
+  "key": "2024타경6202[1]",
+  "danji_name": "진접센트레빌시티1단지",
+  "area": 84.98,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-01",
+  "pred_date": "2026-11-01",
+  "low_manwon": 35600,
+  "bid_by_prob_manwon": {
+   "40%": 35600,
+   "45%": 35600,
+   "50%": 35600,
+   "55%": 35600,
+   "60%": 35600
+  },
+  "status": "매각",
+  "checked": "2026-11-02",
+  "actual_manwon": 35605,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 0.0,
+  "band": "60% 초과"
+ },
+ "2024타경83810[1]|2026-11-01": {
+  "key": "2024타경83810[1]",
+  "danji_name": "호평마을중흥에스-클래스로하스",
+  "area": 158.71,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-01",
+  "pred_date": "2026-11-01",
+  "low_manwon": 31311,
+  "bid_by_prob_manwon": {
+   "40%": 44251,
+   "45%": 44606,
+   "50%": 44978,
+   "55%": 45382,
+   "60%": 45813
+  },
+  "status": "매각",
+  "checked": "2026-11-02",
+  "actual_manwon": 48000,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 6.7,
+  "band": "60% 초과"
+ },
+ "2025타경3729[1]|2026-11-01": {
+  "key": "2025타경3729[1]",
+  "danji_name": "평내마을신명스카이뷰",
+  "area": 84.94,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-01",
+  "pred_date": "2026-11-01",
+  "low_manwon": 38300,
+  "bid_by_prob_manwon": {
+   "40%": 38300,
+   "45%": 38300,
+   "50%": 38300,
+   "55%": 38300,
+   "60%": 38300
+  },
+  "status": "매각",
+  "checked": "2026-11-02",
+  "actual_manwon": 38300,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 0.0,
+  "band": "60% 초과"
+ },
+ "2025타경4459[1]|2026-11-01": {
+  "key": "2025타경4459[1]",
+  "danji_name": "구리갈매푸르지오",
+  "area": 84.77,
+  "region": "경기 구리시",
+  "bidding_date": "2026-11-01",
+  "pred_date": "2026-11-01",
+  "low_manwon": 81200,
+  "bid_by_prob_manwon": {
+   "40%": 81200,
+   "45%": 81200,
+   "50%": 81827,
+   "55%": 82561,
+   "60%": 83346
+  },
+  "status": "매각",
+  "checked": "2026-11-02",
+  "actual_manwon": 85000,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 3.9,
+  "band": "60% 초과"
+ },
+ "2025타경52013[1]|2026-11-01": {
+  "key": "2025타경52013[1]",
+  "danji_name": "고덕롯데캐슬베네루체",
+  "area": 84.15,
+  "region": "서울 강동구",
+  "bidding_date": "2026-11-01",
+  "pred_date": "2026-11-01",
+  "low_manwon": 62800,
+  "bid_by_prob_manwon": {
+   "40%": 136263,
+   "45%": 137355,
+   "50%": 138502,
+   "55%": 139745,
+   "60%": 141073
+  },
+  "status": "매각",
+  "checked": "2026-11-02",
+  "actual_manwon": 71099,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": -48.7,
+  "band": "40% 미만"
+ },
  "2025타경71670[1]|2026-10-31": {
   "key": "2025타경71670[1]",
   "danji_name": "진주8차",
@@ -20,6 +135,29 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -4.7,
+  "band": "40% 미만"
+ },
+ "2025타경71670[1]|2026-11-01": {
+  "key": "2025타경71670[1]",
+  "danji_name": "진주8차",
+  "area": 55.8,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-01",
+  "pred_date": "2026-11-01",
+  "low_manwon": 9100,
+  "bid_by_prob_manwon": {
+   "40%": 9917,
+   "45%": 9996,
+   "50%": 10080,
+   "55%": 10170,
+   "60%": 10267
+  },
+  "status": "매각",
+  "checked": "2026-11-02",
+  "actual_manwon": 9630,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": -4.5,
   "band": "40% 미만"
  }
 }
