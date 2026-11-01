@@ -204,6 +204,42 @@ def update_results(today):
     return dict(summary=summ, items=recent)
 
 
+# ---------------- 권리 위험 판정: 리치고 키워드 vs 등기 기준 권리분석 요약 ----------------
+HARD_KW = ['지분', '유치권', '법정지상권', '별도등기', '대지권미등기']   # 요약으로 확인할 수 없는 특수물건 → 숨김
+
+
+def risk_check(keyword, appr_vs_sise, rights):
+    """decision: show / check(키워드와 요약이 다름 → 확인 필요) / hide(둘 다 경고 또는 특수물건)."""
+    kw = [k.strip() for k in (keyword or '').split(',') if k.strip()]
+    hard = [k for k in kw if any(h in k for h in HARD_KW)]
+    r = rights or {}
+    known = bool(r.get('hasRegistryData'))
+    s_tenant = (r.get('assumedTenantCount') or 0) + (r.get('uncertainTenantCount') or 0) > 0
+    s_right = (r.get('assumedRightCount') or 0) > 0 or bool(r.get('hasAssumption'))
+    k_tenant = any('대항력' in k for k in kw)
+    k_right = any('선순위' in k for k in kw)
+    resale = any('재매각' in k for k in kw)
+    out = dict(keywords=kw, summary=dict(registry=known, tenant_risk=s_tenant, right_risk=s_right,
+                                         base_right=(r.get('baseRight') or {}).get('type'),
+                                         base_date=((r.get('baseRight') or {}).get('date') or '')[:10]),
+               resale=resale)
+    if hard or (appr_vs_sise is not None and appr_vs_sise < 0.6):
+        return dict(out, decision='hide', reason='특수물건(' + ','.join(hard or ['감정가<시세60%']) + ')')
+    reasons_hide, reasons_check = [], []
+    for k_flag, s_flag, name in [(k_tenant, s_tenant, '대항력 임차인'), (k_right, s_right, '인수 권리')]:
+        if k_flag and s_flag:
+            reasons_hide.append(f'{name}: 키워드·요약 모두 있음')
+        elif k_flag and not known:
+            reasons_check.append(f'{name}: 키워드엔 있음·등기 요약 없음(미확인)')
+        elif k_flag != s_flag:
+            reasons_check.append(f'{name}: ' + ('키워드엔 있음·요약엔 없음' if k_flag else '요약엔 있음·키워드엔 없음'))
+    if reasons_hide:
+        return dict(out, decision='hide', reason=' / '.join(reasons_hide))
+    if reasons_check:
+        return dict(out, decision='check', reason=' / '.join(reasons_check))
+    return dict(out, decision='show', reason='재매각' if resale else '')
+
+
 def main():
     now = datetime.now(KST)
     cache = json.load(open(MAP_PATH)) if os.path.exists(MAP_PATH) else {}
@@ -238,6 +274,11 @@ def main():
             try:
                 p = ap.predict_dict(dj, it['id'], df=df, cfg=cfg)
                 items[key] = dict(base, danji_id=dj, danji_name=p.get('name'), **{k: v for k, v in p.items() if k not in ('address', 'area')})
+                try:
+                    pg = auction_detail(it['id']) or {}
+                except Exception:
+                    pg = {}
+                items[key]['risk'] = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
             except SystemExit as e:
                 failed.append(dict(base, danji_id=dj, reason=f'예측 실패: {e}'))
             except Exception as e:
