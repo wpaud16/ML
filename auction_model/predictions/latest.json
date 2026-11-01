@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-31T16:57:24+09:00",
- "date": "2026-10-31",
+ "generated_at": "2026-11-01T09:03:12+09:00",
+ "date": "2026-11-01",
  "model": "앙상블(부스팅+군집별회귀)",
  "config_built": "2026-10-30",
  "filters": {
@@ -8,8 +8,8 @@
   "max_low_manwon": 130000
  },
  "counts": {
-  "predicted": 74,
-  "skipped": 92,
+  "predicted": 80,
+  "skipped": 96,
   "failed": 13
  },
  "errors": [],
@@ -40,42 +40,47 @@
     "applied": true,
     "adj_pct": -3.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 95887,
-     "45%": 96656,
-     "50%": 97463,
-     "55%": 98337,
-     "60%": 99272
+     "40%": 95817,
+     "45%": 96585,
+     "50%": 97391,
+     "55%": 98265,
+     "60%": 99199
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 93011,
-    "45%": 93756,
-    "50%": 94539,
-    "55%": 95387,
-    "60%": 96294
+    "40%": 92942,
+    "45%": 93687,
+    "50%": 94469,
+    "55%": 95317,
+    "60%": 96223
    },
    "bid_by_prob_eok": {
-    "40%": 9.3,
-    "45%": 9.38,
+    "40%": 9.29,
+    "45%": 9.37,
     "50%": 9.45,
-    "55%": 9.54,
-    "60%": 9.63
+    "55%": 9.53,
+    "60%": 9.62
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 90500,
+     "bid_eok": 9.05,
+     "prob": 25
+    },
+    {
      "bid_manwon": 91000,
      "bid_eok": 9.1,
-     "prob": 27
+     "prob": 28
     },
     {
      "bid_manwon": 91500,
      "bid_eok": 9.15,
-     "prob": 30
+     "prob": 31
     },
     {
      "bid_manwon": 92000,
      "bid_eok": 9.2,
-     "prob": 33
+     "prob": 34
     },
     {
      "bid_manwon": 92500,
@@ -90,7 +95,7 @@
     {
      "bid_manwon": 93500,
      "bid_eok": 9.35,
-     "prob": 43
+     "prob": 44
     },
     {
      "bid_manwon": 94000,
@@ -115,12 +120,12 @@
     {
      "bid_manwon": 96000,
      "bid_eok": 9.6,
-     "prob": 58
+     "prob": 59
     },
     {
      "bid_manwon": 96500,
      "bid_eok": 9.65,
-     "prob": 61
+     "prob": 62
     },
     {
      "bid_manwon": 97000,
@@ -135,21 +140,204 @@
     {
      "bid_manwon": 98000,
      "bid_eok": 9.8,
-     "prob": 69
+     "prob": 70
     },
     {
      "bid_manwon": 98500,
      "bid_eok": 9.85,
-     "prob": 72
+     "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 94539,
+   "p50_ensemble_manwon": 94469,
    "p50_ensemble_eok": 9.45,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [],
    "notes": [
     "소규모 단지(160세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
    ]
+  },
+  "2025타경52013[1]": {
+   "key": "2025타경52013[1]",
+   "auction_id": "C56WSABF",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 상일동 514 고덕롯데캐슬베네루체 719동 3층304호",
+   "appr_manwon": 78500,
+   "low_manwon": 62800,
+   "fails": 1,
+   "bidding_date": "2026-11-01",
+   "area": 84.15,
+   "danji_id": "a3itVbo",
+   "danji_name": "고덕롯데캐슬베네루체",
+   "name": "고덕롯데캐슬베네루체",
+   "case": "2025타경52013",
+   "keyword": "재매각,지분매각,토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 7.85,
+   "low_eok": 6.28,
+   "richgo_sise_eok": 19.398,
+   "appr_vs_sise": 0.405,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1859,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 136263,
+     "45%": 137355,
+     "50%": 138502,
+     "55%": 139745,
+     "60%": 141073
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 136263,
+    "45%": 137355,
+    "50%": 138502,
+    "55%": 139745,
+    "60%": 141073
+   },
+   "bid_by_prob_eok": {
+    "40%": 13.63,
+    "45%": 13.74,
+    "50%": 13.85,
+    "55%": 13.97,
+    "60%": 14.11
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 133000,
+     "bid_eok": 13.3,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 133500,
+     "bid_eok": 13.35,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 134000,
+     "bid_eok": 13.4,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 134500,
+     "bid_eok": 13.45,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 135000,
+     "bid_eok": 13.5,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 135500,
+     "bid_eok": 13.55,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 136000,
+     "bid_eok": 13.6,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 136500,
+     "bid_eok": 13.65,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 137000,
+     "bid_eok": 13.7,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 137500,
+     "bid_eok": 13.75,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 138000,
+     "bid_eok": 13.8,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 138500,
+     "bid_eok": 13.85,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 139000,
+     "bid_eok": 13.9,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 139500,
+     "bid_eok": 13.95,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 140000,
+     "bid_eok": 14.0,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 140500,
+     "bid_eok": 14.05,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 141000,
+     "bid_eok": 14.1,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 141500,
+     "bid_eok": 14.15,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 142000,
+     "bid_eok": 14.2,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 142500,
+     "bid_eok": 14.25,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 143000,
+     "bid_eok": 14.3,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 143500,
+     "bid_eok": 14.35,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 144000,
+     "bid_eok": 14.4,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 144500,
+     "bid_eok": 14.45,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 145000,
+     "bid_eok": 14.5,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 138502,
+   "p50_ensemble_eok": 13.85,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
+    "감정가가 시세의 60% 미만 — 지분경매 의심, 예측 부적합"
+   ],
+   "notes": []
   },
   "2025타경51453[1]": {
    "key": "2025타경51453[1]",
@@ -179,9 +367,9 @@
     "bid_by_prob_manwon_raw": {
      "40%": 67000,
      "45%": 67000,
-     "50%": 67319,
-     "55%": 67924,
-     "60%": 68569
+     "50%": 67000,
+     "55%": 67000,
+     "60%": 67519
     }
    },
    "bid_by_prob_manwon": {
@@ -202,16 +390,6 @@
     {
      "bid_manwon": 67000,
      "bid_eok": 6.7,
-     "prob": 64
-    },
-    {
-     "bid_manwon": 67500,
-     "bid_eok": 6.75,
-     "prob": 68
-    },
-    {
-     "bid_manwon": 68000,
-     "bid_eok": 6.8,
      "prob": 72
     }
    ],
@@ -249,161 +427,161 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 140746,
-     "45%": 141875,
-     "50%": 143059,
-     "55%": 144342,
-     "60%": 145714
+     "40%": 139528,
+     "45%": 140647,
+     "50%": 141820,
+     "55%": 143093,
+     "60%": 144453
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 140746,
-    "45%": 141875,
-    "50%": 143059,
-    "55%": 144342,
-    "60%": 145714
+    "40%": 139528,
+    "45%": 140647,
+    "50%": 141820,
+    "55%": 143093,
+    "60%": 144453
    },
    "bid_by_prob_eok": {
-    "40%": 14.07,
-    "45%": 14.19,
-    "50%": 14.31,
-    "55%": 14.43,
-    "60%": 14.57
+    "40%": 13.95,
+    "45%": 14.06,
+    "50%": 14.18,
+    "55%": 14.31,
+    "60%": 14.45
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 136000,
+     "bid_eok": 13.6,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 136500,
+     "bid_eok": 13.65,
+     "prob": 27
+    },
+    {
      "bid_manwon": 137000,
      "bid_eok": 13.7,
-     "prob": 25
+     "prob": 29
     },
     {
      "bid_manwon": 137500,
      "bid_eok": 13.75,
-     "prob": 27
+     "prob": 31
     },
     {
      "bid_manwon": 138000,
      "bid_eok": 13.8,
-     "prob": 29
+     "prob": 33
     },
     {
      "bid_manwon": 138500,
      "bid_eok": 13.85,
-     "prob": 30
+     "prob": 35
     },
     {
      "bid_manwon": 139000,
      "bid_eok": 13.9,
-     "prob": 32
+     "prob": 38
     },
     {
      "bid_manwon": 139500,
      "bid_eok": 13.95,
-     "prob": 35
+     "prob": 40
     },
     {
      "bid_manwon": 140000,
      "bid_eok": 14.0,
-     "prob": 37
+     "prob": 42
     },
     {
      "bid_manwon": 140500,
      "bid_eok": 14.05,
-     "prob": 39
+     "prob": 44
     },
     {
      "bid_manwon": 141000,
      "bid_eok": 14.1,
-     "prob": 41
+     "prob": 47
     },
     {
      "bid_manwon": 141500,
      "bid_eok": 14.15,
-     "prob": 43
+     "prob": 49
     },
     {
      "bid_manwon": 142000,
      "bid_eok": 14.2,
-     "prob": 46
+     "prob": 51
     },
     {
      "bid_manwon": 142500,
      "bid_eok": 14.25,
-     "prob": 48
+     "prob": 53
     },
     {
      "bid_manwon": 143000,
      "bid_eok": 14.3,
-     "prob": 50
+     "prob": 55
     },
     {
      "bid_manwon": 143500,
      "bid_eok": 14.35,
-     "prob": 52
+     "prob": 57
     },
     {
      "bid_manwon": 144000,
      "bid_eok": 14.4,
-     "prob": 54
+     "prob": 58
     },
     {
      "bid_manwon": 144500,
      "bid_eok": 14.45,
-     "prob": 56
+     "prob": 60
     },
     {
      "bid_manwon": 145000,
      "bid_eok": 14.5,
-     "prob": 57
+     "prob": 62
     },
     {
      "bid_manwon": 145500,
      "bid_eok": 14.55,
-     "prob": 59
+     "prob": 64
     },
     {
      "bid_manwon": 146000,
      "bid_eok": 14.6,
-     "prob": 61
+     "prob": 66
     },
     {
      "bid_manwon": 146500,
      "bid_eok": 14.65,
-     "prob": 63
+     "prob": 68
     },
     {
      "bid_manwon": 147000,
      "bid_eok": 14.7,
-     "prob": 65
+     "prob": 69
     },
     {
      "bid_manwon": 147500,
      "bid_eok": 14.75,
-     "prob": 66
+     "prob": 71
     },
     {
      "bid_manwon": 148000,
      "bid_eok": 14.8,
-     "prob": 68
+     "prob": 73
     },
     {
      "bid_manwon": 148500,
      "bid_eok": 14.85,
-     "prob": 70
-    },
-    {
-     "bid_manwon": 149000,
-     "bid_eok": 14.9,
-     "prob": 72
-    },
-    {
-     "bid_manwon": 149500,
-     "bid_eok": 14.95,
-     "prob": 74
+     "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 143059,
-   "p50_ensemble_eok": 14.31,
+   "p50_ensemble_manwon": 141820,
+   "p50_ensemble_eok": 14.18,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
@@ -436,86 +614,91 @@
     "applied": true,
     "adj_pct": -3.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 64112,
-     "45%": 64626,
-     "50%": 65165,
-     "55%": 65750,
-     "60%": 66375
+     "40%": 63971,
+     "45%": 64484,
+     "50%": 65022,
+     "55%": 65605,
+     "60%": 66229
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 62188,
-    "45%": 62687,
-    "50%": 63210,
-    "55%": 63777,
-    "60%": 64384
+    "40%": 62052,
+    "45%": 62549,
+    "50%": 63071,
+    "55%": 63637,
+    "60%": 64242
    },
    "bid_by_prob_eok": {
-    "40%": 6.22,
-    "45%": 6.27,
-    "50%": 6.32,
-    "55%": 6.38,
-    "60%": 6.44
+    "40%": 6.21,
+    "45%": 6.25,
+    "50%": 6.31,
+    "55%": 6.36,
+    "60%": 6.42
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 60500,
+     "bid_eok": 6.05,
+     "prob": 26
+    },
+    {
      "bid_manwon": 61000,
      "bid_eok": 6.1,
-     "prob": 29
+     "prob": 30
     },
     {
      "bid_manwon": 61500,
      "bid_eok": 6.15,
-     "prob": 33
+     "prob": 35
     },
     {
      "bid_manwon": 62000,
      "bid_eok": 6.2,
-     "prob": 38
+     "prob": 39
     },
     {
      "bid_manwon": 62500,
      "bid_eok": 6.25,
-     "prob": 43
+     "prob": 45
     },
     {
      "bid_manwon": 63000,
      "bid_eok": 6.3,
-     "prob": 48
+     "prob": 49
     },
     {
      "bid_manwon": 63500,
      "bid_eok": 6.35,
-     "prob": 53
+     "prob": 54
     },
     {
      "bid_manwon": 64000,
      "bid_eok": 6.4,
-     "prob": 57
+     "prob": 58
     },
     {
      "bid_manwon": 64500,
      "bid_eok": 6.45,
-     "prob": 61
+     "prob": 62
     },
     {
      "bid_manwon": 65000,
      "bid_eok": 6.5,
-     "prob": 65
+     "prob": 66
     },
     {
      "bid_manwon": 65500,
      "bid_eok": 6.55,
-     "prob": 69
+     "prob": 70
     },
     {
      "bid_manwon": 66000,
      "bid_eok": 6.6,
-     "prob": 73
+     "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 63210,
-   "p50_ensemble_eok": 6.32,
+   "p50_ensemble_manwon": 63071,
+   "p50_ensemble_eok": 6.31,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
@@ -550,151 +733,151 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 131606,
-     "45%": 132662,
-     "50%": 133769,
-     "55%": 134969,
-     "60%": 136252
+     "40%": 130705,
+     "45%": 131753,
+     "50%": 132852,
+     "55%": 134045,
+     "60%": 135319
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 131606,
-    "45%": 132662,
-    "50%": 133769,
-    "55%": 134969,
-    "60%": 136252
+    "40%": 130705,
+    "45%": 131753,
+    "50%": 132852,
+    "55%": 134045,
+    "60%": 135319
    },
    "bid_by_prob_eok": {
-    "40%": 13.16,
-    "45%": 13.27,
-    "50%": 13.38,
-    "55%": 13.5,
-    "60%": 13.63
+    "40%": 13.07,
+    "45%": 13.18,
+    "50%": 13.29,
+    "55%": 13.4,
+    "60%": 13.53
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 127500,
+     "bid_eok": 12.75,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 128000,
+     "bid_eok": 12.8,
+     "prob": 28
+    },
+    {
      "bid_manwon": 128500,
      "bid_eok": 12.85,
-     "prob": 27
+     "prob": 30
     },
     {
      "bid_manwon": 129000,
      "bid_eok": 12.9,
-     "prob": 28
+     "prob": 32
     },
     {
      "bid_manwon": 129500,
      "bid_eok": 12.95,
-     "prob": 30
+     "prob": 34
     },
     {
      "bid_manwon": 130000,
      "bid_eok": 13.0,
-     "prob": 33
+     "prob": 37
     },
     {
      "bid_manwon": 130500,
      "bid_eok": 13.05,
-     "prob": 35
+     "prob": 39
     },
     {
      "bid_manwon": 131000,
      "bid_eok": 13.1,
-     "prob": 37
+     "prob": 41
     },
     {
      "bid_manwon": 131500,
      "bid_eok": 13.15,
-     "prob": 39
+     "prob": 44
     },
     {
      "bid_manwon": 132000,
      "bid_eok": 13.2,
-     "prob": 42
+     "prob": 46
     },
     {
      "bid_manwon": 132500,
      "bid_eok": 13.25,
-     "prob": 44
+     "prob": 48
     },
     {
      "bid_manwon": 133000,
      "bid_eok": 13.3,
-     "prob": 47
+     "prob": 51
     },
     {
      "bid_manwon": 133500,
      "bid_eok": 13.35,
-     "prob": 49
+     "prob": 53
     },
     {
      "bid_manwon": 134000,
      "bid_eok": 13.4,
-     "prob": 51
+     "prob": 55
     },
     {
      "bid_manwon": 134500,
      "bid_eok": 13.45,
-     "prob": 53
+     "prob": 57
     },
     {
      "bid_manwon": 135000,
      "bid_eok": 13.5,
-     "prob": 55
+     "prob": 59
     },
     {
      "bid_manwon": 135500,
      "bid_eok": 13.55,
-     "prob": 57
+     "prob": 61
     },
     {
      "bid_manwon": 136000,
      "bid_eok": 13.6,
-     "prob": 59
+     "prob": 63
     },
     {
      "bid_manwon": 136500,
      "bid_eok": 13.65,
-     "prob": 61
+     "prob": 65
     },
     {
      "bid_manwon": 137000,
      "bid_eok": 13.7,
-     "prob": 63
+     "prob": 67
     },
     {
      "bid_manwon": 137500,
      "bid_eok": 13.75,
-     "prob": 65
+     "prob": 69
     },
     {
      "bid_manwon": 138000,
      "bid_eok": 13.8,
-     "prob": 67
+     "prob": 71
     },
     {
      "bid_manwon": 138500,
      "bid_eok": 13.85,
-     "prob": 69
+     "prob": 73
     },
     {
      "bid_manwon": 139000,
      "bid_eok": 13.9,
-     "prob": 71
-    },
-    {
-     "bid_manwon": 139500,
-     "bid_eok": 13.95,
-     "prob": 73
-    },
-    {
-     "bid_manwon": 140000,
-     "bid_eok": 14.0,
      "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 133769,
-   "p50_ensemble_eok": 13.38,
+   "p50_ensemble_manwon": 132852,
+   "p50_ensemble_eok": 13.29,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
@@ -728,151 +911,151 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 134229,
-     "45%": 135305,
-     "50%": 136434,
-     "55%": 137658,
-     "60%": 138967
+     "40%": 133309,
+     "45%": 134378,
+     "50%": 135500,
+     "55%": 136716,
+     "60%": 138015
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 134229,
-    "45%": 135305,
-    "50%": 136434,
-    "55%": 137658,
-    "60%": 138967
+    "40%": 133309,
+    "45%": 134378,
+    "50%": 135500,
+    "55%": 136716,
+    "60%": 138015
    },
    "bid_by_prob_eok": {
-    "40%": 13.42,
-    "45%": 13.53,
-    "50%": 13.64,
-    "55%": 13.77,
-    "60%": 13.9
+    "40%": 13.33,
+    "45%": 13.44,
+    "50%": 13.55,
+    "55%": 13.67,
+    "60%": 13.8
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 130000,
+     "bid_eok": 13.0,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 130500,
+     "bid_eok": 13.05,
+     "prob": 28
+    },
+    {
      "bid_manwon": 131000,
      "bid_eok": 13.1,
-     "prob": 26
+     "prob": 30
     },
     {
      "bid_manwon": 131500,
      "bid_eok": 13.15,
-     "prob": 28
+     "prob": 32
     },
     {
      "bid_manwon": 132000,
      "bid_eok": 13.2,
-     "prob": 30
+     "prob": 34
     },
     {
      "bid_manwon": 132500,
      "bid_eok": 13.25,
-     "prob": 32
+     "prob": 36
     },
     {
      "bid_manwon": 133000,
      "bid_eok": 13.3,
-     "prob": 34
+     "prob": 39
     },
     {
      "bid_manwon": 133500,
      "bid_eok": 13.35,
-     "prob": 37
+     "prob": 41
     },
     {
      "bid_manwon": 134000,
      "bid_eok": 13.4,
-     "prob": 39
+     "prob": 43
     },
     {
      "bid_manwon": 134500,
      "bid_eok": 13.45,
-     "prob": 41
+     "prob": 46
     },
     {
      "bid_manwon": 135000,
      "bid_eok": 13.5,
-     "prob": 44
+     "prob": 48
     },
     {
      "bid_manwon": 135500,
      "bid_eok": 13.55,
-     "prob": 46
+     "prob": 50
     },
     {
      "bid_manwon": 136000,
      "bid_eok": 13.6,
-     "prob": 48
+     "prob": 52
     },
     {
      "bid_manwon": 136500,
      "bid_eok": 13.65,
-     "prob": 50
+     "prob": 54
     },
     {
      "bid_manwon": 137000,
      "bid_eok": 13.7,
-     "prob": 52
+     "prob": 56
     },
     {
      "bid_manwon": 137500,
      "bid_eok": 13.75,
-     "prob": 54
+     "prob": 58
     },
     {
      "bid_manwon": 138000,
      "bid_eok": 13.8,
-     "prob": 56
+     "prob": 60
     },
     {
      "bid_manwon": 138500,
      "bid_eok": 13.85,
-     "prob": 58
+     "prob": 62
     },
     {
      "bid_manwon": 139000,
      "bid_eok": 13.9,
-     "prob": 60
+     "prob": 64
     },
     {
      "bid_manwon": 139500,
      "bid_eok": 13.95,
-     "prob": 62
+     "prob": 66
     },
     {
      "bid_manwon": 140000,
      "bid_eok": 14.0,
-     "prob": 64
+     "prob": 68
     },
     {
      "bid_manwon": 140500,
      "bid_eok": 14.05,
-     "prob": 66
+     "prob": 70
     },
     {
      "bid_manwon": 141000,
      "bid_eok": 14.1,
-     "prob": 68
+     "prob": 72
     },
     {
      "bid_manwon": 141500,
      "bid_eok": 14.15,
-     "prob": 70
-    },
-    {
-     "bid_manwon": 142000,
-     "bid_eok": 14.2,
-     "prob": 72
-    },
-    {
-     "bid_manwon": 142500,
-     "bid_eok": 14.25,
      "prob": 74
     }
    ],
-   "p50_ensemble_manwon": 136434,
-   "p50_ensemble_eok": 13.64,
+   "p50_ensemble_manwon": 135500,
+   "p50_ensemble_eok": 13.55,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
@@ -906,221 +1089,216 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 206780,
-     "45%": 208438,
-     "50%": 210177,
-     "55%": 212063,
-     "60%": 214079
+     "40%": 205223,
+     "45%": 206868,
+     "50%": 208595,
+     "55%": 210467,
+     "60%": 212467
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 206780,
-    "45%": 208438,
-    "50%": 210177,
-    "55%": 212063,
-    "60%": 214079
+    "40%": 205223,
+    "45%": 206868,
+    "50%": 208595,
+    "55%": 210467,
+    "60%": 212467
    },
    "bid_by_prob_eok": {
-    "40%": 20.68,
-    "45%": 20.84,
-    "50%": 21.02,
-    "55%": 21.21,
-    "60%": 21.41
+    "40%": 20.52,
+    "45%": 20.69,
+    "50%": 20.86,
+    "55%": 21.05,
+    "60%": 21.25
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 200000,
+     "bid_eok": 20.0,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 200500,
+     "bid_eok": 20.05,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 201000,
+     "bid_eok": 20.1,
+     "prob": 28
+    },
+    {
      "bid_manwon": 201500,
      "bid_eok": 20.15,
-     "prob": 26
+     "prob": 29
     },
     {
      "bid_manwon": 202000,
      "bid_eok": 20.2,
-     "prob": 27
+     "prob": 31
     },
     {
      "bid_manwon": 202500,
      "bid_eok": 20.25,
-     "prob": 28
+     "prob": 32
     },
     {
      "bid_manwon": 203000,
      "bid_eok": 20.3,
-     "prob": 29
+     "prob": 33
     },
     {
      "bid_manwon": 203500,
      "bid_eok": 20.35,
-     "prob": 30
+     "prob": 35
     },
     {
      "bid_manwon": 204000,
      "bid_eok": 20.4,
-     "prob": 32
+     "prob": 36
     },
     {
      "bid_manwon": 204500,
      "bid_eok": 20.45,
-     "prob": 33
+     "prob": 38
     },
     {
      "bid_manwon": 205000,
      "bid_eok": 20.5,
-     "prob": 35
+     "prob": 39
     },
     {
      "bid_manwon": 205500,
      "bid_eok": 20.55,
-     "prob": 36
+     "prob": 41
     },
     {
      "bid_manwon": 206000,
      "bid_eok": 20.6,
-     "prob": 38
+     "prob": 42
     },
     {
      "bid_manwon": 206500,
      "bid_eok": 20.65,
-     "prob": 39
+     "prob": 44
     },
     {
      "bid_manwon": 207000,
      "bid_eok": 20.7,
-     "prob": 41
+     "prob": 45
     },
     {
      "bid_manwon": 207500,
      "bid_eok": 20.75,
-     "prob": 42
+     "prob": 47
     },
     {
      "bid_manwon": 208000,
      "bid_eok": 20.8,
-     "prob": 44
+     "prob": 48
     },
     {
      "bid_manwon": 208500,
      "bid_eok": 20.85,
-     "prob": 45
+     "prob": 50
     },
     {
      "bid_manwon": 209000,
      "bid_eok": 20.9,
-     "prob": 47
+     "prob": 51
     },
     {
      "bid_manwon": 209500,
      "bid_eok": 20.95,
-     "prob": 48
+     "prob": 52
     },
     {
      "bid_manwon": 210000,
      "bid_eok": 21.0,
-     "prob": 50
+     "prob": 54
     },
     {
      "bid_manwon": 210500,
      "bid_eok": 21.05,
-     "prob": 51
+     "prob": 55
     },
     {
      "bid_manwon": 211000,
      "bid_eok": 21.1,
-     "prob": 52
+     "prob": 56
     },
     {
      "bid_manwon": 211500,
      "bid_eok": 21.15,
-     "prob": 54
+     "prob": 58
     },
     {
      "bid_manwon": 212000,
      "bid_eok": 21.2,
-     "prob": 55
+     "prob": 59
     },
     {
      "bid_manwon": 212500,
      "bid_eok": 21.25,
-     "prob": 56
+     "prob": 60
     },
     {
      "bid_manwon": 213000,
      "bid_eok": 21.3,
-     "prob": 57
+     "prob": 61
     },
     {
      "bid_manwon": 213500,
      "bid_eok": 21.35,
-     "prob": 59
+     "prob": 63
     },
     {
      "bid_manwon": 214000,
      "bid_eok": 21.4,
-     "prob": 60
+     "prob": 64
     },
     {
      "bid_manwon": 214500,
      "bid_eok": 21.45,
-     "prob": 61
+     "prob": 65
     },
     {
      "bid_manwon": 215000,
      "bid_eok": 21.5,
-     "prob": 62
+     "prob": 66
     },
     {
      "bid_manwon": 215500,
      "bid_eok": 21.55,
-     "prob": 63
+     "prob": 68
     },
     {
      "bid_manwon": 216000,
      "bid_eok": 21.6,
-     "prob": 65
+     "prob": 69
     },
     {
      "bid_manwon": 216500,
      "bid_eok": 21.65,
-     "prob": 66
+     "prob": 70
     },
     {
      "bid_manwon": 217000,
      "bid_eok": 21.7,
-     "prob": 67
+     "prob": 71
     },
     {
      "bid_manwon": 217500,
      "bid_eok": 21.75,
-     "prob": 68
+     "prob": 73
     },
     {
      "bid_manwon": 218000,
      "bid_eok": 21.8,
-     "prob": 70
-    },
-    {
-     "bid_manwon": 218500,
-     "bid_eok": 21.85,
-     "prob": 71
-    },
-    {
-     "bid_manwon": 219000,
-     "bid_eok": 21.9,
-     "prob": 72
-    },
-    {
-     "bid_manwon": 219500,
-     "bid_eok": 21.95,
      "prob": 74
-    },
-    {
-     "bid_manwon": 220000,
-     "bid_eok": 22.0,
-     "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 210177,
-   "p50_ensemble_eok": 21.02,
+   "p50_ensemble_manwon": 208595,
+   "p50_ensemble_eok": 20.86,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
@@ -1336,23 +1514,23 @@
     "applied": true,
     "adj_pct": -3.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 53552,
-     "45%": 53981,
-     "50%": 54432,
-     "55%": 54920,
-     "60%": 55442
+     "40%": 53536,
+     "45%": 53966,
+     "50%": 54416,
+     "55%": 54904,
+     "60%": 55426
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 51945,
-    "45%": 52362,
-    "50%": 52799,
-    "55%": 53273,
-    "60%": 53779
+    "40%": 51930,
+    "45%": 52347,
+    "50%": 52784,
+    "55%": 53257,
+    "60%": 53763
    },
    "bid_by_prob_eok": {
     "40%": 5.19,
-    "45%": 5.24,
+    "45%": 5.23,
     "50%": 5.28,
     "55%": 5.33,
     "60%": 5.38
@@ -1404,7 +1582,7 @@
      "prob": 72
     }
    ],
-   "p50_ensemble_manwon": 52799,
+   "p50_ensemble_manwon": 52784,
    "p50_ensemble_eok": 5.28,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [],
@@ -1426,7 +1604,7 @@
    "danji_name": "신우아이딜2차",
    "name": "신우아이딜2차",
    "case": "2026타경20366",
-   "keyword": "대항력있는임차인,HUG인수조건변경,토지거래허가구역",
+   "keyword": "HUG인수조건변경,대항력있는임차인,토지거래허가구역",
    "pyeong": "24",
    "appr_eok": 2.16,
    "low_eok": 1.512,
@@ -3087,7 +3265,7 @@
    "danji_name": "별내신일유토빌",
    "name": "별내신일유토빌",
    "case": "2026타경17",
-   "keyword": "토지거래허가구역,중복사건",
+   "keyword": "중복사건,토지거래허가구역",
    "pyeong": "46",
    "appr_eok": 8.05,
    "low_eok": 5.635,
@@ -3351,7 +3529,7 @@
    "danji_name": "부영사랑으로",
    "name": "부영사랑으로",
    "case": "2024타경80514",
-   "keyword": "중복사건,재매각",
+   "keyword": "재매각,중복사건",
    "pyeong": "35",
    "appr_eok": 3.96,
    "low_eok": 2.772,
@@ -3883,7 +4061,7 @@
    "danji_name": "호평파라곤",
    "name": "호평파라곤",
    "case": "2025타경72160",
-   "keyword": "중복사건,토지거래허가구역,병합사건",
+   "keyword": "병합사건,중복사건,토지거래허가구역",
    "pyeong": "48",
    "appr_eok": 6.02,
    "low_eok": 4.214,
@@ -5028,6 +5206,86 @@
    "warnings": [],
    "notes": []
   },
+  "2025타경4418[1]": {
+   "key": "2025타경4418[1]",
+   "auction_id": "C74INYMB",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 888 남양주오남두산위브아파트 101동 7층703호",
+   "appr_manwon": 34000,
+   "low_manwon": 23800,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 84.99,
+   "danji_id": "a1JPksm",
+   "danji_name": "남양주오남두산위브",
+   "name": "남양주오남두산위브",
+   "case": "2025타경4418",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 3.4,
+   "low_eok": 2.38,
+   "richgo_sise_eok": 3.367,
+   "appr_vs_sise": 1.01,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 356,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 27763,
+     "45%": 27986,
+     "50%": 28219,
+     "55%": 28473,
+     "60%": 28743
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 27763,
+    "45%": 27986,
+    "50%": 28219,
+    "55%": 28473,
+    "60%": 28743
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.78,
+    "45%": 2.8,
+    "50%": 2.82,
+    "55%": 2.85,
+    "60%": 2.87
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 28000,
+     "bid_eok": 2.8,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 28500,
+     "bid_eok": 2.85,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 29000,
+     "bid_eok": 2.9,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 29500,
+     "bid_eok": 2.95,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 28219,
+   "p50_ensemble_eok": 2.82,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": []
+  },
   "2025타경72429[1]": {
    "key": "2025타경72429[1]",
    "auction_id": "C99DJHMF",
@@ -5124,7 +5382,7 @@
    "danji_name": "진접센트레빌시티2단지",
    "name": "진접센트레빌시티2단지",
    "case": "2025타경3712",
-   "keyword": "대항력있는임차인,토지거래허가구역,중복사건",
+   "keyword": "중복사건,대항력있는임차인,토지거래허가구역",
    "pyeong": "40",
    "appr_eok": 3.62,
    "low_eok": 2.534,
@@ -5365,7 +5623,7 @@
    "danji_name": "마석대림",
    "name": "마석대림",
    "case": "2025타경3804",
-   "keyword": "토지거래허가구역,중복사건",
+   "keyword": "중복사건,토지거래허가구역",
    "pyeong": "48",
    "appr_eok": 3.95,
    "low_eok": 2.765,
@@ -5657,7 +5915,7 @@
    "danji_name": "마석건영",
    "name": "마석건영",
    "case": "2025타경71278",
-   "keyword": "대항력있는임차인,재매각",
+   "keyword": "재매각,대항력있는임차인",
    "pyeong": "22",
    "appr_eok": 1.52,
    "low_eok": 0.365,
@@ -5715,7 +5973,7 @@
    "appr_manwon": 13000,
    "low_manwon": 9100,
    "fails": 1,
-   "bidding_date": "2026-10-31",
+   "bidding_date": "2026-11-01",
    "area": 55.8,
    "danji_id": "a4aabMg",
    "danji_name": "진주8차",
@@ -5733,19 +5991,19 @@
     "applied": true,
     "adj_pct": -3.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 10246,
-     "45%": 10328,
-     "50%": 10414,
-     "55%": 10507,
-     "60%": 10607
+     "40%": 10224,
+     "45%": 10306,
+     "50%": 10392,
+     "55%": 10485,
+     "60%": 10584
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 9938,
-    "45%": 10018,
-    "50%": 10102,
-    "55%": 10192,
-    "60%": 10289
+    "40%": 9917,
+    "45%": 9996,
+    "50%": 10080,
+    "55%": 10170,
+    "60%": 10267
    },
    "bid_by_prob_eok": {
     "40%": 0.99,
@@ -5758,15 +6016,15 @@
     {
      "bid_manwon": 10000,
      "bid_eok": 1.0,
-     "prob": 44
+     "prob": 45
     },
     {
      "bid_manwon": 10500,
      "bid_eok": 1.05,
-     "prob": 71
+     "prob": 72
     }
    ],
-   "p50_ensemble_manwon": 10102,
+   "p50_ensemble_manwon": 10080,
    "p50_ensemble_eok": 1.01,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
@@ -5775,6 +6033,227 @@
    "notes": [
     "소규모 단지(290세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
    ]
+  },
+  "2024타경83810[1]": {
+   "key": "2024타경83810[1]",
+   "auction_id": "C27KHING",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 호평로 149, 1901동 4층402호 (호평동,호평마을중흥에스-클래스로하스)",
+   "appr_manwon": 63900,
+   "low_manwon": 31311,
+   "fails": 2,
+   "bidding_date": "2026-11-01",
+   "area": 158.71,
+   "danji_id": "a2OzJfL",
+   "danji_name": "호평마을중흥에스-클래스로하스",
+   "name": "호평마을중흥에스-클래스로하스",
+   "case": "2024타경83810",
+   "keyword": "대항력있는임차인",
+   "pyeong": "56",
+   "appr_eok": 6.39,
+   "low_eok": 3.131,
+   "richgo_sise_eok": 5.778,
+   "appr_vs_sise": 1.106,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 484,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 44251,
+     "45%": 44606,
+     "50%": 44978,
+     "55%": 45382,
+     "60%": 45813
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 44251,
+    "45%": 44606,
+    "50%": 44978,
+    "55%": 45382,
+    "60%": 45813
+   },
+   "bid_by_prob_eok": {
+    "40%": 4.43,
+    "45%": 4.46,
+    "50%": 4.5,
+    "55%": 4.54,
+    "60%": 4.58
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 43500,
+     "bid_eok": 4.35,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 44000,
+     "bid_eok": 4.4,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 44500,
+     "bid_eok": 4.45,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 45000,
+     "bid_eok": 4.5,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 45500,
+     "bid_eok": 4.55,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 46000,
+     "bid_eok": 4.6,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 46500,
+     "bid_eok": 4.65,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 47000,
+     "bid_eok": 4.7,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 44978,
+   "p50_ensemble_eok": 4.5,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": []
+  },
+  "2024타경6202[1]": {
+   "key": "2024타경6202[1]",
+   "auction_id": "C48LDTST",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 부평로 32, 109동 3층304호 (진접센트레빌시티1단지)",
+   "appr_manwon": 35600,
+   "low_manwon": 35600,
+   "fails": 0,
+   "bidding_date": "2026-11-01",
+   "area": 84.98,
+   "danji_id": "a9pNMhx",
+   "danji_name": "진접센트레빌시티1단지",
+   "name": "진접센트레빌시티1단지",
+   "case": "2024타경6202",
+   "keyword": "대항력있는임차인",
+   "pyeong": "34",
+   "appr_eok": 3.56,
+   "low_eok": 3.56,
+   "richgo_sise_eok": 3.457,
+   "appr_vs_sise": 1.03,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1176,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 35600,
+     "45%": 35600,
+     "50%": 35600,
+     "55%": 35600,
+     "60%": 35600
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 35600,
+    "45%": 35600,
+    "50%": 35600,
+    "55%": 35600,
+    "60%": 35600
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.56,
+    "45%": 3.56,
+    "50%": 3.56,
+    "55%": 3.56,
+    "60%": 3.56
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 36000,
+     "bid_eok": 3.6,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 35600,
+   "p50_ensemble_eok": 3.56,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": []
+  },
+  "2025타경3729[1]": {
+   "key": "2025타경3729[1]",
+   "auction_id": "C96ACJJA",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 평내동 601 평내마을신명스카이뷰 1805동 6층604호",
+   "appr_manwon": 38300,
+   "low_manwon": 38300,
+   "fails": 0,
+   "bidding_date": "2026-11-01",
+   "area": 84.94,
+   "danji_id": "a8hwttU",
+   "danji_name": "평내마을신명스카이뷰",
+   "name": "평내마을신명스카이뷰",
+   "case": "2025타경3729",
+   "keyword": "중복사건,대항력있는임차인",
+   "pyeong": "33",
+   "appr_eok": 3.83,
+   "low_eok": 3.83,
+   "richgo_sise_eok": 3.728,
+   "appr_vs_sise": 1.027,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 738,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 38300,
+     "45%": 38300,
+     "50%": 38300,
+     "55%": 38300,
+     "60%": 38300
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 38300,
+    "45%": 38300,
+    "50%": 38300,
+    "55%": 38300,
+    "60%": 38300
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.83,
+    "45%": 3.83,
+    "50%": 3.83,
+    "55%": 3.83,
+    "60%": 3.83
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 38500,
+     "bid_eok": 3.85,
+     "prob": 73
+    }
+   ],
+   "p50_ensemble_manwon": 38300,
+   "p50_ensemble_eok": 3.83,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": []
   },
   "2024타경82466[1]": {
    "key": "2024타경82466[1]",
@@ -6254,9 +6733,9 @@
     "bid_by_prob_manwon_raw": {
      "40%": 68300,
      "45%": 68300,
-     "50%": 68861,
-     "55%": 69479,
-     "60%": 70139
+     "50%": 68810,
+     "55%": 69428,
+     "60%": 70087
     }
    },
    "bid_by_prob_manwon": {
@@ -6326,26 +6805,26 @@
     "applied": true,
     "adj_pct": -3.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 75934,
-     "45%": 76543,
-     "50%": 77182,
-     "55%": 77874,
-     "60%": 78614
+     "40%": 75913,
+     "45%": 76521,
+     "50%": 77160,
+     "55%": 77853,
+     "60%": 78592
     }
    },
    "bid_by_prob_manwon": {
     "40%": 75100,
     "45%": 75100,
     "50%": 75100,
-    "55%": 75538,
-    "60%": 76256
+    "55%": 75517,
+    "60%": 76235
    },
    "bid_by_prob_eok": {
     "40%": 7.51,
     "45%": 7.51,
     "50%": 7.51,
     "55%": 7.55,
-    "60%": 7.63
+    "60%": 7.62
    },
    "prob_by_bid_5m": [
     {
@@ -6993,6 +7472,108 @@
    ],
    "p50_ensemble_manwon": 90765,
    "p50_ensemble_eok": 9.08,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": []
+  },
+  "2025타경4459[1]": {
+   "key": "2025타경4459[1]",
+   "auction_id": "C73LXFVM",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 갈매동 640 구리갈매푸르지오 710동 17층1703호",
+   "appr_manwon": 81200,
+   "low_manwon": 81200,
+   "fails": 0,
+   "bidding_date": "2026-11-01",
+   "area": 84.77,
+   "danji_id": "a1zJcBd",
+   "danji_name": "구리갈매푸르지오",
+   "name": "구리갈매푸르지오",
+   "case": "2025타경4459",
+   "keyword": "중복사건,대항력있는임차인,토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 8.12,
+   "low_eok": 8.12,
+   "richgo_sise_eok": 8.151,
+   "appr_vs_sise": 0.996,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 921,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 81200,
+     "45%": 81200,
+     "50%": 81827,
+     "55%": 82561,
+     "60%": 83346
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 81200,
+    "45%": 81200,
+    "50%": 81827,
+    "55%": 82561,
+    "60%": 83346
+   },
+   "bid_by_prob_eok": {
+    "40%": 8.12,
+    "45%": 8.12,
+    "50%": 8.18,
+    "55%": 8.26,
+    "60%": 8.33
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 81500,
+     "bid_eok": 8.15,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 82000,
+     "bid_eok": 8.2,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 82500,
+     "bid_eok": 8.25,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 83000,
+     "bid_eok": 8.3,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 83500,
+     "bid_eok": 8.35,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 84000,
+     "bid_eok": 8.4,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 84500,
+     "bid_eok": 8.45,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 85000,
+     "bid_eok": 8.5,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 85500,
+     "bid_eok": 8.55,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 81827,
+   "p50_ensemble_eok": 8.18,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
@@ -7754,6 +8335,18 @@
    "reason": "면적미달"
   },
   {
+   "key": "2024타경2085[1]",
+   "auction_id": "C99PIEQZ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호대로176길 10-12, 12층1203호",
+   "appr_manwon": 13800,
+   "low_manwon": 8832,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 11.64,
+   "reason": "면적미달"
+  },
+  {
    "key": "2024타경56181[1]",
    "auction_id": "C14LXKAV",
    "region": "서울 광진구",
@@ -7775,6 +8368,18 @@
    "fails": 16,
    "bidding_date": "2026-11-16",
    "area": 20.66,
+   "reason": "면적미달"
+  },
+  {
+   "key": "2025타경51328[1]",
+   "auction_id": "C25NVEUS",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 화양동 111-88 신원리브웰 화양동 주상복합  4층401호",
+   "appr_manwon": 21800,
+   "low_manwon": 13952,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 16.92,
    "reason": "면적미달"
   },
   {
@@ -8162,6 +8767,18 @@
    "reason": "아파트 아님"
   },
   {
+   "key": "2025타경52550[1]",
+   "auction_id": "C44PHUQO",
+   "region": "경기 성남시 수정구",
+   "address": "경기도 성남시 수정구 심곡동 454 ",
+   "appr_manwon": 17098,
+   "low_manwon": 5864,
+   "fails": 3,
+   "bidding_date": "",
+   "area": null,
+   "reason": "아파트 아님"
+  },
+  {
    "key": "2026타경52[1]",
    "auction_id": "C45DZZDJ",
    "region": "경기 성남시 분당구",
@@ -8234,6 +8851,18 @@
    "reason": "면적미달"
   },
   {
+   "key": "2024타경5360[1]",
+   "auction_id": "C62QFBRJ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 해밀예당3로 68, 1906동 1층101호 (금강펜테리움아파트)",
+   "appr_manwon": 49700,
+   "low_manwon": 34790,
+   "fails": 1,
+   "bidding_date": "",
+   "area": null,
+   "reason": "면적미달"
+  },
+  {
    "key": "2025타경72740[1]",
    "auction_id": "C07DQXQZ",
    "region": "경기 구리시",
@@ -8260,10 +8889,38 @@
  ],
  "recent_results": {
   "summary": {
-   "window": "2026-10-24~2026-10-31",
-   "n_checked": 0,
-   "n_sold": 0
+   "window": "2026-10-25~2026-11-01",
+   "n_checked": 1,
+   "n_sold": 1,
+   "mean_abs_err_pct": 4.7,
+   "within_5pct": 1,
+   "in_40_60": 0,
+   "above_p50": 0
   },
-  "items": []
+  "items": [
+   {
+    "key": "2025타경71670[1]",
+    "danji_name": "진주8차",
+    "area": 55.8,
+    "region": "경기 남양주시",
+    "bidding_date": "2026-10-31",
+    "pred_date": "2026-10-31",
+    "low_manwon": 9100,
+    "bid_by_prob_manwon": {
+     "40%": 9938,
+     "45%": 10018,
+     "50%": 10102,
+     "55%": 10192,
+     "60%": 10289
+    },
+    "status": "매각",
+    "checked": "2026-11-01",
+    "actual_manwon": 9630,
+    "bidders": 1,
+    "second_manwon": null,
+    "diff_pct": -4.7,
+    "band": "40% 미만"
+   }
+  ]
  }
 }
