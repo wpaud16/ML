@@ -18,7 +18,7 @@ import auction_predictor as ap
 KST = timezone(timedelta(hours=9))
 REGIONS = [('서울', '강남구'), ('서울', '서초구'), ('서울', '강동구'), ('서울', '광진구'), ('서울', '송파구'),
            ('경기', '성남시 수정구'), ('경기', '성남시 분당구'), ('경기', '성남시 중원구'), ('경기', '남양주시'), ('경기', '구리시')]
-MIN_AREA, MAX_LOW = 54.0, 13e8
+MIN_AREA, MAX_LOW = 0.0, float("inf")   # 2026-11-02 사용자 요청으로 면적·최저가 필터 해제
 MAP_PATH = os.path.join(HERE, 'danji_map.json')
 OUT_DIR = os.path.join(HERE, 'predictions')
 
@@ -285,7 +285,7 @@ def main():
                 failed.append(dict(base, danji_id=dj, reason=f'예측 실패: {type(e).__name__}: {e}'))
     out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(now.date()),
                model='앙상블(부스팅+군집별회귀)', config_built=cfg.get('built'),
-               filters=dict(min_area=MIN_AREA, max_low_manwon=int(MAX_LOW / 1e4)),
+               filters=dict(min_area=None, max_low_manwon=None),
                counts=dict(predicted=len(items), skipped=len(skipped), failed=len(failed)),
                errors=errors, items=items, failed=failed, skipped=skipped)
     os.makedirs(OUT_DIR, exist_ok=True)
