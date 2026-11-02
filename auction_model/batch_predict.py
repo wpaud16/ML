@@ -319,7 +319,7 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
             rk = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
             if rk['decision'] == 'check':
                 p = om.predict_dict(dj, it['id'], 1, df=odf, cfg=ocfg, models=models)
-            return 'ok', dict(base, danji_id=dj, danji_name=p.get('name'),
+            return 'ok', dict(base, danji_id=dj, danji_name=p.get('name'), court=pg.get('caseSite'),
                               station=dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80))),
                               **{k: v for k, v in p.items() if k not in ('address', 'area', 'category')}, risk=rk)
         except SystemExit as e:
@@ -373,6 +373,7 @@ def main():
                 except Exception:
                     pg = {}
                 items[key]['risk'] = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
+                items[key]['court'] = pg.get('caseSite')
                 items[key]['category'] = '아파트'
             except SystemExit as e:
                 failed.append(dict(base, danji_id=dj, reason=f'예측 실패: {e}'))
@@ -382,7 +383,19 @@ def main():
         officetel_items(items, skipped, failed, cache, now)
     except Exception as e:
         errors.append(f'오피스텔 단계 실패: {type(e).__name__}: {e}')
-    out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(now.date()),
+    # 임차인 자료(사용자 PC가 법원 매각물건명세서에서 읽어 올림)로 보증금 인수 여부 다시 판정 (2026-11-03)
+    try:
+        import tenant_rules
+        n_ten = tenant_rules.apply(items, str(now.date()))
+    except Exception as e:
+        n_ten = 0; errors.append(f'임차인 판정 실패: {type(e).__name__}: {e}')
+    # PC가 다음 날 새벽 조회할 물건 목록 (특수물건은 제외)
+    tgt = [dict(key=k, case=k.split('[')[0], item_no=int(k.split('[')[1].rstrip(']')), court=v.get('court'),
+                auction_id=v.get('auction_id'), bidding_date=v.get('bidding_date'), category=v.get('category'))
+           for k, v in sorted(items.items()) if not (v.get('risk') or {}).get('reason', '').startswith('특수물건')]
+    os.makedirs(OUT_DIR, exist_ok=True)
+    json.dump(dict(date=str(now.date()), n=len(tgt), items=tgt), open(os.path.join(OUT_DIR, 'tenant_targets.json'), 'w'), ensure_ascii=False, indent=1)
+    out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(now.date()), tenant_overrides=n_ten,
                model='앙상블(부스팅+군집별회귀)', config_built=cfg.get('built'),
                filters=dict(min_area=None, max_low_manwon=None),
                counts=dict(predicted=len(items), skipped=len(skipped), failed=len(failed),
