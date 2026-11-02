@@ -249,25 +249,71 @@ def win_prob(pool, a, b, g):
     return float(1 / (1 + np.exp(-(a * _logit(raw_prob(pool, g)) + b))))
 
 
-def bidder_scenarios(df, row, T, low, mkt, adj=0.0):
-    """입찰 인원별 예상 낙찰가(중앙값) + 예상 입찰 인원(25~75% 범위)."""
+def bid_group(n):
+    return 1 if n <= 1 else 2 if n <= 2 else 3 if n <= 4 else 5 if n <= 7 else 8 if n <= 12 else 13
+
+
+def bidder_center(tr, te, T):
+    trb = tr[tr.bidders.notna()]
+    return (fit_predict('부스팅_인원', tr, te, T) + fit_predict('군집_인원', trb, te, T)) / 2
+
+
+def calibrate_bidders(start='2024-07-01'):
+    """인원 모델 월별 롤링 예측오차 → 인원 그룹별 잔차 풀(최근 18개월)을 auction_config.json 'bidder_resid'에 저장."""
+    df = load_train(); has = df.bidders.notna()
+    res = pd.Series(np.nan, index=df.index)
+    for T in pd.date_range(start, df.date.max(), freq='MS'):
+        te = df[(df.date >= T) & (df.date < T + pd.DateOffset(months=1)) & has]
+        tr = df[df.date < T]
+        if len(te) == 0 or tr.bidders.notna().sum() < 150: continue
+        res[te.index] = te.y.values - bidder_center(tr, te, T)
+    T0 = df.date.max()
+    m = res.notna() & (df.date >= T0 - pd.DateOffset(months=18))
+    g = df.bidders[m].map(bid_group)
+    pools = {str(k): [round(float(x), 5) for x in res[m][g == k].values] for k in BID_SCEN}
+    allp = [round(float(x), 5) for x in res[m].values]
+    path = os.path.join(HERE, 'auction_config.json'); cfg = json.load(open(path))
+    cfg['bidder_resid'] = dict(built=str(pd.Timestamp.today().date()), pools=pools, all=allp,
+                               mape=round(float(np.mean(np.abs(np.exp(res.dropna()) - 1)) * 100), 2), n=int(res.notna().sum()))
+    json.dump(cfg, open(path, 'w'), ensure_ascii=False, indent=1)
+    print({k: len(v) for k, v in pools.items()}, 'mape', cfg['bidder_resid']['mape'], 'n', cfg['bidder_resid']['n'])
+
+
+def bidder_scenarios(df, row, T, low, mkt, adj=0.0, cfg=None):
+    """입찰 인원별 낙찰확률 40~60% 입찰가 + 중앙값 + 예상 입찰 인원(25~75% 범위)."""
     try:
+        cfg = cfg or json.load(open(os.path.join(HERE, 'auction_config.json')))
+        br = cfg.get('bidder_resid')
         tr = df[df.date < pd.Timestamp(T) + pd.Timedelta(days=1)]
         trb = tr[tr.bidders.notna()] if 'bidders' in tr else tr.iloc[:0]
-        if len(trb) < 150: return None
+        if len(trb) < 150 or not br: return None
         te = pd.concat([row] * len(BID_SCEN), ignore_index=True).assign(bidders=BID_SCEN)
-        z = (fit_predict('부스팅_인원', tr, te, T) + fit_predict('군집_인원', trb, te, T)) / 2 + np.log(1 + adj)
-        prices = {f'{n}명': int(round(max(low, mkt * np.exp(v)) / 1e4)) for n, v in zip(BID_SCEN, z)}
-        X = prep(trb)[S4]; med = X.median(); xr = prep(row)[S4].fillna(med)
+        z = bidder_center(tr, te, T) + np.log(1 + adj)
+
+        def price_at(pool, zc, q):
+            lo, hi = low, mkt * 1.6
+            for _ in range(60):
+                mid = (lo + hi) / 2
+                pr = 0.0 if mid < low else raw_prob(pool, np.log(mid / mkt) - zc)
+                lo, hi = (mid, hi) if pr < q else (lo, mid)
+            return max(low, hi)
+        by_prob, med = {}, {}
+        for n, zc in zip(BID_SCEN, z):
+            pool = br['pools'].get(str(n)) or []
+            if len(pool) < 30: pool = br['all']
+            by_prob[f'{n}명'] = {f'{q}%': round(price_at(pool, zc, q / 100) / 1e8, 2) for q in PROB_LEVELS}
+            med[f'{n}명'] = round(max(low, mkt * np.exp(zc)) / 1e8, 2)
+        X = prep(trb)[S4]; mdn = X.median(); xr = prep(row)[S4].fillna(mdn)
         wt = np.exp(-((pd.Timestamp(T) - trb.date).dt.days.values) / 365); y = np.log(trb.bidders.values)
         est = {}
         for k, qq in [('p25', .25), ('p50', .5), ('p75', .75)]:
             m = HistGradientBoostingRegressor(loss='quantile', quantile=qq, max_iter=200, learning_rate=0.04, max_depth=3,
-                                              min_samples_leaf=25, random_state=0).fit(X.fillna(med), y, sample_weight=wt)
+                                              min_samples_leaf=25, random_state=0).fit(X.fillna(mdn), y, sample_weight=wt)
             est[k] = max(1, int(round(float(np.exp(m.predict(xr)[0])))))
-        return dict(price_manwon=prices, price_eok={k: round(v / 1e4, 2) for k, v in prices.items()},
+        return dict(bid_by_prob_eok=by_prob, price_eok=med,
                     expected_bidders=est['p50'], expected_range=[est['p25'], max(est['p50'], est['p75'])],
-                    note='입찰 인원별 예상 낙찰가(중앙값). 인원은 당일에야 알 수 있어 예상 인원은 참고용')
+                    model_error_note=f"인원을 알 때 평균 오차 약 {br['mape']}%",
+                    note='N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용')
     except Exception as e:
         return dict(error=str(e)[:200])
 
@@ -307,7 +353,7 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     if small:
         notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
                      f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
-    bidders = bidder_scenarios(df, row, T, low, mkt, SMALL_ADJ if small else 0.0)
+    bidders = bidder_scenarios(df, row, T, low, mkt, SMALL_ADJ if small else 0.0, cfg)
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
                by_bidders=bidders,
                households=None if pd.isna(hh) else int(hh),
@@ -349,13 +395,17 @@ def calibrate(start='2024-01-01'):
                bw=BW, calib_a=round(float(lr.coef_[0][0]), 5), calib_b=round(float(lr.intercept_[0]), 5),
                n_calib_pairs=len(H), mape_recent=round(float(np.mean(np.abs(np.exp(pool) - 1))) * 100, 2),
                resid_pool=[round(float(x), 5) for x in pool.values])
+    try: cfg['bidder_resid'] = json.load(open(os.path.join(HERE, 'auction_config.json'))).get('bidder_resid')
+    except Exception: pass
     json.dump(cfg, open(os.path.join(HERE, 'auction_config.json'), 'w'), ensure_ascii=False, indent=1)
-    print(json.dumps({k: v for k, v in cfg.items() if k != 'resid_pool'} | {'n_pool': len(cfg['resid_pool'])}, ensure_ascii=False))
+    print(json.dumps({k: v for k, v in cfg.items() if k not in ('resid_pool', 'bidder_resid')} | {'n_pool': len(cfg['resid_pool'])}, ensure_ascii=False))
 
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('cmd', choices=['predict', 'calibrate'])
+    ap.add_argument('cmd', choices=['predict', 'calibrate', 'calibrate_bidders'])
     ap.add_argument('--danji'); ap.add_argument('--auction')
     a = ap.parse_args()
-    calibrate() if a.cmd == 'calibrate' else predict(a.danji, a.auction)
+    if a.cmd == 'calibrate': calibrate()
+    elif a.cmd == 'calibrate_bidders': calibrate_bidders()
+    else: predict(a.danji, a.auction)
