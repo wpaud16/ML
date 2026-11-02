@@ -94,6 +94,9 @@ def prep(d):
     X['lag_m'] = d.lag_m.clip(upper=60); X['heat'] = d.heat; X['l_mkt'] = np.log(d.mkt)
     X['tohu'] = d.tohu_r; X['rate'] = d.rate; X['rate_chg6'] = d.rate_chg6
     X['regulated'] = d.regulated; X['loan_ratio'] = d.loan_ratio
+    nb = d['bidders'] if 'bidders' in d else pd.Series(np.nan, index=d.index)
+    X['l_bid'] = np.log(nb); X['bid1'] = (nb == 1).astype(float).where(nb.notna())
+    X['bid2'] = (nb == 2).astype(float).where(nb.notna())
     return X
 
 
@@ -104,6 +107,11 @@ S3 = S1 + ['jeonse', 'py_share', 'lag_m', 'l_mkt']
 S4 = S3 + ['mom3', 'mom6', 'mom12', 'dd24']
 MEMBERS = {'부스팅_감쇠': ('gb', S4, 365), '군집별회귀': ('cluster', S1, 365)}
 ENSEMBLE = ['부스팅_감쇠', '군집별회귀']
+# 입찰 인원 시나리오 모델 (2026-11-02 백테스트 743건: 평균 오차 5.12% → 인원 알 때 4.07%)
+BID = ['l_bid', 'bid1', 'bid2']
+MEMBERS['부스팅_인원'] = ('gb', S4 + BID, 365)      # 전체 사례로 학습 (인원 없는 사례는 중앙값으로 채움)
+MEMBERS['군집_인원'] = ('cluster', S1 + BID, 365)   # 인원 기록 있는 사례만 학습
+BID_SCEN = [1, 2, 3, 5, 8, 13]
 
 
 def fit_predict(name, tr, te, T):
@@ -241,6 +249,29 @@ def win_prob(pool, a, b, g):
     return float(1 / (1 + np.exp(-(a * _logit(raw_prob(pool, g)) + b))))
 
 
+def bidder_scenarios(df, row, T, low, mkt, adj=0.0):
+    """입찰 인원별 예상 낙찰가(중앙값) + 예상 입찰 인원(25~75% 범위)."""
+    try:
+        tr = df[df.date < pd.Timestamp(T) + pd.Timedelta(days=1)]
+        trb = tr[tr.bidders.notna()] if 'bidders' in tr else tr.iloc[:0]
+        if len(trb) < 150: return None
+        te = pd.concat([row] * len(BID_SCEN), ignore_index=True).assign(bidders=BID_SCEN)
+        z = (fit_predict('부스팅_인원', tr, te, T) + fit_predict('군집_인원', trb, te, T)) / 2 + np.log(1 + adj)
+        prices = {f'{n}명': int(round(max(low, mkt * np.exp(v)) / 1e4)) for n, v in zip(BID_SCEN, z)}
+        X = prep(trb)[S4]; med = X.median(); xr = prep(row)[S4].fillna(med)
+        wt = np.exp(-((pd.Timestamp(T) - trb.date).dt.days.values) / 365); y = np.log(trb.bidders.values)
+        est = {}
+        for k, qq in [('p25', .25), ('p50', .5), ('p75', .75)]:
+            m = HistGradientBoostingRegressor(loss='quantile', quantile=qq, max_iter=200, learning_rate=0.04, max_depth=3,
+                                              min_samples_leaf=25, random_state=0).fit(X.fillna(med), y, sample_weight=wt)
+            est[k] = max(1, int(round(float(np.exp(m.predict(xr)[0])))))
+        return dict(price_manwon=prices, price_eok={k: round(v / 1e4, 2) for k, v in prices.items()},
+                    expected_bidders=est['p50'], expected_range=[est['p25'], max(est['p50'], est['p75'])],
+                    note='입찰 인원별 예상 낙찰가(중앙값). 인원은 당일에야 알 수 있어 예상 인원은 참고용')
+    except Exception as e:
+        return dict(error=str(e)[:200])
+
+
 def predict_dict(danji, auction_id, df=None, cfg=None):
     cfg = cfg or json.load(open(os.path.join(HERE, 'auction_config.json')))
     df = load_train() if df is None else df
@@ -276,7 +307,9 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     if small:
         notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
                      f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
+    bidders = bidder_scenarios(df, row, T, low, mkt, SMALL_ADJ if small else 0.0)
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
+               by_bidders=bidders,
                households=None if pd.isna(hh) else int(hh),
                small_danji_adj=dict(applied=small, adj_pct=SMALL_ADJ * 100 if small else 0.0,
                                     bid_by_prob_manwon_raw=prices_raw),
