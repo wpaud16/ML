@@ -1,0 +1,43 @@
+name: auction model retrain (monthly)
+
+# 매월 2일 02:00 KST(1일 17:00 UTC): 지난달까지 새로 매각된 사례를 학습 데이터에 더하고 보정 재계산.
+# 같은 날 06:10 KST 일일 예측(auction_predict.yml)이 새 모델을 쓴다.
+on:
+  schedule:
+    - cron: '0 17 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auction-predict
+  cancel-in-progress: false
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: pip install -q numpy pandas scikit-learn
+      - name: Retrain
+        working-directory: auction_model
+        run: python retrain.py
+      - name: Commit results
+        run: |
+          git config user.name "auction-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add auction_model/auction_train.csv auction_model/auction_config.json auction_model/officetel/ot_train.csv auction_model/officetel/ot_config.json auction_model/predictions/retrain_log.json
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "auction: 월간 재학습 $(TZ=Asia/Seoul date +%F)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "push failed"; exit 1

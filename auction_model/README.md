@@ -42,3 +42,10 @@
 - 인원별 확률: 인원 모델의 롤링 예측오차를 인원 그룹(1/2/3-4/5-7/8-12/13+)별로 모은 풀(최근 18개월, `auction_config.json` `bidder_resid`)에 커널 평활 → 백테스트에서 예측 50% 구간 실제 48~52% 로 보정 없이도 맞음. 재계산: `python3 auction_predictor.py calibrate_bidders`.
   인원은 당일에야 알 수 있으므로 낙찰확률표(40~60%)는 기존 인원 없는 앙상블 그대로 쓴다.
 - 오피스텔은 아직 미적용(인원 기록 555건, 효과가 아파트보다 작음).
+
+## 월 1회 재학습 (2026-11-02~)
+- `.github/workflows/auction_retrain.yml`: 매월 2일 02:00 KST에 `retrain.py` 실행 → 같은 날 06:10 일일 예측부터 새 모델 사용.
+- 지난 학습 마지막 날짜 이후 매각된 사례를 단지·오피스텔 페이지에서 모아 학습 데이터에 추가 (아파트: 권리 show·재매각 아님, 서울·경기 / 오피스텔: show+check, 서울).
+  매각 달의 가격지수로 시세를 되돌려 맞춤 — 기존 학습 행과 대조 시 72건 중 71건 재현, 시세 차이 중앙값 0.5%.
+- 이후 `calibrate()` · `calibrate_bidders()` · `officetel_model.calibrate()` 재계산, 결과를 `predictions/retrain_log.json`에 기록(추가 건수, 오차 전후).
+- 수동 실행: GitHub Actions에서 workflow_dispatch, 또는 `python3 retrain.py --dry-run`(수집 건수만 확인).
