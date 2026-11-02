@@ -26,7 +26,10 @@ OUT_DIR = os.path.join(HERE, 'predictions')
 
 def get(url, tries=3):
     for k in range(tries):
-        r = subprocess.run(['curl', '-sL', '-m', '40', '-A', 'Mozilla/5.0', url], capture_output=True, text=True).stdout
+        try:   # 응답이 중간에 잘려도(멀티바이트 끊김) 죽지 않게 bytes로 받아 'replace' 디코딩
+            r = subprocess.run(['curl', '-sL', '-m', '40', '-A', 'Mozilla/5.0', url], capture_output=True).stdout.decode('utf-8', 'replace')
+        except Exception:
+            r = ''
         if '__NEXT_DATA__' in r:
             return r
         time.sleep(2 + 3 * k)

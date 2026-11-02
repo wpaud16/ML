@@ -114,13 +114,20 @@ def add_detail(r):
     return r
 
 
+def _safe(fn, *a, default=None):
+    """한 단지/사건에서 오류가 나도 전체 재학습이 멈추지 않게 건너뛴다."""
+    try: return fn(*a)
+    except Exception as e:
+        print('skip', fn.__name__, a[:2] if fn.__name__ != 'add_detail' else '', type(e).__name__, flush=True); return default
+
+
 def collect(kind, ids, since, workers=12):
     rows = []
     with ThreadPoolExecutor(workers) as ex:
-        for rs in ex.map(lambda i: rows_from_page(kind, i, since), sorted(ids)):
+        for rs in ex.map(lambda i: _safe(rows_from_page, kind, i, since, default=[]), sorted(ids)):
             rows += rs
     with ThreadPoolExecutor(workers) as ex:
-        rows = list(ex.map(add_detail, rows))
+        rows = list(ex.map(lambda r: _safe(add_detail, r, default=dict(r, risk_decision='error', resale=True)), rows))
     return pd.DataFrame(rows)
 
 
