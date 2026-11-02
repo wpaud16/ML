@@ -1,19 +1,3528 @@
 {
- "generated_at": "2026-11-02T08:19:10+09:00",
+ "generated_at": "2026-11-02T08:40:45+09:00",
  "date": "2026-11-02",
  "model": "앙상블(부스팅+군집별회귀)",
  "config_built": "2026-10-30",
  "filters": {
-  "min_area": 54.0,
-  "max_low_manwon": 130000
+  "min_area": null,
+  "max_low_manwon": null
  },
  "counts": {
-  "predicted": 80,
-  "skipped": 96,
-  "failed": 13
+  "predicted": 101,
+  "skipped": 31,
+  "failed": 57
  },
  "errors": [],
  "items": {
+  "2025타경104308[1]": {
+   "key": "2025타경104308[1]",
+   "auction_id": "C04OZEQG",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 대치동 1027 래미안대치팰리스 104동 12층1201호",
+   "appr_manwon": 507000,
+   "low_manwon": 405600,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.98,
+   "danji_id": "a6eBfVs",
+   "danji_name": "래미안대치팰리스",
+   "name": "래미안대치팰리스",
+   "case": "2025타경104308",
+   "keyword": "토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 50.7,
+   "low_eok": 40.56,
+   "richgo_sise_eok": 43.082,
+   "appr_vs_sise": 1.177,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1608,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 417165,
+     "45%": 420510,
+     "50%": 424019,
+     "55%": 427825,
+     "60%": 431891
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 417165,
+    "45%": 420510,
+    "50%": 424019,
+    "55%": 427825,
+    "60%": 431891
+   },
+   "bid_by_prob_eok": {
+    "40%": 41.72,
+    "45%": 42.05,
+    "50%": 42.4,
+    "55%": 42.78,
+    "60%": 43.19
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 406000,
+     "bid_eok": 40.6,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 406500,
+     "bid_eok": 40.65,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 407000,
+     "bid_eok": 40.7,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 407500,
+     "bid_eok": 40.75,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 408000,
+     "bid_eok": 40.8,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 408500,
+     "bid_eok": 40.85,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 409000,
+     "bid_eok": 40.9,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 409500,
+     "bid_eok": 40.95,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 410000,
+     "bid_eok": 41.0,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 410500,
+     "bid_eok": 41.05,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 411000,
+     "bid_eok": 41.1,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 411500,
+     "bid_eok": 41.15,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 412000,
+     "bid_eok": 41.2,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 412500,
+     "bid_eok": 41.25,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 413000,
+     "bid_eok": 41.3,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 413500,
+     "bid_eok": 41.35,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 414000,
+     "bid_eok": 41.4,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 414500,
+     "bid_eok": 41.45,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 415000,
+     "bid_eok": 41.5,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 415500,
+     "bid_eok": 41.55,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 416000,
+     "bid_eok": 41.6,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 416500,
+     "bid_eok": 41.65,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 417000,
+     "bid_eok": 41.7,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 417500,
+     "bid_eok": 41.75,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 418000,
+     "bid_eok": 41.8,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 418500,
+     "bid_eok": 41.85,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 419000,
+     "bid_eok": 41.9,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 419500,
+     "bid_eok": 41.95,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 420000,
+     "bid_eok": 42.0,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 420500,
+     "bid_eok": 42.05,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 421000,
+     "bid_eok": 42.1,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 421500,
+     "bid_eok": 42.15,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 422000,
+     "bid_eok": 42.2,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 422500,
+     "bid_eok": 42.25,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 423000,
+     "bid_eok": 42.3,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 423500,
+     "bid_eok": 42.35,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 424000,
+     "bid_eok": 42.4,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 424500,
+     "bid_eok": 42.45,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 425000,
+     "bid_eok": 42.5,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 425500,
+     "bid_eok": 42.55,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 426000,
+     "bid_eok": 42.6,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 426500,
+     "bid_eok": 42.65,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 427000,
+     "bid_eok": 42.7,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 427500,
+     "bid_eok": 42.75,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 428000,
+     "bid_eok": 42.8,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 428500,
+     "bid_eok": 42.85,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 429000,
+     "bid_eok": 42.9,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 429500,
+     "bid_eok": 42.95,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 430000,
+     "bid_eok": 43.0,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 430500,
+     "bid_eok": 43.05,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 431000,
+     "bid_eok": 43.1,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 431500,
+     "bid_eok": 43.15,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 432000,
+     "bid_eok": 43.2,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 432500,
+     "bid_eok": 43.25,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 433000,
+     "bid_eok": 43.3,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 433500,
+     "bid_eok": 43.35,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 434000,
+     "bid_eok": 43.4,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 434500,
+     "bid_eok": 43.45,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 435000,
+     "bid_eok": 43.5,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 435500,
+     "bid_eok": 43.55,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 436000,
+     "bid_eok": 43.6,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 436500,
+     "bid_eok": 43.65,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 437000,
+     "bid_eok": 43.7,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 437500,
+     "bid_eok": 43.75,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 438000,
+     "bid_eok": 43.8,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 438500,
+     "bid_eok": 43.85,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 439000,
+     "bid_eok": 43.9,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 439500,
+     "bid_eok": 43.95,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 440000,
+     "bid_eok": 44.0,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 440500,
+     "bid_eok": 44.05,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 441000,
+     "bid_eok": 44.1,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 441500,
+     "bid_eok": 44.15,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 442000,
+     "bid_eok": 44.2,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 442500,
+     "bid_eok": 44.25,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 443000,
+     "bid_eok": 44.3,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 443500,
+     "bid_eok": 44.35,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 444000,
+     "bid_eok": 44.4,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 424019,
+   "p50_ensemble_eok": 42.4,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2011-10-14"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2025타경104318[1]": {
+   "key": "2025타경104318[1]",
+   "auction_id": "C07SRLQR",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 청담동 67-1 청담린든그로브 104동 2층204호",
+   "appr_manwon": 340000,
+   "low_manwon": 340000,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 85,
+   "danji_id": "a6VtpMJ",
+   "danji_name": "청담린든그로브",
+   "name": "청담린든그로브",
+   "case": "2025타경104318",
+   "keyword": "대항력있는임차인,중복사건,토지거래허가구역",
+   "pyeong": "34",
+   "appr_eok": 34.0,
+   "low_eok": 34.0,
+   "richgo_sise_eok": 31.548,
+   "appr_vs_sise": 1.078,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 114,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 340000,
+     "45%": 340000,
+     "50%": 340000,
+     "55%": 340000,
+     "60%": 340704
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 340000,
+    "45%": 340000,
+    "50%": 340000,
+    "55%": 340000,
+    "60%": 340000
+   },
+   "bid_by_prob_eok": {
+    "40%": 34.0,
+    "45%": 34.0,
+    "50%": 34.0,
+    "55%": 34.0,
+    "60%": 34.0
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 340000,
+     "bid_eok": 34.0,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 340000,
+   "p50_ensemble_eok": 34.0,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(114세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "중복사건",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": true,
+     "right_risk": true,
+     "base_right": "근저당권",
+     "base_date": "2025-04-18"
+    },
+    "resale": false,
+    "decision": "hide",
+    "reason": "대항력 임차인: 키워드·요약 모두 있음"
+   }
+  },
+  "2026타경100530[1]": {
+   "key": "2026타경100530[1]",
+   "auction_id": "C19XSUPK",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 757 역삼래미안 108동 1층102호",
+   "appr_manwon": 329000,
+   "low_manwon": 263200,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 80.87,
+   "danji_id": "a3OhLXW",
+   "danji_name": "역삼래미안",
+   "name": "역삼래미안",
+   "case": "2026타경100530",
+   "keyword": "토지거래허가구역",
+   "pyeong": "33",
+   "appr_eok": 32.9,
+   "low_eok": 26.32,
+   "richgo_sise_eok": 32.968,
+   "appr_vs_sise": 0.998,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1050,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 292294,
+     "45%": 294637,
+     "50%": 297096,
+     "55%": 299762,
+     "60%": 302611
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 292294,
+    "45%": 294637,
+    "50%": 297096,
+    "55%": 299762,
+    "60%": 302611
+   },
+   "bid_by_prob_eok": {
+    "40%": 29.23,
+    "45%": 29.46,
+    "50%": 29.71,
+    "55%": 29.98,
+    "60%": 30.26
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 284500,
+     "bid_eok": 28.45,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 285000,
+     "bid_eok": 28.5,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 285500,
+     "bid_eok": 28.55,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 286000,
+     "bid_eok": 28.6,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 286500,
+     "bid_eok": 28.65,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 287000,
+     "bid_eok": 28.7,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 287500,
+     "bid_eok": 28.75,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 288000,
+     "bid_eok": 28.8,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 288500,
+     "bid_eok": 28.85,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 289000,
+     "bid_eok": 28.9,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 289500,
+     "bid_eok": 28.95,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 290000,
+     "bid_eok": 29.0,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 290500,
+     "bid_eok": 29.05,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 291000,
+     "bid_eok": 29.1,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 291500,
+     "bid_eok": 29.15,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 292000,
+     "bid_eok": 29.2,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 292500,
+     "bid_eok": 29.25,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 293000,
+     "bid_eok": 29.3,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 293500,
+     "bid_eok": 29.35,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 294000,
+     "bid_eok": 29.4,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 294500,
+     "bid_eok": 29.45,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 295000,
+     "bid_eok": 29.5,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 295500,
+     "bid_eok": 29.55,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 296000,
+     "bid_eok": 29.6,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 296500,
+     "bid_eok": 29.65,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 297000,
+     "bid_eok": 29.7,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 297500,
+     "bid_eok": 29.75,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 298000,
+     "bid_eok": 29.8,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 298500,
+     "bid_eok": 29.85,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 299000,
+     "bid_eok": 29.9,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 299500,
+     "bid_eok": 29.95,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 300000,
+     "bid_eok": 30.0,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 300500,
+     "bid_eok": 30.05,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 301000,
+     "bid_eok": 30.1,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 301500,
+     "bid_eok": 30.15,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 302000,
+     "bid_eok": 30.2,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 302500,
+     "bid_eok": 30.25,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 303000,
+     "bid_eok": 30.3,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 303500,
+     "bid_eok": 30.35,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 304000,
+     "bid_eok": 30.4,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 304500,
+     "bid_eok": 30.45,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 305000,
+     "bid_eok": 30.5,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 305500,
+     "bid_eok": 30.55,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 306000,
+     "bid_eok": 30.6,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 306500,
+     "bid_eok": 30.65,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 307000,
+     "bid_eok": 30.7,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 307500,
+     "bid_eok": 30.75,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 308000,
+     "bid_eok": 30.8,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 308500,
+     "bid_eok": 30.85,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 309000,
+     "bid_eok": 30.9,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 309500,
+     "bid_eok": 30.95,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 310000,
+     "bid_eok": 31.0,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 310500,
+     "bid_eok": 31.05,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 311000,
+     "bid_eok": 31.1,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 297096,
+   "p50_ensemble_eok": 29.71,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2016-03-31"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2026타경100530[2]": {
+   "key": "2026타경100530[2]",
+   "auction_id": "C45BVLNI",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 755-4 역삼이편한세상 105동 1층104호",
+   "appr_manwon": 321000,
+   "low_manwon": 256800,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 84.99,
+   "danji_id": "a1QDVjE",
+   "danji_name": "역삼e-편한세상",
+   "name": "역삼e-편한세상",
+   "case": "2026타경100530",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 32.1,
+   "low_eok": 25.68,
+   "richgo_sise_eok": 32.361,
+   "appr_vs_sise": 0.992,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 840,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 280167,
+     "45%": 282413,
+     "50%": 284770,
+     "55%": 287326,
+     "60%": 290056
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 280167,
+    "45%": 282413,
+    "50%": 284770,
+    "55%": 287326,
+    "60%": 290056
+   },
+   "bid_by_prob_eok": {
+    "40%": 28.02,
+    "45%": 28.24,
+    "50%": 28.48,
+    "55%": 28.73,
+    "60%": 29.01
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 273000,
+     "bid_eok": 27.3,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 273500,
+     "bid_eok": 27.35,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 274000,
+     "bid_eok": 27.4,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 274500,
+     "bid_eok": 27.45,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 275000,
+     "bid_eok": 27.5,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 275500,
+     "bid_eok": 27.55,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 276000,
+     "bid_eok": 27.6,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 276500,
+     "bid_eok": 27.65,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 277000,
+     "bid_eok": 27.7,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 277500,
+     "bid_eok": 27.75,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 278000,
+     "bid_eok": 27.8,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 278500,
+     "bid_eok": 27.85,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 279000,
+     "bid_eok": 27.9,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 279500,
+     "bid_eok": 27.95,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 280000,
+     "bid_eok": 28.0,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 280500,
+     "bid_eok": 28.05,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 281000,
+     "bid_eok": 28.1,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 281500,
+     "bid_eok": 28.15,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 282000,
+     "bid_eok": 28.2,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 282500,
+     "bid_eok": 28.25,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 283000,
+     "bid_eok": 28.3,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 283500,
+     "bid_eok": 28.35,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 284000,
+     "bid_eok": 28.4,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 284500,
+     "bid_eok": 28.45,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 285000,
+     "bid_eok": 28.5,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 285500,
+     "bid_eok": 28.55,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 286000,
+     "bid_eok": 28.6,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 286500,
+     "bid_eok": 28.65,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 287000,
+     "bid_eok": 28.7,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 287500,
+     "bid_eok": 28.75,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 288000,
+     "bid_eok": 28.8,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 288500,
+     "bid_eok": 28.85,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 289000,
+     "bid_eok": 28.9,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 289500,
+     "bid_eok": 28.95,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 290000,
+     "bid_eok": 29.0,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 290500,
+     "bid_eok": 29.05,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 291000,
+     "bid_eok": 29.1,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 291500,
+     "bid_eok": 29.15,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 292000,
+     "bid_eok": 29.2,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 292500,
+     "bid_eok": 29.25,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 293000,
+     "bid_eok": 29.3,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 293500,
+     "bid_eok": 29.35,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 294000,
+     "bid_eok": 29.4,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 294500,
+     "bid_eok": 29.45,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 295000,
+     "bid_eok": 29.5,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 295500,
+     "bid_eok": 29.55,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 296000,
+     "bid_eok": 29.6,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 296500,
+     "bid_eok": 29.65,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 297000,
+     "bid_eok": 29.7,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 297500,
+     "bid_eok": 29.75,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 298000,
+     "bid_eok": 29.8,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 284770,
+   "p50_ensemble_eok": 28.48,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2015-01-30"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2025타경103932[1]": {
+   "key": "2025타경103932[1]",
+   "auction_id": "C77SOZTX",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 논현동 58-2 마일스디오빌  9층920호",
+   "appr_manwon": 41800,
+   "low_manwon": 10957,
+   "fails": 6,
+   "bidding_date": "2026-11-10",
+   "area": 36.29,
+   "danji_id": "a1mmgFs",
+   "danji_name": "마일스디오빌",
+   "name": "마일스디오빌",
+   "case": "2025타경103932",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "14",
+   "appr_eok": 4.18,
+   "low_eok": 1.096,
+   "richgo_sise_eok": 3.666,
+   "appr_vs_sise": 1.14,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 260,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 25207,
+     "45%": 25409,
+     "50%": 25621,
+     "55%": 25851,
+     "60%": 26096
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 24450,
+    "45%": 24646,
+    "50%": 24852,
+    "55%": 25075,
+    "60%": 25313
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.44,
+    "45%": 2.46,
+    "50%": 2.49,
+    "55%": 2.51,
+    "60%": 2.53
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 24000,
+     "bid_eok": 2.4,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 24500,
+     "bid_eok": 2.45,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 25000,
+     "bid_eok": 2.5,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 25500,
+     "bid_eok": 2.55,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 26000,
+     "bid_eok": 2.6,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 24852,
+   "p50_ensemble_eok": 2.49,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(260세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": true,
+     "right_risk": true,
+     "base_right": "강제경매",
+     "base_date": "2025-09-15"
+    },
+    "resale": false,
+    "decision": "hide",
+    "reason": "대항력 임차인: 키워드·요약 모두 있음"
+   }
+  },
+  "2026타경101303[1]": {
+   "key": "2026타경101303[1]",
+   "auction_id": "C77WEUSL",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 도곡동 467-17 타워팰리스 에프동 11층1104호",
+   "appr_manwon": 510000,
+   "low_manwon": 510000,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 159.44,
+   "danji_id": "a1rzdDh",
+   "danji_name": "타워팰리스2차",
+   "name": "타워팰리스2차",
+   "case": "2026타경101303",
+   "keyword": "토지거래허가구역",
+   "pyeong": "64",
+   "appr_eok": 51.0,
+   "low_eok": 51.0,
+   "richgo_sise_eok": 50.036,
+   "appr_vs_sise": 1.019,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 813,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 510000,
+     "45%": 510000,
+     "50%": 510000,
+     "55%": 510000,
+     "60%": 511237
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 510000,
+    "45%": 510000,
+    "50%": 510000,
+    "55%": 510000,
+    "60%": 511237
+   },
+   "bid_by_prob_eok": {
+    "40%": 51.0,
+    "45%": 51.0,
+    "50%": 51.0,
+    "55%": 51.0,
+    "60%": 51.12
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 510000,
+     "bid_eok": 51.0,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 510500,
+     "bid_eok": 51.05,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 511000,
+     "bid_eok": 51.1,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 511500,
+     "bid_eok": 51.15,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 512000,
+     "bid_eok": 51.2,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 512500,
+     "bid_eok": 51.25,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 513000,
+     "bid_eok": 51.3,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 513500,
+     "bid_eok": 51.35,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 514000,
+     "bid_eok": 51.4,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 514500,
+     "bid_eok": 51.45,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 515000,
+     "bid_eok": 51.5,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 515500,
+     "bid_eok": 51.55,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 516000,
+     "bid_eok": 51.6,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 516500,
+     "bid_eok": 51.65,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 517000,
+     "bid_eok": 51.7,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 517500,
+     "bid_eok": 51.75,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 518000,
+     "bid_eok": 51.8,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 518500,
+     "bid_eok": 51.85,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 519000,
+     "bid_eok": 51.9,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 519500,
+     "bid_eok": 51.95,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 520000,
+     "bid_eok": 52.0,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 520500,
+     "bid_eok": 52.05,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 521000,
+     "bid_eok": 52.1,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 521500,
+     "bid_eok": 52.15,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 522000,
+     "bid_eok": 52.2,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 522500,
+     "bid_eok": 52.25,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 523000,
+     "bid_eok": 52.3,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 523500,
+     "bid_eok": 52.35,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 524000,
+     "bid_eok": 52.4,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 524500,
+     "bid_eok": 52.45,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 525000,
+     "bid_eok": 52.5,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 525500,
+     "bid_eok": 52.55,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 510000,
+   "p50_ensemble_eok": 51.0,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2019-10-28"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2025타경104362[1]": {
+   "key": "2025타경104362[1]",
+   "auction_id": "C14VVNWA",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 청담동 43 청담우방아파트 101동 1702호",
+   "appr_manwon": 280000,
+   "low_manwon": 224000,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 118.53,
+   "danji_id": "a0TWbyG",
+   "danji_name": "청담우방",
+   "name": "청담우방",
+   "case": "2025타경104362",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "45",
+   "appr_eok": 28.0,
+   "low_eok": 22.4,
+   "richgo_sise_eok": 27.654,
+   "appr_vs_sise": 1.013,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 100,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 236441,
+     "45%": 238337,
+     "50%": 240326,
+     "55%": 242483,
+     "60%": 244787
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 229348,
+    "45%": 231187,
+    "50%": 233116,
+    "55%": 235208,
+    "60%": 237444
+   },
+   "bid_by_prob_eok": {
+    "40%": 22.93,
+    "45%": 23.12,
+    "50%": 23.31,
+    "55%": 23.52,
+    "60%": 23.74
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 224000,
+     "bid_eok": 22.4,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 224500,
+     "bid_eok": 22.45,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 225000,
+     "bid_eok": 22.5,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 225500,
+     "bid_eok": 22.55,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 226000,
+     "bid_eok": 22.6,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 226500,
+     "bid_eok": 22.65,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 227000,
+     "bid_eok": 22.7,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 227500,
+     "bid_eok": 22.75,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 228000,
+     "bid_eok": 22.8,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 228500,
+     "bid_eok": 22.85,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 229000,
+     "bid_eok": 22.9,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 229500,
+     "bid_eok": 22.95,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 230000,
+     "bid_eok": 23.0,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 230500,
+     "bid_eok": 23.05,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 231000,
+     "bid_eok": 23.1,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 231500,
+     "bid_eok": 23.15,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 232000,
+     "bid_eok": 23.2,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 232500,
+     "bid_eok": 23.25,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 233000,
+     "bid_eok": 23.3,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 233500,
+     "bid_eok": 23.35,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 234000,
+     "bid_eok": 23.4,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 234500,
+     "bid_eok": 23.45,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 235000,
+     "bid_eok": 23.5,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 235500,
+     "bid_eok": 23.55,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 236000,
+     "bid_eok": 23.6,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 236500,
+     "bid_eok": 23.65,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 237000,
+     "bid_eok": 23.7,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 237500,
+     "bid_eok": 23.75,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 238000,
+     "bid_eok": 23.8,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 238500,
+     "bid_eok": 23.85,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 239000,
+     "bid_eok": 23.9,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 239500,
+     "bid_eok": 23.95,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 240000,
+     "bid_eok": 24.0,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 240500,
+     "bid_eok": 24.05,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 241000,
+     "bid_eok": 24.1,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 241500,
+     "bid_eok": 24.15,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 242000,
+     "bid_eok": 24.2,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 242500,
+     "bid_eok": 24.25,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 243000,
+     "bid_eok": 24.3,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 243500,
+     "bid_eok": 24.35,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 244000,
+     "bid_eok": 24.4,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 233116,
+   "p50_ensemble_eok": 23.31,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(100세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2022-02-25"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
+   }
+  },
+  "2024타경5531[1]": {
+   "key": "2024타경5531[1]",
+   "auction_id": "C59SHMMT",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 헌릉로590길 63, 514동 9층901호 (세곡동,강남데시앙파크)",
+   "appr_manwon": 187000,
+   "low_manwon": 149600,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 114.69,
+   "danji_id": "a3jazWr",
+   "danji_name": "강남데시앙파크",
+   "name": "강남데시앙파크",
+   "case": "2024타경5531",
+   "keyword": "토지거래허가구역",
+   "pyeong": "44",
+   "appr_eok": 18.7,
+   "low_eok": 14.96,
+   "richgo_sise_eok": 18.254,
+   "appr_vs_sise": 1.024,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 546,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 157060,
+     "45%": 158319,
+     "50%": 159640,
+     "55%": 161073,
+     "60%": 162604
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 157060,
+    "45%": 158319,
+    "50%": 159640,
+    "55%": 161073,
+    "60%": 162604
+   },
+   "bid_by_prob_eok": {
+    "40%": 15.71,
+    "45%": 15.83,
+    "50%": 15.96,
+    "55%": 16.11,
+    "60%": 16.26
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 153000,
+     "bid_eok": 15.3,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 153500,
+     "bid_eok": 15.35,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 154000,
+     "bid_eok": 15.4,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 154500,
+     "bid_eok": 15.45,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 155000,
+     "bid_eok": 15.5,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 155500,
+     "bid_eok": 15.55,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 156000,
+     "bid_eok": 15.6,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 156500,
+     "bid_eok": 15.65,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 157000,
+     "bid_eok": 15.7,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 157500,
+     "bid_eok": 15.75,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 158000,
+     "bid_eok": 15.8,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 158500,
+     "bid_eok": 15.85,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 159000,
+     "bid_eok": 15.9,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 159500,
+     "bid_eok": 15.95,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 160000,
+     "bid_eok": 16.0,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 160500,
+     "bid_eok": 16.05,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 161000,
+     "bid_eok": 16.1,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 161500,
+     "bid_eok": 16.15,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 162000,
+     "bid_eok": 16.2,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 162500,
+     "bid_eok": 16.25,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 163000,
+     "bid_eok": 16.3,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 163500,
+     "bid_eok": 16.35,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 164000,
+     "bid_eok": 16.4,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 164500,
+     "bid_eok": 16.45,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 165000,
+     "bid_eok": 16.5,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 165500,
+     "bid_eok": 16.55,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 166000,
+     "bid_eok": 16.6,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 166500,
+     "bid_eok": 16.65,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 167000,
+     "bid_eok": 16.7,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 159640,
+   "p50_ensemble_eok": 15.96,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2013-05-30"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2025타경103942[1]": {
+   "key": "2025타경103942[1]",
+   "auction_id": "C64ICUON",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 720-25 디오빌역삼  12층1212호",
+   "appr_manwon": 32400,
+   "low_manwon": 25920,
+   "fails": 1,
+   "bidding_date": "2026-11-26",
+   "area": 30.03,
+   "danji_id": "a5OUZkp",
+   "danji_name": "역삼디오빌",
+   "name": "역삼디오빌",
+   "case": "2025타경103942",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "11",
+   "appr_eok": 3.24,
+   "low_eok": 2.592,
+   "richgo_sise_eok": 2.786,
+   "appr_vs_sise": 1.163,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 457,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 26092,
+     "45%": 26301,
+     "50%": 26520,
+     "55%": 26758,
+     "60%": 27013
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 26092,
+    "45%": 26301,
+    "50%": 26520,
+    "55%": 26758,
+    "60%": 27013
+   },
+   "bid_by_prob_eok": {
+    "40%": 2.61,
+    "45%": 2.63,
+    "50%": 2.65,
+    "55%": 2.68,
+    "60%": 2.7
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 26000,
+     "bid_eok": 2.6,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 26500,
+     "bid_eok": 2.65,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 27000,
+     "bid_eok": 2.7,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 27500,
+     "bid_eok": 2.75,
+     "prob": 70
+    }
+   ],
+   "p50_ensemble_manwon": 26520,
+   "p50_ensemble_eok": 2.65,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2023-02-27"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
+   }
+  },
+  "2026타경100316[1]": {
+   "key": "2026타경100316[1]",
+   "auction_id": "C43AWBJL",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 잠원동 162 반포센트럴자이 104동 22층2201호",
+   "appr_manwon": 525000,
+   "low_manwon": 420000,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 84.98,
+   "danji_id": "a3FJYYD",
+   "danji_name": "반포센트럴자이",
+   "name": "반포센트럴자이",
+   "case": "2026타경100316",
+   "keyword": "토지거래허가구역",
+   "pyeong": "35",
+   "appr_eok": 52.5,
+   "low_eok": 42.0,
+   "richgo_sise_eok": 48.556,
+   "appr_vs_sise": 1.081,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 757,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 455313,
+     "45%": 458964,
+     "50%": 462794,
+     "55%": 466947,
+     "60%": 471385
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 455313,
+    "45%": 458964,
+    "50%": 462794,
+    "55%": 466947,
+    "60%": 471385
+   },
+   "bid_by_prob_eok": {
+    "40%": 45.53,
+    "45%": 45.9,
+    "50%": 46.28,
+    "55%": 46.69,
+    "60%": 47.14
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 443500,
+     "bid_eok": 44.35,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 444000,
+     "bid_eok": 44.4,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 444500,
+     "bid_eok": 44.45,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 445000,
+     "bid_eok": 44.5,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 445500,
+     "bid_eok": 44.55,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 446000,
+     "bid_eok": 44.6,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 446500,
+     "bid_eok": 44.65,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 447000,
+     "bid_eok": 44.7,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 447500,
+     "bid_eok": 44.75,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 448000,
+     "bid_eok": 44.8,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 448500,
+     "bid_eok": 44.85,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 449000,
+     "bid_eok": 44.9,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 449500,
+     "bid_eok": 44.95,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 450000,
+     "bid_eok": 45.0,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 450500,
+     "bid_eok": 45.05,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 451000,
+     "bid_eok": 45.1,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 451500,
+     "bid_eok": 45.15,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 452000,
+     "bid_eok": 45.2,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 452500,
+     "bid_eok": 45.25,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 453000,
+     "bid_eok": 45.3,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 453500,
+     "bid_eok": 45.35,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 454000,
+     "bid_eok": 45.4,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 454500,
+     "bid_eok": 45.45,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 455000,
+     "bid_eok": 45.5,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 455500,
+     "bid_eok": 45.55,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 456000,
+     "bid_eok": 45.6,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 456500,
+     "bid_eok": 45.65,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 457000,
+     "bid_eok": 45.7,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 457500,
+     "bid_eok": 45.75,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 458000,
+     "bid_eok": 45.8,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 458500,
+     "bid_eok": 45.85,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 459000,
+     "bid_eok": 45.9,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 459500,
+     "bid_eok": 45.95,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 460000,
+     "bid_eok": 46.0,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 460500,
+     "bid_eok": 46.05,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 461000,
+     "bid_eok": 46.1,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 461500,
+     "bid_eok": 46.15,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 462000,
+     "bid_eok": 46.2,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 462500,
+     "bid_eok": 46.25,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 463000,
+     "bid_eok": 46.3,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 463500,
+     "bid_eok": 46.35,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 464000,
+     "bid_eok": 46.4,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 464500,
+     "bid_eok": 46.45,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 465000,
+     "bid_eok": 46.5,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 465500,
+     "bid_eok": 46.55,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 466000,
+     "bid_eok": 46.6,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 466500,
+     "bid_eok": 46.65,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 467000,
+     "bid_eok": 46.7,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 467500,
+     "bid_eok": 46.75,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 468000,
+     "bid_eok": 46.8,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 468500,
+     "bid_eok": 46.85,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 469000,
+     "bid_eok": 46.9,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 469500,
+     "bid_eok": 46.95,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 470000,
+     "bid_eok": 47.0,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 470500,
+     "bid_eok": 47.05,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 471000,
+     "bid_eok": 47.1,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 471500,
+     "bid_eok": 47.15,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 472000,
+     "bid_eok": 47.2,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 472500,
+     "bid_eok": 47.25,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 473000,
+     "bid_eok": 47.3,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 473500,
+     "bid_eok": 47.35,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 474000,
+     "bid_eok": 47.4,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 474500,
+     "bid_eok": 47.45,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 475000,
+     "bid_eok": 47.5,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 475500,
+     "bid_eok": 47.55,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 476000,
+     "bid_eok": 47.6,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 476500,
+     "bid_eok": 47.65,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 477000,
+     "bid_eok": 47.7,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 477500,
+     "bid_eok": 47.75,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 478000,
+     "bid_eok": 47.8,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 478500,
+     "bid_eok": 47.85,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 479000,
+     "bid_eok": 47.9,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 479500,
+     "bid_eok": 47.95,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 480000,
+     "bid_eok": 48.0,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 480500,
+     "bid_eok": 48.05,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 481000,
+     "bid_eok": 48.1,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 481500,
+     "bid_eok": 48.15,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 482000,
+     "bid_eok": 48.2,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 482500,
+     "bid_eok": 48.25,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 483000,
+     "bid_eok": 48.3,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 483500,
+     "bid_eok": 48.35,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 484000,
+     "bid_eok": 48.4,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 484500,
+     "bid_eok": 48.45,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 462794,
+   "p50_ensemble_eok": 46.28,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2023-09-19"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2026타경100393[1]": {
+   "key": "2026타경100393[1]",
+   "auction_id": "C46QDYCY",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 3275 동부센트레빌 101동 18층1801호",
+   "appr_manwon": 323500,
+   "low_manwon": 258800,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 134.04,
+   "danji_id": "a1iCbgY",
+   "danji_name": "방배동부센트레빌",
+   "name": "방배동부센트레빌",
+   "case": "2026타경100393",
+   "keyword": "중복사건,토지거래허가구역",
+   "pyeong": "49",
+   "appr_eok": 32.35,
+   "low_eok": 25.88,
+   "richgo_sise_eok": 29.981,
+   "appr_vs_sise": 1.079,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 122,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 277909,
+     "45%": 280137,
+     "50%": 282475,
+     "55%": 285010,
+     "60%": 287719
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 269572,
+    "45%": 271733,
+    "50%": 274001,
+    "55%": 276460,
+    "60%": 279087
+   },
+   "bid_by_prob_eok": {
+    "40%": 26.96,
+    "45%": 27.17,
+    "50%": 27.4,
+    "55%": 27.65,
+    "60%": 27.91
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 262500,
+     "bid_eok": 26.25,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 263000,
+     "bid_eok": 26.3,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 263500,
+     "bid_eok": 26.35,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 264000,
+     "bid_eok": 26.4,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 264500,
+     "bid_eok": 26.45,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 265000,
+     "bid_eok": 26.5,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 265500,
+     "bid_eok": 26.55,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 266000,
+     "bid_eok": 26.6,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 266500,
+     "bid_eok": 26.65,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 267000,
+     "bid_eok": 26.7,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 267500,
+     "bid_eok": 26.75,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 268000,
+     "bid_eok": 26.8,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 268500,
+     "bid_eok": 26.85,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 269000,
+     "bid_eok": 26.9,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 269500,
+     "bid_eok": 26.95,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 270000,
+     "bid_eok": 27.0,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 270500,
+     "bid_eok": 27.05,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 271000,
+     "bid_eok": 27.1,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 271500,
+     "bid_eok": 27.15,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 272000,
+     "bid_eok": 27.2,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 272500,
+     "bid_eok": 27.25,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 273000,
+     "bid_eok": 27.3,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 273500,
+     "bid_eok": 27.35,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 274000,
+     "bid_eok": 27.4,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 274500,
+     "bid_eok": 27.45,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 275000,
+     "bid_eok": 27.5,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 275500,
+     "bid_eok": 27.55,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 276000,
+     "bid_eok": 27.6,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 276500,
+     "bid_eok": 27.65,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 277000,
+     "bid_eok": 27.7,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 277500,
+     "bid_eok": 27.75,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 278000,
+     "bid_eok": 27.8,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 278500,
+     "bid_eok": 27.85,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 279000,
+     "bid_eok": 27.9,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 279500,
+     "bid_eok": 27.95,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 280000,
+     "bid_eok": 28.0,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 280500,
+     "bid_eok": 28.05,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 281000,
+     "bid_eok": 28.1,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 281500,
+     "bid_eok": 28.15,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 282000,
+     "bid_eok": 28.2,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 282500,
+     "bid_eok": 28.25,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 283000,
+     "bid_eok": 28.3,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 283500,
+     "bid_eok": 28.35,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 284000,
+     "bid_eok": 28.4,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 284500,
+     "bid_eok": 28.45,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 285000,
+     "bid_eok": 28.5,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 285500,
+     "bid_eok": 28.55,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 286000,
+     "bid_eok": 28.6,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 286500,
+     "bid_eok": 28.65,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 274001,
+   "p50_ensemble_eok": 27.4,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [
+    "소규모 단지(122세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "중복사건",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2014-05-14"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2025타경104590[1]": {
+   "key": "2025타경104590[1]",
+   "auction_id": "C57TSSWJ",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1686-9 서초교대이편한세상 101동 8층802호",
+   "appr_manwon": 346100,
+   "low_manwon": 276880,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 84.97,
+   "danji_id": "a9kneTv",
+   "danji_name": "서초교대e편한세상",
+   "name": "서초교대e편한세상",
+   "case": "2025타경104590",
+   "keyword": "중복사건,토지거래허가구역",
+   "pyeong": "34",
+   "appr_eok": 34.61,
+   "low_eok": 27.688,
+   "richgo_sise_eok": 31.407,
+   "appr_vs_sise": 1.102,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 435,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 294886,
+     "45%": 297250,
+     "50%": 299731,
+     "55%": 302421,
+     "60%": 305295
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 294886,
+    "45%": 297250,
+    "50%": 299731,
+    "55%": 302421,
+    "60%": 305295
+   },
+   "bid_by_prob_eok": {
+    "40%": 29.49,
+    "45%": 29.73,
+    "50%": 29.97,
+    "55%": 30.24,
+    "60%": 30.53
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 287000,
+     "bid_eok": 28.7,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 287500,
+     "bid_eok": 28.75,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 288000,
+     "bid_eok": 28.8,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 288500,
+     "bid_eok": 28.85,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 289000,
+     "bid_eok": 28.9,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 289500,
+     "bid_eok": 28.95,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 290000,
+     "bid_eok": 29.0,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 290500,
+     "bid_eok": 29.05,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 291000,
+     "bid_eok": 29.1,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 291500,
+     "bid_eok": 29.15,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 292000,
+     "bid_eok": 29.2,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 292500,
+     "bid_eok": 29.25,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 293000,
+     "bid_eok": 29.3,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 293500,
+     "bid_eok": 29.35,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 294000,
+     "bid_eok": 29.4,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 294500,
+     "bid_eok": 29.45,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 295000,
+     "bid_eok": 29.5,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 295500,
+     "bid_eok": 29.55,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 296000,
+     "bid_eok": 29.6,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 296500,
+     "bid_eok": 29.65,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 297000,
+     "bid_eok": 29.7,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 297500,
+     "bid_eok": 29.75,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 298000,
+     "bid_eok": 29.8,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 298500,
+     "bid_eok": 29.85,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 299000,
+     "bid_eok": 29.9,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 299500,
+     "bid_eok": 29.95,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 300000,
+     "bid_eok": 30.0,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 300500,
+     "bid_eok": 30.05,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 301000,
+     "bid_eok": 30.1,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 301500,
+     "bid_eok": 30.15,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 302000,
+     "bid_eok": 30.2,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 302500,
+     "bid_eok": 30.25,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 303000,
+     "bid_eok": 30.3,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 303500,
+     "bid_eok": 30.35,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 304000,
+     "bid_eok": 30.4,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 304500,
+     "bid_eok": 30.45,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 305000,
+     "bid_eok": 30.5,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 305500,
+     "bid_eok": 30.55,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 306000,
+     "bid_eok": 30.6,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 306500,
+     "bid_eok": 30.65,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 307000,
+     "bid_eok": 30.7,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 307500,
+     "bid_eok": 30.75,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 308000,
+     "bid_eok": 30.8,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 308500,
+     "bid_eok": 30.85,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 309000,
+     "bid_eok": 30.9,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 309500,
+     "bid_eok": 30.95,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 310000,
+     "bid_eok": 31.0,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 310500,
+     "bid_eok": 31.05,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 311000,
+     "bid_eok": 31.1,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 311500,
+     "bid_eok": 31.15,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 312000,
+     "bid_eok": 31.2,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 312500,
+     "bid_eok": 31.25,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 313000,
+     "bid_eok": 31.3,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 313500,
+     "bid_eok": 31.35,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 299731,
+   "p50_ensemble_eok": 29.97,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "중복사건",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2022-03-11"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2026타경100393[2]": {
+   "key": "2026타경100393[2]",
+   "auction_id": "C75NBWAX",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1455-9 경남아너스빌 101동 2층205호",
+   "appr_manwon": 223000,
+   "low_manwon": 178400,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 127.04,
+   "danji_id": "a5htnvf",
+   "danji_name": "경남아너스빌(1455-9)",
+   "name": "경남아너스빌(1455-9)",
+   "case": "2026타경100393",
+   "keyword": "대항력있는임차인,중복사건,토지거래허가구역",
+   "pyeong": "45",
+   "appr_eok": 22.3,
+   "low_eok": 17.84,
+   "richgo_sise_eok": 22.574,
+   "appr_vs_sise": 0.988,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 55,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 190864,
+     "45%": 192395,
+     "50%": 194000,
+     "55%": 195741,
+     "60%": 197602
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 185139,
+    "45%": 186623,
+    "50%": 188180,
+    "55%": 189869,
+    "60%": 191674
+   },
+   "bid_by_prob_eok": {
+    "40%": 18.51,
+    "45%": 18.66,
+    "50%": 18.82,
+    "55%": 18.99,
+    "60%": 19.17
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 180500,
+     "bid_eok": 18.05,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 181000,
+     "bid_eok": 18.1,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 181500,
+     "bid_eok": 18.15,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 182000,
+     "bid_eok": 18.2,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 182500,
+     "bid_eok": 18.25,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 183000,
+     "bid_eok": 18.3,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 183500,
+     "bid_eok": 18.35,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 184000,
+     "bid_eok": 18.4,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 184500,
+     "bid_eok": 18.45,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 185000,
+     "bid_eok": 18.5,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 185500,
+     "bid_eok": 18.55,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 186000,
+     "bid_eok": 18.6,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 186500,
+     "bid_eok": 18.65,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 187000,
+     "bid_eok": 18.7,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 187500,
+     "bid_eok": 18.75,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 188000,
+     "bid_eok": 18.8,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 188500,
+     "bid_eok": 18.85,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 189000,
+     "bid_eok": 18.9,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 189500,
+     "bid_eok": 18.95,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 190000,
+     "bid_eok": 19.0,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 190500,
+     "bid_eok": 19.05,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 191000,
+     "bid_eok": 19.1,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 191500,
+     "bid_eok": 19.15,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 192000,
+     "bid_eok": 19.2,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 192500,
+     "bid_eok": 19.25,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 193000,
+     "bid_eok": 19.3,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 193500,
+     "bid_eok": 19.35,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 194000,
+     "bid_eok": 19.4,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 194500,
+     "bid_eok": 19.45,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 195000,
+     "bid_eok": 19.5,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 195500,
+     "bid_eok": 19.55,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 196000,
+     "bid_eok": 19.6,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 196500,
+     "bid_eok": 19.65,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 197000,
+     "bid_eok": 19.7,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 188180,
+   "p50_ensemble_eok": 18.82,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(55세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "중복사건",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2012-05-17"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
+   }
+  },
   "2026타경50101[1]": {
    "key": "2026타경50101[1]",
    "auction_id": "C42BLWEB",
@@ -179,7 +3688,7 @@
    "appr_manwon": 78500,
    "low_manwon": 62800,
    "fails": 1,
-   "bidding_date": "2026-11-01",
+   "bidding_date": "2026-11-02",
    "area": 84.15,
    "danji_id": "a3itVbo",
    "danji_name": "고덕롯데캐슬베네루체",
@@ -197,37 +3706,42 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 136263,
-     "45%": 137355,
-     "50%": 138502,
-     "55%": 139745,
-     "60%": 141073
+     "40%": 136159,
+     "45%": 137251,
+     "50%": 138396,
+     "55%": 139638,
+     "60%": 140966
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 136263,
-    "45%": 137355,
-    "50%": 138502,
-    "55%": 139745,
-    "60%": 141073
+    "40%": 136159,
+    "45%": 137251,
+    "50%": 138396,
+    "55%": 139638,
+    "60%": 140966
    },
    "bid_by_prob_eok": {
-    "40%": 13.63,
-    "45%": 13.74,
-    "50%": 13.85,
-    "55%": 13.97,
-    "60%": 14.11
+    "40%": 13.62,
+    "45%": 13.73,
+    "50%": 13.84,
+    "55%": 13.96,
+    "60%": 14.1
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 132500,
+     "bid_eok": 13.25,
+     "prob": 25
+    },
+    {
      "bid_manwon": 133000,
      "bid_eok": 13.3,
-     "prob": 26
+     "prob": 27
     },
     {
      "bid_manwon": 133500,
      "bid_eok": 13.35,
-     "prob": 28
+     "prob": 29
     },
     {
      "bid_manwon": 134000,
@@ -237,12 +3751,12 @@
     {
      "bid_manwon": 134500,
      "bid_eok": 13.45,
-     "prob": 32
+     "prob": 33
     },
     {
      "bid_manwon": 135000,
      "bid_eok": 13.5,
-     "prob": 34
+     "prob": 35
     },
     {
      "bid_manwon": 135500,
@@ -257,12 +3771,12 @@
     {
      "bid_manwon": 136500,
      "bid_eok": 13.65,
-     "prob": 41
+     "prob": 42
     },
     {
      "bid_manwon": 137000,
      "bid_eok": 13.7,
-     "prob": 43
+     "prob": 44
     },
     {
      "bid_manwon": 137500,
@@ -312,22 +3826,22 @@
     {
      "bid_manwon": 142000,
      "bid_eok": 14.2,
-     "prob": 63
+     "prob": 64
     },
     {
      "bid_manwon": 142500,
      "bid_eok": 14.25,
-     "prob": 65
+     "prob": 66
     },
     {
      "bid_manwon": 143000,
      "bid_eok": 14.3,
-     "prob": 67
+     "prob": 68
     },
     {
      "bid_manwon": 143500,
      "bid_eok": 14.35,
-     "prob": 69
+     "prob": 70
     },
     {
      "bid_manwon": 144000,
@@ -338,15 +3852,10 @@
      "bid_manwon": 144500,
      "bid_eok": 14.45,
      "prob": 73
-    },
-    {
-     "bid_manwon": 145000,
-     "bid_eok": 14.5,
-     "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 138502,
-   "p50_ensemble_eok": 13.85,
+   "p50_ensemble_manwon": 138396,
+   "p50_ensemble_eok": 13.84,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
@@ -369,6 +3878,323 @@
     "resale": true,
     "decision": "hide",
     "reason": "특수물건(지분매각)"
+   }
+  },
+  "2024타경56181[1]": {
+   "key": "2024타경56181[1]",
+   "auction_id": "C14LXKAV",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 아차산로 552, 16동 2층202호 (광장동,광장극동아파트)",
+   "appr_manwon": 209200,
+   "low_manwon": 209200,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 156.91,
+   "danji_id": "a2MhWUs",
+   "danji_name": "광장극동2차",
+   "name": "광장극동2차",
+   "case": "2024타경56181",
+   "keyword": "재매각",
+   "pyeong": "54",
+   "appr_eok": 20.92,
+   "low_eok": 20.92,
+   "richgo_sise_eok": 33.133,
+   "appr_vs_sise": 0.631,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 896,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 266428,
+     "45%": 268564,
+     "50%": 270805,
+     "55%": 273235,
+     "60%": 275832
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 266428,
+    "45%": 268564,
+    "50%": 270805,
+    "55%": 273235,
+    "60%": 275832
+   },
+   "bid_by_prob_eok": {
+    "40%": 26.64,
+    "45%": 26.86,
+    "50%": 27.08,
+    "55%": 27.32,
+    "60%": 27.58
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 259500,
+     "bid_eok": 25.95,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 260000,
+     "bid_eok": 26.0,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 260500,
+     "bid_eok": 26.05,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 261000,
+     "bid_eok": 26.1,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 261500,
+     "bid_eok": 26.15,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 262000,
+     "bid_eok": 26.2,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 262500,
+     "bid_eok": 26.25,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 263000,
+     "bid_eok": 26.3,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 263500,
+     "bid_eok": 26.35,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 264000,
+     "bid_eok": 26.4,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 264500,
+     "bid_eok": 26.45,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 265000,
+     "bid_eok": 26.5,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 265500,
+     "bid_eok": 26.55,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 266000,
+     "bid_eok": 26.6,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 266500,
+     "bid_eok": 26.65,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 267000,
+     "bid_eok": 26.7,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 267500,
+     "bid_eok": 26.75,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 268000,
+     "bid_eok": 26.8,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 268500,
+     "bid_eok": 26.85,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 269000,
+     "bid_eok": 26.9,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 269500,
+     "bid_eok": 26.95,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 270000,
+     "bid_eok": 27.0,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 270500,
+     "bid_eok": 27.05,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 271000,
+     "bid_eok": 27.1,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 271500,
+     "bid_eok": 27.15,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 272000,
+     "bid_eok": 27.2,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 272500,
+     "bid_eok": 27.25,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 273000,
+     "bid_eok": 27.3,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 273500,
+     "bid_eok": 27.35,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 274000,
+     "bid_eok": 27.4,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 274500,
+     "bid_eok": 27.45,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 275000,
+     "bid_eok": 27.5,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 275500,
+     "bid_eok": 27.55,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 276000,
+     "bid_eok": 27.6,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 276500,
+     "bid_eok": 27.65,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 277000,
+     "bid_eok": 27.7,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 277500,
+     "bid_eok": 27.75,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 278000,
+     "bid_eok": 27.8,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 278500,
+     "bid_eok": 27.85,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 279000,
+     "bid_eok": 27.9,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 279500,
+     "bid_eok": 27.95,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 280000,
+     "bid_eok": 28.0,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 280500,
+     "bid_eok": 28.05,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 281000,
+     "bid_eok": 28.1,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 281500,
+     "bid_eok": 28.15,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 282000,
+     "bid_eok": 28.2,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 282500,
+     "bid_eok": 28.25,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 283000,
+     "bid_eok": 28.3,
+     "prob": 74
+    },
+    {
+     "bid_manwon": 283500,
+     "bid_eok": 28.35,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 270805,
+   "p50_ensemble_eok": 27.08,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "재매각"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2016-05-02"
+    },
+    "resale": true,
+    "decision": "show",
+    "reason": "재매각"
    }
   },
   "2025타경51453[1]": {
@@ -979,6 +4805,311 @@
     "reason": "특수물건(지분매각)"
    }
   },
+  "2025타경52183[1]": {
+   "key": "2025타경52183[1]",
+   "auction_id": "C12ABSRM",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 가락동 913 헬리오시티 318동 5층504호",
+   "appr_manwon": 279000,
+   "low_manwon": 223200,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 84.95,
+   "danji_id": "a1zUerj",
+   "danji_name": "헬리오시티",
+   "name": "헬리오시티",
+   "case": "2025타경52183",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 27.9,
+   "low_eok": 22.32,
+   "richgo_sise_eok": 29.266,
+   "appr_vs_sise": 0.953,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 9510,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 259160,
+     "45%": 261238,
+     "50%": 263418,
+     "55%": 265782,
+     "60%": 268308
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 259160,
+    "45%": 261238,
+    "50%": 263418,
+    "55%": 265782,
+    "60%": 268308
+   },
+   "bid_by_prob_eok": {
+    "40%": 25.92,
+    "45%": 26.12,
+    "50%": 26.34,
+    "55%": 26.58,
+    "60%": 26.83
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 252500,
+     "bid_eok": 25.25,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 253000,
+     "bid_eok": 25.3,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 253500,
+     "bid_eok": 25.35,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 254000,
+     "bid_eok": 25.4,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 254500,
+     "bid_eok": 25.45,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 255000,
+     "bid_eok": 25.5,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 255500,
+     "bid_eok": 25.55,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 256000,
+     "bid_eok": 25.6,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 256500,
+     "bid_eok": 25.65,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 257000,
+     "bid_eok": 25.7,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 257500,
+     "bid_eok": 25.75,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 258000,
+     "bid_eok": 25.8,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 258500,
+     "bid_eok": 25.85,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 259000,
+     "bid_eok": 25.9,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 259500,
+     "bid_eok": 25.95,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 260000,
+     "bid_eok": 26.0,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 260500,
+     "bid_eok": 26.05,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 261000,
+     "bid_eok": 26.1,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 261500,
+     "bid_eok": 26.15,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 262000,
+     "bid_eok": 26.2,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 262500,
+     "bid_eok": 26.25,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 263000,
+     "bid_eok": 26.3,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 263500,
+     "bid_eok": 26.35,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 264000,
+     "bid_eok": 26.4,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 264500,
+     "bid_eok": 26.45,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 265000,
+     "bid_eok": 26.5,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 265500,
+     "bid_eok": 26.55,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 266000,
+     "bid_eok": 26.6,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 266500,
+     "bid_eok": 26.65,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 267000,
+     "bid_eok": 26.7,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 267500,
+     "bid_eok": 26.75,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 268000,
+     "bid_eok": 26.8,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 268500,
+     "bid_eok": 26.85,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 269000,
+     "bid_eok": 26.9,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 269500,
+     "bid_eok": 26.95,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 270000,
+     "bid_eok": 27.0,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 270500,
+     "bid_eok": 27.05,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 271000,
+     "bid_eok": 27.1,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 271500,
+     "bid_eok": 27.15,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 272000,
+     "bid_eok": 27.2,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 272500,
+     "bid_eok": 27.25,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 273000,
+     "bid_eok": 27.3,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 273500,
+     "bid_eok": 27.35,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 274000,
+     "bid_eok": 27.4,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 274500,
+     "bid_eok": 27.45,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 275000,
+     "bid_eok": 27.5,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 275500,
+     "bid_eok": 27.55,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 263418,
+   "p50_ensemble_eok": 26.34,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2021-05-07"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
   "2025타경52152[1]": {
    "key": "2025타경52152[1]",
    "auction_id": "C18KHZUH",
@@ -1432,6 +5563,650 @@
     "reason": "특수물건(지분매각)"
    }
   },
+  "2025타경478[1]": {
+   "key": "2025타경478[1]",
+   "auction_id": "C39VQJLB",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 오금동 619 송파호반베르디움더퍼스트 101동 20층2001호",
+   "appr_manwon": 171000,
+   "low_manwon": 136800,
+   "fails": 1,
+   "bidding_date": "2026-11-30",
+   "area": 101.46,
+   "danji_id": "a1AfHaW",
+   "danji_name": "송파호반베르디움더퍼스트",
+   "name": "송파호반베르디움더퍼스트",
+   "case": "2025타경478",
+   "keyword": "중복사건",
+   "pyeong": "39",
+   "appr_eok": 17.1,
+   "low_eok": 13.68,
+   "richgo_sise_eok": 18.299,
+   "appr_vs_sise": 0.934,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 220,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 151952,
+     "45%": 153170,
+     "50%": 154448,
+     "55%": 155834,
+     "60%": 157315
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 147393,
+    "45%": 148575,
+    "50%": 149815,
+    "55%": 151159,
+    "60%": 152596
+   },
+   "bid_by_prob_eok": {
+    "40%": 14.74,
+    "45%": 14.86,
+    "50%": 14.98,
+    "55%": 15.12,
+    "60%": 15.26
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 143500,
+     "bid_eok": 14.35,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 144000,
+     "bid_eok": 14.4,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 144500,
+     "bid_eok": 14.45,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 145000,
+     "bid_eok": 14.5,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 145500,
+     "bid_eok": 14.55,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 146000,
+     "bid_eok": 14.6,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 146500,
+     "bid_eok": 14.65,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 147000,
+     "bid_eok": 14.7,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 147500,
+     "bid_eok": 14.75,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 148000,
+     "bid_eok": 14.8,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 148500,
+     "bid_eok": 14.85,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 149000,
+     "bid_eok": 14.9,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 149500,
+     "bid_eok": 14.95,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 150000,
+     "bid_eok": 15.0,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 150500,
+     "bid_eok": 15.05,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 151000,
+     "bid_eok": 15.1,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 151500,
+     "bid_eok": 15.15,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 152000,
+     "bid_eok": 15.2,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 152500,
+     "bid_eok": 15.25,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 153000,
+     "bid_eok": 15.3,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 153500,
+     "bid_eok": 15.35,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 154000,
+     "bid_eok": 15.4,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 154500,
+     "bid_eok": 15.45,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 155000,
+     "bid_eok": 15.5,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 155500,
+     "bid_eok": 15.55,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 156000,
+     "bid_eok": 15.6,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 156500,
+     "bid_eok": 15.65,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 149815,
+   "p50_ensemble_eok": 14.98,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [
+    "소규모 단지(220세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "중복사건"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2018-05-09"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2026타경52[1]": {
+   "key": "2026타경52[1]",
+   "auction_id": "C45DZZDJ",
+   "region": "경기 성남시 분당구",
+   "address": "경기도 성남시 분당구 이매동 100 이매촌삼성아파트 1015동 3층302호",
+   "appr_manwon": 162000,
+   "low_manwon": 162000,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 84.94,
+   "danji_id": "a1Iqbuh",
+   "danji_name": "이매삼성",
+   "name": "이매삼성",
+   "case": "2026타경52",
+   "keyword": "중복사건,토지거래허가구역,개발행위허가제한구역",
+   "pyeong": "32",
+   "appr_eok": 16.2,
+   "low_eok": 16.2,
+   "richgo_sise_eok": 18.554,
+   "appr_vs_sise": 0.873,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1162,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 172768,
+     "45%": 174153,
+     "50%": 175606,
+     "55%": 177182,
+     "60%": 178866
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 172768,
+    "45%": 174153,
+    "50%": 175606,
+    "55%": 177182,
+    "60%": 178866
+   },
+   "bid_by_prob_eok": {
+    "40%": 17.28,
+    "45%": 17.42,
+    "50%": 17.56,
+    "55%": 17.72,
+    "60%": 17.89
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 168500,
+     "bid_eok": 16.85,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 169000,
+     "bid_eok": 16.9,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 169500,
+     "bid_eok": 16.95,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 170000,
+     "bid_eok": 17.0,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 170500,
+     "bid_eok": 17.05,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 171000,
+     "bid_eok": 17.1,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 171500,
+     "bid_eok": 17.15,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 172000,
+     "bid_eok": 17.2,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 172500,
+     "bid_eok": 17.25,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 173000,
+     "bid_eok": 17.3,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 173500,
+     "bid_eok": 17.35,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 174000,
+     "bid_eok": 17.4,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 174500,
+     "bid_eok": 17.45,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 175000,
+     "bid_eok": 17.5,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 175500,
+     "bid_eok": 17.55,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 176000,
+     "bid_eok": 17.6,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 176500,
+     "bid_eok": 17.65,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 177000,
+     "bid_eok": 17.7,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 177500,
+     "bid_eok": 17.75,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 178000,
+     "bid_eok": 17.8,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 178500,
+     "bid_eok": 17.85,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 179000,
+     "bid_eok": 17.9,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 179500,
+     "bid_eok": 17.95,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 180000,
+     "bid_eok": 18.0,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 180500,
+     "bid_eok": 18.05,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 181000,
+     "bid_eok": 18.1,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 181500,
+     "bid_eok": 18.15,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 182000,
+     "bid_eok": 18.2,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 182500,
+     "bid_eok": 18.25,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 183000,
+     "bid_eok": 18.3,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 183500,
+     "bid_eok": 18.35,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 175606,
+   "p50_ensemble_eok": 17.56,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "중복사건",
+     "토지거래허가구역",
+     "개발행위허가제한구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2002-01-12"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2026타경50816[1]": {
+   "key": "2026타경50816[1]",
+   "auction_id": "C64STUIR",
+   "region": "경기 성남시 분당구",
+   "address": "경기도 성남시 분당구 백현동 608 더샵판교퍼스트파크 107동 15층1502호",
+   "appr_manwon": 150000,
+   "low_manwon": 150000,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 84.97,
+   "danji_id": "a5fodBX",
+   "danji_name": "더샵판교퍼스트파크",
+   "name": "더샵판교퍼스트파크",
+   "case": "2026타경50816",
+   "keyword": "토지거래허가구역",
+   "pyeong": "34",
+   "appr_eok": 15.0,
+   "low_eok": 15.0,
+   "richgo_sise_eok": 16.238,
+   "appr_vs_sise": 0.924,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1223,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 153870,
+     "45%": 155103,
+     "50%": 156398,
+     "55%": 157801,
+     "60%": 159301
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 153870,
+    "45%": 155103,
+    "50%": 156398,
+    "55%": 157801,
+    "60%": 159301
+   },
+   "bid_by_prob_eok": {
+    "40%": 15.39,
+    "45%": 15.51,
+    "50%": 15.64,
+    "55%": 15.78,
+    "60%": 15.93
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 150000,
+     "bid_eok": 15.0,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 150500,
+     "bid_eok": 15.05,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 151000,
+     "bid_eok": 15.1,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 151500,
+     "bid_eok": 15.15,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 152000,
+     "bid_eok": 15.2,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 152500,
+     "bid_eok": 15.25,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 153000,
+     "bid_eok": 15.3,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 153500,
+     "bid_eok": 15.35,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 154000,
+     "bid_eok": 15.4,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 154500,
+     "bid_eok": 15.45,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 155000,
+     "bid_eok": 15.5,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 155500,
+     "bid_eok": 15.55,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 156000,
+     "bid_eok": 15.6,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 156500,
+     "bid_eok": 15.65,
+     "prob": 50
+    },
+    {
+     "bid_manwon": 157000,
+     "bid_eok": 15.7,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 157500,
+     "bid_eok": 15.75,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 158000,
+     "bid_eok": 15.8,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 158500,
+     "bid_eok": 15.85,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 159000,
+     "bid_eok": 15.9,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 159500,
+     "bid_eok": 15.95,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 160000,
+     "bid_eok": 16.0,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 160500,
+     "bid_eok": 16.05,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 161000,
+     "bid_eok": 16.1,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 161500,
+     "bid_eok": 16.15,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 162000,
+     "bid_eok": 16.2,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 162500,
+     "bid_eok": 16.25,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 163000,
+     "bid_eok": 16.3,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 163500,
+     "bid_eok": 16.35,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 156398,
+   "p50_ensemble_eok": 15.64,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2023-10-31"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
   "2025타경53415[1]": {
    "key": "2025타경53415[1]",
    "auction_id": "C05UWOSS",
@@ -1623,6 +6398,246 @@
      "right_risk": false,
      "base_right": "근저당권",
      "base_date": "2021-06-08"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   }
+  },
+  "2026타경50765[1]": {
+   "key": "2026타경50765[1]",
+   "auction_id": "C36PBQZC",
+   "region": "경기 성남시 분당구",
+   "address": "경기도 성남시 분당구 백현동 608 더샵판교퍼스트파크 104동 10층1004호",
+   "appr_manwon": 228000,
+   "low_manwon": 159600,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 129.83,
+   "danji_id": "a5fodBX",
+   "danji_name": "더샵판교퍼스트파크",
+   "name": "더샵판교퍼스트파크",
+   "case": "2026타경50765",
+   "keyword": "토지거래허가구역",
+   "pyeong": "49",
+   "appr_eok": 22.8,
+   "low_eok": 15.96,
+   "richgo_sise_eok": 20.301,
+   "appr_vs_sise": 1.123,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 1223,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 181851,
+     "45%": 183309,
+     "50%": 184839,
+     "55%": 186498,
+     "60%": 188271
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 181851,
+    "45%": 183309,
+    "50%": 184839,
+    "55%": 186498,
+    "60%": 188271
+   },
+   "bid_by_prob_eok": {
+    "40%": 18.19,
+    "45%": 18.33,
+    "50%": 18.48,
+    "55%": 18.65,
+    "60%": 18.83
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 177000,
+     "bid_eok": 17.7,
+     "prob": 25
+    },
+    {
+     "bid_manwon": 177500,
+     "bid_eok": 17.75,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 178000,
+     "bid_eok": 17.8,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 178500,
+     "bid_eok": 17.85,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 179000,
+     "bid_eok": 17.9,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 179500,
+     "bid_eok": 17.95,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 180000,
+     "bid_eok": 18.0,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 180500,
+     "bid_eok": 18.05,
+     "prob": 35
+    },
+    {
+     "bid_manwon": 181000,
+     "bid_eok": 18.1,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 181500,
+     "bid_eok": 18.15,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 182000,
+     "bid_eok": 18.2,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 182500,
+     "bid_eok": 18.25,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 183000,
+     "bid_eok": 18.3,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 183500,
+     "bid_eok": 18.35,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 184000,
+     "bid_eok": 18.4,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 184500,
+     "bid_eok": 18.45,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 185000,
+     "bid_eok": 18.5,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 185500,
+     "bid_eok": 18.55,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 186000,
+     "bid_eok": 18.6,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 186500,
+     "bid_eok": 18.65,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 187000,
+     "bid_eok": 18.7,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 187500,
+     "bid_eok": 18.75,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 188000,
+     "bid_eok": 18.8,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 188500,
+     "bid_eok": 18.85,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 189000,
+     "bid_eok": 18.9,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 189500,
+     "bid_eok": 18.95,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 190000,
+     "bid_eok": 19.0,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 190500,
+     "bid_eok": 19.05,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 191000,
+     "bid_eok": 19.1,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 191500,
+     "bid_eok": 19.15,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 192000,
+     "bid_eok": 19.2,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 192500,
+     "bid_eok": 19.25,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 193000,
+     "bid_eok": 19.3,
+     "prob": 73
+    },
+    {
+     "bid_manwon": 193500,
+     "bid_eok": 19.35,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 184839,
+   "p50_ensemble_eok": 18.48,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2023-06-23"
     },
     "resale": false,
     "decision": "show",
@@ -2081,6 +7096,94 @@
     "resale": false,
     "decision": "show",
     "reason": ""
+   }
+  },
+  "2026타경20745[1]": {
+   "key": "2026타경20745[1]",
+   "auction_id": "C67VKHJE",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진건읍 용정리 855 진건주공2단지 201동 8층801호",
+   "appr_manwon": 19900,
+   "low_manwon": 13930,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 49.95,
+   "danji_id": "a2DnTOi",
+   "danji_name": "진건주공2단지",
+   "name": "진건주공2단지",
+   "case": "2026타경20745",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "22",
+   "appr_eok": 1.99,
+   "low_eok": 1.393,
+   "richgo_sise_eok": 1.756,
+   "appr_vs_sise": 1.133,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 499,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 14675,
+     "45%": 14792,
+     "50%": 14916,
+     "55%": 15050,
+     "60%": 15193
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 14675,
+    "45%": 14792,
+    "50%": 14916,
+    "55%": 15050,
+    "60%": 15193
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.47,
+    "45%": 1.48,
+    "50%": 1.49,
+    "55%": 1.5,
+    "60%": 1.52
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 14500,
+     "bid_eok": 1.45,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 15000,
+     "bid_eok": 1.5,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 15500,
+     "bid_eok": 1.55,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 14916,
+   "p50_ensemble_eok": 1.49,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "가압류",
+     "base_date": "2025-11-18"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
    }
   },
   "2026타경20738[1]": {
@@ -6921,7 +12024,7 @@
    "appr_manwon": 13000,
    "low_manwon": 9100,
    "fails": 1,
-   "bidding_date": "2026-11-01",
+   "bidding_date": "2026-11-02",
    "area": 55.8,
    "danji_id": "a4aabMg",
    "danji_name": "진주8차",
@@ -6939,40 +12042,40 @@
     "applied": true,
     "adj_pct": -3.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 10224,
-     "45%": 10306,
-     "50%": 10392,
-     "55%": 10485,
-     "60%": 10584
+     "40%": 10204,
+     "45%": 10286,
+     "50%": 10371,
+     "55%": 10464,
+     "60%": 10564
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 9917,
-    "45%": 9996,
-    "50%": 10080,
-    "55%": 10170,
-    "60%": 10267
+    "40%": 9898,
+    "45%": 9977,
+    "50%": 10060,
+    "55%": 10151,
+    "60%": 10247
    },
    "bid_by_prob_eok": {
     "40%": 0.99,
     "45%": 1.0,
     "50%": 1.01,
     "55%": 1.02,
-    "60%": 1.03
+    "60%": 1.02
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 10000,
      "bid_eok": 1.0,
-     "prob": 45
+     "prob": 46
     },
     {
      "bid_manwon": 10500,
      "bid_eok": 1.05,
-     "prob": 72
+     "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 10080,
+   "p50_ensemble_manwon": 10060,
    "p50_ensemble_eok": 1.01,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
@@ -7005,7 +12108,7 @@
    "appr_manwon": 63900,
    "low_manwon": 31311,
    "fails": 2,
-   "bidding_date": "2026-11-01",
+   "bidding_date": "2026-11-02",
    "area": 158.71,
    "danji_id": "a2OzJfL",
    "danji_name": "호평마을중흥에스-클래스로하스",
@@ -7023,71 +12126,71 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 44251,
-     "45%": 44606,
-     "50%": 44978,
-     "55%": 45382,
-     "60%": 45813
+     "40%": 44028,
+     "45%": 44381,
+     "50%": 44751,
+     "55%": 45153,
+     "60%": 45582
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 44251,
-    "45%": 44606,
-    "50%": 44978,
-    "55%": 45382,
-    "60%": 45813
+    "40%": 44028,
+    "45%": 44381,
+    "50%": 44751,
+    "55%": 45153,
+    "60%": 45582
    },
    "bid_by_prob_eok": {
-    "40%": 4.43,
-    "45%": 4.46,
-    "50%": 4.5,
-    "55%": 4.54,
-    "60%": 4.58
+    "40%": 4.4,
+    "45%": 4.44,
+    "50%": 4.48,
+    "55%": 4.52,
+    "60%": 4.56
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 43000,
+     "bid_eok": 4.3,
+     "prob": 27
+    },
+    {
      "bid_manwon": 43500,
      "bid_eok": 4.35,
-     "prob": 30
+     "prob": 33
     },
     {
      "bid_manwon": 44000,
      "bid_eok": 4.4,
-     "prob": 36
+     "prob": 40
     },
     {
      "bid_manwon": 44500,
      "bid_eok": 4.45,
-     "prob": 44
+     "prob": 47
     },
     {
      "bid_manwon": 45000,
      "bid_eok": 4.5,
-     "prob": 50
+     "prob": 53
     },
     {
      "bid_manwon": 45500,
      "bid_eok": 4.55,
-     "prob": 56
+     "prob": 59
     },
     {
      "bid_manwon": 46000,
      "bid_eok": 4.6,
-     "prob": 62
+     "prob": 65
     },
     {
      "bid_manwon": 46500,
      "bid_eok": 4.65,
-     "prob": 68
-    },
-    {
-     "bid_manwon": 47000,
-     "bid_eok": 4.7,
-     "prob": 74
+     "prob": 71
     }
    ],
-   "p50_ensemble_manwon": 44978,
-   "p50_ensemble_eok": 4.5,
+   "p50_ensemble_manwon": 44751,
+   "p50_ensemble_eok": 4.48,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
@@ -7117,7 +12220,7 @@
    "appr_manwon": 35600,
    "low_manwon": 35600,
    "fails": 0,
-   "bidding_date": "2026-11-01",
+   "bidding_date": "2026-11-02",
    "area": 84.98,
    "danji_id": "a9pNMhx",
    "danji_name": "진접센트레빌시티1단지",
@@ -7156,13 +12259,7 @@
     "55%": 3.56,
     "60%": 3.56
    },
-   "prob_by_bid_5m": [
-    {
-     "bid_manwon": 36000,
-     "bid_eok": 3.6,
-     "prob": 75
-    }
-   ],
+   "prob_by_bid_5m": [],
    "p50_ensemble_manwon": 35600,
    "p50_ensemble_eok": 3.56,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
@@ -7194,7 +12291,7 @@
    "appr_manwon": 38300,
    "low_manwon": 38300,
    "fails": 0,
-   "bidding_date": "2026-11-01",
+   "bidding_date": "2026-11-02",
    "area": 84.94,
    "danji_id": "a8hwttU",
    "danji_name": "평내마을신명스카이뷰",
@@ -7237,7 +12334,7 @@
     {
      "bid_manwon": 38500,
      "bid_eok": 3.85,
-     "prob": 73
+     "prob": 72
     }
    ],
    "p50_ensemble_manwon": 38300,
@@ -7975,6 +13072,111 @@
     "reason": ""
    }
   },
+  "2025타경72387[1]": {
+   "key": "2025타경72387[1]",
+   "auction_id": "C25GZSNK",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 수택동 482-2 수택동성원상떼빌 101동 14층1413호",
+   "appr_manwon": 36200,
+   "low_manwon": 25340,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 53.28,
+   "danji_id": "a7kNjXc",
+   "danji_name": "수택성원상떼빌",
+   "name": "수택성원상떼빌",
+   "case": "2025타경72387",
+   "keyword": "대항력있는임차인,토지거래허가구역",
+   "pyeong": "23",
+   "appr_eok": 3.62,
+   "low_eok": 2.534,
+   "richgo_sise_eok": 4.051,
+   "appr_vs_sise": 0.893,
+   "model": "앙상블(부스팅+군집별회귀)",
+   "households": 182,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 32660,
+     "45%": 32922,
+     "50%": 33197,
+     "55%": 33495,
+     "60%": 33813
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 31681,
+    "45%": 31935,
+    "50%": 32201,
+    "55%": 32490,
+    "60%": 32799
+   },
+   "bid_by_prob_eok": {
+    "40%": 3.17,
+    "45%": 3.19,
+    "50%": 3.22,
+    "55%": 3.25,
+    "60%": 3.28
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 31000,
+     "bid_eok": 3.1,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 31500,
+     "bid_eok": 3.15,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 32000,
+     "bid_eok": 3.2,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 32500,
+     "bid_eok": 3.25,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 33000,
+     "bid_eok": 3.3,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 33500,
+     "bid_eok": 3.35,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 32201,
+   "p50_ensemble_eok": 3.22,
+   "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [
+    "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음"
+   ],
+   "notes": [
+    "소규모 단지(182세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2023-04-03"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
+   }
+  },
   "2025타경72200[1]": {
    "key": "2025타경72200[1]",
    "auction_id": "C49LSPHG",
@@ -8671,7 +13873,7 @@
    "appr_manwon": 81200,
    "low_manwon": 81200,
    "fails": 0,
-   "bidding_date": "2026-11-01",
+   "bidding_date": "2026-11-02",
    "area": 84.77,
    "danji_id": "a1zJcBd",
    "danji_name": "구리갈매푸르지오",
@@ -8691,23 +13893,23 @@
     "bid_by_prob_manwon_raw": {
      "40%": 81200,
      "45%": 81200,
-     "50%": 81827,
-     "55%": 82561,
-     "60%": 83346
+     "50%": 81782,
+     "55%": 82516,
+     "60%": 83300
     }
    },
    "bid_by_prob_manwon": {
     "40%": 81200,
     "45%": 81200,
-    "50%": 81827,
-    "55%": 82561,
-    "60%": 83346
+    "50%": 81782,
+    "55%": 82516,
+    "60%": 83300
    },
    "bid_by_prob_eok": {
     "40%": 8.12,
     "45%": 8.12,
     "50%": 8.18,
-    "55%": 8.26,
+    "55%": 8.25,
     "60%": 8.33
    },
    "prob_by_bid_5m": [
@@ -8719,7 +13921,7 @@
     {
      "bid_manwon": 82000,
      "bid_eok": 8.2,
-     "prob": 51
+     "prob": 52
     },
     {
      "bid_manwon": 82500,
@@ -8744,7 +13946,7 @@
     {
      "bid_manwon": 84500,
      "bid_eok": 8.45,
-     "prob": 67
+     "prob": 68
     },
     {
      "bid_manwon": 85000,
@@ -8757,7 +13959,7 @@
      "prob": 74
     }
    ],
-   "p50_ensemble_manwon": 81827,
+   "p50_ensemble_manwon": 81782,
    "p50_ensemble_eok": 8.18,
    "model_error_note": "평균 오차 약 5.74% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
    "warnings": [
@@ -8785,6 +13987,18 @@
  },
  "failed": [
   {
+   "key": "2025타경103166[1]",
+   "auction_id": "C18BJCFO",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  14층1401호",
+   "appr_manwon": 313000,
+   "low_manwon": 250400,
+   "fails": 1,
+   "bidding_date": "2026-11-04",
+   "area": 22.37,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
    "key": "2025타경101733[1]",
    "auction_id": "C33IVHBT",
    "region": "서울 강남구",
@@ -8797,6 +14011,30 @@
    "reason": "단지 못 찾음 (확인 29곳)"
   },
   {
+   "key": "2025타경102969[1]",
+   "auction_id": "C03NDQOM",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 681-26 역삼동하나빌  6층602호",
+   "appr_manwon": 45200,
+   "low_manwon": 18513,
+   "fails": 4,
+   "bidding_date": "2026-11-05",
+   "area": 28.44,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경103165[4]",
+   "auction_id": "C37RSEGW",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 청담동 114-9 청담브르넨  5층502호",
+   "appr_manwon": 654000,
+   "low_manwon": 523200,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": 171.6,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
    "key": "2026타경100455[1]",
    "auction_id": "C71OXPSC",
    "region": "서울 강남구",
@@ -8807,6 +14045,67 @@
    "bidding_date": "2026-11-10",
    "area": 63.36,
    "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2026타경101156[1]",
+   "auction_id": "C73QRRYR",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 828-28 역삼동이지소울리더  3층312호",
+   "appr_manwon": 24000,
+   "low_manwon": 19200,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 19.37,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2026타경101202[1]",
+   "auction_id": "C94TVYCL",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 역삼동 727-9 요진와이시티미니  4층405호",
+   "appr_manwon": 18700,
+   "low_manwon": 14960,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 12.94,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경104735[2]",
+   "auction_id": "C12TVCLM",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  14층1402호",
+   "appr_manwon": 266000,
+   "low_manwon": 212800,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 15.82,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경104735[1]",
+   "auction_id": "C15WAZJE",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  8층801호",
+   "appr_manwon": 331000,
+   "low_manwon": 264800,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 22.37,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경103751[1]",
+   "auction_id": "C17NBBIO",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 146 삼성동포스코더샵  20층2002호",
+   "appr_manwon": 532000,
+   "low_manwon": 425600,
+   "fails": 1,
+   "bidding_date": "2026-11-18",
+   "area": 199.2,
+   "danji_id": "a0ziaFN",
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
   },
   {
    "key": "2025타경2577[2]",
@@ -8833,6 +14132,30 @@
    "reason": "단지 못 찾음 (확인 12곳)"
   },
   {
+   "key": "2025타경103132[1]",
+   "auction_id": "C66LQEWC",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  19층1901호",
+   "appr_manwon": 699000,
+   "low_manwon": 559200,
+   "fails": 1,
+   "bidding_date": "2026-11-24",
+   "area": 96.26,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경2812[1]",
+   "auction_id": "C73ORPMX",
+   "region": "서울 강남구",
+   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  16층1601호",
+   "appr_manwon": 327400,
+   "low_manwon": 209536,
+   "fails": 2,
+   "bidding_date": "2026-11-26",
+   "area": 22.37,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
    "key": "2026타경100088[1]",
    "auction_id": "C67PVDRX",
    "region": "서울 서초구",
@@ -8843,6 +14166,43 @@
    "bidding_date": "2026-11-04",
    "area": 104.75,
    "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경103101[1]",
+   "auction_id": "C06XEOJA",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 999 월드빌라트  10층11층1002호",
+   "appr_manwon": 269000,
+   "low_manwon": 269000,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 261.49,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경103618[1]",
+   "auction_id": "C49VKBBX",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 845-14 성지라빌레뜨 비동 5층502호",
+   "appr_manwon": 330000,
+   "low_manwon": 330000,
+   "fails": 0,
+   "bidding_date": "2026-11-05",
+   "area": 216.36,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경103954[1]",
+   "auction_id": "C78MBBQE",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 반포동 12 래미안원펜타스 102동 14층1403호",
+   "appr_manwon": 580000,
+   "low_manwon": 464000,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 84.73,
+   "danji_id": "a9YMOSF",
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
   },
   {
    "key": "2026타경101131[1]",
@@ -8869,6 +14229,18 @@
    "reason": "단지 못 찾음 (확인 10곳)"
   },
   {
+   "key": "2026타경100434[1]",
+   "auction_id": "C58BOMOL",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 799-5 힐스나인빌리지  1층101호",
+   "appr_manwon": 247300,
+   "low_manwon": 197840,
+   "fails": 1,
+   "bidding_date": "2026-11-10",
+   "area": null,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
    "key": "2025타경103180[1]",
    "auction_id": "C42ARMPU",
    "region": "서울 서초구",
@@ -8879,6 +14251,139 @@
    "bidding_date": "2026-11-12",
    "area": 227.97,
    "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경104617[1]",
+   "auction_id": "C69AIGOM",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1675-10 지에스타워주건축물제1동  지상6층601호",
+   "appr_manwon": 27100,
+   "low_manwon": 21680,
+   "fails": 1,
+   "bidding_date": "2026-11-12",
+   "area": 12.56,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경104699[1]",
+   "auction_id": "C35PPPDF",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1496-6 루컴즈힐서리풀 101동 4층404호",
+   "appr_manwon": 200000,
+   "low_manwon": 160000,
+   "fails": 1,
+   "bidding_date": "2026-11-17",
+   "area": 83.92,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경103336[1]",
+   "auction_id": "C35LMMYV",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 805-1 라빌레뜨  1층101호",
+   "appr_manwon": 286000,
+   "low_manwon": 183040,
+   "fails": 2,
+   "bidding_date": "2026-11-24",
+   "area": 203.63,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경2485[1]",
+   "auction_id": "C97MAMXS",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 양재동 122-2 메르디안하우스  6층602호",
+   "appr_manwon": 221000,
+   "low_manwon": 176800,
+   "fails": 1,
+   "bidding_date": "2026-11-24",
+   "area": 206.12,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2026타경100722[1]",
+   "auction_id": "C15RUGQU",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 방배동 847-34 방배대우유로카운티  1층105호",
+   "appr_manwon": 420000,
+   "low_manwon": 336000,
+   "fails": 1,
+   "bidding_date": "2026-12-02",
+   "area": 234.01,
+   "danji_id": "a4nqFKb",
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  },
+  {
+   "key": "2025타경52458[1]",
+   "auction_id": "C31BKTMV",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  11층1103호",
+   "appr_manwon": 24000,
+   "low_manwon": 24000,
+   "fails": 0,
+   "bidding_date": "2026-11-02",
+   "area": 14.01,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경51375[1]",
+   "auction_id": "C48YNJNH",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차 13층 1305호",
+   "appr_manwon": 12100,
+   "low_manwon": 4956,
+   "fails": 4,
+   "bidding_date": "2026-11-09",
+   "area": 13.27,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2026타경50411[1]",
+   "auction_id": "C07ZLFYT",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  6층608호",
+   "appr_manwon": 11000,
+   "low_manwon": 7040,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 16.68,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경52148[1]",
+   "auction_id": "C14VAAKA",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  8층803호",
+   "appr_manwon": 23300,
+   "low_manwon": 18640,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 14.01,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경52354[1]",
+   "auction_id": "C56OKKIM",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 343-2 현대웰하임2단지  5층521호",
+   "appr_manwon": 8400,
+   "low_manwon": 5376,
+   "fails": 2,
+   "bidding_date": "2026-11-16",
+   "area": 13.11,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경51960[1]",
+   "auction_id": "C60FRBHY",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  14층1414호",
+   "appr_manwon": 12300,
+   "low_manwon": 9840,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 13.27,
+   "reason": "단지 못 찾음 (확인 11곳)"
   },
   {
    "key": "2025타경51884[1]",
@@ -8893,6 +14398,187 @@
    "reason": "단지 못 찾음 (확인 18곳)"
   },
   {
+   "key": "2026타경50152[1]",
+   "auction_id": "C71RRXWS",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 457 청광플러스원큐브2차  17층1708호",
+   "appr_manwon": 10900,
+   "low_manwon": 8720,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 14.49,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경52220[1]",
+   "auction_id": "C97ZPREW",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 457 청광플러스원큐브2차  15층1504호",
+   "appr_manwon": 11000,
+   "low_manwon": 8800,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 14.49,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경52272[1]",
+   "auction_id": "C12SILHA",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  10층1014호",
+   "appr_manwon": 12000,
+   "low_manwon": 9600,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 13.27,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경51291[1]",
+   "auction_id": "C39VYXRF",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  13층1306호",
+   "appr_manwon": 11300,
+   "low_manwon": 3702,
+   "fails": 5,
+   "bidding_date": "2026-11-23",
+   "area": 16.68,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경51702[1]",
+   "auction_id": "C47IEVFB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 456-3 강동큐브  16층1604호",
+   "appr_manwon": 12700,
+   "low_manwon": 6502,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 12.49,
+   "reason": "단지 못 찾음 (확인 14곳)"
+  },
+  {
+   "key": "2025타경52149[1]",
+   "auction_id": "C63TMBWB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  15층1504호",
+   "appr_manwon": 23600,
+   "low_manwon": 15104,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 14.04,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경51117[1]",
+   "auction_id": "C68XOZZH",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 343-1 현대웰하임1단지  3층306호",
+   "appr_manwon": 13000,
+   "low_manwon": 3407,
+   "fails": 6,
+   "bidding_date": "2026-11-23",
+   "area": 16.96,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경51389[1]",
+   "auction_id": "C61ENASP",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  11층1106호",
+   "appr_manwon": 12200,
+   "low_manwon": 6246,
+   "fails": 6,
+   "bidding_date": "2026-11-30",
+   "area": 13.27,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2025타경51173[1]",
+   "auction_id": "C75QUJHJ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 457-1 강동렘브란트  11층1106호",
+   "appr_manwon": 12600,
+   "low_manwon": 6451,
+   "fails": 7,
+   "bidding_date": "2026-11-30",
+   "area": 15.86,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2024타경61978[1]",
+   "auction_id": "C84DJETR",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호대로177길 40, 11층1108호 (길동,경지아리움)",
+   "appr_manwon": 19700,
+   "low_manwon": 15760,
+   "fails": 11,
+   "bidding_date": "2026-11-30",
+   "area": 13.45,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경51965[1]",
+   "auction_id": "C17HBDLY",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  9층910호",
+   "appr_manwon": 10900,
+   "low_manwon": 5580,
+   "fails": 4,
+   "bidding_date": "",
+   "area": 16.68,
+   "reason": "단지 못 찾음 (확인 11곳)"
+  },
+  {
+   "key": "2024타경2085[1]",
+   "auction_id": "C99PIEQZ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호대로176길 10-12, 12층1203호",
+   "appr_manwon": 13800,
+   "low_manwon": 8832,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 11.64,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2023타경60534[1]",
+   "auction_id": "C00MBZPL",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 능동로 170, 4층405호 (화양동,신원리브웰 화양동 주상복합)",
+   "appr_manwon": 22700,
+   "low_manwon": 638,
+   "fails": 16,
+   "bidding_date": "2026-11-16",
+   "area": 20.66,
+   "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경51328[1]",
+   "auction_id": "C25NVEUS",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 화양동 111-88 신원리브웰 화양동 주상복합  4층401호",
+   "appr_manwon": 21800,
+   "low_manwon": 13952,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 16.92,
+   "reason": "단지 못 찾음 (확인 12곳)"
+  },
+  {
+   "key": "2025타경52237[1]",
+   "auction_id": "C58JSTQT",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 신천동 7-19 잠실시그마타워  21층2105호",
+   "appr_manwon": 280000,
+   "low_manwon": 224000,
+   "fails": 1,
+   "bidding_date": "2026-11-02",
+   "area": 208.56,
+   "danji_id": "a2TIBzD",
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  },
+  {
    "key": "2026타경20937[1]",
    "auction_id": "C46YPOHX",
    "region": "경기 남양주시",
@@ -8903,6 +14589,30 @@
    "bidding_date": "2026-11-04",
    "area": 84.88,
    "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2025타경72706[1]",
+   "auction_id": "C44SHXNH",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 금곡리 1108 금강펜테리움아파트 1907동 14층1401호",
+   "appr_manwon": 50600,
+   "low_manwon": 35420,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": null,
+   "reason": "단지 못 찾음 (확인 18곳)"
+  },
+  {
+   "key": "2025타경71740[1]",
+   "auction_id": "C96CIVJQ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 오남읍 오남리 683-25 진주아파트 202동 1층105호",
+   "appr_manwon": 12500,
+   "low_manwon": 6125,
+   "fails": 2,
+   "bidding_date": "2026-11-11",
+   "area": 39.96,
+   "reason": "단지 못 찾음 (확인 23곳)"
   },
   {
    "key": "2025타경72451[1]",
@@ -8939,686 +14649,38 @@
    "bidding_date": "",
    "area": 59.97,
    "reason": "단지 못 찾음 (확인 10곳)"
+  },
+  {
+   "key": "2024타경5360[1]",
+   "auction_id": "C62QFBRJ",
+   "region": "경기 남양주시",
+   "address": "경기도 남양주시 진접읍 해밀예당3로 68, 1906동 1층101호 (금강펜테리움아파트)",
+   "appr_manwon": 49700,
+   "low_manwon": 34790,
+   "fails": 1,
+   "bidding_date": "",
+   "area": null,
+   "reason": "단지 못 찾음 (확인 20곳)"
+  },
+  {
+   "key": "2025타경72740[1]",
+   "auction_id": "C07DQXQZ",
+   "region": "경기 구리시",
+   "address": "경기도 구리시 수택동 506-9  8층808호",
+   "appr_manwon": 24900,
+   "low_manwon": 17430,
+   "fails": 1,
+   "bidding_date": "2026-11-05",
+   "area": 42.72,
+   "reason": "단지 못 찾음 (확인 10곳)"
   }
  ],
  "skipped": [
-  {
-   "key": "2025타경103166[1]",
-   "auction_id": "C18BJCFO",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  14층1401호",
-   "appr_manwon": 313000,
-   "low_manwon": 250400,
-   "fails": 1,
-   "bidding_date": "2026-11-04",
-   "area": 22.37,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경102969[1]",
-   "auction_id": "C03NDQOM",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 역삼동 681-26 역삼동하나빌  6층602호",
-   "appr_manwon": 45200,
-   "low_manwon": 18513,
-   "fails": 4,
-   "bidding_date": "2026-11-05",
-   "area": 28.44,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경104308[1]",
-   "auction_id": "C04OZEQG",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 대치동 1027 래미안대치팰리스 104동 12층1201호",
-   "appr_manwon": 507000,
-   "low_manwon": 405600,
-   "fails": 1,
-   "bidding_date": "2026-11-05",
-   "area": 84.98,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경104318[1]",
-   "auction_id": "C07SRLQR",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 청담동 67-1 청담린든그로브 104동 2층204호",
-   "appr_manwon": 340000,
-   "low_manwon": 340000,
-   "fails": 0,
-   "bidding_date": "2026-11-05",
-   "area": 85,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경100530[1]",
-   "auction_id": "C19XSUPK",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 역삼동 757 역삼래미안 108동 1층102호",
-   "appr_manwon": 329000,
-   "low_manwon": 263200,
-   "fails": 1,
-   "bidding_date": "2026-11-10",
-   "area": 80.87,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103165[4]",
-   "auction_id": "C37RSEGW",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 청담동 114-9 청담브르넨  5층502호",
-   "appr_manwon": 654000,
-   "low_manwon": 523200,
-   "fails": 1,
-   "bidding_date": "2026-11-10",
-   "area": 171.6,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경100530[2]",
-   "auction_id": "C45BVLNI",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 역삼동 755-4 역삼이편한세상 105동 1층104호",
-   "appr_manwon": 321000,
-   "low_manwon": 256800,
-   "fails": 1,
-   "bidding_date": "2026-11-10",
-   "area": 84.99,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103932[1]",
-   "auction_id": "C77SOZTX",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 논현동 58-2 마일스디오빌  9층920호",
-   "appr_manwon": 41800,
-   "low_manwon": 10957,
-   "fails": 6,
-   "bidding_date": "2026-11-10",
-   "area": 36.29,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2026타경101303[1]",
-   "auction_id": "C77WEUSL",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 도곡동 467-17 타워팰리스 에프동 11층1104호",
-   "appr_manwon": 510000,
-   "low_manwon": 510000,
-   "fails": 0,
-   "bidding_date": "2026-11-10",
-   "area": 159.44,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경101156[1]",
-   "auction_id": "C73QRRYR",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 역삼동 828-28 역삼동이지소울리더  3층312호",
-   "appr_manwon": 24000,
-   "low_manwon": 19200,
-   "fails": 1,
-   "bidding_date": "2026-11-17",
-   "area": 19.37,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2026타경101202[1]",
-   "auction_id": "C94TVYCL",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 역삼동 727-9 요진와이시티미니  4층405호",
-   "appr_manwon": 18700,
-   "low_manwon": 14960,
-   "fails": 1,
-   "bidding_date": "2026-11-17",
-   "area": 12.94,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경104735[2]",
-   "auction_id": "C12TVCLM",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  14층1402호",
-   "appr_manwon": 266000,
-   "low_manwon": 212800,
-   "fails": 1,
-   "bidding_date": "2026-11-18",
-   "area": 15.82,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경104362[1]",
-   "auction_id": "C14VVNWA",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 청담동 43 청담우방아파트 101동 1702호",
-   "appr_manwon": 280000,
-   "low_manwon": 224000,
-   "fails": 1,
-   "bidding_date": "2026-11-18",
-   "area": 118.53,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경104735[1]",
-   "auction_id": "C15WAZJE",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  8층801호",
-   "appr_manwon": 331000,
-   "low_manwon": 264800,
-   "fails": 1,
-   "bidding_date": "2026-11-18",
-   "area": 22.37,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경103751[1]",
-   "auction_id": "C17NBBIO",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 삼성동 146 삼성동포스코더샵  20층2002호",
-   "appr_manwon": 532000,
-   "low_manwon": 425600,
-   "fails": 1,
-   "bidding_date": "2026-11-18",
-   "area": 199.2,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2024타경5531[1]",
-   "auction_id": "C59SHMMT",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 헌릉로590길 63, 514동 9층901호 (세곡동,강남데시앙파크)",
-   "appr_manwon": 187000,
-   "low_manwon": 149600,
-   "fails": 1,
-   "bidding_date": "2026-11-18",
-   "area": 114.69,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103132[1]",
-   "auction_id": "C66LQEWC",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  19층1901호",
-   "appr_manwon": 699000,
-   "low_manwon": 559200,
-   "fails": 1,
-   "bidding_date": "2026-11-24",
-   "area": 96.26,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103942[1]",
-   "auction_id": "C64ICUON",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 역삼동 720-25 디오빌역삼  12층1212호",
-   "appr_manwon": 32400,
-   "low_manwon": 25920,
-   "fails": 1,
-   "bidding_date": "2026-11-26",
-   "area": 30.03,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경2812[1]",
-   "auction_id": "C73ORPMX",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 삼성동 90 삼성브르넨  16층1601호",
-   "appr_manwon": 327400,
-   "low_manwon": 209536,
-   "fails": 2,
-   "bidding_date": "2026-11-26",
-   "area": 22.37,
-   "reason": "면적미달"
-  },
   {
    "key": "2025타경103165[3]",
    "auction_id": "C93DRMMS",
    "address": "서울특별시 강남구 청담동 114-9 청담브르넨  1층101호",
    "reason": "가격정보없음"
-  },
-  {
-   "key": "2026타경100316[1]",
-   "auction_id": "C43AWBJL",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 잠원동 162 반포센트럴자이 104동 22층2201호",
-   "appr_manwon": 525000,
-   "low_manwon": 420000,
-   "fails": 1,
-   "bidding_date": "2026-11-04",
-   "area": 84.98,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103101[1]",
-   "auction_id": "C06XEOJA",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 방배동 999 월드빌라트  10층11층1002호",
-   "appr_manwon": 269000,
-   "low_manwon": 269000,
-   "fails": 0,
-   "bidding_date": "2026-11-05",
-   "area": 261.49,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103618[1]",
-   "auction_id": "C49VKBBX",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 방배동 845-14 성지라빌레뜨 비동 5층502호",
-   "appr_manwon": 330000,
-   "low_manwon": 330000,
-   "fails": 0,
-   "bidding_date": "2026-11-05",
-   "area": 216.36,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103954[1]",
-   "auction_id": "C78MBBQE",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 반포동 12 래미안원펜타스 102동 14층1403호",
-   "appr_manwon": 580000,
-   "low_manwon": 464000,
-   "fails": 1,
-   "bidding_date": "2026-11-05",
-   "area": 84.73,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경100393[1]",
-   "auction_id": "C46QDYCY",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 방배동 3275 동부센트레빌 101동 18층1801호",
-   "appr_manwon": 323500,
-   "low_manwon": 258800,
-   "fails": 1,
-   "bidding_date": "2026-11-10",
-   "area": 134.04,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경104590[1]",
-   "auction_id": "C57TSSWJ",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 서초동 1686-9 서초교대이편한세상 101동 8층802호",
-   "appr_manwon": 346100,
-   "low_manwon": 276880,
-   "fails": 1,
-   "bidding_date": "2026-11-10",
-   "area": 84.97,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경100434[1]",
-   "auction_id": "C58BOMOL",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 방배동 799-5 힐스나인빌리지  1층101호",
-   "appr_manwon": 247300,
-   "low_manwon": 197840,
-   "fails": 1,
-   "bidding_date": "2026-11-10",
-   "area": null,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2026타경100393[2]",
-   "auction_id": "C75NBWAX",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 서초동 1455-9 경남아너스빌 101동 2층205호",
-   "appr_manwon": 223000,
-   "low_manwon": 178400,
-   "fails": 1,
-   "bidding_date": "2026-11-10",
-   "area": 127.04,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경104617[1]",
-   "auction_id": "C69AIGOM",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 서초동 1675-10 지에스타워주건축물제1동  지상6층601호",
-   "appr_manwon": 27100,
-   "low_manwon": 21680,
-   "fails": 1,
-   "bidding_date": "2026-11-12",
-   "area": 12.56,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경104699[1]",
-   "auction_id": "C35PPPDF",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 서초동 1496-6 루컴즈힐서리풀 101동 4층404호",
-   "appr_manwon": 200000,
-   "low_manwon": 160000,
-   "fails": 1,
-   "bidding_date": "2026-11-17",
-   "area": 83.92,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경103336[1]",
-   "auction_id": "C35LMMYV",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 방배동 805-1 라빌레뜨  1층101호",
-   "appr_manwon": 286000,
-   "low_manwon": 183040,
-   "fails": 2,
-   "bidding_date": "2026-11-24",
-   "area": 203.63,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경2485[1]",
-   "auction_id": "C97MAMXS",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 양재동 122-2 메르디안하우스  6층602호",
-   "appr_manwon": 221000,
-   "low_manwon": 176800,
-   "fails": 1,
-   "bidding_date": "2026-11-24",
-   "area": 206.12,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경100722[1]",
-   "auction_id": "C15RUGQU",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 방배동 847-34 방배대우유로카운티  1층105호",
-   "appr_manwon": 420000,
-   "low_manwon": 336000,
-   "fails": 1,
-   "bidding_date": "2026-12-02",
-   "area": 234.01,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경52458[1]",
-   "auction_id": "C31BKTMV",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  11층1103호",
-   "appr_manwon": 24000,
-   "low_manwon": 24000,
-   "fails": 0,
-   "bidding_date": "2026-11-02",
-   "area": 14.01,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51375[1]",
-   "auction_id": "C48YNJNH",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차 13층 1305호",
-   "appr_manwon": 12100,
-   "low_manwon": 4956,
-   "fails": 4,
-   "bidding_date": "2026-11-09",
-   "area": 13.27,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2026타경50411[1]",
-   "auction_id": "C07ZLFYT",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  6층608호",
-   "appr_manwon": 11000,
-   "low_manwon": 7040,
-   "fails": 2,
-   "bidding_date": "2026-11-16",
-   "area": 16.68,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경52148[1]",
-   "auction_id": "C14VAAKA",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  8층803호",
-   "appr_manwon": 23300,
-   "low_manwon": 18640,
-   "fails": 1,
-   "bidding_date": "2026-11-16",
-   "area": 14.01,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경52354[1]",
-   "auction_id": "C56OKKIM",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 343-2 현대웰하임2단지  5층521호",
-   "appr_manwon": 8400,
-   "low_manwon": 5376,
-   "fails": 2,
-   "bidding_date": "2026-11-16",
-   "area": 13.11,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51960[1]",
-   "auction_id": "C60FRBHY",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  14층1414호",
-   "appr_manwon": 12300,
-   "low_manwon": 9840,
-   "fails": 1,
-   "bidding_date": "2026-11-16",
-   "area": 13.27,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2026타경50152[1]",
-   "auction_id": "C71RRXWS",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 457 청광플러스원큐브2차  17층1708호",
-   "appr_manwon": 10900,
-   "low_manwon": 8720,
-   "fails": 1,
-   "bidding_date": "2026-11-16",
-   "area": 14.49,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경52220[1]",
-   "auction_id": "C97ZPREW",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 457 청광플러스원큐브2차  15층1504호",
-   "appr_manwon": 11000,
-   "low_manwon": 8800,
-   "fails": 1,
-   "bidding_date": "2026-11-16",
-   "area": 14.49,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경52272[1]",
-   "auction_id": "C12SILHA",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  10층1014호",
-   "appr_manwon": 12000,
-   "low_manwon": 9600,
-   "fails": 1,
-   "bidding_date": "2026-11-23",
-   "area": 13.27,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51291[1]",
-   "auction_id": "C39VYXRF",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  13층1306호",
-   "appr_manwon": 11300,
-   "low_manwon": 3702,
-   "fails": 5,
-   "bidding_date": "2026-11-23",
-   "area": 16.68,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51702[1]",
-   "auction_id": "C47IEVFB",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 456-3 강동큐브  16층1604호",
-   "appr_manwon": 12700,
-   "low_manwon": 6502,
-   "fails": 3,
-   "bidding_date": "2026-11-23",
-   "area": 12.49,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경52149[1]",
-   "auction_id": "C63TMBWB",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  15층1504호",
-   "appr_manwon": 23600,
-   "low_manwon": 15104,
-   "fails": 2,
-   "bidding_date": "2026-11-23",
-   "area": 14.04,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51117[1]",
-   "auction_id": "C68XOZZH",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 343-1 현대웰하임1단지  3층306호",
-   "appr_manwon": 13000,
-   "low_manwon": 3407,
-   "fails": 6,
-   "bidding_date": "2026-11-23",
-   "area": 16.96,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51389[1]",
-   "auction_id": "C61ENASP",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  11층1106호",
-   "appr_manwon": 12200,
-   "low_manwon": 6246,
-   "fails": 6,
-   "bidding_date": "2026-11-30",
-   "area": 13.27,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51173[1]",
-   "auction_id": "C75QUJHJ",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 457-1 강동렘브란트  11층1106호",
-   "appr_manwon": 12600,
-   "low_manwon": 6451,
-   "fails": 7,
-   "bidding_date": "2026-11-30",
-   "area": 15.86,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2024타경61978[1]",
-   "auction_id": "C84DJETR",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호대로177길 40, 11층1108호 (길동,경지아리움)",
-   "appr_manwon": 19700,
-   "low_manwon": 15760,
-   "fails": 11,
-   "bidding_date": "2026-11-30",
-   "area": 13.45,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51965[1]",
-   "auction_id": "C17HBDLY",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 387-5 길동청광플러스원큐브1차  9층910호",
-   "appr_manwon": 10900,
-   "low_manwon": 5580,
-   "fails": 4,
-   "bidding_date": "",
-   "area": 16.68,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2024타경2085[1]",
-   "auction_id": "C99PIEQZ",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호대로176길 10-12, 12층1203호",
-   "appr_manwon": 13800,
-   "low_manwon": 8832,
-   "fails": 2,
-   "bidding_date": "",
-   "area": 11.64,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2024타경56181[1]",
-   "auction_id": "C14LXKAV",
-   "region": "서울 광진구",
-   "address": "서울특별시 광진구 아차산로 552, 16동 2층202호 (광장동,광장극동아파트)",
-   "appr_manwon": 209200,
-   "low_manwon": 209200,
-   "fails": 0,
-   "bidding_date": "2026-11-02",
-   "area": 156.91,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2023타경60534[1]",
-   "auction_id": "C00MBZPL",
-   "region": "서울 광진구",
-   "address": "서울특별시 광진구 능동로 170, 4층405호 (화양동,신원리브웰 화양동 주상복합)",
-   "appr_manwon": 22700,
-   "low_manwon": 638,
-   "fails": 16,
-   "bidding_date": "2026-11-16",
-   "area": 20.66,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경51328[1]",
-   "auction_id": "C25NVEUS",
-   "region": "서울 광진구",
-   "address": "서울특별시 광진구 화양동 111-88 신원리브웰 화양동 주상복합  4층401호",
-   "appr_manwon": 21800,
-   "low_manwon": 13952,
-   "fails": 2,
-   "bidding_date": "",
-   "area": 16.92,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경52237[1]",
-   "auction_id": "C58JSTQT",
-   "region": "서울 송파구",
-   "address": "서울특별시 송파구 신천동 7-19 잠실시그마타워  21층2105호",
-   "appr_manwon": 280000,
-   "low_manwon": 224000,
-   "fails": 1,
-   "bidding_date": "2026-11-02",
-   "area": 208.56,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경52183[1]",
-   "auction_id": "C12ABSRM",
-   "region": "서울 송파구",
-   "address": "서울특별시 송파구 가락동 913 헬리오시티 318동 5층504호",
-   "appr_manwon": 279000,
-   "low_manwon": 223200,
-   "fails": 1,
-   "bidding_date": "2026-11-16",
-   "area": 84.95,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2025타경478[1]",
-   "auction_id": "C39VQJLB",
-   "region": "서울 송파구",
-   "address": "서울특별시 송파구 오금동 619 송파호반베르디움더퍼스트 101동 20층2001호",
-   "appr_manwon": 171000,
-   "low_manwon": 136800,
-   "fails": 1,
-   "bidding_date": "2026-11-30",
-   "area": 101.46,
-   "reason": "예산초과"
   },
   {
    "key": "2025타경52704[5]",
@@ -9979,114 +15041,6 @@
    "bidding_date": "",
    "area": null,
    "reason": "아파트 아님"
-  },
-  {
-   "key": "2026타경52[1]",
-   "auction_id": "C45DZZDJ",
-   "region": "경기 성남시 분당구",
-   "address": "경기도 성남시 분당구 이매동 100 이매촌삼성아파트 1015동 3층302호",
-   "appr_manwon": 162000,
-   "low_manwon": 162000,
-   "fails": 0,
-   "bidding_date": "2026-11-02",
-   "area": 84.94,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경50816[1]",
-   "auction_id": "C64STUIR",
-   "region": "경기 성남시 분당구",
-   "address": "경기도 성남시 분당구 백현동 608 더샵판교퍼스트파크 107동 15층1502호",
-   "appr_manwon": 150000,
-   "low_manwon": 150000,
-   "fails": 0,
-   "bidding_date": "2026-11-02",
-   "area": 84.97,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경50765[1]",
-   "auction_id": "C36PBQZC",
-   "region": "경기 성남시 분당구",
-   "address": "경기도 성남시 분당구 백현동 608 더샵판교퍼스트파크 104동 10층1004호",
-   "appr_manwon": 228000,
-   "low_manwon": 159600,
-   "fails": 1,
-   "bidding_date": "2026-11-23",
-   "area": 129.83,
-   "reason": "예산초과"
-  },
-  {
-   "key": "2026타경20745[1]",
-   "auction_id": "C67VKHJE",
-   "region": "경기 남양주시",
-   "address": "경기도 남양주시 진건읍 용정리 855 진건주공2단지 201동 8층801호",
-   "appr_manwon": 19900,
-   "low_manwon": 13930,
-   "fails": 1,
-   "bidding_date": "2026-11-04",
-   "area": 49.95,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경72706[1]",
-   "auction_id": "C44SHXNH",
-   "region": "경기 남양주시",
-   "address": "경기도 남양주시 진접읍 금곡리 1108 금강펜테리움아파트 1907동 14층1401호",
-   "appr_manwon": 50600,
-   "low_manwon": 35420,
-   "fails": 1,
-   "bidding_date": "2026-11-05",
-   "area": null,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경71740[1]",
-   "auction_id": "C96CIVJQ",
-   "region": "경기 남양주시",
-   "address": "경기도 남양주시 오남읍 오남리 683-25 진주아파트 202동 1층105호",
-   "appr_manwon": 12500,
-   "low_manwon": 6125,
-   "fails": 2,
-   "bidding_date": "2026-11-11",
-   "area": 39.96,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2024타경5360[1]",
-   "auction_id": "C62QFBRJ",
-   "region": "경기 남양주시",
-   "address": "경기도 남양주시 진접읍 해밀예당3로 68, 1906동 1층101호 (금강펜테리움아파트)",
-   "appr_manwon": 49700,
-   "low_manwon": 34790,
-   "fails": 1,
-   "bidding_date": "",
-   "area": null,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경72740[1]",
-   "auction_id": "C07DQXQZ",
-   "region": "경기 구리시",
-   "address": "경기도 구리시 수택동 506-9  8층808호",
-   "appr_manwon": 24900,
-   "low_manwon": 17430,
-   "fails": 1,
-   "bidding_date": "2026-11-05",
-   "area": 42.72,
-   "reason": "면적미달"
-  },
-  {
-   "key": "2025타경72387[1]",
-   "auction_id": "C25GZSNK",
-   "region": "경기 구리시",
-   "address": "경기도 구리시 수택동 482-2 수택동성원상떼빌 101동 14층1413호",
-   "appr_manwon": 36200,
-   "low_manwon": 25340,
-   "fails": 1,
-   "bidding_date": "2026-11-05",
-   "area": 53.28,
-   "reason": "면적미달"
   }
  ],
  "recent_results": {
@@ -10101,50 +15055,27 @@
   },
   "items": [
    {
-    "key": "2025타경52013[1]",
-    "danji_name": "고덕롯데캐슬베네루체",
-    "area": 84.15,
-    "region": "서울 강동구",
-    "bidding_date": "2026-11-01",
-    "pred_date": "2026-11-01",
-    "low_manwon": 62800,
-    "bid_by_prob_manwon": {
-     "40%": 136263,
-     "45%": 137355,
-     "50%": 138502,
-     "55%": 139745,
-     "60%": 141073
-    },
-    "status": "매각",
-    "checked": "2026-11-02",
-    "actual_manwon": 71099,
-    "bidders": 1,
-    "second_manwon": null,
-    "diff_pct": -48.7,
-    "band": "40% 미만"
-   },
-   {
-    "key": "2025타경71670[1]",
-    "danji_name": "진주8차",
-    "area": 55.8,
+    "key": "2024타경6202[1]",
+    "danji_name": "진접센트레빌시티1단지",
+    "area": 84.98,
     "region": "경기 남양주시",
     "bidding_date": "2026-11-01",
     "pred_date": "2026-11-01",
-    "low_manwon": 9100,
+    "low_manwon": 35600,
     "bid_by_prob_manwon": {
-     "40%": 9917,
-     "45%": 9996,
-     "50%": 10080,
-     "55%": 10170,
-     "60%": 10267
+     "40%": 35600,
+     "45%": 35600,
+     "50%": 35600,
+     "55%": 35600,
+     "60%": 35600
     },
     "status": "매각",
     "checked": "2026-11-02",
-    "actual_manwon": 9630,
+    "actual_manwon": 35605,
     "bidders": 1,
     "second_manwon": null,
-    "diff_pct": -4.5,
-    "band": "40% 미만"
+    "diff_pct": 0.0,
+    "band": "60% 초과"
    },
    {
     "key": "2024타경83810[1]",
@@ -10167,29 +15098,6 @@
     "bidders": 1,
     "second_manwon": null,
     "diff_pct": 6.7,
-    "band": "60% 초과"
-   },
-   {
-    "key": "2024타경6202[1]",
-    "danji_name": "진접센트레빌시티1단지",
-    "area": 84.98,
-    "region": "경기 남양주시",
-    "bidding_date": "2026-11-01",
-    "pred_date": "2026-11-01",
-    "low_manwon": 35600,
-    "bid_by_prob_manwon": {
-     "40%": 35600,
-     "45%": 35600,
-     "50%": 35600,
-     "55%": 35600,
-     "60%": 35600
-    },
-    "status": "매각",
-    "checked": "2026-11-02",
-    "actual_manwon": 35605,
-    "bidders": 1,
-    "second_manwon": null,
-    "diff_pct": 0.0,
     "band": "60% 초과"
    },
    {
@@ -10237,6 +15145,52 @@
     "second_manwon": null,
     "diff_pct": 3.9,
     "band": "60% 초과"
+   },
+   {
+    "key": "2025타경52013[1]",
+    "danji_name": "고덕롯데캐슬베네루체",
+    "area": 84.15,
+    "region": "서울 강동구",
+    "bidding_date": "2026-11-01",
+    "pred_date": "2026-11-01",
+    "low_manwon": 62800,
+    "bid_by_prob_manwon": {
+     "40%": 136263,
+     "45%": 137355,
+     "50%": 138502,
+     "55%": 139745,
+     "60%": 141073
+    },
+    "status": "매각",
+    "checked": "2026-11-02",
+    "actual_manwon": 71099,
+    "bidders": 1,
+    "second_manwon": null,
+    "diff_pct": -48.7,
+    "band": "40% 미만"
+   },
+   {
+    "key": "2025타경71670[1]",
+    "danji_name": "진주8차",
+    "area": 55.8,
+    "region": "경기 남양주시",
+    "bidding_date": "2026-11-01",
+    "pred_date": "2026-11-01",
+    "low_manwon": 9100,
+    "bid_by_prob_manwon": {
+     "40%": 9917,
+     "45%": 9996,
+     "50%": 10080,
+     "55%": 10170,
+     "60%": 10267
+    },
+    "status": "매각",
+    "checked": "2026-11-02",
+    "actual_manwon": 9630,
+    "bidders": 1,
+    "second_manwon": null,
+    "diff_pct": -4.5,
+    "band": "40% 미만"
    },
    {
     "key": "2025타경71670[1]",
