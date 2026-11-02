@@ -11,6 +11,7 @@ on:
     paths:
       - 'auction_model/auction_predictor.py'
       - 'auction_model/batch_predict.py'
+      - 'auction_model/villa_log.py'
       - 'auction_model/auction_config.json'
       - 'auction_model/auction_train.csv'
       - '.github/workflows/auction_predict.yml'
@@ -36,11 +37,15 @@ jobs:
       - name: Predict
         working-directory: auction_model
         run: python batch_predict.py
+      - name: Villa log (서울 빌라 경매 기록, 2026-11-02~)
+        working-directory: auction_model
+        continue-on-error: true
+        run: python villa_log.py
       - name: Commit results
         run: |
           git config user.name "auction-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add auction_model/predictions auction_model/danji_map.json
+          git add auction_model/predictions auction_model/danji_map.json auction_model/villa
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "auction: 예측 결과 $(TZ=Asia/Seoul date +%F)"
           for i in 1 2 3; do
