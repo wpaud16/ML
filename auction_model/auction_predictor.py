@@ -318,6 +318,15 @@ def bidder_scenarios(df, row, T, low, mkt, adj=0.0, cfg=None):
         return dict(error=str(e)[:200])
 
 
+def _fail_info(kind, row):
+    """이번 회차 유찰 확률 (fail_model.py). 실패해도 예측 전체는 계속."""
+    try:
+        import fail_model as fm
+        return fm.fail_info(kind, row)
+    except Exception as e:
+        return dict(error=f'{type(e).__name__}: {e}'[:200])
+
+
 def predict_dict(danji, auction_id, df=None, cfg=None):
     cfg = cfg or json.load(open(os.path.join(HERE, 'auction_config.json')))
     df = load_train() if df is None else df
@@ -356,6 +365,7 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     bidders = bidder_scenarios(df, row, T, low, mkt, SMALL_ADJ if small else 0.0, cfg)
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
                by_bidders=bidders,
+               fail=_fail_info('apt', row),
                households=None if pd.isna(hh) else int(hh),
                small_danji_adj=dict(applied=small, adj_pct=SMALL_ADJ * 100 if small else 0.0,
                                     bid_by_prob_manwon_raw=prices_raw),

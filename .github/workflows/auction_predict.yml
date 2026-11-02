@@ -14,6 +14,8 @@ on:
       - 'auction_model/villa_log.py'
       - 'auction_model/officetel_model.py'
       - 'auction_model/auction_config.json'
+      - 'auction_model/fail_model.py'
+      - 'auction_model/fail_config.json'
       - 'auction_model/auction_train.csv'
       - '.github/workflows/auction_predict.yml'
 

@@ -144,7 +144,7 @@ def predict_dict(ot_id, auction_id, is_check=0, df=None, cfg=None, models=None):
     return dict(info, model=cfg['model'], category='오피스텔',
                 bid_by_prob_manwon=prices, bid_by_prob_eok={k: round(v / 1e4, 2) for k, v in prices.items()},
                 prob_by_bid_5m=table, p50_ensemble_manwon=prices['50%'], p50_ensemble_eok=round(prices['50%'] / 1e4, 2),
-                income=income,
+                income=income, fail=ap._fail_info('ot', row),
                 model_error_note=f"평균 오차 약 {cfg['mape_recent']}% (최근 12개월 롤링), 확률 오차 약 ±5%p", warnings=[])
 
 

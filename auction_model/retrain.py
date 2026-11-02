@@ -190,6 +190,15 @@ def main(dry=False):
         out = pd.concat([ot_old, ot_add], ignore_index=True).sort_values('date')
         out.to_csv(OT_TRAIN, index=False)
         om.calibrate()
+    # 유찰 확률 모델: 새 사례의 회차 이력 추가 후 다시 보정 (2026-11-03)
+    try:
+        import fail_model as fm
+        info['fail_rounds_added'] = {'apt': fm.add_rounds('apt', apt_add), 'ot': fm.add_rounds('ot', ot_add)}
+        for k in ('apt', 'ot'):
+            if info['fail_rounds_added'][k]:
+                c = fm.calibrate(k); info[f'fail_{k}_acc'] = c['all']['acc_pct']
+    except Exception as e:
+        info['fail_error'] = f'{type(e).__name__}: {e}'[:200]
     cfg_a = json.load(open(os.path.join(HERE, 'auction_config.json')))
     cfg_o = json.load(open(os.path.join(HERE, 'officetel', 'ot_config.json')))
     info.update(apt_n_train=int(len(pd.read_csv(APT_TRAIN))), ot_n_train=int(len(pd.read_csv(OT_TRAIN))),
