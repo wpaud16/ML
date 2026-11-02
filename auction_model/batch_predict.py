@@ -178,6 +178,15 @@ def update_results(today):
             bd = it.get('bidding_date') or ''
             if not bd or d > bd: continue
             last_pred[(k, bd)] = dict(it, pred_date=d)
+    def excluded(it):
+        # 지분매각·대지권 없음 등 특수물건은 성적표에서 뺀다 (시세 대비 가격이 원래 낮아 오차 노이즈, 2026-11-03 사용자 요청)
+        r = it.get('risk') or {}
+        if r.get('decision') == 'hide': return True
+        if it.get('appr_vs_sise') is not None and it['appr_vs_sise'] < 0.6: return True
+        return any(any(h in w for h in HARD_KW + ['지분경매']) for w in (it.get('warnings') or []) + (r.get('keywords') or []))
+    for (k, bd), it in list(last_pred.items()):
+        if excluded(it):
+            res.pop(f'{k}|{bd}', None); last_pred.pop((k, bd))
     for (k, bd), it in last_pred.items():
         rid = f'{k}|{bd}'
         if bd >= today or bd < str((datetime.fromisoformat(today) - timedelta(days=30)).date()): continue
@@ -217,7 +226,7 @@ def update_results(today):
 
 
 # ---------------- 권리 위험 판정: 리치고 키워드 vs 등기 기준 권리분석 요약 ----------------
-HARD_KW = ['지분', '유치권', '법정지상권', '별도등기', '대지권미등기']   # 요약으로 확인할 수 없는 특수물건 → 숨김
+HARD_KW = ['지분', '유치권', '법정지상권', '별도등기', '대지권', '건물만', '토지제외']   # 대지권 없음/미등기·건물만 매각 포함 (2026-11-03)   # 요약으로 확인할 수 없는 특수물건 → 숨김
 
 
 def risk_check(keyword, appr_vs_sise, rights):

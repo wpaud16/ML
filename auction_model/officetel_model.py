@@ -130,7 +130,9 @@ def predict_dict(ot_id, auction_id, is_check=0, df=None, cfg=None, models=None):
     grid = np.arange(np.ceil(max(low, p25) / 5e6) * 5e6, p75 + 1, 5e6)
     table = [dict(bid_manwon=int(g / 1e4), bid_eok=round(g / 1e8, 2), prob=int(round(wp(g) * 100))) for g in grid]
     # 월세 추정: 전세 시세 × 전월세전환율 (보증금 1,000만원 가정)
-    jr = row.jeonse_ratio.iloc[0]
+    jr = row.jeonse_ratio.iloc[0]; basis = '해당 평형 전세 시세'
+    if jr != jr and 'jeonse_ratio_bldg' in row and row.jeonse_ratio_bldg.iloc[0] == row.jeonse_ratio_bldg.iloc[0]:
+        jr = float(row.jeonse_ratio_bldg.iloc[0]); basis = '같은 건물 다른 평형의 전세가율로 추정'   # 2026-11-03 사용자 요청
     jeonse = mkt * jr if jr == jr else None
     rent = None
     if jeonse:
@@ -140,6 +142,7 @@ def predict_dict(ot_id, auction_id, is_check=0, df=None, cfg=None, models=None):
                   jeonse_ratio=round(float(jr), 3) if jr == jr else None,
                   est_monthly_rent_manwon=int(round(rent / 1e4)) if rent else None,
                   deposit_assumed_manwon=1000, rent_conversion_rate=RENT_CONV,
+                  rent_basis=basis if rent else None,
                   gross_yield_pct_at_p50=round(rent * 12 / p50 * 100, 2) if rent else None)
     return dict(info, model=cfg['model'], category='오피스텔',
                 bid_by_prob_manwon=prices, bid_by_prob_eok={k: round(v / 1e4, 2) for k, v in prices.items()},

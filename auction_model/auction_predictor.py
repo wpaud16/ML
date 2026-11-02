@@ -209,6 +209,7 @@ def target_row(danji, auction_id, df, kind='danji'):
                age=a.get('constructYear'), hh=a.get('totalHouseholds') or tot_hh,
                py_share=(best[2].get('households') or np.nan) / tot_hh,
                jeonse_ratio=(best[4] / best[3]) if best[4] else np.nan,
+               jeonse_ratio_bldg=_bldg_jeonse_ratio(d),
                mom3=ch[last] / idx(mshift(last, 3)) - 1, mom6=ch[last] / idx(mshift(last, 6)) - 1,
                mom12=ch[last] / idx(mshift(last, 12)) - 1,
                dd24=ch[last] / max(ch[m] for m in ms if m >= mshift(last, 24)) - 1,
@@ -325,6 +326,16 @@ def _fail_info(kind, row):
         return fm.fail_info(kind, row)
     except Exception as e:
         return dict(error=f'{type(e).__name__}: {e}'[:200])
+
+
+def _bldg_jeonse_ratio(d):
+    """같은 건물(단지) 다른 평형들의 전세가율 중앙값 — 해당 평형에 전세 시세가 없을 때 월세 추정용 (2026-11-03)."""
+    rs = []
+    for v in (d.get('pyeongInfos') or {}).values():
+        dp = v.get('danjiPriceInfo') or {}
+        m, j = (dp.get('meme') or {}).get('price'), (dp.get('jeonse') or {}).get('price')
+        if m and j: rs.append(j / m)
+    return float(np.median(rs)) if rs else np.nan
 
 
 def predict_dict(danji, auction_id, df=None, cfg=None):
