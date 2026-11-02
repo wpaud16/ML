@@ -14693,6 +14693,11 @@
 "date": "",
 "low_manwon": 15680,
 "fails": 2
+},
+{
+"date": "2026-12-04",
+"low_manwon": 12544,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -15773,6 +15778,11 @@
 "date": "",
 "low_manwon": 31872,
 "fails": 2
+},
+{
+"date": "2026-12-04",
+"low_manwon": 25497,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -16593,6 +16603,11 @@
 "date": "",
 "low_manwon": 19800,
 "fails": 0
+},
+{
+"date": "2026-11-25",
+"low_manwon": 15840,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22213,6 +22228,11 @@
 "date": "2026-11-02",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 38100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -22231,6 +22251,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 29596,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 29596,
 "fails": 0
 }
@@ -22253,6 +22278,11 @@
 "date": "2026-11-02",
 "low_manwon": 81315,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 81315,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -22271,6 +22301,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 38100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 38100,
 "fails": 0
 }
@@ -22293,6 +22328,11 @@
 "date": "2026-11-02",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 38100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -22311,6 +22351,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 38100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 38100,
 "fails": 0
 }
@@ -22333,6 +22378,11 @@
 "date": "2026-11-02",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 38100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -22351,6 +22401,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 14160,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 14160,
 "fails": 1
 }
@@ -22373,6 +22428,11 @@
 "date": "2026-11-02",
 "low_manwon": 36100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 36100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -22391,6 +22451,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 20560,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 20560,
 "fails": 1
 }
@@ -22413,6 +22478,11 @@
 "date": "2026-11-02",
 "low_manwon": 15564,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 15564,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -22431,6 +22501,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 38100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 38100,
 "fails": 0
 }
@@ -37113,6 +37188,11 @@
 "date": "2026-11-02",
 "low_manwon": 43800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 43800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -38873,6 +38953,11 @@
 "date": "2026-11-02",
 "low_manwon": 13824,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 13824,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -38891,6 +38976,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 43100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 43100,
 "fails": 0
 }
@@ -38913,6 +39003,11 @@
 "date": "2026-11-02",
 "low_manwon": 14377,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 14377,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -38931,6 +39026,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 17367,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 17367,
 "fails": 5
 }
@@ -38953,6 +39053,11 @@
 "date": "2026-11-02",
 "low_manwon": 14208,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 14208,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -38971,6 +39076,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 24960,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 24960,
 "fails": 3
 }
@@ -38993,6 +39103,11 @@
 "date": "2026-11-02",
 "low_manwon": 15616,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 15616,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -39011,6 +39126,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 24512,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 24512,
 "fails": 2
 }
@@ -39033,6 +39153,11 @@
 "date": "2026-11-02",
 "low_manwon": 44400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 44400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -39051,6 +39176,11 @@
 "rounds": [
 {
 "date": "2026-11-02",
+"low_manwon": 29500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 29500,
 "fails": 0
 }
@@ -51933,6 +52063,406 @@
 "date": "2026-11-10",
 "low_manwon": 38544,
 "fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C24OTAYO": {
+"case": "2025타경52530[1]",
+"address": "서울특별시 강동구 암사동 462-17  5층502호",
+"sgg": "강동구",
+"emd": "암사동",
+"type": "다세대",
+"area": 46.93,
+"land_area": 24.93,
+"appr_manwon": 28400,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 28400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C98YDGEV": {
+"case": "2026타경50135[1]",
+"address": "서울특별시 강동구 길동 334-4 그린파크빌  2층202호",
+"sgg": "강동구",
+"emd": "길동",
+"type": "다세대",
+"area": 28.14,
+"land_area": 17.38,
+"appr_manwon": 28700,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 28700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C00EMBOO": {
+"case": "2026타경3144[1]",
+"address": "서울특별시 강서구 화곡동 351-41 씨티하우스 제비동 제4층 제403호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 22.9,
+"land_area": 13.5,
+"appr_manwon": 21700,
+"rounds": [
+{
+"date": "",
+"low_manwon": 13888,
+"fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C25KKTNA": {
+"case": "2026타경3622[1]",
+"address": "서울특별시 강서구 화곡동 1102-5 미성하르딘  제4층 제401호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.19,
+"land_area": 18.92,
+"appr_manwon": 24300,
+"rounds": [
+{
+"date": "",
+"low_manwon": 15552,
+"fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C33FFONJ": {
+"case": "2025타경14132[1]",
+"address": "서울특별시 강서구 화곡동 464-12 와이앤비  제2층 제204호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.82,
+"land_area": 36.06,
+"appr_manwon": 26200,
+"rounds": [
+{
+"date": "",
+"low_manwon": 16768,
+"fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C33ORQVW": {
+"case": "2025타경14194[1]",
+"address": "서울특별시 강서구 화곡동 970-21 성원프라우드  제2층 제204호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 27.63,
+"land_area": 19.67,
+"appr_manwon": 24800,
+"rounds": [
+{
+"date": "",
+"low_manwon": 15872,
+"fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C34BUQBZ": {
+"case": "2026타경3418[1]",
+"address": "서울특별시 강서구 화곡동 1169 더숨153 제105동 제2층 제206호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 15.03,
+"land_area": 12.73,
+"appr_manwon": 26500,
+"rounds": [
+{
+"date": "",
+"low_manwon": 16960,
+"fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C24KOMHY": {
+"case": "2025타경103498[1]",
+"address": "서울특별시 관악구 봉천동 458-71  3층302호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 28.25,
+"land_area": 13.21,
+"appr_manwon": 30300,
+"rounds": [
+{
+"date": "",
+"low_manwon": 19392,
+"fails": 3
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C07UEOGB": {
+"case": "2026타경50100[1]",
+"address": "서울특별시 성동구 성수동1가 706 쌍용아파트 101동 15층1504호",
+"sgg": "성동구",
+"emd": "성수동1가",
+"type": "연립",
+"area": 84.78,
+"land_area": 33.65,
+"appr_manwon": 226000,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 226000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C17QDEBJ": {
+"case": "2025타경52419[1]",
+"address": "서울특별시 성동구 성수동1가 72-69 성수동뉴타운오피스텔  4층407호",
+"sgg": "성동구",
+"emd": "성수동1가",
+"type": "연립",
+"area": 31.6,
+"land_area": 19.72,
+"appr_manwon": 26300,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 26300,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C36SJPGP": {
+"case": "2026타경50302[1]",
+"address": "서울특별시 성동구 용답동 238-1 카서울닷컴  10층1002호",
+"sgg": "성동구",
+"emd": "용답동",
+"type": "연립",
+"area": 247.25,
+"land_area": 118.44,
+"appr_manwon": 103000,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 103000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C41HOVAZ": {
+"case": "2025타경52567[1]",
+"address": "서울특별시 성동구 응봉동 265-121  비층02호",
+"sgg": "성동구",
+"emd": "응봉동",
+"type": "연립",
+"area": 25.19,
+"land_area": 13.98,
+"appr_manwon": 15100,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 15100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C45HPBOW": {
+"case": "2026타경50211[1]",
+"address": "서울특별시 성동구 옥수동 463-1  복수층302호",
+"sgg": "성동구",
+"emd": "옥수동",
+"type": "연립",
+"area": 191.73,
+"land_area": 114.86,
+"appr_manwon": 389000,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 389000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C49TITSD": {
+"case": "2026타경50302[2]",
+"address": "서울특별시 성동구 용답동 238-1 카서울닷컴  10층1005호",
+"sgg": "성동구",
+"emd": "용답동",
+"type": "연립",
+"area": 285.85,
+"land_area": 121.58,
+"appr_manwon": 119000,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 119000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C58KTFIT": {
+"case": "2026타경50302[3]",
+"address": "서울특별시 성동구 용답동 238-1 카서울닷컴  10층1006호",
+"sgg": "성동구",
+"emd": "용답동",
+"type": "연립",
+"area": 215.06,
+"land_area": 102.98,
+"appr_manwon": 89500,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 89500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C79ONEQS": {
+"case": "2025타경52516[1]",
+"address": "서울특별시 성동구 성수동1가 718 트리마제 101동 31층3102호",
+"sgg": "성동구",
+"emd": "성수동1가",
+"type": "연립",
+"area": 136.56,
+"land_area": 60.79,
+"appr_manwon": 771000,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 771000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C23XFUKB": {
+"case": "2025타경11363[1]",
+"address": "서울특별시 양천구 신월동 104-19 씨티하우스  제2층 제204호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 29.37,
+"land_area": 23.52,
+"appr_manwon": 25700,
+"rounds": [
+{
+"date": "",
+"low_manwon": 16448,
+"fails": 3
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C43FIYLU": {
+"case": "2025타경13647[1]",
+"address": "서울특별시 양천구 신정동 951-12 유니크3차  제4층 제403호",
+"sgg": "양천구",
+"emd": "신정동",
+"type": "다세대",
+"area": 29.98,
+"land_area": 37.9,
+"appr_manwon": 34000,
+"rounds": [
+{
+"date": "",
+"low_manwon": 21760,
+"fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C69SSJHW": {
+"case": "2025타경14236[1]",
+"address": "서울특별시 양천구 신월동 109-7 경성빌  제2층 제203호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 28.89,
+"land_area": 39.12,
+"appr_manwon": 29900,
+"rounds": [
+{
+"date": "",
+"low_manwon": 19136,
+"fails": 2
+}
+],
+"first_seen": "2026-11-02",
+"status": "진행중",
+"last_seen": "2026-11-02"
+},
+"C84HMWEZ": {
+"case": "2025타경102922[1]",
+"address": "서울특별시 종로구 창신동 255-1  4층402호",
+"sgg": "종로구",
+"emd": "창신동",
+"type": "연립",
+"area": 14.19,
+"land_area": 10.18,
+"appr_manwon": 24400,
+"rounds": [
+{
+"date": "",
+"low_manwon": 15616,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
