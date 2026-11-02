@@ -1,0 +1,22 @@
+[
+ {
+  "date": "2026-11-02",
+  "apt_since": "2026-10-28",
+  "ot_since": "2026-10-30",
+  "apt_pages": 1049,
+  "ot_pages": 656,
+  "apt_found": 3,
+  "apt_added": 1,
+  "ot_found": 1,
+  "ot_added": 0,
+  "collect_min": 9.5,
+  "apt_mape_before": 5.74,
+  "bid_mape_before": 4.07,
+  "ot_mape_before": 6.38,
+  "apt_n_train": 1413,
+  "ot_n_train": 718,
+  "apt_mape_after": 5.73,
+  "bid_mape_after": 4.04,
+  "ot_mape_after": 6.38
+ }
+]
