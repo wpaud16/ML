@@ -155,8 +155,8 @@ def mshift(m, k):
     return f'{t // 12:04d}-{t % 12 + 1:02d}'
 
 
-def target_row(danji, auction_id, df):
-    raw = fetch('https://m.richgo.ai/realty/danji/' + danji)
+def target_row(danji, auction_id, df, kind='danji'):
+    raw = fetch(f'https://m.richgo.ai/realty/{kind}/' + danji)
     i = raw.find('__NEXT_DATA__'); j = raw.find('>', i); k = raw.find('</script>', j)
     d = json.loads(raw[j + 1:k])['props']['pageProps']['data']
     au = []

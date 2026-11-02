@@ -10,6 +10,7 @@
 import json, os, re, sys, time, subprocess, urllib.parse
 from datetime import datetime, timezone, timedelta
 import numpy as np
+import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -41,10 +42,10 @@ def q(s):
     return urllib.parse.quote(s)
 
 
-def region_items(sd, sgg):
+def region_items(sd, sgg, ty='아파트'):
     out, page = [], 1
     while True:
-        url = f'https://m.richgo.ai/auction/hub/region/{q(sd)}/{q(sgg)}/{q("아파트")}' + (f'?page={page}' if page > 1 else '')
+        url = f'https://m.richgo.ai/auction/hub/region/{q(sd)}/{q(sgg)}/{q(ty)}' + (f'?page={page}' if page > 1 else '')
         raw = get(url)
         if not raw:
             raise RuntimeError(f'list fetch failed {sd} {sgg} p{page}')
@@ -55,8 +56,8 @@ def region_items(sd, sgg):
         page += 1
 
 
-def danji_auctions(danji):
-    raw = get('https://m.richgo.ai/realty/danji/' + danji)
+def danji_auctions(danji, kind='danji'):
+    raw = get(f'https://m.richgo.ai/realty/{kind}/' + danji)
     if not raw:
         return set()
     d = next_data(raw).get('data') or {}
@@ -70,15 +71,15 @@ def danji_auctions(danji):
     return ids
 
 
-def search(term):
+def search(term, kind='apart'):
     raw = get('https://m.richgo.ai/realty/search?q=' + q(term))
     if not raw:
         return []
     res = []
     for g in (next_data(raw).get('agentSearch') or {}).get('groups') or []:
-        if g.get('kind') != 'apart': continue
+        if g.get('kind') != kind: continue
         for it in g.get('items') or []:
-            m = re.search(r'/realty/danji/([0-9A-Za-z]+)', it.get('href', ''))
+            m = re.search(r'/realty/(?:danji|officetel)/([0-9A-Za-z]+)', it.get('href', ''))
             if m: res.append((m.group(1), it.get('name', ''), it.get('address', '')))
     return res
 
@@ -95,8 +96,10 @@ def name_candidates(addr, emd):
             names.append(t)
     # 지번 바로 뒤 단어 (예: '신사동 593-21 장자울아파트  3층303호', '방배동 799-9 캐슬렉스  6층')
     m = re.search(r'\d+(?:-\d+)?\s+([^\s\d][^\s]*?)(?:아파트)?(?:\(\S*\))?\s', addr + ' ')
-    if m and not re.fullmatch(r'\S+[동층호]|.*빌딩.*', m.group(1)):
-        names.append(m.group(1))
+    if m:
+        w = re.sub(r'제?\d+동$', '', m.group(1))
+        if w and not re.fullmatch(r'\S+[동층호]|.*빌딩.*|제\d+.*', w):
+            names.append(w)
     names += re.findall(r'([가-힣A-Za-z0-9]+?)아파트', addr)
     names = [re.sub(r'\(.*?\)', '', n) for n in names] + [n for n in names if '(' in n]
     seen, out = set(), []
@@ -107,28 +110,34 @@ def name_candidates(addr, emd):
     return out
 
 
-def find_danji(item, cache):
+def find_danji(item, cache, kind='apart'):
+    page_kind = 'officetel' if kind == 'officetel' else 'danji'
     aid = item['id']
     if cache.get(aid):
         return cache[aid], 'cache'
     tried = set()
     cands = []
     for n in name_candidates(item.get('address', ''), item.get('emd')):
-        cands += [c for c in search(n)][:8]
-        if item.get('emd'):
-            cands += [c for c in search(f"{item['emd']} {n}")][:5]
+        n2 = re.sub(r'(제?\d+동|주건축물.*)$', '', n)
+        for nn in dict.fromkeys([n, n2]):
+            if not nn: continue
+            cands += [c for c in search(nn, kind)][:8]
+            if item.get('emd'):
+                cands += [c for c in search(f"{item['emd']} {nn}", kind)][:5]
     if item.get('emd'):
-        cands += search(item['emd'])  # 단지명이 없는 지번 주소: 같은 동의 단지 전부 확인
+        cands += search(item['emd'], kind)
+        if item.get('sgg'):
+            cands += search(f"{item['sgg']} {item['emd']}", kind)  # 단지명이 없는 지번 주소: 같은 동의 단지 전부 확인
     sgg_word = item.get('sgg', '').split()[-1]
     for dj, nm, ad in cands:
         if dj in tried: continue
         tried.add(dj)
         if sgg_word and sgg_word not in ad and item.get('sgg', '') not in ad:
             continue
-        if aid in danji_auctions(dj):
+        if aid in danji_auctions(dj, page_kind):
             cache[aid] = dj
             return dj, nm
-        if len(tried) > 40: break
+        if len(tried) > (20 if kind == 'officetel' else 40): break
     return None, f'단지 못 찾음 (확인 {len(tried)}곳)'
 
 
@@ -183,7 +192,7 @@ def update_results(today):
                 status = '취하'   # 매각가 없이 종료 = 취하·기각 등
             elif (page.get('numberOfFailures') or 0) > (it.get('fails') or 0) or ((page.get('biddingDate') or '')[:10] > bd):
                 status = '유찰'
-        r = dict(key=k, danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
+        r = dict(key=k, category=it.get('category', '아파트'), danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
                  bidding_date=bd, pred_date=it['pred_date'], low_manwon=it.get('low_manwon'),
                  bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today)
         if actual:
@@ -240,6 +249,79 @@ def risk_check(keyword, appr_vs_sise, rights):
     return dict(out, decision='show', reason='재매각' if resale else '')
 
 
+# ---------------- 서울 오피스텔 (2026-11-02~) ----------------
+SEOUL_GU = ['강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구',
+            '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구']
+OT_STATION_M = 615   # 역 도보 10분 ≈ 직선 615m (도보분 = 직선거리 × 1.3 ÷ 80)
+
+
+def page_station(page_id, kind='officetel'):
+    raw = get(f'https://m.richgo.ai/realty/{kind}/' + page_id)
+    st = [(int(m.group(1)), m.group(2)) for m in re.finditer(r'"distance":(\d+),"targetName":"([^"]*)","indexName":"지하철"', raw)]
+    return min(st) if st else (None, None)
+
+
+def officetel_items(items, skipped, failed, cache, now, workers=8):
+    from concurrent.futures import ThreadPoolExecutor
+    import officetel_model as om
+    odf = om.load_train(); ocfg = json.load(open(om.CFG))
+    models = om.fit_models(odf, pd.Timestamp(now.date()))
+
+    def lst(gu):
+        try:
+            return gu, region_items('서울', gu, '오피스텔')
+        except Exception:
+            return gu, []
+    todo, seen = [], set()
+    with ThreadPoolExecutor(workers) as ex:
+        for gu, l in ex.map(lst, SEOUL_GU):
+            for it in l:
+                key = f"{it['caseName']}[{it.get('itemNumber') or 1}]"
+                if it['id'] in seen or key in items: continue
+                seen.add(it['id']); todo.append((gu, key, it))
+
+    neg_path = os.path.join(HERE, 'officetel', 'nomatch.json')
+    neg = json.load(open(neg_path)) if os.path.exists(neg_path) else {}
+    today = str(now.date())
+    week_ago = str((now - timedelta(days=7)).date())
+
+    def work(arg):
+        gu, key, it = arg
+        base = dict(key=key, category='오피스텔', auction_id=it['id'], region=f'서울 {gu}', address=it.get('address'),
+                    appr_manwon=int((it.get('appraisedPrice') or 0) / 1e4), low_manwon=int((it.get('lowestSellingPrice') or 0) / 1e4),
+                    fails=it.get('numberOfFailures'), bidding_date=(it.get('biddingDate') or '')[:10], area=it.get('buildingTotalArea'))
+        if not it.get('appraisedPrice') or not it.get('lowestSellingPrice'):
+            return 'skip', dict(base, reason='가격정보없음')
+        try:
+            if neg.get(it['id'], '') >= week_ago and not cache.get(it['id']):
+                return 'fail', dict(base, reason='단지 못 찾음 (7일 내 재시도 안 함)')
+            dj, how = find_danji(it, cache, 'officetel')
+            if not dj:
+                neg[it['id']] = today
+                return 'fail', dict(base, reason=how)
+            st_m, st_name = page_station(dj)
+            if st_m is None or st_m > OT_STATION_M:
+                return 'skip', dict(base, danji_id=dj, reason=f'역세권아님({st_name or "역 정보 없음"} {st_m}m)')
+            pg = auction_detail(it['id']) or {}
+            p = om.predict_dict(dj, it['id'], 0, df=odf, cfg=ocfg, models=models)
+            rk = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
+            if rk['decision'] == 'check':
+                p = om.predict_dict(dj, it['id'], 1, df=odf, cfg=ocfg, models=models)
+            return 'ok', dict(base, danji_id=dj, danji_name=p.get('name'),
+                              station=dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80))),
+                              **{k: v for k, v in p.items() if k not in ('address', 'area', 'category')}, risk=rk)
+        except SystemExit as e:
+            return 'fail', dict(base, reason=f'예측 실패: {e}')
+        except Exception as e:
+            return 'fail', dict(base, reason=f'예측 실패: {type(e).__name__}: {e}')
+    with ThreadPoolExecutor(workers) as ex:
+        for kind, r in ex.map(work, todo):
+            if kind == 'ok': items[r['key']] = r
+            elif kind == 'skip': skipped.append(r)
+            else: failed.append(r)
+    json.dump({k: v for k, v in neg.items() if v >= week_ago}, open(neg_path, 'w'), ensure_ascii=False)
+
+
 def main():
     now = datetime.now(KST)
     cache = json.load(open(MAP_PATH)) if os.path.exists(MAP_PATH) else {}
@@ -279,14 +361,20 @@ def main():
                 except Exception:
                     pg = {}
                 items[key]['risk'] = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
+                items[key]['category'] = '아파트'
             except SystemExit as e:
                 failed.append(dict(base, danji_id=dj, reason=f'예측 실패: {e}'))
             except Exception as e:
                 failed.append(dict(base, danji_id=dj, reason=f'예측 실패: {type(e).__name__}: {e}'))
+    try:
+        officetel_items(items, skipped, failed, cache, now)
+    except Exception as e:
+        errors.append(f'오피스텔 단계 실패: {type(e).__name__}: {e}')
     out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(now.date()),
                model='앙상블(부스팅+군집별회귀)', config_built=cfg.get('built'),
                filters=dict(min_area=None, max_low_manwon=None),
-               counts=dict(predicted=len(items), skipped=len(skipped), failed=len(failed)),
+               counts=dict(predicted=len(items), skipped=len(skipped), failed=len(failed),
+                           by_category={c: sum(v.get('category') == c for v in items.values()) for c in ('아파트', '오피스텔')}),
                errors=errors, items=items, failed=failed, skipped=skipped)
     os.makedirs(OUT_DIR, exist_ok=True)
     try:
