@@ -49,7 +49,10 @@ jobs:
           git add auction_model/predictions auction_model/danji_map.json auction_model/villa auction_model/officetel
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "auction: 예측 결과 $(TZ=Asia/Seoul date +%F)"
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin HEAD:main && break
-            sleep 5
+          # 다른 실행과 결과 파일이 겹치면 이번 실행(최신 계산) 결과를 우선한다
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 10
           done
+          echo "push failed"; exit 1
