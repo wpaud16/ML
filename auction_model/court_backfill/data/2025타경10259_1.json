@@ -1,0 +1,25 @@
+{
+ "key": "2025타경10259[1]",
+ "court": "서울남부지방법원",
+ "checked": "2026-11-04",
+ "available": true,
+ "case_info": {
+  "received_date": "2025-06-05",
+  "start_decision_date": "2025-06-12",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 9800,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2026-06-11",
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}
