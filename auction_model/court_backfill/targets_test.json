@@ -1,0 +1,113 @@
+{
+ "n": 12,
+ "items": [
+  {
+   "key": "2022타경115287[1]",
+   "case": "2022타경115287",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "category": "아파트",
+   "outcome": "매각",
+   "auction_id": "C94JIAST"
+  },
+  {
+   "key": "2023타경102442[1]",
+   "case": "2023타경102442",
+   "item_no": 1,
+   "court": "안양지원",
+   "category": "아파트",
+   "outcome": "매각",
+   "auction_id": "C31AITUJ"
+  },
+  {
+   "key": "2025타경9015[1]",
+   "case": "2025타경9015",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "category": "아파트",
+   "outcome": "매각",
+   "auction_id": "C87NOEKZ"
+  },
+  {
+   "key": "2022타경109527[1]",
+   "case": "2022타경109527",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "category": "오피스텔",
+   "outcome": "매각",
+   "auction_id": "C55DWWAG"
+  },
+  {
+   "key": "2023타경1283[1]",
+   "case": "2023타경1283",
+   "item_no": 1,
+   "court": "서울동부지방법원",
+   "category": "오피스텔",
+   "outcome": "매각",
+   "auction_id": "C94GKDCQ"
+  },
+  {
+   "key": "2024타경109798[1]",
+   "case": "2024타경109798",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "category": "오피스텔",
+   "outcome": "매각",
+   "auction_id": "C78CFJYI"
+  },
+  {
+   "key": "2023타경106642[1]",
+   "case": "2023타경106642",
+   "item_no": 1,
+   "court": "안양지원",
+   "category": "아파트",
+   "outcome": "취하",
+   "auction_id": "C12COCBY"
+  },
+  {
+   "key": "2024타경48542[1]",
+   "case": "2024타경48542",
+   "item_no": 1,
+   "court": "평택지원",
+   "category": "아파트",
+   "outcome": "취하",
+   "auction_id": "C47ITXAC"
+  },
+  {
+   "key": "2025타경54682[1]",
+   "case": "2025타경54682",
+   "item_no": 1,
+   "court": "수원지방법원",
+   "category": "아파트",
+   "outcome": "취하",
+   "auction_id": "C35ZDBYW"
+  },
+  {
+   "key": "2023타경5695[1]",
+   "case": "2023타경5695",
+   "item_no": 1,
+   "court": "서울중앙지방법원",
+   "category": "오피스텔",
+   "outcome": "취하",
+   "auction_id": "C94TUJRY"
+  },
+  {
+   "key": "2024타경122401[1]",
+   "case": "2024타경122401",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "category": "오피스텔",
+   "outcome": "취하",
+   "auction_id": "C44TRPIN"
+  },
+  {
+   "key": "2025타경535[19]",
+   "case": "2025타경535",
+   "item_no": 19,
+   "court": "서울남부지방법원",
+   "category": "오피스텔",
+   "outcome": "취하",
+   "auction_id": "C15IALBO"
+  }
+ ]
+}
