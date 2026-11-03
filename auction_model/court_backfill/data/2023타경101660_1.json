@@ -1,0 +1,25 @@
+{
+ "key": "2023타경101660[1]",
+ "court": "서울북부지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2023-02-08",
+  "start_decision_date": "2023-02-10",
+  "case_kind": "공유물분할을위한경매",
+  "claim_amount_manwon": 0,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2024-03-22",
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "key": "2024타경2818[1]",
+ "court": "서울동부지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-09-19",
+  "start_decision_date": "2024-10-04",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 109133,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2025-10-29",
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}
