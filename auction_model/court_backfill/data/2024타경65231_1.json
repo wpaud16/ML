@@ -1,0 +1,313 @@
+{
+ "key": "2024타경65231[1]",
+ "court": "고양지원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-03-12",
+  "start_decision_date": "2024-03-13",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 5220,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": [
+   "2025타경60257(중복)"
+  ]
+ },
+ "spec": {
+  "base_right_date": "2020-08-12",
+  "base_right": "근저당권",
+  "dividend_deadline": "2024-06-13",
+  "tenants": [
+   {
+    "occupant": "주거전세권자",
+    "move_in": null,
+    "fixed_date": null,
+    "deposit_manwon": 500,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": false,
+    "claim_date": null
+   }
+  ],
+  "remarks": "",
+  "assumed_rights_text": ""
+ },
+ "occupancy": {
+  "occupant_type": "채무자(소유자)점유",
+  "lessee_count": 0,
+  "periods": [],
+  "surveyed": [
+   "2024-03-22"
+  ],
+  "text": "1.현지 조사차 방문하였으나 아무도 만나지 못하여 점유관계를 알 수 없고, 덧붙인 전입세대 확인서 및 주민등록표에 채무자(소유자)가 등재되어 있음(현황조사안내문 부착함)\n2. 이후 채무자(소유자)와 전화문답(2024. 3. 25. 11:57)에 의하면, 이건 목록 건물에는 채무자(소유자) 가족만 거주하고 있다고 함.\n2. 부동산의 현황\n1. 철근콘크리트구조 철골조경사지붕 17층 공동주택(아파트)",
+  "closed_absent": true
+ },
+ "events": [
+  {
+   "date": "2026-11-03",
+   "type": "문건",
+   "text": "기타 성OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "문건",
+   "text": "기타 성OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "채권자 주OOO OOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 도달"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "근저당권자 주OOO OOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "근저당권자 더OOOOOOOOOOOOO OOOO(OOOOOO OOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "채권자 더OOOOOOOOOOOOO OOOO (OOO O OOOO OOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 도달"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "전세권자 주OOO OOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "근저당권자 오OOOOOOOOOOOOO(OOO OOOO OOOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.09.16 도달"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "교부권자 파OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "채무자겸소유자 박OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-04-12",
+   "type": "송달",
+   "text": "채권자 주OOO OOOOO 중복경매통지서 발송 → 2026.04.13 도달"
+  },
+  {
+   "date": "2026-04-12",
+   "type": "송달",
+   "text": "채무자겸소유자 박OO 중복경매통지서 발송 → 2026.04.15 도달"
+  },
+  {
+   "date": "2026-04-12",
+   "type": "송달",
+   "text": "채권자 더OOOOOOOOOOOOO OOOO (OOO O OOOO OOOO) 중복경매통지서 발송 → 2026.04.13 도달"
+  },
+  {
+   "date": "2026-01-09",
+   "type": "문건",
+   "text": "채권자 주OOO OOOOO 접수증명서"
+  },
+  {
+   "date": "2026-01-09",
+   "type": "문건",
+   "text": "채권자 주OOO OOOOO 경매속행 신청서 제출"
+  },
+  {
+   "date": "2026-01-05",
+   "type": "문건",
+   "text": "근저당권자 더OOOOOOOOOOOOO OOOO(OOOOOO OOOO) 경매속행 신청서 제출"
+  },
+  {
+   "date": "2024-11-05",
+   "type": "문건",
+   "text": "근저당권자 더OOOOOOOOOOOOO OOOO(OOOOOO OOOO) 열람및복사신청 제출"
+  },
+  {
+   "date": "2024-10-24",
+   "type": "변경신청",
+   "text": "근저당권자 신OOO OOO OOOOOOOOOOOOOO OOOO 근저당권자변경신고서 제출"
+  },
+  {
+   "date": "2024-09-10",
+   "type": "문건",
+   "text": "채권자 주OOO OOOOO 보정서 제출"
+  },
+  {
+   "date": "2024-08-05",
+   "type": "문건",
+   "text": "근저당권자 주OOO OOOO 열람및복사신청 제출"
+  },
+  {
+   "date": "2024-07-23",
+   "type": "변경신청",
+   "text": "채권자 양OO OOOOOOOOOOOOOO 채권자변경신고서 제출"
+  },
+  {
+   "date": "2024-07-23",
+   "type": "문건",
+   "text": "채권자 오OOOOOOOOOOOOO 전자소송신청서 제출"
+  },
+  {
+   "date": "2024-07-15",
+   "type": "문건",
+   "text": "신청인 오OOOOOOOOOOOOO 전자소송신청서 제출"
+  },
+  {
+   "date": "2024-07-15",
+   "type": "변경신청",
+   "text": "채권자 양OO OOOOOOOOOOOOOO 채권자변경신고서 제출"
+  },
+  {
+   "date": "2024-06-11",
+   "type": "문건",
+   "text": "교부권자 파OO 교부청구서 제출"
+  },
+  {
+   "date": "2024-03-29",
+   "type": "송달",
+   "text": "감정인 (주)OOOOOOOOO OOOO OOO 평가명령 발송 → 2024.04.01 송달간주"
+  },
+  {
+   "date": "2024-03-27",
+   "type": "문건",
+   "text": "채무자겸소유자 박OO 집행중지신청 제출"
+  },
+  {
+   "date": "2024-03-27",
+   "type": "문건",
+   "text": "감정인 주OOO OOOOOOOOO OOOO 회보서 제출"
+  },
+  {
+   "date": "2024-03-27",
+   "type": "문건",
+   "text": "집행관 이OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2024-03-26",
+   "type": "문건",
+   "text": "집행관 이OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달불능",
+   "text": "감정인 (주)OOOOOOOOO OOOO OOO 평가명령 발송 → 2024.03.22 주소불명"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달",
+   "text": "근저당권자 주OOO OOOOO 최고서 발송 → 2024.03.18 송달간주"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달",
+   "text": "집행관 고OOO OOO 조사명령 발송 → 2024.03.21 도달"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달",
+   "text": "전세권자 주OOO OOOOO 최고서 발송 → 2024.03.18 송달간주"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달",
+   "text": "주무관서 파OOO 최고서 발송 → 2024.03.18 송달간주"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달",
+   "text": "근저당권자 주OOO OOOO 최고서 발송 → 2024.03.18 송달간주"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달",
+   "text": "주무관서 파OOOO 최고서 발송 → 2024.03.18 송달간주"
+  },
+  {
+   "date": "2024-03-18",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOO 최고서 발송 → 2024.03.18 송달간주"
+  },
+  {
+   "date": "2024-03-15",
+   "type": "송달",
+   "text": "채무자겸소유자 박OO 개시결정정본 발송 → 2024.03.18 도달"
+  },
+  {
+   "date": "2024-03-15",
+   "type": "송달",
+   "text": "채권자 주OOO OOOOO 개시결정정본 발송 → 2024.03.15 도달"
+  },
+  {
+   "date": "2024-03-14",
+   "type": "문건",
+   "text": "등기소 파OOOO 등기필증 제출"
+  },
+  {
+   "date": "2024-03-12",
+   "type": "문건",
+   "text": "기타 주OOO OOOOO 접수증명"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-09-29",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 48800
+  },
+  {
+   "date": "2026-11-03",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 34160
+  },
+  {
+   "date": "2026-11-10",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "전세권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": "개인"
+  }
+ ],
+ "error": null
+}

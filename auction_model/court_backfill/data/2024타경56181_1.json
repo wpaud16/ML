@@ -1,0 +1,45 @@
+{
+ "key": "2024타경56181[1]",
+ "court": "서울동부지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-05-21",
+  "start_decision_date": "2024-05-22",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 151773,
+  "creditor_type": "개인",
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": [
+  {
+   "role": "채권자",
+   "type": "개인"
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  }
+ ],
+ "error": null,
+ "notes": [
+  "물건상세조회 비활성 (물건 종국 등)",
+  "문건/송달 실패: Timeout 30000ms exceeded.",
+  "기일내역 실패: Timeout 30000ms exceeded.",
+  "현황조사서 실패: Timeout 30000ms exceeded."
+ ]
+}
