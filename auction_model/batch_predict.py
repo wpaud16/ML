@@ -190,6 +190,8 @@ def update_results(today):
     for (k, bd), it in last_pred.items():
         rid = f'{k}|{bd}'
         if bd >= today or bd < str((datetime.fromisoformat(today) - timedelta(days=30)).date()): continue
+        if rid in res and res[rid].get('expected_bidders') is None and (it.get('by_bidders') or {}).get('expected_bidders'):
+            res[rid].update(expected_bidders=it['by_bidders']['expected_bidders'], expected_range=it['by_bidders'].get('expected_range'))
         if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지'): continue
         page = auction_detail(it['auction_id'])
         status, actual, bidders, second = '결과대기', None, None, None
@@ -206,7 +208,8 @@ def update_results(today):
                 status = '유찰'
         r = dict(key=k, auction_id=it.get('auction_id'), category=it.get('category', '아파트'), danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
                  bidding_date=bd, pred_date=it['pred_date'], low_manwon=it.get('low_manwon'),
-                 bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today)
+                 bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today,
+                 expected_bidders=(it.get('by_bidders') or {}).get('expected_bidders'), expected_range=(it.get('by_bidders') or {}).get('expected_range'))
         if actual:
             p50 = it['bid_by_prob_manwon']['50%']
             r.update(actual_manwon=actual, bidders=bidders, second_manwon=second,
