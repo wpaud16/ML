@@ -158,7 +158,7 @@ CARD (one per item, ALWAYS — never merge items into one table or list; the onl
      e. 시세 (v23, 2026-11-03) — use the latest.json entry's "sise" object.
         If sise has est_eok (and no "error"):
           line 1: "매매 시세(종합) **X.XX억**" (X = sise.est_eok) + small gray " (범위 a~b억 · 감정가는 N% · 최저가는 N%)" (a~b = sise.range_eok; omit "범위" when a = b; N = 감정가 ÷ est_eok and sise.low_vs_est_pct).
-          line 2 (small gray 12px): sources that exist, joined by " · ": "실거래 X.XX억(M/D → 추세 반영 Y.YY)" from sise.trade (eok, date, adj_eok) · "KB X.XX억" from sise.kb.eok · "리치고 X.XX억" from sise.richgo_eok. NEVER show 호가/매물 (sise.offer) anywhere — the user removed it 2026-11-03.
+          line 2 (small gray 12px): sources that exist, joined by " · ": "실거래 X.XX억(M/D → 추세 반영 Y.YY)" from sise.trade (eok, date, adj_eok) · "KB X.XX억" from sise.kb.eok · "리치고 X.XX억" from sise.richgo_eok (skip it when sise.richgo_source is "OFFER" — that value is a 호가). NEVER show 호가/매물 (sise.offer) anywhere — the user removed it 2026-11-03.
           line 3 (small gray 12px, only when sise.trend exists): "단지 시세 추세 3개월 ±N% · 1년 ±N%" (trend 3m_pct, 12m_pct; skip a missing value).
           line 4 (only when sise.flags is non-empty): red (#d93025) 12px "⚠ " + flags joined by " · ".
         If sise is missing, null, has "error", or has no est_eok: the old ONE line "매매 시세 X.XX억" + small gray "(리치고 · 감정가는 시세의 N% · 최저가는 N%)".

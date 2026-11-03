@@ -283,7 +283,7 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
         flags = []
         if out['spread_pct'] > 15: flags.append('출처 간 차이 큼')
         if 'trade' not in out or out['trade']['months_ago'] > 6: flags.append('최근 6개월 실거래 없음 (거래 적음)')
-        if abs(out['richgo_vs_est_pct']) > 5: flags.append(f"리치고 시세가 종합보다 {out['richgo_vs_est_pct']:+.0f}%")
+        if out.get('richgo_source') != 'OFFER' and abs(out['richgo_vs_est_pct']) > 5: flags.append(f"리치고 시세가 종합보다 {out['richgo_vs_est_pct']:+.0f}%")
         out['flags'] = flags
     return out
 
