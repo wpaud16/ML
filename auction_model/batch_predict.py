@@ -204,7 +204,7 @@ def update_results(today):
                 status = '취하'   # 매각가 없이 종료 = 취하·기각 등
             elif (page.get('numberOfFailures') or 0) > (it.get('fails') or 0) or ((page.get('biddingDate') or '')[:10] > bd):
                 status = '유찰'
-        r = dict(key=k, category=it.get('category', '아파트'), danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
+        r = dict(key=k, auction_id=it.get('auction_id'), category=it.get('category', '아파트'), danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
                  bidding_date=bd, pred_date=it['pred_date'], low_manwon=it.get('low_manwon'),
                  bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today)
         if actual:

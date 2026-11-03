@@ -1,10 +1,10 @@
 name: auction predictions (daily)
 
-# 매일 새벽 06:10 KST(전날 21:10 UTC)에 경매 낙찰가 예측을 미리 계산해 auction_model/predictions/latest.json 에 저장.
+# 매일 새벽 03:40 KST(전날 18:40 UTC)에 (2026-11-03: GitHub 예약 실행이 몇 시간씩 밀려 07:45 브리핑 전에 못 끝난 날이 있어 앞당김) 경매 낙찰가 예측을 미리 계산해 auction_model/predictions/latest.json 에 저장.
 # 아침 브리핑(07:45 KST)은 이 파일만 읽는다.
 on:
   schedule:
-    - cron: '10 21 * * *'
+    - cron: '40 18 * * *'
   workflow_dispatch:
   push:
     branches: [main]
