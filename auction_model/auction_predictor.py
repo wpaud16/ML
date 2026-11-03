@@ -234,7 +234,7 @@ def target_row(danji, auction_id, df, kind='danji'):
 def sise_detail(pv, ch, mkt, low, offer_cnt=None):
     """시세 종합 (2026-11-03 사용자 요청: 리치고 추정치 하나보다 탄탄하게).
     리치고 단지 페이지의 평형별 값: 국토부 마지막 실거래 · KB 시세 · 매물 호가(최저~최고, 매물 수) · 리치고 추정시세
-    + 단지 월별 시세 추세. 실거래·KB는 그 시점 이후의 단지 추세만큼 보정해 오늘 값으로 맞춘다.
+    + 단지 월별 시세 추세. 호가는 기록만 하고 종합에서 제외(2026-11-03). 실거래·KB는 그 시점 이후의 단지 추세만큼 보정해 오늘 값으로 맞춘다.
     종합 = 쓸 수 있는 값들의 중앙값 (실거래는 12개월, KB는 6개월 이내만). 모델 입력은 아직 리치고 추정시세 그대로(학습 기준)."""
     md = ((pv or {}).get('danjiPriceInfo') or {}).get('memePriceDict') or {}
     ms = sorted(ch); last = ms[-1] if ms else None
@@ -252,7 +252,8 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
     if rg: out['richgo_eok'] = round(rg / 1e4, 2); vals.append(('리치고', rg * 1e4))
     elif mkt:   # 오피스텔 등 리치고 추정시세가 없으면 모델 시세는 호가 대표값과 같아 중복으로 넣지 않는다
         out['richgo_eok'] = round(mkt / 1e8, 2); out['richgo_source'] = ((pv or {}).get('danjiPriceInfo') or {}).get('memeSource')
-        if not (md.get('OFFER') or {}).get('price'): vals.append(('리치고', mkt))
+        # 2026-11-03 사용자 요청: 호가는 종합에서 제외 → 호가 기반 모델 시세도 넣지 않는다
+        if not (md.get('OFFER') or {}).get('price') and out.get('richgo_source') != 'OFFER': vals.append(('리치고', mkt))
     mo = md.get('MOLIT') or {}
     p, age, tr = adj(mo.get('price'), mo.get('yyyymmdd'))
     if p:
@@ -267,8 +268,7 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
     of = md.get('OFFER') or {}
     if of.get('minPrice'):
         out['offer'] = dict(min_eok=round(of['minPrice'] / 1e4, 2), max_eok=round((of.get('maxPrice') or of['minPrice']) / 1e4, 2), count=offer_cnt)
-        # 매물이 많으면 최저 호가는 저층·급매 한 건일 수 있어 대표 호가(price)를 쓴다
-        vals.append(('호가', (of.get('price') or of['minPrice']) * 1e4))
+        # 호가는 참고로만 기록, 종합 중앙값에는 넣지 않음 (2026-11-03 사용자 요청: 오피스텔에서 실거래 대비 최대 +9% 높게 잡힘)
         out['offer']['rep_eok'] = round((of.get('price') or of['minPrice']) / 1e4, 2)
     if ms:
         def idx(k):
