@@ -1,0 +1,188 @@
+{
+ "key": "2025타경13766[1]",
+ "court": "서울북부지방법원",
+ "checked": "2026-11-04",
+ "available": true,
+ "case_info": {
+  "received_date": "2025-11-27",
+  "start_decision_date": "2025-11-28",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 12517,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": {
+  "base_right_date": "2025-11-28",
+  "base_right": "배당요구종기 경매개시결정",
+  "dividend_deadline": null,
+  "tenants": [
+   {
+    "occupant": "주거임차권자",
+    "move_in": null,
+    "fixed_date": null,
+    "deposit_manwon": 12000,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": false,
+    "claim_date": null
+   },
+   {
+    "occupant": "주거임차권자",
+    "move_in": null,
+    "fixed_date": null,
+    "deposit_manwon": 12000,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": false,
+    "claim_date": null
+   }
+  ],
+  "remarks": "- 서울보증보험 주식회사 : 경매신청채권자로 임차권자 한국토지주택공사의 임대차보증금반환채권을 대위변제함으로써 발생한\n구상금채권을 보전을 위하여 임차인의 우선변제권을 행사하는 것이며 배당요구일은 경매신청일임.\n특별매각조건 있음(신청채권자 및 임차인은 별지목록 부동산에 대한 이 사건 배당금으로 임대차보증금반환채권 전액을 변제받\n지 못하더라도 잔존 임대차보증금반환채권을 포기하고 임차권등기를 말소함).",
+  "assumed_rights_text": ""
+ },
+ "occupancy": {
+  "occupant_type": "미상",
+  "lessee_count": 0,
+  "periods": [],
+  "surveyed": [
+   "2025-12-16",
+   "2025-12-22"
+  ],
+  "text": "덧붙인 전입세대확인서, 외국인체류확인서 및 상가건물임대차현황서와 같이 주거임차인 및 상가임차인 내역이 없어 확인 불능하오니 그 점유관계 등은 별도 확인을 요함.\n2. 부동산의 현황\n1) 현지 방문하였으나 폐문부재로 아무도 만나지 못함.\n2) 안내문을 출입문에 꽂아두었으나 아무 연락이 없어 점유자 확인 불능함.",
+  "closed_absent": true
+ },
+ "events": [
+  {
+   "date": "2026-10-19",
+   "type": "송달",
+   "text": "채무자겸소유자 진OO 매각기일 및 매각결정기일통지서 발송 → 2026.10.20 송달간주"
+  },
+  {
+   "date": "2026-10-19",
+   "type": "송달",
+   "text": "교부권자 서OOOOOOO(OOOOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.10.20 송달간주"
+  },
+  {
+   "date": "2026-10-19",
+   "type": "송달",
+   "text": "교부권자 중OOOO(OOO) 매각기일 및 매각결정기일통지서 발송 → 2026.10.20 송달간주"
+  },
+  {
+   "date": "2026-10-19",
+   "type": "송달",
+   "text": "임차권자 한OOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.10.20 송달간주"
+  },
+  {
+   "date": "2026-10-19",
+   "type": "송달",
+   "text": "채권자 서OOOOO OOOO 매각기일 및 매각결정기일통지서 발송 → 2026.10.20 도달"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "문건",
+   "text": "채권자 서OOOOO OOOO 대항력포기서 제출"
+  },
+  {
+   "date": "2025-12-26",
+   "type": "문건",
+   "text": "기타 김OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2025-12-22",
+   "type": "문건",
+   "text": "교부권자 중OOOO(OOO) 교부청구 제출"
+  },
+  {
+   "date": "2025-12-17",
+   "type": "문건",
+   "text": "교부권자 서OOOOOOO(OOOOOO) 교부청구 제출"
+  },
+  {
+   "date": "2025-12-15",
+   "type": "문건",
+   "text": "감정인 이OOOOOOOOOO 감정평가서 제출"
+  },
+  {
+   "date": "2025-12-09",
+   "type": "송달",
+   "text": "주무관서 서OOOO OOOOO 최고서 발송 → 2025.12.10 송달간주"
+  },
+  {
+   "date": "2025-12-09",
+   "type": "송달",
+   "text": "임차권자 한OOOOOOO 최고서 발송 → 2025.12.10 송달간주"
+  },
+  {
+   "date": "2025-12-09",
+   "type": "송달",
+   "text": "주무관서 중OOOO 최고서 발송 → 2025.12.10 송달간주"
+  },
+  {
+   "date": "2025-12-09",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOO 최고서 발송 → 2025.12.10 송달간주"
+  },
+  {
+   "date": "2025-12-09",
+   "type": "송달",
+   "text": "집행관 서OOOOO OOO 조사명령 발송 → 2025.12.10 도달"
+  },
+  {
+   "date": "2025-12-09",
+   "type": "송달",
+   "text": "감정인 이OOOOOOOOOO OOO 평가명령 발송 → 2025.12.12 도달"
+  },
+  {
+   "date": "2025-12-02",
+   "type": "송달",
+   "text": "채무자겸소유자 진OO 개시결정정본 발송 → 2025.12.08 도달"
+  },
+  {
+   "date": "2025-12-01",
+   "type": "문건",
+   "text": "등기소 서OOOOOOO OOO 등기필증 제출"
+  },
+  {
+   "date": "2025-12-01",
+   "type": "송달",
+   "text": "채권자 서OOOOO OOOO 개시결정정본 발송 → 2025.12.02 도달"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-11-10",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 10800
+  },
+  {
+   "date": "2026-11-17",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "임차권자",
+   "type": null
+  }
+ ],
+ "error": null
+}
