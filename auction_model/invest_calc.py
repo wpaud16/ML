@@ -53,8 +53,9 @@ def safety(it):
     d = rk.get('decision'); why = []
     if d == 'hide': return dict(grade='위험', reasons=[rk.get('reason') or '권리 위험'])
     if d == 'check': why.append(rk.get('reason') or '권리 확인 필요')
-    if rk.get('resale'): why.append('재매각')
-    for s in ci.get('withdraw_signal') or []: why.append(f"{s.get('label')} 신호")
+    # 유치권 신고·매각불허가는 권리 위험 → 주의. 재매각·변경·연기 신호는 보여주되 카드에 따로 표시 (2026-11-03)
+    for x in ci.get('withdraw_signal') or []:
+        if x.get('label') in ('유치권 신고', '불허가'): why.append(f"{x.get('label')} 신호")
     if why: return dict(grade='주의', reasons=why)
     if t and not t.get('assumed_manwon') and not t.get('unknown_deposit'):
         return dict(grade='안전', reasons=['법원 명세서 기준 인수 금액 0원'] + (['세금 교부청구 있음'] if any(n.get('label') == '세금 교부청구' for n in ci.get('notes') or []) else []))
