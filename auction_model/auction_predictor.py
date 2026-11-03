@@ -374,7 +374,10 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
         notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
                      f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
     bidders = bidder_scenarios(df, row, T, low, mkt, SMALL_ADJ if small else 0.0, cfg)
+    _jr = row.jeonse_ratio.iloc[0]
+    if _jr != _jr and 'jeonse_ratio_bldg' in row: _jr = row.jeonse_ratio_bldg.iloc[0]
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
+               jeonse_ratio=None if _jr != _jr else round(float(_jr), 3),
                by_bidders=bidders,
                fail=_fail_info('apt', row),
                households=None if pd.isna(hh) else int(hh),

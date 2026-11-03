@@ -389,6 +389,12 @@ def main():
         n_ten = tenant_rules.apply(items, str(now.date()))
     except Exception as e:
         n_ten = 0; errors.append(f'임차인 판정 실패: {type(e).__name__}: {e}')
+    # 안전 등급 + 투자금 회수기간 (2026-11-03)
+    try:
+        import invest_calc
+        invest_calc.apply(items)
+    except Exception as e:
+        errors.append(f'안전등급·회수기간 실패: {type(e).__name__}: {e}')
     # PC가 다음 날 새벽 조회할 물건 목록 (특수물건은 제외)
     tgt = [dict(key=k, case=k.split('[')[0], item_no=int(k.split('[')[1].rstrip(']')), court=v.get('court'),
                 auction_id=v.get('auction_id'), bidding_date=v.get('bidding_date'), category=v.get('category'))
