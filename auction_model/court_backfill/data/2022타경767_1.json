@@ -1,0 +1,27 @@
+{
+ "key": "2022타경767[1]",
+ "court": "서울남부지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2022-02-10",
+  "start_decision_date": "2022-02-21",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 7059,
+  "creditor_type": null,
+  "end_result": "취하",
+  "end_date": "2025-04-28",
+  "duplicate_cases": [
+   "2024타경127048(중복:모사건)"
+  ]
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}

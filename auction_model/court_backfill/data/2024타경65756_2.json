@@ -1,0 +1,28 @@
+{
+ "key": "2024타경65756[2]",
+ "court": "성남지원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-09-03",
+  "start_decision_date": "2024-09-05",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 12000,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2025-12-04",
+  "duplicate_cases": [
+   "2024타경71409(병합)",
+   "2025타경50454(병합)"
+  ]
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}
