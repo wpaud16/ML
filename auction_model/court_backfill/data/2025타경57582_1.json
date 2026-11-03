@@ -1,0 +1,220 @@
+{
+ "key": "2025타경57582[1]",
+ "court": "수원지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2025-08-26",
+  "start_decision_date": "2025-08-29",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 25800,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": {
+  "base_right_date": "2020-01-30",
+  "base_right": "근저당권",
+  "dividend_deadline": "2025-11-12",
+  "tenants": [
+   {
+    "occupant": "주거임차인",
+    "move_in": "2012-04-05",
+    "fixed_date": null,
+    "deposit_manwon": null,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": false,
+    "claim_date": null
+   }
+  ],
+  "remarks": "",
+  "assumed_rights_text": ""
+ },
+ "occupancy": {
+  "occupant_type": "임차인(별지)점유",
+  "lessee_count": 1,
+  "periods": [
+   {
+    "occupant": "임차인",
+    "use": "주거",
+    "period": null,
+    "move_in": "2012-04-05"
+   }
+  ],
+  "surveyed": [
+   "2025-09-06"
+  ],
+  "text": "해당 부동산에 대하여 현황조사차 현장을 방문하였는바, 폐문부재로 소유자 및 점유자 등을 만날 수 없어 출입문에 안내문을 부착하여 두었으며, 전입세대확인서 등에 이OO가 기재되어 있는바, 일단 동인을 임차인으로 등재함.\n2. 부동산의 현황\n본건 부동산의 현황은 외관상 공부의 내용과 일치하는 것으로 보임.",
+  "closed_absent": true
+ },
+ "events": [
+  {
+   "date": "2026-10-02",
+   "type": "문건",
+   "text": "기타 이OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-09-17",
+   "type": "송달",
+   "text": "채무자겸소유자 이OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.18 송달간주"
+  },
+  {
+   "date": "2026-09-17",
+   "type": "송달",
+   "text": "임차인 이OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.18 송달간주"
+  },
+  {
+   "date": "2026-09-17",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.18 송달간주"
+  },
+  {
+   "date": "2026-09-17",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.18 송달간주"
+  },
+  {
+   "date": "2026-09-17",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.18 송달간주"
+  },
+  {
+   "date": "2026-09-17",
+   "type": "송달",
+   "text": "채권자 주OOOOOOOOOOOOOO OOOO OOOOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.17 도달"
+  },
+  {
+   "date": "2026-03-11",
+   "type": "문건",
+   "text": "채권자 메OOOOOOOOO 기일지정신청서 제출"
+  },
+  {
+   "date": "2025-11-03",
+   "type": "문건",
+   "text": "교부권자 용OO 미체납교부청구서 제출"
+  },
+  {
+   "date": "2025-09-19",
+   "type": "송달",
+   "text": "임차인 이OO 임차인통지서 발송 → 2025.09.24 도달"
+  },
+  {
+   "date": "2025-09-16",
+   "type": "문건",
+   "text": "감정인 메OOOOOOO OOO  감정평가서 제출"
+  },
+  {
+   "date": "2025-09-15",
+   "type": "문건",
+   "text": "기타 고OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2025-09-15",
+   "type": "문건",
+   "text": "감정인 김OO 감정평가서 제출"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "주무관서 용OOO 최고서 발송 → 2025.09.05 송달간주"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOO 최고서 발송 → 2025.09.05 송달간주"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOOOOOOOO 최고서 발송 → 2025.09.05 송달간주"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOOOO 최고서 발송 → 2025.09.05 송달간주"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "주무관서 종OOOO 최고서 발송 → 2025.09.05 송달간주"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOO 최고서 발송 → 2025.09.05 송달간주"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "집행관 수OOO OOO 조사명령 발송 → 2025.09.04 도달"
+  },
+  {
+   "date": "2025-09-04",
+   "type": "송달",
+   "text": "감정인 메OOOOOOOOOO OOO 평가명령 발송 → 2025.09.04 도달"
+  },
+  {
+   "date": "2025-09-02",
+   "type": "문건",
+   "text": "등기소 용OOOO 등기필증 제출"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "채무자겸소유자 이OO 개시결정정본 발송 → 2025.09.08 도달"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "채권자 주OOOOOOOOOOOOOO OOOO OOOOOOOOOO 개시결정정본 발송 → 2025.09.02 도달"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-10-02",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 36500
+  },
+  {
+   "date": "2026-11-06",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 25550
+  },
+  {
+   "date": "2026-11-13",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  }
+ ],
+ "error": null
+}
