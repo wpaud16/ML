@@ -9,6 +9,7 @@
   · 배당 재원 = 낙찰확률 40% 가격 × 95% − 집행비용 300만 (당해세 등 먼저 빠질 수 있는 몫을 남겨 둠)
 - 그 외(배당요구 없음, 확정일자 없음/늦음) → 보증금 전액 인수로 본다
 - 인수 예상액 > 0 → 숨김, 0 → 포함(대항력 임차인 문제는 해소)
+- 대항력 임차인 보증금이 미상(null)이면 인수액을 알 수 없으므로 숨김 (2026-11-03)
 """
 import json, os
 from datetime import datetime, timedelta
@@ -43,9 +44,13 @@ def evaluate(t, prices_manwon, low_manwon):
     opp = [x for x in t.get('tenants') or [] if _d(x.get('move_in')) and _d(x.get('move_in')) < base]
     if not opp:
         return dict(assumed_manwon=0, opposing=0, lines=['법원 명세서상 대항력 임차인 없음'], ok=True)
-    assumed, lines = 0, []
+    assumed, lines, unknown = 0, [], 0
     opp.sort(key=lambda x: _d(x.get('fixed_date')) or '9999')
     for x in opp:
+        if x.get('deposit_manwon') is None:
+            unknown += 1
+            lines.append('대항력 임차인 보증금 미상 → 인수액 알 수 없음')
+            continue
         dep = int(x.get('deposit_manwon') or 0)
         claimed = bool(x.get('claimed_dividend'))
         if claimed and deadline and _d(x.get('claim_date')) and _d(x.get('claim_date')) > deadline: claimed = False
@@ -55,7 +60,7 @@ def evaluate(t, prices_manwon, low_manwon):
         assumed += dep - pay
         why = '배당요구·확정일자 선순위 → 배당' if first else ('배당요구 없음' if not claimed else '확정일자 없음/늦음')
         lines.append(f"대항력 임차인 보증금 {dep:,}만 · {why}" + (f" {pay:,}만" if first else ''))
-    return dict(assumed_manwon=int(assumed), opposing=len(opp), lines=lines, ok=assumed <= 0)
+    return dict(assumed_manwon=int(assumed), opposing=len(opp), lines=lines, unknown=unknown, ok=assumed <= 0 and not unknown)
 
 
 def apply(items, today):
@@ -71,11 +76,13 @@ def apply(items, today):
         other = [p for p in reason.split(' / ') if p and not p.startswith('대항력 임차인')]
         hard = reason.startswith('특수물건')
         note = dict(source='법원 매각물건명세서', checked=t.get('checked'), assumed_manwon=ev['assumed_manwon'],
-                    opposing_tenants=ev['opposing'], lines=ev['lines'],
+                    opposing_tenants=ev['opposing'], unknown_deposit=ev.get('unknown', 0), lines=ev['lines'],
                     caution='압류(세금)가 말소기준이면 당해세가 임차인보다 먼저 배당될 수 있음' if '압류' in ((rk.get('summary') or {}).get('base_right') or '') else None)
         it['tenant'] = note
         if hard: continue
-        if not ev['ok']:
+        if ev.get('unknown'):
+            rk.update(decision='hide', reason='대항력 임차인 보증금 미상 (법원 명세서 기준)'); n += 1
+        elif not ev['ok']:
             rk.update(decision='hide', reason=f"보증금 인수 예상 약 {ev['assumed_manwon']:,}만 (법원 명세서 기준)"); n += 1
         elif not other:
             rk.update(decision='show', reason='대항력 임차인 배당으로 전액 변제 예상' if ev['opposing'] else '', tenant_cleared=True); n += 1
