@@ -224,7 +224,66 @@ def target_row(danji, auction_id, df, kind='danji'):
                 pyeong=best[1], area=area, appr_eok=round(row['appr'] / 1e8, 3), low_eok=round(row['low'] / 1e8, 3),
                 fails=row['fails'], bidding_date=str(T.date()), richgo_sise_eok=round(mkt / 1e8, 3),
                 appr_vs_sise=round(row['r_appr_mkt'], 3))
+    try:
+        info['sise'] = sise_detail(best[2], ch, mkt, row['low'], (best[2].get('memeOfferCount')))
+    except Exception as e:
+        info['sise'] = dict(error=f'{type(e).__name__}: {e}'[:150])
     return pd.DataFrame([row]), info
+
+
+def sise_detail(pv, ch, mkt, low, offer_cnt=None):
+    """시세 종합 (2026-11-03 사용자 요청: 리치고 추정치 하나보다 탄탄하게).
+    리치고 단지 페이지의 평형별 값: 국토부 마지막 실거래 · KB 시세 · 매물 호가(최저~최고, 매물 수) · 리치고 추정시세
+    + 단지 월별 시세 추세. 실거래·KB는 그 시점 이후의 단지 추세만큼 보정해 오늘 값으로 맞춘다.
+    종합 = 쓸 수 있는 값들의 중앙값 (실거래는 12개월, KB는 6개월 이내만). 모델 입력은 아직 리치고 추정시세 그대로(학습 기준)."""
+    md = ((pv or {}).get('danjiPriceInfo') or {}).get('memePriceDict') or {}
+    ms = sorted(ch); last = ms[-1] if ms else None
+    today = pd.Timestamp.today().normalize()
+
+    def adj(price, ymd):
+        if not price or not ymd or not last: return None, None, None
+        t = pd.Timestamp(ymd.replace('.', '-')); age = (today - t).days / 30.4
+        m = t.strftime('%Y-%m'); pr = [x for x in ms if x <= m]
+        f = ch[last] / ch[pr[-1]] if pr else 1.0
+        return price * 1e4 * f, age, f - 1
+
+    out, vals = {}, []
+    rg = (md.get('RICHGO_SISE') or {}).get('price')
+    if rg: out['richgo_eok'] = round(rg / 1e4, 2); vals.append(('리치고', rg * 1e4))
+    elif mkt: out['richgo_eok'] = round(mkt / 1e8, 2); vals.append(('리치고', mkt))
+    mo = md.get('MOLIT') or {}
+    p, age, tr = adj(mo.get('price'), mo.get('yyyymmdd'))
+    if p:
+        out['trade'] = dict(eok=round(mo['price'] / 1e4, 2), date=mo['yyyymmdd'].replace('.', '-'), months_ago=round(age, 1),
+                            adj_eok=round(p / 1e8, 2), trend_since_pct=round(tr * 100, 1))
+        if age <= 12: vals.append(('실거래', p))
+    kb = md.get('KB') or {}
+    p, age, tr = adj(kb.get('price'), kb.get('yyyymmdd'))
+    if p:
+        out['kb'] = dict(eok=round(kb['price'] / 1e4, 2), date=kb['yyyymmdd'].replace('.', '-'), adj_eok=round(p / 1e8, 2))
+        if age <= 6: vals.append(('KB', p))
+    of = md.get('OFFER') or {}
+    if of.get('minPrice'):
+        out['offer'] = dict(min_eok=round(of['minPrice'] / 1e4, 2), max_eok=round((of.get('maxPrice') or of['minPrice']) / 1e4, 2), count=offer_cnt)
+        # 매물이 많으면 최저 호가는 저층·급매 한 건일 수 있어 대표 호가(price)를 쓴다
+        vals.append(('호가', (of.get('price') or of['minPrice']) * 1e4))
+        out['offer']['rep_eok'] = round((of.get('price') or of['minPrice']) / 1e4, 2)
+    if ms:
+        def idx(k):
+            t = pd.Timestamp(last + '-01') - pd.DateOffset(months=k); pr = [x for x in ms if x <= t.strftime('%Y-%m')]
+            return ch[pr[-1]] if pr else None
+        out['trend'] = {f'{k}m_pct': (round((ch[last] / idx(k) - 1) * 100, 1) if idx(k) else None) for k in (3, 6, 12)}
+    if vals:
+        v = np.array([x[1] for x in vals]); est = float(np.median(v))
+        out.update(est_eok=round(est / 1e8, 2), range_eok=[round(v.min() / 1e8, 2), round(v.max() / 1e8, 2)],
+                   used=[x[0] for x in vals], spread_pct=round((v.max() / v.min() - 1) * 100, 1),
+                   low_vs_est_pct=round(low / est * 100), richgo_vs_est_pct=round(mkt / est * 100 - 100, 1))
+        flags = []
+        if out['spread_pct'] > 15: flags.append('출처 간 차이 큼')
+        if 'trade' not in out or out['trade']['months_ago'] > 6: flags.append('최근 6개월 실거래 없음 (거래 적음)')
+        if abs(out['richgo_vs_est_pct']) > 5: flags.append(f"리치고 시세가 종합보다 {out['richgo_vs_est_pct']:+.0f}%")
+        out['flags'] = flags
+    return out
 
 
 BW = 0.012
