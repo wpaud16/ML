@@ -250,7 +250,9 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
     out, vals = {}, []
     rg = (md.get('RICHGO_SISE') or {}).get('price')
     if rg: out['richgo_eok'] = round(rg / 1e4, 2); vals.append(('리치고', rg * 1e4))
-    elif mkt: out['richgo_eok'] = round(mkt / 1e8, 2); vals.append(('리치고', mkt))
+    elif mkt:   # 오피스텔 등 리치고 추정시세가 없으면 모델 시세는 호가 대표값과 같아 중복으로 넣지 않는다
+        out['richgo_eok'] = round(mkt / 1e8, 2); out['richgo_source'] = ((pv or {}).get('danjiPriceInfo') or {}).get('memeSource')
+        if not (md.get('OFFER') or {}).get('price'): vals.append(('리치고', mkt))
     mo = md.get('MOLIT') or {}
     p, age, tr = adj(mo.get('price'), mo.get('yyyymmdd'))
     if p:
@@ -275,8 +277,8 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
         out['trend'] = {f'{k}m_pct': (round((ch[last] / idx(k) - 1) * 100, 1) if idx(k) else None) for k in (3, 6, 12)}
     if vals:
         v = np.array([x[1] for x in vals]); est = float(np.median(v))
-        out.update(est_eok=round(est / 1e8, 2), range_eok=[round(v.min() / 1e8, 2), round(v.max() / 1e8, 2)],
-                   used=[x[0] for x in vals], spread_pct=round((v.max() / v.min() - 1) * 100, 1),
+        out.update(est_eok=round(est / 1e8, 2), range_eok=[round(float(v.min()) / 1e8, 2), round(float(v.max()) / 1e8, 2)],
+                   used=[x[0] for x in vals], spread_pct=round(float(v.max() / v.min() - 1) * 100, 1),
                    low_vs_est_pct=round(low / est * 100), richgo_vs_est_pct=round(mkt / est * 100 - 100, 1))
         flags = []
         if out['spread_pct'] > 15: flags.append('출처 간 차이 큼')
