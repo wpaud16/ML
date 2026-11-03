@@ -5153,6 +5153,11 @@
 "date": "2026-11-03",
 "low_manwon": 14976,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 14976,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -5171,6 +5176,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 17300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 17300,
 "fails": 0
 }
@@ -54983,6 +54993,86 @@
 "date": "2026-11-24",
 "low_manwon": 136049,
 "fails": 2
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C05NKKMY": {
+"case": "2026타경4833[1]",
+"address": "서울특별시 강서구 화곡동 371-50 화곡아트빌  제3층 제303호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 28.85,
+"land_area": 20.34,
+"appr_manwon": 29600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 29600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C06XHXHG": {
+"case": "2026타경3290[1]",
+"address": "서울특별시 강서구 화곡동 841-31 예도하임  제2층 제201호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 44.43,
+"land_area": 29.81,
+"appr_manwon": 34900,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 34900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C08ABZQJ": {
+"case": "2026타경5154[1]",
+"address": "서울특별시 강서구 화곡동 1169 더숨153 제103동 제6층 제602호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 16.99,
+"land_area": 14.39,
+"appr_manwon": 27500,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 27500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C08CMPSI": {
+"case": "2026타경4406[1]",
+"address": "서울특별시 강서구 화곡동 1010-2 에스케이파크리움  제6층 제603호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 24.14,
+"land_area": 16.11,
+"appr_manwon": 26900,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 26900,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-03",
