@@ -1,0 +1,290 @@
+{
+ "key": "2026타경100614[1]",
+ "court": "서울중앙지방법원",
+ "checked": "2026-11-04",
+ "available": true,
+ "case_info": {
+  "received_date": "2026-03-27",
+  "start_decision_date": "2026-03-30",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 26003,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": {
+  "base_right_date": "2026-03-30",
+  "base_right": "경매개시결정",
+  "dividend_deadline": "2026-06-22",
+  "tenants": [
+   {
+    "occupant": "주거임차권자",
+    "move_in": "2022-02-07",
+    "fixed_date": "2022-01-11",
+    "deposit_manwon": 23000,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": true,
+    "claim_date": "2026-06-18"
+   }
+  ],
+  "remarks": "정OO:주택임대차보호법에 의하여 신청채권자가 우선변제권 승계\n신청채권자로부터 우선변제권만 주장하고 대항력을 포기하여, 임대차보증금반환채권 전액을 변제받지 못하더라도 매수인에 대\n한 잔존 임대차보증금반환청구권을 포기하고 임차권등기 말소하는 것에 동의한다는 확약서(2026.6.26.자)가 제출됨",
+  "assumed_rights_text": ""
+ },
+ "occupancy": {
+  "occupant_type": "미상",
+  "lessee_count": 0,
+  "periods": [],
+  "surveyed": [
+   "2026-04-06",
+   "2026-04-09",
+   "2026-04-14"
+  ],
+  "text": "1) 이 사건 부동산의 전입세대확인서 및 외국인체류확인서에 등재된 세대주는 없음.\n2) 현장에 임하여 점유자 등을 만날 수 없어서 점유자 미상으로 보고함. 단, 점유관계는 별도 확인이 필요함.\n(안내문 세대 현관문 부착)",
+  "closed_absent": true
+ },
+ "events": [
+  {
+   "date": "2026-10-06",
+   "type": "문건",
+   "text": "기타 윤OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-09-21",
+   "type": "송달",
+   "text": "교부권자 강OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.21 도달"
+  },
+  {
+   "date": "2026-09-21",
+   "type": "송달",
+   "text": "교부권자 국OOOOOOO OOOO(OOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.09.21 도달"
+  },
+  {
+   "date": "2026-09-21",
+   "type": "송달",
+   "text": "채무자겸소유자 한OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.22 도달"
+  },
+  {
+   "date": "2026-09-21",
+   "type": "송달",
+   "text": "채권자대리인 정O 매각기일 및 매각결정기일통지서 발송 → 2026.09.21 도달"
+  },
+  {
+   "date": "2026-09-21",
+   "type": "송달",
+   "text": "임차인 주OOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.21 송달간주"
+  },
+  {
+   "date": "2026-09-21",
+   "type": "송달",
+   "text": "임차권자 정OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.21 송달간주"
+  },
+  {
+   "date": "2026-07-22",
+   "type": "송달",
+   "text": "채무자겸소유자1 한OO 개시결정정본 발송 → 2026.08.06 도달"
+  },
+  {
+   "date": "2026-07-21",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2026-07-14",
+   "type": "송달",
+   "text": "채권자대리인 정O 주소보정명령등본 발송 → 2026.07.14 도달"
+  },
+  {
+   "date": "2026-06-26",
+   "type": "문건",
+   "text": "채권자 주OOOOOOO 대항력 포기 확약서 제출"
+  },
+  {
+   "date": "2026-06-23",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2026-06-23",
+   "type": "송달",
+   "text": "채권자대리인 정O 주소보정명령등본 발송 → 2026.06.23 도달"
+  },
+  {
+   "date": "2026-06-23",
+   "type": "송달불능",
+   "text": "채무자겸소유자 1 한OO 개시결정정본 발송 → 2026.07.12 폐문부재"
+  },
+  {
+   "date": "2026-06-18",
+   "type": "배당요구",
+   "text": "권리신고인 겸 배당요구신청인 소송대리인 법OOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 권리신고 및 배당요구신청서(주택임대차) 제출"
+  },
+  {
+   "date": "2026-06-18",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 채권계산서 제출"
+  },
+  {
+   "date": "2026-06-09",
+   "type": "문건",
+   "text": "이해관계인 강OO 교부청구서 제출"
+  },
+  {
+   "date": "2026-06-09",
+   "type": "문건",
+   "text": "기타 강OO 접수증명서"
+  },
+  {
+   "date": "2026-06-02",
+   "type": "송달불능",
+   "text": "채무자겸소유자 1 한OO 개시결정정본 발송 → 2026.06.20 폐문부재"
+  },
+  {
+   "date": "2026-06-01",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2026-05-26",
+   "type": "송달",
+   "text": "채권자대리인 정O 주소보정명령등본 발송 → 2026.05.28 도달"
+  },
+  {
+   "date": "2026-05-12",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2026-05-12",
+   "type": "송달불능",
+   "text": "채무자겸소유자 1 한OO 개시결정정본 발송 → 2026.05.20 폐문부재"
+  },
+  {
+   "date": "2026-05-03",
+   "type": "송달",
+   "text": "채권자대리인 정O 주소보정명령등본 발송 → 2026.05.08 도달"
+  },
+  {
+   "date": "2026-04-17",
+   "type": "문건",
+   "text": "기타 윤OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2026-04-09",
+   "type": "문건",
+   "text": "이해관계인 국OOOOOOO OOOO(OOOO) 교부청구서 제출"
+  },
+  {
+   "date": "2026-04-08",
+   "type": "문건",
+   "text": "감정인 HOOOOOOOOO 회보서 제출"
+  },
+  {
+   "date": "2026-04-07",
+   "type": "문건",
+   "text": "감정인 박OO 감정평가서 제출"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달",
+   "text": "주무관서 파OOOO 최고서 발송 → 2026.04.03 송달간주"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달",
+   "text": "주무관서 서OO OOOOO 최고서 발송 → 2026.04.03 송달간주"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달",
+   "text": "임차권자 정OO 최고서 발송 → 2026.04.03 송달간주"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOO 최고서 발송 → 2026.04.03 송달간주"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달",
+   "text": "집행관 서OOOOO OOO 조사명령 발송 → 2026.04.03 도달"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달불능",
+   "text": "채무자겸소유자 한OO 개시결정정본 발송 → 2026.04.08 폐문부재"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달",
+   "text": "감정인 HOOOOOOOOO OOO 평가명령 발송 → 2026.04.03 도달"
+  },
+  {
+   "date": "2026-04-02",
+   "type": "송달",
+   "text": "채권자대리인 정O 개시결정정본 발송 → 2026.04.07 도달"
+  },
+  {
+   "date": "2026-04-01",
+   "type": "문건",
+   "text": "등기소 서OOOOOOO OOO 등기필증 제출"
+  },
+  {
+   "date": "2026-03-30",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOO 보정서 제출"
+  },
+  {
+   "date": "2026-03-27",
+   "type": "송달",
+   "text": "채권자대리인 정O 보정명령등본 발송 → 2026.03.30 도달"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-10-06",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 23200
+  },
+  {
+   "date": "2026-11-10",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 18560
+  },
+  {
+   "date": "2026-11-17",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": "개인"
+  },
+  {
+   "role": "임차권자",
+   "type": "개인"
+  }
+ ],
+ "error": null
+}

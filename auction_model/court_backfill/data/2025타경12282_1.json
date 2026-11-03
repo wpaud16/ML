@@ -1,0 +1,57 @@
+{
+ "key": "2025타경12282[1]",
+ "court": "서울남부지방법원",
+ "checked": "2026-11-04",
+ "available": true,
+ "case_info": {
+  "received_date": "2025-09-22",
+  "start_decision_date": "2025-09-23",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 27300,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2026-10-28",
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "배당요구권자",
+   "type": null
+  },
+  {
+   "role": "배당요구권자",
+   "type": null
+  },
+  {
+   "role": "주택임차권자",
+   "type": "개인"
+  },
+  {
+   "role": "주택임차권자",
+   "type": null
+  }
+ ],
+ "error": null,
+ "notes": [
+  "물건상세조회 비활성 (물건 종국 등)",
+  "문건/송달 실패: Timeout 30000ms exceeded.",
+  "기일내역 실패: Timeout 30000ms exceeded.",
+  "현황조사서 실패: Timeout 30000ms exceeded."
+ ]
+}
