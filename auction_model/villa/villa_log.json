@@ -393,6 +393,11 @@
 "date": "2026-11-03",
 "low_manwon": 310400,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 310400,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -478,6 +483,11 @@
 "date": "",
 "low_manwon": 3516,
 "fails": 9
+},
+{
+"date": "2026-12-07",
+"low_manwon": 2813,
+"fails": 10
 }
 ],
 "first_seen": "2026-11-02",
@@ -503,6 +513,11 @@
 "date": "",
 "low_manwon": 31908,
 "fails": 1
+},
+{
+"date": "2026-12-07",
+"low_manwon": 25526,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -2828,6 +2843,11 @@
 "date": "2026-11-03",
 "low_manwon": 19680,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 19680,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -2846,6 +2866,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 30100,
+"fails": 8
+},
+{
+"date": "",
 "low_manwon": 30100,
 "fails": 8
 }
@@ -2868,6 +2893,11 @@
 "date": "2026-11-03",
 "low_manwon": 8240,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 8240,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -2886,6 +2916,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 25900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 25900,
 "fails": 0
 }
@@ -2908,6 +2943,11 @@
 "date": "2026-11-03",
 "low_manwon": 5440,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 5440,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -2926,6 +2966,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 8960,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 8960,
 "fails": 2
 }
@@ -2948,6 +2993,11 @@
 "date": "2026-11-03",
 "low_manwon": 16128,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 16128,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -2966,6 +3016,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 29360,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 29360,
 "fails": 1
 }
@@ -2988,6 +3043,11 @@
 "date": "2026-11-03",
 "low_manwon": 28640,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 28640,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -3006,6 +3066,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 19582,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 19582,
 "fails": 1
 }
@@ -3028,6 +3093,11 @@
 "date": "2026-11-03",
 "low_manwon": 33920,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 33920,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -3046,6 +3116,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 19440,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 19440,
 "fails": 1
 }
@@ -3068,6 +3143,11 @@
 "date": "2026-11-03",
 "low_manwon": 14320,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 14320,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -3086,6 +3166,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 18688,
+"fails": 11
+},
+{
+"date": "",
 "low_manwon": 18688,
 "fails": 11
 }
@@ -3168,6 +3253,11 @@
 "date": "2026-11-03",
 "low_manwon": 19360,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 19360,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -3186,6 +3276,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 15360,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 15360,
 "fails": 3
 }
@@ -3228,6 +3323,11 @@
 "date": "2026-11-03",
 "low_manwon": 32500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 32500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -3246,6 +3346,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 20480,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 20480,
 "fails": 1
 }
@@ -4808,6 +4913,11 @@
 "date": "2026-11-03",
 "low_manwon": 18528,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 18528,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -4848,6 +4958,11 @@
 "date": "2026-11-03",
 "low_manwon": 16896,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 16896,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -4866,6 +4981,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 6710,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 6710,
 "fails": 6
 }
@@ -4888,6 +5008,11 @@
 "date": "2026-11-03",
 "low_manwon": 3274,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 3274,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -4906,6 +5031,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 1227,
+"fails": 14
+},
+{
+"date": "",
 "low_manwon": 1227,
 "fails": 14
 }
@@ -4948,6 +5078,11 @@
 "date": "2026-11-03",
 "low_manwon": 13504,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 13504,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -4968,6 +5103,11 @@
 "date": "2026-11-03",
 "low_manwon": 7831,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 7831,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -4986,6 +5126,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 16480,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 16480,
 "fails": 1
 }
@@ -15618,6 +15763,11 @@
 "date": "",
 "low_manwon": 18480,
 "fails": 1
+},
+{
+"date": "2026-12-04",
+"low_manwon": 14784,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -17308,6 +17458,11 @@
 "date": "2026-11-03",
 "low_manwon": 16992,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 16992,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -17326,6 +17481,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 27040,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 27040,
 "fails": 3
 }
@@ -17348,6 +17508,11 @@
 "date": "2026-11-03",
 "low_manwon": 31300,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 31300,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -17368,6 +17533,11 @@
 "date": "2026-11-03",
 "low_manwon": 37700,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 37700,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -17386,6 +17556,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 2711,
+"fails": 9
+},
+{
+"date": "",
 "low_manwon": 2711,
 "fails": 9
 }
@@ -17428,6 +17603,11 @@
 "date": "2026-11-03",
 "low_manwon": 28043,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 28043,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -17446,6 +17626,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 11776,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 11776,
 "fails": 2
 }
@@ -17468,6 +17653,11 @@
 "date": "2026-11-03",
 "low_manwon": 4845,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 4845,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -17486,6 +17676,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 30800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 30800,
 "fails": 0
 }
@@ -17508,6 +17703,11 @@
 "date": "2026-11-03",
 "low_manwon": 13120,
 "fails": 11
+},
+{
+"date": "",
+"low_manwon": 13120,
+"fails": 11
 }
 ],
 "first_seen": "2026-11-02",
@@ -17528,6 +17728,11 @@
 "date": "2026-11-03",
 "low_manwon": 27840,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 27840,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -17546,6 +17751,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 23200,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 23200,
 "fails": 1
 }
@@ -17608,6 +17818,11 @@
 "date": "2026-11-03",
 "low_manwon": 28800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 28800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -17646,6 +17861,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 17984,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 17984,
 "fails": 2
 }
@@ -17688,6 +17908,11 @@
 "date": "2026-11-03",
 "low_manwon": 39900,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 39900,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -17706,6 +17931,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 27840,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 27840,
 "fails": 1
 }
@@ -17728,6 +17958,11 @@
 "date": "2026-11-03",
 "low_manwon": 24240,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 24240,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -17748,6 +17983,11 @@
 "date": "2026-11-03",
 "low_manwon": 26485,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 26485,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -17766,6 +18006,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 15300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 15300,
 "fails": 0
 }
@@ -23398,6 +23643,11 @@
 "date": "2026-11-03",
 "low_manwon": 24400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 24400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -23418,6 +23668,11 @@
 "date": "2026-11-03",
 "low_manwon": 8480,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 8480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -23436,6 +23691,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 13500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 13500,
 "fails": 0
 }
@@ -26898,6 +27158,11 @@
 "date": "2026-11-03",
 "low_manwon": 21400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 21400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -26916,6 +27181,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 14899,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 14899,
 "fails": 3
 }
@@ -26938,6 +27208,11 @@
 "date": "2026-11-03",
 "low_manwon": 21900,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 21900,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -26956,6 +27231,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 21600,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 21600,
 "fails": 0
 }
@@ -26978,6 +27258,11 @@
 "date": "2026-11-03",
 "low_manwon": 21200,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 21200,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -26996,6 +27281,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 21600,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 21600,
 "fails": 0
 }
@@ -27018,6 +27308,11 @@
 "date": "2026-11-03",
 "low_manwon": 21400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 21400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -27036,6 +27331,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 21400,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 21400,
 "fails": 0
 }
@@ -27058,6 +27358,11 @@
 "date": "2026-11-03",
 "low_manwon": 21600,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 21600,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -27076,6 +27381,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 20200,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 20200,
 "fails": 0
 }
@@ -27098,6 +27408,11 @@
 "date": "2026-11-03",
 "low_manwon": 21600,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 21600,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -27118,6 +27433,11 @@
 "date": "2026-11-03",
 "low_manwon": 21900,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 21900,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -27136,6 +27456,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 8300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 8300,
 "fails": 0
 }
@@ -30298,6 +30623,11 @@
 "date": "2026-11-03",
 "low_manwon": 14800,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 14800,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -31258,6 +31588,11 @@
 "date": "2026-11-03",
 "low_manwon": 16320,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 16320,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -31276,6 +31611,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 21248,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 21248,
 "fails": 2
 }
@@ -31298,6 +31638,11 @@
 "date": "2026-11-03",
 "low_manwon": 15230,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 15230,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -31316,6 +31661,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 11648,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 11648,
 "fails": 2
 }
@@ -31358,6 +31708,11 @@
 "date": "2026-11-03",
 "low_manwon": 14784,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 14784,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -31376,6 +31731,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 15104,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 15104,
 "fails": 2
 }
@@ -31398,6 +31758,11 @@
 "date": "2026-11-03",
 "low_manwon": 7650,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 7650,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -31416,6 +31781,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 23360,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 23360,
 "fails": 1
 }
@@ -31438,6 +31808,11 @@
 "date": "2026-11-03",
 "low_manwon": 44160,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 44160,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -31456,6 +31831,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 21800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 21800,
 "fails": 0
 }
@@ -31478,6 +31858,11 @@
 "date": "2026-11-03",
 "low_manwon": 14848,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 14848,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -31498,6 +31883,11 @@
 "date": "2026-11-03",
 "low_manwon": 18112,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 18112,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -31516,6 +31906,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 7040,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 7040,
 "fails": 1
 }
@@ -31556,6 +31951,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 20100,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 20100,
 "fails": 1
 }
@@ -33178,6 +33578,11 @@
 "date": "2026-11-03",
 "low_manwon": 16500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 16500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -33517,6 +33922,11 @@
 {
 "date": "",
 "low_manwon": 14080,
+"fails": 4
+},
+{
+"date": "2026-12-01",
+"low_manwon": 11264,
 "fails": 4
 }
 ],
@@ -34738,6 +35148,11 @@
 "date": "2026-11-03",
 "low_manwon": 21056,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 21056,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -34758,6 +35173,11 @@
 "date": "2026-11-03",
 "low_manwon": 7995,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 7995,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -34776,6 +35196,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 22656,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 22656,
 "fails": 2
 }
@@ -34818,6 +35243,11 @@
 "date": "2026-11-03",
 "low_manwon": 34000,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 34000,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -34836,6 +35266,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 34960,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 34960,
 "fails": 1
 }
@@ -34858,6 +35293,11 @@
 "date": "2026-11-03",
 "low_manwon": 9666,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 9666,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -34876,6 +35316,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 19840,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 19840,
 "fails": 2
 }
@@ -34898,6 +35343,11 @@
 "date": "2026-11-03",
 "low_manwon": 1548,
 "fails": 14
+},
+{
+"date": "",
+"low_manwon": 1548,
+"fails": 14
 }
 ],
 "first_seen": "2026-11-02",
@@ -34916,6 +35366,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 33900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 33900,
 "fails": 0
 }
@@ -34938,6 +35393,11 @@
 "date": "2026-11-03",
 "low_manwon": 29568,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 29568,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -34956,6 +35416,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 67200,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 67200,
 "fails": 1
 }
@@ -35438,6 +35903,11 @@
 "date": "2026-11-03",
 "low_manwon": 25408,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 25408,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -35478,6 +35948,11 @@
 "date": "2026-11-03",
 "low_manwon": 13736,
 "fails": 6
+},
+{
+"date": "",
+"low_manwon": 13736,
+"fails": 6
 }
 ],
 "first_seen": "2026-11-02",
@@ -35498,6 +35973,11 @@
 "date": "2026-11-03",
 "low_manwon": 50944,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 50944,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -35516,6 +35996,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 43900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 43900,
 "fails": 0
 }
@@ -35578,6 +36063,11 @@
 "date": "2026-11-03",
 "low_manwon": 43600,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 43600,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -35618,6 +36108,11 @@
 "date": "2026-11-03",
 "low_manwon": 20787,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 20787,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -35636,6 +36131,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 40100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 40100,
 "fails": 0
 }
@@ -35678,6 +36178,11 @@
 "date": "2026-11-03",
 "low_manwon": 43800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 43800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -35718,6 +36223,11 @@
 "date": "2026-11-03",
 "low_manwon": 27800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 27800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -35736,6 +36246,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 8880,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 8880,
 "fails": 0
 }
@@ -35758,6 +36273,11 @@
 "date": "2026-11-03",
 "low_manwon": 20582,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 20582,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -35776,6 +36296,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 20787,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 20787,
 "fails": 3
 }
@@ -35818,6 +36343,11 @@
 "date": "2026-11-03",
 "low_manwon": 20531,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 20531,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -35838,6 +36368,11 @@
 "date": "2026-11-03",
 "low_manwon": 20736,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 20736,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -35856,6 +36391,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 16000,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 16000,
 "fails": 0
 }
@@ -35898,6 +36438,11 @@
 "date": "2026-11-03",
 "low_manwon": 11760,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 11760,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -35918,6 +36463,11 @@
 "date": "2026-11-03",
 "low_manwon": 42700,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 42700,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -35936,6 +36486,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 45500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 45500,
 "fails": 0
 }
@@ -35978,6 +36533,11 @@
 "date": "2026-11-03",
 "low_manwon": 44600,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 44600,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -35998,6 +36558,11 @@
 "date": "2026-11-03",
 "low_manwon": 15836,
 "fails": 10
+},
+{
+"date": "",
+"low_manwon": 15836,
+"fails": 10
 }
 ],
 "first_seen": "2026-11-02",
@@ -36016,6 +36581,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 19558,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 19558,
 "fails": 3
 }
@@ -36058,6 +36628,11 @@
 "date": "2026-11-03",
 "low_manwon": 25920,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 25920,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -36076,6 +36651,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 32500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 32500,
 "fails": 0
 }
@@ -36098,6 +36678,11 @@
 "date": "2026-11-03",
 "low_manwon": 32500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 32500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -36118,6 +36703,11 @@
 "date": "2026-11-03",
 "low_manwon": 20000,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 20000,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -36136,6 +36726,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 27040,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 27040,
 "fails": 5
 }
@@ -37943,6 +38538,11 @@
 "date": "2026-11-03",
 "low_manwon": 18880,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 18880,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -37963,6 +38563,11 @@
 "date": "2026-11-03",
 "low_manwon": 15808,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 15808,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -37981,6 +38586,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 7890,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 7890,
 "fails": 6
 }
@@ -38043,6 +38653,11 @@
 "date": "2026-11-03",
 "low_manwon": 3422,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 3422,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -38063,6 +38678,11 @@
 "date": "2026-11-03",
 "low_manwon": 27200,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 27200,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -38081,6 +38701,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 6586,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 6586,
 "fails": 5
 }
@@ -38121,6 +38746,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 7575,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 7575,
 "fails": 6
 }
@@ -39088,6 +39718,11 @@
 "date": "",
 "low_manwon": 13824,
 "fails": 2
+},
+{
+"date": "2026-12-07",
+"low_manwon": 11059,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -39138,6 +39773,11 @@
 "date": "",
 "low_manwon": 14377,
 "fails": 4
+},
+{
+"date": "2026-12-07",
+"low_manwon": 11501,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -39238,6 +39878,11 @@
 "date": "",
 "low_manwon": 15616,
 "fails": 3
+},
+{
+"date": "2026-12-07",
+"low_manwon": 12492,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -39263,6 +39908,11 @@
 "date": "",
 "low_manwon": 24512,
 "fails": 2
+},
+{
+"date": "2026-12-07",
+"low_manwon": 19609,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -40153,6 +40803,11 @@
 "date": "2026-11-03",
 "low_manwon": 3355,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 3355,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -40171,6 +40826,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 14131,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 14131,
 "fails": 4
 }
@@ -43253,6 +43913,11 @@
 "date": "",
 "low_manwon": 19040,
 "fails": 1
+},
+{
+"date": "2026-12-04",
+"low_manwon": 15232,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -43913,6 +44578,11 @@
 "date": "2026-11-03",
 "low_manwon": 8064,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 8064,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -43931,6 +44601,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 5100,
+"fails": 9
+},
+{
+"date": "",
 "low_manwon": 5100,
 "fails": 9
 }
@@ -44813,6 +45488,11 @@
 "date": "2026-11-03",
 "low_manwon": 20960,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 20960,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -44831,6 +45511,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 9664,
+"fails": 11
+},
+{
+"date": "",
 "low_manwon": 9664,
 "fails": 11
 }
@@ -44873,6 +45558,11 @@
 "date": "2026-11-03",
 "low_manwon": 10035,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 10035,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -44891,6 +45581,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 22480,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 22480,
 "fails": 1
 }
@@ -44913,6 +45608,11 @@
 "date": "2026-11-03",
 "low_manwon": 26640,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 26640,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -44931,6 +45631,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 32600,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 32600,
 "fails": 0
 }
@@ -44993,6 +45698,11 @@
 "date": "2026-11-03",
 "low_manwon": 2568,
 "fails": 11
+},
+{
+"date": "",
+"low_manwon": 2568,
+"fails": 11
 }
 ],
 "first_seen": "2026-11-02",
@@ -45011,6 +45721,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 17200,
+"fails": 13
+},
+{
+"date": "",
 "low_manwon": 17200,
 "fails": 13
 }
@@ -45033,6 +45748,11 @@
 "date": "2026-11-03",
 "low_manwon": 20352,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 20352,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -45051,6 +45771,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 22400,
+"fails": 13
+},
+{
+"date": "",
 "low_manwon": 22400,
 "fails": 13
 }
@@ -45093,6 +45818,11 @@
 "date": "2026-11-03",
 "low_manwon": 24000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 24000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -45111,6 +45841,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 9600,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 9600,
 "fails": 1
 }
@@ -45133,6 +45868,11 @@
 "date": "2026-11-03",
 "low_manwon": 32100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 32100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -45151,6 +45891,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 18080,
+"fails": 8
+},
+{
+"date": "",
 "low_manwon": 18080,
 "fails": 8
 }
@@ -45173,6 +45918,11 @@
 "date": "2026-11-03",
 "low_manwon": 16896,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 16896,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -45191,6 +45941,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 33800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 33800,
 "fails": 0
 }
@@ -45253,6 +46008,11 @@
 "date": "2026-11-03",
 "low_manwon": 18072,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 18072,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -45271,6 +46031,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 18480,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 18480,
 "fails": 1
 }
@@ -45293,6 +46058,11 @@
 "date": "2026-11-03",
 "low_manwon": 9502,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 9502,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -45311,6 +46081,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 38000,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 38000,
 "fails": 0
 }
@@ -45333,6 +46108,11 @@
 "date": "2026-11-03",
 "low_manwon": 19440,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 19440,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -45351,6 +46131,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 22000,
+"fails": 9
+},
+{
+"date": "",
 "low_manwon": 22000,
 "fails": 9
 }
@@ -45393,6 +46178,11 @@
 "date": "2026-11-03",
 "low_manwon": 15168,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 15168,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -45411,6 +46201,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 18944,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 18944,
 "fails": 6
 }
@@ -45453,6 +46248,11 @@
 "date": "2026-11-03",
 "low_manwon": 22960,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 22960,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -45471,6 +46271,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 5012,
+"fails": 7
+},
+{
+"date": "",
 "low_manwon": 5012,
 "fails": 7
 }
@@ -45493,6 +46298,11 @@
 "date": "2026-11-03",
 "low_manwon": 27840,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 27840,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -45513,6 +46323,11 @@
 "date": "2026-11-03",
 "low_manwon": 27200,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 27200,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -45531,6 +46346,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 9840,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 9840,
 "fails": 1
 }
@@ -45573,6 +46393,11 @@
 "date": "2026-11-03",
 "low_manwon": 30960,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 30960,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -45591,6 +46416,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 16384,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 16384,
 "fails": 3
 }
@@ -45613,6 +46443,11 @@
 "date": "2026-11-03",
 "low_manwon": 20400,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 20400,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -45631,6 +46466,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 24000,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 24000,
 "fails": 0
 }
@@ -45653,6 +46493,11 @@
 "date": "2026-11-03",
 "low_manwon": 7808,
 "fails": 10
+},
+{
+"date": "",
+"low_manwon": 7808,
+"fails": 10
 }
 ],
 "first_seen": "2026-11-02",
@@ -45673,6 +46518,11 @@
 "date": "2026-11-03",
 "low_manwon": 20400,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 20400,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -45691,6 +46541,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 20288,
+"fails": 10
+},
+{
+"date": "",
 "low_manwon": 20288,
 "fails": 10
 }
@@ -45753,6 +46608,11 @@
 "date": "2026-11-03",
 "low_manwon": 14016,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 14016,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -45771,6 +46631,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 21440,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 21440,
 "fails": 1
 }
@@ -45793,6 +46658,11 @@
 "date": "2026-11-03",
 "low_manwon": 32800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 32800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -45813,6 +46683,11 @@
 "date": "2026-11-03",
 "low_manwon": 16160,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 16160,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -45831,6 +46706,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 17600,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 17600,
 "fails": 1
 }
@@ -45873,6 +46753,11 @@
 "date": "2026-11-03",
 "low_manwon": 21600,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 21600,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -45913,6 +46798,11 @@
 "date": "2026-11-03",
 "low_manwon": 9257,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 9257,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -45933,6 +46823,11 @@
 "date": "2026-11-03",
 "low_manwon": 25360,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 25360,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -45951,6 +46846,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 13360,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 13360,
 "fails": 1
 }
@@ -45993,6 +46893,11 @@
 "date": "2026-11-03",
 "low_manwon": 24100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 24100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -46011,6 +46916,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 24880,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 24880,
 "fails": 1
 }
@@ -46033,6 +46943,11 @@
 "date": "2026-11-03",
 "low_manwon": 24832,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 24832,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -46051,6 +46966,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 35300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 35300,
 "fails": 0
 }
@@ -46073,6 +46993,11 @@
 "date": "2026-11-03",
 "low_manwon": 17040,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 17040,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -46091,6 +47016,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 5386,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 5386,
 "fails": 4
 }
@@ -48653,6 +49583,11 @@
 "date": "2026-11-03",
 "low_manwon": 13280,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 13280,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -48691,6 +49626,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 13803,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 13803,
 "fails": 4
 }
@@ -49291,6 +50231,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 19680,
+"fails": 13
+},
+{
+"date": "",
 "low_manwon": 19680,
 "fails": 13
 }
@@ -50523,6 +51468,11 @@
 "date": "2026-11-03",
 "low_manwon": 7628,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 7628,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -50541,6 +51491,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 30000,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 30000,
 "fails": 0
 }
@@ -50563,6 +51518,11 @@
 "date": "2026-11-03",
 "low_manwon": 28560,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 28560,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -50581,6 +51541,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 9840,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 9840,
 "fails": 1
 }
@@ -50603,6 +51568,11 @@
 "date": "2026-11-03",
 "low_manwon": 26000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 26000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -50621,6 +51591,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 10485,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 10485,
 "fails": 4
 }
@@ -51668,11 +52643,6 @@
 "date": "2026-12-01",
 "low_manwon": 27840,
 "fails": 1
-},
-{
-"date": "",
-"low_manwon": 34800,
-"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -53079,6 +54049,146 @@
 "status": "진행중",
 "last_seen": "2026-11-03"
 },
+"C31ZJYFL": {
+"case": "2026타경5239[1]",
+"address": "서울특별시 강서구 화곡동 504-20 베스트빌  제6층 제601호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.81,
+"land_area": 39.18,
+"appr_manwon": 29100,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 29100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C36RVIFL": {
+"case": "2026타경5606[1]",
+"address": "서울특별시 강서구 화곡동 830-5 엠펠리체 제103동 제4층 제401호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 35.98,
+"land_area": 19.78,
+"appr_manwon": 32500,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 32500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C46WYWUK": {
+"case": "2026타경3316[1]",
+"address": "서울특별시 강서구 마곡동 1553 슈베르트빌  제6층 제601호",
+"sgg": "강서구",
+"emd": "마곡동",
+"type": "다세대",
+"area": 29.54,
+"land_area": 19,
+"appr_manwon": 32300,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 32300,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C59JLGNN": {
+"case": "2026타경5286[1]",
+"address": "서울특별시 강서구 화곡동 504-20 베스트빌  제5층 제501호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 27.72,
+"land_area": 36.44,
+"appr_manwon": 27800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 27800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C67NEYIH": {
+"case": "2026타경5592[1]",
+"address": "서울특별시 강서구 화곡동 451-8 아줄리움  제3층 제301호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 43.04,
+"land_area": 50.22,
+"appr_manwon": 28900,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 28900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C72SNVDJ": {
+"case": "2026타경4474[1]",
+"address": "서울특별시 강서구 내발산동 711-16 우영채움빌  제3층 제301호",
+"sgg": "강서구",
+"emd": "내발산동",
+"type": "다세대",
+"area": 28.19,
+"land_area": 19.45,
+"appr_manwon": 27400,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 27400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C76CYMXA": {
+"case": "2026타경5554[1]",
+"address": "서울특별시 강서구 내발산동 697-2 제이앤하우스  제3층 제302호",
+"sgg": "강서구",
+"emd": "내발산동",
+"type": "다세대",
+"area": 27.07,
+"land_area": 17.93,
+"appr_manwon": 29200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 29200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
 "C91FUHTM": {
 "case": "2026타경5626[1]",
 "address": "서울특별시 강서구 화곡동 400-6 에스엠파크빌  제3층 제303호",
@@ -53119,6 +54229,86 @@
 "status": "진행중",
 "last_seen": "2026-11-03"
 },
+"C07UXOWP": {
+"case": "2026타경100885[1]",
+"address": "서울특별시 관악구 봉천동 867-12 프라비다2  5층516호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 15.64,
+"land_area": 3.32,
+"appr_manwon": 14600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 14600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C34RZLCB": {
+"case": "2026타경101293[1]",
+"address": "서울특별시 관악구 봉천동 713-136 태경8차  4층401호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 21.94,
+"land_area": 14.53,
+"appr_manwon": 22800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 22800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C53KPGEZ": {
+"case": "2026타경101296[1]",
+"address": "서울특별시 관악구 봉천동 713-138 태경9차 103동 3층302호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 26.25,
+"land_area": 97.65,
+"appr_manwon": 25800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C95LEVFV": {
+"case": "2026타경101274[1]",
+"address": "서울특별시 관악구 봉천동 1557-29 수팰리스티디  3층303호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 34.2,
+"land_area": 80.49,
+"appr_manwon": 37300,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 37300,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
 "C02WSVSH": {
 "case": "2025타경52461[1]",
 "address": "서울특별시 광진구 중곡동 623-3  4층401호",
@@ -53152,6 +54342,386 @@
 {
 "date": "2026-11-16",
 "low_manwon": 34100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C19CWDDK": {
+"case": "2026타경5129[1]",
+"address": "서울특별시 구로구 구로동 466-299 베네치아  제4층 제402호",
+"sgg": "구로구",
+"emd": "구로동",
+"type": "다세대",
+"area": 30,
+"land_area": 56.58,
+"appr_manwon": 33200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 33200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C31KRCUT": {
+"case": "2025타경707[1]",
+"address": "서울특별시 구로구 구로동 454-19 다보빌  제4층 제402호",
+"sgg": "구로구",
+"emd": "구로동",
+"type": "다세대",
+"area": 18.43,
+"land_area": 34.46,
+"appr_manwon": 13050,
+"rounds": [
+{
+"date": "",
+"low_manwon": 10440,
+"fails": 1
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C44RUZIY": {
+"case": "2026타경5276[1]",
+"address": "서울특별시 금천구 독산동 1071-25 삼성프라임  제3층 제303호",
+"sgg": "금천구",
+"emd": "독산동",
+"type": "다세대",
+"area": 29.17,
+"land_area": 35.26,
+"appr_manwon": 23100,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 23100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C85AFNIA": {
+"case": "2026타경4051[1]",
+"address": "서울특별시 금천구 독산동 181-105 프라우드20  제5층 제504호",
+"sgg": "금천구",
+"emd": "독산동",
+"type": "다세대",
+"area": 21.06,
+"land_area": 34.86,
+"appr_manwon": 22300,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 22300,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C13RHFFT": {
+"case": "2025타경12231[1]",
+"address": "서울특별시 동대문구 청량리동 206-7 홍릉한강뉴스타 102동 2층204호",
+"sgg": "동대문구",
+"emd": "청량리동",
+"type": "다세대",
+"area": 41.6,
+"land_area": 44.19,
+"appr_manwon": 36400,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 6106,
+"fails": 8
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C15YTJQD": {
+"case": "2025타경11984[1]",
+"address": "서울특별시 동대문구 장안동 394-2 더하이엔드 103동 3층302호",
+"sgg": "동대문구",
+"emd": "장안동",
+"type": "다세대",
+"area": 29.91,
+"land_area": 17.79,
+"appr_manwon": 36800,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 6174,
+"fails": 8
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C48JOXJM": {
+"case": "2026타경101235[1]",
+"address": "서울특별시 동작구 상도동 211-185 예그린  2층201호",
+"sgg": "동작구",
+"emd": "상도동",
+"type": "다세대",
+"area": 35.52,
+"land_area": 54.24,
+"appr_manwon": 33400,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 33400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C25ZHNEP": {
+"case": "2026타경50701[1]",
+"address": "서울특별시 마포구 성산동 81-5  2층204호",
+"sgg": "마포구",
+"emd": "성산동",
+"type": "다세대",
+"area": 28.35,
+"land_area": 26.83,
+"appr_manwon": 17000,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 17000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C54JUDBP": {
+"case": "2026타경50753[1]",
+"address": "서울특별시 마포구 합정동 391-30  2층202호",
+"sgg": "마포구",
+"emd": "합정동",
+"type": "다세대",
+"area": 54.48,
+"land_area": 21.14,
+"appr_manwon": 48300,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 48300,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C00RWBXN": {
+"case": "2026타경101135[1]",
+"address": "서울특별시 서초구 반포동 577-28  3층302호",
+"sgg": "서초구",
+"emd": "반포동",
+"type": "다세대",
+"area": 59.72,
+"land_area": 37.59,
+"appr_manwon": 71200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 71200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C84TLYPH": {
+"case": "2026타경101258[1]",
+"address": "서울특별시 서초구 서초동 1619-2 더클래스  4층401호",
+"sgg": "서초구",
+"emd": "서초동",
+"type": "다세대",
+"area": 25.83,
+"land_area": 16.9,
+"appr_manwon": 54800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 54800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C19TBKNE": {
+"case": "2026타경5696[1]",
+"address": "서울특별시 양천구 신월동 17-2 아줄리움  제4층 제404호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 26.91,
+"land_area": 16.72,
+"appr_manwon": 25600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C39YOPKS": {
+"case": "2026타경5066[1]",
+"address": "서울특별시 양천구 신월동 420-8 영신트라움 제101동 제3층 제304호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 29.52,
+"land_area": 18.44,
+"appr_manwon": 22200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 22200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C96DUOTG": {
+"case": "2025타경10776[1]",
+"address": "서울특별시 양천구 목동 553-33 동인에버빌  제3층 제302호",
+"sgg": "양천구",
+"emd": "목동",
+"type": "다세대",
+"area": 21.23,
+"land_area": 17.13,
+"appr_manwon": 15500,
+"rounds": [
+{
+"date": "2026-11-19",
+"low_manwon": 15500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C52ZTVWN": {
+"case": "2026타경5386[1]",
+"address": "서울특별시 양천구 신월동 436-11 제이클래스  제4층 제402호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 29.66,
+"land_area": 20.5,
+"appr_manwon": 30400,
+"rounds": [
+{
+"date": "",
+"low_manwon": 30400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C96ZLHXL": {
+"case": "2026타경4988[1]",
+"address": "서울특별시 영등포구 대림동 942-39  제3층 제301호",
+"sgg": "영등포구",
+"emd": "대림동",
+"type": "다세대",
+"area": 49.28,
+"land_area": 29.62,
+"appr_manwon": 31500,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 31500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C30SSBQP": {
+"case": "2026타경50277[1]",
+"address": "서울특별시 은평구 구산동 14-2 삼성캐슬  6층602호",
+"sgg": "은평구",
+"emd": "구산동",
+"type": "다세대",
+"area": 44.46,
+"land_area": 25.95,
+"appr_manwon": 35200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 35200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C31OCCWW": {
+"case": "2026타경50454[1]",
+"address": "서울특별시 은평구 갈현동 522-27  지하층2호",
+"sgg": "은평구",
+"emd": "갈현동",
+"type": "다세대",
+"area": 36.42,
+"land_area": 19.68,
+"appr_manwon": 10800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 10800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C17MLGAK": {
+"case": "2026타경50808[1]",
+"address": "서울특별시 은평구 응암동 110-27 신아굿모닝빌  10층1002호",
+"sgg": "은평구",
+"emd": "응암동",
+"type": "다세대",
+"area": 29.96,
+"land_area": 9.63,
+"appr_manwon": 27200,
+"rounds": [
+{
+"date": "",
+"low_manwon": 27200,
 "fails": 0
 }
 ],
