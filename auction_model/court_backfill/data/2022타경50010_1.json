@@ -1,0 +1,29 @@
+{
+ "key": "2022타경50010[1]",
+ "court": "안산지원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2022-01-03",
+  "start_decision_date": "2022-01-03",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 22058,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2023-10-05",
+  "duplicate_cases": [
+   "2021타경62733(중복)",
+   "2022타경54883(중복)",
+   "2023타경2735(중복)"
+  ]
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}
