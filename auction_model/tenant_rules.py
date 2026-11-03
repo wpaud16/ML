@@ -52,7 +52,7 @@ def evaluate(t, prices_manwon, low_manwon):
             lines.append('대항력 임차인 보증금 미상 → 인수액 알 수 없음')
             continue
         dep = int(x.get('deposit_manwon') or 0)
-        claimed = bool(x.get('claimed_dividend'))
+        claimed = bool(x.get('claimed_dividend')) or '임차권' in (x.get('occupant') or '')   # 임차권등기권자는 배당요구 없이도 배당
         if claimed and deadline and _d(x.get('claim_date')) and _d(x.get('claim_date')) > deadline: claimed = False
         first = claimed and _d(x.get('fixed_date')) and _d(x.get('fixed_date')) < base
         pay = int(min(dep, max(0, pool))) if first else 0
@@ -63,6 +63,26 @@ def evaluate(t, prices_manwon, low_manwon):
     return dict(assumed_manwon=int(assumed), opposing=len(opp), lines=lines, unknown=unknown, ok=assumed <= 0 and not unknown)
 
 
+SIGNALS = [('취하', '취하'), ('변경', '변경'), ('연기', '연기'), ('정지', '정지'), ('기각', '기각'), ('불허가', '불허가'),
+           ('유치권', '유치권 신고'), ('송달불능', '송달불능'), ('교부청구', '세금 교부청구'), ('임차권', '임차권등기')]
+
+
+def court_info(t):
+    """법원 문건·송달·현황조사 요약 → 브리핑 한두 줄용."""
+    occ = t.get('occupancy') or {}
+    ev = t.get('events') or []
+    flags = []
+    for e in ev:
+        txt = e.get('text') or ''
+        for kw, label in SIGNALS:
+            if kw in txt and not any(f['label'] == label for f in flags):
+                flags.append(dict(label=label, date=e.get('date'), text=txt[:60]))
+    warn = [f for f in flags if f['label'] in ('취하', '변경', '연기', '정지', '기각', '불허가', '유치권 신고', '송달불능')]
+    return dict(occupant=occ.get('occupant_type'), closed_absent=bool(occ.get('closed_absent')),
+                lessee_count=occ.get('lessee_count'), spec_published=bool(t.get('base_right_date')),
+                withdraw_signal=warn[:3], notes=[f for f in flags if f not in warn][:3])
+
+
 def apply(items, today):
     """latest.json items 의 risk 를 임차인 자료로 다시 판정. 바꾼 건수 반환."""
     T = load(today); n = 0
@@ -70,6 +90,7 @@ def apply(items, today):
         t = T.get(key)
         rk = it.get('risk')
         if not t or not rk: continue
+        it['court_info'] = court_info(t)
         ev = evaluate(t, it.get('bid_by_prob_manwon'), it.get('low_manwon'))
         if not ev: continue
         reason = rk.get('reason') or ''
