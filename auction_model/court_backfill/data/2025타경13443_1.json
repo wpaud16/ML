@@ -1,0 +1,253 @@
+{
+ "key": "2025타경13443[1]",
+ "court": "서울북부지방법원",
+ "checked": "2026-11-04",
+ "available": true,
+ "case_info": {
+  "received_date": "2025-10-15",
+  "start_decision_date": "2025-10-16",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 6598,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": {
+  "base_right_date": "2012-11-02",
+  "base_right": "근저당권 배당요구종기",
+  "dividend_deadline": null,
+  "tenants": [
+   {
+    "occupant": "전세권자",
+    "move_in": null,
+    "fixed_date": null,
+    "deposit_manwon": 500,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": false,
+    "claim_date": null
+   }
+  ],
+  "remarks": "",
+  "assumed_rights_text": ""
+ },
+ "occupancy": {
+  "occupant_type": "채무자(소유자)점유",
+  "lessee_count": 0,
+  "periods": [],
+  "surveyed": [
+   "2025-10-29"
+  ],
+  "text": "1) 덧붙인 전입세대확인서 및 주민등록표등본과 같이 채무자(소유자)의 배우자 이성춘 세대가 등재되어 있으니 그 점유관계 등은 별도 확인을 요함.\n2) 덧붙인 상가건물임대차현황서와 같이 상가임차인 내역은 없어 확인 불능하오니 그 점유관계 등은 별도 확인을 요함.\n2. 부동산의 현황\n1) 현지 방문하였으나 폐문부재로 아무도 만나지 못함.\n2) 안내문을 출입문에 부착하였으나 아무 연락이 없어 점유자 확인 불능함.",
+  "closed_absent": true
+ },
+ "events": [
+  {
+   "date": "2026-10-13",
+   "type": "문건",
+   "text": "기타 임OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "문건",
+   "text": "기타 임OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-08-04",
+   "type": "송달",
+   "text": "채무자겸소유자 임OO 매각기일 및 매각결정기일통지서 발송 → 2026.08.05 송달간주"
+  },
+  {
+   "date": "2026-08-04",
+   "type": "송달",
+   "text": "근저당권자 조OOOOOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.08.05 송달간주"
+  },
+  {
+   "date": "2026-08-04",
+   "type": "송달",
+   "text": "전세권자 판OOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.08.05 송달간주"
+  },
+  {
+   "date": "2026-08-04",
+   "type": "송달",
+   "text": "교부권자 국OOOOOOOOOOO(OOOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.08.05 송달간주"
+  },
+  {
+   "date": "2026-08-04",
+   "type": "송달",
+   "text": "교부권자 서OOOOOOO(OOOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.08.05 송달간주"
+  },
+  {
+   "date": "2026-08-04",
+   "type": "송달",
+   "text": "채권자 판OOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.08.05 도달"
+  },
+  {
+   "date": "2026-08-04",
+   "type": "송달",
+   "text": "근저당권자 북OOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.08.05 도달"
+  },
+  {
+   "date": "2026-02-02",
+   "type": "문건",
+   "text": "감정인 세OOOOOOOOO 사실조회서에 대한 회신 제출"
+  },
+  {
+   "date": "2026-01-08",
+   "type": "송달",
+   "text": "기타 세OOOOOO OOO 사실조회서 발송 → 2026.01.13 도달"
+  },
+  {
+   "date": "2026-01-02",
+   "type": "문건",
+   "text": "채무자겸소유자 임OO 재 감정평가 신청서 제출"
+  },
+  {
+   "date": "2025-12-26",
+   "type": "문건",
+   "text": "채무자겸소유자 임OO 열람및복사신청 제출"
+  },
+  {
+   "date": "2025-11-05",
+   "type": "문건",
+   "text": "감정인 세OOOOOOOOO 감정평가서 제출"
+  },
+  {
+   "date": "2025-11-04",
+   "type": "문건",
+   "text": "이해관계인 도OO 교부청구서 제출"
+  },
+  {
+   "date": "2025-11-04",
+   "type": "문건",
+   "text": "기타 황OO  감정평가서 제출"
+  },
+  {
+   "date": "2025-11-03",
+   "type": "문건",
+   "text": "기타 김OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2025-11-03",
+   "type": "문건",
+   "text": "이해관계인 국OOOOOOOOOOO 교부청구서 제출"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "주무관서 서OO OOOOO 최고서 발송 → 2025.10.28 송달간주"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "근저당권자 북OOOOOOOO 최고서 발송 → 2025.10.28 송달간주"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "근저당권자 조OOOOOOOOOOO 최고서 발송 → 2025.10.28 송달간주"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "전세권자 판OOOOOOOO 최고서 발송 → 2025.10.28 송달간주"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "주무관서 노OOOO 최고서 발송 → 2025.10.28 송달간주"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOO 최고서 발송 → 2025.10.28 송달간주"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "집행관 서OOOOO OOO 조사명령 발송 → 2025.10.29 도달"
+  },
+  {
+   "date": "2025-10-27",
+   "type": "송달",
+   "text": "감정인 세OOOOOOOOO OOO 평가명령 발송 → 2025.10.30 도달"
+  },
+  {
+   "date": "2025-10-17",
+   "type": "송달",
+   "text": "채무자겸소유자 임OO 개시결정정본 발송 → 2025.10.23 도달"
+  },
+  {
+   "date": "2025-10-17",
+   "type": "송달",
+   "text": "채권자 판OOOOOOOO 개시결정정본 발송 → 2025.10.17 도달"
+  },
+  {
+   "date": "2025-10-16",
+   "type": "문건",
+   "text": "채권자 판OOOOOOOO 보정서 제출"
+  },
+  {
+   "date": "2025-10-16",
+   "type": "문건",
+   "text": "등기소 서OOOOOOO OOO 등기필증 제출"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-09-01",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 34800
+  },
+  {
+   "date": "2026-10-13",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 27840
+  },
+  {
+   "date": "2026-11-10",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 22272
+  },
+  {
+   "date": "2026-11-17",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "전세권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  }
+ ],
+ "error": null
+}

@@ -1,0 +1,363 @@
+{
+ "key": "2025타경10615[1]",
+ "court": "서울남부지방법원",
+ "checked": "2026-11-04",
+ "available": true,
+ "case_info": {
+  "received_date": "2025-06-25",
+  "start_decision_date": "2025-06-26",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 23000,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": {
+  "base_right_date": "2023-03-15",
+  "base_right": "압류",
+  "dividend_deadline": "2025-09-25",
+  "tenants": [
+   {
+    "occupant": "주거",
+    "move_in": "2025-02-25",
+    "fixed_date": null,
+    "deposit_manwon": null,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": false,
+    "claim_date": null
+   },
+   {
+    "occupant": "임차인",
+    "move_in": null,
+    "fixed_date": null,
+    "deposit_manwon": 50,
+    "monthly_rent_manwon": 80,
+    "claimed_dividend": false,
+    "claim_date": null
+   },
+   {
+    "occupant": "주거주택임차권자",
+    "move_in": "2022-02-18",
+    "fixed_date": "2022-01-27",
+    "deposit_manwon": 23000,
+    "monthly_rent_manwon": 0,
+    "claimed_dividend": true,
+    "claim_date": "2025-06-25"
+   }
+  ],
+  "remarks": "주택도시보증공사:경매신청채권자이고, 주택임차권자 김OO의 임차보증금반환채권을 승계함.\n임차인 김OO의 주택임차권승계인 주택도시보증공사는 매수인에 대하여 배당받지 못하는 잔액에 대한 임대차보증금 반환 청\n구권을 포기하고, 임차권등기를 말소하는 것을 조건으로 매각",
+  "assumed_rights_text": ""
+ },
+ "occupancy": {
+  "occupant_type": "임차인(별지)점유",
+  "lessee_count": 1,
+  "periods": [
+   {
+    "occupant": "임차인",
+    "use": "주거",
+    "period": "2025.02.25~2025.08.25.",
+    "move_in": "2025-02-25"
+   }
+  ],
+  "surveyed": [
+   "2025-07-02",
+   "2025-07-03"
+  ],
+  "text": "현장출장 방문시 임차인 VENUGOPAL SANKARSHANA를 만나 부동산경매개시결정된 취지를 알리고 경매현황조사 안내문을 교부하였음.",
+  "closed_absent": false
+ },
+ "events": [
+  {
+   "date": "2026-10-06",
+   "type": "문건",
+   "text": "기타 김OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "교부권자 국OOOOOOO OOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 도달"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "교부권자 북OOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "교부권자 서OOOO OOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "교부권자 인OOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "주택임차권자 김OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "주택임차권자 주OOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "채권자대리인 지O 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 도달"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "압류권자 인OOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "임차인 VOOOOOOOO OOOOOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "채무자겸소유자 김OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-09-01",
+   "type": "송달",
+   "text": "교부권자 남OOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.02 송달간주"
+  },
+  {
+   "date": "2026-07-09",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOOOOOOOO  대항력 포기 확약서 제출"
+  },
+  {
+   "date": "2025-12-21",
+   "type": "송달",
+   "text": "채권자대리인 지O 보정명령등본 발송 → 2025.12.22 도달"
+  },
+  {
+   "date": "2025-09-19",
+   "type": "문건",
+   "text": "교부권자 서OOOO OOOO 교부청구 제출"
+  },
+  {
+   "date": "2025-09-12",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOOOOOOOO  보정서 제출"
+  },
+  {
+   "date": "2025-09-03",
+   "type": "송달",
+   "text": "채권자대리인 지O 보정명령등본 발송 → 2025.09.04 도달"
+  },
+  {
+   "date": "2025-08-04",
+   "type": "송달",
+   "text": "채무자겸소유자 1 김OO 개시결정정본 발송 → 2025.08.15 도달"
+  },
+  {
+   "date": "2025-08-01",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOOOOOOOO  주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2025-07-30",
+   "type": "송달",
+   "text": "채권자대리인 지O 보정명령등본 발송 → 2025.07.31 도달"
+  },
+  {
+   "date": "2025-07-21",
+   "type": "문건",
+   "text": "감정인 정OOOOO 보정서 제출"
+  },
+  {
+   "date": "2025-07-17",
+   "type": "문건",
+   "text": "감정인 정OOOOO 회보서 제출"
+  },
+  {
+   "date": "2025-07-16",
+   "type": "문건",
+   "text": "기타 강OO 감정평가서 제출"
+  },
+  {
+   "date": "2025-07-14",
+   "type": "송달",
+   "text": "채무자겸소유자 1 김OO 개시결정정본 발송 → 2025.07.20 도달"
+  },
+  {
+   "date": "2025-07-10",
+   "type": "문건",
+   "text": "채권자 소송대리인 법OOOOOOOOO  주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2025-07-09",
+   "type": "송달",
+   "text": "임차인 VOOOOOOOO OOOOOOOOOOO 임차인통지서 발송 → 2025.07.14 도달"
+  },
+  {
+   "date": "2025-07-08",
+   "type": "문건",
+   "text": "이해관계인 국OOOOOOO OOOOOO(OOOO) 교부청구서 제출"
+  },
+  {
+   "date": "2025-07-08",
+   "type": "문건",
+   "text": "교부권자 북OOOOO 교부청구 제출"
+  },
+  {
+   "date": "2025-07-08",
+   "type": "문건",
+   "text": "교부권자 인OOOO 교부청구 제출"
+  },
+  {
+   "date": "2025-07-08",
+   "type": "문건",
+   "text": "교부권자 남OOOO 교부청구 제출"
+  },
+  {
+   "date": "2025-07-08",
+   "type": "문건",
+   "text": "기타 박OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2025-07-07",
+   "type": "송달",
+   "text": "채권자대리인 지O 보정명령등본 발송 → 2025.07.09 도달"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "문건",
+   "text": "등기소 서OOOOOOO OOO 등기필증 제출"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "채권자대리인 지O 개시결정정본 발송 → 2025.06.27 도달"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "채무자겸소유자 김OO 개시결정정본 발송 → 2025.07.01 도달"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOOOO 최고서 발송 → 2025.06.30 송달간주"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "주무관서 남OOOO 최고서 발송 → 2025.06.30 송달간주"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "주무관서 서OOOO OOOOOO 최고서 발송 → 2025.06.30 송달간주"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "가압류권자 주OOOOOOO 최고서 발송 → 2025.06.30 송달간주"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "압류권자 인OOOO 최고서 발송 → 2025.06.30 송달간주"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "감정인 (주)OOOOOOOO OO OOO 평가명령 발송 → 2025.07.03 도달"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "집행관 서OOOOO OOO 조사명령 발송 → 2025.07.01 도달"
+  },
+  {
+   "date": "2025-06-27",
+   "type": "송달",
+   "text": "주택임차권자 김OO 최고서 발송 → 2025.06.30 송달간주"
+  },
+  {
+   "date": "2025-06-25",
+   "type": "문건",
+   "text": "채권자대리인 법OOOOOOOOO  사용증명"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-10-06",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 22600
+  },
+  {
+   "date": "2026-11-05",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 18080
+  },
+  {
+   "date": "2026-11-12",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": null
+  },
+  {
+   "role": "가압류권자",
+   "type": null
+  },
+  {
+   "role": "압류권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "주택임차권자",
+   "type": "개인"
+  },
+  {
+   "role": "주택임차권자",
+   "type": null
+  }
+ ],
+ "error": null
+}
