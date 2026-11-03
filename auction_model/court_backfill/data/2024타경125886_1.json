@@ -1,0 +1,28 @@
+{
+ "key": "2024타경125886[1]",
+ "court": "서울중앙지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-12-20",
+  "start_decision_date": "2024-12-27",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 18369,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2026-04-29",
+  "duplicate_cases": [
+   "2025타경1420(중복)",
+   "2025타경102121(중복)"
+  ]
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}

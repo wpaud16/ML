@@ -1,0 +1,290 @@
+{
+ "key": "2024타경5531[1]",
+ "court": "서울중앙지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-10-25",
+  "start_decision_date": "2025-08-27",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 95150,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": {
+  "occupant_type": "미상",
+  "lessee_count": 0,
+  "periods": [],
+  "surveyed": [
+   "2025-09-10",
+   "2025-09-12"
+  ],
+  "text": "1) 이 사건 각 부동산의 전입세대확인서와 외국인체류확인서에 등재된 세대주는 없음.\n2) 현장에 임하여 점유자 등을 만날 수 없어서 안내문을 출입문에 부착해 두었음. 따라서 점유자 미상으로 보고함. 단, 점유관계는 별도 확인이 필요함.",
+  "closed_absent": true
+ },
+ "events": [
+  {
+   "date": "2026-11-03",
+   "type": "변경신청",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 송달장소변경신고서 제출"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "송달",
+   "text": "소유자 망 OOOO OOOOOOO OOO OOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.30 송달간주"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "송달",
+   "text": "채무자대리인 변OO OOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.30 송달간주"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.30 송달간주"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "송달",
+   "text": "교부권자 서OOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.30 송달간주"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "송달",
+   "text": "교부권자 강OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.29 도달"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "송달",
+   "text": "근저당권자 안OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.30 송달간주"
+  },
+  {
+   "date": "2026-09-07",
+   "type": "송달",
+   "text": "채무자대리인 변OO OOO 개시결정정본 발송 → 2026.09.10 도달"
+  },
+  {
+   "date": "2026-08-10",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 보정명령등본 발송 → 2026.08.13 도달"
+  },
+  {
+   "date": "2026-08-05",
+   "type": "변경신청",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 당사자표시변경신청서 제출"
+  },
+  {
+   "date": "2026-07-29",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 보정명령등본 발송 → 2026.08.03 도달"
+  },
+  {
+   "date": "2026-04-22",
+   "type": "문건",
+   "text": "법원 서OOOOOOO OOOO 가압류통지서 제출"
+  },
+  {
+   "date": "2026-04-09",
+   "type": "문건",
+   "text": "법원 서OOOOOOO OOOO 가처분통지서 제출"
+  },
+  {
+   "date": "2026-03-11",
+   "type": "문건",
+   "text": "신청인대리인 법OOO OO 보정서(선납우편) 제출"
+  },
+  {
+   "date": "2026-03-06",
+   "type": "송달",
+   "text": "법원 서OOOOO 문서송부서 발송 → 2026.03.16 도달"
+  },
+  {
+   "date": "2026-01-27",
+   "type": "문건",
+   "text": "가처분권자 남OOOO OOOO 소송위임장 제출"
+  },
+  {
+   "date": "2026-01-15",
+   "type": "문건",
+   "text": "법원 서OOOOO(OOOOOO) 문서송부촉탁서 제출"
+  },
+  {
+   "date": "2025-11-18",
+   "type": "문건",
+   "text": "기타 강OO 접수증명서"
+  },
+  {
+   "date": "2025-11-18",
+   "type": "문건",
+   "text": "이해관계인 강OO 교부청구서 제출"
+  },
+  {
+   "date": "2025-09-30",
+   "type": "문건",
+   "text": "교부권자 서OOOO 교부청구 제출"
+  },
+  {
+   "date": "2025-09-17",
+   "type": "문건",
+   "text": "집행관 서OOOOOOO 부동산현황조사서 제출"
+  },
+  {
+   "date": "2025-09-11",
+   "type": "문건",
+   "text": "가압류권자 주OOO OOOO 채권계산서 제출"
+  },
+  {
+   "date": "2025-09-11",
+   "type": "문건",
+   "text": "감정인 목OOOOOOOOO 회보서 제출"
+  },
+  {
+   "date": "2025-09-09",
+   "type": "문건",
+   "text": "기타 서OO 감정평가서 제출"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "주무관서 삼OOOO 최고서 발송 → 2025.09.02 송달간주"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "주무관서 서OO OOOOO 최고서 발송 → 2025.09.02 송달간주"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "집행관 서OOOOO OOO 조사명령 발송 → 2025.09.05 도달"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "감정인 목O OOOOOOOO OOO 평가명령 발송 → 2025.09.05 도달"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOOOO 최고서 발송 → 2025.09.02 송달간주"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "근저당권자 안OO 최고서 발송 → 2025.09.02 송달간주"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "가압류권자 주OOO OOOO 최고서 발송 → 2025.09.02 송달간주"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "소유자 망 OOOO OOOOOOO OOO OOO 개시결정정본 발송 → 2025.09.05 도달"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "채무자 파OO OOOO OOOOO OOOOO OOO 개시결정정본 발송 → 2025.09.05 도달"
+  },
+  {
+   "date": "2025-09-01",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 개시결정정본 발송 → 2025.09.05 도달"
+  },
+  {
+   "date": "2025-08-28",
+   "type": "문건",
+   "text": "등기소 서OOOOOOO OOO 등기필증 제출"
+  },
+  {
+   "date": "2025-08-25",
+   "type": "변경신청",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 당사자표시변경신청 제출"
+  },
+  {
+   "date": "2025-08-20",
+   "type": "변경신청",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 당사자표시변경신청 제출"
+  },
+  {
+   "date": "2025-08-20",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 보정명령등본 발송 → 2025.08.25 도달"
+  },
+  {
+   "date": "2024-12-31",
+   "type": "연기신청",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 보정연기신청서 제출"
+  },
+  {
+   "date": "2024-11-01",
+   "type": "연기신청",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 보정연기신청서 제출"
+  },
+  {
+   "date": "2024-10-28",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOO OOOO 보정명령등본 발송 → 2024.10.31 도달"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-10-14",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 187000
+  },
+  {
+   "date": "2026-11-18",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 149600
+  },
+  {
+   "date": "2026-11-25",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자",
+   "type": null
+  },
+  {
+   "role": "소유자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": "개인"
+  },
+  {
+   "role": "가압류권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": "개인"
+  },
+  {
+   "role": "가처분권자",
+   "type": null
+  }
+ ],
+ "error": null
+}

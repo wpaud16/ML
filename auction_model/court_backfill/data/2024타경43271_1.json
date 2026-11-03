@@ -1,0 +1,25 @@
+{
+ "key": "2024타경43271[1]",
+ "court": "평택지원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-03-14",
+  "start_decision_date": "2024-05-29",
+  "case_kind": "청산을위한형식적경매",
+  "claim_amount_manwon": 0,
+  "creditor_type": null,
+  "end_result": "배당종결",
+  "end_date": "2025-05-29",
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": null,
+ "error": null,
+ "notes": [
+  "종국 후 30일 경과: 법원 사이트에 기본사항만 공개"
+ ]
+}
