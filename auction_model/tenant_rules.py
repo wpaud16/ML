@@ -27,7 +27,8 @@ def load(today):
     except Exception:
         return {}
     lo = str((datetime.fromisoformat(today) - timedelta(days=14)).date())
-    return {k: v for k, v in (d.get('items') or {}).items() if (v.get('checked') or '') >= lo and not v.get('error')}
+    # error 가 있어도(예: 매각물건명세서 공개 전) 문건·점유 정보는 쓴다. 명세서 항목이 없으면 evaluate 가 판정을 건너뜀.
+    return {k: v for k, v in (d.get('items') or {}).items() if (v.get('checked') or '') >= lo}
 
 
 def _d(s):
