@@ -1,0 +1,101 @@
+{
+ "key": "2026타경4070[1]",
+ "court": "서울남부지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2026-03-10",
+  "start_decision_date": "2026-03-11",
+  "case_kind": "부동산강제경매",
+  "claim_amount_manwon": 35400,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "가압류권자",
+   "type": null
+  },
+  {
+   "role": "압류권자",
+   "type": null
+  },
+  {
+   "role": "압류권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "배당요구권자",
+   "type": null
+  },
+  {
+   "role": "배당요구권자",
+   "type": null
+  },
+  {
+   "role": "주택임차권자",
+   "type": "개인"
+  },
+  {
+   "role": "주택임차권자",
+   "type": null
+  }
+ ],
+ "error": null,
+ "notes": [
+  "물건상세조회 비활성 (물건 종국 등)",
+  "문건/송달 실패: Timeout 30000ms exceeded.",
+  "기일내역 실패: Timeout 30000ms exceeded.",
+  "현황조사서 실패: Timeout 30000ms exceeded."
+ ]
+}
