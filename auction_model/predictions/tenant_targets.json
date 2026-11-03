@@ -66,6 +66,15 @@
    "category": "오피스텔"
   },
   {
+   "key": "2024타경115212[1]",
+   "case": "2024타경115212",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C84OBJTC",
+   "bidding_date": "2026-11-03",
+   "category": "오피스텔"
+  },
+  {
    "key": "2024타경117977[1]",
    "case": "2024타경117977",
    "item_no": 1,
@@ -282,15 +291,6 @@
    "category": "오피스텔"
   },
   {
-   "key": "2024타경56181[1]",
-   "case": "2024타경56181",
-   "item_no": 1,
-   "court": "서울동부지방법원",
-   "auction_id": "C14LXKAV",
-   "bidding_date": "2026-11-03",
-   "category": "아파트"
-  },
-  {
    "key": "2024타경57375[1]",
    "case": "2024타경57375",
    "item_no": 1,
@@ -343,15 +343,6 @@
    "auction_id": "C76XGZWE",
    "bidding_date": "2026-11-16",
    "category": "오피스텔"
-  },
-  {
-   "key": "2024타경64236[1]",
-   "case": "2024타경64236",
-   "item_no": 1,
-   "court": "서울동부지방법원",
-   "auction_id": "C77IQUQQ",
-   "bidding_date": "2026-11-03",
-   "category": "아파트"
   },
   {
    "key": "2024타경65277[1]",
@@ -702,6 +693,15 @@
    "court": "서울중앙지방법원",
    "auction_id": "C94JUBAP",
    "bidding_date": "2026-11-12",
+   "category": "오피스텔"
+  },
+  {
+   "key": "2025타경104192[1]",
+   "case": "2025타경104192",
+   "item_no": 1,
+   "court": "서울중앙지방법원",
+   "auction_id": "C29ARXGX",
+   "bidding_date": "2026-11-17",
    "category": "오피스텔"
   },
   {
@@ -1080,6 +1080,15 @@
    "court": "서울남부지방법원",
    "auction_id": "C19IVNXE",
    "bidding_date": "2026-11-26",
+   "category": "오피스텔"
+  },
+  {
+   "key": "2025타경13352[1]",
+   "case": "2025타경13352",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C16WDCUU",
+   "bidding_date": "2026-11-03",
    "category": "오피스텔"
   },
   {
@@ -1692,15 +1701,6 @@
    "court": "남양주지원",
    "auction_id": "C74INYMB",
    "bidding_date": "2026-11-17",
-   "category": "아파트"
-  },
-  {
-   "key": "2025타경4459[1]",
-   "case": "2025타경4459",
-   "item_no": 1,
-   "court": "남양주지원",
-   "auction_id": "C73LXFVM",
-   "bidding_date": "2026-11-03",
    "category": "아파트"
   },
   {
@@ -2613,6 +2613,15 @@
    "category": "오피스텔"
   },
   {
+   "key": "2025타경8882[1]",
+   "case": "2025타경8882",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C45ZREXV",
+   "bidding_date": "2026-11-03",
+   "category": "오피스텔"
+  },
+  {
    "key": "2025타경9378[1]",
    "case": "2025타경9378",
    "item_no": 1,
@@ -2757,6 +2766,15 @@
    "category": "오피스텔"
   },
   {
+   "key": "2026타경100470[1]",
+   "case": "2026타경100470",
+   "item_no": 1,
+   "court": "서울중앙지방법원",
+   "auction_id": "C01PGSFB",
+   "bidding_date": "2026-12-02",
+   "category": "오피스텔"
+  },
+  {
    "key": "2026타경100526[1]",
    "case": "2026타경100526",
    "item_no": 1,
@@ -2829,15 +2847,6 @@
    "category": "오피스텔"
   },
   {
-   "key": "2026타경101084[1]",
-   "case": "2026타경101084",
-   "item_no": 1,
-   "court": "서울중앙지방법원",
-   "auction_id": "C66BSABY",
-   "bidding_date": "2026-11-17",
-   "category": "오피스텔"
-  },
-  {
    "key": "2026타경101086[1]",
    "case": "2026타경101086",
    "item_no": 1,
@@ -2907,15 +2916,6 @@
    "court": "서울북부지방법원",
    "auction_id": "C95RRBCZ",
    "bidding_date": "2026-12-01",
-   "category": "오피스텔"
-  },
-  {
-   "key": "2026타경10907[1]",
-   "case": "2026타경10907",
-   "item_no": 1,
-   "court": "서울북부지방법원",
-   "auction_id": "C55ZLNAV",
-   "bidding_date": "2026-11-03",
    "category": "오피스텔"
   },
   {
@@ -3261,6 +3261,15 @@
    "category": "오피스텔"
   },
   {
+   "key": "2026타경3628[1]",
+   "case": "2026타경3628",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C99AMBFR",
+   "bidding_date": "2026-11-05",
+   "category": "오피스텔"
+  },
+  {
    "key": "2026타경3642[1]",
    "case": "2026타경3642",
    "item_no": 1,
@@ -3567,6 +3576,15 @@
    "category": "오피스텔"
   },
   {
+   "key": "2026타경4540[1]",
+   "case": "2026타경4540",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C58WADHC",
+   "bidding_date": "2026-11-03",
+   "category": "오피스텔"
+  },
+  {
    "key": "2026타경4541[1]",
    "case": "2026타경4541",
    "item_no": 1,
@@ -3708,15 +3726,6 @@
    "court": "서울서부지방법원",
    "auction_id": "C89YZYIP",
    "bidding_date": "2026-11-03",
-   "category": "오피스텔"
-  },
-  {
-   "key": "2026타경50043[1]",
-   "case": "2026타경50043",
-   "item_no": 1,
-   "court": "서울서부지방법원",
-   "auction_id": "C19SBOLT",
-   "bidding_date": "2026-11-10",
    "category": "오피스텔"
   },
   {
@@ -3925,15 +3934,6 @@
    "auction_id": "C89NRIQH",
    "bidding_date": "2026-11-10",
    "category": "오피스텔"
-  },
-  {
-   "key": "2026타경52[1]",
-   "case": "2026타경52",
-   "item_no": 1,
-   "court": "성남지원",
-   "auction_id": "C45DZZDJ",
-   "bidding_date": "2026-11-03",
-   "category": "아파트"
   },
   {
    "key": "2026타경5457[1]",

@@ -52928,5 +52928,45 @@
 "first_seen": "2026-11-03",
 "status": "진행중",
 "last_seen": "2026-11-03"
+},
+"C86LFGOH": {
+"case": "2025타경12674[1]",
+"address": "서울특별시 중랑구 신내동 807-1 신내골드프라자  제1층 제101호",
+"sgg": "중랑구",
+"emd": "신내동",
+"type": "연립",
+"area": 39.78,
+"land_area": null,
+"appr_manwon": 49400,
+"rounds": [
+{
+"date": "2026-11-10",
+"low_manwon": 49400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C90UTRCR": {
+"case": "2025타경12674[2]",
+"address": "서울특별시 중랑구 신내동 807-1 신내골드프라자  제1층 제102호",
+"sgg": "중랑구",
+"emd": "신내동",
+"type": "연립",
+"area": 39.78,
+"land_area": null,
+"appr_manwon": 49400,
+"rounds": [
+{
+"date": "2026-11-10",
+"low_manwon": 49400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
 }
 }
