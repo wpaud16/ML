@@ -1,6 +1,7 @@
 """안전 등급 + 투자금 회수기간 (2026-11-03 추가).
 
-투자금 회수기간 = 실투자금 ÷ 연간 순수익(월세 − 이자 − 기타비용)
+투자금 회수기간(오피스텔만) = 낙찰확률 50% 가격 ÷ (월세 × 12)  — 단순 계산 (2026-11-03 사용자 요청으로 변경)
+(아래 옛 설명은 참고용)
 - 오피스텔: 낙찰 50% 가격 기준, 대출 70%(금리 5.2% 가정), 취득세 등 4.6%, 부대비용 800만, 보증금 1,000만 받고 월세
   (월세 = (전세 − 보증금) × 전월세전환율 6.06% ÷ 12)
 - 아파트: 생애최초 주담대는 실거주 의무라 임대 시 대출 없이 계산(현금 매수 가정), 보증금 = 가격의 10%,
@@ -18,33 +19,15 @@ def _apt_tax(P, area):
 
 
 def payback(it):
-    """it: latest.json 의 한 물건. → dict 또는 None."""
+    """오피스텔만: 낙찰확률 50% 가격을 월세로 모으는 데 걸리는 기간 (단순 계산, 2026-11-03 사용자 요청).
+    years = 50% 가격 ÷ (월세 × 12). 대출·세금·비용은 넣지 않음."""
+    if it.get('category') != '오피스텔': return None
     P = (it.get('bid_by_prob_manwon') or {}).get('50%')
-    if not P: return None
-    cat = it.get('category')
-    if cat == '오피스텔':
-        inc = it.get('income') or {}
-        rent = inc.get('est_monthly_rent_manwon')
-        if not rent: return None
-        dep = inc.get('deposit_assumed_manwon') or 1000
-        loan = P * OT_LTV
-        cash = P - loan + P * 0.046 + 800 - dep
-        interest = loan * OT_LOAN_RATE
-        basis = f'대출 70%·금리 {OT_LOAN_RATE*100:.1f}% · 보증금 {dep:,}만'
-    else:
-        jr = it.get('jeonse_ratio'); mkt = (it.get('richgo_sise_eok') or 0) * 1e4
-        if not jr or not mkt: return None
-        dep = round(P * 0.1 / 1000) * 1000
-        rent = max(0, (mkt * jr - dep) * APT_CONV / 12)
-        loan, interest = 0, 0
-        cash = P + _apt_tax(P, it.get('area')) + 800 - dep
-        basis = f'대출 없이(생애최초 대출은 실거주 의무) · 보증금 {dep:,}만'
-    net = rent * 12 * (1 - OTHER) - interest
-    out = dict(cash_manwon=int(round(cash)), monthly_rent_manwon=int(round(rent)), annual_net_manwon=int(round(net)),
-               basis=basis, years=None, coc_pct=None)
-    if net > 0 and cash > 0:
-        out.update(years=round(cash / net, 1), coc_pct=round(net / cash * 100, 2))
-    return out
+    rent = (it.get('income') or {}).get('est_monthly_rent_manwon')
+    if not P or not rent: return None
+    months = P / rent
+    return dict(price_manwon=int(P), monthly_rent_manwon=int(rent), months=int(round(months)), years=round(months / 12, 1),
+                basis='낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산')
 
 
 def safety(it):
