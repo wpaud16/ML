@@ -1,0 +1,273 @@
+{
+ "key": "2024타경123551[1]",
+ "court": "서울북부지방법원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-12-23",
+  "start_decision_date": "2024-12-23",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 88578,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": [
+  {
+   "date": "2026-11-03",
+   "type": "송달",
+   "text": "등기소 서OOOOOOO OOO 이전등기(록)촉탁서 발송"
+  },
+  {
+   "date": "2026-11-02",
+   "type": "문건",
+   "text": "최고가매수인 매각대금완납증명"
+  },
+  {
+   "date": "2026-11-02",
+   "type": "문건",
+   "text": "최고가매수신고인 부동산소유권이전 및 말소등기 촉탁신청서 제출"
+  },
+  {
+   "date": "2026-11-02",
+   "type": "문건",
+   "text": "최고가매수신고인 등기필증우편송부신청서 제출"
+  },
+  {
+   "date": "2026-10-14",
+   "type": "송달",
+   "text": "최고가매수인 대금지급기한통지서 발송 → 2026.10.20 도달"
+  },
+  {
+   "date": "2026-09-29",
+   "type": "문건",
+   "text": "기타 임OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-08-14",
+   "type": "문건",
+   "text": "기타 강OO 사실조회회신 제출"
+  },
+  {
+   "date": "2026-08-13",
+   "type": "송달",
+   "text": "교부권자 도OOOO(OOO) 매각기일 및 매각결정기일통지서 발송 → 2026.08.14 송달간주"
+  },
+  {
+   "date": "2026-08-13",
+   "type": "송달",
+   "text": "압류권자 중OOOO(OOO) 매각기일 및 매각결정기일통지서 발송 → 2026.08.14 송달간주"
+  },
+  {
+   "date": "2026-08-13",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO(OOO O OOOO OOOOOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.08.13 도달"
+  },
+  {
+   "date": "2026-08-13",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.08.13 도달"
+  },
+  {
+   "date": "2026-08-13",
+   "type": "송달",
+   "text": "채무자겸소유자 황OO 매각기일 및 매각결정기일통지서 발송 → 2026.08.21 도달"
+  },
+  {
+   "date": "2026-08-10",
+   "type": "문건",
+   "text": "기타 강OO 사실조회 회신서 제출"
+  },
+  {
+   "date": "2026-07-29",
+   "type": "송달",
+   "text": "기타 서OO OOOOO 사실조회서 발송 → 2026.08.03 도달"
+  },
+  {
+   "date": "2026-07-21",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO(OOO O OOOO OOOOOOO) 강제집행속행신청 제출"
+  },
+  {
+   "date": "2026-07-07",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO 보정기간연장 신청서 제출"
+  },
+  {
+   "date": "2026-07-03",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO(OOO O OOOO OOOOOOO) 보정명령등본 발송 → 2026.07.06 도달"
+  },
+  {
+   "date": "2026-07-02",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO 기일지정신청서 제출"
+  },
+  {
+   "date": "2025-05-12",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO(OOO O OOOO OOOOOOO) 열람및복사신청 제출"
+  },
+  {
+   "date": "2025-05-12",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO(OOO O OOOO OOOOOOO) 인증번호발급신청서 제출"
+  },
+  {
+   "date": "2025-05-09",
+   "type": "문건",
+   "text": "채무자겸소유자 황OO 전자인증번호부여신청서 제출"
+  },
+  {
+   "date": "2025-05-07",
+   "type": "송달",
+   "text": "채무자겸소유자 황OO 압류채권자승계통지서(임의경매) 발송 → 2025.05.12 도달"
+  },
+  {
+   "date": "2025-04-29",
+   "type": "변경신청",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOOOOO) 채권자변경신고서 제출"
+  },
+  {
+   "date": "2025-01-13",
+   "type": "문건",
+   "text": "교부권자 도OOOO(OOO) 교부청구서 제출"
+  },
+  {
+   "date": "2025-01-13",
+   "type": "문건",
+   "text": "압류권자 중OOOO(OOO) 교부청구서 제출"
+  },
+  {
+   "date": "2025-01-09",
+   "type": "문건",
+   "text": "채무자겸소유자 황OO 강제집행중지신청 제출"
+  },
+  {
+   "date": "2025-01-06",
+   "type": "문건",
+   "text": "집행관 임OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2025-01-03",
+   "type": "문건",
+   "text": "감정인 인OOOOOOOOO 감정평가서 제출"
+  },
+  {
+   "date": "2025-01-02",
+   "type": "문건",
+   "text": "감정인 이OO 감정평가서 제출"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "주무관서 서OOOO OOOOO 최고서 발송 → 2024.12.30 송달간주"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOO 최고서 발송 → 2024.12.30 송달간주"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "주무관서 도OOOO 최고서 발송 → 2024.12.30 송달간주"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "근저당권자 주OOOOOOOOOOOOO 최고서 발송 → 2024.12.30 송달간주"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "채무자겸소유자 황OO 개시결정정본 발송 → 2025.01.02 도달"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "집행관 서OOOOO OOO 조사명령 발송 → 2024.12.30 도달"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "감정인 인OOOOOOOOO OOO 평가명령 발송 → 2024.12.27 도달"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "채권자 주OOOOOOOOOO 개시결정정본 발송 → 2024.12.30 도달"
+  },
+  {
+   "date": "2024-12-27",
+   "type": "송달",
+   "text": "압류권자 중OOOO(OOO) 최고서 발송 → 2024.12.30 송달간주"
+  },
+  {
+   "date": "2024-12-26",
+   "type": "문건",
+   "text": "등기소 서OOOOOOO OOO 등기필증 제출"
+  },
+  {
+   "date": "2024-12-23",
+   "type": "문건",
+   "text": "기타 주OOOOOOOOOO 접수증명"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-09-29",
+   "kind": "매각기일",
+   "result": "매각\n(847,325,000원)",
+   "min_price_manwon": 77000
+  },
+  {
+   "date": "2026-10-06",
+   "kind": "매각결정기일",
+   "result": "최고가매각허가결정",
+   "min_price_manwon": null
+  },
+  {
+   "date": "2026-11-10",
+   "kind": "대금지급기한",
+   "result": "납부\n(2026.11.02)",
+   "min_price_manwon": null
+  },
+  {
+   "date": "2026-12-09",
+   "kind": "배당기일",
+   "result": "진행",
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "압류권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  }
+ ],
+ "error": null,
+ "notes": [
+  "물건상세조회 비활성 (물건 종국 등)",
+  "현황조사서 화면이 비어 있음 (공개 기간 아님)"
+ ]
+}

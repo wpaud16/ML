@@ -1,0 +1,299 @@
+{
+ "key": "2025타경72113[1]",
+ "court": "남양주지원",
+ "checked": "2026-11-03",
+ "available": true,
+ "case_info": {
+  "received_date": "2025-07-30",
+  "start_decision_date": "2025-08-05",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 24032,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": {
+  "occupant_type": "채무자(소유자)점유",
+  "lessee_count": 0,
+  "periods": [],
+  "surveyed": [
+   "2025-08-12"
+  ],
+  "text": "현장에 임하였으나 점유자를 만나지 못하였으므로, 정확한 점유관계는 별도 확인이 필요함",
+  "closed_absent": true
+ },
+ "events": [
+  {
+   "date": "2026-10-07",
+   "type": "문건",
+   "text": "기타 김OO 기일입찰조서 제출"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "교부권자 남OOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "교부권자 남OOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "교부권자 국OOOOOOO OOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "근저당권자 아OOOOOOOOOOOOOO OOOO(OOOOOOOOOOOOOOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "근저당권자 고OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "근저당권자 (주OOOOOOOOOOOOO)OOOOOOOOOOOOOOOOOOOO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 송달간주"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 매각기일 및 매각결정기일통지서 발송 → 2026.09.14 도달"
+  },
+  {
+   "date": "2026-09-14",
+   "type": "송달",
+   "text": "채무자겸소유자 박OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.15 도달"
+  },
+  {
+   "date": "2026-02-05",
+   "type": "송달",
+   "text": "채무자겸소유자 박OO 개시결정정본 발송 → 2026.02.20 도달"
+  },
+  {
+   "date": "2026-02-03",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2026-02-03",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 주소보정서(특OOOOOOOOOOOOOOO) 제출"
+  },
+  {
+   "date": "2026-01-25",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 주소보정명령등본 발송 → 2026.01.28 도달"
+  },
+  {
+   "date": "2025-12-18",
+   "type": "변경신청",
+   "text": "근저당권자 아OOOOOOOOO OOOOOOOOO (OOOO OOOOOOOOOOOO) 채권자변경신고서 제출"
+  },
+  {
+   "date": "2025-12-12",
+   "type": "송달불능",
+   "text": "채무자겸소유자 1 박OO 개시결정정본 발송 → 2025.12.21 폐문부재"
+  },
+  {
+   "date": "2025-10-20",
+   "type": "문건",
+   "text": "근저당권자 제OOOOOOOOOOO 열람및복사신청 제출"
+  },
+  {
+   "date": "2025-09-30",
+   "type": "문건",
+   "text": "교부권자 남OOO 교부청구 제출"
+  },
+  {
+   "date": "2025-09-08",
+   "type": "송달불능",
+   "text": "채무자겸소유자 1 박OO 개시결정정본 발송 → 2025.09.28 폐문부재"
+  },
+  {
+   "date": "2025-08-20",
+   "type": "문건",
+   "text": "교부권자 남OOOOO 교부청구 제출"
+  },
+  {
+   "date": "2025-08-20",
+   "type": "송달불능",
+   "text": "채무자겸소유자 1 박OO 개시결정정본 발송 → 2025.08.29 폐문부재"
+  },
+  {
+   "date": "2025-08-18",
+   "type": "문건",
+   "text": "근저당권자 제OOOOOOO OOOO 채권계산서 제출"
+  },
+  {
+   "date": "2025-08-18",
+   "type": "문건",
+   "text": "이해관계인 국OOOOOOO OOOOOOO(OOOO) 교부청구서 제출"
+  },
+  {
+   "date": "2025-08-13",
+   "type": "문건",
+   "text": "기타 이OO 감정평가서 제출"
+  },
+  {
+   "date": "2025-08-13",
+   "type": "문건",
+   "text": "감정인 법OOOOOO 감정평가서 제출"
+  },
+  {
+   "date": "2025-08-13",
+   "type": "문건",
+   "text": "집행관 김OO 현황조사서 제출"
+  },
+  {
+   "date": "2025-08-12",
+   "type": "문건",
+   "text": "기타 김OO 현황조사보고서 제출"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달",
+   "text": "주무관서 남OOO 최고서 발송 → 2025.08.11 송달간주"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달",
+   "text": "주무관서 남OOOOO 최고서 발송 → 2025.08.11 송달간주"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달",
+   "text": "근저당권자 (주OOOOOOOOOOOOO)OOOOOOOOOOOOOOOOOOOO 최고서 발송 → 2025.08.11 송달간주"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달",
+   "text": "근저당권자 제OOOOOOOOOOO 최고서 발송 → 2025.08.11 송달간주"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달",
+   "text": "근저당권자 고OO 최고서 발송 → 2025.08.11 송달간주"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달",
+   "text": "감정인 법OOOOOOOOO OOO 평가명령 발송 → 2025.08.13 도달"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달불능",
+   "text": "채무자겸소유자 박OO 개시결정정본 발송 → 2025.08.14 폐문부재"
+  },
+  {
+   "date": "2025-08-09",
+   "type": "송달",
+   "text": "주무관서 국OOOOOOO OOOOOOO 최고서 발송 → 2025.08.11 송달간주"
+  },
+  {
+   "date": "2025-08-08",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 개시결정정본 발송 → 2025.08.11 도달"
+  },
+  {
+   "date": "2025-08-08",
+   "type": "송달",
+   "text": "집행관 의OOOO OOOOO OOO 조사명령 발송 → 2025.08.11 도달"
+  },
+  {
+   "date": "2025-08-06",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 보정서 제출"
+  },
+  {
+   "date": "2025-08-06",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 보정서 제출"
+  },
+  {
+   "date": "2025-08-06",
+   "type": "문건",
+   "text": "등기소 남OOOO OOO 등기필증 제출"
+  },
+  {
+   "date": "2025-08-04",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 보정서 제출"
+  },
+  {
+   "date": "2025-08-04",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 보정명령등본 발송 → 2025.08.06 도달"
+  },
+  {
+   "date": "2025-07-31",
+   "type": "송달",
+   "text": "채권자 에OOOOOOOOOOOOOOO OOOO(OOOOOOOO OOOO) 보정명령등본 발송 → 2025.08.01 도달"
+  },
+  {
+   "date": "2025-07-30",
+   "type": "문건",
+   "text": "채권자 에OOOOOOOOOOOOOOOOOOO 접수증명서"
+  }
+ ],
+ "schedule": [
+  {
+   "date": "2026-10-07",
+   "kind": "매각기일",
+   "result": "유찰",
+   "min_price_manwon": 49500
+  },
+  {
+   "date": "2026-11-11",
+   "kind": "매각기일",
+   "result": null,
+   "min_price_manwon": 34650
+  },
+  {
+   "date": "2026-11-18",
+   "kind": "매각결정기일",
+   "result": null,
+   "min_price_manwon": null
+  }
+ ],
+ "parties": [
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": "개인"
+  }
+ ],
+ "error": null
+}
