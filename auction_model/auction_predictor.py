@@ -344,6 +344,9 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     row, info = target_row(danji, auction_id, df)
     T = row.date.iloc[0]
     c_raw = float(np.mean([fit_predict(m, df, row, T)[0] for m in ENSEMBLE]))
+    g = f"{row.sd.iloc[0]} {row.sgg.iloc[0] or ''}"
+    sgg_adj = float((cfg.get('sgg_adj') or {}).get(g, 0.0))   # 구별 치우침 보정 (calibrate 에서 계산)
+    c_raw += sgg_adj
     mkt, low = float(row.mkt.iloc[0]), float(row.low.iloc[0])
     pool, a, b = cfg['resid_pool'], cfg['calib_a'], cfg['calib_b']
     hh = row.hh.iloc[0]
@@ -373,11 +376,12 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     if small:
         notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
                      f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
-    bidders = bidder_scenarios(df, row, T, low, mkt, SMALL_ADJ if small else 0.0, cfg)
+    bidders = bidder_scenarios(df, row, T, low, mkt, (1 + (SMALL_ADJ if small else 0.0)) * np.exp(sgg_adj) - 1, cfg)
     _jr = row.jeonse_ratio.iloc[0]
     if _jr != _jr and 'jeonse_ratio_bldg' in row: _jr = row.jeonse_ratio_bldg.iloc[0]
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
                jeonse_ratio=None if _jr != _jr else round(float(_jr), 3),
+               sgg_adj_pct=round((np.exp(sgg_adj) - 1) * 100, 1),
                by_bidders=bidders,
                fail=_fail_info('apt', row),
                households=None if pd.isna(hh) else int(hh),
@@ -396,6 +400,9 @@ def predict(danji, auction_id):
     print(json.dumps(predict_dict(danji, auction_id), ensure_ascii=False))
 
 
+SGG_K, SGG_W = 15, 12   # 구별 보정: 축소 강도, 최근 개월 수
+
+
 def calibrate(start='2024-01-01'):
     df = load_train()
     df['m0'] = df.date.dt.to_period('M').dt.to_timestamp()
@@ -404,6 +411,20 @@ def calibrate(start='2024-01-01'):
         tr, te = df[df.date < T], df[(df.date >= T) & (df.date < T + pd.DateOffset(months=1))]
         if len(te) == 0: continue
         res[te.index] = te.y.values - np.mean([fit_predict(m, tr, te, T) for m in ENSEMBLE], axis=0)
+    # 구별 치우침 사후 보정 (2026-11-03 백테스트: 평균 오차 5.09% → 5.01%, 관심 10개 구 치우침 +1.8% → +1.0%)
+    df['g'] = df.sd + ' ' + df.sgg.fillna('')
+    raw = res.copy()
+    for T in df.m0[res.notna()].unique():
+        h = df[(df.m0 < T) & (df.m0 >= T - pd.DateOffset(months=SGG_W)) & raw.notna()]
+        if len(h) < 100: continue
+        st = raw[h.index].groupby(h.g).agg(['mean', 'size'])
+        adj = st['mean'] * st['size'] / (st['size'] + SGG_K)
+        t = (df.m0 == T) & raw.notna()
+        res[t] = raw[t] - df.g[t].map(adj).fillna(0).values
+    T1 = df.m0.max() + pd.DateOffset(months=1)
+    h = df[(df.m0 >= T1 - pd.DateOffset(months=SGG_W)) & raw.notna()]
+    st = raw[h.index].groupby(h.g).agg(['mean', 'size'])
+    sgg_adj = {g: round(float(m * n / (n + SGG_K)), 5) for g, (m, n) in st.iterrows()}
     # calibration pairs: each 1회 유찰 case, prior-12-month pool, offsets -15%..+15%
     offs = np.linspace(-.15, .15, 31); X, H = [], []
     for i in df.index[(df.date >= pd.Timestamp(start) + pd.DateOffset(months=12)) & (df.fails == 1) & res.notna()]:
@@ -418,7 +439,7 @@ def calibrate(start='2024-01-01'):
     cfg = dict(built=str(pd.Timestamp.today().date()), model='앙상블(부스팅+군집별회귀)', n_train=int(len(df)),
                bw=BW, calib_a=round(float(lr.coef_[0][0]), 5), calib_b=round(float(lr.intercept_[0]), 5),
                n_calib_pairs=len(H), mape_recent=round(float(np.mean(np.abs(np.exp(pool) - 1))) * 100, 2),
-               resid_pool=[round(float(x), 5) for x in pool.values])
+               resid_pool=[round(float(x), 5) for x in pool.values], sgg_adj=sgg_adj)
     try: cfg['bidder_resid'] = json.load(open(os.path.join(HERE, 'auction_config.json'))).get('bidder_resid')
     except Exception: pass
     json.dump(cfg, open(os.path.join(HERE, 'auction_config.json'), 'w'), ensure_ascii=False, indent=1)
