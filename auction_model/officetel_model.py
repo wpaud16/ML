@@ -148,12 +148,119 @@ def predict_dict(ot_id, auction_id, is_check=0, df=None, cfg=None, models=None):
                 bid_by_prob_manwon=prices, bid_by_prob_eok={k: round(v / 1e4, 2) for k, v in prices.items()},
                 prob_by_bid_5m=table, p50_ensemble_manwon=prices['50%'], p50_ensemble_eok=round(prices['50%'] / 1e4, 2),
                 income=income, fail=ap._fail_info('ot', row),
+                by_bidders=bidder_scenarios(df, row, T, low, mkt, cfg),
                 model_error_note=f"평균 오차 약 {cfg['mape_recent']}% (최근 12개월 롤링), 확률 오차 약 ±5%p", warnings=[])
 
 
+
+# ---------------- 입찰 인원별 낙찰확률 입찰가 (2026-11-03 추가) ----------------
+# 백테스트(2024-07~, 인원 기록 있는 536건): 평균 오차 6.03% → 인원 알 때 5.87%, 인원 그룹별 확률 40/50/60% → 실제 41/52/62%
+import threading
+BID_CSV = os.path.join(HERE, 'officetel', 'ot_bidders.csv')   # auction_id, bidders
+OT_BID_SCEN = [1, 2, 3, 5, 8]
+OT_BID_LABEL = {1: '1명', 2: '2명', 3: '3명', 5: '5명', 8: '8명 이상'}
+_BCACHE, _BLOCK = {}, threading.Lock()
+
+
+def ot_bid_group(n):
+    return 1 if n <= 1 else 2 if n == 2 else 3 if n <= 4 else 5 if n <= 7 else 8
+
+
+def _with_bidders(df):
+    df = df.drop(columns=['bidders'], errors='ignore')
+    b = pd.read_csv(BID_CSV).drop_duplicates('auction_id') if os.path.exists(BID_CSV) else pd.DataFrame(columns=['auction_id', 'bidders'])
+    return df.merge(b, on='auction_id', how='left') if 'auction_id' in df else df.assign(bidders=np.nan)
+
+
+def _Xb(x, cols):
+    Z = _X(x, cols)
+    nb = x['bidders'] if 'bidders' in x else pd.Series(np.nan, index=x.index)
+    Z['l_bid'] = np.log(nb).values
+    Z['bid1'] = (nb == 1).astype(float).where(nb.notna()).values
+    Z['bid2'] = (nb == 2).astype(float).where(nb.notna()).values
+    return Z
+
+
+def _fit_bid(tr, T):
+    out = []
+    for kind, cols in [('rf', ap.S3), ('gb', ap.S4)]:
+        Xt = _Xb(tr, cols); med = Xt.median(); Xt = Xt.fillna(med).fillna(0)
+        w = np.exp(-((pd.Timestamp(T) - tr.date).dt.days.values) / 365)
+        m = (RandomForestRegressor(300, min_samples_leaf=6, max_features=0.5, random_state=0, n_jobs=-1) if kind == 'rf' else
+             HistGradientBoostingRegressor(max_iter=300, learning_rate=0.04, max_depth=3, min_samples_leaf=max(10, len(tr) // 30),
+                                           l2_regularization=2.0, random_state=0))
+        out.append((cols, med, m.fit(Xt, tr.y.values, sample_weight=w)))
+    return out
+
+
+def _pred_bid(models, te):
+    return np.mean([m.predict(_Xb(te, c).fillna(med).fillna(0)) for c, med, m in models], axis=0)
+
+
+EXP_F = ['l_appr', 'l_low', 'fails', 'l_area', 'age', 'jeonse', 'heat', 'rate', 'is_check']
+
+
+def _Xe(d):
+    Z = ap.prep(d); Z['is_check'] = d['is_check'].values
+    return Z[EXP_F]
+
+
+def _fit_exp(tr):
+    tr = tr[tr.bidders.notna()]; Xt = _Xe(tr); med = Xt.median()
+    ms = {q: HistGradientBoostingRegressor(loss='quantile', quantile=q, max_iter=200, max_depth=3, learning_rate=0.05,
+                                           min_samples_leaf=15, random_state=0).fit(Xt.fillna(med), np.log(tr.bidders)) for q in (0.25, 0.5, 0.75)}
+    return ms, med
+
+
+def calibrate_bidders(start='2024-07-01'):
+    df = _with_bidders(load_train()); df['m0'] = df.date.dt.to_period('M').dt.to_timestamp()
+    res = pd.Series(np.nan, index=df.index)
+    for T in pd.date_range(start, df.date.max(), freq='MS'):
+        tr, te = df[df.date < T], df[(df.date >= T) & (df.date < T + pd.DateOffset(months=1)) & df.bidders.notna()]
+        if len(te) == 0 or len(tr) < 60: continue
+        res[te.index] = te.y.values - _pred_bid(_fit_bid(tr, T), te)
+    T0 = df.date.max(); m = res.notna() & (df.date >= T0 - pd.DateOffset(months=18))
+    g = df.bidders[m].map(ot_bid_group)
+    cfg = json.load(open(CFG))
+    cfg['bidder_resid'] = dict(built=str(pd.Timestamp.today().date()),
+                               pools={str(k): [round(float(x), 5) for x in res[m][g == k].values] for k in OT_BID_SCEN},
+                               all=[round(float(x), 5) for x in res[m].values],
+                               mape=round(float(np.mean(np.abs(np.exp(res.dropna()) - 1)) * 100), 2), n=int(res.notna().sum()))
+    json.dump(cfg, open(CFG, 'w'), ensure_ascii=False, indent=1)
+    print({k: len(v) for k, v in cfg['bidder_resid']['pools'].items()}, 'mape', cfg['bidder_resid']['mape'])
+
+
+def bidder_scenarios(df, row, T, low, mkt, cfg):
+    """오피스텔 입찰 인원별 낙찰확률 40~60% 입찰가 + 예상 인원."""
+    try:
+        br = cfg.get('bidder_resid')
+        if not br: return dict(error='bidder_resid 없음')
+        key = len(df)   # 예측 대상은 모두 앞으로의 기일이라 전체 학습자료로 한 번만 학습
+        with _BLOCK:
+            if key not in _BCACHE:
+                dfb = _with_bidders(df); T0 = dfb.date.max() + pd.Timedelta(days=1)
+                _BCACHE.clear(); _BCACHE[key] = (_fit_bid(dfb, T0), _fit_exp(dfb))
+        bm, (em, emed) = _BCACHE[key]
+        out, price = {}, {}
+        for n in OT_BID_SCEN:
+            c = float(_pred_bid(bm, row.assign(bidders=float(n)))[0])
+            pool = br['pools'].get(str(n)) or []
+            if len(pool) < 30: pool = br['all']
+            qs = {f'{q}%': round(max(low, mkt * float(np.exp(c + np.quantile(pool, q / 100)))) / 1e8, 2) for q in ap.PROB_LEVELS}
+            out[OT_BID_LABEL[n]] = qs; price[OT_BID_LABEL[n]] = qs['50%']
+        xe = _Xe(row).fillna(emed)
+        e = {q: float(np.exp(m.predict(xe)[0])) for q, m in em.items()}
+        return dict(bid_by_prob_eok=out, price_eok=price, expected_bidders=int(round(e[0.5])),
+                    expected_range=[max(1, int(round(e[0.25]))), max(1, int(round(e[0.75])))],
+                    model_error_note=f"인원을 알 때 평균 오차 약 {br['mape']}%",
+                    note='N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용')
+    except Exception as ex:
+        return dict(error=f'{type(ex).__name__}: {ex}'[:200])
+
 if __name__ == '__main__':
-    p = argparse.ArgumentParser(); p.add_argument('cmd', choices=['predict', 'calibrate'])
+    p = argparse.ArgumentParser(); p.add_argument('cmd', choices=['predict', 'calibrate', 'calibrate_bidders'])
     p.add_argument('--ot'); p.add_argument('--auction'); p.add_argument('--check', type=int, default=0)
     a = p.parse_args()
     if a.cmd == 'calibrate': calibrate()
+    elif a.cmd == 'calibrate_bidders': calibrate_bidders()
     else: print(json.dumps(predict_dict(a.ot, a.auction, a.check), ensure_ascii=False))

@@ -187,9 +187,15 @@ def main(dry=False):
         ap.calibrate(); ap.calibrate_bidders()
     if len(ot_add):
         import officetel_model as om
-        out = pd.concat([ot_old, ot_add], ignore_index=True).sort_values('date')
+        # 응찰자 수는 별도 파일(officetel/ot_bidders.csv)에 모은다 (2026-11-03, 오피스텔 인원별 입찰가)
+        if 'bidders' in ot_new and 'auction_id' in ot_new:
+            nb = ot_new[['auction_id', 'bidders']].dropna()
+            if len(nb):
+                ob = pd.read_csv(om.BID_CSV) if os.path.exists(om.BID_CSV) else pd.DataFrame(columns=['auction_id', 'bidders'])
+                pd.concat([ob, nb], ignore_index=True).drop_duplicates('auction_id', keep='last').to_csv(om.BID_CSV, index=False)
+        out = pd.concat([ot_old, ot_add.drop(columns=['bidders'], errors='ignore')], ignore_index=True).sort_values('date')
         out.to_csv(OT_TRAIN, index=False)
-        om.calibrate()
+        om.calibrate(); om.calibrate_bidders()
     # 유찰 확률 모델: 새 사례의 회차 이력 추가 후 다시 보정 (2026-11-03)
     try:
         import fail_model as fm
