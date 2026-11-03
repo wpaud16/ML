@@ -22313,6 +22313,11 @@
 "date": "",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "2026-12-07",
+"low_manwon": 30480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22388,6 +22393,11 @@
 "date": "",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "2026-12-07",
+"low_manwon": 30480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22438,6 +22448,11 @@
 "date": "",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "2026-12-07",
+"low_manwon": 30480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22463,6 +22478,11 @@
 "date": "",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "2026-12-07",
+"low_manwon": 30480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22513,6 +22533,11 @@
 "date": "",
 "low_manwon": 36100,
 "fails": 0
+},
+{
+"date": "2026-12-07",
+"low_manwon": 28880,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22588,6 +22613,11 @@
 "date": "",
 "low_manwon": 38100,
 "fails": 0
+},
+{
+"date": "2026-12-07",
+"low_manwon": 30480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -30688,6 +30718,11 @@
 "date": "2026-11-03",
 "low_manwon": 12000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 12000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -30928,6 +30963,11 @@
 "date": "2026-11-03",
 "low_manwon": 118862,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 118862,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -30948,6 +30988,11 @@
 "date": "2026-11-03",
 "low_manwon": 95200,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 95200,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -30966,6 +31011,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 92400,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 92400,
 "fails": 0
 }
@@ -50283,6 +50333,11 @@
 "date": "2026-11-03",
 "low_manwon": 17247,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 17247,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -50303,6 +50358,11 @@
 "date": "2026-11-03",
 "low_manwon": 18432,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 18432,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -50321,6 +50381,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 33700,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 33700,
 "fails": 0
 }
@@ -50363,6 +50428,11 @@
 "date": "2026-11-03",
 "low_manwon": 975,
 "fails": 12
+},
+{
+"date": "",
+"low_manwon": 975,
+"fails": 12
 }
 ],
 "first_seen": "2026-11-02",
@@ -50403,6 +50473,11 @@
 "date": "2026-11-03",
 "low_manwon": 1443,
 "fails": 12
+},
+{
+"date": "",
+"low_manwon": 1443,
+"fails": 12
 }
 ],
 "first_seen": "2026-11-02",
@@ -50421,6 +50496,11 @@
 "rounds": [
 {
 "date": "2026-11-03",
+"low_manwon": 14800,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 14800,
 "fails": 6
 }
@@ -51579,6 +51659,16 @@
 "land_area": null,
 "appr_manwon": 34800,
 "rounds": [
+{
+"date": "",
+"low_manwon": 34800,
+"fails": 0
+},
+{
+"date": "2026-12-01",
+"low_manwon": 27840,
+"fails": 1
+},
 {
 "date": "",
 "low_manwon": 34800,
@@ -52963,6 +53053,366 @@
 "date": "2026-11-10",
 "low_manwon": 49400,
 "fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C15QIMHB": {
+"case": "2026타경50062[1]",
+"address": "서울특별시 강동구 길동 330-13 베네시티  3층304호",
+"sgg": "강동구",
+"emd": "길동",
+"type": "다세대",
+"area": 24.43,
+"land_area": 30.24,
+"appr_manwon": 26600,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 26600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C91FUHTM": {
+"case": "2026타경5626[1]",
+"address": "서울특별시 강서구 화곡동 400-6 에스엠파크빌  제3층 제303호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 28.21,
+"land_area": 35.08,
+"appr_manwon": 25100,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C00GVACM": {
+"case": "2025타경11203[1]",
+"address": "서울특별시 강서구 화곡동 421-17 우솔아트빌  제4층 제404호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 25.33,
+"land_area": 30.6,
+"appr_manwon": 30500,
+"rounds": [
+{
+"date": "2026-11-19",
+"low_manwon": 30500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C02WSVSH": {
+"case": "2025타경52461[1]",
+"address": "서울특별시 광진구 중곡동 623-3  4층401호",
+"sgg": "광진구",
+"emd": "중곡동",
+"type": "다세대",
+"area": 46.92,
+"land_area": 27.37,
+"appr_manwon": 31500,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 31500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C04GZJLH": {
+"case": "2026타경50844[1]",
+"address": "서울특별시 광진구 군자동 464-4 홀가하우스  5층502호",
+"sgg": "광진구",
+"emd": "군자동",
+"type": "다세대",
+"area": 24.34,
+"land_area": 28.06,
+"appr_manwon": 34100,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 34100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C21LSRVV": {
+"case": "2026타경101335[1]",
+"address": "서울특별시 중구 흥인동 8 동대문솔하임  5층503호",
+"sgg": "중구",
+"emd": "흥인동",
+"type": "연립",
+"area": 25,
+"land_area": 4.09,
+"appr_manwon": 22800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 22800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C39NJGFG": {
+"case": "2025타경102796[1]",
+"address": "서울특별시 중구 신당동 251-128 ",
+"sgg": "중구",
+"emd": "신당동",
+"type": "연립",
+"area": null,
+"land_area": 106,
+"appr_manwon": 173840,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 45571,
+"fails": 6
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C03YIZKH": {
+"case": "2025타경243[2]",
+"address": "서울특별시 중구 청계천로 334, 2층가-59호",
+"sgg": "중구",
+"emd": "신당동",
+"type": "연립",
+"area": 11.01,
+"land_area": 3.38,
+"appr_manwon": 54700,
+"rounds": [
+{
+"date": "2026-11-26",
+"low_manwon": 14339,
+"fails": 6
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C95OWHSM": {
+"case": "2025타경12674[5]",
+"address": "서울특별시 중랑구 신내동 807-1 신내골드프라자  제1층 제107호",
+"sgg": "중랑구",
+"emd": "신내동",
+"type": "연립",
+"area": 39.63,
+"land_area": null,
+"appr_manwon": 49200,
+"rounds": [
+{
+"date": "2026-11-10",
+"low_manwon": 49200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C96LGRRI": {
+"case": "2025타경12674[6]",
+"address": "서울특별시 중랑구 신내동 807-1 신내골드프라자  제1층 제108호",
+"sgg": "중랑구",
+"emd": "신내동",
+"type": "연립",
+"area": 37.44,
+"land_area": null,
+"appr_manwon": 46500,
+"rounds": [
+{
+"date": "2026-11-10",
+"low_manwon": 46500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C02HXKLC": {
+"case": "2025타경11797[1]",
+"address": "서울특별시 중랑구 망우동 470-1 ",
+"sgg": "중랑구",
+"emd": "망우동",
+"type": "연립",
+"area": 2738.82,
+"land_area": null,
+"appr_manwon": 52700,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 70320,
+"fails": 1
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C08WFVWB": {
+"case": "2025타경13694[1]",
+"address": "서울특별시 중랑구 망우동 506-8  13층1308호",
+"sgg": "중랑구",
+"emd": "망우동",
+"type": "연립",
+"area": 13.55,
+"land_area": 3.17,
+"appr_manwon": 9500,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 6080,
+"fails": 2
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C15IFYKV": {
+"case": "2025타경12556[1]",
+"address": "서울특별시 중랑구 망우동 435-12 ",
+"sgg": "중랑구",
+"emd": "망우동",
+"type": "연립",
+"area": 132.22,
+"land_area": 117,
+"appr_manwon": 85076,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 43559,
+"fails": 3
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C20VPHTJ": {
+"case": "2025타경1825[1]",
+"address": "서울특별시 중랑구 면목동 172-24 ",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": null,
+"land_area": 90.6,
+"appr_manwon": 74858,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 47909,
+"fails": 2
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C36ZUHWT": {
+"case": "2025타경2705[1]",
+"address": "서울특별시 중랑구 면목동 192-99 ",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 216.57,
+"land_area": 136.2,
+"appr_manwon": 108227,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 86582,
+"fails": 1
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C67UMJLE": {
+"case": "2025타경13757[1]",
+"address": "서울특별시 중랑구 면목동 90-64 어반휴6차  3층301호",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 29.08,
+"land_area": 56.6,
+"appr_manwon": 31900,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 20416,
+"fails": 2
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C78VSPMR": {
+"case": "2025타경13270[1]",
+"address": "서울특별시 중랑구 면목동 538 중랑지웰에스테이트 101동 7층703호",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 14.43,
+"land_area": 6.06,
+"appr_manwon": 9500,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 4864,
+"fails": 3
+}
+],
+"first_seen": "2026-11-03",
+"status": "진행중",
+"last_seen": "2026-11-03"
+},
+"C86HCYAB": {
+"case": "2024타경107122[1]",
+"address": "서울특별시 중랑구 동일로96길 13",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 367.78,
+"land_area": 226.1,
+"appr_manwon": 212576,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 136049,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-03",
