@@ -6,6 +6,7 @@ import google_api as g
 import quote
 import schedule_doc
 import auction_mail
+import market
 
 TO = os.environ.get('BRIEF_TO', 'wpaud16@naver.com')
 TEST = os.environ.get('TEST_MODE', '1') == '1'
@@ -31,7 +32,14 @@ def main():
     except Exception:
         traceback.print_exc(); fails.append('오늘의 할 일 (문서 읽기/쓰기)')
 
-    # TODO: STEP 2 증시
+    try:
+        data, errs = market.fetch()
+        print('market errors:', errs)
+        if all(v is None for v in data.values()):
+            fails.append('증시 숫자')
+        h, t = market.render(data, errs); H.append(h); T.append(t)
+    except Exception:
+        traceback.print_exc(); fails.append('증시 숫자')
 
     try:
         h, t, _ = auction_mail.build(today); H.append(h); T.append(t)
