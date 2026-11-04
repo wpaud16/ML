@@ -25,7 +25,22 @@ MAP_PATH = os.path.join(HERE, 'danji_map.json')
 OUT_DIR = os.path.join(HERE, 'predictions')
 
 
+_GET = {}
+
+
 def get(url, tries=3):
+    if url in _GET:
+        return _GET[url]
+    if url in getattr(ap, '_PAGES', {}) and '/auctionMobile/' not in url:   # 예측 모듈이 이미 받은 단지 페이지
+        return ap._PAGES[url]
+    r = _get(url, tries)
+    if r and '/auctionMobile/' not in url:   # 경매 상세는 결과 확인용이라 매번 새로
+        if len(_GET) > 3000: _GET.clear()
+        _GET[url] = r
+    return r
+
+
+def _get(url, tries=3):
     for k in range(tries):
         try:   # 응답이 중간에 잘려도(멀티바이트 끊김) 죽지 않게 bytes로 받아 'replace' 디코딩
             r = subprocess.run(['curl', '-sL', '-m', '40', '-A', 'Mozilla/5.0', url], capture_output=True).stdout.decode('utf-8', 'replace')

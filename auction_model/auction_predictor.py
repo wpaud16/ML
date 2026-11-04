@@ -114,25 +114,50 @@ MEMBERS['군집_인원'] = ('cluster', S1 + BID, 365)   # 인원 기록 있는 �
 BID_SCEN = [1, 2, 3, 5, 8, 13]
 
 
-def fit_predict(name, tr, te, T):
+_FIT = {}   # 학습 결과 캐시 (2026-11-05 속도 개선: 배치에서 물건마다 같은 학습을 반복하던 것)
+
+
+def _fit(name, tr, T):
     kind, cols, decay = MEMBERS[name]
-    Xtr, Xte = prep(tr)[cols], prep(te)[cols]
-    med = Xtr.median(); Xtr, Xte = Xtr.fillna(med), Xte.fillna(med)
-    sc = StandardScaler().fit(Xtr); Ztr, Zte = sc.transform(Xtr), sc.transform(Xte)
+    key = (name, tuple(cols), id(prep), len(tr), str(tr.date.max()), str(pd.Timestamp(T)), float(tr.y.sum()))
+    if key in _FIT:
+        return _FIT[key]
+    Xtr = prep(tr)[cols]
+    med = Xtr.median(); Xtr = Xtr.fillna(med)
+    sc = StandardScaler().fit(Xtr); Ztr = sc.transform(Xtr)
     y = tr.y.values
     wt = None if not decay else np.exp(-((pd.Timestamp(T) - tr.date).dt.days.values) / decay)
     if kind == 'gb':
-        return HistGradientBoostingRegressor(max_iter=300, learning_rate=0.04, max_depth=3, min_samples_leaf=25,
-                                             l2_regularization=2.0, random_state=0).fit(Xtr, y, sample_weight=wt).predict(Xte)
-    cc = [cols.index(c) for c in ['l_appr', 'l_low', 'seoul', 'l_area', 'age']]
-    km = KMeans(n_clusters=6, n_init=10, random_state=0).fit(Ztr[:, cc])
-    ctr, cte = km.labels_, km.predict(Zte[:, cc])
-    p = Ridge(alpha=3.0).fit(Ztr, y, sample_weight=wt).predict(Zte)
-    for c in range(6):
-        mtr, mte = ctr == c, cte == c
-        if mtr.sum() >= 40 and mte.any():
-            pw = None if wt is None else wt[mtr]
-            p[mte] = 0.5 * p[mte] + 0.5 * Ridge(alpha=10.0).fit(Ztr[mtr], y[mtr], sample_weight=pw).predict(Zte[mte])
+        f = dict(kind=kind, cols=cols, med=med, model=HistGradientBoostingRegressor(
+            max_iter=300, learning_rate=0.04, max_depth=3, min_samples_leaf=25, l2_regularization=2.0, random_state=0).fit(Xtr, y, sample_weight=wt))
+    else:
+        cc = [cols.index(c) for c in ['l_appr', 'l_low', 'seoul', 'l_area', 'age']]
+        km = KMeans(n_clusters=6, n_init=10, random_state=0).fit(Ztr[:, cc])
+        ctr = km.labels_
+        sub = {}
+        for c in range(6):
+            mtr = ctr == c
+            if mtr.sum() >= 40:
+                sub[c] = Ridge(alpha=10.0).fit(Ztr[mtr], y[mtr], sample_weight=None if wt is None else wt[mtr])
+        f = dict(kind=kind, cols=cols, med=med, sc=sc, cc=cc, km=km, ridge=Ridge(alpha=3.0).fit(Ztr, y, sample_weight=wt), sub=sub)
+    if len(_FIT) > 64:
+        _FIT.clear()
+    _FIT[key] = f
+    return f
+
+
+def fit_predict(name, tr, te, T):
+    f = _fit(name, tr, T)
+    Xte = prep(te)[f['cols']].fillna(f['med'])
+    if f['kind'] == 'gb':
+        return f['model'].predict(Xte)
+    Zte = f['sc'].transform(Xte)
+    cte = f['km'].predict(Zte[:, f['cc']])
+    p = f['ridge'].predict(Zte)
+    for c, m in f['sub'].items():
+        mte = cte == c
+        if mte.any():
+            p[mte] = 0.5 * p[mte] + 0.5 * m.predict(Zte[mte])
     return p
 
 
@@ -154,8 +179,18 @@ def recent_heat(df, seoul, T):
 
 
 # ---------------- target row from Richgo complex page ----------------
+_PAGES = {}
+
+
 def fetch(url):
-    return subprocess.run(['curl', '-sL', '-m', '40', '-A', 'Mozilla/5.0', url], capture_output=True, text=True).stdout
+    if url not in _PAGES:
+        r = subprocess.run(['curl', '-sL', '-m', '40', '-A', 'Mozilla/5.0', url], capture_output=True, text=True).stdout
+        if '__NEXT_DATA__' not in r:
+            return r   # 실패한 응답은 캐시하지 않음
+        if len(_PAGES) > 3000:
+            _PAGES.clear()
+        _PAGES[url] = r
+    return _PAGES[url]
 
 
 def mshift(m, k):

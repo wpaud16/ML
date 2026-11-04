@@ -13,6 +13,13 @@ _PAGE = {}
 
 
 def _get(url, tries=2):
+    try:   # 배치에서 이미 받은 페이지는 다시 받지 않음
+        import auction_predictor as _ap
+        r = _ap.fetch(url)
+        if '__NEXT_DATA__' in r:
+            return r
+    except Exception:
+        pass
     for k in range(tries):
         try:
             r = subprocess.run(['curl', '-sL', '-m', '40', '-A', 'Mozilla/5.0', url], capture_output=True).stdout.decode('utf-8', 'replace')
