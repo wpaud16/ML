@@ -198,6 +198,22 @@ def mshift(m, k):
     return f'{t // 12:04d}-{t % 12 + 1:02d}'
 
 
+def _fallback_price(dp):
+    """리치고 추정시세(meme)가 빈 평형(신축 단지 등): 최근 12개월 국토부 실거래 → 매물 호가 대표값. (가격, 출처)"""
+    md = dp.get('memePriceDict') or {}
+    mo = md.get('MOLIT') or {}
+    if mo.get('price') and mo.get('yyyymmdd'):
+        try:
+            if (pd.Timestamp.today() - pd.Timestamp(mo['yyyymmdd'].replace('.', '-'))).days <= 365:
+                return mo['price'], 'MOLIT'
+        except ValueError:
+            pass
+    of = md.get('OFFER') or {}
+    if of.get('price') or of.get('minPrice'):
+        return of.get('price') or of['minPrice'], 'OFFER'
+    return None, None
+
+
 def target_row(danji, auction_id, df, kind='danji'):
     raw = fetch(f'https://m.richgo.ai/realty/{kind}/' + danji)
     i = raw.find('__NEXT_DATA__'); j = raw.find('>', i); k = raw.find('</script>', j)
@@ -220,7 +236,12 @@ def target_row(danji, auction_id, df, kind='danji'):
         except (TypeError, ValueError): continue
         dp = (v.get('danjiPriceInfo') or {})
         meme = (dp.get('meme') or {}).get('price')
-        if not meme: continue
+        if not meme:
+            meme, src = _fallback_price(dp)   # 2026-11-05 사용자 결정(A): 리치고 시세 없으면 12개월 내 실거래 → 호가
+            if not meme: continue
+            v = dict(v, danjiPriceInfo=dict(dp, memeSource=src))
+        else:
+            v = dict(v, danjiPriceInfo=dict(dp, memeSource=dp.get('memeSource') or 'RICHGO_SISE'))
         dist = 0 if lo - 0.5 <= area <= hi + 0.5 else abs(area - (lo + hi) / 2)
         if best is None or dist < best[0]:
             best = (dist, p, v, meme, (dp.get('jeonse') or {}).get('price'))
@@ -288,7 +309,7 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
     elif mkt:   # 오피스텔 등 리치고 추정시세가 없으면 모델 시세는 호가 대표값과 같아 중복으로 넣지 않는다
         out['richgo_eok'] = round(mkt / 1e8, 2); out['richgo_source'] = ((pv or {}).get('danjiPriceInfo') or {}).get('memeSource')
         # 2026-11-03 사용자 요청: 호가는 종합에서 제외 → 호가 기반 모델 시세도 넣지 않는다
-        if not (md.get('OFFER') or {}).get('price') and out.get('richgo_source') != 'OFFER': vals.append(('리치고', mkt))
+        if not (md.get('OFFER') or {}).get('price') and out.get('richgo_source') not in ('OFFER', 'MOLIT'): vals.append(('리치고', mkt))
     mo = md.get('MOLIT') or {}
     p, age, tr = adj(mo.get('price'), mo.get('yyyymmdd'))
     if p:
@@ -318,7 +339,7 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
         flags = []
         if out['spread_pct'] > 15: flags.append('출처 간 차이 큼')
         if 'trade' not in out or out['trade']['months_ago'] > 6: flags.append('최근 6개월 실거래 없음 (거래 적음)')
-        if out.get('richgo_source') != 'OFFER' and abs(out['richgo_vs_est_pct']) > 5: flags.append(f"리치고 시세가 종합보다 {out['richgo_vs_est_pct']:+.0f}%")
+        if out.get('richgo_source') not in ('OFFER', 'MOLIT') and abs(out['richgo_vs_est_pct']) > 5: flags.append(f"리치고 시세가 종합보다 {out['richgo_vs_est_pct']:+.0f}%")
         out['flags'] = flags
     return out
 
