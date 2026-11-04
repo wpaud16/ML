@@ -48,7 +48,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C12HZAAR": {
 "case": "2025타경104287[1]",
@@ -4668,6 +4669,16 @@
 "date": "2026-12-01",
 "low_manwon": 10690,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 13363,
+"fails": 4
+},
+{
+"date": "2026-12-01",
+"low_manwon": 10690,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -5364,7 +5375,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C06TFWKC": {
 "case": "2026타경5212[9]",
@@ -5389,7 +5401,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C10HUVUT": {
 "case": "2025타경10332[1]",
@@ -5639,7 +5652,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C44GHKXU": {
 "case": "2026타경5756[1]",
@@ -5664,7 +5678,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C45KXAFD": {
 "case": "2026타경5486[1]",
@@ -5689,7 +5704,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C49ZJIKN": {
 "case": "2026타경5212[6]",
@@ -5714,7 +5730,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C60MNGGC": {
 "case": "2026타경4467[1]",
@@ -5739,7 +5756,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C70AQZHJ": {
 "case": "2026타경5212[3]",
@@ -5764,7 +5782,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C70PBUXW": {
 "case": "2023타경118641[1]",
@@ -5789,7 +5808,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C73UHZUM": {
 "case": "2026타경5212[7]",
@@ -5814,7 +5834,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C80UXTGO": {
 "case": "2025타경4357[1]",
@@ -5839,7 +5860,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C82LHVNW": {
 "case": "2026타경4282[1]",
@@ -5864,7 +5886,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C83FRXZS": {
 "case": "2026타경5567[1]",
@@ -5889,7 +5912,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C84TNTAM": {
 "case": "2026타경5212[4]",
@@ -5914,7 +5938,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C86TKBDP": {
 "case": "2026타경3572[1]",
@@ -5939,7 +5964,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C88TJYME": {
 "case": "2026타경3590[1]",
@@ -5964,7 +5990,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C94LUPXR": {
 "case": "2025타경13796[1]",
@@ -18520,7 +18547,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C46IPWNS": {
 "case": "2025타경103190[1]",
@@ -18545,7 +18573,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C47JDVEX": {
 "case": "2025타경104408[1]",
@@ -18570,7 +18599,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C50TAQLC": {
 "case": "2025타경104570[1]",
@@ -18670,7 +18700,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C64THPJW": {
 "case": "2025타경104703[1]",
@@ -18745,7 +18776,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C87WYVNB": {
 "case": "2026타경11[1]",
@@ -24312,7 +24344,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C50DMYCD": {
 "case": "2026타경4561[1]",
@@ -24337,7 +24370,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C55EDILX": {
 "case": "2025타경13317[1]",
@@ -24362,7 +24396,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C65FAYIB": {
 "case": "2026타경12[1]",
@@ -24387,7 +24422,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C01FVNTW": {
 "case": "2026타경3372[1]",
@@ -28172,7 +28208,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C98JMVRY": {
 "case": "2024타경140331[1]",
@@ -28197,7 +28234,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C03PSYRP": {
 "case": "2025타경12641[1]",
@@ -31874,7 +31912,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-04",
+"last_seen": "2026-11-05",
 "checked": "2026-11-04"
 },
 "C65CACFR": {
@@ -31900,7 +31938,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-04",
+"last_seen": "2026-11-05",
 "checked": "2026-11-04"
 },
 "C73CZJAD": {
@@ -32207,7 +32245,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-04"
+"last_seen": "2026-11-05"
 },
 "C45PCMJL": {
 "case": "2025타경12211[1]",
@@ -34760,7 +34798,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C39ZEGPX": {
 "case": "2026타경100318[1]",
@@ -34785,7 +34824,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C44GRODS": {
 "case": "2026타경100423[1]",
@@ -34810,7 +34850,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C72WPWBG": {
 "case": "2025타경104456[1]",
@@ -34826,11 +34867,16 @@
 "date": "2026-11-04",
 "low_manwon": 19923,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 19923,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-04",
+"status": "진행중",
+"last_seen": "2026-11-05",
 "checked": "2026-11-05"
 },
 "C11BIOAO": {
@@ -35731,7 +35777,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-04"
+"last_seen": "2026-11-05"
 },
 "C50DENIL": {
 "case": "2025타경103461[1]",
@@ -37367,6 +37413,16 @@
 "date": "2026-12-08",
 "low_manwon": 9797,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 12247,
+"fails": 4
+},
+{
+"date": "2026-12-08",
+"low_manwon": 9797,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -37413,6 +37469,16 @@
 "date": "2026-11-03",
 "low_manwon": 15836,
 "fails": 10
+},
+{
+"date": "",
+"low_manwon": 15836,
+"fails": 10
+},
+{
+"date": "2026-12-08",
+"low_manwon": 12669,
+"fails": 11
 },
 {
 "date": "",
@@ -38605,7 +38671,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C45YJMLW": {
 "case": "2026타경100544[1]",
@@ -39608,6 +39675,16 @@
 "date": "2026-12-08",
 "low_manwon": 21760,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 27200,
+"fails": 1
+},
+{
+"date": "2026-12-08",
+"low_manwon": 21760,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -39684,6 +39761,16 @@
 "date": "2026-11-03",
 "low_manwon": 7575,
 "fails": 6
+},
+{
+"date": "",
+"low_manwon": 7575,
+"fails": 6
+},
+{
+"date": "2026-12-08",
+"low_manwon": 6060,
+"fails": 7
 },
 {
 "date": "",
@@ -40610,6 +40697,16 @@
 "land_area": 37.06,
 "appr_manwon": 13100,
 "rounds": [
+{
+"date": "",
+"low_manwon": 5365,
+"fails": 4
+},
+{
+"date": "2026-12-01",
+"low_manwon": 4292,
+"fails": 4
+},
 {
 "date": "",
 "low_manwon": 5365,
@@ -41823,7 +41920,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C48KXMQF": {
 "case": "2025타경8038[1]",
@@ -41848,7 +41946,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C76MLRPX": {
 "case": "2024타경121910[1]",
@@ -41894,7 +41993,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C00JDOXX": {
 "case": "2026타경3011[1]",
@@ -45665,11 +45765,16 @@
 "date": "2026-11-04",
 "low_manwon": 14240,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 14240,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-04",
+"status": "진행중",
+"last_seen": "2026-11-05",
 "checked": "2026-11-05"
 },
 "C23VRTAD": {
@@ -46330,7 +46435,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-04"
+"last_seen": "2026-11-05"
 },
 "C46FAYBP": {
 "case": "2025타경9554[1]",
@@ -46350,7 +46455,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-04"
+"last_seen": "2026-11-05"
 },
 "C62TRLOI": {
 "case": "2025타경13191[1]",
@@ -46370,7 +46475,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-04"
+"last_seen": "2026-11-05"
 },
 "C36EKFLC": {
 "case": "2024타경139584[1]",
@@ -51382,7 +51487,8 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05"
+"last_seen": "2026-11-05",
+"checked": "2026-11-05"
 },
 "C65DGQFG": {
 "case": "2025타경104536[1]",
@@ -55378,7 +55484,7 @@
 ],
 "first_seen": "2026-11-03",
 "status": "진행중",
-"last_seen": "2026-11-04"
+"last_seen": "2026-11-05"
 },
 "C86LFGOH": {
 "case": "2025타경12674[1]",
@@ -58329,6 +58435,1426 @@
 "date": "2026-11-26",
 "low_manwon": 22000,
 "fails": 1
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C27PLHHK": {
+"case": "2025타경103977[6]",
+"address": "서울특별시 강남구 역삼동 685-24  3층302호",
+"sgg": "강남구",
+"emd": "역삼동",
+"type": "다세대",
+"area": 29.99,
+"land_area": 16.53,
+"appr_manwon": 55400,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 55400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C40VAEJY": {
+"case": "2025타경103977[8]",
+"address": "서울특별시 강남구 역삼동 685-24  4층401호",
+"sgg": "강남구",
+"emd": "역삼동",
+"type": "다세대",
+"area": 128.63,
+"land_area": 70.88,
+"appr_manwon": 213000,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 213000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C41DBLAW": {
+"case": "2025타경103977[7]",
+"address": "서울특별시 강남구 역삼동 685-24  3층303호",
+"sgg": "강남구",
+"emd": "역삼동",
+"type": "다세대",
+"area": 29.99,
+"land_area": 16.53,
+"appr_manwon": 55400,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 55400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C54OABLA": {
+"case": "2025타경103977[5]",
+"address": "서울특별시 강남구 역삼동 685-24  3층301호",
+"sgg": "강남구",
+"emd": "역삼동",
+"type": "다세대",
+"area": 29.64,
+"land_area": 16.33,
+"appr_manwon": 54800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 54800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C33CUWXQ": {
+"case": "2026타경100124[1]",
+"address": "서울특별시 강남구 삼성동 102-4 금향빌라  1층104호",
+"sgg": "강남구",
+"emd": "삼성동",
+"type": "연립",
+"area": 131.67,
+"land_area": 101.95,
+"appr_manwon": 305000,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 305000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C04UYNWR": {
+"case": "2025타경51846[1]",
+"address": "서울특별시 강동구 길동 456-3 강동큐브  11층1105호",
+"sgg": "강동구",
+"emd": "길동",
+"type": "다세대",
+"area": 12.49,
+"land_area": 3.77,
+"appr_manwon": 12400,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 12400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C11YWYHB": {
+"case": "2026타경50124[1]",
+"address": "서울특별시 강동구 둔촌동 425-15 오앤하우스  9층904호",
+"sgg": "강동구",
+"emd": "둔촌동",
+"type": "다세대",
+"area": 16.77,
+"land_area": 5.8,
+"appr_manwon": 11400,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 11400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C12ILBND": {
+"case": "2026타경50180[1]",
+"address": "서울특별시 강동구 천호동 330-1 신안아트빌  3층303호",
+"sgg": "강동구",
+"emd": "천호동",
+"type": "다세대",
+"area": 37.72,
+"land_area": 47.86,
+"appr_manwon": 38900,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 38900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C15GZOOG": {
+"case": "2025타경52610[1]",
+"address": "서울특별시 강동구 길동 330-5 길동애드하우징  4층401호",
+"sgg": "강동구",
+"emd": "길동",
+"type": "다세대",
+"area": 28.37,
+"land_area": 18.47,
+"appr_manwon": 31000,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 31000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C79QRZOQ": {
+"case": "2025타경52519[1]",
+"address": "서울특별시 강동구 암사동 459-46 부림빌라  4층402호",
+"sgg": "강동구",
+"emd": "암사동",
+"type": "다세대",
+"area": 36.86,
+"land_area": 19.94,
+"appr_manwon": 24100,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 24100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C96CZEVY": {
+"case": "2025타경52515[1]",
+"address": "서울특별시 강동구 길동 414-4 강동와이시티  18층1805호",
+"sgg": "강동구",
+"emd": "길동",
+"type": "다세대",
+"area": 13.97,
+"land_area": 3.6,
+"appr_manwon": 12400,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 12400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C93MYLFS": {
+"case": "2025타경51064[1]",
+"address": "서울특별시 강동구 천호동 166-76 다성이즈빌  10층1003호",
+"sgg": "강동구",
+"emd": "천호동",
+"type": "다세대",
+"area": 17.33,
+"land_area": 5.58,
+"appr_manwon": 26000,
+"rounds": [
+{
+"date": "",
+"low_manwon": 16640,
+"fails": 5
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C22AMVAH": {
+"case": "2026타경50170[1]",
+"address": "서울특별시 강동구 성내동 548-4 에스아이팰리스센트럴성내  13층1302호",
+"sgg": "강동구",
+"emd": "성내동",
+"type": "연립",
+"area": 14.04,
+"land_area": 7.38,
+"appr_manwon": 21700,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 21700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C36KXQIN": {
+"case": "2026타경4134[1]",
+"address": "서울특별시 강서구 화곡동 372-73 케이씨타운  제9층 제905호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 23.65,
+"land_area": 27.33,
+"appr_manwon": 38000,
+"rounds": [
+{
+"date": "2026-11-11",
+"low_manwon": 38000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C06FOKXH": {
+"case": "2026타경3707[1]",
+"address": "서울특별시 강서구 공항동 678-10 마곡대림밸리  제6층 제602호",
+"sgg": "강서구",
+"emd": "공항동",
+"type": "다세대",
+"area": 26.41,
+"land_area": 16.16,
+"appr_manwon": 24200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 24200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C12HCLUU": {
+"case": "2026타경5472[1]",
+"address": "서울특별시 강서구 화곡동 24-551  제6층 제501호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.7,
+"land_area": 16.8,
+"appr_manwon": 18100,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 18100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C35DNEIZ": {
+"case": "2026타경5715[1]",
+"address": "서울특별시 강서구 화곡동 475-14 디에이씨  제3층 제302호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 27.6,
+"land_area": 21.06,
+"appr_manwon": 20100,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 20100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C39PZJGM": {
+"case": "2026타경4300[1]",
+"address": "서울특별시 강서구 화곡동 157-21 에스케이파크리움  제5층 제504호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 19.3,
+"land_area": 11.91,
+"appr_manwon": 21800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 21800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C42BNRLX": {
+"case": "2026타경5167[1]",
+"address": "서울특별시 강서구 등촌동 636-35 석경트라움 제102동 제6층 제602호",
+"sgg": "강서구",
+"emd": "등촌동",
+"type": "다세대",
+"area": 26.02,
+"land_area": 13.15,
+"appr_manwon": 25200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C46ADMGO": {
+"case": "2025타경14207[1]",
+"address": "서울특별시 강서구 화곡동 808-4 4층 401호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 28.68,
+"land_area": 35.12,
+"appr_manwon": 22700,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 22700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C55DHAVR": {
+"case": "2026타경5622[1]",
+"address": "서울특별시 강서구 등촌동 365-75 에비앙하우스  제5층 제502호",
+"sgg": "강서구",
+"emd": "등촌동",
+"type": "다세대",
+"area": 29.73,
+"land_area": 32,
+"appr_manwon": 25900,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C55TBQHH": {
+"case": "2026타경3520[1]",
+"address": "서울특별시 강서구 화곡동 1066-17 한스아이빌  제3층 제302호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.94,
+"land_area": 16.3,
+"appr_manwon": 25400,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C59DOFFM": {
+"case": "2026타경5112[1]",
+"address": "서울특별시 강서구 화곡동 504-187 우성  제2층 제202호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 54.51,
+"land_area": 65.69,
+"appr_manwon": 37800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 37800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C66HEYQF": {
+"case": "2026타경4983[1]",
+"address": "서울특별시 강서구 등촌동 671-5 메종드남광 제102동 제4층 제402호",
+"sgg": "강서구",
+"emd": "등촌동",
+"type": "다세대",
+"area": 34.68,
+"land_area": 15.18,
+"appr_manwon": 35000,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 35000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C73GBAPI": {
+"case": "2026타경5208[1]",
+"address": "서울특별시 강서구 화곡동 102-182 동일네오빌  제2층 제201호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": null,
+"land_area": 27.16,
+"appr_manwon": 25600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C76JOMHP": {
+"case": "2026타경5144[1]",
+"address": "서울특별시 강서구 화곡동 353-17 로얄하이츠  제2층 제202호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 44.98,
+"land_area": 26.42,
+"appr_manwon": 29600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 29600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C79DWPXQ": {
+"case": "2025타경12010[1]",
+"address": "서울특별시 강서구 화곡동 421-21 포르테하임2  제4층 제401호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 20.81,
+"land_area": 12.98,
+"appr_manwon": 29400,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 29400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C82EBLUJ": {
+"case": "2026타경5150[1]",
+"address": "서울특별시 강서구 화곡동 370-31 케이엠아트빌  제3층 제305호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.88,
+"land_area": 35.74,
+"appr_manwon": 30100,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 30100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C90YKKBB": {
+"case": "2025타경11013[1]",
+"address": "서울특별시 강서구 화곡동 340-13 라홈  제2층 제204호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.78,
+"land_area": 21.04,
+"appr_manwon": 35200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 35200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C96EUKAZ": {
+"case": "2026타경5054[1]",
+"address": "서울특별시 강서구 화곡동 74-1 더라온  제4층 제403호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.63,
+"land_area": 19.59,
+"appr_manwon": 25600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C00QACUI": {
+"case": "2025타경10037[1]",
+"address": "서울특별시 강서구 화곡동 866-6 동양주택  제502호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 60.92,
+"land_area": 28.84,
+"appr_manwon": 22700,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 22700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C51CHIAC": {
+"case": "2025타경722[1]",
+"address": "서울특별시 강서구 화곡동 397-13 유현빌  제6층 제602호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.76,
+"land_area": 38.12,
+"appr_manwon": 21400,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 21400,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C51ZCLYU": {
+"case": "2025타경12531[1]",
+"address": "서울특별시 강서구 화곡동 869-52 혜성펠리스  제1층 제101호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 39.17,
+"land_area": 118.56,
+"appr_manwon": 23200,
+"rounds": [
+{
+"date": "2026-12-04",
+"low_manwon": 14848,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C49RHATR": {
+"case": "2025타경13728[1]",
+"address": "서울특별시 강서구 화곡동 860-20 블루스카이빌  제3층 제302호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.27,
+"land_area": 39.29,
+"appr_manwon": 22800,
+"rounds": [
+{
+"date": "",
+"low_manwon": 14592,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C67WDKTN": {
+"case": "2025타경723[1]",
+"address": "서울특별시 강서구 화곡동 464-19 우현펠리스  제3층 제302호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 43.9,
+"land_area": 25.87,
+"appr_manwon": 28300,
+"rounds": [
+{
+"date": "",
+"low_manwon": 18112,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C75DIMZH": {
+"case": "2025타경14211[1]",
+"address": "서울특별시 강서구 화곡동 424-39 에이엔캐슬  제6층 제601호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 26.23,
+"land_area": 48.66,
+"appr_manwon": 21600,
+"rounds": [
+{
+"date": "",
+"low_manwon": 13824,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C77GHFVV": {
+"case": "2026타경3258[1]",
+"address": "서울특별시 강서구 화곡동 338-6 가이아팰리스  제2층 제202호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.85,
+"land_area": 18.64,
+"appr_manwon": 27500,
+"rounds": [
+{
+"date": "",
+"low_manwon": 17600,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C85VMYDR": {
+"case": "2025타경13686[1]",
+"address": "서울특별시 강서구 화곡동 368-14 제이이하우스  제3층 제301호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 28.66,
+"land_area": 39.47,
+"appr_manwon": 29300,
+"rounds": [
+{
+"date": "",
+"low_manwon": 18752,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C81FFSSY": {
+"case": "2026타경101294[1]",
+"address": "서울특별시 관악구 봉천동 713-138 태경9차 103동 4층402호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 26.25,
+"land_area": 97.65,
+"appr_manwon": 25700,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C96PZQRF": {
+"case": "2026타경101295[1]",
+"address": "서울특별시 관악구 봉천동 713-136 태경8차  3층301호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 27.45,
+"land_area": 18.17,
+"appr_manwon": 26500,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 26500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C36PBVZS": {
+"case": "2026타경100150[1]",
+"address": "서울특별시 관악구 신림동 529-15  11층1101호",
+"sgg": "관악구",
+"emd": "신림동",
+"type": "다세대",
+"area": 10.99,
+"land_area": 4.36,
+"appr_manwon": 14100,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 14100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C56MPZZE": {
+"case": "2026타경100187[1]",
+"address": "서울특별시 관악구 신림동 1510-3  지하층비02호",
+"sgg": "관악구",
+"emd": "신림동",
+"type": "다세대",
+"area": 48.18,
+"land_area": 20.22,
+"appr_manwon": 18900,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 18900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C65HULMP": {
+"case": "2025타경3310[1]",
+"address": "서울특별시 관악구 봉천동 1648-12  601호",
+"sgg": "관악구",
+"emd": "봉천동",
+"type": "다세대",
+"area": 65.98,
+"land_area": null,
+"appr_manwon": 9840,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 9840,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C87GRZQM": {
+"case": "2025타경104391[1]",
+"address": "서울특별시 관악구 신림동 469-4 바벨  3층302호",
+"sgg": "관악구",
+"emd": "신림동",
+"type": "다세대",
+"area": 37.47,
+"land_area": 52.1,
+"appr_manwon": 48500,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 48500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C74QOBXV": {
+"case": "2026타경5095[1]",
+"address": "서울특별시 구로구 개봉동 338-11  제4층 제401호",
+"sgg": "구로구",
+"emd": "개봉동",
+"type": "다세대",
+"area": 53.3,
+"land_area": 23.55,
+"appr_manwon": 28700,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 28700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C87JNRMG": {
+"case": "2025타경13773[1]",
+"address": "서울특별시 구로구 개봉동 132-44 지오펠리체  제3층 제304호",
+"sgg": "구로구",
+"emd": "개봉동",
+"type": "다세대",
+"area": null,
+"land_area": 58.38,
+"appr_manwon": 26800,
+"rounds": [
+{
+"date": "",
+"low_manwon": 17152,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C40GBIWA": {
+"case": "2026타경4770[1]",
+"address": "서울특별시 금천구 시흥동 790-53 리더스빌  제5층 제502호",
+"sgg": "금천구",
+"emd": "시흥동",
+"type": "다세대",
+"area": 53.23,
+"land_area": 35.42,
+"appr_manwon": 26300,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 26300,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C59WZKJN": {
+"case": "2026타경5675[1]",
+"address": "서울특별시 금천구 독산동 962-11 우미그린빌  제5층 제503호",
+"sgg": "금천구",
+"emd": "독산동",
+"type": "다세대",
+"area": 29.8,
+"land_area": 25.84,
+"appr_manwon": 28200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 28200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C87CLCQV": {
+"case": "2025타경13030[1]",
+"address": "서울특별시 금천구 독산동 378-404 신영팰리스  제3층 제301호",
+"sgg": "금천구",
+"emd": "독산동",
+"type": "다세대",
+"area": 28.24,
+"land_area": 39.94,
+"appr_manwon": 24000,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 24000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C84DHAAV": {
+"case": "2026타경101058[1]",
+"address": "서울특별시 동작구 상도1동 325-5 두손베스티움  2층202호",
+"sgg": "동작구",
+"emd": "상도1동",
+"type": "다세대",
+"area": 37.66,
+"land_area": 19.91,
+"appr_manwon": 34900,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 34900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C41QQSBB": {
+"case": "2026타경100171[1]",
+"address": "서울특별시 동작구 상도동 305-2 일오삼빌  1층102호",
+"sgg": "동작구",
+"emd": "상도동",
+"type": "다세대",
+"area": 37.53,
+"land_area": 45.88,
+"appr_manwon": 27200,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 27200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C64VEHDQ": {
+"case": "2025타경52473[1]",
+"address": "서울특별시 송파구 오금동 52-6 한흥빌라  6층601호",
+"sgg": "송파구",
+"emd": "오금동",
+"type": "다세대",
+"area": 54.22,
+"land_area": 25.98,
+"appr_manwon": 58900,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 58900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C83QWOWF": {
+"case": "2025타경52433[1]",
+"address": "서울특별시 송파구 문정동 80-8 집앤사베스타  4층403호",
+"sgg": "송파구",
+"emd": "문정동",
+"type": "다세대",
+"area": 23.15,
+"land_area": 31.54,
+"appr_manwon": 28600,
+"rounds": [
+{
+"date": "2026-11-16",
+"low_manwon": 28600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C30AKJVB": {
+"case": "2026타경4082[1]",
+"address": "서울특별시 양천구 신월동 96-5 골든캐슬  제5층 제503호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 28.91,
+"land_area": 12.61,
+"appr_manwon": 26500,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 26500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C42YTRFK": {
+"case": "2026타경5587[1]",
+"address": "서울특별시 양천구 신월동 233-15 에스케이그랑빌  제3층 제302호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 29.9,
+"land_area": 33.48,
+"appr_manwon": 22600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 22600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C59DRGOD": {
+"case": "2026타경3700[1]",
+"address": "서울특별시 양천구 신월동 243-30 다온캐슬  제5층 제501호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 37.53,
+"land_area": 45.94,
+"appr_manwon": 31200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 31200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C69IHJVN": {
+"case": "2026타경4400[1]",
+"address": "서울특별시 양천구 목동 615-3 해오름타운  제2층 제204호",
+"sgg": "양천구",
+"emd": "목동",
+"type": "다세대",
+"area": 25.97,
+"land_area": 35.02,
+"appr_manwon": 24000,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 24000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C40FXZQK": {
+"case": "2026타경4038[1]",
+"address": "서울특별시 양천구 목동 791-20 에덴하이빌  제3층 제302호",
+"sgg": "양천구",
+"emd": "목동",
+"type": "다세대",
+"area": 29.71,
+"land_area": 15.71,
+"appr_manwon": 24100,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 24100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C72OTDUO": {
+"case": "2025타경10903[1]",
+"address": "서울특별시 양천구 신월동 1081 에코빌리지 제103동 제5층 제501호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 41.19,
+"land_area": 26.85,
+"appr_manwon": 40200,
+"rounds": [
+{
+"date": "2026-12-04",
+"low_manwon": 16465,
+"fails": 4
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C28ZNJCZ": {
+"case": "2025타경13785[1]",
+"address": "서울특별시 양천구 신월동 103-5 보노하우스  제2층 제201호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 29.86,
+"land_area": 43.06,
+"appr_manwon": 26700,
+"rounds": [
+{
+"date": "",
+"low_manwon": 17088,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C39DNKMP": {
+"case": "2025타경10341[1]",
+"address": "서울특별시 양천구 신월동 195-31 우진파크빌  제3층 제302호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 27.1,
+"land_area": 46.78,
+"appr_manwon": 19600,
+"rounds": [
+{
+"date": "",
+"low_manwon": 4110,
+"fails": 7
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C47NXQSM": {
+"case": "2025타경12551[1]",
+"address": "서울특별시 양천구 신월동 243-30 다온캐슬  제3층 제303호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 29.91,
+"land_area": 36.6,
+"appr_manwon": 25300,
+"rounds": [
+{
+"date": "",
+"low_manwon": 16192,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C60BRWYN": {
+"case": "2025타경672[1]",
+"address": "서울특별시 양천구 목동 231-203 성재캐슬빌  제지층 제비01호",
+"sgg": "양천구",
+"emd": "목동",
+"type": "다세대",
+"area": 59.8,
+"land_area": 32.47,
+"appr_manwon": 30800,
+"rounds": [
+{
+"date": "",
+"low_manwon": 24640,
+"fails": 1
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C68MFDTR": {
+"case": "2025타경14063[1]",
+"address": "서울특별시 양천구 신월동 99-16 어반리더스  제2층 제203호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 29.66,
+"land_area": 36.92,
+"appr_manwon": 27200,
+"rounds": [
+{
+"date": "",
+"low_manwon": 17408,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C96GZVXK": {
+"case": "2025타경14221[1]",
+"address": "서울특별시 양천구 신월동 60-31 한울팰리스  제5층 제501호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 22.68,
+"land_area": 23.04,
+"appr_manwon": 27200,
+"rounds": [
+{
+"date": "",
+"low_manwon": 17408,
+"fails": 2
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C09JVPDT": {
+"case": "2026타경3894[1]",
+"address": "서울특별시 영등포구 대림동 1101-7 지밸리소홈  제11층 제1119호",
+"sgg": "영등포구",
+"emd": "대림동",
+"type": "다세대",
+"area": 16.1,
+"land_area": 6.22,
+"appr_manwon": 14500,
+"rounds": [
+{
+"date": "",
+"low_manwon": 11600,
+"fails": 1
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C41NZSQG": {
+"case": "2025타경51851[1]",
+"address": "서울특별시 은평구 신사동 17-3 금강블루  2층202호",
+"sgg": "은평구",
+"emd": "신사동",
+"type": "다세대",
+"area": null,
+"land_area": 52.3,
+"appr_manwon": 36200,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 36200,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C44JLVXY": {
+"case": "2026타경50790[1]",
+"address": "서울특별시 은평구 신사동 190-7  지하층",
+"sgg": "은평구",
+"emd": "신사동",
+"type": "다세대",
+"area": 44.43,
+"land_area": 33.37,
+"appr_manwon": 14000,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 14000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C61PISYQ": {
+"case": "2026타경50769[1]",
+"address": "서울특별시 은평구 대조동 89-361  2층나호",
+"sgg": "은평구",
+"emd": "대조동",
+"type": "다세대",
+"area": 44.01,
+"land_area": 29.44,
+"appr_manwon": 32800,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 32800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C66SPUNM": {
+"case": "2026타경50789[1]",
+"address": "서울특별시 은평구 신사동 15-57  3층301호",
+"sgg": "은평구",
+"emd": "신사동",
+"type": "다세대",
+"area": 54.34,
+"land_area": 44.09,
+"appr_manwon": 25600,
+"rounds": [
+{
+"date": "2026-11-17",
+"low_manwon": 25600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C41UCGGP": {
+"case": "2026타경100351[1]",
+"address": "서울특별시 종로구 창신동 255-1  5층513호",
+"sgg": "종로구",
+"emd": "창신동",
+"type": "다세대",
+"area": 15.64,
+"land_area": 11.1,
+"appr_manwon": 28000,
+"rounds": [
+{
+"date": "2026-11-18",
+"low_manwon": 28000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
