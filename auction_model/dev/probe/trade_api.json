@@ -1,6 +1,62 @@
 {
  "len": 251691,
- "scripts": [],
+ "scripts": [
+  "/_next/static/At13y0LZ711gPmzJHR-Fl/_buildManifest.js",
+  "/_next/static/At13y0LZ711gPmzJHR-Fl/_ssgManifest.js",
+  "/_next/static/chunks/12007-07d1b72e8f85d6ac.js",
+  "/_next/static/chunks/12936-4d0baf8f0ebe98d1.js",
+  "/_next/static/chunks/13122-50dd92ffa87930ab.js",
+  "/_next/static/chunks/15433-0ef3e43988ea53ff.js",
+  "/_next/static/chunks/19811.25d1e5eca71b51ac.js",
+  "/_next/static/chunks/22447-42e8002ecbe1c5a6.js",
+  "/_next/static/chunks/25853-1a26a6193a480d87.js",
+  "/_next/static/chunks/27105-06c3fbdfd0cec4a7.js",
+  "/_next/static/chunks/28994-dc9da39ac714253c.js",
+  "/_next/static/chunks/31059-c0bc0797c81d8833.js",
+  "/_next/static/chunks/32780-910af9939ccfcf8b.js",
+  "/_next/static/chunks/36492-0463482c2c413606.js",
+  "/_next/static/chunks/40782-cfc7d55338cf03da.js",
+  "/_next/static/chunks/43872-8565550437533a42.js",
+  "/_next/static/chunks/47561-8fa56dfbc34fa225.js",
+  "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/_next/static/chunks/48764-a0b9f4dccc2a1c3d.js",
+  "/_next/static/chunks/49929-47fae2120a09aecb.js",
+  "/_next/static/chunks/5011-5d3ae96fd8c5d780.js",
+  "/_next/static/chunks/50278-afb5543d9ff0b584.js",
+  "/_next/static/chunks/55137.593ff21c03afe689.js",
+  "/_next/static/chunks/5529-9a7e35e702089499.js",
+  "/_next/static/chunks/59220.f536be8eef317319.js",
+  "/_next/static/chunks/63653.d91a0294a8014529.js",
+  "/_next/static/chunks/67194-070545ab33718dd2.js",
+  "/_next/static/chunks/71102-1fe6b689596cff23.js",
+  "/_next/static/chunks/71534-0d233cea7808b2ef.js",
+  "/_next/static/chunks/71836-08904b123029fe46.js",
+  "/_next/static/chunks/71871-2e2c7ccab019d8c4.js",
+  "/_next/static/chunks/72135-b39669e91ead67b8.js",
+  "/_next/static/chunks/72695.b739a78c78fb8312.js",
+  "/_next/static/chunks/73256.c3c842a98c709637.js",
+  "/_next/static/chunks/75196-235a7c9eda511bef.js",
+  "/_next/static/chunks/7698.7d93f46fa6b2ab25.js",
+  "/_next/static/chunks/77820-a5c1c5d4af12972b.js",
+  "/_next/static/chunks/79759.832bf7a1912857fc.js",
+  "/_next/static/chunks/80377.a94a7600306a89b6.js",
+  "/_next/static/chunks/80924.6aaff8ee8e166760.js",
+  "/_next/static/chunks/81447-c2890c78b2e3746c.js",
+  "/_next/static/chunks/81661-34e120cb839d2150.js",
+  "/_next/static/chunks/81848-52b9ae96cb1951e5.js",
+  "/_next/static/chunks/87873.6952bd9623e9ef60.js",
+  "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/_next/static/chunks/90407.f39e176e347f9f3a.js",
+  "/_next/static/chunks/9136-7a52ef57b40ab0e0.js",
+  "/_next/static/chunks/93694-494abf792ddb0e66.js",
+  "/_next/static/chunks/framework-58fe5b0c087fd9da.js",
+  "/_next/static/chunks/main-a11093835117124f.js",
+  "/_next/static/chunks/pages/_app-1d93d223519bc695.js",
+  "/_next/static/chunks/pages/realty/danji/%5Bid%5D-10c49a88ac179b9e.js",
+  "/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+  "/_next/static/chunks/webpack-26f435125bc9b5d0.js"
+ ],
  "buildId": "At13y0LZ711gPmzJHR-Fl",
  "runtimeConfig": null,
  "page": "/realty/danji/[id]",
@@ -49,5 +105,191 @@
   ]
  },
  "tf_sample": "{\"pyeong\": 33, \"recent\": [{\"date\": \"2026.10.06\", \"dong\": null, \"floor\": 11, \"price\": 42500, \"direct\": false}, {\"date\": \"2026.09.29\", \"dong\": null, \"floor\": 40, \"price\": 40300, \"direct\": false}, {\"date\": \"2026.09.06\", \"dong\": null, \"floor\": 4, \"price\": 41400, \"direct\": false}, {\"date\": \"2026.08.29\", \"dong\": null, \"floor\": 34, \"price\": 43500, \"direct\": false}, {\"date\": \"2026.07.17\", \"dong\": null, \"floor\": 31, \"price\": 42000, \"direct\": false}, {\"date\": \"2026.07.14\", \"dong\": \"104동\", \"floor\": 15, \"price\": 40900, \"direct\": false}, {\"date\": \"2026.07.10\", \"dong\": \"102동\", \"floor\": 20, \"price\": 41800, \"direct\": false}, {\"date\": \"2026.07.01\", \"dong\": \"103동\", \"floor\": 31, \"price\": 41900, \"direct\": false}, {\"date\": \"2026.06.26\", \"dong\": \"104동\", \"floor\": 35, \"price\": 41300, \"direct\": false}, {\"date\": \"2026.06.22\", \"dong\": \"103동\", \"floor\": 43, \"price\": 43800, \"direct\": false}], \"count12m\": 33, \"yearChangePct\": -0.9, \"listing\": {\"count\": 43, \"min\": 40000, \"max\": 49000, \"median\": 42000}}",
- "api_hits": {}
+ "api_hits": {
+  "/api/og/danji/": "/_next/static/chunks/12007-07d1b72e8f85d6ac.js",
+  "/api/data/ai/predict?danjiId=": "/_next/static/chunks/12007-07d1b72e8f85d6ac.js",
+  "https://public-resources.richgo.ai/pictogram/나무둘.svg": "/_next/static/chunks/19811.25d1e5eca71b51ac.js",
+  "v2_log_DanjiDetail_prototype_": "/_next/static/chunks/22447-42e8002ecbe1c5a6.js",
+  "v2_log_DanjiComparison_": "/_next/static/chunks/22447-42e8002ecbe1c5a6.js",
+  "https://richgo.page.link/u9dy": "/_next/static/chunks/22447-42e8002ecbe1c5a6.js",
+  "/v2/Danji/": "/_next/static/chunks/25853-1a26a6193a480d87.js",
+  "https://m.richgo.ai": "/_next/static/chunks/32780-910af9939ccfcf8b.js",
+  "https://m.richgo.ai/opengraph/opengraph.png": "/_next/static/chunks/32780-910af9939ccfcf8b.js",
+  "https://m.richgo.ai/opengraph/signal_share": "/_next/static/chunks/32780-910af9939ccfcf8b.js",
+  "/api/data/bjd/danji": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/api/og/danji-map/": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/api/data/danji/chart": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/api/data/nh/app/transfer-screen?type=HistoryBack&kbDanjiId=": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/api/data/nh/app/transfer-screen?type=Loan&kbDanjiId=": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/api/data/danji/": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/v2/Danji/resident-day/": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "https://m.richgo.ai/api/og/danji/": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "https://m.richgo.ai/api/og/danji-map/": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "https://m.richgo.ai/realty/danji/": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "https://m.richgo.ai/realty/region/": "/_next/static/chunks/48733-6381742b423f72bc.js",
+  "/v2/danji/": "/_next/static/chunks/5011-5d3ae96fd8c5d780.js",
+  "/v2/danji/academy/": "/_next/static/chunks/5011-5d3ae96fd8c5d780.js",
+  "/api/data/map/danji": "/_next/static/chunks/50278-afb5543d9ff0b584.js",
+  "https://api-m.richgo.ai": "/_next/static/chunks/55137.593ff21c03afe689.js",
+  "https://public-resources.richgo.ai": "/_next/static/chunks/71534-0d233cea7808b2ef.js",
+  "https://richgo.channel.io/lounge?": "/_next/static/chunks/79759.832bf7a1912857fc.js",
+  "https://public-resources.richgo.ai/logo/defalut_app_end.png": "/_next/static/chunks/79759.832bf7a1912857fc.js",
+  "https://m.richgo.ai/#organization": "/_next/static/chunks/79759.832bf7a1912857fc.js",
+  "https://m.richgo.ai/apple-touch-icon.png": "/_next/static/chunks/79759.832bf7a1912857fc.js",
+  "https://m.richgo.ai/realty/search?q={search_term_string}": "/_next/static/chunks/79759.832bf7a1912857fc.js",
+  "/v2/Fortune/danji/": "/_next/static/chunks/81661-34e120cb839d2150.js",
+  "/v2/Fortune/danjis": "/_next/static/chunks/81661-34e120cb839d2150.js",
+  "/v2/Danji/decline-race": "/_next/static/chunks/87873.6952bd9623e9ef60.js",
+  "/api/data/danji/property/": "/_next/static/chunks/87873.6952bd9623e9ef60.js",
+  "/v2/Danji/rival-race": "/_next/static/chunks/87873.6952bd9623e9ef60.js",
+  "/api/data/danji/price/history": "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/api/data/danji/onepage?": "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/api/data/danji/view/": "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/api/data/danji/price/gap-chart/history": "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/api/data/goodnews/aroundDanji/": "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/api/data/danji/envirment": "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/api/wiki/by-danji/": "/_next/static/chunks/88937-c2cd94674ff3099c.js",
+  "/api/data/danji-id/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/price/opengoods": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/price/real-transaction": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/opengoods/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/opengoods-board/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/onepage": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/auction/delivery/history/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/checklist/danji/time-series/invest-score/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/v2/checklist-danji/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/v2/checklist-danji/indicator/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/v2/checklist/danji/purchase-info/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/v2/checklist/danji/purchase": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/molit/history": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/opengoods/history": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/opengoods/today": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/opengoods/diff-price": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/molit/diff-price": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/opengoods/diff-count": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/opengoods/today-count/chart": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/dong-ho/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/danji/income/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/search/history": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "/api/data/search/history/": "/_next/static/chunks/88957-42911a8c8238a7db.js",
+  "https://public-resources.richgo.ai/next-resources/production/1dfe0f44/_next/": "/_next/static/chunks/webpack-26f435125bc9b5d0.js"
+ },
+ "shape_priceTrend": {
+  "pyeong": 33,
+  "startMonth": "2020-01",
+  "start": 36972,
+  "latestMonth": "2026-11",
+  "latest": 41361,
+  "sinceYears": 7,
+  "sincePct": 11.9,
+  "peakMonth": "2021-09",
+  "peak": 55037,
+  "fromPeakPct": -24.8,
+  "troughMonth": "2020-03",
+  "trough": 36310,
+  "change1y": -0.9,
+  "change3y": -0.1,
+  "change5y": -24,
+  "jeonseRate": 81
+ },
+ "shape_priceSnapshot": {
+  "pyeong": 33,
+  "trade": {
+   "price": 42500,
+   "floor": 11,
+   "date": "2026.10.06",
+   "direct": false
+  },
+  "minOffer": {
+   "price": 40000,
+   "floor": "3",
+   "date": "2026.11.04"
+  }
+ },
+ "shape_dehydratedState": {
+  "mutations": [
+   0,
+   null
+  ],
+  "queries": [
+   1,
+   {
+    "state": {
+     "data": "NoneType",
+     "dataUpdateCount": "int",
+     "dataUpdatedAt": "int",
+     "error": "NoneType",
+     "errorUpdateCount": "int",
+     "errorUpdatedAt": "int",
+     "fetchFailureCount": "int",
+     "fetchFailureReason": "NoneType",
+     "fetchMeta": "NoneType",
+     "isInvalidated": "bool",
+     "status": "str",
+     "fetchStatus": "str"
+    },
+    "queryKey": [
+     2,
+     "str"
+    ],
+    "queryHash": "[\"reasonHomeworkCard\",\"a0AkrGl\"]"
+   }
+  ]
+ },
+ "shape_forecastFact": {
+  "pyeong": 33,
+  "basePrice": 41361,
+  "baseDate": "2026-11-02",
+  "predictedPrice": 41638,
+  "predictedAt": "2026-11-02",
+  "ratePct": 0.7,
+  "targetMonth": "2027년 2월"
+ },
+ "shape_hogaFact": {
+  "pyeong": 33,
+  "privateArea": 74.51,
+  "baseWeek": "2026-11-04",
+  "listingCount": 43,
+  "bands": [
+   3,
+   {
+    "band": "저",
+    "floorFrom": 3,
+    "floorTo": 15,
+    "lowMin": 39500,
+    "modeMin": 41500,
+    "modeMax": 45000
+   }
+  ]
+ },
+ "shape_analyze": {
+  "invest": {
+   "invest": {
+    "score": 66.5,
+    "rate": 21.28,
+    "chart": {
+     "data": "list"
+    }
+   },
+   "mdd": {
+    "rank": 14.43,
+    "value": 0,
+    "chart": {
+     "data": "list"
+    }
+   },
+   "bars": [
+    4,
+    {
+     "title": "str",
+     "text": "str",
+     "topRate": "int"
+    }
+   ],
+   "annualReturn": {
+    "rank": -0.01,
+    "value": 14.87
+   }
+  }
+ }
 }
