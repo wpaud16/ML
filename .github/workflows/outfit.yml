@@ -1,0 +1,65 @@
+name: outfit (아침 날씨·코디)
+
+# 매일 05:47 KST(20:47 UTC). Claude 예약 작업 "아침 날씨·코디 브리핑"을 대신하는 Python 버전 (2026-11-05~).
+# 코드 수정 push 로 실행되면 제목에 [테스트].
+on:
+  schedule:
+    - cron: '47 20 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'outfit/run_outfit.py'
+      - 'outfit/weather.py'
+      - 'outfit/looks.py'
+      - '.github/workflows/outfit.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: outfit
+  cancel-in-progress: false
+
+jobs:
+  outfit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk > /dev/null
+          pip install -q playwright pillow
+          python -m playwright install --with-deps chromium > /dev/null
+      - name: Outfit
+        working-directory: outfit
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          TEST_MODE: ${{ github.event_name == 'push' && '1' || '0' }}
+        run: python run_outfit.py
+      - name: Commit page
+        if: always()
+        run: |
+          git config user.name "outfit-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add outfit/20*/
+          git diff --cached --quiet && exit 0
+          git commit -m "outfit: $(TZ=Asia/Seoul date +%F) 코디 카드"
+          for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0; sleep 10; done
+          exit 1
+      - name: Send mail (페이지 반영 1~2분 대기 후)
+        if: always()
+        working-directory: outfit
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: |
+          sleep 90
+          python run_outfit.py send
