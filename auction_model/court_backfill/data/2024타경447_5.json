@@ -1,0 +1,133 @@
+{
+ "key": "2024타경447[5]",
+ "court": "서울동부지방법원",
+ "checked": "2026-11-04",
+ "available": true,
+ "case_info": {
+  "received_date": "2024-02-14",
+  "start_decision_date": "2024-02-15",
+  "case_kind": "부동산임의경매",
+  "claim_amount_manwon": 177073,
+  "creditor_type": null,
+  "end_result": "미종국",
+  "end_date": null,
+  "duplicate_cases": []
+ },
+ "spec": null,
+ "occupancy": null,
+ "events": null,
+ "schedule": null,
+ "parties": [
+  {
+   "role": "승계인",
+   "type": null
+  },
+  {
+   "role": "채권자",
+   "type": null
+  },
+  {
+   "role": "근저당권부질권자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권부질권자",
+   "type": null
+  },
+  {
+   "role": "근저당권부질권자",
+   "type": null
+  },
+  {
+   "role": "채무자겸소유자",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": null
+  },
+  {
+   "role": "임차인",
+   "type": null
+  },
+  {
+   "role": "임차인",
+   "type": null
+  },
+  {
+   "role": "임차인",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": "개인"
+  },
+  {
+   "role": "임차인",
+   "type": null
+  },
+  {
+   "role": "임차인",
+   "type": null
+  },
+  {
+   "role": "근저당권자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": "개인"
+  },
+  {
+   "role": "근저당권자",
+   "type": "개인"
+  },
+  {
+   "role": "가압류권자",
+   "type": "개인"
+  },
+  {
+   "role": "압류권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "교부권자",
+   "type": null
+  },
+  {
+   "role": "유치권자",
+   "type": "개인"
+  },
+  {
+   "role": "주택임차권자",
+   "type": "개인"
+  }
+ ],
+ "error": null,
+ "notes": [
+  "물건상세조회 비활성 (물건 종국 등)",
+  "문건/송달 실패: Timeout 30000ms exceeded.",
+  "기일내역 실패: Timeout 30000ms exceeded.",
+  "현황조사서 실패: Timeout 30000ms exceeded."
+ ]
+}
