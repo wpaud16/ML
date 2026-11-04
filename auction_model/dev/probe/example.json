@@ -1,0 +1,228 @@
+{
+ "2025타경72200[1]": {
+  "nearby": {
+   "eok": 15.35,
+   "n_danji": 13,
+   "basis": "교문동 연식 ±10년",
+   "per_pyeong_manwon": 3267,
+   "self_per_pyeong_manwon": 3352,
+   "price_date": "2026.11.02",
+   "detail": [
+    {
+     "name": "대명빌리지",
+     "age": 34,
+     "per_pyeong": 2609
+    },
+    {
+     "name": "교문대우,동양고속",
+     "age": 33,
+     "per_pyeong": 3773
+    },
+    {
+     "name": "한가람LG,대림",
+     "age": 33,
+     "per_pyeong": 3766
+    },
+    {
+     "name": "구리우성,한양",
+     "age": 33,
+     "per_pyeong": 3721
+    },
+    {
+     "name": "하나",
+     "age": 33,
+     "per_pyeong": 3267
+    }
+   ]
+  },
+  "weighted": {
+   "eok": 11.73,
+   "cap_by_offer": false,
+   "floor": 12,
+   "parts": [
+    {
+     "key": "trade3",
+     "eok": 11.9,
+     "weight": 0.6,
+     "note": "3개월 거래 없음 → 2026-05 실거래(추세 보정)"
+    },
+    {
+     "key": "floor",
+     "eok": 10.95,
+     "weight": 0.2,
+     "note": "층 보정 6개월 실거래 3건 (물건 12층)"
+    },
+    {
+     "key": "offer",
+     "eok": 11.8,
+     "weight": 0.15,
+     "note": "매물 최저 호가 (매물 4건)"
+    },
+    {
+     "key": "appr",
+     "eok": 12.58,
+     "weight": 0.05,
+     "note": "감정가 × 1년 시세 변동 +22.1%"
+    }
+   ]
+  },
+  "merged": {
+   "richgo_eok": 11.2,
+   "trade": {
+    "eok": 10.95,
+    "date": "2026-05-16",
+    "months_ago": 5.7,
+    "adj_eok": 11.9,
+    "trend_since_pct": 8.7
+   },
+   "kb": {
+    "eok": 10.6,
+    "date": "2026-10-01",
+    "adj_eok": 10.6
+   },
+   "offer": {
+    "min_eok": 11.8,
+    "max_eok": 12.0,
+    "count": 4,
+    "rep_eok": 11.9
+   },
+   "trend": {
+    "3m_pct": 4.1,
+    "6m_pct": 10.8,
+    "12m_pct": 22.1
+   },
+   "est_eok": 11.55,
+   "range_eok": [
+    10.6,
+    15.35
+   ],
+   "used": [
+    "리치고",
+    "실거래",
+    "KB",
+    "주변"
+   ],
+   "spread_pct": 44.8,
+   "low_vs_est_pct": 62,
+   "richgo_vs_est_pct": 0.0,
+   "flags": [
+    "출처 간 차이 큼",
+    "주변 단지 시세가 이 단지보다 +37%"
+   ],
+   "nearby": {
+    "eok": 15.35,
+    "n_danji": 13,
+    "basis": "교문동 연식 ±10년",
+    "per_pyeong_manwon": 3267,
+    "self_per_pyeong_manwon": 3352,
+    "price_date": "2026.11.02",
+    "detail": [
+     {
+      "name": "대명빌리지",
+      "age": 34,
+      "per_pyeong": 2609
+     },
+     {
+      "name": "교문대우,동양고속",
+      "age": 33,
+      "per_pyeong": 3773
+     },
+     {
+      "name": "한가람LG,대림",
+      "age": 33,
+      "per_pyeong": 3766
+     },
+     {
+      "name": "구리우성,한양",
+      "age": 33,
+      "per_pyeong": 3721
+     },
+     {
+      "name": "하나",
+      "age": 33,
+      "per_pyeong": 3267
+     }
+    ]
+   },
+   "nearby_vs_own_pct": 37.1
+  },
+  "trades": [
+   {
+    "date": "2026.05.16",
+    "dong": "111동",
+    "floor": 13,
+    "price": 109500,
+    "direct": false
+   },
+   {
+    "date": "2026.05.15",
+    "dong": "107동",
+    "floor": 4,
+    "price": 113000,
+    "direct": false
+   },
+   {
+    "date": "2026.05.05",
+    "dong": "107동",
+    "floor": 19,
+    "price": 97000,
+    "direct": false
+   },
+   {
+    "date": "2026.05.04",
+    "dong": "102동",
+    "floor": 14,
+    "price": 100000,
+    "direct": false
+   },
+   {
+    "date": "2026.04.24",
+    "dong": "107동",
+    "floor": 10,
+    "price": 110000,
+    "direct": false
+   },
+   {
+    "date": "2026.04.21",
+    "dong": "107동",
+    "floor": 14,
+    "price": 107000,
+    "direct": false
+   },
+   {
+    "date": "2026.03.25",
+    "dong": "102동",
+    "floor": 4,
+    "price": 98000,
+    "direct": false
+   },
+   {
+    "date": "2026.01.31",
+    "dong": "107동",
+    "floor": 9,
+    "price": 97500,
+    "direct": false
+   },
+   {
+    "date": "2026.01.28",
+    "dong": "102동",
+    "floor": 18,
+    "price": 99000,
+    "direct": false
+   },
+   {
+    "date": "2026.01.16",
+    "dong": "102동",
+    "floor": 6,
+    "price": 96500,
+    "direct": false
+   }
+  ],
+  "listing": {
+   "count": 4,
+   "min": 118000,
+   "max": 120000,
+   "median": 118000
+  }
+ }
+}
