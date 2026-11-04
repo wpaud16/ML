@@ -5,6 +5,7 @@ import datetime as dt, os, traceback
 import google_api as g
 import quote
 import schedule_doc
+import auction_mail
 
 TO = os.environ.get('BRIEF_TO', 'wpaud16@naver.com')
 TEST = os.environ.get('TEST_MODE', '1') == '1'
@@ -30,7 +31,12 @@ def main():
     except Exception:
         traceback.print_exc(); fails.append('오늘의 할 일 (문서 읽기/쓰기)')
 
-    # TODO: STEP 2 증시 / 3 경매
+    # TODO: STEP 2 증시
+
+    try:
+        h, t, _ = auction_mail.build(today); H.append(h); T.append(t)
+    except Exception:
+        traceback.print_exc(); fails.append('경매 알림')
 
     top_h = top_t = ''
     if TEST:
