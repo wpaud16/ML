@@ -4,6 +4,7 @@ TEST_MODE=1 (기본): 제목에 [테스트], 구글 문서·트래커는 읽기�
 import datetime as dt, os, traceback
 import google_api as g
 import quote
+import schedule_doc
 
 TO = os.environ.get('BRIEF_TO', 'wpaud16@naver.com')
 TEST = os.environ.get('TEST_MODE', '1') == '1'
@@ -22,7 +23,14 @@ def main():
         traceback.print_exc(); q = None; fails.append('오늘의 문장')
     h, t = quote.render(q); H.append(h); T.append(t)
 
-    # TODO: STEP 1 할 일 / 1b 식사 / 2 증시 / 3 경매
+    try:
+        r = schedule_doc.plan(today, write=not TEST)
+        h, t = schedule_doc.render(r); H.append(h); T.append(t)
+        fails += r['warnings']
+    except Exception:
+        traceback.print_exc(); fails.append('오늘의 할 일 (문서 읽기/쓰기)')
+
+    # TODO: STEP 2 증시 / 3 경매
 
     top_h = top_t = ''
     if TEST:
@@ -31,6 +39,9 @@ def main():
     if fails:
         top_h += f'<p style="color:#d93025">⚠️ 실패: {", ".join(fails)}</p>'
         top_t += f'⚠️ 실패: {", ".join(fails)}\n\n'
+    H.append('<div style="color:#777;font-size:12px">📝 <a href="https://docs.google.com/document/d/16r3j5QD_VJZKxL9hOxbv-Aj58jNbp92nCM4szeKrq6Y/edit">JM\'s Schedule 문서 열기</a><br>'
+             '끝낸 일(운동·큐티·독서 포함)은 문서에서 체크해 주세요. 내일 아침 자동 정리됩니다.</div>')
+    T.append('📝 문서: https://docs.google.com/document/d/16r3j5QD_VJZKxL9hOxbv-Aj58jNbp92nCM4szeKrq6Y/edit')
     html_body = ('<div style="font-family:-apple-system,Segoe UI,Malgun Gothic,sans-serif;max-width:600px;'
                  'margin:auto;padding:8px;line-height:1.5;color:#222">' + top_h + DIV.join(H) + '</div>')
     subject = ('[테스트] ' if TEST else '') + f"[JM's Schedule] {label} 오늘의 할 일"
