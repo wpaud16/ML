@@ -20,9 +20,16 @@ def recent_titles(today):
     return out
 
 
+def sent_mark(today):
+    return os.path.join(HERE, today.isoformat(), 'sent.txt')
+
+
 def main():
     fail = []
     d, today, rain_hour, rainy = weather.build()
+    # 하루 1통 (2026-11-05): GitHub 예약 실행이 몇 시간씩 밀려 수동 실행 뒤 늦게 또 돌 수 있음
+    if os.environ.get('TEST_MODE') != '1' and os.path.exists(sent_mark(today)):
+        print('오늘 메일 이미 보냄 → 건너뜀'); open(os.path.join(HERE, '.skip'), 'w').close(); return
     d['looks'] = looks.pick(int(d['tmin']), int(d['tmax']), rainy, recent_titles(today), today.toordinal())
     out = os.path.join(HERE, today.isoformat()); os.makedirs(out, exist_ok=True)
     json.dump(d, open(os.path.join(out, 'd.json'), 'w'), ensure_ascii=False, indent=1)
@@ -41,14 +48,18 @@ def main():
         btn = f'<p style="color:#d93025;font-size:13px">⚠️ 실패: {", ".join(fail)}</p>' + (
             f"<p>기온 {d['tmin']}°/{d['tmax']}° · {d['rain_title']}<br>코디: " + ' / '.join(l['title'] for l in d['looks']) + '</p>')
     print(subj, url)
-    json.dump(dict(subject=subj, html=btn, text=f'오늘의 날씨·코디 보기: {url}'), open(os.path.join(HERE, '.mail.json'), 'w'), ensure_ascii=False)
+    json.dump(dict(subject=subj, test=os.environ.get('TEST_MODE') == '1', day=today.isoformat(), html=btn, text=f'오늘의 날씨·코디 보기: {url}'), open(os.path.join(HERE, '.mail.json'), 'w'), ensure_ascii=False)
 
 
 def send():
+    if os.path.exists(os.path.join(HERE, '.skip')):
+        print('skip'); return
     m = json.load(open(os.path.join(HERE, '.mail.json')))
     import google_api as g
     g.send_mail(TO, m['subject'], m['html'], m['text'])
     print('sent:', m['subject'])
+    if not m.get('test'):
+        open(os.path.join(HERE, m['day'], 'sent.txt'), 'w').write(m['subject'] + '\n')
 
 
 if __name__ == '__main__':
