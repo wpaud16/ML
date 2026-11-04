@@ -11,9 +11,12 @@ def _creds():
     p = os.environ.get('GOOGLE_CREDS_FILE')  # 로컬 테스트용
     if p:
         return json.load(open(p))
-    return dict(client_id=os.environ['GOOGLE_CLIENT_ID'],
-                client_secret=os.environ['GOOGLE_CLIENT_SECRET'],
-                refresh_token=os.environ['GOOGLE_REFRESH_TOKEN'])
+    v = lambda k: os.environ.get(k, '').strip().strip('"\'').strip()
+    c = dict(client_id=v('GOOGLE_CLIENT_ID'), client_secret=v('GOOGLE_CLIENT_SECRET'), refresh_token=v('GOOGLE_REFRESH_TOKEN'))
+    # 값 자체는 출력하지 않고 형태만 점검
+    print('secrets:', {k: (len(x), x[:4] + '…') if k == 'refresh_token' else len(x) for k, x in c.items()},
+          'client_id 형식 OK' if c['client_id'].endswith('.apps.googleusercontent.com') else 'client_id 형식 이상')
+    return c
 
 
 def token():
@@ -21,7 +24,10 @@ def token():
     if _TOKEN is None:
         c = _creds()
         d = urllib.parse.urlencode(dict(c, grant_type='refresh_token')).encode()
-        _TOKEN = json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', d, timeout=30))['access_token']
+        try:
+            _TOKEN = json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', d, timeout=30))['access_token']
+        except urllib.error.HTTPError as e:
+            raise RuntimeError('구글 토큰 발급 실패: ' + e.read().decode()[:300])
     return _TOKEN
 
 
