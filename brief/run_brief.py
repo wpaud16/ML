@@ -7,6 +7,7 @@ import quote
 import schedule_doc
 import auction_mail
 import market
+import gemini
 
 TO = os.environ.get('BRIEF_TO', 'wpaud16@naver.com')
 TEST = os.environ.get('TEST_MODE', '1') == '1'
@@ -37,7 +38,13 @@ def main():
         print('market errors:', errs)
         if all(v is None for v in data.values()):
             fails.append('증시 숫자')
-        h, t = market.render(data, errs); H.append(h); T.append(t)
+        ai = None
+        try:
+            nums = market.render(data, errs)[1]
+            ai = gemini.market_summary(today.isoformat(), nums)
+        except Exception:
+            traceback.print_exc(); fails.append('증시 해설(Gemini)')
+        h, t = market.render(data, errs, ai); H.append(h); T.append(t)
     except Exception:
         traceback.print_exc(); fails.append('증시 숫자')
 
