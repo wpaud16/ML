@@ -1,22 +1,34 @@
 """증시 해설 — Google Gemini + Google 검색 (환경변수 GEMINI_API_KEY 가 있을 때만)."""
-import datetime as dt, json, os, re, urllib.request
+import datetime as dt, json, os, re, urllib.request, urllib.error
 
 BASE = 'https://generativelanguage.googleapis.com/v1beta'
 
 
-def _post(url, body):
-    req = urllib.request.Request(url, json.dumps(body).encode(), {'Content-Type': 'application/json'})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        return json.load(r)
+VERTEX = 'https://aiplatform.googleapis.com/v1/publishers/google/models'
+FALLBACK = ['gemini-3-flash', 'gemini-2.5-flash', 'gemini-2.0-flash']
+
+
+def _post(url, body, key):
+    req = urllib.request.Request(url, json.dumps(body).encode(), {'Content-Type': 'application/json', 'x-goog-api-key': key})
+    try:
+        with urllib.request.urlopen(req, timeout=180) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f'{e.code}: {e.read().decode()[:300]}')
 
 
 def pick_model(key):
     """GEMINI_MODEL 이 있으면 그것, 없으면 사용 가능한 최신 flash 모델."""
     if os.environ.get('GEMINI_MODEL'):
         return os.environ['GEMINI_MODEL']
-    with urllib.request.urlopen(f'{BASE}/models?key={key}&pageSize=200', timeout=30) as r:
-        ms = [m['name'].split('/')[-1] for m in json.load(r).get('models', [])
-              if 'generateContent' in m.get('supportedGenerationMethods', [])]
+    try:
+        req = urllib.request.Request(f'{BASE}/models?pageSize=200', headers={'x-goog-api-key': key})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            ms = [m['name'].split('/')[-1] for m in json.load(r).get('models', [])
+                  if 'generateContent' in m.get('supportedGenerationMethods', [])]
+    except Exception as e:
+        print('model list failed:', str(e)[:120])
+        return None
     ok = [m for m in ms if re.fullmatch(r'gemini-\d+(\.\d+)?-flash', m)]
     ok.sort(key=lambda m: float(re.search(r'\d+(\.\d+)?', m).group()))
     return ok[-1] if ok else 'gemini-2.5-flash'
@@ -42,11 +54,20 @@ def market_summary(today, numbers_text):
     key = os.environ.get('GEMINI_API_KEY', '').strip()
     if not key:
         return None
-    model = pick_model(key)
-    print('gemini model:', model)
     body = {'contents': [{'parts': [{'text': PROMPT.format(today=today, numbers=numbers_text)}]}],
             'tools': [{'google_search': {}}], 'generationConfig': {'temperature': 0.2}}
-    r = _post(f'{BASE}/models/{model}:generateContent?key={key}', body)
+    m0 = pick_model(key)
+    tries = [(BASE + '/models', m) for m in ([m0] if m0 else FALLBACK)] + [(VERTEX, m) for m in ([m0] if m0 else []) + FALLBACK]
+    r, errs = None, []
+    for base, model in tries:  # AI Studio 키(AIza…)와 Vertex AI 키(AQ.…) 모두 시도
+        try:
+            r = _post(f'{base}/{model}:generateContent', body, key)
+            print('gemini ok:', base.split('/')[2], model)
+            break
+        except Exception as e:
+            errs.append(f'{base.split("/")[2]} {model}: {str(e)[:150]}')
+    if r is None:
+        raise RuntimeError('Gemini 호출 실패\n' + '\n'.join(errs))
     txt = ''.join(p.get('text', '') for p in r['candidates'][0]['content']['parts'])
     m = re.search(r'\{.*\}', txt, re.S)
     return json.loads(m.group())
