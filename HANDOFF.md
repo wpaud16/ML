@@ -1,0 +1,69 @@
+# 세션 인계 (2026-11-05 새벽 기준)
+
+새 세션 시작 시: 이 문서를 먼저 읽고 이어서 진행. 저장소 wpaud16/ML (public).
+- 연결: `add_repo owner=wpaud16 repo=ML access=push` → `git clone --depth 1 https://github.com/wpaud16/ml /home/user/ml`
+- push: `git fetch origin main && git rebase origin/main && git push origin HEAD:main` (봇 커밋이 잦음)
+- **이 작업공간에서 리치고·github.io·야후·네이버 접속 불가** → 리치고가 필요한 확인은 `auction_model/dev/probe_richgo.py` 를 고쳐 push 하면
+  Actions(`probe_richgo.yml`)가 실행·결과를 `dev/probe/` 에 커밋함. 실행 상태는 공개 API로 확인:
+  `curl -s https://api.github.com/repos/wpaud16/ML/actions/workflows/<파일>.yml/runs?per_page=1`
+- GitHub 버튼(Run workflow)은 직접 못 누름(gh 토큰 없음) → push 로 실행되는 워크플로 사용.
+- 구글 인증: GitHub Secrets `GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / GOOGLE_REFRESH_TOKEN` (OAuth 앱 jm-brief, 프로덕션 게시).
+  로컬 테스트용 refresh token 파일은 이전 세션 scratchpad 에만 있었음(삭제됨) → 로컬 메일 테스트가 필요하면 사용자에게 OAuth 재발급
+  (google_api.py 참고: client JSON + 인증 URL → code 교환) 또는 Actions 로 테스트.
+
+## 1. 매일 자동 실행 (KST)
+| 시각 | 무엇 | 어디서 | 상태 |
+|---|---|---|---|
+| 03:00 | 법원자료 수집(임차인·문건) | 노트북 LAPTOP-M47J0JTR 작업 스케줄러 `AuctionTenants` | 11/4 업로드 누락 원인 미확인 |
+| 03:40 | 경매 예측 배치 → `predictions/latest.json` + 웹페이지 `auction_model/page/` | Actions `auction_predict.yml` (코드 push 로도 실행) | 76~151분 걸렸음 → 속도 개선 반영(아래) |
+| 05:47 | 날씨·코디 메일 | Actions `outfit.yml` → `outfit/run_outfit.py` | **Python 전환 완료, Claude 예약 작업 trig_014ofhU8tyCW8NDDpN3Nd2mT 끔** |
+| 07:45 | JM's Schedule 브리핑 | **Claude 예약 작업 trig_0179rvk2D2q2hDcCBZKnbPoX (켜져 있음)** | 비교 기간 |
+| 07:45 | [테스트] JM's Schedule (Python) | Actions `morning_brief.yml` → `brief/run_brief.py` (TEST_MODE=1) | 비교 기간 |
+
+## 2. 아침 브리핑 Python 버전 (`brief/`)
+- `google_api.py`(OAuth·시트·문서·드라이브·Gmail), `quote.py`(오늘의 문장), `schedule_doc.py`(할 일 섹션·이월·운동 Day·식사 시간, 쓰기는 TEST_MODE=0 일 때만 — 임시 문서로 쓰기 검증 완료),
+  `market.py`(증시 숫자: 야후·네이버 보조, 상승 빨강/하락 파랑), `claude_summary.py`(증시 해설: ANTHROPIC_API_KEY 있을 때만, 없으면 빈칸 — **사용자가 해설은 스킵하기로 함**, Gemini 는 429 로 제거),
+  `auction_mail.py`(경매: 아파트/오피스텔 각각 **기일순 2줄 요약 + New 표시**(어제 예측 파일에 없던 물건), 낙찰된 물건·10시 이후 당일 물건 제외, 🔍 예측 불가(단지 못 찾음) 목록, 상세·성적표는 웹페이지 버튼).
+- 사용자 결정: 추적 중 카테고리 없앰, 전체 카드·성적표는 메일에서 빼고 웹페이지에만, 성적표 14일, 증시 해설 스킵.
+- 네이버 앱 다크모드 때문에 색이 안 보일 수 있음(코드 문제 아님).
+- **남은 일**: 며칠 비교 → 사용자 OK 시 `morning_brief.yml` 의 TEST_MODE '0' (문서 쓰기 켜짐·[테스트] 제거) → Claude 브리핑 예약 작업 끄기(update_trigger enabled=false).
+- 트래커 Google Doc(1Ot5SNpm…)은 Python 버전에서 더 이상 쓰지 않음(New 판정은 예측 파일 비교).
+
+## 3. 날씨·코디 (`outfit/`)
+- `weather.py`: Open-Meteo(기상청 모델 → 실패 시 기본), 서울 강동구, 최저/최고·하늘·시간별 강수(오늘, 없으면 이틀 내 다음 비).
+- `looks.py`: 기온대별 노멀코어 코디 후보(브랜드 없음), 최근 3일과 겹치지 않게, 비 오면 어두운 하의·레더 스니커즈.
+- `run_outfit.py`: d.json → 기존 `cards.py`/`page.py` 렌더 → 워크플로가 `outfit/YYYY-MM-DD/` 커밋 → 90초 뒤 링크 메일(`run_outfit.py send`). push 실행은 제목 [테스트].
+- 11/5 테스트 실행 성공(카드 이미지 확인). 11/5 링크 404는 GitHub Pages 배포 대기열 지연 때문이었음 — 다시 404면 Pages 실행 상태 확인.
+
+## 4. 경매 모델·배치 변경 (11/4~11/5)
+- 낙찰된 물건이 리치고 목록에 기일만 바뀌어 남는 버그 → 상세 페이지 낙찰가 있으면 `skipped: 매각완료` (재매각 제외).
+- 성적표: 확률표가 최저가 하나로 모이면 구간 '최저가 단일'. 웹페이지 맨 아래 📊 성적표(최근 14일, results.json, 같은 물건 중복 정리).
+- **주변 시세** `nearby.py`: 아파트 = 리치고 단지 페이지 `emdComparison`(같은 동, 연식 ±10년) 평당가 중앙값 ÷ 이 단지 평당가 비율 × 이 단지 시세
+  (평당가×평수는 대형 평형 부풀림 → 11/5 수정), 오피스텔 = 같은 동 검색 → 전용 ±30% 12개월 실거래. 종합 시세(중앙값)의 4번째 근거.
+- **가중 시세** `nearby.weighted_apt`: 단지 페이지 `?pyeongType=<평>` 의 tradeFacts — 3개월 실거래 60 · 층 보정(1~3층↔중고층 ±4%) 20 · 매물 최저 호가 15(상한) · 감정가×1년 변동 5. 아파트만(오피스텔 미적용). 카드에 ⚖ 줄.
+- 검색 지역 + **하남시(5호선역 도보 15분 = 직선 920m 이내만, station5)**. 남양주·구리는 8호선 920m.
+- 단지 못 찾은 아파트: failed 에 category·risk·court 기록 → 메일·웹페이지 🔍 예측 불가 표시, 법원자료 수집 대상 포함(남양주·구리·하남은 역 판정 불가라 제외).
+- 감정 후 시세 상승 경고(감정가 < 시세 85% & 1년 +8%↑): 카드·메일에 ⚠.
+- 속도 개선: `auction_predictor._fit` 학습 캐시(결과 동일 확인, 물건당 2.9초→0.02초), 같은 단지 페이지 중복 다운로드 제거. 효과(실행 시간) 아직 미확인.
+
+## 5. 백테스트 결론 (아파트 987건, 2024-07~ 월별 시간 순, 현재 평균 오차 5.09%) — 모두 미채택
+| 시도 | 결과 | 파일 |
+|---|---|---|
+| 주변 대비 상대가격(nb_rel) | 5.05% | dev/nearby_bt.py |
+| 감정가 차이×상승률 | 5.09~5.10% | dev/gap_bt.py |
+| 구 최근 낙찰가율·인원 | 5.07% | dev/local_heat_bt.py |
+| 다른 모델(LightGBM·XGBoost·CatBoost·RF·ET·조합) | 최고 5.03%(현재+CatBoost) | dev/models_bt.py |
+- 남은 오차는 경쟁 강도: 입찰 10명+ 물건 평균 +3.1% 과소, 감정후상승 유형 76건 +2.2%·3건 중 1건 +5% 초과.
+- 사례: 2024타경3470 힐스테이트다산 예측 9.29억 → 실제 10.718억(2등 10.7108억), 2024타경64236 거여2단지 14.18 → 15.60억(10명).
+- 다음 가능성: 가중 시세를 모델 기준으로(매일 기록 쌓은 뒤 1~2개월 후 검증), 조회수·관심 등 경쟁 신호 수집. 사용자는 입찰 인원 개선은 어렵다고 봄.
+
+## 6. 미해결·확인할 것
+1. 예측 배치 최신 실행이 끝나면 웹페이지에 주변·가중 시세, 하남, 예측 불가, 성적표 반영 확인 + 실행 시간(속도 개선) 확인.
+2. 2026타경50031: 검색 지역 어디에도 없음(리치고 검색도 없음) → 사용자에게 주소·유형 받아 확인(하남이면 이제 나올 수 있음).
+3. 노트북 법원자료 업로드 누락 원인(이전 인계 문서 auction_model/... 참고), 취하 위험 모델 적용 여부(사용자 결정 대기).
+4. 권한: 사용자가 매번 승인 묻는 것을 싫어함 → 모드 Auto 사용 또는 사용자가 직접 `.claude/settings.json` 에 allow 규칙 커밋(Claude 가 직접 추가하는 건 정책상 거부됨).
+
+## 7. 사용자 선호
+- 항상 한국어, **답변은 압축해서**. 불명확하면 질문, 여러 요청은 하나씩, 중간중간 진행 정리, 목적에서 벗어나지 않기.
+- 사용자는 실행·확인을 Claude 가 직접 하길 원함(버튼 누르기 요청 최소화).
+- 예측은 사실·추정만, 입찰 권유 금지.
