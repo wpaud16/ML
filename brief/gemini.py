@@ -17,10 +17,10 @@ def _post(url, body, key):
         raise RuntimeError(f'{e.code}: {e.read().decode()[:300]}')
 
 
-def pick_model(key):
-    """GEMINI_MODEL 이 있으면 그것, 없으면 사용 가능한 최신 flash 모델."""
+def models(key):
+    """시도할 모델 순서. GEMINI_MODEL 이 있으면 그것만. 무료 한도가 없는 최신 모델이 있어 여러 개를 차례로 시도."""
     if os.environ.get('GEMINI_MODEL'):
-        return os.environ['GEMINI_MODEL']
+        return [os.environ['GEMINI_MODEL']]
     try:
         req = urllib.request.Request(f'{BASE}/models?pageSize=200', headers={'x-goog-api-key': key})
         with urllib.request.urlopen(req, timeout=30) as r:
@@ -28,10 +28,14 @@ def pick_model(key):
                   if 'generateContent' in m.get('supportedGenerationMethods', [])]
     except Exception as e:
         print('model list failed:', str(e)[:120])
-        return None
-    ok = [m for m in ms if re.fullmatch(r'gemini-\d+(\.\d+)?-flash', m)]
-    ok.sort(key=lambda m: float(re.search(r'\d+(\.\d+)?', m).group()))
-    return ok[-1] if ok else 'gemini-2.5-flash'
+        return FALLBACK
+    ver = lambda m: float(re.search(r'\d+(\.\d+)?', m).group())
+    flash = sorted((m for m in ms if re.fullmatch(r'gemini-\d+(\.\d+)?-flash', m)), key=ver, reverse=True)
+    lite = sorted((m for m in ms if re.fullmatch(r'gemini-\d+(\.\d+)?-flash-lite', m)), key=ver, reverse=True)
+    out = []
+    for i in range(max(len(flash), len(lite))):  # 최신 flash → 최신 lite → 그 이전 flash → ...
+        out += flash[i:i + 1] + lite[i:i + 1]
+    return out[:8] or FALLBACK
 
 
 PROMPT = """오늘은 {today} (한국시간 아침)입니다. 아래 숫자는 마지막 거래일 종가입니다.
@@ -56,16 +60,14 @@ def market_summary(today, numbers_text):
         return None
     body = {'contents': [{'parts': [{'text': PROMPT.format(today=today, numbers=numbers_text)}]}],
             'tools': [{'google_search': {}}], 'generationConfig': {'temperature': 0.2}}
-    m0 = pick_model(key)
-    tries = [(BASE + '/models', m) for m in ([m0] if m0 else FALLBACK)] + [(VERTEX, m) for m in ([m0] if m0 else []) + FALLBACK]
     r, errs = None, []
-    for base, model in tries:  # AI Studio 키(AIza…)와 Vertex AI 키(AQ.…) 모두 시도
+    for model in models(key):
         try:
-            r = _post(f'{base}/{model}:generateContent', body, key)
-            print('gemini ok:', base.split('/')[2], model)
+            r = _post(f'{BASE}/models/{model}:generateContent', body, key)
+            print('gemini ok:', model)
             break
         except Exception as e:
-            errs.append(f'{base.split("/")[2]} {model}: {str(e)[:150]}')
+            errs.append(f'{model}: {str(e)[:120]}')
     if r is None:
         raise RuntimeError('Gemini 호출 실패\n' + '\n'.join(errs))
     txt = ''.join(p.get('text', '') for p in r['candidates'][0]['content']['parts'])
