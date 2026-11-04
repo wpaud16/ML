@@ -39,10 +39,15 @@
    "55%": 27531,
    "60%": 27813
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-04",
   "expected_bidders": null,
-  "expected_range": null
+  "expected_range": null,
+  "actual_manwon": 27730,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 1.7,
+  "band": "55~60%"
  },
  "2024타경63389[1]|2026-11-03": {
   "key": "2024타경63389[1]",
@@ -61,10 +66,15 @@
    "55%": 22415,
    "60%": 22644
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-04",
   "expected_bidders": null,
-  "expected_range": null
+  "expected_range": null,
+  "actual_manwon": 22137,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": -0.3,
+  "band": "45~50%"
  },
  "2024타경64236[1]|2026-11-02": {
   "key": "2024타경64236[1]",
@@ -298,10 +308,15 @@
    "55%": 15450,
    "60%": 15608
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-04",
   "expected_bidders": null,
-  "expected_range": null
+  "expected_range": null,
+  "actual_manwon": 16078,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 5.0,
+  "band": "60% 초과"
  },
  "2025타경51793[1]|2026-11-03": {
   "key": "2025타경51793[1]",
@@ -522,10 +537,15 @@
    "55%": 11973,
    "60%": 12095
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-04",
   "expected_bidders": null,
-  "expected_range": null
+  "expected_range": null,
+  "actual_manwon": 11689,
+  "bidders": 3,
+  "second_manwon": 10533,
+  "diff_pct": -1.5,
+  "band": "40~45%"
  },
  "2025타경8882[1]|2026-11-02": {
   "key": "2025타경8882[1]",
@@ -598,10 +618,15 @@
    "55%": 10221,
    "60%": 10325
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-04",
   "expected_bidders": null,
-  "expected_range": null
+  "expected_range": null,
+  "actual_manwon": 10334,
+  "bidders": 3,
+  "second_manwon": 9316,
+  "diff_pct": 2.1,
+  "band": "60% 초과"
  },
  "2026타경10907[1]|2026-11-03": {
   "key": "2026타경10907[1]",
