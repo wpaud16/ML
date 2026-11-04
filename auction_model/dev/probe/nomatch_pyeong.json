@@ -1,0 +1,1787 @@
+[
+ {
+  "key": "2025타경103751[1]",
+  "aid": "C17NBBIO",
+  "pid": "a0ziaFN",
+  "area": 199.2,
+  "kind": "danji",
+  "page_ok": true,
+  "found": true,
+  "au_area": 199.2,
+  "n_py": 5,
+  "py": {
+   "53": {
+    "lo": "154.21",
+    "hi": "154.24",
+    "meme": 336349,
+    "src": "RICHGO_SISE",
+    "molit": [
+     330000,
+     "2026.01.27"
+    ],
+    "offer": 363000
+   },
+   "55": {
+    "lo": "160.28",
+    "hi": "160.53",
+    "meme": 337733,
+    "src": "RICHGO_SISE",
+    "molit": [
+     291827,
+     "2024.09.06"
+    ],
+    "offer": 386000
+   },
+   "57": {
+    "lo": "166.54",
+    "hi": "166.54",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": null
+   },
+   "68": {
+    "lo": "199.2",
+    "hi": "199.2",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     200000,
+     "2013.03.19"
+    ],
+    "offer": null
+   },
+   "73": {
+    "lo": "211.95",
+    "hi": "211.95",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경103954[1]",
+  "aid": "C78MBBQE",
+  "pid": "a9YMOSF",
+  "area": 84.73,
+  "kind": "danji",
+  "page_ok": true,
+  "found": true,
+  "au_area": 84.73,
+  "n_py": 11,
+  "py": {
+   "24": {
+    "lo": "59.78",
+    "hi": "59.8",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     350000,
+     "2024.09.14"
+    ],
+    "offer": 473333
+   },
+   "33": {
+    "lo": "84.72",
+    "hi": "84.8",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     470000,
+     "2025.03.21"
+    ],
+    "offer": null
+   },
+   "41": {
+    "lo": "102.97",
+    "hi": "102.97",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": null
+   },
+   "42": {
+    "lo": "107.63",
+    "hi": "107.89",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     710000,
+     "2025.11.28"
+    ],
+    "offer": 730000
+   },
+   "48": {
+    "lo": "121.63",
+    "hi": "121.63",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     698000,
+     "2024.08.22"
+    ],
+    "offer": 1100000
+   },
+   "53": {
+    "lo": "131.97",
+    "hi": "131.97",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": null
+   },
+   "54": {
+    "lo": "137.65",
+    "hi": "137.99",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": 865000
+   },
+   "60": {
+    "lo": "155.87",
+    "hi": "155.87",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     855000,
+     "2026.05.15"
+    ],
+    "offer": 958000
+   },
+   "72": {
+    "lo": "181.97",
+    "hi": "181.97",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": 1160000
+   },
+   "74": {
+    "lo": "191.85",
+    "hi": "191.85",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     940000,
+     "2026.06.08"
+    ],
+    "offer": 1110538
+   },
+   "86": {
+    "lo": "215.97",
+    "hi": "215.97",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": 2200000
+   }
+  }
+ },
+ {
+  "key": "2026타경100722[1]",
+  "aid": "C15RUGQU",
+  "pid": "a4nqFKb",
+  "area": 234.01,
+  "kind": "danji",
+  "page_ok": true,
+  "found": true,
+  "au_area": 234.01,
+  "n_py": 5,
+  "py": {
+   "44": {
+    "lo": "127.6",
+    "hi": "127.6",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     null,
+     null
+    ],
+    "offer": null
+   },
+   "69": {
+    "lo": "202.4",
+    "hi": "202.44",
+    "meme": 332668,
+    "src": "RICHGO_SISE",
+    "molit": [
+     280000,
+     "2023.01.29"
+    ],
+    "offer": 470833
+   },
+   "74": {
+    "lo": "216.15",
+    "hi": "216.15",
+    "meme": 351247,
+    "src": "RICHGO_SISE",
+    "molit": [
+     400000,
+     "2026.04.08"
+    ],
+    "offer": 445000
+   },
+   "79": {
+    "lo": "229.17",
+    "hi": "229.17",
+    "meme": 372027,
+    "src": "RICHGO_SISE",
+    "molit": [
+     310000,
+     "2019.10.21"
+    ],
+    "offer": 550000
+   },
+   "80": {
+    "lo": "234.01",
+    "hi": "234.01",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     330000,
+     "2020.04.24"
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경50243[1]",
+  "aid": "C65XPVPZ",
+  "pid": "a6qvRBn",
+  "area": 90.01,
+  "kind": "danji",
+  "page_ok": true,
+  "found": true,
+  "au_area": 90.01,
+  "n_py": 7,
+  "py": {
+   "25": {
+    "lo": "61.89",
+    "hi": "61.89",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     22100,
+     "2007.02.20"
+    ],
+    "offer": null
+   },
+   "27": {
+    "lo": "68.27",
+    "hi": "68.27",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     59000,
+     "2026.06.02"
+    ],
+    "offer": null
+   },
+   "30": {
+    "lo": "76.31",
+    "hi": "76.31",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     65000,
+     "2026.02.03"
+    ],
+    "offer": null
+   },
+   "32": {
+    "lo": "80",
+    "hi": "80",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     38600,
+     "2017.08.19"
+    ],
+    "offer": 80000
+   },
+   "33": {
+    "lo": "82.18",
+    "hi": "82.18",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     36500,
+     "2016.03.24"
+    ],
+    "offer": null
+   },
+   "36": {
+    "lo": "90.01",
+    "hi": "90.01",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     71500,
+     "2021.08.14"
+    ],
+    "offer": 81500
+   },
+   "41": {
+    "lo": "100.51",
+    "hi": "100.51",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     74800,
+     "2020.11.27"
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경50031[1]",
+  "aid": "C59RTRUR",
+  "pid": "a2jAdUo",
+  "area": 84.92,
+  "kind": "danji",
+  "page_ok": true,
+  "found": true,
+  "au_area": 84.92,
+  "n_py": 4,
+  "py": {
+   "21": {
+    "lo": "51.88",
+    "hi": "51.97",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     105000,
+     "2026.07.20"
+    ],
+    "offer": 107900
+   },
+   "24": {
+    "lo": "59.83",
+    "hi": "59.83",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     115000,
+     "2026.09.09"
+    ],
+    "offer": 117000
+   },
+   "30": {
+    "lo": "74.96",
+    "hi": "74.96",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     119800,
+     "2026.09.16"
+    ],
+    "offer": 123667
+   },
+   "35": {
+    "lo": "84.92",
+    "hi": "84.96",
+    "meme": null,
+    "src": "RICHGO_SISE",
+    "molit": [
+     129000,
+     "2026.10.22"
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경52074[1]",
+  "aid": "C54SUWED",
+  "pid": "a8zDLqK",
+  "area": 14.04,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 14.04,
+  "n_py": 2,
+  "py": {
+   "6": {
+    "lo": "14.04",
+    "hi": "14.04",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "10": {
+    "lo": "20.89",
+    "hi": "21.13",
+    "meme": 18480,
+    "src": "OFFER",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": 18480
+   }
+  }
+ },
+ {
+  "key": "2026타경14[1]",
+  "aid": "C91EHXTL",
+  "pid": "a8Puxja",
+  "area": 8.84,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 8.84,
+  "n_py": 5,
+  "py": {
+   "4": {
+    "lo": "8.84",
+    "hi": "8.84",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "9": {
+    "lo": "18.72",
+    "hi": "18.72",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "10": {
+    "lo": "20.7",
+    "hi": "20.7",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "13": {
+    "lo": "26.68",
+    "hi": "26.68",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "40": {
+    "lo": "80.32",
+    "hi": "80.32",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경52388[1]",
+  "aid": "C57KYBTK",
+  "pid": "a9ETgYx",
+  "area": 38.86,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 38.86,
+  "n_py": 3,
+  "py": {
+   "14": {
+    "lo": "38.63",
+    "hi": "38.86",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "41.88",
+    "hi": "41.88",
+    "meme": 30000,
+    "src": "OFFER",
+    "molit": [
+     26000,
+     "2026.05.09"
+    ],
+    "offer": 30000
+   },
+   "20": {
+    "lo": "54.4",
+    "hi": "54.4",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경13768[1]",
+  "aid": "C54HGWZB",
+  "pid": "a3JkbCl",
+  "area": 41.22,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 41.22,
+  "n_py": 3,
+  "py": {
+   "19": {
+    "lo": "39.47",
+    "hi": "39.47",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "20": {
+    "lo": "41.21",
+    "hi": "41.21",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "25": {
+    "lo": "51.85",
+    "hi": "51.85",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경10093[1]",
+  "aid": "C88CODOS",
+  "pid": "a3JkbCl",
+  "area": 51.86,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 51.86,
+  "n_py": 3,
+  "py": {
+   "19": {
+    "lo": "39.47",
+    "hi": "39.47",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "20": {
+    "lo": "41.21",
+    "hi": "41.21",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "25": {
+    "lo": "51.85",
+    "hi": "51.85",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경12965[1]",
+  "aid": "C10SLJYN",
+  "pid": "a3JkbCl",
+  "area": 39.47,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 39.47,
+  "n_py": 3,
+  "py": {
+   "19": {
+    "lo": "39.47",
+    "hi": "39.47",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "20": {
+    "lo": "41.21",
+    "hi": "41.21",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "25": {
+    "lo": "51.85",
+    "hi": "51.85",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경14204[1]",
+  "aid": "C17FFVGX",
+  "pid": "a1Gigvo",
+  "area": 25.43,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 25.43,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "25.43",
+    "hi": "25.43",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경11845[1]",
+  "aid": "C18DKEPH",
+  "pid": "a4Uwunk",
+  "area": 29.82,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 29.82,
+  "n_py": 1,
+  "py": {
+   "13": {
+    "lo": "29.82",
+    "hi": "29.98",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경3450[1]",
+  "aid": "C25CWOHL",
+  "pid": "a7KTenr",
+  "area": 25.62,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 25.62,
+  "n_py": 3,
+  "py": {
+   "10": {
+    "lo": "25.62",
+    "hi": "25.87",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "11": {
+    "lo": "28.48",
+    "hi": "28.48",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "41",
+    "hi": "41",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2024타경122968[1]",
+  "aid": "C66UXHKP",
+  "pid": "a4CYtXe",
+  "area": 36.68,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 36.68,
+  "n_py": 2,
+  "py": {
+   "15": {
+    "lo": "35.77",
+    "hi": "35.77",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "36.68",
+    "hi": "36.68",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경3925[1]",
+  "aid": "C70IUTLH",
+  "pid": "a0UwigN",
+  "area": 23.86,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 23.86,
+  "n_py": 4,
+  "py": {
+   "9": {
+    "lo": "23.86",
+    "hi": "23.86",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "10": {
+    "lo": "25.17",
+    "hi": "25.17",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "12": {
+    "lo": "29.7",
+    "hi": "29.87",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "14": {
+    "lo": "34.08",
+    "hi": "35.21",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경10467[1]",
+  "aid": "C81SDAVS",
+  "pid": "a1Gigvo",
+  "area": 25.43,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 25.43,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "25.43",
+    "hi": "25.43",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경47[2]",
+  "aid": "C53LFGAG",
+  "pid": "a9knRGf",
+  "area": 14.75,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 14.75,
+  "n_py": 3,
+  "py": {
+   "7": {
+    "lo": "11.71",
+    "hi": "12.47",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "8": {
+    "lo": "13.41",
+    "hi": "13.41",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "9": {
+    "lo": "14.75",
+    "hi": "14.75",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경47[1]",
+  "aid": "C97QHUUI",
+  "pid": "a9knRGf",
+  "area": 12.47,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 12.47,
+  "n_py": 3,
+  "py": {
+   "7": {
+    "lo": "11.71",
+    "hi": "12.47",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "8": {
+    "lo": "13.41",
+    "hi": "13.41",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "9": {
+    "lo": "14.75",
+    "hi": "14.75",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경4685[1]",
+  "aid": "C02FXKPE",
+  "pid": "a2vAYBX",
+  "area": 23.47,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 23.47,
+  "n_py": 4,
+  "py": {
+   "9": {
+    "lo": "22.96",
+    "hi": "22.96",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "10": {
+    "lo": "23.47",
+    "hi": "24.55",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "11": {
+    "lo": "28.46",
+    "hi": "28.46",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "12": {
+    "lo": "28.83",
+    "hi": "29.15",
+    "meme": 24500,
+    "src": "OFFER",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": 24500
+   }
+  }
+ },
+ {
+  "key": "2025타경14138[1]",
+  "aid": "C07ZZPEE",
+  "pid": "a5znHys",
+  "area": 44.29,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 44.29,
+  "n_py": 3,
+  "py": {
+   "14": {
+    "lo": "35.27",
+    "hi": "36.2",
+    "meme": 32000,
+    "src": "OFFER",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": 32000
+   },
+   "17": {
+    "lo": "44.29",
+    "hi": "44.29",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "20": {
+    "lo": "50.41",
+    "hi": "50.41",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2024타경149420[1]",
+  "aid": "C13WJRFI",
+  "pid": "a2vAYBX",
+  "area": 23.8,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 23.8,
+  "n_py": 4,
+  "py": {
+   "9": {
+    "lo": "22.96",
+    "hi": "22.96",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "10": {
+    "lo": "23.47",
+    "hi": "24.55",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "11": {
+    "lo": "28.46",
+    "hi": "28.46",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "12": {
+    "lo": "28.83",
+    "hi": "29.15",
+    "meme": 24500,
+    "src": "OFFER",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": 24500
+   }
+  }
+ },
+ {
+  "key": "2025타경13761[1]",
+  "aid": "C61LMRPA",
+  "pid": "a4CYtXe",
+  "area": 35.77,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 35.77,
+  "n_py": 2,
+  "py": {
+   "15": {
+    "lo": "35.77",
+    "hi": "35.77",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "36.68",
+    "hi": "36.68",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경13969[1]",
+  "aid": "C65LQSKF",
+  "pid": "a5zSPqW",
+  "area": 29.64,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 29.64,
+  "n_py": 1,
+  "py": {
+   "13": {
+    "lo": "29.64",
+    "hi": "29.78",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경3943[1]",
+  "aid": "C68LGFBP",
+  "pid": "a0LLDuA",
+  "area": 41.86,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 41.86,
+  "n_py": 3,
+  "py": {
+   "15": {
+    "lo": "38.09",
+    "hi": "38.57",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "41.48",
+    "hi": "41.86",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "17": {
+    "lo": "41.86",
+    "hi": "42.05",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경3684[1]",
+  "aid": "C72CJLMN",
+  "pid": "a7KTenr",
+  "area": 25.62,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 25.62,
+  "n_py": 3,
+  "py": {
+   "10": {
+    "lo": "25.62",
+    "hi": "25.87",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "11": {
+    "lo": "28.48",
+    "hi": "28.48",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "41",
+    "hi": "41",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경13537[1]",
+  "aid": "C72OMHUF",
+  "pid": "a0GnRPO",
+  "area": 28.71,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 28.71,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "28.62",
+    "hi": "28.71",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경14198[1]",
+  "aid": "C96ZWTDF",
+  "pid": "a0GnRPO",
+  "area": 28.62,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 28.62,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "28.62",
+    "hi": "28.71",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경5300[1]",
+  "aid": "C07EIYNR",
+  "pid": "a9RcKSk",
+  "area": 43.9,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 43.9,
+  "n_py": 3,
+  "py": {
+   "18": {
+    "lo": "28.46",
+    "hi": "28.46",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "27": {
+    "lo": "43.23",
+    "hi": "43.9",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "37": {
+    "lo": "59.86",
+    "hi": "60.54",
+    "meme": 57075,
+    "src": "OFFER",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": 57075
+   }
+  }
+ },
+ {
+  "key": "2025타경13921[1]",
+  "aid": "C09MULUB",
+  "pid": "a2blxGZ",
+  "area": 28.38,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 28.38,
+  "n_py": 2,
+  "py": {
+   "11": {
+    "lo": "24.29",
+    "hi": "24.29",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "13": {
+    "lo": "28.38",
+    "hi": "28.38",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경9342[1]",
+  "aid": "C06NZDJN",
+  "pid": "a0GnRPO",
+  "area": 28.62,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 28.62,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "28.62",
+    "hi": "28.71",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경3998[1]",
+  "aid": "C10LGKNH",
+  "pid": "a8EtjCp",
+  "area": 37.77,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 37.77,
+  "n_py": 2,
+  "py": {
+   "11": {
+    "lo": "28.17",
+    "hi": "28.17",
+    "meme": 29500,
+    "src": "OFFER",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": 29500
+   },
+   "14": {
+    "lo": "37.77",
+    "hi": "37.77",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경3542[1]",
+  "aid": "C18NRLYB",
+  "pid": "a0yAqRs",
+  "area": 27.52,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 27.52,
+  "n_py": 3,
+  "py": {
+   "9": {
+    "lo": "19.35",
+    "hi": "19.35",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "10": {
+    "lo": "20.24",
+    "hi": "20.24",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "13": {
+    "lo": "27.52",
+    "hi": "27.52",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경12106[1]",
+  "aid": "C32HHKPA",
+  "pid": "a0yAqRs",
+  "area": 20.24,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 20.24,
+  "n_py": 3,
+  "py": {
+   "9": {
+    "lo": "19.35",
+    "hi": "19.35",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "10": {
+    "lo": "20.24",
+    "hi": "20.24",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "13": {
+    "lo": "27.52",
+    "hi": "27.52",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경14179[1]",
+  "aid": "C34JHDRJ",
+  "pid": "a0GnRPO",
+  "area": 28.62,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 28.62,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "28.62",
+    "hi": "28.71",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경4016[1]",
+  "aid": "C67RCJLN",
+  "pid": "a0GnRPO",
+  "area": 28.62,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 28.62,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "28.62",
+    "hi": "28.71",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경4122[1]",
+  "aid": "C76EKMMC",
+  "pid": "a1Gigvo",
+  "area": 25.43,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 25.43,
+  "n_py": 1,
+  "py": {
+   "14": {
+    "lo": "25.43",
+    "hi": "25.43",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경3841[1]",
+  "aid": "C96NWJQQ",
+  "pid": "a7KTenr",
+  "area": 25.87,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 25.87,
+  "n_py": 3,
+  "py": {
+   "10": {
+    "lo": "25.62",
+    "hi": "25.87",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "11": {
+    "lo": "28.48",
+    "hi": "28.48",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "41",
+    "hi": "41",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2025타경10191[1]",
+  "aid": "C70WQMYI",
+  "pid": "a4CYtXe",
+  "area": 35.77,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 35.77,
+  "n_py": 2,
+  "py": {
+   "15": {
+    "lo": "35.77",
+    "hi": "35.77",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "16": {
+    "lo": "36.68",
+    "hi": "36.68",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ },
+ {
+  "key": "2026타경4310[1]",
+  "aid": "C27LSEVO",
+  "pid": "a5CXdUU",
+  "area": 19.92,
+  "kind": "officetel",
+  "page_ok": true,
+  "found": true,
+  "au_area": 19.92,
+  "n_py": 2,
+  "py": {
+   "11": {
+    "lo": "19.79",
+    "hi": "19.92",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   },
+   "12": {
+    "lo": "20.19",
+    "hi": "20.19",
+    "meme": null,
+    "src": "MOLIT",
+    "molit": [
+     null,
+     ""
+    ],
+    "offer": null
+   }
+  }
+ }
+]
