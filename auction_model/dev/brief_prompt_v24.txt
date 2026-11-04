@@ -183,10 +183,13 @@ CARD (one per item, ALWAYS — never merge items into one table or list; the onl
   7. Small link "상세 보기 →" to https://m.richgo.ai/auctionMobile/<auction_id>.
 
 EMAIL CONTENT for this step (section "🏠 경매 알림"):
+- FIRST line of the section (before both category blocks, after any freshness/failure notice): a centered dark button link to the full-card web page, exactly:
+  <p style="text-align:center;margin:12px 0"><a href="https://wpaud16.github.io/ML/auction_model/page/" style="display:inline-block;background:#1F1D1A;color:#ffffff;text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">📄 경매 전체 카드 보기 (모든 물건 상세)</a></p>
+  The GitHub job (03:40) builds that page from the same latest.json (all 🛡 안전·보통 items with predictions, full cards: 시세·🚇·인원별 표·권리분석). Plain-text version: "📄 경매 전체 카드: https://wpaud16.github.io/ML/auction_model/page/".
 - TWO category blocks in this order, each with a large bold header (19px) and a 2px #888888 bottom divider: "🏢 아파트" then "🏬 오피스텔 (서울 · 역 도보 10분)". Inside EACH block, in order:
   a) "🆕 새 물건 (N건)" — items with a model prediction shown in full for the FIRST time (new passing items, 분석대기 items now analyzed). Full CARD. If none: one line "새 물건 없음".
   b) "📋 추적 중인 물건 (N건)" — EVERY DAY, every passing item with a model prediction already shown in an earlier email and still in progress, plus results found today. Items without a prediction are hidden. Small sub-labels in this order (omit empty): "🔔 7일 이내", "📅 그 이후", "⏳ 결과 대기", "✅ 오늘 확인된 결과"; nearest date first.
-     • upcoming items → the SAME full CARD as 🆕 (with the "📋 추적 중" tag), using today's latest.json values (new round prices after a 유찰).
+     • upcoming items → ONE compact summary row each (the user chose 2026-11-04: full cards for every item live on the web page linked at the top of this section, so the email stays small and reliable): line 1 bold "<단지명>" + small gray " <전용>㎡ · <구/시> <사건번호>" (+ small "변동" if changed since the last email); line 2 "M/D(요일) D-N · 최저 X.XX억 · 50% Y.YY억 (N명) · 🚇 <역명> N분 · " + link "상세" to https://m.richgo.ai/auctionMobile/<auction_id>. Y = by_bidders.bid_by_prob_eok[expected row]["50%"] (else bid_by_prob_eok 50%), N = expected_bidders. Use today's latest.json values (new round prices after a 유찰). No bidder table and no 권리분석 for these rows. Do NOT add any note about mail size.
      • 결과대기 card (small): "⏳ M/D 기일 · 결과 미발표" (+ "(리치고 미반영 — 법원경매정보 확인 권장)" if 3+ days) / 단지명 전용㎡ / 사건번호 + 상세 link.
      • 낙찰 card (small): "✅ M/D 낙찰 · 알림 종료" / 단지명 전용㎡ (사건번호) / "1등 **X.XX억** (감정가 N%)" / "2등 **Y.YY억** · N명 응찰" ("2등 미공개" if unknown) / (when stored) "예상 50% C.CC억 → 실제 X.XX억 (±N%)" + the band (e.g. "실제가는 45~50% 구간", "40% 미만", "60% 초과"). Old items with only 예상AVG: use it as the 50% value.
      • 유찰 card: "🔁 유찰 → 다음 M/D(요일) · D-N" / 단지명 전용㎡ (사건번호) / "최저가 X억 → **Y억**" / then the BIDDER TABLE for the new round.

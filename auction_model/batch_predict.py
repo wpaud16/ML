@@ -276,6 +276,20 @@ def page_station(page_id, kind='officetel'):
     return min(st) if st else (None, None)
 
 
+def page_stations(page_id, kind='danji'):
+    """단지 페이지 주변 지하철역 목록 [(직선거리m, 역명, [노선...])], 가까운 순."""
+    raw = get(f'https://m.richgo.ai/realty/{kind}/' + page_id)
+    out = []
+    for m in re.finditer(r'\{[^{}]*"indexName":"지하철"[^{}]*\}', raw):
+        try:
+            o = json.loads(m.group(0)); ln = o.get('subwayLineInfo') or '[]'
+            ln = json.loads(ln) if isinstance(ln, str) else ln
+            out.append((int(o['distance']), o.get('targetName'), [x.replace('수도권 ', '') for x in ln]))
+        except Exception:
+            continue
+    return sorted(out)
+
+
 def officetel_items(items, skipped, failed, cache, now, workers=8):
     from concurrent.futures import ThreadPoolExecutor
     import officetel_model as om
@@ -380,9 +394,13 @@ def main():
                 items[key]['category'] = '아파트'
                 # 가장 가까운 지하철역 (2026-11-04 사용자 요청: 아파트도 오피스텔처럼 역 표시)
                 try:
-                    st_m, st_name = page_station(dj, 'danji')
-                    if st_m is not None:
-                        items[key]['station'] = dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80)))
+                    sts = page_stations(dj, 'danji')
+                    if sts:
+                        d0, n0, l0 = sts[0]
+                        items[key]['station'] = dict(name=n0, distance_m=d0, walk_min=int(-(-d0 * 1.3 // 80)), lines=l0)
+                        s8 = [x for x in sts if any('8호선' in ln for ln in x[2])]
+                        if s8:
+                            items[key]['station8'] = dict(name=s8[0][1], distance_m=s8[0][0], walk_min=int(-(-s8[0][0] * 1.3 // 80)))
                 except Exception:
                     pass
             except SystemExit as e:

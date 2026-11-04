@@ -11,6 +11,7 @@ on:
     paths:
       - 'auction_model/auction_predictor.py'
       - 'auction_model/batch_predict.py'
+      - 'auction_model/cards_page.py'
       - 'auction_model/villa_log.py'
       - 'auction_model/officetel_model.py'
       - 'auction_model/auction_config.json'
@@ -40,6 +41,10 @@ jobs:
       - name: Predict
         working-directory: auction_model
         run: python batch_predict.py
+      - name: Cards page (경매 전체 카드 웹페이지, 2026-11-04~)
+        working-directory: auction_model
+        continue-on-error: true
+        run: python cards_page.py
       - name: Villa log (서울 빌라 경매 기록, 2026-11-02~)
         working-directory: auction_model
         continue-on-error: true
@@ -48,7 +53,7 @@ jobs:
         run: |
           git config user.name "auction-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add auction_model/predictions auction_model/danji_map.json auction_model/villa auction_model/officetel
+          git add auction_model/predictions auction_model/page auction_model/danji_map.json auction_model/villa auction_model/officetel
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "auction: 예측 결과 $(TZ=Asia/Seoul date +%F)"
           # 다른 실행과 결과 파일이 겹치면 이번 실행(최신 계산) 결과를 우선한다

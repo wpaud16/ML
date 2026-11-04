@@ -1,0 +1,245 @@
+#!/usr/bin/env python3
+"""경매 전체 카드 웹페이지 (2026-11-04 사용자 요청: 메일 용량 때문에 요약된 추적 물건도 물건별 전체 정보로 보기).
+
+predictions/latest.json → page/index.html (GitHub Pages: https://wpaud16.github.io/ML/auction_model/page/)
+메일 카드(브리핑 v24 CARD)와 같은 내용·같은 표 색을 코드로 만든다. 표시 기준도 메일과 같다:
+  - risk.decision == show, safety 안전/보통만, 모델 예측 있는 물건만
+  - 남양주·구리 아파트는 8호선역 도보 15분(직선 920m) 이내만
+  python3 cards_page.py [latest.json] [출력 html]
+"""
+import json, os, sys, html
+from datetime import datetime, timedelta, timezone
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+KST = timezone(timedelta(hours=9))
+WD = '월화수목금토일'
+E = html.escape
+
+
+def eok(x, nd=2):
+    return f'{x:.{nd}f}' if x is not None else '-'
+
+
+def md(d):
+    t = datetime.strptime(d[:10], '%Y-%m-%d')
+    return f'{t.month}/{t.day}({WD[t.weekday()]})'
+
+
+def keep(v):
+    if v.get('category') not in ('아파트', '오피스텔'): return False
+    if (v.get('risk') or {}).get('decision', 'show') != 'show': return False
+    if (v.get('safety') or {}).get('grade', '보통') not in ('안전', '보통'): return False
+    if not v.get('bid_by_prob_eok'): return False
+    reg = v.get('region') or ''
+    if v.get('category') == '아파트' and ('남양주' in reg or '구리' in reg):
+        s8 = v.get('station8')
+        if not s8 or s8['distance_m'] > 920: return False
+    return True
+
+
+def sise_lines(v, appr, low):
+    s = v.get('sise') or {}
+    if s.get('est_eok') and not s.get('error'):
+        est = s['est_eok']; a, b = (s.get('range_eok') or [est, est])
+        rng = f'범위 {a:.2f}~{b:.2f}억 · ' if abs(a - b) > 0.005 else ''
+        out = [f'매매 시세(종합) <b>{est:.2f}억</b> <span class="g">({rng}감정가는 {appr / est * 100:.0f}% · 최저가는 {low / est * 100:.0f}%)</span>']
+        src = []
+        t = s.get('trade')
+        if t: src.append(f"실거래 {t['eok']:.2f}억({md(t['date']).split('(')[0]} → 추세 반영 {t['adj_eok']:.2f})")
+        if s.get('kb'): src.append(f"KB {s['kb']['eok']:.2f}억")
+        if s.get('richgo_eok') and s.get('richgo_source') != 'OFFER': src.append(f"리치고 {s['richgo_eok']:.2f}억")
+        if src: out.append(f'<span class="g s">{" · ".join(src)}</span>')
+        tr = s.get('trend') or {}
+        tt = [f'{lab} {tr[k]:+.1f}%' for k, lab in (('3m_pct', '3개월'), ('12m_pct', '1년')) if tr.get(k) is not None]
+        if tt: out.append(f'<span class="g s">단지 시세 추세 {" · ".join(tt)}</span>')
+        if s.get('flags'): out.append(f'<span class="warn">⚠ {E(" · ".join(s["flags"]))}</span>')
+        return out
+    rs = v.get('richgo_sise_eok')
+    if rs:
+        lab = '리치고 · 매물 호가 기반 · 최근 실거래·KB 없음' if s.get('richgo_source') == 'OFFER' else '리치고'
+        return [f'매매 시세 {rs:.2f}억 <span class="g">({lab} · 감정가는 시세의 {appr / rs * 100:.0f}% · 최저가는 {low / rs * 100:.0f}%)</span>']
+    return []
+
+
+def exp_row(cat, n):
+    if n is None: return None
+    if cat == '오피스텔':
+        return '1명' if n <= 1 else '2명' if n <= 2 else '3명' if n <= 4 else '5명' if n <= 7 else '8명 이상'
+    return '1명' if n <= 1 else '2명' if n <= 2 else '3명' if n <= 4 else '5명' if n <= 7 else '8명' if n <= 12 else '13명'
+
+
+def bidder_table(v, seoul):
+    bb = v.get('by_bidders') or {}
+    probs = ['40%', '45%', '50%', '55%', '60%']
+    head = '<b>👥 입찰 인원별 낙찰확률 입찰가</b>'
+    if bb.get('bid_by_prob_eok') and not bb.get('error'):
+        n = bb.get('expected_bidders'); r = bb.get('expected_range') or []
+        if n is not None:
+            head += f' <span class="n">· 예상 약 {n}명' + (f' (보통 {r[0]}~{r[1]}명)' if len(r) == 2 else '') + '</span>'
+        rows = list(bb['bid_by_prob_eok'].items()); ex = exp_row(v.get('category'), n)
+    else:
+        rows = [('예측', v['bid_by_prob_eok'])]; ex = None
+    t = ['<table><col style="width:19%"><col><col><col><col><col>', '<tr><th>인원</th>' + ''.join(f'<th>{p}</th>' for p in probs) + '</tr>']
+    for lab, vals in rows:
+        hi = lab == ex
+        cells = [f'<td class="lab{" hi" if hi else ""}">{"▶ " if hi else ""}{E(lab)}</td>']
+        for p in probs:
+            cls = ' hi' if (hi or p == '50%') else ''
+            cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}</td>')
+        t.append('<tr>' + ''.join(cells) + '</tr>')
+    t.append('</table>')
+    note = '단위 억 · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
+    f = v.get('fail') or {}
+    if seoul and f.get('level') in ('보통', '높음'):
+        note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"
+    return head + ''.join(t) + f'<div class="g s">{note}</div>'
+
+
+def rights(v, seoul):
+    out = ['<b>⚖️ 권리분석</b>']
+    sm = (v.get('risk') or {}).get('summary') or {}
+    if sm.get('base_right'):
+        out.append(f"말소기준: {E(sm['base_right'])}" + (f" ({sm['base_date']})" if sm.get('base_date') else '') + ' · 이후 소멸')
+    out.append('인수 권리(등기 기준): ' + ('있음 — 확인 필요' if sm.get('right_risk') else '없음'))
+    tn = v.get('tenant')
+    if tn:
+        ck = tn.get('checked') or ''
+        out.append(f'👤 법원 명세서({md(ck).split("(")[0] if ck else "-"})')
+        out += [E(x) for x in (tn.get('lines') or [])]
+        am = tn.get('assumed_manwon') or 0
+        out.append('인수 예상 <b>' + ('0원 (배당으로 전액 변제 예상)' if am == 0 else f'{am:,}만') + '</b>')
+        if tn.get('caution'): out.append(f'<span class="g s">{E(tn["caution"])}</span>')
+    else:
+        out.append('점유자(대항력): 매각물건명세서 확인 필요')
+    ci = v.get('court_info')
+    if ci:
+        if ci.get('occupant'):
+            out.append(f"🏠 점유: {E(ci['occupant'])}" + (' · 폐문부재' if ci.get('closed_absent') else ''))
+        for w in (ci.get('withdraw_signal') or [])[:2]:
+            out.append(f"<b>⚖️ 취하·변경 주의: {md(w['date']).split('(')[0]} {E(w.get('label') or '')} — {E(w.get('text') or '')}</b>")
+        if ci.get('notes'):
+            out.append('<span class="g s">📂 ' + ' · '.join(E(n.get('label') or '') for n in ci['notes']) + '</span>')
+        if ci.get('spec_published') is False:
+            out.append('<span class="g s">명세서는 보통 매각기일 1주 전 공개 — 공개 후 자동 반영</span>')
+    if seoul and v.get('category') == '아파트':
+        out.append('토지거래허가: 경매 취득은 허가 대상 아님')
+    out.append('<span class="g s">입찰 전 직접 확인: 배당요구종기 · 관리비 체납</span>')
+    return out
+
+
+def card(v, today):
+    cat = v['category']; reg = v.get('region') or ''; seoul = reg.startswith('서울')
+    gu = reg.split(' ', 1)[-1]
+    appr, low = v['appr_manwon'] / 1e4, v['low_manwon'] / 1e4
+    key = v['key']; no = key.split('[')[-1].rstrip(']')
+    case = key.split('[')[0] + (f' [{no}]' if no != '1' else '')
+    hh = f' <span class="hh">{v["households"]:,}세대</span>' if cat == '아파트' and v.get('households') else ''
+    grade = (v.get('safety') or {}).get('grade', '보통')
+    L = [f'<div class="t">{E(v.get("danji_name") or "")}{hh} · 전용 {v.get("area")}㎡ · 🛡 {grade}</div>',
+         f'<div class="g s">{E(gu)} · {E(case)} · {E(v.get("court") or "")}</div>', '<b>📋 기본 정보</b>']
+    bd = v.get('bidding_date') or ''
+    L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
+    f = v.get('fail') or {}
+    line = f"유찰 {v.get('fails') or 0}회"
+    if f.get('prob_pct') is not None and not f.get('error'): line += f" · 유찰 확률(이번 회차) {f['prob_pct']}% · {f.get('level', '')}"
+    L.append(line)
+    L.append(f'감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b> ({low / appr * 100:.0f}%) · 보증금 {v["low_manwon"] * 0.1:,.0f}만')
+    st = v.get('station')
+    if st and st.get('name'):
+        L.append(f"🚇 {E(st['name'])}역 도보 약 {st['walk_min']}분 ({st['distance_m']}m)")
+    s8 = v.get('station8')
+    if cat == '아파트' and s8 and st and s8['name'] != st['name'] and s8['distance_m'] <= 920:
+        L.append(f"🚇 8호선 {E(s8['name'])}역 도보 약 {s8['walk_min']}분 ({s8['distance_m']}m)")
+    L += sise_lines(v, appr, low)
+    if cat == '오피스텔':
+        inc = v.get('income') or {}
+        if inc.get('est_monthly_rent_manwon'):
+            b = ' · 같은 건물 다른 평형 기준' if '같은 건물' in (inc.get('rent_basis') or '') else ''
+            L.append(f"월세 시세 약 {inc['est_monthly_rent_manwon']}만원 <span class=\"g\">(보증금 1,000만 기준 추정{b})</span>")
+        pb = v.get('payback')
+        if pb and not pb.get('error') and pb.get('years'):
+            L.append(f"📈 월세 {pb['monthly_rent_manwon']}만 × 약 {pb['years']:.1f}년({pb['months']}개월)이면 50% 가격 {pb['price_manwon'] / 1e4:.2f}억 <span class=\"g\">(대출·세금·비용 제외 단순 계산)</span>")
+    sa = v.get('small_danji_adj') or {}
+    if sa.get('applied'):
+        L.append('<span class="g s">🏘 소규모 단지(300세대 미만) −3% 보정 적용</span>')
+    if (v.get('risk') or {}).get('resale'):
+        L.append('<span class="s">🔁 재매각 물건 — 이전 낙찰자 잔금 미납 · 보증금(보통 20%)·사유 확인 · 모델은 일반 물건 기준이라 참고용</span>')
+    body = '<br>'.join(L)
+    body += '<div class="sec">' + bidder_table(v, seoul) + '</div>'
+    body += '<div class="sec">' + '<br>'.join(rights(v, seoul)) + '</div>'
+    if v.get('auction_id'):
+        body += f'<div class="sec"><a href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세 보기 →</a></div>'
+    return f'<div class="card" data-d="{bd}">{body}</div>'
+
+
+CSS = """
+:root{--bg:#ffffff;--fg:#1d1d1f;--mut:#777;--bd:#888}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ececec;--mut:#9a9a9a;--bd:#666}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;font-size:14px;line-height:1.55}
+.wrap{max-width:600px;margin:0 auto;padding:12px 16px 40px}
+h1{font-size:19px;margin:6px 0 2px} .meta{color:var(--mut);font-size:12px;margin-bottom:10px}
+.nav{position:sticky;top:0;background:var(--bg);padding:8px 0;display:flex;gap:8px;flex-wrap:wrap;z-index:2;border-bottom:1px solid var(--bd)}
+.nav a{border:1px solid var(--bd);border-radius:16px;padding:4px 12px;color:var(--fg);text-decoration:none;font-size:13px}
+h2{font-size:19px;margin:22px 0 6px;padding-bottom:4px;border-bottom:2px solid var(--bd)}
+h3{font-size:15px;margin:16px 0 8px}
+.card{border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px;overflow:hidden}
+.t{font-weight:bold;font-size:15px} .hh{font-weight:normal;color:var(--mut);font-size:12px}
+.g{color:var(--mut)} .s{font-size:12px} .n{font-weight:normal;font-size:13px}
+.warn{color:#d93025;font-size:12px}
+.sec{margin-top:10px}
+table{border-collapse:collapse;width:100%;max-width:560px;table-layout:fixed;margin:8px 0;font-size:14px;text-align:center;background:#000;color:#fff;border:2px solid #fff}
+th,td{background:#000;color:#fff;border:1px solid #fff;padding:9px 2px}
+td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333}
+a{color:#1a73e8}
+.foot{color:var(--mut);font-size:12px;margin-top:24px}
+"""
+
+JS = """
+(function(){var t=new Date();var k=new Date(t.getTime()+9*3600e3);var today=Date.UTC(k.getUTCFullYear(),k.getUTCMonth(),k.getUTCDate());
+document.querySelectorAll('.dday').forEach(function(e){var p=e.getAttribute('data-d').split('-');var d=Date.UTC(+p[0],+p[1]-1,+p[2]);
+var n=Math.round((d-today)/864e5);e.textContent=n>0?('D-'+n):(n==0?'D-day':'기일 지남');});})();
+"""
+
+
+def build(src, dst):
+    d = json.load(open(src))
+    now = datetime.now(KST); today = now.strftime('%Y-%m-%d')
+    items = [v for v in d['items'].values() if keep(v)]
+    soon = (now + timedelta(days=7)).strftime('%Y-%m-%d')
+    parts, nav, total = [], [], {}
+    for cat, title, anchor in (('아파트', '🏢 아파트', 'apt'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)', 'ot')):
+        xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v.get('bidding_date') or '9999', v.get('danji_name') or ''))
+        total[cat] = len(xs)
+        nav.append(f'<a href="#{anchor}">{title.split(" (")[0]} {len(xs)}</a>')
+        parts.append(f'<h2 id="{anchor}">{title} · {len(xs)}건</h2>')
+        groups = (('🔔 7일 이내', [v for v in xs if today <= (v.get('bidding_date') or '') <= soon]),
+                  ('📅 그 이후', [v for v in xs if (v.get('bidding_date') or '9999') > soon]),
+                  ('⏳ 기일 지남 · 결과 대기', [v for v in xs if (v.get('bidding_date') or '9999') < today]))
+        for lab, g in groups:
+            if not g: continue
+            parts.append(f'<h3>{lab} ({len(g)}건)</h3>')
+            parts += [card(v, today) for v in g]
+        if not xs: parts.append('<p class="g">표시할 물건 없음</p>')
+    gen = d.get('generated_at', '')[:16].replace('T', ' ')
+    foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만<br>'
+            '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅 · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
+            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세의 중앙값 (호가 제외) — 입찰가 모델은 리치고 시세 기준<br>'
+            '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'
+            '권리분석은 등기 기준 자동요약을 바탕으로 한 1차 추정입니다. 점유자·대항력은 매각물건명세서에서, 대출 한도는 은행에서 직접 확인하세요. 입찰 권유가 아닙니다.')
+    doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>경매 전체 카드</title><style>{CSS}</style></head><body><div class="wrap">
+<h1>🏠 경매 전체 카드</h1><div class="meta">예측 {E(gen)} 기준 · 아파트 {total['아파트']}건 · 오피스텔 {total['오피스텔']}건 · 매각기일 순</div>
+<div class="nav">{''.join(nav)}</div>
+{''.join(parts)}
+<div class="foot">{foot}</div></div><script>{JS}</script></body></html>"""
+    os.makedirs(os.path.dirname(dst), exist_ok=True)
+    open(dst, 'w').write(doc)
+    print('page', dst, total, f'{len(doc.encode()) / 1024:.0f}KB')
+
+
+if __name__ == '__main__':
+    src = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'predictions', 'latest.json')
+    dst = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, 'page', 'index.html')
+    build(src, dst)
