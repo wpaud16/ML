@@ -170,3 +170,71 @@ def merge_into_sise(sise, nb, low_manwon, appr_manwon=None):
             flags.append(f'주변 단지 시세가 이 단지보다 {d:+.0f}%')
     s['flags'] = flags
     return s
+
+
+# ---------------- 가중 시세 (2026-11-05 사용자 요청) ----------------
+# 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(동시에 상한) · 감정가 시차 보정 5%
+W = dict(trade3=0.60, floor=0.20, offer=0.15, appr=0.05)
+
+
+def _floor_of(address):
+    m = re.search(r'(\d+)층', address or '')
+    return int(m.group(1)) if m else None
+
+
+def weighted_from_props(pp, address, appr_manwon, sise, today=None):
+    today = today or datetime.now()
+    tf = pp.get('tradeFacts') or {}
+    rec = []
+    for t in tf.get('recent') or []:
+        if not isinstance(t, dict) or not t.get('price') or not t.get('date') or t.get('direct'):
+            continue   # 직거래는 시세보다 낮은 경우가 많아 제외
+        try:
+            age = (today - datetime.strptime(t['date'], '%Y.%m.%d')).days
+        except Exception:
+            continue
+        rec.append((age, t.get('floor'), t['price'] / 1e4))
+    F = _floor_of(address)
+    parts = {}
+    t3 = [p for a, f, p in rec if a <= 92]
+    if t3:
+        parts['trade3'] = (statistics.median(t3), f'최근 3개월 실거래 {len(t3)}건')
+    elif (sise or {}).get('trade', {}).get('adj_eok') and sise['trade'].get('months_ago', 99) <= 12:
+        parts['trade3'] = (sise['trade']['adj_eok'], f"3개월 거래 없음 → {sise['trade']['date'][:7]} 실거래(추세 보정)")
+    adj = []
+    for a, f, p in rec:
+        if a > 183 or f is None or F is None:
+            continue
+        k = 1.0
+        if f <= 3 < F: k = 1.04       # 저층 거래 → 중고층 물건: +4%
+        elif F <= 3 < f: k = 0.96     # 중고층 거래 → 저층 물건: −4%
+        adj.append(p * k)
+    if adj:
+        parts['floor'] = (statistics.median(adj), f'층 보정 6개월 실거래 {len(adj)}건 (물건 {F}층)')
+    ls = tf.get('listing') or {}
+    if ls.get('min'):
+        parts['offer'] = (ls['min'] / 1e4, f"매물 최저 호가 (매물 {ls.get('count')}건)")
+    tr12 = ((sise or {}).get('trend') or {}).get('12m_pct')
+    if appr_manwon and tr12 is not None:
+        parts['appr'] = (appr_manwon / 1e4 * (1 + tr12 / 100), f'감정가 × 1년 시세 변동 {tr12:+.1f}%')
+    if 'trade3' not in parts and 'floor' not in parts:
+        return None   # 실거래가 없으면 계산하지 않음
+    wsum = sum(W[k] for k in parts)
+    val = sum(W[k] * v for k, (v, _) in parts.items()) / wsum
+    cap = False
+    if 'offer' in parts and val > parts['offer'][0]:
+        val, cap = parts['offer'][0], True   # 매물 최저 호가를 상한으로
+    return dict(eok=round(val, 2), cap_by_offer=cap, floor=F,
+                parts=[dict(key=k, eok=round(v, 2), weight=W[k], note=n) for k, (v, n) in parts.items()])
+
+
+def weighted_apt(danji_id, pyeong, address, appr_manwon, sise):
+    try:
+        if not pyeong:
+            return None
+        pp = page_props('danji', f'{danji_id}?pyeongType={int(float(pyeong))}')
+        if (pp.get('tradeFacts') or {}).get('pyeong') not in (None, int(float(pyeong))):
+            return None
+        return weighted_from_props(pp, address, appr_manwon, sise)
+    except Exception:
+        return None

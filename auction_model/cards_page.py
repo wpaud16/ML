@@ -57,6 +57,11 @@ def sise_lines(v, appr, low):
         tr = s.get('trend') or {}
         tt = [f'{lab} {tr[k]:+.1f}%' for k, lab in (('3m_pct', '3개월'), ('12m_pct', '1년')) if tr.get(k) is not None]
         if tt: out.append(f'<span class="g s">단지 시세 추세 {" · ".join(tt)}</span>')
+        ws = s.get('weighted')
+        if ws:
+            NM = dict(trade3='3개월 실거래', floor='층 보정', offer='최저 호가', appr='감정 시차')
+            out.append(f'⚖ 가중 시세 <b>{ws["eok"]:.2f}억</b> <span class="g">(최저가는 {low / ws["eok"] * 100:.0f}%' + (' · 최저 호가 상한 적용' if ws.get('cap_by_offer') else '') + ')</span>')
+            out.append('<span class="g s">' + ' · '.join(f"{NM[x['key']]} {x['eok']:.2f}억×{int(x['weight'] * 100)}%" for x in ws['parts']) + '</span>')
         if nb and nb.get('detail'):
             unit = '평당' if 'per_pyeong' in nb['detail'][0] else '㎡당'
             out.append('<span class="g s">🏘 ' + E(nb.get('basis') or '') + ' · ' + ' · '.join(
@@ -353,6 +358,7 @@ def build(src, dst):
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
     foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만 · 하남은 5호선역 도보 15분 이내만<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅 · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
+            '⚖ 가중 시세 = 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(상한) · 감정가 시차 보정 5% (직거래 제외)<br>'
             '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 입찰가 모델은 리치고 시세 기준<br>'
             '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'
             '권리분석은 등기 기준 자동요약을 바탕으로 한 1차 추정입니다. 점유자·대항력은 매각물건명세서에서, 대출 한도는 은행에서 직접 확인하세요. 입찰 권유가 아닙니다.')

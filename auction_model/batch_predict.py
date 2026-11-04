@@ -452,6 +452,12 @@ def main():
                         items[key]['sise'] = nearby.merge_into_sise(items[key].get('sise'), nb, items[key]['low_manwon'])
                 except Exception:
                     pass
+                try:   # 가중 시세: 3개월 실거래 60 · 층 보정 20 · 최저 호가 15(상한) · 감정 시차 5 (2026-11-05)
+                    ws = nearby.weighted_apt(dj, p.get('pyeong'), base.get('address'), base['appr_manwon'], items[key].get('sise'))
+                    if ws and items[key].get('sise') is not None:
+                        items[key]['sise'] = dict(items[key]['sise'], weighted=ws)
+                except Exception:
+                    pass
             except SystemExit as e:
                 failed.append(dict(base, danji_id=dj, reason=f'예측 실패: {e}'))
             except Exception as e:
