@@ -1,0 +1,732 @@
+{
+ "a2jAdUo": {
+  "name": "미사강변효성해링턴플레이스엔에이치에프",
+  "keys": [
+   "analyze",
+   "auctionInfo",
+   "basic",
+   "bjdInfo",
+   "brandUrl",
+   "environment",
+   "frontSeo",
+   "goodnews",
+   "isEmdLeader",
+   "isSdLeader",
+   "isSggLeader",
+   "landTradePermissionType",
+   "location",
+   "name",
+   "newKbStarId",
+   "opengoodsCount",
+   "price",
+   "pyeongInfos",
+   "schoolInfo",
+   "score",
+   "selectedPriceType",
+   "selectedPyeongType",
+   "tags",
+   "totalPostCount"
+  ],
+  "pyeong": {
+   "21": {
+    "lo": "51.88",
+    "hi": "51.97",
+    "hh": 94,
+    "dp": {
+     "meme": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "jeonse": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "gap": 42000,
+     "jeonseRate": 60.75,
+     "memeSource": "RICHGO_SISE",
+     "jeonseSource": "RICHGO_SISE",
+     "memePriceDict": {
+      "MOLIT": {
+       "price": 105000,
+       "perPyeong": 5000,
+       "yyyymmdd": "2026.07.20"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": 107000,
+       "maxPrice": 109000,
+       "price": 107900,
+       "perPyeong": 5138,
+       "yyyymmdd": "2026.11.04"
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "jeonsePriceDict": {
+      "MOLIT": {
+       "price": 8491,
+       "perPyeong": 404,
+       "yyyymmdd": "2026.09.21"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": 65000,
+       "maxPrice": 65000,
+       "price": 65000,
+       "perPyeong": 3095,
+       "yyyymmdd": "2026.11.04"
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "memeRateOfChange": null,
+     "jeonseRateOfChange": null,
+     "publishedAvgPrice": null
+    }
+   },
+   "24": {
+    "lo": "59.83",
+    "hi": "59.83",
+    "hh": 94,
+    "dp": {
+     "meme": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "jeonse": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "gap": null,
+     "jeonseRate": null,
+     "memeSource": "RICHGO_SISE",
+     "jeonseSource": "RICHGO_SISE",
+     "memePriceDict": {
+      "MOLIT": {
+       "price": 115000,
+       "perPyeong": 4791,
+       "yyyymmdd": "2026.09.09"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": 117000,
+       "maxPrice": 117000,
+       "price": 117000,
+       "perPyeong": 4875,
+       "yyyymmdd": "2026.11.04"
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "jeonsePriceDict": {
+      "MOLIT": {
+       "price": 51450,
+       "perPyeong": 2143,
+       "yyyymmdd": "2026.10.03"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": null,
+       "maxPrice": null,
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "memeRateOfChange": null,
+     "jeonseRateOfChange": null,
+     "publishedAvgPrice": null
+    }
+   },
+   "30": {
+    "lo": "74.96",
+    "hi": "74.96",
+    "hh": 59,
+    "dp": {
+     "meme": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "jeonse": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "gap": 45000,
+     "jeonseRate": 63.41,
+     "memeSource": "RICHGO_SISE",
+     "jeonseSource": "RICHGO_SISE",
+     "memePriceDict": {
+      "MOLIT": {
+       "price": 119800,
+       "perPyeong": 3993,
+       "yyyymmdd": "2026.09.16"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": 123000,
+       "maxPrice": 125000,
+       "price": 123667,
+       "perPyeong": 4122,
+       "yyyymmdd": "2026.11.04"
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "jeonsePriceDict": {
+      "MOLIT": {
+       "price": 56700,
+       "perPyeong": 1890,
+       "yyyymmdd": "2026.10.13"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": 78000,
+       "maxPrice": 78000,
+       "price": 78000,
+       "perPyeong": 2600,
+       "yyyymmdd": "2026.11.04"
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "memeRateOfChange": null,
+     "jeonseRateOfChange": null,
+     "publishedAvgPrice": null
+    }
+   },
+   "35": {
+    "lo": "84.92",
+    "hi": "84.96",
+    "hh": 68,
+    "dp": {
+     "meme": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "jeonse": {
+      "price": null,
+      "rateOfChange": null,
+      "perPyeong": 0,
+      "yyyymmdd": null
+     },
+     "gap": null,
+     "jeonseRate": null,
+     "memeSource": "RICHGO_SISE",
+     "jeonseSource": "RICHGO_SISE",
+     "memePriceDict": {
+      "MOLIT": {
+       "price": 129000,
+       "perPyeong": 3685,
+       "yyyymmdd": "2026.10.22"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": null,
+       "maxPrice": null,
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "jeonsePriceDict": {
+      "MOLIT": {
+       "price": 58800,
+       "perPyeong": 1680,
+       "yyyymmdd": "2026.10.30"
+      },
+      "KB": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "OFFER": {
+       "minPrice": null,
+       "maxPrice": null,
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      },
+      "RICHGO_SISE": {
+       "price": null,
+       "perPyeong": 0,
+       "yyyymmdd": null
+      }
+     },
+     "memeRateOfChange": null,
+     "jeonseRateOfChange": null,
+     "publishedAvgPrice": null
+    }
+   }
+  },
+  "auctions": [
+   {
+    "id": "C59RTRUR",
+    "case": null,
+    "area": 84.92,
+    "date": "2026-11-16T00:00:00+00:00"
+   }
+  ]
+ },
+ "search:한솔리치빌": [
+  {
+   "kind": "apart",
+   "name": "한솔리치빌2단지",
+   "addr": "경기도 하남시 덕산로 60",
+   "href": "https://m.richgo.ai/realty/danji/a8bFQXW"
+  },
+  {
+   "kind": "apart",
+   "name": "한솔리치빌3단지",
+   "addr": "경기도 하남시 덕산로 80",
+   "href": "https://m.richgo.ai/realty/danji/a0XpjAh"
+  },
+  {
+   "kind": "apart",
+   "name": "한솔리치빌5단지",
+   "addr": "경기도 하남시 덕산로 50",
+   "href": "https://m.richgo.ai/realty/danji/a8BJlRv"
+  },
+  {
+   "kind": "apart",
+   "name": "한솔리치빌1단지",
+   "addr": "경기도 하남시 덕산로 39",
+   "href": "https://m.richgo.ai/realty/danji/a0ZRFHt"
+  },
+  {
+   "kind": "officetel",
+   "name": "한솔리치빌",
+   "addr": "경기도 의정부시 망월로13번길 8",
+   "href": "https://m.richgo.ai/realty/officetel/a5Zuccw"
+  }
+ ],
+ "search:한솔리치빌1단지": [
+  {
+   "kind": "apart",
+   "name": "한솔리치빌1단지",
+   "addr": "경기도 하남시 덕산로 39",
+   "href": "https://m.richgo.ai/realty/danji/a0ZRFHt"
+  }
+ ],
+ "search:덕풍동 한솔리치빌": [
+  {
+   "kind": "apart",
+   "name": "한솔리치빌2단지",
+   "addr": "경기도 하남시 덕산로 60",
+   "href": "https://m.richgo.ai/realty/danji/a8bFQXW"
+  },
+  {
+   "kind": "apart",
+   "name": "한솔리치빌3단지",
+   "addr": "경기도 하남시 덕산로 80",
+   "href": "https://m.richgo.ai/realty/danji/a0XpjAh"
+  },
+  {
+   "kind": "apart",
+   "name": "한솔리치빌5단지",
+   "addr": "경기도 하남시 덕산로 50",
+   "href": "https://m.richgo.ai/realty/danji/a8BJlRv"
+  },
+  {
+   "kind": "apart",
+   "name": "한솔리치빌1단지",
+   "addr": "경기도 하남시 덕산로 39",
+   "href": "https://m.richgo.ai/realty/danji/a0ZRFHt"
+  }
+ ],
+ "search:하남 덕풍동": [
+  {
+   "kind": "apart",
+   "name": "하남덕풍역파크어울림",
+   "addr": "경기도 하남시 덕풍공원로 50",
+   "href": "https://m.richgo.ai/realty/danji/a5dIXvb"
+  },
+  {
+   "kind": "apart",
+   "name": "덕풍서해",
+   "addr": "경기도 하남시 신장로205번길 16",
+   "href": "https://m.richgo.ai/realty/danji/a5EwXzP"
+  },
+  {
+   "kind": "apart",
+   "name": "덕풍쌍용",
+   "addr": "경기도 하남시 역말로15번길 35",
+   "href": "https://m.richgo.ai/realty/danji/a3UkMde"
+  },
+  {
+   "kind": "apart",
+   "name": "덕풍현대",
+   "addr": "경기도 하남시 대성로 259",
+   "href": "https://m.richgo.ai/realty/danji/a2jktTd"
+  },
+  {
+   "kind": "apart",
+   "name": "하남자이",
+   "addr": "경기도 하남시 덕풍공원로 38",
+   "href": "https://m.richgo.ai/realty/danji/a0ffWNA"
+  },
+  {
+   "kind": "apart",
+   "name": "라인",
+   "addr": "경기도 하남시 하남대로 895",
+   "href": "https://m.richgo.ai/realty/danji/a4rTZse"
+  },
+  {
+   "kind": "apart",
+   "name": "하남풍산센트레빌",
+   "addr": "경기도 하남시 덕풍동로 110",
+   "href": "https://m.richgo.ai/realty/danji/a5FWiBN"
+  },
+  {
+   "kind": "apart",
+   "name": "하남한솔솔파크",
+   "addr": "경기도 하남시 하남대로887번길 25",
+   "href": "https://m.richgo.ai/realty/danji/a4CVTpK"
+  },
+  {
+   "kind": "apart",
+   "name": "더샵하남에디피스",
+   "addr": "경기도 하남시 하남대로 830",
+   "href": "https://m.richgo.ai/realty/danji/a3PUbWn"
+  },
+  {
+   "kind": "apart",
+   "name": "하남더샵센트럴뷰",
+   "addr": "경기도 하남시 하남대로 856",
+   "href": "https://m.richgo.ai/realty/danji/a4AxjTb"
+  },
+  {
+   "kind": "officetel",
+   "name": "하남",
+   "addr": "경기도 하남시 신평로55번길 31",
+   "href": "https://m.richgo.ai/realty/officetel/a2crCLj"
+  },
+  {
+   "kind": "officetel",
+   "name": "빌리브하남",
+   "addr": "경기도 하남시 덕풍서로 80",
+   "href": "https://m.richgo.ai/realty/officetel/a1jnSHP"
+  },
+  {
+   "kind": "officetel",
+   "name": "블리스",
+   "addr": "경기도 하남시 신평로 42",
+   "href": "https://m.richgo.ai/realty/officetel/a9ATfoS"
+  },
+  {
+   "kind": "officetel",
+   "name": "그린나래",
+   "addr": "경기도 하남시 역말로15번길 30",
+   "href": "https://m.richgo.ai/realty/officetel/a4WNyQg"
+  },
+  {
+   "kind": "officetel",
+   "name": "태석하남풍산메트하임",
+   "addr": "경기도 하남시 덕풍동로 123",
+   "href": "https://m.richgo.ai/realty/officetel/a6USQWO"
+  },
+  {
+   "kind": "officetel",
+   "name": "길오피스텔",
+   "addr": "경기도 하남시 수리북로13번길 8",
+   "href": "https://m.richgo.ai/realty/officetel/a2cqPmn"
+  },
+  {
+   "kind": "officetel",
+   "name": "하남푸르지오시티",
+   "addr": "경기도 하남시 덕풍동로 111-33",
+   "href": "https://m.richgo.ai/realty/officetel/a9pUaej"
+  },
+  {
+   "kind": "officetel",
+   "name": "트윈렉스1",
+   "addr": "경기도 하남시 덕풍동로 111-10",
+   "href": "https://m.richgo.ai/realty/officetel/a1oaxfI"
+  },
+  {
+   "kind": "officetel",
+   "name": "트윈렉스2",
+   "addr": "경기도 하남시 덕풍동로 111-50",
+   "href": "https://m.richgo.ai/realty/officetel/a6uXJQd"
+  },
+  {
+   "kind": "region",
+   "name": "경기 하남시 덕풍동",
+   "addr": null,
+   "href": "https://m.richgo.ai/realty/region/4145010800"
+  }
+ ],
+ "search:하남시 덕풍동": [
+  {
+   "kind": "apart",
+   "name": "덕풍서해",
+   "addr": "경기도 하남시 신장로205번길 16",
+   "href": "https://m.richgo.ai/realty/danji/a5EwXzP"
+  },
+  {
+   "kind": "apart",
+   "name": "덕풍쌍용",
+   "addr": "경기도 하남시 역말로15번길 35",
+   "href": "https://m.richgo.ai/realty/danji/a3UkMde"
+  },
+  {
+   "kind": "apart",
+   "name": "덕풍현대",
+   "addr": "경기도 하남시 대성로 259",
+   "href": "https://m.richgo.ai/realty/danji/a2jktTd"
+  },
+  {
+   "kind": "apart",
+   "name": "하남자이",
+   "addr": "경기도 하남시 덕풍공원로 38",
+   "href": "https://m.richgo.ai/realty/danji/a0ffWNA"
+  },
+  {
+   "kind": "apart",
+   "name": "라인",
+   "addr": "경기도 하남시 하남대로 895",
+   "href": "https://m.richgo.ai/realty/danji/a4rTZse"
+  },
+  {
+   "kind": "apart",
+   "name": "하남덕풍역파크어울림",
+   "addr": "경기도 하남시 덕풍공원로 50",
+   "href": "https://m.richgo.ai/realty/danji/a5dIXvb"
+  },
+  {
+   "kind": "apart",
+   "name": "하남풍산센트레빌",
+   "addr": "경기도 하남시 덕풍동로 110",
+   "href": "https://m.richgo.ai/realty/danji/a5FWiBN"
+  },
+  {
+   "kind": "apart",
+   "name": "하남한솔솔파크",
+   "addr": "경기도 하남시 하남대로887번길 25",
+   "href": "https://m.richgo.ai/realty/danji/a4CVTpK"
+  },
+  {
+   "kind": "apart",
+   "name": "더샵하남에디피스",
+   "addr": "경기도 하남시 하남대로 830",
+   "href": "https://m.richgo.ai/realty/danji/a3PUbWn"
+  },
+  {
+   "kind": "apart",
+   "name": "하남더샵센트럴뷰",
+   "addr": "경기도 하남시 하남대로 856",
+   "href": "https://m.richgo.ai/realty/danji/a4AxjTb"
+  },
+  {
+   "kind": "officetel",
+   "name": "하남",
+   "addr": "경기도 하남시 신평로55번길 31",
+   "href": "https://m.richgo.ai/realty/officetel/a2crCLj"
+  },
+  {
+   "kind": "officetel",
+   "name": "빌리브하남",
+   "addr": "경기도 하남시 덕풍서로 80",
+   "href": "https://m.richgo.ai/realty/officetel/a1jnSHP"
+  },
+  {
+   "kind": "officetel",
+   "name": "블리스",
+   "addr": "경기도 하남시 신평로 42",
+   "href": "https://m.richgo.ai/realty/officetel/a9ATfoS"
+  },
+  {
+   "kind": "officetel",
+   "name": "그린나래",
+   "addr": "경기도 하남시 역말로15번길 30",
+   "href": "https://m.richgo.ai/realty/officetel/a4WNyQg"
+  },
+  {
+   "kind": "officetel",
+   "name": "태석하남풍산메트하임",
+   "addr": "경기도 하남시 덕풍동로 123",
+   "href": "https://m.richgo.ai/realty/officetel/a6USQWO"
+  },
+  {
+   "kind": "officetel",
+   "name": "길오피스텔",
+   "addr": "경기도 하남시 수리북로13번길 8",
+   "href": "https://m.richgo.ai/realty/officetel/a2cqPmn"
+  },
+  {
+   "kind": "officetel",
+   "name": "하남푸르지오시티",
+   "addr": "경기도 하남시 덕풍동로 111-33",
+   "href": "https://m.richgo.ai/realty/officetel/a9pUaej"
+  },
+  {
+   "kind": "officetel",
+   "name": "트윈렉스1",
+   "addr": "경기도 하남시 덕풍동로 111-10",
+   "href": "https://m.richgo.ai/realty/officetel/a1oaxfI"
+  },
+  {
+   "kind": "officetel",
+   "name": "트윈렉스2",
+   "addr": "경기도 하남시 덕풍동로 111-50",
+   "href": "https://m.richgo.ai/realty/officetel/a6uXJQd"
+  },
+  {
+   "kind": "region",
+   "name": "경기 하남시 덕풍동",
+   "addr": null,
+   "href": "https://m.richgo.ai/realty/region/4145010800"
+  }
+ ],
+ "search:한솔리치빌아파트1단지": [],
+ "hansol_auctions": {
+  "a0ZRFHt": [
+   {
+    "id": "C77BUVAG",
+    "case": null,
+    "area": 84.8,
+    "date": "9999-12-31T00:00:00+00:00"
+   },
+   {
+    "id": "C53KNJDB",
+    "case": null,
+    "area": 84.8,
+    "date": "9999-12-31T00:00:00+00:00"
+   },
+   {
+    "id": "C94LTUCT",
+    "case": null,
+    "area": 84.8,
+    "date": "9999-12-31T00:00:00+00:00"
+   }
+  ],
+  "a8bFQXW": [
+   {
+    "id": "C79KLNOZ",
+    "case": null,
+    "area": 84.43,
+    "date": "9999-12-31T00:00:00+00:00"
+   }
+  ],
+  "a4CVTpK": [
+   {
+    "id": "C73LQWKH",
+    "case": null,
+    "area": 84.99,
+    "date": "9999-12-31T00:00:00+00:00"
+   },
+   {
+    "id": "C99CWRDY",
+    "case": null,
+    "area": 84.99,
+    "date": "9999-12-31T00:00:00+00:00"
+   },
+   {
+    "id": "C88CIIZT",
+    "case": null,
+    "area": 84.99,
+    "date": "9999-12-31T00:00:00+00:00"
+   },
+   {
+    "id": "C07EVVQQ",
+    "case": null,
+    "area": 84.99,
+    "date": "9999-12-31T00:00:00+00:00"
+   }
+  ],
+  "a0XpjAh": [
+   {
+    "id": "C67GRAEC",
+    "case": null,
+    "area": 84.99,
+    "date": null
+   },
+   {
+    "id": "C62ERTWR",
+    "case": null,
+    "area": 84.99,
+    "date": null
+   }
+  ],
+  "a8BJlRv": [
+   {
+    "id": "C15GZAAW",
+    "case": null,
+    "area": 84.99,
+    "date": "9999-12-31T00:00:00+00:00"
+   },
+   {
+    "id": "C32JWIWT",
+    "case": null,
+    "area": 84.99,
+    "date": "9999-12-31T00:00:00+00:00"
+   }
+  ]
+ }
+}
