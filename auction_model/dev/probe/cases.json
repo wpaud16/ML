@@ -1,0 +1,38 @@
+{
+ "2025타경52331": [
+  {
+   "list": "서울 강동구 아파트",
+   "id": "C67BRHQT",
+   "itemNumber": 1,
+   "address": "서울특별시 강동구 명일동 47-12 고덕복합빌딩  16층1605호",
+   "itemType": "아파트",
+   "typeDetails": [
+    "아파트"
+   ],
+   "appraisedPrice": 1225000000,
+   "lowestSellingPrice": 1225000000,
+   "biddingDate": "2026-11-16T00:00:00+00:00",
+   "buildingTotalArea": 118.44,
+   "itemStatus": null,
+   "numberOfFailures": 0
+  },
+  {
+   "list": "서울 강동구 (전체)",
+   "id": "C67BRHQT",
+   "itemNumber": 1,
+   "address": "서울특별시 강동구 명일동 47-12 고덕복합빌딩  16층1605호",
+   "itemType": "아파트",
+   "typeDetails": [
+    "아파트"
+   ],
+   "appraisedPrice": 1225000000,
+   "lowestSellingPrice": 1225000000,
+   "biddingDate": "2026-11-16T00:00:00+00:00",
+   "buildingTotalArea": 118.44,
+   "itemStatus": null,
+   "numberOfFailures": 0
+  }
+ ],
+ "2025타경52331_search": "{\"agentSearch\": {\"q\": \"2025타경52331\", \"groups\": []}}",
+ "2026타경50031_search": "{\"agentSearch\": {\"q\": \"2026타경50031\", \"groups\": []}}"
+}
