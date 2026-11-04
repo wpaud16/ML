@@ -182,13 +182,8 @@ def build(today, now_hour=None):
     H = [f'<div style="font-weight:bold;font-size:17px">🏠 경매 알림</div>']
     H += [f'<div style="color:#d93025;font-size:13px">{E(n)}</div>' for n in notes]
     H.append(f'<p style="text-align:center;margin:12px 0"><a href="{PAGE}" style="display:inline-block;background:#1F1D1A;color:#ffffff;'
-             'text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">📄 경매 전체 카드 보기 (모든 물건 상세)</a></p>')
+             'text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">📄 경매 전체 카드 · 모델 성적표 보기</a></p>')
     T = ['🏠 경매 알림'] + notes + [f'📄 경매 전체 카드: {PAGE}']
-    rt = retrain_line(today)
-    try:
-        res = results_14d(today)
-    except Exception:
-        res = None
     cnt = dict(new=0, total=0)
     for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)')):
         xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v['bidding_date'], v.get('danji_name') or ''))
@@ -202,14 +197,6 @@ def build(today, now_hour=None):
             H.append(f'<div style="{GRAY}">진행 중인 물건 없음</div>')
         for v in xs:
             h, t = summary_row(v, today, is_new(v, pk)); H.append(h); T.append(t)
-        H.append(f'<div style="font-weight:bold;margin:16px 0 6px">📊 모델 성적표 (최근 14일)</div>')
-        T.append('▶ 📊 모델 성적표 (최근 14일)')
-        if rt:
-            H.append(f'<div style="{GRAY}">{rt}</div>'); T.append(rt)
-        if res is None:
-            H.append(f'<div style="{GRAY}">성적표를 만들지 못했습니다</div>')
-        else:
-            h, t = scorecard(res, cat, today); H.append(h); T.append(t)
     foot = ['🛡 안전 = 법원 매각물건명세서로 인수 금액 0원 확인 · 보통 = 리치고 기준 권리 문제 없음(명세서 미확인) · 주의·위험은 숨김',
             '📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12) · 대출·세금·비용 제외 단순 계산',
             '검색 지역: 서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리(8호선역 도보 15분 이내)',

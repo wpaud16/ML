@@ -172,6 +172,68 @@ def card(v, today):
     return f'<div class="card" data-d="{bd}">{body}</div>'
 
 
+def results_14d(today):
+    """predictions/results.json 최근 14일 (같은 물건은 매각 우선·최신 기일 하나)."""
+    try:
+        R = json.load(open(os.path.join(HERE, 'predictions', 'results.json'))).values()
+    except Exception:
+        return None
+    t = datetime.strptime(today, '%Y-%m-%d')
+    lo = (t - timedelta(days=14)).strftime('%Y-%m-%d')
+    best = {}
+    for r in R:
+        if not (lo <= r['bidding_date'] < today): continue
+        r = dict(r); r['category'] = r.get('category') or '아파트'
+        b = best.get(r['key'])
+        if b is None or (r['status'] == '매각', r['bidding_date']) > (b['status'] == '매각', b['bidding_date']):
+            best[r['key']] = r
+    return list(best.values())
+
+
+def retrain_line(today):
+    try:
+        x = json.load(open(os.path.join(HERE, 'predictions', 'retrain_log.json')))[-1]
+        d = datetime.strptime(x['date'], '%Y-%m-%d')
+    except Exception:
+        return ''
+    if (datetime.strptime(today, '%Y-%m-%d') - d).days > 14: return ''
+    if not x.get('apt_added') and not x.get('ot_added'):
+        return f'🔄 {d.month}/{d.day} 재학습 확인 · 새 낙찰 사례 없음 (모델 그대로)'
+    return (f"🔄 {d.month}/{d.day} 모델 재학습 · 아파트 +{x['apt_added']}건 (오차 {x['apt_mape_before']}% → {x['apt_mape_after']}%) · "
+            f"오피스텔 +{x['ot_added']}건 (오차 {x['ot_mape_before']}% → {x['ot_mape_after']}%)")
+
+
+def scorecard(rows, cat):
+    rows = sorted([r for r in rows if r['category'] == cat], key=lambda r: r['bidding_date'], reverse=True)
+    if not rows: return '<p class="g">최근 14일 결과 없음 (예측 기록은 10/31부터 쌓는 중)</p>'
+    sold = [r for r in rows if r.get('status') == '매각' and r.get('diff_pct') is not None]
+    out = []
+    if sold:
+        err = sum(abs(r['diff_pct']) for r in sold) / len(sold)
+        w5 = sum(1 for r in sold if abs(r['diff_pct']) <= 5)
+        mid = sum(1 for r in sold if (r.get('band') or '') not in ('', '60% 초과') and not (r.get('band') or '').startswith('40% 미만'))
+        out.append(f'<div class="g s">낙찰 {len(sold)}건 · 평균 오차 {err:.1f}% · ±5% 안 {w5}건 · 40~60% 구간 안 {mid}건</div>')
+    t = ['<table class="sc"><col style="width:28%"><col style="width:11%"><col><col><col><col style="width:14%">',
+         '<tr><th>물건</th><th>기일</th><th>예상(50%)</th><th>실제</th><th>차이</th><th>인원<br><span class="sub">실제/예상</span></th></tr>']
+    for r in rows:
+        p50 = r['bid_by_prob_manwon']['50%'] / 1e4
+        d = datetime.strptime(r['bidding_date'], '%Y-%m-%d'); dd = f'{d.month}/{d.day}'
+        if r.get('status') == '매각' and r.get('actual_manwon'):
+            act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>'; df = r.get('diff_pct') or 0
+            diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span><br><span class="sub">{E(r.get("band") or "")}</span>'
+        else:
+            act = f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'; diff = '-'
+        b = r.get('bidders'); x = r.get('expected_bidders')
+        ppl = f'<b>{b if b is not None else "-"}</b>/{x if x is not None else "-"}'
+        name = f'{E(r.get("danji_name") or "")}<br><span class="sub">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡</span>'
+        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}', act, diff, ppl)) + '</tr>')
+    t.append('</table>')
+    out.append(''.join(t))
+    out.append('<div class="g s">예상 = 기일 전에 기록한 앙상블 낙찰확률 50% 가격 · 인원 = 실제 응찰자 수 / 기일 전 모델이 예상한 인원 · '
+               '구간 = 실제 낙찰가가 확률표의 어디에 있었는지 (40~60% 안이면 모델 범위 안)</div>')
+    return ''.join(out)
+
+
 CSS = """
 :root{--bg:#ffffff;--fg:#1d1d1f;--mut:#777;--bd:#888}
 @media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ececec;--mut:#9a9a9a;--bd:#666}}
@@ -192,6 +254,7 @@ table{border-collapse:collapse;width:100%;max-width:560px;table-layout:fixed;mar
 th,td{background:#000;color:#fff;border:1px solid #fff;padding:9px 2px}
 td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333}
 a{color:#1a73e8}
+table.sc{font-size:12px} table.sc td{padding:8px 2px} .sub{font-size:11px;color:#BBBBBB}
 .foot{color:var(--mut);font-size:12px;margin-top:24px}
 """
 
@@ -221,6 +284,16 @@ def build(src, dst):
             parts.append(f'<h3>{lab} ({len(g)}건)</h3>')
             parts += [card(v, today) for v in g]
         if not xs: parts.append('<p class="g">표시할 물건 없음</p>')
+    res = results_14d(today)
+    nav.append('<a href="#score">📊 성적표</a>')
+    parts.append('<h2 id="score">📊 모델 성적표 (최근 14일)</h2>')
+    rt = retrain_line(today)
+    if rt: parts.append(f'<div class="g s">{rt}</div>')
+    if res is None:
+        parts.append('<p class="g">성적표를 만들지 못했습니다</p>')
+    else:
+        for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔')):
+            parts.append(f'<h3>{title}</h3>' + scorecard(res, cat))
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
     foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅 · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
