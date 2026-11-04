@@ -1,0 +1,2395 @@
+{
+ "url": "https://m.richgo.ai/realty/danji/a6eBfVs",
+ "html_len": 420963,
+ "next_data": {
+  "props": {
+   "pageProps": {
+    "seo": {
+     "url": "https://m.richgo.ai/realty/danji/a6eBfVs",
+     "title": "'대치동 래미안대치팰리스' 아파트 실거래가·시세·2년뒤 가격예측 분석",
+     "description": "'대치동 래미안대치팰리스' 37평 매매 46.7억, 전세 20.7억. 3개월 뒤 45.6억 전망(리치고 단기 예측, 소폭 하락 예상). AI 가격예측, 실거래가, 시세 분석. 1,608세대 2015년 입주, 서울대치초·개원중·개포고 학군, 평형별 시세까지 리치고에서 확인하세요.",
+     "customKeywords": [
+      "래미안대치팰리스",
+      "강남구 대치동 래미안대치팰리스",
+      "래미안대치팰리스 아파트",
+      "...(+14)"
+     ],
+     "opengoodsCount": null,
+     "defaultPyeongType": 37,
+     "customOpenGraph": "https://m.richgo.ai/api/og/danji/a6eBfVs",
+     "english": {
+      "url": "https://m.richgo.ai/realty/danji/a6eBfVs?lang=en",
+      "title": "Raemian Daechi Palace (래미안대치팰리스), Daechi-dong, Gangnam-gu, Seoul Apartment Prices | Richgo",
+      "description": "Raemian Daechi Palace (래미안대치팰리스), 37 pyeong (approximately 122.3 m²; size category): latest recorded sale ₩4,650,000,000 (contract 2026.09.07, floor 6); lowest asking price ₩4,200,000,000 (listing sna…"
+     },
+     "localized": {
+      "ja": {
+       "url": "https://m.richgo.ai/realty/danji/a6eBfVs?lang=ja",
+       "title": "Raemian Daechi Palace（大峙洞・江南区・ソウル） · 韓国マンション価格・成約情報 | Richgo",
+       "description": "Raemian Daechi Palace · 37 韓国坪（約122.3 m²）：直近成約価格 4,650,000,000 韓国ウォン（契約日 2026.09.07、6階）；最低売出価格 4,200,000,000 韓国ウォン（掲載データ 2026.11.04）。売出価格は成約価格ではありません。面積区分は概算で、専有面積とは異なります。"
+      },
+      "zh-cn": {
+       "url": "https://m.richgo.ai/realty/danji/a6eBfVs?lang=zh-cn",
+       "title": "Raemian Daechi Palace（大峙洞·江南区·首尔） · 韩国公寓价格与成交记录 | Richgo",
+       "description": "Raemian Daechi Palace · 37 韩国坪（约122.3 m²）：最近成交价 4,650,000,000 韩元（合同日期 2026.09.07，6层）；最低挂牌价 4,200,000,000 韩元（房源数据日期 2026.11.04）。挂牌价不等于成交价。面积档位为概算，不等于套内面积。"
+      }
+     }
+    },
+    "data": {
+     "opengoodsCount": 127,
+     "auctionInfo": {
+      "caseId": "20220130113209",
+      "caseSite": "서울중앙지방법원",
+      "caseName": "2022타경113209",
+      "itemNumber": 1,
+      "address": "서울특별시 강남구  삼성로51길 37, 105동 16층1602호 (대치동,래미안대치팰리스)",
+      "keyword": "토지거래허가구역,대항력있는임차인,지분매각",
+      "isOpposingPower": 1,
+      "biddingDate": "9999-12-31T00:00:00+00:00",
+      "pnu": "1168010600110270000",
+      "bjdCode": "1168010600",
+      "bjdInfo": {
+       "sd": "서울",
+       "sgg": "강남구",
+       "emd": "대치동",
+       "dr": null,
+       "bjdCode": "1168010600",
+       "location": {
+        "x": 127.056693501259,
+        "y": 37.4932421505539
+       }
+      },
+      "registrationDate": "2022-12-29",
+      "sellingDate": "2023-10-19",
+      "category": "건물",
+      "danjiId": "a6eBfVs",
+      "pyeong": 35,
+      "privatePyeong": 25,
+      "appraisedPrice": 650000000,
+      "lowestSellingPrice": 520000000,
+      "sellingPrice": 521577000,
+      "itemStatus": "종료",
+      "simpleLowestSellingPrice": 52000,
+      "historyKeyword": null,
+      "subList": [
+       {
+        "caseId": "20230130110504",
+        "caseSite": "서울중앙지방법원",
+        "caseName": "2023타경110504",
+        "itemNumber": 1,
+        "address": "서울특별시 강남구  삼성로51길 37, 102동 17층1702호 (대치동,래미안대치팰리스)",
+        "keyword": "토지거래허가구역,대항력있는임차인",
+        "isOpposingPower": 1,
+        "biddingDate": "9999-12-31T00:00:00+00:00",
+        "pnu": "1168010600110270000",
+        "bjdCode": "1168010600",
+        "bjdInfo": {
+         "sd": "서울",
+         "sgg": "강남구",
+         "emd": "대치동",
+         "dr": null,
+         "bjdCode": "1168010600",
+         "location": {
+          "x": 127.056693501259,
+          "y": 37.4932421505539
+         }
+        },
+        "registrationDate": "2023-07-31",
+        "sellingDate": null,
+        "category": "건물",
+        "danjiId": "a6eBfVs",
+        "pyeong": 38,
+        "privatePyeong": 28,
+        "appraisedPrice": 3600000000,
+        "lowestSellingPrice": 2880000000,
+        "sellingPrice": null,
+        "itemStatus": "종료",
+        "simpleLowestSellingPrice": 288000,
+        "historyKeyword": null,
+        "subList": null,
+        "itemType": "아파트",
+        "groundTotalArea": 49.02,
+        "buildingTotalArea": 94.49,
+        "simpleAppraisedPrice": 360000,
+        "simpleSellingPrice": null,
+        "simpleBiddingDepositMin": 28800,
+        "simpleBiddingDepositMax": 28800,
+        "numberOfFailures": 1,
+        "biddingDepositMin": 288000000,
+        "biddingDepositMax": 288000000,
+        "biddingDepositPercentMin": 10,
+        "biddingDepositPercentMax": 10,
+        "results": null,
+        "photoCount": 9,
+        "totalHouseholds": 1608,
+        "constructYear": 12,
+        "opengoodsPriceRatio": 44.1,
+        "viewCount": 0,
+        "contentId": 19176,
+        "recommendedGrade": "Now",
+        "recommendedBidPrice": null,
+        "estimateMaxProfit": null,
+        "hasAnalyzerPermission": false,
+        "goodnewsType": null,
+        "auctionId": "C09CJYXL",
+        "location": {
+         "x": 127.058003,
+         "y": 37.494298
+        }
+       },
+       {
+        "caseId": "20240130005203",
+        "caseSite": "서울중앙지방법원",
+        "caseName": "2024타경5203",
+        "itemNumber": 1,
+        "address": "서울특별시 강남구 삼성로51길 37, 112동 7층705호 (대치동,래미안대치팰리스)",
+        "keyword": "토지거래허가구역",
+        "isOpposingPower": null,
+        "biddingDate": "9999-12-31T00:00:00+00:00",
+        "pnu": "1168010600110270000",
+        "bjdCode": "1168010600",
+        "bjdInfo": {
+         "sd": "서울",
+         "sgg": "강남구",
+         "emd": "대치동",
+         "dr": null,
+         "bjdCode": "1168010600",
+         "location": {
+          "x": 127.056693501259,
+          "y": 37.4932421505539
+         }
+        },
+        "registrationDate": "2024-10-14",
+        "sellingDate": "2025-01-16",
+        "category": "건물",
+        "danjiId": "a6eBfVs",
+        "pyeong": 38,
+        "privatePyeong": 28,
+        "appraisedPrice": 4020000000,
+        "lowestSellingPrice": 4020000000,
+        "sellingPrice": 4119060500,
+        "itemStatus": "종료",
+        "simpleLowestSellingPrice": 402000,
+        "historyKeyword": null,
+        "subList": null,
+        "itemType": "아파트",
+        "groundTotalArea": 49.02,
+        "buildingTotalArea": 94.49,
+        "simpleAppraisedPrice": 402000,
+        "simpleSellingPrice": 411906,
+        "simpleBiddingDepositMin": 40200,
+        "simpleBiddingDepositMax": 40200,
+        "numberOfFailures": 0,
+        "biddingDepositMin": 402000000,
+        "biddingDepositMax": 402000000,
+        "biddingDepositPercentMin": 10,
+        "biddingDepositPercentMax": 10,
+        "results": null,
+        "photoCount": 17,
+        "totalHouseholds": 1608,
+        "constructYear": 12,
+        "opengoodsPriceRatio": 21.9,
+        "viewCount": 0,
+        "contentId": 19630788,
+        "recommendedGrade": "Now",
+        "recommendedBidPrice": null,
+        "estimateMaxProfit": null,
+        "hasAnalyzerPermission": false,
+        "goodnewsType": null,
+        "auctionId": "C56KZDOZ",
+        "location": {
+         "x": 127.058003,
+         "y": 37.494297
+        }
+       },
+       {
+        "caseId": "20250130104308",
+        "caseSite": "서울중앙지방법원",
+        "caseName": "2025타경104308",
+        "itemNumber": 1,
+        "address": "서울특별시 강남구 대치동 1027 래미안대치팰리스 104동 12층1201호",
+        "keyword": "토지거래허가구역",
+        "isOpposingPower": null,
+        "biddingDate": "2026-11-05T00:00:00+00:00",
+        "pnu": "1168010600110270000",
+        "bjdCode": "1168010600",
+        "bjdInfo": {
+         "sd": "서울",
+         "sgg": "강남구",
+         "emd": "대치동",
+         "dr": null,
+         "bjdCode": "1168010600",
+         "location": {
+          "x": 127.056693501259,
+          "y": 37.4932421505539
+         }
+        },
+        "registrationDate": "2025-11-11",
+        "sellingDate": null,
+        "category": "건물",
+        "danjiId": "a6eBfVs",
+        "pyeong": 33,
+        "privatePyeong": 25,
+        "appraisedPrice": 5070000000,
+        "lowestSellingPrice": 4056000000,
+        "sellingPrice": null,
+        "itemStatus": "진행중",
+        "simpleLowestSellingPrice": 405600,
+        "historyKeyword": null,
+        "subList": null,
+        "itemType": "아파트",
+        "groundTotalArea": 44.08,
+        "buildingTotalArea": 84.98,
+        "simpleAppraisedPrice": 507000,
+        "simpleSellingPrice": null,
+        "simpleBiddingDepositMin": 40560,
+        "simpleBiddingDepositMax": 40560,
+        "numberOfFailures": 1,
+        "biddingDepositMin": 405600000,
+        "biddingDepositMax": 405600000,
+        "biddingDepositPercentMin": 10,
+        "biddingDepositPercentMax": 10,
+        "results": null,
+        "photoCount": 18,
+        "totalHouseholds": 1608,
+        "constructYear": 12,
+        "opengoodsPriceRatio": 1.1,
+        "viewCount": 0,
+        "contentId": 68914486,
+        "recommendedGrade": "NotNow",
+        "recommendedBidPrice": null,
+        "estimateMaxProfit": null,
+        "hasAnalyzerPermission": false,
+        "goodnewsType": null,
+        "auctionId": "C04OZEQG",
+        "location": {
+         "x": 127.058003,
+         "y": 37.494298
+        }
+       }
+      ],
+      "itemType": "아파트",
+      "groundTotalArea": 44.09,
+      "buildingTotalArea": 84.99,
+      "simpleAppraisedPrice": 65000,
+      "simpleSellingPrice": 52158,
+      "simpleBiddingDepositMin": 5200,
+      "simpleBiddingDepositMax": 5200,
+      "numberOfFailures": 1,
+      "biddingDepositMin": 52000000,
+      "biddingDepositMax": 52000000,
+      "biddingDepositPercentMin": 10,
+      "biddingDepositPercentMax": 10,
+      "results": null,
+      "photoCount": 14,
+      "totalHouseholds": 1608,
+      "constructYear": 12,
+      "opengoodsPriceRatio": 89.6,
+      "viewCount": 0,
+      "contentId": 30788,
+      "recommendedGrade": "Hard",
+      "recommendedBidPrice": null,
+      "estimateMaxProfit": null,
+      "hasAnalyzerPermission": false,
+      "goodnewsType": null,
+      "auctionId": "C28FFPGC",
+      "location": {
+       "x": 127.057698,
+       "y": 37.493436
+      }
+     },
+     "newKbStarId": "KBA027505",
+     "landTradePermissionType": "None",
+     "schoolInfo": {
+      "elementary": [
+       {
+        "schoolId": "S010000749",
+        "schoolName": "서울대치초등학교",
+        "admissionInfoDto": {
+         "admissionRate": 26.624,
+         "sdAdmissionRate": 2.79,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 0.42
+        },
+        "distanceWalk": 533.1504,
+        "distanceEuclidean": 444.292,
+        "admissionRecordList": []
+       }
+      ],
+      "middle": [
+       {
+        "schoolId": "S010000698",
+        "schoolName": "개원중학교",
+        "admissionInfoDto": {
+         "admissionRate": 8.25,
+         "sdAdmissionRate": 47.55,
+         "sdAdmissionGrade": "A",
+         "nationalAdmissionRate": 10.72
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 1072.07,
+        "admissionRecordList": []
+       },
+       {
+        "schoolId": "S010000699",
+        "schoolName": "개포중학교",
+        "admissionInfoDto": {
+         "admissionRate": 18.06,
+         "sdAdmissionRate": 15.76,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 2.78
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 1618.1,
+        "admissionRecordList": []
+       },
+       {
+        "schoolId": "S010000701",
+        "schoolName": "구룡중학교",
+        "admissionInfoDto": {
+         "admissionRate": 20.51,
+         "sdAdmissionRate": 12.4,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 2.09
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 1006.58,
+        "admissionRecordList": []
+       },
+       "...(+10)"
+      ],
+      "high": [
+       {
+        "schoolId": "S010000373",
+        "schoolName": "개포고등학교",
+        "admissionInfoDto": {
+         "admissionRate": 42.33,
+         "sdAdmissionRate": 30.49,
+         "sdAdmissionGrade": "A",
+         "nationalAdmissionRate": 60.31
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 1088.07,
+        "admissionRecordList": [
+         {
+          "admissionYear": 2023,
+          "target": "SNU",
+          "targetName": "서울대",
+          "basis": "ENROLL",
+          "basisName": "등록",
+          "isPartial": false,
+          "totalCount": 10,
+          "susiCount": 4,
+          "jeongsiCount": 6,
+          "sourceType": "AUDIT",
+          "sourceName": "국정감사 자료",
+          "reliabilityNote": "최종등록자 기준, 예체능·특성화고 제외",
+          "displayText": "서울대 등록 10명"
+         },
+         {
+          "admissionYear": 2020,
+          "target": "SNU",
+          "targetName": "서울대",
+          "basis": "ENROLL",
+          "basisName": "등록",
+          "isPartial": false,
+          "totalCount": 7,
+          "susiCount": 5,
+          "jeongsiCount": 2,
+          "sourceType": "AUDIT",
+          "sourceName": "국정감사 자료",
+          "reliabilityNote": "최종등록자 기준, 예체능 제외",
+          "displayText": "서울대 등록 7명"
+         }
+        ]
+       },
+       {
+        "schoolId": "S010000376",
+        "schoolName": "경기여자고등학교",
+        "admissionInfoDto": {
+         "admissionRate": 48.17,
+         "sdAdmissionRate": 16.67,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 32.35
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 1044.9,
+        "admissionRecordList": [
+         {
+          "admissionYear": 2023,
+          "target": "SNU",
+          "targetName": "서울대",
+          "basis": "ENROLL",
+          "basisName": "등록",
+          "isPartial": false,
+          "totalCount": 9,
+          "susiCount": 3,
+          "jeongsiCount": 6,
+          "sourceType": "AUDIT",
+          "sourceName": "국정감사 자료",
+          "reliabilityNote": "최종등록자 기준, 예체능·특성화고 제외",
+          "displayText": "서울대 등록 9명"
+         },
+         {
+          "admissionYear": 2022,
+          "target": "SNU",
+          "targetName": "서울대",
+          "basis": "ENROLL",
+          "basisName": "등록",
+          "isPartial": false,
+          "totalCount": 11,
+          "susiCount": 6,
+          "jeongsiCount": 5,
+          "sourceType": "AUDIT",
+          "sourceName": "국정감사 자료",
+          "reliabilityNote": "최종등록자 기준, 예체능·특성화고 제외",
+          "displayText": "서울대 등록 11명"
+         },
+         {
+          "admissionYear": 2020,
+          "target": "SNU",
+          "targetName": "서울대",
+          "basis": "ENROLL",
+          "basisName": "등록",
+          "isPartial": false,
+          "totalCount": 11,
+          "susiCount": 4,
+          "jeongsiCount": 7,
+          "sourceType": "AUDIT",
+          "sourceName": "국정감사 자료",
+          "reliabilityNote": "최종등록자 기준, 예체능 제외",
+          "displayText": "서울대 등록 11명"
+         }
+        ]
+       },
+       {
+        "schoolId": "S010000405",
+        "schoolName": "단국대학교사범대학부속고등학교",
+        "admissionInfoDto": {
+         "admissionRate": 45.28,
+         "sdAdmissionRate": 9.35,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 12.99
+        },
+        "distanceWalk": 365.68559999999997,
+        "distanceEuclidean": 304.738,
+        "admissionRecordList": [
+         {
+          "admissionYear": 2026,
+          "target": "SNU",
+          "targetName": "서울대",
+          "basis": "PASS",
+          "basisName": "합격",
+          "isPartial": false,
+          "totalCount": 37,
+          "susiCount": 5,
+          "jeongsiCount": 32,
+          "sourceType": "PRESS",
+          "sourceName": "언론 보도",
+          "reliabilityNote": "정시 추합 포함 합격 기준; 타 출처 37명",
+          "displayText": "서울대 합격 37명"
+         },
+         {
+          "admissionYear": 2026,
+          "target": "MED",
+          "targetName": "의대",
+          "basis": "PASS",
+          "basisName": "합격",
+          "isPartial": false,
+          "totalCount": 102,
+          "susiCount": null,
+          "jeongsiCount": null,
+          "sourceType": "PRESS",
+          "sourceName": "언론 보도",
+          "reliabilityNote": "톱100 표(중복합격·N수생 포함); 중복합격·N수생 포함 가능; 타 출처 69명; 타 출처 77명",
+          "displayText": "의대 합격 102명"
+         },
+         {
+          "admissionYear": 2026,
+          "target": "DENT",
+          "targetName": "치대",
+          "basis": "PASS",
+          "basisName": "합격",
+          "isPartial": false,
+          "totalCount": 1,
+          "susiCount": null,
+          "jeongsiCount": null,
+          "sourceType": "PRESS",
+          "sourceName": "언론 보도",
+          "reliabilityNote": "톱100 표(중복합격·N수생 포함); 중복합격·N수생 포함 가능; 타 출처 1명",
+          "displayText": "치대 합격 1명"
+         },
+         "...(+15)"
+        ]
+       },
+       "...(+3)"
+      ]
+     },
+     "bjdInfo": {
+      "code": "1168010600",
+      "sd": "서울",
+      "sgg": "강남구",
+      "emd": "대치동"
+     },
+     "score": 40.2,
+     "brandUrl": "https://public-resources.richgo.ai/danji_brand_icons/래미안.svg",
+     "name": "래미안대치팰리스",
+     "tags": [
+      "대단지",
+      "역세권"
+     ],
+     "location": {
+      "x": 127.059641,
+      "y": 37.494837
+     },
+     "pyeongInfos": {
+      "26": {
+       "pyeongType": 26,
+       "naverAreaIndex": "2,3",
+       "minSupplyArea": "88",
+       "maxSupplyArea": "88.15",
+       "minPrivateArea": "59.99",
+       "maxPrivateArea": "59.99",
+       "households": 14,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 338449,
+         "rateOfChange": 0,
+         "perPyeong": 13017,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 69537,
+         "rateOfChange": 0,
+         "perPyeong": 2674,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": 175000,
+        "jeonseRate": 49.13,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 250000,
+          "perPyeong": 9615,
+          "yyyymmdd": "2020.06.20"
+         },
+         "KB": {
+          "price": 330000,
+          "perPyeong": 12692,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 344000,
+          "maxPrice": 359000,
+          "price": 349500,
+          "perPyeong": 13442,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 338449,
+          "perPyeong": 13017,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 165000,
+          "perPyeong": 6346,
+          "yyyymmdd": "2026.10.15"
+         },
+         "KB": {
+          "price": 170000,
+          "perPyeong": 6538,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 169000,
+          "maxPrice": 169000,
+          "price": 169750,
+          "perPyeong": 6528,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 69537,
+          "perPyeong": 2674,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": 0,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 6,
+       "jeonseMonthlyOfferCount": 7,
+       "historySummaryInfoDto": null
+      },
+      "31": {
+       "pyeongType": 31,
+       "naverAreaIndex": "4",
+       "minSupplyArea": "102.69",
+       "maxSupplyArea": "102.69",
+       "minPrivateArea": "69.04",
+       "maxPrivateArea": "69.04",
+       "households": 3,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": null,
+         "rateOfChange": 0,
+         "perPyeong": 0,
+         "yyyymmdd": null
+        },
+        "jeonse": {
+         "price": null,
+         "rateOfChange": -3.664370059967041,
+         "perPyeong": 0,
+         "yyyymmdd": null
+        },
+        "gap": null,
+        "jeonseRate": null,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 356000,
+          "perPyeong": 11483,
+          "yyyymmdd": "2025.02.11"
+         },
+         "KB": {
+          "price": 399700,
+          "perPyeong": 12893,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": null,
+          "maxPrice": null,
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         },
+         "RICHGO_SISE": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         },
+         "KB": {
+          "price": 181400,
+          "perPyeong": 5851,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": null,
+          "maxPrice": null,
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         },
+         "RICHGO_SISE": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": -3.66437,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 0,
+       "jeonseMonthlyOfferCount": 1,
+       "historySummaryInfoDto": null
+      },
+      "33": {
+       "pyeongType": 33,
+       "naverAreaIndex": "6,7",
+       "minSupplyArea": "111.83",
+       "maxSupplyArea": "112.24",
+       "minPrivateArea": "84.98",
+       "maxPrivateArea": "84.99",
+       "households": 224,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 430821,
+         "rateOfChange": 0,
+         "perPyeong": 13055,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 204805,
+         "rateOfChange": -3.6585400104522705,
+         "perPyeong": 6206,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": 205000,
+        "jeonseRate": 50,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 430000,
+          "perPyeong": 13030,
+          "yyyymmdd": "2026.05.08"
+         },
+         "KB": {
+          "price": 435000,
+          "perPyeong": 13181,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 410000,
+          "maxPrice": 500000,
+          "price": 436548,
+          "perPyeong": 13228,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 430821,
+          "perPyeong": 13055,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 205000,
+          "perPyeong": 6212,
+          "yyyymmdd": "2026.09.18"
+         },
+         "KB": {
+          "price": 197500,
+          "perPyeong": 5984,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 205000,
+          "maxPrice": 205000,
+          "price": 212000,
+          "perPyeong": 6424,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 204805,
+          "perPyeong": 6206,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": -3.65854,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 42,
+       "jeonseMonthlyOfferCount": 31,
+       "historySummaryInfoDto": null
+      },
+      "34": {
+       "pyeongType": 34,
+       "naverAreaIndex": "5",
+       "minSupplyArea": "113.15",
+       "maxSupplyArea": "113.15",
+       "minPrivateArea": "84.97",
+       "maxPrivateArea": "84.97",
+       "households": 198,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 436202,
+         "rateOfChange": 0,
+         "perPyeong": 12829,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 194445,
+         "rateOfChange": -3.6585400104522705,
+         "perPyeong": 5718,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": 204000,
+        "jeonseRate": 50.12,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 440000,
+          "perPyeong": 12941,
+          "yyyymmdd": "2026.06.03"
+         },
+         "KB": {
+          "price": 435000,
+          "perPyeong": 12794,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 409000,
+          "maxPrice": 460000,
+          "price": 425167,
+          "perPyeong": 12504,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 436202,
+          "perPyeong": 12829,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 186000,
+          "perPyeong": 5470,
+          "yyyymmdd": "2026.10.08"
+         },
+         "KB": {
+          "price": 197500,
+          "perPyeong": 5808,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 205000,
+          "maxPrice": 205000,
+          "price": 215588,
+          "perPyeong": 6340,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 194445,
+          "perPyeong": 5718,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": -3.65854,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 24,
+       "jeonseMonthlyOfferCount": 28,
+       "historySummaryInfoDto": null
+      },
+      "35": {
+       "pyeongType": 35,
+       "naverAreaIndex": "10,8,9",
+       "minSupplyArea": "118.76",
+       "maxSupplyArea": "118.94",
+       "minPrivateArea": "84.99",
+       "maxPrivateArea": "89.03",
+       "households": 27,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": null,
+         "rateOfChange": 0,
+         "perPyeong": 0,
+         "yyyymmdd": null
+        },
+        "jeonse": {
+         "price": null,
+         "rateOfChange": 0,
+         "perPyeong": 0,
+         "yyyymmdd": null
+        },
+        "gap": 290000,
+        "jeonseRate": 42,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         },
+         "KB": {
+          "price": 405000,
+          "perPyeong": 11571,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 500000,
+          "maxPrice": 500000,
+          "price": 500000,
+          "perPyeong": 14285,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 190000,
+          "perPyeong": 5428,
+          "yyyymmdd": "2024.05.11"
+         },
+         "KB": {
+          "price": 185000,
+          "perPyeong": 5285,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 210000,
+          "maxPrice": 210000,
+          "price": 210000,
+          "perPyeong": 6000,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": 0,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 1,
+       "jeonseMonthlyOfferCount": 2,
+       "historySummaryInfoDto": null
+      },
+      "36": {
+       "pyeongType": 36,
+       "naverAreaIndex": "11",
+       "minSupplyArea": "122.05",
+       "maxSupplyArea": "122.05",
+       "minPrivateArea": "91.55",
+       "maxPrivateArea": "91.55",
+       "households": 2,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": null,
+         "rateOfChange": 0,
+         "perPyeong": 0,
+         "yyyymmdd": null
+        },
+        "jeonse": {
+         "price": null,
+         "rateOfChange": -1.2820500135421753,
+         "perPyeong": 0,
+         "yyyymmdd": null
+        },
+        "gap": null,
+        "jeonseRate": null,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 196000,
+          "perPyeong": 5444,
+          "yyyymmdd": "2017.11.18"
+         },
+         "KB": {
+          "price": 425000,
+          "perPyeong": 11805,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": null,
+          "maxPrice": null,
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         },
+         "RICHGO_SISE": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 170000,
+          "perPyeong": 4722,
+          "yyyymmdd": "2019.12.20"
+         },
+         "KB": {
+          "price": 192500,
+          "perPyeong": 5347,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": null,
+          "maxPrice": null,
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         },
+         "RICHGO_SISE": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": -1.28205,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 0,
+       "jeonseMonthlyOfferCount": 0,
+       "historySummaryInfoDto": null
+      },
+      "37": {
+       "pyeongType": 37,
+       "naverAreaIndex": "12,13,14,15,16,17,19,21",
+       "minSupplyArea": "122.58",
+       "maxSupplyArea": "125.57",
+       "minPrivateArea": "91.89",
+       "maxPrivateArea": "94.5",
+       "households": 564,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 467649,
+         "rateOfChange": -0.6602770090103149,
+         "perPyeong": 12639,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 207861,
+         "rateOfChange": -2.7064900398254395,
+         "perPyeong": 5617,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": 220000,
+        "jeonseRate": 47.62,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 465000,
+          "perPyeong": 12567,
+          "yyyymmdd": "2026.09.07"
+         },
+         "KB": {
+          "price": 466400,
+          "perPyeong": 12605,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 420000,
+          "maxPrice": 540000,
+          "price": 470620,
+          "perPyeong": 12719,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 467649,
+          "perPyeong": 12639,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 235000,
+          "perPyeong": 6351,
+          "yyyymmdd": "2026.11.02"
+         },
+         "KB": {
+          "price": 208500,
+          "perPyeong": 5635,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 200000,
+          "maxPrice": 200000,
+          "price": 221154,
+          "perPyeong": 5977,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 207861,
+          "perPyeong": 5617,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": -0.660277,
+        "jeonseRateOfChange": -2.70649,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 71,
+       "jeonseMonthlyOfferCount": 56,
+       "historySummaryInfoDto": {
+        "openGoodMemeMinPrice1mAgoRate": -2.2,
+        "openGoodMemeMinPrice3mAgoRate": -4.4,
+        "openGoodMemeMinPrice6mAgoRate": 3.7,
+        "openGoodMemeMinPrice12mAgoRate": -10.4,
+        "openGoodJeonseMinPrice1mAgoRate": -2.4,
+        "openGoodJeonseMinPrice3mAgoRate": -8.7,
+        "openGoodJeonseMinPrice6mAgoRate": 11.4,
+        "openGoodJeonseMinPrice12mAgoRate": 0.5,
+        "highestMolitMemePriceRate": -12.3,
+        "highestMolitJeonsePriceRate": -7.8
+       }
+      },
+      "38": {
+       "pyeongType": 38,
+       "naverAreaIndex": "18,20,22",
+       "minSupplyArea": "126.12",
+       "maxSupplyArea": "126.57",
+       "minPrivateArea": "94.48",
+       "maxPrivateArea": "94.51",
+       "households": 262,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 488471,
+         "rateOfChange": -1.01010000705719,
+         "perPyeong": 12854,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 213192,
+         "rateOfChange": -3.333329916000366,
+         "perPyeong": 5610,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": 230000,
+        "jeonseRate": 48.89,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 470000,
+          "perPyeong": 12368,
+          "yyyymmdd": "2026.05.13"
+         },
+         "KB": {
+          "price": 490000,
+          "perPyeong": 12894,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 450000,
+          "maxPrice": 560000,
+          "price": 487159,
+          "perPyeong": 12819,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 488471,
+          "perPyeong": 12854,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 220000,
+          "perPyeong": 5789,
+          "yyyymmdd": "2026.06.27"
+         },
+         "KB": {
+          "price": 217500,
+          "perPyeong": 5723,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 220000,
+          "maxPrice": 220000,
+          "price": 243333,
+          "perPyeong": 6403,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 213192,
+          "perPyeong": 5610,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": -1.0101,
+        "jeonseRateOfChange": -3.33333,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 44,
+       "jeonseMonthlyOfferCount": 15,
+       "historySummaryInfoDto": null
+      },
+      "45": {
+       "pyeongType": 45,
+       "naverAreaIndex": "23,24,25,26",
+       "minSupplyArea": "149.36",
+       "maxSupplyArea": "150.66",
+       "minPrivateArea": "114.14",
+       "maxPrivateArea": "114.17",
+       "households": 178,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 599757,
+         "rateOfChange": 0,
+         "perPyeong": 13327,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 282415,
+         "rateOfChange": -0.847458004951477,
+         "perPyeong": 6275,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": 260000,
+        "jeonseRate": 53.57,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 638000,
+          "perPyeong": 14177,
+          "yyyymmdd": "2026.07.22"
+         },
+         "KB": {
+          "price": 590000,
+          "perPyeong": 13111,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 560000,
+          "maxPrice": 650000,
+          "price": 601750,
+          "perPyeong": 13372,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 599757,
+          "perPyeong": 13327,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 290000,
+          "perPyeong": 6444,
+          "yyyymmdd": "2026.08.25"
+         },
+         "KB": {
+          "price": 292500,
+          "perPyeong": 6500,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 300000,
+          "maxPrice": 300000,
+          "price": 300000,
+          "perPyeong": 6666,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 282415,
+          "perPyeong": 6275,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": -0.847458,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 40,
+       "jeonseMonthlyOfferCount": 21,
+       "historySummaryInfoDto": null
+      },
+      "54": {
+       "pyeongType": 54,
+       "naverAreaIndex": "28",
+       "minSupplyArea": "181.45",
+       "maxSupplyArea": "181.45",
+       "minPrivateArea": "151.31",
+       "maxPrivateArea": "151.31",
+       "households": 63,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 601237,
+         "rateOfChange": 0,
+         "perPyeong": 11134,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 300705,
+         "rateOfChange": 0,
+         "perPyeong": 5568,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": null,
+        "jeonseRate": null,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 570000,
+          "perPyeong": 10555,
+          "yyyymmdd": "2026.05.27"
+         },
+         "KB": {
+          "price": 595000,
+          "perPyeong": 11018,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 599000,
+          "maxPrice": 750000,
+          "price": 659933,
+          "perPyeong": 12220,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 601237,
+          "perPyeong": 11134,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 330000,
+          "perPyeong": 6111,
+          "yyyymmdd": "2024.09.30"
+         },
+         "KB": {
+          "price": 295000,
+          "perPyeong": 5462,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": null,
+          "maxPrice": null,
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": null
+         },
+         "RICHGO_SISE": {
+          "price": 300705,
+          "perPyeong": 5568,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": 0,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 15,
+       "jeonseMonthlyOfferCount": 6,
+       "historySummaryInfoDto": null
+      },
+      "55": {
+       "pyeongType": 55,
+       "naverAreaIndex": "27",
+       "minSupplyArea": "183.59",
+       "maxSupplyArea": "183.59",
+       "minPrivateArea": "151.27",
+       "maxPrivateArea": "151.27",
+       "households": 33,
+       "minRoomCount": null,
+       "maxRoomCount": null,
+       "minBathRoomCount": null,
+       "maxBathRoomCount": null,
+       "myHouseYn": false,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 601543,
+         "rateOfChange": 0,
+         "perPyeong": 10937,
+         "yyyymmdd": "2026.11.02"
+        },
+        "jeonse": {
+         "price": 300674,
+         "rateOfChange": 0,
+         "perPyeong": 5466,
+         "yyyymmdd": "2026.11.02"
+        },
+        "gap": 300000,
+        "jeonseRate": 53.85,
+        "memeSource": "RICHGO_SISE",
+        "jeonseSource": "RICHGO_SISE",
+        "memePriceDict": {
+         "MOLIT": {
+          "price": 595000,
+          "perPyeong": 10818,
+          "yyyymmdd": "2026.03.28"
+         },
+         "KB": {
+          "price": 595000,
+          "perPyeong": 10818,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 650000,
+          "maxPrice": 745000,
+          "price": 673750,
+          "perPyeong": 12250,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 601543,
+          "perPyeong": 10937,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "jeonsePriceDict": {
+         "MOLIT": {
+          "price": 300000,
+          "perPyeong": 5454,
+          "yyyymmdd": "2024.01.17"
+         },
+         "KB": {
+          "price": 295000,
+          "perPyeong": 5363,
+          "yyyymmdd": "2026.10.01"
+         },
+         "OFFER": {
+          "minPrice": 350000,
+          "maxPrice": 350000,
+          "price": 350000,
+          "perPyeong": 6363,
+          "yyyymmdd": "2026.11.04"
+         },
+         "RICHGO_SISE": {
+          "price": 300674,
+          "perPyeong": 5466,
+          "yyyymmdd": "2026.11.02"
+         }
+        },
+        "memeRateOfChange": 0,
+        "jeonseRateOfChange": 0,
+        "publishedAvgPrice": null
+       },
+       "priceChangeRateInfo": null,
+       "memeOfferCount": 4,
+       "jeonseMonthlyOfferCount": 2,
+       "historySummaryInfoDto": null
+      }
+     },
+     "isEmdLeader": true,
+     "isSggLeader": false,
+     "isSdLeader": false,
+     "selectedPriceType": "meme",
+     "selectedPyeongType": 37,
+     "totalPostCount": 2,
+     "price": {
+      "sId": 180280,
+      "gapTable": {
+       "more": true,
+       "items": [
+        {
+         "dong": null,
+         "date": "2026.09.07",
+         "supplyAreaRep": "125B1",
+         "privateAreaRep": "94B1",
+         "floor": 6,
+         "price": 465000,
+         "parcelOutYn": "n",
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "",
+         "isDistantRegion": false,
+         "registrationDate": null,
+         "estDong": null
+        },
+        {
+         "dong": null,
+         "date": "2026.07.09",
+         "supplyAreaRep": "124",
+         "privateAreaRep": "93",
+         "floor": 4,
+         "price": 470000,
+         "parcelOutYn": "n",
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "",
+         "isDistantRegion": false,
+         "registrationDate": null,
+         "estDong": "102동"
+        },
+        {
+         "dong": "202동",
+         "date": "2026.06.29",
+         "supplyAreaRep": "122C",
+         "privateAreaRep": "91C",
+         "floor": 10,
+         "price": 397000,
+         "parcelOutYn": "n",
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "",
+         "isDistantRegion": false,
+         "registrationDate": "2026.10.28",
+         "estDong": null
+        },
+        "...(+2)"
+       ]
+      },
+      "saleCount": 6,
+      "offerPrice": null,
+      "realTransactionPrice": 465000,
+      "minOfferPrice": 420000,
+      "transaction": {
+       "more": true,
+       "items": [
+        {
+         "dong": null,
+         "date": "2026.09.07",
+         "supplyAreaRep": "125B1",
+         "privateAreaRep": "94B1",
+         "floor": 6,
+         "price": 465000,
+         "parcelOutYn": "n",
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "",
+         "isDistantRegion": false,
+         "registrationDate": null,
+         "estDong": null
+        },
+        {
+         "dong": null,
+         "date": "2026.07.09",
+         "supplyAreaRep": "124",
+         "privateAreaRep": "93",
+         "floor": 4,
+         "price": 470000,
+         "parcelOutYn": "n",
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "",
+         "isDistantRegion": false,
+         "registrationDate": null,
+         "estDong": "102동"
+        },
+        {
+         "dong": "202동",
+         "date": "2026.06.29",
+         "supplyAreaRep": "122C",
+         "privateAreaRep": "91C",
+         "floor": 10,
+         "price": 397000,
+         "parcelOutYn": "n",
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "",
+         "isDistantRegion": false,
+         "registrationDate": "2026.10.28",
+         "estDong": null
+        },
+        "...(+2)"
+       ]
+      }
+     },
+     "basic": {
+      "address": {
+       "jibun": "서울시 강남구 대치동 1027",
+       "road": "서울시 강남구 삼성로51길 37"
+      },
+      "floor": {
+       "top": 35,
+       "bottom": 12
+      },
+      "construction": {
+       "year": 12,
+       "date": "2015.09.22"
+      },
+      "pyeongTypeList": [
+       35,
+       36,
+       37,
+       "...(+8)"
+      ],
+      "households": 1608,
+      "floorArea": 258,
+      "buildingRatio": 15,
+      "parking": {
+       "count": 3119,
+       "households": 1.9299999475479126
+      },
+      "heating": {
+       "fuel": "열병합",
+       "system": "지역난방"
+      },
+      "builder": "삼성물산(주)",
+      "enteranceType": "계단식",
+      "officePhone": "02-567-3303"
+     },
+     "analyze": {
+      "invest": {
+       "invest": {
+        "score": 40.2,
+        "rate": 48,
+        "chart": {
+         "data": [
+          {
+           "date": "2008-01-01",
+           "score": 74,
+           "averagePrice": 3345
+          },
+          {
+           "date": "2008-02-01",
+           "score": 74.1,
+           "averagePrice": 3346
+          },
+          {
+           "date": "2008-03-01",
+           "score": 74.2,
+           "averagePrice": 3347
+          },
+          "...(+223)"
+         ]
+        }
+       },
+       "mdd": {
+        "rank": 14.98,
+        "value": null,
+        "chart": {
+         "data": [
+          {
+           "date": "2015-08-01",
+           "mdd": 0
+          },
+          {
+           "date": "2015-09-01",
+           "mdd": 0
+          },
+          {
+           "date": "2015-10-01",
+           "mdd": 0
+          },
+          "...(+132)"
+         ]
+        }
+       },
+       "bars": [
+        {
+         "title": "전세가율",
+         "text": "-%",
+         "topRate": null
+        },
+        {
+         "title": "갭가격",
+         "text": "0",
+         "topRate": null
+        },
+        {
+         "title": "시가총액",
+         "text": "7.5조",
+         "topRate": 0.78
+        },
+        "...(+1)"
+       ],
+       "annualReturn": {
+        "rank": 0.99,
+        "value": null
+       }
+      }
+     },
+     "environment": {
+      "selectedDistance": 600,
+      "score": 95,
+      "trafficScore": 81,
+      "lifeScore": 93,
+      "eduScore": 95,
+      "residenceIndexList": [
+       {
+        "indexCode": 1,
+        "name": "mart",
+        "nameKr": "마트",
+        "groupCategory": "life"
+       },
+       {
+        "indexCode": 2,
+        "name": "academy",
+        "nameKr": "학원",
+        "groupCategory": "edu"
+       },
+       {
+        "indexCode": 3,
+        "name": "baby",
+        "nameKr": "어린이집",
+        "groupCategory": "edu"
+       },
+       "...(+16)"
+      ],
+      "distanceGroupList": [
+       {
+        "indexCode": 1,
+        "category": "life",
+        "distanceDataList": [
+         {
+          "distance": 300,
+          "groupCount": 2
+         },
+         {
+          "distance": 600,
+          "groupCount": 5
+         },
+         {
+          "distance": 1000,
+          "groupCount": 12
+         }
+        ]
+       },
+       {
+        "indexCode": 2,
+        "category": "edu",
+        "distanceDataList": [
+         {
+          "distance": 300,
+          "groupCount": 117
+         },
+         {
+          "distance": 600,
+          "groupCount": 588
+         },
+         {
+          "distance": 1000,
+          "groupCount": 1503
+         }
+        ]
+       },
+       {
+        "indexCode": 3,
+        "category": "edu",
+        "distanceDataList": [
+         {
+          "distance": 300,
+          "groupCount": 5
+         },
+         {
+          "distance": 600,
+          "groupCount": 9
+         },
+         {
+          "distance": 1000,
+          "groupCount": 20
+         }
+        ]
+       },
+       "...(+11)"
+      ],
+      "placeInfoList": [
+       {
+        "indexCode": 2,
+        "category": "edu",
+        "distance": 118,
+        "targetName": "이맥스잉글리시(eMAX Englsih)어학원",
+        "indexName": "학원",
+        "subwayLineInfo": null,
+        "targetId": "ac2BkeNrFfI"
+       },
+       {
+        "indexCode": 2,
+        "category": "edu",
+        "distance": 118,
+        "targetName": "이맥스6789학원",
+        "indexName": "학원",
+        "subwayLineInfo": null,
+        "targetId": "ac6OpnsotzP"
+       },
+       {
+        "indexCode": 2,
+        "category": "edu",
+        "distance": 118,
+        "targetName": "이맥스34학원",
+        "indexName": "학원",
+        "subwayLineInfo": null,
+        "targetId": "ac8OoytRKBR"
+       },
+       "...(+825)"
+      ]
+     },
+     "goodnews": {
+      "selectedDistance": 600,
+      "score": 4,
+      "house": {
+       "count": 5,
+       "average": 1.57464
+      },
+      "jigu": {
+       "count": 1,
+       "average": 0.55288
+      },
+      "traffic": {
+       "count": 0,
+       "average": 0.43018
+      },
+      "etc": {
+       "count": 0,
+       "average": 0.51184
+      },
+      "subTypeCountList": [
+       {
+        "distanceGroup": 600,
+        "type": "주택",
+        "subType": "재건축",
+        "count": 2
+       },
+       {
+        "distanceGroup": 1000,
+        "type": "택지",
+        "subType": "도시",
+        "count": 1
+       },
+       {
+        "distanceGroup": 1000,
+        "type": "주택",
+        "subType": "리모델링",
+        "count": 2
+       },
+       "...(+1)"
+      ],
+      "subTypeInfoList": [
+       {
+        "score": 4,
+        "distance": 392.88,
+        "distanceGroup": 600,
+        "type": "주택",
+        "subType": "재건축",
+        "leafType": null,
+        "id": "r9fdHaF",
+        "subId": null,
+        "extraData": null,
+        "name": "개포우성1,2차"
+       },
+       {
+        "score": 4,
+        "distance": 586.42,
+        "distanceGroup": 600,
+        "type": "주택",
+        "subType": "재건축",
+        "leafType": null,
+        "id": "r1BmQue",
+        "subId": null,
+        "extraData": null,
+        "name": "은마"
+       },
+       {
+        "score": 3,
+        "distance": 657.6,
+        "distanceGroup": 1000,
+        "type": "택지",
+        "subType": "도시",
+        "leafType": null,
+        "id": "86679AS3532731",
+        "subId": null,
+        "extraData": null,
+        "name": "대치푸르지오써밋"
+       },
+       "...(+3)"
+      ]
+     },
+     "frontSeo": {
+      "url": "https://m.richgo.ai/realty/danji/a6eBfVs",
+      "title": "'대치동 래미안대치팰리스' 아파트 실거래가·시세·2년뒤 가격예측 분석",
+      "description": "'대치동 래미안대치팰리스' 37평 매매 46.7억, 전세 20.7억. 3개월 뒤 45.6억 전망(리치고 단기 예측, 소폭 하락 예상). AI 가격예측, 실거래가, 시세 분석. 1,608세대 2015년 입주, 서울대치초·개원중·개포고 학군, 평형별 시세까지 리치고에서 확인하세요.",
+      "customKeywords": [
+       "래미안대치팰리스",
+       "강남구 대치동 래미안대치팰리스",
+       "래미안대치팰리스 아파트",
+       "...(+14)"
+      ],
+      "opengoodsCount": null,
+      "defaultPyeongType": 37,
+      "customOpenGraph": "https://m.richgo.ai/api/og/danji/a6eBfVs",
+      "english": {
+       "url": "https://m.richgo.ai/realty/danji/a6eBfVs?lang=en",
+       "title": "Raemian Daechi Palace (래미안대치팰리스), Daechi-dong, Gangnam-gu, Seoul Apartment Prices | Richgo",
+       "description": "Raemian Daechi Palace (래미안대치팰리스), 37 pyeong (approximately 122.3 m²; size category): latest recorded sale ₩4,650,000,000 (contract 2026.09.07, floor 6); lowest asking price ₩4,200,000,000 (listing sna…"
+      },
+      "localized": {
+       "ja": {
+        "url": "https://m.richgo.ai/realty/danji/a6eBfVs?lang=ja",
+        "title": "Raemian Daechi Palace（大峙洞・江南区・ソウル） · 韓国マンション価格・成約情報 | Richgo",
+        "description": "Raemian Daechi Palace · 37 韓国坪（約122.3 m²）：直近成約価格 4,650,000,000 韓国ウォン（契約日 2026.09.07、6階）；最低売出価格 4,200,000,000 韓国ウォン（掲載データ 2026.11.04）。売出価格は成約価格ではありません。面積区分は概算で、専有面積とは異なります。"
+       },
+       "zh-cn": {
+        "url": "https://m.richgo.ai/realty/danji/a6eBfVs?lang=zh-cn",
+        "title": "Raemian Daechi Palace（大峙洞·江南区·首尔） · 韩国公寓价格与成交记录 | Richgo",
+        "description": "Raemian Daechi Palace · 37 韩国坪（约122.3 m²）：最近成交价 4,650,000,000 韩元（合同日期 2026.09.07，6层）；最低挂牌价 4,200,000,000 韩元（房源数据日期 2026.11.04）。挂牌价不等于成交价。面积档位为概算，不等于套内面积。"
+       }
+      }
+     }
+    },
+    "error": null,
+    "aptWiki": {
+     "url": "https://apt.wiki/wiki/%EB%9E%98%EB%AF%B8%EC%95%88%EB%8C%80%EC%B9%98%ED%8C%B0%EB%A6%AC%EC%8A%A4",
+     "title": "래미안대치팰리스"
+    },
+    "nearbyDanjis": [
+     {
+      "id": "a0fQydR",
+      "name": "대치삼성1차"
+     },
+     {
+      "id": "a0sCdHW",
+      "name": "은마"
+     },
+     {
+      "id": "a0SPhNU",
+      "name": "선릉역풍림아이원레몬"
+     },
+     "...(+37)"
+    ],
+    "residentComments": [
+     {
+      "id": "1165300",
+      "text": "좁고 눅눅해요 주차장은 넓어요",
+      "nickName": "근근한하우스키퍼",
+      "date": "2025.08"
+     },
+     {
+      "id": "1165299",
+      "text": "좁고 눅눅해요 ㅜㅜ 주차장은 넓어요",
+      "nickName": "근근한하우스키퍼",
+      "date": "2025.08"
+     }
+    ],
+    "priceSnapshot": {
+     "pyeong": 37,
+     "trade": {
+      "price": 465000,
+      "floor": 6,
+      "date": "2026.09.07",
+      "direct": false
+     },
+     "minOffer": {
+      "price": 420000,
+      "floor": "중",
+      "date": "2026.11.04"
+     }
+    },
+    "tradeFacts": {
+     "pyeong": 37,
+     "recent": [
+      {
+       "date": "2026.09.07",
+       "dong": null,
+       "floor": 6,
+       "price": 465000,
+       "direct": false
+      },
+      {
+       "date": "2026.07.09",
+       "dong": null,
+       "floor": 4,
+       "price": 470000,
+       "direct": false
+      },
+      {
+       "date": "2026.06.29",
+       "dong": "202동",
+       "floor": 10,
+       "price": 397000,
+       "direct": false
+      },
+      "...(+7)"
+     ],
+     "count12m": 10,
+     "yearChangePct": -7.7,
+     "listing": {
+      "count": 71,
+      "min": 420000,
+      "max": 540000,
+      "median": 470000
+     }
+    },
+    "dongFacts": {
+     "hasPolygon": true,
+     "royalDongs": [
+      "101",
+      "110"
+     ],
+     "royalFloor": {
+      "from": 18,
+      "to": 29
+     },
+     "facingCounts": [
+      {
+       "facing": "남향",
+       "count": 15
+      }
+     ],
+     "dongs": [
+      {
+       "dong": "101",
+       "floors": 26,
+       "units": 109,
+       "facing": "남향",
+       "royal": true,
+       "recentTrade": {
+        "date": "2025.12.08",
+        "floor": 17,
+        "price": 530000,
+        "pyeong": 37,
+        "estimated": false
+       }
+      },
+      {
+       "dong": "102",
+       "floors": 26,
+       "units": 48,
+       "facing": "남향",
+       "royal": false,
+       "recentTrade": {
+        "date": "2026.07.09",
+        "floor": 4,
+        "price": 470000,
+        "pyeong": 37,
+        "estimated": true
+       }
+      },
+      {
+       "dong": "103",
+       "floors": 22,
+       "units": 97,
+       "facing": "남향",
+       "royal": false,
+       "recentTrade": {
+        "date": "2026.05.08",
+        "floor": 15,
+        "price": 430000,
+        "pyeong": 33,
+        "estimated": false
+       }
+      },
+      "...(+14)"
+     ]
+    },
+    "absorptionFact": {
+     "listingCount": 246,
+     "months": 86.8,
+     "confirmedThrough": "2026-09",
+     "region": {
+      "name": "강남구",
+      "months": 49.6
+     }
+    },
+    "reasonFact": {
+     "reasons": [
+      "대치동 대장이 만든 가격대",
+      "학원가 도보권에 역 두 개",
+      "주변이 공사판일 때 유일한 완성품"
+     ],
+     "homeworks": [
+      "한 단지 이름 안의 두 생활권",
+      "삼성역 정차까지 남은 시차",
+      "개포동 신축과의 연차 경쟁"
+     ]
+    },
+    "referenceFx": null,
+    "hogaFact": {
+     "pyeong": 37,
+     "privateArea": 94.49,
+     "baseWeek": "2026-11-03",
+     "listingCount": 71,
+     "bands": [
+      {
+       "band": "저",
+       "floorFrom": 2,
+       "floorTo": 11,
+       "lowMin": 425000,
+       "modeMin": 438000,
+       "modeMax": 482500
+      },
+      {
+       "band": "중",
+       "floorFrom": 12,
+       "floorTo": 22,
+       "lowMin": 445500,
+       "modeMin": 459500,
+       "modeMax": 492500
+      },
+      {
+       "band": "고",
+       "floorFrom": 23,
+       "floorTo": 34,
+       "lowMin": 454500,
+       "modeMin": 468500,
+       "modeMax": 495000
+      }
+     ]
+    },
+    "holdingTaxFact": {
+     "pyeong": 37,
+     "year": 2026,
+     "totalTax": 18731389,
+     "propertyTax": 7338920,
+     "comprehensiveTax": 11392469,
+     "publishedPrice": 348990,
+     "publishedYear": 2026
+    },
+    "forecastFact": {
+     "pyeong": 37,
+     "basePrice": 467649,
+     "baseDate": "2026-11-02",
+     "predictedPrice": 456165,
+     "predictedAt": "2026-11-02",
+     "ratePct": -2.5,
+     "targetMonth": "2027년 2월"
+    },
+    "emdComparison": {
+     "emd": "대치동",
+     "total": 27,
+     "rank": 2,
+     "perPyeong": 12639,
+     "rows": [
+      {
+       "id": "a4mUMSL",
+       "name": "선경1,2차",
+       "households": 1034,
+       "age": 44,
+       "pyeong": 30,
+       "price": 419710,
+       "perPyeong": 13990,
+       "localRank": 1
+      },
+      {
+       "id": "a6eBfVs",
+       "name": "래미안대치팰리스",
+       "households": 1608,
+       "age": 12,
+       "pyeong": 37,
+       "price": 467649,
+       "perPyeong": 12639,
+       "localRank": 2
+      },
+      {
+       "id": "a2qejLy",
+       "name": "대치아이파크",
+       "households": 768,
+       "age": 19,
+       "pyeong": 32,
+       "price": 384473,
+       "perPyeong": 12014,
+       "localRank": 3
+      },
+      "...(+24)"
+     ],
+     "priceDate": "2026.11.02"
+    },
+    "rivalSummary": null,
+    "priceTrend": {
+     "pyeong": 37,
+     "startMonth": "2025-04",
+     "start": 349391,
+     "latestMonth": "2026-11",
+     "latest": 467649,
+     "sinceYears": 2,
+     "sincePct": 33.8,
+     "peakMonth": "2026-02",
+     "peak": 520533,
+     "fromPeakPct": -10.2,
+     "troughMonth": "2025-04",
+     "trough": 349391,
+     "change1y": -7.7,
+     "change3y": null,
+     "change5y": null,
+     "jeonseRate": 44.4
+    },
+    "dehydratedState": {
+     "mutations": [],
+     "queries": [
+      {
+       "state": {
+        "data": {
+         "danjiName": "래미안대치팰리스",
+         "hook": "재건축 벨트 한가운데 이미 완성",
+         "reasons": [
+          {
+           "title": "대치동 대장이 만든 가격대",
+           "desc": "37평 53억, 45평 63.8억, 54평 65.5억. 대치동 신축 대단지의 값이 여기서 매겨짐.",
+           "chips": [
+            "45평 최고 63.8억",
+            "54평 최고 65.5억"
+           ]
+          },
+          {
+           "title": "학원가 도보권에 역 두 개",
+           "desc": "3호선 대치역과 수인분당선 도곡역을 목적지에 따라 갈라 씀. 하원 차량이 필요 없는 동선.",
+           "chips": [
+            "학원가 도보 3~5분",
+            "대치역·도곡역"
+           ]
+          },
+          {
+           "title": "주변이 공사판일 때 유일한 완성품",
+           "desc": "은마 사업시행인가, 한보미도 추진위 승인. 벨트 시계가 도는 동안 이 단지만 1,608세대 입주 완료.",
+           "chips": [
+            "은마 사업시행인가 26.07.02",
+            "반경 720m 내 재건축 3곳"
+           ]
+          }
+         ],
+         "homeworks": [
+          {
+           "title": "한 단지 이름 안의 두 생활권",
+           "desc": "2단지에는 수영장과 키즈카페가 없음. 관리는 통합인데 커뮤니티 이용은 갈려 있는 상태.",
+           "detail": "지켜볼 것: 커뮤니티 통합 운영 전환 여부. 38·45평은 1단지, 37·55평은 2단지에만 있어 평형과 단지를 함께 고르는 것이 지금의 요령."
+          },
+          {
+           "title": "삼성역 정차까지 남은 시차",
+           "desc": "GTX-A 전 구간이 연결되어도 삼성역은 한동안 무정차 통과. 개통과 체감 사이 간격이 남음.",
+           "detail": "지켜볼 것: 임시 환승 체계 구축과 2027년 삼성역 GTX-A 정차 개시. 무정차가 끝나는 시점이 교통 프리미엄의 실제 출발선."
+          },
+          {
+           "title": "개포동 신축과의 연차 경쟁",
+           "desc": "준공 2015년, 개포동 경쟁 신축은 2019년. 설비 연차는 뒤지지만 학원가 도보권은 그쪽에서 재현되지 않음.",
+           "detail": "지켜볼 것: 2028년 영동대로 광역복합환승센터 완공. 철도 허브가 담장 밖에 붙으면 연차 차이를 좌표가 상쇄하는 구도."
+          }
+         ],
+         "quote": "평형부터 정하고 단지를 고른다, 이 단지에서는 순서가 거꾸로다",
+         "milestones": {
+          "events": [
+           {
+            "name": "영동대로 착공",
+            "done": true,
+            "note": "2025"
+           },
+           {
+            "name": "은마 사업시행인가",
+            "done": true,
+            "note": "26.07.02"
+           },
+           {
+            "name": "삼성역 GTX-A 정차",
+            "done": false,
+            "note": "2027",
+            "desc": "정차가 시작되면 삼성역까지의 실제 이동 시간이 줄면서 대치동 좌표의 값이 다시 매겨짐."
+           },
+           "...(+1)"
+          ],
+          "plan": "GTX 허브를 낀 대치동 대장 신축"
+         }
+        },
+        "dataUpdateCount": 1,
+        "dataUpdatedAt": 1793806601342,
+        "error": null,
+        "errorUpdateCount": 0,
+        "errorUpdatedAt": 0,
+        "fetchFailureCount": 0,
+        "fetchFailureReason": null,
+        "fetchMeta": null,
+        "isInvalidated": false,
+        "status": "success",
+        "fetchStatus": "idle"
+       },
+       "queryKey": [
+        "reasonHomeworkCard",
+        "a6eBfVs"
+       ],
+       "queryHash": "[\"reasonHomeworkCard\",\"a6eBfVs\"]"
+      }
+     ]
+    },
+    "routeEnv": "server"
+   },
+   "userAgent": "Mozilla/5.0",
+   "partner": {
+    "type": "none"
+   },
+   "user": {
+    "notification": {
+     "setting": {
+      "list": []
+     }
+    },
+    "favorites": {
+     "danjiList": [],
+     "officetelList": [],
+     "auctionList": [],
+     "parcelList": []
+    },
+    "profile": {
+     "id": "",
+     "name": "",
+     "email": "",
+     "externalEmail": "",
+     "hasLatestAgreedTerm": false,
+     "livingArea": {
+      "sido": "",
+      "sigungu": "",
+      "eupMyunDong": ""
+     },
+     "community": null,
+     "myHouseYn": false,
+     "myParcelConditionYn": false,
+     "brokerIsAgreed": false,
+     "favoriteCount": 0,
+     "isKakaoPhoneAgree": false,
+     "externalProviderName": "",
+     "isMarketingAgreed": false
+    },
+    "auth": {
+     "isLoggedIn": false
+    }
+   },
+   "serviceLocale": "ko",
+   "serviceCatalog": {}
+  },
+  "page": "/realty/danji/[id]",
+  "query": {
+   "id": "a6eBfVs"
+  },
+  "buildId": "At13y0LZ711gPmzJHR-Fl",
+  "assetPrefix": "https://public-resources.richgo.ai/next-resources/production/1dfe0f44",
+  "isFallback": false,
+  "dynamicIds": [
+   31213,
+   73256,
+   51558,
+   "...(+2)"
+  ],
+  "gip": true,
+  "appGip": true,
+  "scriptLoader": []
+ }
+}

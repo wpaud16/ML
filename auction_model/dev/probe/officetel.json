@@ -1,0 +1,952 @@
+{
+ "url": "https://m.richgo.ai/realty/officetel/a1ZDEBj",
+ "html_len": 367845,
+ "next_data": {
+  "props": {
+   "pageProps": {
+    "seo": {
+     "url": "https://m.richgo.ai/realty/officetel/a1ZDEBj",
+     "title": "'역삼동 강남역와이즈플레이스' 오피스텔 시세 및 실거래가 분석 | 리치고",
+     "description": "'역삼동 강남역와이즈플레이스' 오피스텔의 실거래가와 시세를 비롯한 다양한 매물 정보를 리치고에서 확인하세요. 총 264세대 규모, 연식 14년, 평형(15평, 17평)",
+     "keywords": [],
+     "customKeywords": [
+      "역삼동 강남역와이즈플레이스",
+      "강남역와이즈플레이스 오피스텔",
+      "강남구 오피스텔 매매",
+      "...(+12)"
+     ]
+    },
+    "data": {
+     "auctionInfo": {
+      "caseId": "20230130109726",
+      "caseSite": "서울중앙지방법원",
+      "caseName": "2023타경109726",
+      "itemNumber": 1,
+      "address": "서울특별시 강남구  강남대로66길 14, 6층 620호 (역삼동,강남역와이즈플레이스)",
+      "keyword": null,
+      "isOpposingPower": null,
+      "biddingDate": "9999-12-31T00:00:00+00:00",
+      "pnu": "1168010100108370013",
+      "bjdCode": "1168010100",
+      "bjdInfo": {
+       "sd": "서울",
+       "sgg": "강남구",
+       "emd": "역삼동",
+       "dr": null,
+       "bjdCode": "1168010100",
+       "location": {
+        "x": 127.033065361851,
+        "y": 37.495366690816
+       }
+      },
+      "registrationDate": "2023-07-12",
+      "sellingDate": "2023-11-07",
+      "category": "건물",
+      "danjiId": "a1ZDEBj",
+      "pyeong": 15,
+      "privatePyeong": 7,
+      "appraisedPrice": 225000000,
+      "lowestSellingPrice": 225000000,
+      "sellingPrice": 225000000,
+      "itemStatus": "종료",
+      "simpleLowestSellingPrice": 22500,
+      "historyKeyword": null,
+      "subList": [
+       {
+        "caseId": "20250130102304",
+        "caseSite": "서울중앙지방법원",
+        "caseName": "2025타경102304",
+        "itemNumber": 1,
+        "address": "서울특별시 강남구 역삼동 837-13 강남역와이즈플레이스  9층920호",
+        "keyword": "대항력있는임차인,재매각",
+        "isOpposingPower": 1,
+        "biddingDate": "9999-12-31T00:00:00+00:00",
+        "pnu": "1168010100108370013",
+        "bjdCode": "1168010100",
+        "bjdInfo": {
+         "sd": "서울",
+         "sgg": "강남구",
+         "emd": "역삼동",
+         "dr": null,
+         "bjdCode": "1168010100",
+         "location": {
+          "x": 127.033065361851,
+          "y": 37.495366690816
+         }
+        },
+        "registrationDate": "2025-03-07",
+        "sellingDate": "2025-12-03",
+        "category": "건물",
+        "danjiId": "a1ZDEBj",
+        "pyeong": 15,
+        "privatePyeong": 7,
+        "appraisedPrice": 220000000,
+        "lowestSellingPrice": 176000000,
+        "sellingPrice": 181299000,
+        "itemStatus": "종료",
+        "simpleLowestSellingPrice": 17600,
+        "historyKeyword": null,
+        "subList": null,
+        "itemType": "상가,오피스텔,근린",
+        "groundTotalArea": 12.6,
+        "buildingTotalArea": 23.87,
+        "simpleAppraisedPrice": 22000,
+        "simpleSellingPrice": 18130,
+        "simpleBiddingDepositMin": 1760,
+        "simpleBiddingDepositMax": 1760,
+        "numberOfFailures": 2,
+        "biddingDepositMin": 17600000,
+        "biddingDepositMax": 17600000,
+        "biddingDepositPercentMin": 10,
+        "biddingDepositPercentMax": 10,
+        "results": null,
+        "photoCount": 10,
+        "totalHouseholds": 264,
+        "constructYear": 14,
+        "opengoodsPriceRatio": 14.1,
+        "viewCount": 0,
+        "contentId": 37156109,
+        "recommendedGrade": "Hard",
+        "recommendedBidPrice": null,
+        "estimateMaxProfit": null,
+        "hasAnalyzerPermission": false,
+        "goodnewsType": null,
+        "auctionId": "C30YFFVZ",
+        "location": {
+         "x": 127.03184,
+         "y": 37.491728
+        }
+       },
+       {
+        "caseId": "20250130102516",
+        "caseSite": "서울중앙지방법원",
+        "caseName": "2025타경102516",
+        "itemNumber": 1,
+        "address": "서울특별시 강남구 역삼동 837-13 강남역와이즈플레이스  9층919호",
+        "keyword": "토지거래허가구역,HUG인수조건변경,대항력있는임차인",
+        "isOpposingPower": 2,
+        "biddingDate": "9999-12-31T00:00:00+00:00",
+        "pnu": "1168010100108370013",
+        "bjdCode": "1168010100",
+        "bjdInfo": {
+         "sd": "서울",
+         "sgg": "강남구",
+         "emd": "역삼동",
+         "dr": null,
+         "bjdCode": "1168010100",
+         "location": {
+          "x": 127.033065361851,
+          "y": 37.495366690816
+         }
+        },
+        "registrationDate": "2025-03-27",
+        "sellingDate": "2026-04-07",
+        "category": "건물",
+        "danjiId": "a1ZDEBj",
+        "pyeong": 15,
+        "privatePyeong": 7,
+        "appraisedPrice": 220000000,
+        "lowestSellingPrice": 176000000,
+        "sellingPrice": null,
+        "itemStatus": "종료",
+        "simpleLowestSellingPrice": 17600,
+        "historyKeyword": null,
+        "subList": null,
+        "itemType": "오피스텔",
+        "groundTotalArea": 12.6,
+        "buildingTotalArea": 23.87,
+        "simpleAppraisedPrice": 22000,
+        "simpleSellingPrice": null,
+        "simpleBiddingDepositMin": 3520,
+        "simpleBiddingDepositMax": 3520,
+        "numberOfFailures": 4,
+        "biddingDepositMin": 35200000,
+        "biddingDepositMax": 35200000,
+        "biddingDepositPercentMin": 20,
+        "biddingDepositPercentMax": 20,
+        "results": null,
+        "photoCount": 9,
+        "totalHouseholds": 264,
+        "constructYear": 14,
+        "opengoodsPriceRatio": 7.4,
+        "viewCount": 0,
+        "contentId": 37156110,
+        "recommendedGrade": "Hard",
+        "recommendedBidPrice": null,
+        "estimateMaxProfit": null,
+        "hasAnalyzerPermission": false,
+        "goodnewsType": null,
+        "auctionId": "C59FFUTV",
+        "location": {
+         "x": 127.03184,
+         "y": 37.491728
+        }
+       },
+       {
+        "caseId": "20260130100438",
+        "caseSite": "서울중앙지방법원",
+        "caseName": "2026타경100438",
+        "itemNumber": 1,
+        "address": "서울특별시 강남구 역삼동 837-13 강남역와이즈플레이스  11층1113호",
+        "keyword": "토지거래허가구역,대항력있는임차인",
+        "isOpposingPower": 1,
+        "biddingDate": "2026-11-05T00:00:00+00:00",
+        "pnu": "1168010100108370013",
+        "bjdCode": "1168010100",
+        "bjdInfo": {
+         "sd": "서울",
+         "sgg": "강남구",
+         "emd": "역삼동",
+         "dr": null,
+         "bjdCode": "1168010100",
+         "location": {
+          "x": 127.033065361851,
+          "y": 37.495366690816
+         }
+        },
+        "registrationDate": "2026-03-18",
+        "sellingDate": null,
+        "category": "건물",
+        "danjiId": "a1ZDEBj",
+        "pyeong": 15,
+        "privatePyeong": 7,
+        "appraisedPrice": 220000000,
+        "lowestSellingPrice": 220000000,
+        "sellingPrice": null,
+        "itemStatus": "진행중",
+        "simpleLowestSellingPrice": 22000,
+        "historyKeyword": null,
+        "subList": null,
+        "itemType": "상가,오피스텔,근린",
+        "groundTotalArea": 12.6,
+        "buildingTotalArea": 23.87,
+        "simpleAppraisedPrice": 22000,
+        "simpleSellingPrice": null,
+        "simpleBiddingDepositMin": 2200,
+        "simpleBiddingDepositMax": 2200,
+        "numberOfFailures": 0,
+        "biddingDepositMin": 22000000,
+        "biddingDepositMax": 22000000,
+        "biddingDepositPercentMin": 10,
+        "biddingDepositPercentMax": 10,
+        "results": null,
+        "photoCount": 10,
+        "totalHouseholds": 264,
+        "constructYear": 14,
+        "opengoodsPriceRatio": -15.8,
+        "viewCount": 0,
+        "contentId": 71190407,
+        "recommendedGrade": "Hard",
+        "recommendedBidPrice": null,
+        "estimateMaxProfit": null,
+        "hasAnalyzerPermission": false,
+        "goodnewsType": null,
+        "auctionId": "C00WLSYJ",
+        "location": {
+         "x": 127.03184,
+         "y": 37.491728
+        }
+       },
+       "...(+1)"
+      ],
+      "itemType": "오피스텔",
+      "groundTotalArea": 4.2,
+      "buildingTotalArea": 23.87,
+      "simpleAppraisedPrice": 22500,
+      "simpleSellingPrice": 22500,
+      "simpleBiddingDepositMin": 2250,
+      "simpleBiddingDepositMax": 2250,
+      "numberOfFailures": 0,
+      "biddingDepositMin": 22500000,
+      "biddingDepositMax": 22500000,
+      "biddingDepositPercentMin": 10,
+      "biddingDepositPercentMax": 10,
+      "results": null,
+      "photoCount": 8,
+      "totalHouseholds": 264,
+      "constructYear": 14,
+      "opengoodsPriceRatio": -9.8,
+      "viewCount": 0,
+      "contentId": 30756,
+      "recommendedGrade": "Hard",
+      "recommendedBidPrice": null,
+      "estimateMaxProfit": null,
+      "hasAnalyzerPermission": false,
+      "goodnewsType": null,
+      "auctionId": "C94XNVJR",
+      "location": {
+       "x": 127.03184,
+       "y": 37.491728
+      }
+     },
+     "newKbStarId": "KBO002431",
+     "schoolInfo": {
+      "elementary": [
+       {
+        "schoolId": "S010000775",
+        "schoolName": "서울역삼초등학교",
+        "admissionInfoDto": {
+         "admissionRate": 17.292,
+         "sdAdmissionRate": 13.63,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 1.8
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 173.763,
+        "admissionRecordList": []
+       }
+      ],
+      "middle": [
+       {
+        "schoolId": "S010000727",
+        "schoolName": "언주중학교",
+        "admissionInfoDto": {
+         "admissionRate": 16.23,
+         "sdAdmissionRate": 20.93,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 3.72
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 2867.06,
+        "admissionRecordList": []
+       }
+      ],
+      "high": [
+       {
+        "schoolId": "S010000373",
+        "schoolName": "개포고등학교",
+        "admissionInfoDto": {
+         "admissionRate": 42.33,
+         "sdAdmissionRate": 30.49,
+         "sdAdmissionGrade": "A",
+         "nationalAdmissionRate": 60.31
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 2535.98,
+        "admissionRecordList": []
+       },
+       {
+        "schoolId": "S010000405",
+        "schoolName": "단국대학교사범대학부속고등학교",
+        "admissionInfoDto": {
+         "admissionRate": 45.28,
+         "sdAdmissionRate": 9.35,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 12.99
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 2201.59,
+        "admissionRecordList": []
+       },
+       {
+        "schoolId": "S010000440",
+        "schoolName": "반포고등학교",
+        "admissionInfoDto": {
+         "admissionRate": 37.55,
+         "sdAdmissionRate": 17.89,
+         "sdAdmissionGrade": "S",
+         "nationalAdmissionRate": 35.94
+        },
+        "distanceWalk": null,
+        "distanceEuclidean": 1790.93,
+        "admissionRecordList": []
+       },
+       "...(+9)"
+      ]
+     },
+     "bjdInfo": {
+      "code": "1168010100",
+      "sd": "서울",
+      "sgg": "강남구",
+      "emd": "역삼동"
+     },
+     "score": 40.2,
+     "name": "강남역와이즈플레이스",
+     "tags": [
+      "초품아"
+     ],
+     "location": {
+      "x": 127.031815,
+      "y": 37.491741
+     },
+     "pyeongInfos": {
+      "15": {
+       "pyeongType": 15,
+       "minSupplyArea": "49.79",
+       "maxSupplyArea": "49.79",
+       "minPrivateArea": "23.87",
+       "maxPrivateArea": "23.87",
+       "households": 216,
+       "minRoomCount": 1,
+       "maxRoomCount": 1,
+       "minBathRoomCount": 1,
+       "maxBathRoomCount": 1,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 20764,
+         "perPyeong": 1384,
+         "yyyymmdd": "2026.11.04",
+         "rateOfChange": null
+        },
+        "jeonse": {
+         "price": 22000,
+         "perPyeong": 1466,
+         "yyyymmdd": "2026.11.04",
+         "rateOfChange": null
+        },
+        "memeSource": "OFFER",
+        "jeonseSource": "OFFER",
+        "memePriceDict": {
+         "OFFER": {
+          "minPrice": 19000,
+          "maxPrice": 23000,
+          "price": 20764,
+          "perPyeong": 1384,
+          "yyyymmdd": "2026.11.04",
+          "rateOfChange": null
+         },
+         "MOLIT": {
+          "price": 18900,
+          "perPyeong": 1260,
+          "yyyymmdd": "2026.10.14",
+          "rateOfChange": null
+         }
+        },
+        "jeonsePriceDict": {
+         "OFFER": {
+          "minPrice": 22000,
+          "maxPrice": 22000,
+          "price": 22000,
+          "perPyeong": 1466,
+          "yyyymmdd": "2026.11.04",
+          "rateOfChange": null
+         },
+         "MOLIT": {
+          "price": 18450,
+          "perPyeong": 1230,
+          "yyyymmdd": "2026.09.29",
+          "rateOfChange": null
+         }
+        },
+        "memeRateOfChange": null,
+        "jeonseRateOfChange": null,
+        "gap": null,
+        "jeonseRate": null,
+        "publishedAvgPrice": null
+       },
+       "memeOfferCount": null,
+       "jeonseMonthlyOfferCount": null,
+       "historySummaryInfoDto": {
+        "openGoodMemeMinPrice1mAgoRate": 0,
+        "openGoodMemeMinPrice3mAgoRate": 0,
+        "openGoodMemeMinPrice6mAgoRate": -5,
+        "openGoodMemeMinPrice12mAgoRate": -5,
+        "openGoodJeonseMinPrice1mAgoRate": 0,
+        "openGoodJeonseMinPrice3mAgoRate": 4.8,
+        "openGoodJeonseMinPrice6mAgoRate": 6.3,
+        "openGoodJeonseMinPrice12mAgoRate": 6.3,
+        "highestMolitMemePriceRate": -24.7,
+        "highestMolitJeonsePriceRate": -26.2
+       }
+      },
+      "17": {
+       "pyeongType": 17,
+       "minSupplyArea": "56.27",
+       "maxSupplyArea": "56.27",
+       "minPrivateArea": "26.98",
+       "maxPrivateArea": "26.98",
+       "households": 48,
+       "minRoomCount": 1,
+       "maxRoomCount": 1,
+       "minBathRoomCount": 1,
+       "maxBathRoomCount": 1,
+       "danjiPriceInfo": {
+        "meme": {
+         "price": 24000,
+         "perPyeong": 1411,
+         "yyyymmdd": "2026.11.04",
+         "rateOfChange": null
+        },
+        "jeonse": {
+         "price": 22000,
+         "perPyeong": 1294,
+         "yyyymmdd": "2026.11.04",
+         "rateOfChange": null
+        },
+        "memeSource": "OFFER",
+        "jeonseSource": "OFFER",
+        "memePriceDict": {
+         "OFFER": {
+          "minPrice": 20000,
+          "maxPrice": 26000,
+          "price": 24000,
+          "perPyeong": 1411,
+          "yyyymmdd": "2026.11.04",
+          "rateOfChange": null
+         },
+         "MOLIT": {
+          "price": null,
+          "perPyeong": 0,
+          "yyyymmdd": "",
+          "rateOfChange": null
+         }
+        },
+        "jeonsePriceDict": {
+         "OFFER": {
+          "minPrice": 22000,
+          "maxPrice": 22000,
+          "price": 22000,
+          "perPyeong": 1294,
+          "yyyymmdd": "2026.11.04",
+          "rateOfChange": null
+         },
+         "MOLIT": {
+          "price": 20700,
+          "perPyeong": 1217,
+          "yyyymmdd": "2026.05.22",
+          "rateOfChange": null
+         }
+        },
+        "memeRateOfChange": null,
+        "jeonseRateOfChange": null,
+        "gap": null,
+        "jeonseRate": null,
+        "publishedAvgPrice": null
+       },
+       "memeOfferCount": null,
+       "jeonseMonthlyOfferCount": null,
+       "historySummaryInfoDto": {
+        "openGoodMemeMinPrice1mAgoRate": 0,
+        "openGoodMemeMinPrice3mAgoRate": -9.1,
+        "openGoodMemeMinPrice6mAgoRate": -23.1,
+        "openGoodMemeMinPrice12mAgoRate": -13,
+        "openGoodJeonseMinPrice1mAgoRate": 0,
+        "openGoodJeonseMinPrice3mAgoRate": 0,
+        "openGoodJeonseMinPrice6mAgoRate": null,
+        "openGoodJeonseMinPrice12mAgoRate": null,
+        "highestMolitMemePriceRate": null,
+        "highestMolitJeonsePriceRate": -23.3
+       }
+      }
+     },
+     "totalPostCount": 32,
+     "selectedPriceType": "meme",
+     "selectedPyeongType": 15,
+     "price": {
+      "sId": 104166,
+      "gapTable": {
+       "more": true,
+       "items": [
+        {
+         "date": "2026.10.14",
+         "supplyAreaRep": "49",
+         "privateAreaRep": "23",
+         "floor": 6,
+         "price": 18900,
+         "deposit": null,
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "서울 강남구",
+         "rent_100p": null
+        },
+        {
+         "date": "2026.06.24",
+         "supplyAreaRep": "49",
+         "privateAreaRep": "23",
+         "floor": 12,
+         "price": 19000,
+         "deposit": null,
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "서울 강남구",
+         "rent_100p": null
+        },
+        {
+         "date": "2026.05.20",
+         "supplyAreaRep": "49",
+         "privateAreaRep": "23",
+         "floor": 9,
+         "price": 18700,
+         "deposit": null,
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "서울 강남구, 서울 서초구",
+         "rent_100p": null
+        },
+        "...(+2)"
+       ]
+      },
+      "saleCount": 6,
+      "offerPrice": null,
+      "realTransactionPrice": 18900,
+      "minOfferPrice": 19000,
+      "transaction": {
+       "more": true,
+       "items": [
+        {
+         "date": "2026.10.14",
+         "supplyAreaRep": "49",
+         "privateAreaRep": "23",
+         "floor": 6,
+         "price": 18900,
+         "deposit": null,
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "서울 강남구",
+         "rent_100p": null
+        },
+        {
+         "date": "2026.06.24",
+         "supplyAreaRep": "49",
+         "privateAreaRep": "23",
+         "floor": 12,
+         "price": 19000,
+         "deposit": null,
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "서울 강남구",
+         "rent_100p": null
+        },
+        {
+         "date": "2026.05.20",
+         "supplyAreaRep": "49",
+         "privateAreaRep": "23",
+         "floor": 9,
+         "price": 18700,
+         "deposit": null,
+         "cancelDate": null,
+         "transactionType": "중개거래",
+         "brokerLocation": "서울 강남구, 서울 서초구",
+         "rent_100p": null
+        },
+        "...(+2)"
+       ]
+      },
+      "loan": {
+       "condition": {
+        "period": 20,
+        "principal": 0
+       },
+       "averageLendRate": 4.5,
+       "loanPrincipal": 0,
+       "maxLoanPrincipal": 0,
+       "monthlyRepay": 0,
+       "totalInterest": 0,
+       "repayTypeName": "분할상환방식"
+      },
+      "published": {
+       "averagePrice": null,
+       "standardYear": null,
+       "minPrice": null,
+       "maxPrice": null
+      }
+     },
+     "basic": {
+      "address": {
+       "jibun": "서울시 강남구 역삼동 837-13",
+       "road": "서울시 강남구 강남대로66길 14"
+      },
+      "floor": {
+       "top": 14,
+       "bottom": 14
+      },
+      "construction": {
+       "year": 14,
+       "date": "2013.12.31"
+      },
+      "pyeongTypeList": [
+       15,
+       17
+      ],
+      "households": 264,
+      "floorArea": 793,
+      "buildingRatio": 59,
+      "parking": {
+       "count": 124,
+       "households": 0.46000000834465027
+      },
+      "heating": {
+       "fuel": "도시가스",
+       "system": "개별난방"
+      },
+      "builder": "신세계건설(주)",
+      "enteranceType": "",
+      "officePhone": ""
+     },
+     "analyze": {
+      "invest": {
+       "invest": {
+        "score": 40.2,
+        "rate": 48,
+        "chart": {
+         "data": [
+          {
+           "date": "2008-01-01",
+           "score": 74,
+           "averagePrice": 3345
+          },
+          {
+           "date": "2008-02-01",
+           "score": 74.1,
+           "averagePrice": 3346
+          },
+          {
+           "date": "2008-03-01",
+           "score": 74.2,
+           "averagePrice": 3347
+          },
+          "...(+223)"
+         ]
+        }
+       }
+      }
+     },
+     "environment": {
+      "selectedDistance": 1000,
+      "score": 100,
+      "trafficScore": 84,
+      "lifeScore": 100,
+      "eduScore": 88,
+      "residenceIndexList": [
+       {
+        "indexCode": 1,
+        "name": "mart",
+        "nameKr": "마트",
+        "groupCategory": "life"
+       },
+       {
+        "indexCode": 2,
+        "name": "academy",
+        "nameKr": "학원",
+        "groupCategory": "edu"
+       },
+       {
+        "indexCode": 3,
+        "name": "baby",
+        "nameKr": "어린이집",
+        "groupCategory": "edu"
+       },
+       "...(+16)"
+      ],
+      "distanceGroupList": [
+       {
+        "indexCode": 1,
+        "category": "life",
+        "distanceDataList": [
+         {
+          "distance": 300,
+          "groupCount": 1
+         },
+         {
+          "distance": 600,
+          "groupCount": 5
+         },
+         {
+          "distance": 1000,
+          "groupCount": 6
+         }
+        ]
+       },
+       {
+        "indexCode": 2,
+        "category": "edu",
+        "distanceDataList": [
+         {
+          "distance": 300,
+          "groupCount": 28
+         },
+         {
+          "distance": 600,
+          "groupCount": 241
+         },
+         {
+          "distance": 1000,
+          "groupCount": 467
+         }
+        ]
+       },
+       {
+        "indexCode": 3,
+        "category": "edu",
+        "distanceDataList": [
+         {
+          "distance": 600,
+          "groupCount": 8
+         },
+         {
+          "distance": 1000,
+          "groupCount": 23
+         }
+        ]
+       },
+       "...(+11)"
+      ],
+      "placeInfoList": [
+       {
+        "indexCode": 5,
+        "category": "life",
+        "distance": 3,
+        "targetName": "칼마커피",
+        "indexName": "카페",
+        "subwayLineInfo": null,
+        "targetId": "ce1403810318"
+       },
+       {
+        "indexCode": 5,
+        "category": "life",
+        "distance": 12,
+        "targetName": "오프커피 역삼1호점",
+        "indexName": "카페",
+        "subwayLineInfo": null,
+        "targetId": "ce450840293"
+       },
+       {
+        "indexCode": 5,
+        "category": "life",
+        "distance": 13,
+        "targetName": "코어커피스탠드 2호점",
+        "indexName": "카페",
+        "subwayLineInfo": null,
+        "targetId": "ce43378627"
+       },
+       "...(+1653)"
+      ]
+     },
+     "goodnews": {
+      "selectedDistance": 1000,
+      "score": 5,
+      "house": {
+       "count": 0,
+       "average": 1.63208
+      },
+      "jigu": {
+       "count": 0,
+       "average": 0.60899
+      },
+      "traffic": {
+       "count": 2,
+       "average": 0.62912
+      },
+      "etc": {
+       "count": 3,
+       "average": 1.1727
+      },
+      "subTypeCountList": [
+       {
+        "distanceGroup": 1000,
+        "type": "기타",
+        "subType": "기타",
+        "count": 3
+       },
+       {
+        "distanceGroup": 1000,
+        "type": "교통",
+        "subType": "철도",
+        "count": 2
+       }
+      ],
+      "subTypeInfoList": [
+       {
+        "score": 3,
+        "distance": 634.35,
+        "distanceGroup": 1000,
+        "type": "기타",
+        "subType": "기타",
+        "leafType": null,
+        "id": "1000000000000000144599",
+        "subId": null,
+        "extraData": null,
+        "name": "도곡동 952-6  교육연구시설"
+       },
+       {
+        "score": 5,
+        "distance": 782.81,
+        "distanceGroup": 1000,
+        "type": "교통",
+        "subType": "철도",
+        "leafType": "GTX-D",
+        "id": "t5nVHrF",
+        "subId": "s3VzgwU",
+        "extraData": null,
+        "name": "강남역"
+       },
+       {
+        "score": 5,
+        "distance": 824.65,
+        "distanceGroup": 1000,
+        "type": "교통",
+        "subType": "철도",
+        "leafType": "GTX-C",
+        "id": "t6pvMIH",
+        "subId": "s5ZxdDa",
+        "extraData": null,
+        "name": "양재역"
+       },
+       "...(+2)"
+      ]
+     }
+    },
+    "error": null,
+    "routeEnv": "server"
+   },
+   "userAgent": "Mozilla/5.0",
+   "partner": {
+    "type": "none"
+   },
+   "user": {
+    "notification": {
+     "setting": {
+      "list": []
+     }
+    },
+    "favorites": {
+     "danjiList": [],
+     "officetelList": [],
+     "auctionList": [],
+     "parcelList": []
+    },
+    "profile": {
+     "id": "",
+     "name": "",
+     "email": "",
+     "externalEmail": "",
+     "hasLatestAgreedTerm": false,
+     "livingArea": {
+      "sido": "",
+      "sigungu": "",
+      "eupMyunDong": ""
+     },
+     "community": null,
+     "myHouseYn": false,
+     "myParcelConditionYn": false,
+     "brokerIsAgreed": false,
+     "favoriteCount": 0,
+     "isKakaoPhoneAgree": false,
+     "externalProviderName": "",
+     "isMarketingAgreed": false
+    },
+    "auth": {
+     "isLoggedIn": false
+    }
+   },
+   "serviceLocale": "ko",
+   "serviceCatalog": {}
+  },
+  "page": "/realty/officetel/[id]",
+  "query": {
+   "id": "a1ZDEBj"
+  },
+  "buildId": "At13y0LZ711gPmzJHR-Fl",
+  "assetPrefix": "https://public-resources.richgo.ai/next-resources/production/1dfe0f44",
+  "isFallback": false,
+  "dynamicIds": [
+   31213,
+   27815,
+   25853,
+   "...(+1)"
+  ],
+  "gip": true,
+  "appGip": true,
+  "scriptLoader": []
+ }
+}

@@ -1,0 +1,138 @@
+{
+ "url": "https://m.richgo.ai/realty/search?q=%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8C%80%EC%B9%98%EB%8F%99",
+ "html_len": 37922,
+ "next_data": {
+  "props": {
+   "pageProps": {
+    "agentSearch": {
+     "q": "강남구 대치동",
+     "groups": [
+      {
+       "title": "아파트",
+       "kind": "apart",
+       "items": [
+        {
+         "href": "https://m.richgo.ai/realty/danji/a3Trldx",
+         "name": "대치현대",
+         "kind": "apart",
+         "address": "서울시 강남구 삼성로64길 5",
+         "sub": "아파트 · 서울시 강남구 삼성로64길 5"
+        },
+        {
+         "href": "https://m.richgo.ai/realty/danji/a4cVNlH",
+         "name": "대치효성",
+         "kind": "apart",
+         "address": "서울시 강남구 삼성로64길 12",
+         "sub": "아파트 · 서울시 강남구 삼성로64길 12"
+        },
+        {
+         "href": "https://m.richgo.ai/realty/danji/a4rksyB",
+         "name": "대치르엘",
+         "kind": "apart",
+         "address": "서울시 강남구 도곡로93길 23",
+         "sub": "아파트 · 서울시 강남구 도곡로93길 23"
+        },
+        "...(+7)"
+       ]
+      },
+      {
+       "title": "오피스텔",
+       "kind": "officetel",
+       "items": [
+        {
+         "href": "https://m.richgo.ai/realty/officetel/a0aLiMf",
+         "name": "대치클래시아",
+         "kind": "officetel",
+         "address": "서울시 강남구 남부순환로 2927",
+         "sub": "오피스텔 · 서울시 강남구 남부순환로 2927"
+        },
+        {
+         "href": "https://m.richgo.ai/realty/officetel/a8rJhfv",
+         "name": "아티스톤",
+         "kind": "officetel",
+         "address": "서울시 강남구 역삼로 409",
+         "sub": "오피스텔 · 서울시 강남구 역삼로 409"
+        },
+        {
+         "href": "https://m.richgo.ai/realty/officetel/a8trRhE",
+         "name": "대치트레비스타",
+         "kind": "officetel",
+         "address": "서울시 강남구 선릉로90길 68",
+         "sub": "오피스텔 · 서울시 강남구 선릉로90길 68"
+        },
+        "...(+7)"
+       ]
+      },
+      {
+       "title": "지역",
+       "kind": "region",
+       "items": [
+        {
+         "href": "https://m.richgo.ai/realty/region/1168010600",
+         "name": "서울 강남구 대치동",
+         "kind": "region",
+         "sub": "지역 아파트 시세·순위"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "userAgent": "Mozilla/5.0",
+   "partner": {
+    "type": "none"
+   },
+   "user": {
+    "notification": {
+     "setting": {
+      "list": []
+     }
+    },
+    "favorites": {
+     "danjiList": [],
+     "officetelList": [],
+     "auctionList": [],
+     "parcelList": []
+    },
+    "profile": {
+     "id": "",
+     "name": "",
+     "email": "",
+     "externalEmail": "",
+     "hasLatestAgreedTerm": false,
+     "livingArea": {
+      "sido": "",
+      "sigungu": "",
+      "eupMyunDong": ""
+     },
+     "community": null,
+     "myHouseYn": false,
+     "myParcelConditionYn": false,
+     "brokerIsAgreed": false,
+     "favoriteCount": 0,
+     "isKakaoPhoneAgree": false,
+     "externalProviderName": "",
+     "isMarketingAgreed": false
+    },
+    "auth": {
+     "isLoggedIn": false
+    }
+   },
+   "serviceLocale": "ko",
+   "serviceCatalog": {}
+  },
+  "page": "/realty/search",
+  "query": {
+   "q": "강남구 대치동"
+  },
+  "buildId": "At13y0LZ711gPmzJHR-Fl",
+  "assetPrefix": "https://public-resources.richgo.ai/next-resources/production/1dfe0f44",
+  "isFallback": false,
+  "dynamicIds": [
+   31213
+  ],
+  "gip": true,
+  "appGip": true,
+  "scriptLoader": []
+ }
+}
