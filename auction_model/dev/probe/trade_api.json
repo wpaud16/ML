@@ -1,0 +1,53 @@
+{
+ "len": 251691,
+ "scripts": [],
+ "buildId": "At13y0LZ711gPmzJHR-Fl",
+ "runtimeConfig": null,
+ "page": "/realty/danji/[id]",
+ "pp_keys": [
+  "absorptionFact",
+  "aptWiki",
+  "data",
+  "dehydratedState",
+  "dongFacts",
+  "emdComparison",
+  "error",
+  "forecastFact",
+  "hogaFact",
+  "holdingTaxFact",
+  "nearbyDanjis",
+  "priceSnapshot",
+  "priceTrend",
+  "reasonFact",
+  "referenceFx",
+  "residentComments",
+  "rivalSummary",
+  "routeEnv",
+  "seo",
+  "tradeFacts"
+ ],
+ "tf_keys": {
+  "pyeong": [
+   "int",
+   33
+  ],
+  "recent": [
+   "list",
+   10
+  ],
+  "count12m": [
+   "int",
+   33
+  ],
+  "yearChangePct": [
+   "float",
+   -0.9
+  ],
+  "listing": [
+   "dict",
+   4
+  ]
+ },
+ "tf_sample": "{\"pyeong\": 33, \"recent\": [{\"date\": \"2026.10.06\", \"dong\": null, \"floor\": 11, \"price\": 42500, \"direct\": false}, {\"date\": \"2026.09.29\", \"dong\": null, \"floor\": 40, \"price\": 40300, \"direct\": false}, {\"date\": \"2026.09.06\", \"dong\": null, \"floor\": 4, \"price\": 41400, \"direct\": false}, {\"date\": \"2026.08.29\", \"dong\": null, \"floor\": 34, \"price\": 43500, \"direct\": false}, {\"date\": \"2026.07.17\", \"dong\": null, \"floor\": 31, \"price\": 42000, \"direct\": false}, {\"date\": \"2026.07.14\", \"dong\": \"104동\", \"floor\": 15, \"price\": 40900, \"direct\": false}, {\"date\": \"2026.07.10\", \"dong\": \"102동\", \"floor\": 20, \"price\": 41800, \"direct\": false}, {\"date\": \"2026.07.01\", \"dong\": \"103동\", \"floor\": 31, \"price\": 41900, \"direct\": false}, {\"date\": \"2026.06.26\", \"dong\": \"104동\", \"floor\": 35, \"price\": 41300, \"direct\": false}, {\"date\": \"2026.06.22\", \"dong\": \"103동\", \"floor\": 43, \"price\": 43800, \"direct\": false}], \"count12m\": 33, \"yearChangePct\": -0.9, \"listing\": {\"count\": 43, \"min\": 40000, \"max\": 49000, \"median\": 42000}}",
+ "api_hits": {}
+}
