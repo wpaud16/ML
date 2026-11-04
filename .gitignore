@@ -4,3 +4,4 @@ __pycache__/
 client_secret*.json
 google_creds.json
 outfit/.mail.json
+catboost_info/
