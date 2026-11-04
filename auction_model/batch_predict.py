@@ -378,6 +378,13 @@ def main():
                 items[key]['risk'] = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
                 items[key]['court'] = pg.get('caseSite')
                 items[key]['category'] = '아파트'
+                # 가장 가까운 지하철역 (2026-11-04 사용자 요청: 아파트도 오피스텔처럼 역 표시)
+                try:
+                    st_m, st_name = page_station(dj, 'danji')
+                    if st_m is not None:
+                        items[key]['station'] = dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80)))
+                except Exception:
+                    pass
             except SystemExit as e:
                 failed.append(dict(base, danji_id=dj, reason=f'예측 실패: {e}'))
             except Exception as e:
