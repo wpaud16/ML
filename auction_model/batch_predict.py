@@ -486,8 +486,10 @@ def main():
                  auction_id=f.get('auction_id'), bidding_date=f.get('bidding_date'), category='아파트')
             for f in failed if f.get('category') == '아파트' and (f.get('risk') or {}).get('decision') == 'show']
     os.makedirs(OUT_DIR, exist_ok=True)
-    json.dump(dict(date=str(now.date()), n=len(tgt), items=tgt), open(os.path.join(OUT_DIR, 'tenant_targets.json'), 'w'), ensure_ascii=False, indent=1)
-    out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(now.date()), tenant_overrides=n_ten,
+    # 결과 날짜: 18시 이후 실행은 다음 날 아침 메일용 (2026-11-05: 예약 실행 지연 대비 전날 21시부터 실행)
+    day = (now + timedelta(hours=6)).date()
+    json.dump(dict(date=str(day), n=len(tgt), items=tgt), open(os.path.join(OUT_DIR, 'tenant_targets.json'), 'w'), ensure_ascii=False, indent=1)
+    out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(day), tenant_overrides=n_ten,
                model='앙상블(부스팅+군집별회귀)', config_built=cfg.get('built'),
                filters=dict(min_area=None, max_low_manwon=None),
                counts=dict(predicted=len(items), skipped=len(skipped), failed=len(failed),
@@ -495,10 +497,10 @@ def main():
                errors=errors, items=items, failed=failed, skipped=skipped)
     os.makedirs(OUT_DIR, exist_ok=True)
     try:
-        out['recent_results'] = update_results(str(now.date()))
+        out['recent_results'] = update_results(str(day))
     except Exception as e:
         out['recent_results'] = dict(summary=dict(error=f'{type(e).__name__}: {e}'), items=[])
-    for fn in ['latest.json', f'{now.date()}.json']:
+    for fn in ['latest.json', f'{day}.json']:
         json.dump(out, open(os.path.join(OUT_DIR, fn), 'w'), ensure_ascii=False, indent=1)
     json.dump(dict(sorted(cache.items())), open(MAP_PATH, 'w'), ensure_ascii=False, indent=1)
     print(json.dumps(out['counts'], ensure_ascii=False), 'errors', errors)

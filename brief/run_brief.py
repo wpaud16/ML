@@ -64,6 +64,11 @@ def main():
     subject = ('[테스트] ' if TEST else '') + f"[JM's Schedule] {label} 오늘의 할 일"
     g.send_mail(TO, subject, html_body, top_t + '\n\n'.join(T))
     print('sent:', subject)
+    # 하루 1통 기록 (2026-11-05: 예약 여러 번 → 워크플로가 이 파일 있으면 건너뜀)
+    import datetime as _dt
+    day = _dt.datetime.now(_dt.timezone(_dt.timedelta(hours=9))).date().isoformat()
+    os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sent'), exist_ok=True)
+    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sent', day + '.txt'), 'w').write(subject + '\n')
 
 
 if __name__ == '__main__':

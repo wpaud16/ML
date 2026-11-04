@@ -3,19 +3,36 @@ name: morning brief (JM's Schedule)
 # 매일 07:45 KST(22:45 UTC) 아침 브리핑 메일. Claude 예약 작업을 대신하는 Python 버전 (2026-11-04~).
 # TEST_MODE=1 동안은 제목에 [테스트], 구글 문서·트래커는 읽기만 한다.
 on:
+  # 2026-11-05: 예약 실행 지연 대비 KST 04:23·05:23·06:23·07:23 네 번, 오늘 보냈으면(brief/sent/날짜.txt) 건너뜀
   schedule:
-    - cron: '45 22 * * *'
+    - cron: '23 19 * * *'
+    - cron: '23 20 * * *'
+    - cron: '23 21 * * *'
+    - cron: '23 22 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: morning-brief
   cancel-in-progress: false
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.c.outputs.skip }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: c
+        run: |
+          git fetch -q --depth=1 origin main
+          if [ "${{ github.event_name }}" = "schedule" ] && git cat-file -e origin/main:brief/sent/$(TZ=Asia/Seoul date +%F).txt 2>/dev/null; then echo "이미 보냄"; echo "skip=1" >> $GITHUB_OUTPUT; fi
+
   brief:
+    needs: check
+    if: needs.check.outputs.skip != '1'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -35,3 +52,11 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           TEST_MODE: '1'
         run: python run_brief.py
+      - name: Commit sent mark (하루 1통)
+        run: |
+          git config user.name "brief-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add brief/sent
+          git diff --cached --quiet && exit 0
+          git commit -m "brief: $(TZ=Asia/Seoul date +%F) 메일 발송 기록"
+          for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0; sleep 10; done

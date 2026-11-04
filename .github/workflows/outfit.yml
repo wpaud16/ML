@@ -3,8 +3,12 @@ name: outfit (아침 날씨·코디)
 # 매일 05:47 KST(20:47 UTC). Claude 예약 작업 "아침 날씨·코디 브리핑"을 대신하는 Python 버전 (2026-11-05~).
 # 코드 수정 push 로 실행되면 제목에 [테스트].
 on:
+  # 2026-11-05: 예약 실행 지연 대비 KST 04:13·05:13·06:13·07:13 네 번, 오늘 메일 보냈으면(sent.txt) 건너뜀
   schedule:
-    - cron: '47 20 * * *'
+    - cron: '13 19 * * *'
+    - cron: '13 20 * * *'
+    - cron: '13 21 * * *'
+    - cron: '13 22 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -22,7 +26,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.c.outputs.skip }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: c
+        run: |
+          git fetch -q --depth=1 origin main
+          if [ "${{ github.event_name }}" = "schedule" ] && git cat-file -e origin/main:outfit/$(TZ=Asia/Seoul date +%F)/sent.txt 2>/dev/null; then echo "이미 보냄"; echo "skip=1" >> $GITHUB_OUTPUT; fi
+
   outfit:
+    needs: check
+    if: needs.check.outputs.skip != '1'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
