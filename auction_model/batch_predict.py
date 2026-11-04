@@ -7,6 +7,7 @@
 아침 브리핑은 이 파일을 '읽기만' 하고 코드를 실행하지 않는다.
 단지 연결 캐시: danji_map.json { "<경매ID>": "<단지ID>" } (수동으로 추가해도 됨)
 """
+import nearby
 import json, os, re, sys, time, subprocess, urllib.parse
 from datetime import datetime, timezone, timedelta
 import numpy as np
@@ -348,6 +349,13 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
             rk = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
             if rk['decision'] == 'check':
                 p = om.predict_dict(dj, it['id'], 1, df=odf, cfg=ocfg, models=models)
+            try:   # 주변 오피스텔 시세 (2026-11-05)
+                bj = ((nearby.page_props('officetel', dj).get('data') or {}).get('bjdInfo') or {})
+                nb = nearby.nearby_ot(dj, bj.get('sgg') or gu, bj.get('emd'), it.get('buildingTotalArea'))
+                if nb and p.get('sise'):
+                    p['sise'] = nearby.merge_into_sise(p['sise'], nb, base['low_manwon'])
+            except Exception:
+                pass
             return 'ok', dict(base, danji_id=dj, danji_name=p.get('name'), court=pg.get('caseSite'),
                               station=dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80))),
                               **{k: v for k, v in p.items() if k not in ('address', 'area', 'category')}, risk=rk)
@@ -415,6 +423,13 @@ def main():
                         s8 = [x for x in sts if any('8호선' in ln for ln in x[2])]
                         if s8:
                             items[key]['station8'] = dict(name=s8[0][1], distance_m=s8[0][0], walk_min=int(-(-s8[0][0] * 1.3 // 80)))
+                except Exception:
+                    pass
+                # 주변 단지 시세를 종합 시세의 네 번째 근거로 (2026-11-05)
+                try:
+                    nb = nearby.nearby_apt(dj, p.get('pyeong'))
+                    if nb:
+                        items[key]['sise'] = nearby.merge_into_sise(items[key].get('sise'), nb, items[key]['low_manwon'])
                 except Exception:
                     pass
             except SystemExit as e:

@@ -48,10 +48,16 @@ def sise_lines(v, appr, low):
         if t: src.append(f"실거래 {t['eok']:.2f}억({md(t['date']).split('(')[0]} → 추세 반영 {t['adj_eok']:.2f})")
         if s.get('kb'): src.append(f"KB {s['kb']['eok']:.2f}억")
         if s.get('richgo_eok') and s.get('richgo_source') != 'OFFER': src.append(f"리치고 {s['richgo_eok']:.2f}억")
+        nb = s.get('nearby')
+        if nb: src.append(f"주변 {nb['eok']:.2f}억({nb['n_danji']}개 단지)")
         if src: out.append(f'<span class="g s">{" · ".join(src)}</span>')
         tr = s.get('trend') or {}
         tt = [f'{lab} {tr[k]:+.1f}%' for k, lab in (('3m_pct', '3개월'), ('12m_pct', '1년')) if tr.get(k) is not None]
         if tt: out.append(f'<span class="g s">단지 시세 추세 {" · ".join(tt)}</span>')
+        if nb and nb.get('detail'):
+            unit = '평당' if 'per_pyeong' in nb['detail'][0] else '㎡당'
+            out.append('<span class="g s">🏘 ' + E(nb.get('basis') or '') + ' · ' + ' · '.join(
+                f"{E(d['name'] or '')} {unit} {(d.get('per_pyeong') or d.get('per_m2')):,}만" for d in nb['detail'][:4]) + '</span>')
         if s.get('flags'): out.append(f'<span class="warn">⚠ {E(" · ".join(s["flags"]))}</span>')
         return out
     rs = v.get('richgo_sise_eok')
@@ -299,7 +305,7 @@ def build(src, dst):
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
     foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅 · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
-            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세의 중앙값 (호가 제외) — 입찰가 모델은 리치고 시세 기준<br>'
+            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 입찰가 모델은 리치고 시세 기준<br>'
             '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'
             '권리분석은 등기 기준 자동요약을 바탕으로 한 1차 추정입니다. 점유자·대항력은 매각물건명세서에서, 대출 한도는 은행에서 직접 확인하세요. 입찰 권유가 아닙니다.')
     doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
