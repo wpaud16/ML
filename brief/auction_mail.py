@@ -60,7 +60,7 @@ def tracker_rows():
     return rows
 
 
-def summary_row(v, today, changed=False):
+def summary_row(v, today, new=False):
     bb = v.get('by_bidders') or {}
     n = bb.get('expected_bidders'); ex = cp.exp_row(v['category'], n)
     p50 = ((bb.get('bid_by_prob_eok') or {}).get(ex) or v['bid_by_prob_eok'])['50%']
@@ -70,18 +70,19 @@ def summary_row(v, today, changed=False):
     line2 = (f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · "
              f"50% {p50:.2f}억" + (f' ({n}명)' if n else '') + (f" · 🚇 {E(st['name'])} {st['walk_min']}분" if st.get('name') else '')
              + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>')
-    h = (f'<div style="border-bottom:1px solid #ddd;padding:6px 0"><b>{E(v.get("danji_name") or "")}</b> '
-         f'<span style="{GRAY}">{v.get("area")}㎡ · {E(gu)} {E(case)}</span>' + (' <span style="font-size:11px;color:#d93025">변동</span>' if changed else '')
+    tag = '<span style="color:#d93025;font-weight:bold;font-size:12px">New</span> ' if new else ''
+    h = (f'<div style="border-bottom:1px solid #ddd;padding:6px 0">{tag}<b>{E(v.get("danji_name") or "")}</b> '
+         f'<span style="{GRAY}">{v.get("area")}㎡ · {E(gu)} {E(case)}</span>'
          + f'<br>{line2}</div>')
-    t = (f"{v.get('danji_name')} {v.get('area')}㎡ · {gu} {case}\n  {md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · 50% {p50:.2f}억"
+    t = (('[New] ' if new else '') + f"{v.get('danji_name')} {v.get('area')}㎡ · {gu} {case}\n  {md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · 50% {p50:.2f}억"
          + (f' ({n}명)' if n else ''))
     return h, t
 
 
 def scorecard(rows, cat, today):
-    rows = sorted([r for r in rows if r.get('category') == cat], key=lambda r: r['bidding_date'], reverse=True)[:12]
+    rows = sorted([r for r in rows if r.get('category') == cat], key=lambda r: r['bidding_date'], reverse=True)[:30]
     if not rows:
-        return f'<div style="{GRAY}">최근 7일 결과 없음 (예측 기록은 10/31부터 쌓는 중)</div>', '최근 7일 결과 없음'
+        return f'<div style="{GRAY}">최근 14일 결과 없음 (예측 기록은 10/31부터 쌓는 중)</div>', '최근 14일 결과 없음'
     sold = [r for r in rows if r.get('status') == '매각' and r.get('diff_pct') is not None]
     sm = ''
     if sold:
@@ -127,61 +128,88 @@ def retrain_line(today):
             f"오피스텔 +{x['ot_added']}건 (오차 {x['ot_mape_before']}% → {x['ot_mape_after']}%)")
 
 
-def build(today):
-    """(html, text, notes). notes = 상단 경고 문구 목록."""
+def is_new(v, prev_keys):
+    return prev_keys is not None and v['key'] not in prev_keys
+
+
+def prev_keys(today):
+    """어제 이전 가장 최근 예측 파일의 물건 키 (New 판정). 없으면 None."""
+    d = os.path.join(AM, 'predictions')
+    fs = sorted(f for f in os.listdir(d) if re.match(r'\d{4}-\d{2}-\d{2}\.json$', f) and f[:10] < today.isoformat())
+    if not fs:
+        return None
+    return set(json.load(open(os.path.join(d, fs[-1])))['items'])
+
+
+def results_14d(today):
+    R = json.load(open(os.path.join(AM, 'predictions', 'results.json'))).values()
+    lo = (today - dt.timedelta(days=14)).isoformat()
+    out = []
+    for r in R:
+        if lo <= r['bidding_date'] < today.isoformat():
+            r = dict(r); r.setdefault('category', '아파트')
+            r['category'] = r['category'] or '아파트'
+            out.append(r)
+    # 같은 물건이 여러 기일로 기록된 경우 하나만 (매각 우선, 그다음 최신 기일)
+    best = {}
+    for r in out:
+        b = best.get(r['key'])
+        if b is None or (r['status'] == '매각', r['bidding_date']) > (b['status'] == '매각', b['bidding_date']):
+            best[r['key']] = r
+    return list(best.values())
+
+
+def sold_keys():
+    try:
+        R = json.load(open(os.path.join(AM, 'predictions', 'results.json'))).values()
+        return {r['key'] for r in R if r.get('status') == '매각'}
+    except Exception:
+        return set()
+
+
+def build(today, now_hour=None):
+    """(html, text, counts)."""
     notes = []
     L = json.load(open(os.path.join(AM, 'predictions', 'latest.json')))
     if L.get('date') != today.isoformat():
         notes.append(f"예측 결과가 {L.get('date')} 기준입니다 (오늘 자동 계산 미실행)")
-    try:
-        tr = tracker_rows()
-    except Exception as e:
-        tr = {}; notes.append(f'트래커를 읽지 못했습니다 ({str(e)[:60]})')
-    items = [v for v in L['items'].values() if cp.keep(v) and (v.get('bidding_date') or '') >= today.isoformat()]
+    # 오늘 기일 물건은 입찰 시작(10시) 전에만 보여준다
+    hour = now_hour if now_hour is not None else dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).hour
+    lo = today.isoformat() if hour < 10 else (today + dt.timedelta(days=1)).isoformat()
+    sold = sold_keys()  # 이미 낙찰된 물건은 목록에서 뺀다 (성적표에만)
+    items = [v for v in L['items'].values() if cp.keep(v) and (v.get('bidding_date') or '') >= lo and v['key'] not in sold]
+    pk = prev_keys(today)
     H = [f'<div style="font-weight:bold;font-size:17px">🏠 경매 알림</div>']
     H += [f'<div style="color:#d93025;font-size:13px">{E(n)}</div>' for n in notes]
     H.append(f'<p style="text-align:center;margin:12px 0"><a href="{PAGE}" style="display:inline-block;background:#1F1D1A;color:#ffffff;'
              'text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">📄 경매 전체 카드 보기 (모든 물건 상세)</a></p>')
     T = ['🏠 경매 알림'] + notes + [f'📄 경매 전체 카드: {PAGE}']
     rt = retrain_line(today)
-    soon = (today + dt.timedelta(days=7)).isoformat()
-    cnt = dict(new=0, track=0)
+    try:
+        res = results_14d(today)
+    except Exception:
+        res = None
+    cnt = dict(new=0, total=0)
     for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)')):
-        xs = sorted((v for v in items if v['category'] == cat), key=lambda v: v['bidding_date'])
-        shown = lambda v: (tr.get(v['key']) or {}).get('처음알림일', '-') not in ('-', '')
-        new = [v for v in xs if not shown(v)]
-        trk = [v for v in xs if shown(v)]
-        extra = new[CAP:]; new = new[:CAP]
-        cnt['new'] += len(new); cnt['track'] += len(trk) + len(extra)
+        xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v['bidding_date'], v.get('danji_name') or ''))
+        nn = sum(1 for v in xs if is_new(v, pk))
+        cnt['new'] += nn; cnt['total'] += len(xs)
         H.append(f'<div style="font-weight:bold;font-size:19px;margin-top:22px;padding-bottom:4px;border-bottom:2px solid #888888">{title}</div>')
         T.append(f'\n▶ {title}')
-        H.append(f'<div style="font-weight:bold;margin:12px 0 6px">🆕 새 물건 ({len(new)}건)</div>')
-        T.append(f'▶ 🆕 새 물건 ({len(new)}건)')
-        if not new:
-            H.append(f'<div style="{GRAY}">새 물건 없음</div>')
-        for v in new:
-            H.append(inline(cp.card(v, today.isoformat()), today))
-            T.append(f"{v.get('danji_name')} · 전용 {v.get('area')}㎡ · {md(v['bidding_date'])} · 최저 {v['low_manwon'] / 1e4:.2f}억 · 50% {v['bid_by_prob_eok']['50%']:.2f}억")
-        rest = trk + extra
-        H.append(f'<div style="font-weight:bold;margin:16px 0 6px">📋 추적 중인 물건 ({len(rest)}건)</div>')
-        T.append(f'▶ 📋 추적 중인 물건 ({len(rest)}건)')
-        for lab, grp in (('🔔 7일 이내', [v for v in rest if v['bidding_date'] <= soon]), ('📅 그 이후', [v for v in rest if v['bidding_date'] > soon])):
-            if not grp:
-                continue
-            H.append(f'<div style="font-size:13px;font-weight:bold;margin-top:8px">{lab}</div>'); T.append(lab)
-            for v in sorted(grp, key=lambda v: v['bidding_date']):
-                row = tr.get(v['key']) or {}
-                changed = bool(row) and (row.get('최저가(만원)') != str(v['low_manwon']) or row.get('매각기일') != v['bidding_date'])
-                h, t = summary_row(v, today, changed); H.append(h); T.append(t)
-        H.append(f'<div style="font-weight:bold;margin:16px 0 6px">📊 모델 성적표 (최근 7일)</div>')
-        T.append('▶ 📊 모델 성적표 (최근 7일)')
+        H.append(f'<div style="font-weight:bold;margin:12px 0 6px">📋 경매 물건 ({len(xs)}건' + (f' · New {nn}' if nn else '') + ')</div>')
+        T.append(f'▶ 📋 경매 물건 ({len(xs)}건' + (f' · New {nn}' if nn else '') + ')')
+        if not xs:
+            H.append(f'<div style="{GRAY}">진행 중인 물건 없음</div>')
+        for v in xs:
+            h, t = summary_row(v, today, is_new(v, pk)); H.append(h); T.append(t)
+        H.append(f'<div style="font-weight:bold;margin:16px 0 6px">📊 모델 성적표 (최근 14일)</div>')
+        T.append('▶ 📊 모델 성적표 (최근 14일)')
         if rt:
             H.append(f'<div style="{GRAY}">{rt}</div>'); T.append(rt)
-        rr = L.get('recent_results') or {}
-        if rr.get('summary', {}).get('error'):
+        if res is None:
             H.append(f'<div style="{GRAY}">성적표를 만들지 못했습니다</div>')
         else:
-            h, t = scorecard(rr.get('items') or [], cat, today); H.append(h); T.append(t)
+            h, t = scorecard(res, cat, today); H.append(h); T.append(t)
     foot = ['🛡 안전 = 법원 매각물건명세서로 인수 금액 0원 확인 · 보통 = 리치고 기준 권리 문제 없음(명세서 미확인) · 주의·위험은 숨김',
             '📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12) · 대출·세금·비용 제외 단순 계산',
             '검색 지역: 서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리(8호선역 도보 15분 이내)',
