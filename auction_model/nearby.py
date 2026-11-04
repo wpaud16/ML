@@ -64,8 +64,11 @@ def apt_from_props(pp, danji_id, pyeong):
     if len(pick) < 2:
         return None
     pp_med = statistics.median(r['perPyeong'] for r in pick)
+    # 각 단지 대표 평형끼리 비교한 비율 (대형 평형은 평당가가 낮아 평당가 × 평수로 바로 곱하면 부풀려짐 — 2026-11-05 덕현 47평 사례)
+    self_pp = (me or {}).get('perPyeong')
+    ratio = pp_med / self_pp if self_pp else None
     eok = round(pp_med * float(pyeong) / 1e4, 2)
-    return dict(eok=eok, n_danji=len(pick), basis=f"{ec.get('emd', '')} {basis}".strip(), per_pyeong_manwon=round(pp_med),
+    return dict(eok=eok, ratio=round(ratio, 4) if ratio else None, n_danji=len(pick), basis=f"{ec.get('emd', '')} {basis}".strip(), per_pyeong_manwon=round(pp_med),
                 self_per_pyeong_manwon=(me or {}).get('perPyeong'), price_date=ec.get('priceDate'),
                 detail=[dict(name=r.get('name'), age=r.get('age'), per_pyeong=r['perPyeong']) for r in sorted(pick, key=lambda r: abs((r.get('age') or 0) - (age or 0)))[:5]])
 
@@ -153,6 +156,9 @@ def merge_into_sise(sise, nb, low_manwon, appr_manwon=None):
         vals.append(('실거래', s['trade']['adj_eok']))
     if 'KB' in used and (s.get('kb') or {}).get('adj_eok'):
         vals.append(('KB', s['kb']['adj_eok']))
+    if nb.get('ratio') and vals:   # 이 단지 시세 × (주변 평당가 ÷ 이 단지 평당가)
+        nb = dict(nb, eok=round(statistics.median(x[1] for x in vals) * nb['ratio'], 2))
+        s['nearby'] = nb
     vals.append(('주변', nb['eok']))
     v = [x[1] for x in vals]
     est = statistics.median(v)
