@@ -21,7 +21,6 @@ KST = timezone(timedelta(hours=9))
 REGIONS = [('서울', '강남구'), ('서울', '서초구'), ('서울', '강동구'), ('서울', '광진구'), ('서울', '송파구'),
            ('경기', '성남시 수정구'), ('경기', '성남시 분당구'), ('경기', '성남시 중원구'), ('경기', '남양주시'), ('경기', '구리시'),
            ('경기', '하남시')]
-MISA = ('망월동', '풍산동', '선동')   # 하남시는 미사강변도시만 (2026-11-05 사용자 요청)
 MIN_AREA, MAX_LOW = 0.0, float("inf")   # 2026-11-02 사용자 요청으로 면적·최저가 필터 해제
 MAP_PATH = os.path.join(HERE, 'danji_map.json')
 OUT_DIR = os.path.join(HERE, 'predictions')
@@ -410,8 +409,6 @@ def main():
                         appr_manwon=int(it['appraisedPrice'] / 1e4), low_manwon=int(it['lowestSellingPrice'] / 1e4),
                         fails=it.get('numberOfFailures'), bidding_date=(it.get('biddingDate') or '')[:10],
                         area=it.get('buildingTotalArea'))
-            if sgg == '하남시' and not any(e in (it.get('address') or '') for e in MISA):
-                skipped.append(dict(base, reason='하남 미사 외')); continue
             if 'typeDetails' in it and '아파트' not in (it.get('typeDetails') or []) and it.get('itemType') != '아파트':
                 skipped.append(dict(base, reason='아파트 아님')); continue
             if (it.get('buildingTotalArea') or 0) < MIN_AREA:
@@ -443,6 +440,9 @@ def main():
                         s8 = [x for x in sts if any('8호선' in ln for ln in x[2])]
                         if s8:
                             items[key]['station8'] = dict(name=s8[0][1], distance_m=s8[0][0], walk_min=int(-(-s8[0][0] * 1.3 // 80)))
+                        s5 = [x for x in sts if any('5호선' in ln for ln in x[2])]   # 하남: 5호선역 도보 15분 (2026-11-05)
+                        if s5:
+                            items[key]['station5'] = dict(name=s5[0][1], distance_m=s5[0][0], walk_min=int(-(-s5[0][0] * 1.3 // 80)))
                 except Exception:
                     pass
                 # 주변 단지 시세를 종합 시세의 네 번째 근거로 (2026-11-05)

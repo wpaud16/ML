@@ -34,6 +34,9 @@ def keep(v):
     if v.get('category') == '아파트' and ('남양주' in reg or '구리' in reg):
         s8 = v.get('station8')
         if not s8 or s8['distance_m'] > 920: return False
+    if v.get('category') == '아파트' and '하남' in reg:   # 하남은 5호선역 도보 15분(직선 920m) 이내만
+        s5 = v.get('station5')
+        if not s5 or s5['distance_m'] > 920: return False
     return True
 
 
@@ -147,6 +150,7 @@ def unmatched(d, today):
     out = []
     for f in d.get('failed') or []:
         if f.get('category') != '아파트' or (f.get('bidding_date') or '') < today: continue
+        if any(x in (f.get('region') or '') for x in ('남양주', '구리', '하남')): continue   # 역세권 판정 불가 지역은 제외
         if (f.get('risk') or {}).get('decision', 'show') == 'hide': continue
         out.append(f)
     return sorted(out, key=lambda f: f.get('bidding_date') or '9999')
@@ -188,6 +192,9 @@ def card(v, today):
     if st and st.get('name'):
         L.append(f"🚇 {E(st['name'])}역 도보 약 {st['walk_min']}분 ({st['distance_m']}m)")
     s8 = v.get('station8')
+    s5 = v.get('station5')
+    if cat == '아파트' and s5 and st and s5['name'] != st['name'] and s5['distance_m'] <= 920:
+        L.append(f"🚇 5호선 {E(s5['name'])}역 도보 약 {s5['walk_min']}분 ({s5['distance_m']}m)")
     if cat == '아파트' and s8 and st and s8['name'] != st['name'] and s8['distance_m'] <= 920:
         L.append(f"🚇 8호선 {E(s8['name'])}역 도보 약 {s8['walk_min']}분 ({s8['distance_m']}m)")
     L += sise_lines(v, appr, low)
@@ -344,7 +351,7 @@ def build(src, dst):
         for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔')):
             parts.append(f'<h3>{title}</h3>' + scorecard(res, cat))
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
-    foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만 · 하남은 미사(망월·풍산·선동)만<br>'
+    foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만 · 하남은 5호선역 도보 15분 이내만<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅 · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
             '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 입찰가 모델은 리치고 시세 기준<br>'
             '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'
