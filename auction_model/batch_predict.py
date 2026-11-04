@@ -19,7 +19,9 @@ import auction_predictor as ap
 
 KST = timezone(timedelta(hours=9))
 REGIONS = [('서울', '강남구'), ('서울', '서초구'), ('서울', '강동구'), ('서울', '광진구'), ('서울', '송파구'),
-           ('경기', '성남시 수정구'), ('경기', '성남시 분당구'), ('경기', '성남시 중원구'), ('경기', '남양주시'), ('경기', '구리시')]
+           ('경기', '성남시 수정구'), ('경기', '성남시 분당구'), ('경기', '성남시 중원구'), ('경기', '남양주시'), ('경기', '구리시'),
+           ('경기', '하남시')]
+MISA = ('망월동', '풍산동', '선동')   # 하남시는 미사강변도시만 (2026-11-05 사용자 요청)
 MIN_AREA, MAX_LOW = 0.0, float("inf")   # 2026-11-02 사용자 요청으로 면적·최저가 필터 해제
 MAP_PATH = os.path.join(HERE, 'danji_map.json')
 OUT_DIR = os.path.join(HERE, 'predictions')
@@ -408,6 +410,8 @@ def main():
                         appr_manwon=int(it['appraisedPrice'] / 1e4), low_manwon=int(it['lowestSellingPrice'] / 1e4),
                         fails=it.get('numberOfFailures'), bidding_date=(it.get('biddingDate') or '')[:10],
                         area=it.get('buildingTotalArea'))
+            if sgg == '하남시' and not any(e in (it.get('address') or '') for e in MISA):
+                skipped.append(dict(base, reason='하남 미사 외')); continue
             if 'typeDetails' in it and '아파트' not in (it.get('typeDetails') or []) and it.get('itemType') != '아파트':
                 skipped.append(dict(base, reason='아파트 아님')); continue
             if (it.get('buildingTotalArea') or 0) < MIN_AREA:
@@ -421,8 +425,9 @@ def main():
             if sold_already(pg):
                 skipped.append(dict(base, reason='매각완료')); continue
             dj, how = find_danji(it, cache)
-            if not dj:
-                failed.append(dict(base, reason=how)); continue
+            if not dj:   # 예측은 못 해도 목록에 표시·추적 (2026-11-05 사용자 요청)
+                failed.append(dict(base, reason=how, category='아파트', court=pg.get('caseSite'),
+                                   risk=risk_check(pg.get('keyword'), None, pg.get('rights')))); continue
             try:
                 p = ap.predict_dict(dj, it['id'], df=df, cfg=cfg)
                 items[key] = dict(base, danji_id=dj, danji_name=p.get('name'), **{k: v for k, v in p.items() if k not in ('address', 'area')})
@@ -471,6 +476,9 @@ def main():
     tgt = [dict(key=k, case=k.split('[')[0], item_no=int(k.split('[')[1].rstrip(']')), court=v.get('court'),
                 auction_id=v.get('auction_id'), bidding_date=v.get('bidding_date'), category=v.get('category'))
            for k, v in sorted(items.items()) if not (v.get('risk') or {}).get('reason', '').startswith('특수물건')]
+    tgt += [dict(key=f['key'], case=f['key'].split('[')[0], item_no=int(f['key'].split('[')[1].rstrip(']')), court=f.get('court'),
+                 auction_id=f.get('auction_id'), bidding_date=f.get('bidding_date'), category='아파트')
+            for f in failed if f.get('category') == '아파트' and (f.get('risk') or {}).get('decision') == 'show']
     os.makedirs(OUT_DIR, exist_ok=True)
     json.dump(dict(date=str(now.date()), n=len(tgt), items=tgt), open(os.path.join(OUT_DIR, 'tenant_targets.json'), 'w'), ensure_ascii=False, indent=1)
     out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(now.date()), tenant_overrides=n_ten,

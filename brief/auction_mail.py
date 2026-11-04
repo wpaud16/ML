@@ -199,9 +199,21 @@ def build(today, now_hour=None):
             H.append(f'<div style="{GRAY}">진행 중인 물건 없음</div>')
         for v in xs:
             h, t = summary_row(v, today, is_new(v, pk)); H.append(h); T.append(t)
+        if cat == '아파트':
+            um = [f for f in cp.unmatched(L, lo)]
+            if um:
+                H.append(f'<div style="font-weight:bold;margin:14px 0 4px">🔍 예측 불가 물건 ({len(um)}건 · 단지 못 찾음)</div>')
+                T.append(f'▶ 🔍 예측 불가 물건 ({len(um)}건)')
+                for f in um:
+                    nm = (f.get('address') or '').split(' ', 2)[-1]
+                    gu = (f.get('region') or '').split(' ', 1)[-1]
+                    ln2 = (f"{md(f['bidding_date'])} {dday(f['bidding_date'], today)} · 최저 {f['low_manwon'] / 1e4:.2f}억 · 감정 {f['appr_manwon'] / 1e4:.2f}억 · 유찰 {f.get('fails') or 0}회")
+                    H.append(f'<div style="border-bottom:1px solid #ddd;padding:6px 0"><b>{E(nm)}</b> <span style="{GRAY}">{f.get("area")}㎡ · {E(gu)} {E(f["key"].replace("[1]", ""))}</span>'
+                             f'<br>{ln2} · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(f["auction_id"])}">상세</a></div>')
+                    T.append(f'{nm} · {gu} {f["key"]}\n  {ln2}')
     foot = ['🛡 안전 = 법원 매각물건명세서로 인수 금액 0원 확인 · 보통 = 리치고 기준 권리 문제 없음(명세서 미확인) · 주의·위험은 숨김',
             '📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12) · 대출·세금·비용 제외 단순 계산',
-            '검색 지역: 서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리(8호선역 도보 15분 이내)',
+            '검색 지역: 서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리(8호선역 도보 15분 이내) / 하남 미사',
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 가격 오차 약 ±6% · 확률 오차 약 ±5%p',
             '🏬 오피스텔 입찰가 = 오피스텔 전용 모델(랜덤포레스트+부스팅) · 월세는 전세 시세 × 전월세전환율로 추정',
             '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세의 중앙값 (호가 제외)',

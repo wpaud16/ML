@@ -142,6 +142,31 @@ def rights(v, seoul):
     return out
 
 
+def unmatched(d, today):
+    """단지를 못 찾아 예측이 없는 아파트 (2026-11-05: 숨기지 말고 표시·추적)."""
+    out = []
+    for f in d.get('failed') or []:
+        if f.get('category') != '아파트' or (f.get('bidding_date') or '') < today: continue
+        if (f.get('risk') or {}).get('decision', 'show') == 'hide': continue
+        out.append(f)
+    return sorted(out, key=lambda f: f.get('bidding_date') or '9999')
+
+
+def unmatched_card(f):
+    appr, low = (f.get('appr_manwon') or 0) / 1e4, (f.get('low_manwon') or 0) / 1e4
+    reg = (f.get('region') or '').split(' ', 1)[-1]
+    rk = f.get('risk') or {}
+    chk = ' · ⚠ 권리 확인 필요' if rk.get('decision') == 'check' else ''
+    L = [f'<div class="t">{E((f.get("address") or "").split(" ", 2)[-1])}</div>',
+         f'<div class="g s">{E(reg)} · {E(f["key"].replace("[1]", ""))} · {E(f.get("court") or "")}{chk}</div>',
+         f'매각기일 {md(f["bidding_date"])} · <span class="dday" data-d="{f["bidding_date"]}"></span> · 전용 {f.get("area")}㎡',
+         f'감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b> ({low / appr * 100:.0f}%) · 유찰 {f.get("fails") or 0}회' if appr else '',
+         f'<span class="g s">🔍 예측 불가: {E(f.get("reason") or "")} — 리치고 단지 페이지가 없어 시세·모델 예측 없음</span>']
+    if f.get('auction_id'):
+        L.append(f'<a href="https://m.richgo.ai/auctionMobile/{E(f["auction_id"])}">상세 보기 →</a>')
+    return f'<div class="card">' + '<br>'.join(x for x in L if x) + '</div>'
+
+
 def card(v, today):
     cat = v['category']; reg = v.get('region') or ''; seoul = reg.startswith('서울')
     gu = reg.split(' ', 1)[-1]
@@ -303,6 +328,11 @@ def build(src, dst):
             parts.append(f'<h3>{lab} ({len(g)}건)</h3>')
             parts += [card(v, today) for v in g]
         if not xs: parts.append('<p class="g">표시할 물건 없음</p>')
+        if cat == '아파트':
+            um = unmatched(d, today)
+            if um:
+                parts.append(f'<h3>🔍 예측 불가 (단지 못 찾음) · {len(um)}건</h3>')
+                parts += [unmatched_card(f) for f in um]
     res = results_14d(today)
     nav.append('<a href="#score">📊 성적표</a>')
     parts.append('<h2 id="score">📊 모델 성적표 (최근 14일)</h2>')
@@ -314,7 +344,7 @@ def build(src, dst):
         for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔')):
             parts.append(f'<h3>{title}</h3>' + scorecard(res, cat))
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
-    foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만<br>'
+    foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만 · 하남은 미사(망월·풍산·선동)만<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅 · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
             '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 입찰가 모델은 리치고 시세 기준<br>'
             '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'
