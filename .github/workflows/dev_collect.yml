@@ -1,0 +1,35 @@
+name: dev collect (주변 시세 백테스트 데이터)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'auction_model/dev/collect_nearby.py'
+      - '.github/workflows/dev_collect.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q pandas numpy
+      - name: Collect
+        working-directory: auction_model/dev
+        run: python collect_nearby.py
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "auction-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add auction_model/dev/nearby_apt.json
+          git diff --cached --quiet && exit 0
+          git commit -m "dev: 주변 단지 비교 데이터 수집"
+          for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0; sleep 10; done
