@@ -214,6 +214,35 @@ def _fallback_price(dp):
     return None, None
 
 
+def _ot_estimate(d, ot_id, area):
+    """오피스텔: 이 면적의 가격이 없을 때 ① 같은 건물 다른 면적의 전용㎡당 가격(면적 가장 가까운 것) × 면적
+    ② 없으면 주변 시세(같은 동 오피스텔 · 전용 ±30% · 12개월 실거래 ㎡당 중앙값) × 면적. best 튜플 형태로 반환."""
+    near = None
+    for p, v in (d.get('pyeongInfos') or {}).items():
+        try: lo, hi = float(v['minPrivateArea']), float(v['maxPrivateArea'])
+        except (TypeError, ValueError): continue
+        dp = v.get('danjiPriceInfo') or {}
+        pr = (dp.get('meme') or {}).get('price') or _fallback_price(dp)[0]
+        if not pr or not lo: continue
+        gap = abs((lo + hi) / 2 - area)
+        if near is None or gap < near[0]:
+            near = (gap, p, pr / ((lo + hi) / 2), v)
+    if near:
+        est = round(near[2] * area)
+        pv = dict(near[3], danjiPriceInfo=dict(memePriceDict={}, memeSource='BLDG'), households=None)
+        return (0, near[1], pv, est, None)
+    bj = d.get('bjdInfo') or {}
+    try:
+        import nearby
+        nb = nearby.nearby_ot(ot_id, bj.get('sgg'), bj.get('emd'), area)
+    except Exception:
+        nb = None
+    if nb and nb.get('eok'):
+        pv = dict(danjiPriceInfo=dict(memePriceDict={}, memeSource='NEARBY'), households=None)
+        return (0, None, pv, round(nb['eok'] * 1e4), None)
+    return None
+
+
 def target_row(danji, auction_id, df, kind='danji'):
     raw = fetch(f'https://m.richgo.ai/realty/{kind}/' + danji)
     i = raw.find('__NEXT_DATA__'); j = raw.find('>', i); k = raw.find('</script>', j)
@@ -245,10 +274,17 @@ def target_row(danji, auction_id, df, kind='danji'):
         dist = 0 if lo - 0.5 <= area <= hi + 0.5 else abs(area - (lo + hi) / 2)
         if best is None or dist < best[0]:
             best = (dist, p, v, meme, (dp.get('jeonse') or {}).get('price'))
+    if (best is None or best[0] > 3) and kind == 'officetel':
+        best = _ot_estimate(d, danji, area) or best   # 2026-11-05 사용자 결정: 오피스텔은 같은 건물 다른 면적 → 주변 시세
     if best is None or best[0] > 3:
         raise SystemExit(json.dumps({'error': 'no matching pyeong price on complex page'}, ensure_ascii=False))
-    tot_hh = sum((v.get('households') or 0) for v in d['pyeongInfos'].values()) or np.nan
-    ch = {x['date'][:7]: x.get('averagePrice') for x in d['analyze']['invest']['invest']['chart']['data'] if x.get('averagePrice')}
+    tot_hh = sum((v.get('households') or 0) for v in (d.get('pyeongInfos') or {}).values()) or np.nan
+    try:
+        ch = {x['date'][:7]: x.get('averagePrice') for x in d['analyze']['invest']['invest']['chart']['data'] if x.get('averagePrice')}
+    except (KeyError, TypeError):
+        ch = {}
+    if not ch:   # 시세 기록이 전혀 없는 건물(대체 시세 사용): 추세 0 으로
+        ch = {pd.Timestamp.today().strftime('%Y-%m'): 1.0}
     ms = sorted(ch); last = ms[-1]
 
     def idx(m):
@@ -309,7 +345,7 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
     elif mkt:   # 오피스텔 등 리치고 추정시세가 없으면 모델 시세는 호가 대표값과 같아 중복으로 넣지 않는다
         out['richgo_eok'] = round(mkt / 1e8, 2); out['richgo_source'] = ((pv or {}).get('danjiPriceInfo') or {}).get('memeSource')
         # 2026-11-03 사용자 요청: 호가는 종합에서 제외 → 호가 기반 모델 시세도 넣지 않는다
-        if not (md.get('OFFER') or {}).get('price') and out.get('richgo_source') not in ('OFFER', 'MOLIT'): vals.append(('리치고', mkt))
+        if not (md.get('OFFER') or {}).get('price') and out.get('richgo_source') not in ('OFFER', 'MOLIT', 'BLDG', 'NEARBY'): vals.append(('리치고', mkt))
     mo = md.get('MOLIT') or {}
     p, age, tr = adj(mo.get('price'), mo.get('yyyymmdd'))
     if p:
@@ -339,7 +375,7 @@ def sise_detail(pv, ch, mkt, low, offer_cnt=None):
         flags = []
         if out['spread_pct'] > 15: flags.append('출처 간 차이 큼')
         if 'trade' not in out or out['trade']['months_ago'] > 6: flags.append('최근 6개월 실거래 없음 (거래 적음)')
-        if out.get('richgo_source') not in ('OFFER', 'MOLIT') and abs(out['richgo_vs_est_pct']) > 5: flags.append(f"리치고 시세가 종합보다 {out['richgo_vs_est_pct']:+.0f}%")
+        if out.get('richgo_source') not in ('OFFER', 'MOLIT', 'BLDG', 'NEARBY') and abs(out['richgo_vs_est_pct']) > 5: flags.append(f"리치고 시세가 종합보다 {out['richgo_vs_est_pct']:+.0f}%")
         out['flags'] = flags
     return out
 

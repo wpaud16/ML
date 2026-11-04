@@ -50,7 +50,7 @@ def sise_lines(v, appr, low):
         t = s.get('trade')
         if t: src.append(f"실거래 {t['eok']:.2f}억({md(t['date']).split('(')[0]} → 추세 반영 {t['adj_eok']:.2f})")
         if s.get('kb'): src.append(f"KB {s['kb']['eok']:.2f}억")
-        if s.get('richgo_eok') and s.get('richgo_source') not in ('OFFER', 'MOLIT'): src.append(f"리치고 {s['richgo_eok']:.2f}억")
+        if s.get('richgo_eok') and s.get('richgo_source') not in ('OFFER', 'MOLIT', 'BLDG', 'NEARBY'): src.append(f"리치고 {s['richgo_eok']:.2f}억")
         nb = s.get('nearby')
         if nb: src.append(f"주변 {nb['eok']:.2f}억({nb['n_danji']}개 단지)")
         if src: out.append(f'<span class="g s">{" · ".join(src)}</span>')
@@ -70,7 +70,7 @@ def sise_lines(v, appr, low):
         return out
     rs = v.get('richgo_sise_eok')
     if rs:
-        lab = {'OFFER': '리치고 · 매물 호가 기반 · 최근 실거래·KB 없음', 'MOLIT': '리치고 시세 없음 → 최근 실거래 기준'}.get(s.get('richgo_source'), '리치고')
+        lab = {'OFFER': '리치고 · 매물 호가 기반 · 최근 실거래·KB 없음', 'MOLIT': '리치고 시세 없음 → 최근 실거래 기준', 'BLDG': '추정: 같은 건물 다른 면적 ㎡당 가격 × 면적', 'NEARBY': '추정: 주변 오피스텔 ㎡당 실거래 × 면적'}.get(s.get('richgo_source'), '리치고')
         return [f'매매 시세 {rs:.2f}억 <span class="g">({lab} · 감정가는 시세의 {appr / rs * 100:.0f}% · 최저가는 {low / rs * 100:.0f}%)</span>']
     return []
 
