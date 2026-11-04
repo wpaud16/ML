@@ -22,6 +22,50 @@
   "diff_pct": 0.0,
   "band": "60% 초과"
  },
+ "2024타경63150[1]|2026-11-03": {
+  "key": "2024타경63150[1]",
+  "auction_id": "C50YVJCL",
+  "category": "오피스텔",
+  "danji_name": "디우아르떼빌(354-3)",
+  "area": 59.43,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-02",
+  "low_manwon": 22848,
+  "bid_by_prob_manwon": {
+   "40%": 26768,
+   "45%": 27025,
+   "50%": 27274,
+   "55%": 27531,
+   "60%": 27813
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": null,
+  "expected_range": null
+ },
+ "2024타경63389[1]|2026-11-03": {
+  "key": "2024타경63389[1]",
+  "auction_id": "C05HGFVU",
+  "category": "오피스텔",
+  "danji_name": "SM벨리체",
+  "area": 40.43,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-02",
+  "low_manwon": 18240,
+  "bid_by_prob_manwon": {
+   "40%": 21794,
+   "45%": 22003,
+   "50%": 22205,
+   "55%": 22415,
+   "60%": 22644
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": null,
+  "expected_range": null
+ },
  "2024타경64236[1]|2026-11-02": {
   "key": "2024타경64236[1]",
   "category": "아파트",
@@ -69,6 +113,56 @@
   "diff_pct": 6.7,
   "band": "60% 초과"
  },
+ "2025타경102542[1]|2026-11-03": {
+  "key": "2025타경102542[1]",
+  "auction_id": "C15SQJQF",
+  "category": "오피스텔",
+  "danji_name": "동광팰리스",
+  "area": 35.94,
+  "region": "서울 중구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 24640,
+  "bid_by_prob_manwon": {
+   "40%": 25537,
+   "45%": 25782,
+   "50%": 26020,
+   "55%": 26265,
+   "60%": 26534
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 2,
+  "expected_range": [
+   1,
+   4
+  ]
+ },
+ "2025타경103936[1]|2026-11-03": {
+  "key": "2025타경103936[1]",
+  "auction_id": "C59MVLTX",
+  "category": "오피스텔",
+  "danji_name": "제이타워",
+  "area": 19.37,
+  "region": "서울 종로구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 21920,
+  "bid_by_prob_manwon": {
+   "40%": 22324,
+   "45%": 22538,
+   "50%": 22746,
+   "55%": 22960,
+   "60%": 23195
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ]
+ },
  "2025타경13352[1]|2026-11-02": {
   "key": "2025타경13352[1]",
   "auction_id": "C16WDCUU",
@@ -90,6 +184,56 @@
   "checked": "2026-11-03",
   "expected_bidders": null,
   "expected_range": null
+ },
+ "2025타경13931[1]|2026-11-03": {
+  "key": "2025타경13931[1]",
+  "auction_id": "C08LGEVU",
+  "category": "오피스텔",
+  "danji_name": "구로예미지어반코어",
+  "area": 45.46,
+  "region": "서울 구로구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 30800,
+  "bid_by_prob_manwon": {
+   "40%": 31695,
+   "45%": 31999,
+   "50%": 32294,
+   "55%": 32598,
+   "60%": 32932
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ]
+ },
+ "2025타경2268[1]|2026-11-03": {
+  "key": "2025타경2268[1]",
+  "auction_id": "C34ZQEOK",
+  "category": "오피스텔",
+  "danji_name": "용산센트럴포레",
+  "area": 32.55,
+  "region": "서울 용산구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 51800,
+  "bid_by_prob_manwon": {
+   "40%": 51800,
+   "45%": 51800,
+   "50%": 51821,
+   "55%": 52309,
+   "60%": 52845
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   1
+  ]
  },
  "2025타경3729[1]|2026-11-01": {
   "key": "2025타경3729[1]",
@@ -136,6 +280,103 @@
   "second_manwon": null,
   "diff_pct": 3.9,
   "band": "60% 초과"
+ },
+ "2025타경51381[1]|2026-11-03": {
+  "key": "2025타경51381[1]",
+  "auction_id": "C56RVYSG",
+  "category": "오피스텔",
+  "danji_name": "마하나임",
+  "area": 26.47,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-02",
+  "low_manwon": 13248,
+  "bid_by_prob_manwon": {
+   "40%": 15022,
+   "45%": 15166,
+   "50%": 15306,
+   "55%": 15450,
+   "60%": 15608
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": null,
+  "expected_range": null
+ },
+ "2025타경51793[1]|2026-11-03": {
+  "key": "2025타경51793[1]",
+  "auction_id": "C90SWADM",
+  "category": "오피스텔",
+  "danji_name": "동인에버빌(43-62)",
+  "area": 52.16,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 14233,
+  "bid_by_prob_manwon": {
+   "40%": 17134,
+   "45%": 17298,
+   "50%": 17457,
+   "55%": 17622,
+   "60%": 17802
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 3,
+  "expected_range": [
+   1,
+   5
+  ]
+ },
+ "2025타경52060[1]|2026-11-03": {
+  "key": "2025타경52060[1]",
+  "auction_id": "C50MKXQS",
+  "category": "오피스텔",
+  "danji_name": "마하나임불광",
+  "area": 18.01,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 16560,
+  "bid_by_prob_manwon": {
+   "40%": 16861,
+   "45%": 17023,
+   "50%": 17180,
+   "55%": 17342,
+   "60%": 17519
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ]
+ },
+ "2025타경52197[1]|2026-11-03": {
+  "key": "2025타경52197[1]",
+  "auction_id": "C20TTRES",
+  "category": "오피스텔",
+  "danji_name": "뉴월드애필리움",
+  "area": 55.88,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 18752,
+  "bid_by_prob_manwon": {
+   "40%": 20600,
+   "45%": 20798,
+   "50%": 20989,
+   "55%": 21187,
+   "60%": 21404
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 3,
+  "expected_range": [
+   1,
+   5
+  ]
  },
  "2025타경52598[1]|2026-11-02": {
   "key": "2025타경52598[1]",
@@ -234,6 +475,58 @@
    9
   ]
  },
+ "2025타경71670[1]|2026-11-03": {
+  "key": "2025타경71670[1]",
+  "auction_id": "C04THBGP",
+  "category": "아파트",
+  "danji_name": "진주8차",
+  "area": 55.8,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 9100,
+  "bid_by_prob_manwon": {
+   "40%": 9830,
+   "45%": 9915,
+   "50%": 9997,
+   "55%": 10077,
+   "60%": 10161
+  },
+  "status": "매각",
+  "checked": "2026-11-04",
+  "expected_bidders": 5,
+  "expected_range": [
+   4,
+   9
+  ],
+  "actual_manwon": 9630,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": -3.7,
+  "band": "40% 미만"
+ },
+ "2025타경788[1]|2026-11-03": {
+  "key": "2025타경788[1]",
+  "auction_id": "C69ERLSI",
+  "category": "오피스텔",
+  "danji_name": "콘펠리체",
+  "area": 16.82,
+  "region": "서울 영등포구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-02",
+  "low_manwon": 10240,
+  "bid_by_prob_manwon": {
+   "40%": 11641,
+   "45%": 11753,
+   "50%": 11861,
+   "55%": 11973,
+   "60%": 12095
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": null,
+  "expected_range": null
+ },
  "2025타경8882[1]|2026-11-02": {
   "key": "2025타경8882[1]",
   "category": "오피스텔",
@@ -258,6 +551,83 @@
   "diff_pct": 12.9,
   "band": "60% 초과"
  },
+ "2025타경8882[1]|2026-11-03": {
+  "key": "2025타경8882[1]",
+  "auction_id": "C45ZREXV",
+  "category": "오피스텔",
+  "danji_name": "명남더블레스",
+  "area": 17.63,
+  "region": "서울 영등포구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 18320,
+  "bid_by_prob_manwon": {
+   "40%": 18963,
+   "45%": 19145,
+   "50%": 19321,
+   "55%": 19504,
+   "60%": 19703
+  },
+  "status": "매각",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ],
+  "actual_manwon": 21865,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 13.2,
+  "band": "60% 초과"
+ },
+ "2026타경10323[1]|2026-11-03": {
+  "key": "2026타경10323[1]",
+  "auction_id": "C84LFMJY",
+  "category": "오피스텔",
+  "danji_name": "벨라미아",
+  "area": 20.96,
+  "region": "서울 성북구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-02",
+  "low_manwon": 8768,
+  "bid_by_prob_manwon": {
+   "40%": 9938,
+   "45%": 10033,
+   "50%": 10125,
+   "55%": 10221,
+   "60%": 10325
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": null,
+  "expected_range": null
+ },
+ "2026타경10907[1]|2026-11-03": {
+  "key": "2026타경10907[1]",
+  "auction_id": "C55ZLNAV",
+  "category": "오피스텔",
+  "danji_name": "한일써너스빌리젠시2단지",
+  "area": 59.2,
+  "region": "서울 중랑구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 38800,
+  "bid_by_prob_manwon": {
+   "40%": 39081,
+   "45%": 39456,
+   "50%": 39819,
+   "55%": 40194,
+   "60%": 40606
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ]
+ },
  "2026타경4540[1]|2026-11-02": {
   "key": "2026타경4540[1]",
   "auction_id": "C58WADHC",
@@ -280,6 +650,81 @@
   "expected_bidders": null,
   "expected_range": null
  },
+ "2026타경5010[1]|2026-11-03": {
+  "key": "2026타경5010[1]",
+  "auction_id": "C31DQIRD",
+  "category": "오피스텔",
+  "danji_name": "등촌크라운팰리스2차",
+  "area": 27.9,
+  "region": "서울 강서구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 26100,
+  "bid_by_prob_manwon": {
+   "40%": 26100,
+   "45%": 26100,
+   "50%": 26275,
+   "55%": 26522,
+   "60%": 26794
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ]
+ },
+ "2026타경50520[1]|2026-11-03": {
+  "key": "2026타경50520[1]",
+  "auction_id": "C20ADENT",
+  "category": "오피스텔",
+  "danji_name": "거성리젠시(126-10)",
+  "area": 46.92,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 22400,
+  "bid_by_prob_manwon": {
+   "40%": 23938,
+   "45%": 24168,
+   "50%": 24390,
+   "55%": 24620,
+   "60%": 24872
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ]
+ },
+ "2026타경50588[1]|2026-11-03": {
+  "key": "2026타경50588[1]",
+  "auction_id": "C57BGPMO",
+  "category": "오피스텔",
+  "danji_name": "디우아르떼",
+  "area": 56.15,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 26560,
+  "bid_by_prob_manwon": {
+   "40%": 28221,
+   "45%": 28492,
+   "50%": 28754,
+   "55%": 29025,
+   "60%": 29323
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
+  "expected_bidders": 2,
+  "expected_range": [
+   1,
+   3
+  ]
+ },
  "2026타경50816[1]|2026-11-02": {
   "key": "2026타경50816[1]",
   "auction_id": "C64STUIR",
@@ -298,7 +743,32 @@
    "60%": 159301
   },
   "status": "결과대기",
-  "checked": "2026-11-03",
+  "checked": "2026-11-04",
+  "expected_bidders": 2,
+  "expected_range": [
+   1,
+   3
+  ]
+ },
+ "2026타경50816[1]|2026-11-03": {
+  "key": "2026타경50816[1]",
+  "auction_id": "C64STUIR",
+  "category": "아파트",
+  "danji_name": "더샵판교퍼스트파크",
+  "area": 84.97,
+  "region": "경기 성남시 분당구",
+  "bidding_date": "2026-11-03",
+  "pred_date": "2026-11-03",
+  "low_manwon": 150000,
+  "bid_by_prob_manwon": {
+   "40%": 155061,
+   "45%": 156392,
+   "50%": 157690,
+   "55%": 158953,
+   "60%": 160277
+  },
+  "status": "결과대기",
+  "checked": "2026-11-04",
   "expected_bidders": 2,
   "expected_range": [
    1,
