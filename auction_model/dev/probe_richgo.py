@@ -6,7 +6,7 @@ def get(u, extra=()):
 res = {}
 raw = get('https://m.richgo.ai/realty/danji/a0AkrGl?pyeongType=33')
 res['len'] = len(raw)
-res['scripts'] = sorted(set(re.findall(r'src="(/_next/static/[^"]+\.js)"', raw)))[:80]
+res['scripts'] = sorted(set(re.findall(r'(/_next/static/[^"\'\s]+?\.js)', raw)))[:80]
 i = raw.find('__NEXT_DATA__'); j = raw.find('>', i); k = raw.find('</script>', j)
 nd = json.loads(raw[j + 1:k]); res['buildId'] = nd.get('buildId'); res['runtimeConfig'] = nd.get('runtimeConfig'); res['page'] = nd.get('page')
 pp = nd['props']['pageProps']; res['pp_keys'] = sorted(pp)
@@ -22,5 +22,14 @@ for s in res['scripts']:
     for m in re.finditer(r'https?://[a-z0-9.\-]*richgo[a-z0-9.\-]*\.[a-z]+[^"`\'\s]{0,80}', js):
         hits.setdefault(m.group(0), s)
 res['api_hits'] = hits
+def shape(x, d=0):
+    if d > 3: return type(x).__name__
+    if isinstance(x, dict): return {k: shape(v, d + 1) for k, v in list(x.items())[:25]}
+    if isinstance(x, list): return [len(x), shape(x[0], d + 1) if x else None]
+    return x if isinstance(x, (int, float)) or (isinstance(x, str) and len(x) < 40) else type(x).__name__
+for key in ['priceTrend', 'priceSnapshot', 'dehydratedState', 'forecastFact', 'hogaFact']:
+    res['shape_' + key] = shape(pp.get(key))
+an = (pp.get('data') or {}).get('analyze') or {}
+res['shape_analyze'] = shape(an)
 json.dump(res, open(os.path.join(OUT, 'trade_api.json'), 'w'), ensure_ascii=False, indent=1)
 print(json.dumps({k: res[k] for k in ['len', 'buildId', 'page', 'pp_keys', 'tf_keys']}, ensure_ascii=False)); print(len(hits))
