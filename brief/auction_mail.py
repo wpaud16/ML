@@ -61,6 +61,7 @@ def tracker_rows():
 
 
 def summary_row(v, today, new=False):
+    gw = cp.gap_warn(v)
     bb = v.get('by_bidders') or {}
     n = bb.get('expected_bidders'); ex = cp.exp_row(v['category'], n)
     p50 = ((bb.get('bid_by_prob_eok') or {}).get(ex) or v['bid_by_prob_eok'])['50%']
@@ -69,7 +70,8 @@ def summary_row(v, today, new=False):
     case = v['key'].replace('[1]', '')
     line2 = (f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · "
              f"50% {p50:.2f}억" + (f' ({n}명)' if n else '') + (f" · 🚇 {E(st['name'])} {st['walk_min']}분" if st.get('name') else '')
-             + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>')
+             + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>'
+             + ('<br><span style="color:#d93025;font-size:12px">⚠ 감정 후 시세 상승 — 실제가가 예측보다 높을 수 있음</span>' if gw else ''))
     tag = '<span style="color:#d93025;font-weight:bold;font-size:12px">New</span> ' if new else ''
     h = (f'<div style="border-bottom:1px solid #ddd;padding:6px 0">{tag}<b>{E(v.get("danji_name") or "")}</b> '
          f'<span style="{GRAY}">{v.get("area")}㎡ · {E(gu)} {E(case)}</span>'

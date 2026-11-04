@@ -74,6 +74,15 @@ def exp_row(cat, n):
     return '1명' if n <= 1 else '2명' if n <= 2 else '3명' if n <= 4 else '5명' if n <= 7 else '8명' if n <= 12 else '13명'
 
 
+def gap_warn(v):
+    """감정 후 시세가 많이 오른 물건 (2026-11-05 백테스트: 감정가<시세 85% & 1년 +8%↑ 76건, 실제가가 예측보다 평균 +2.2%,
+    3건 중 1건은 5% 넘게 높음 — 2024타경3470 +15%). 모델 입력으로는 개선이 없어 경고로만 표시."""
+    avs = v.get('appr_vs_sise'); m12 = ((v.get('sise') or {}).get('trend') or {}).get('12m_pct')
+    if avs and m12 is not None and avs < 0.85 and m12 > 8:
+        return f'⚠ 감정 후 시세 상승(감정가는 시세의 {avs * 100:.0f}% · 1년 {m12:+.0f}%) — 과거 이런 물건은 실제가가 예측보다 높은 경우가 많았어요(3건 중 1건 +5% 넘게)'
+    return ''
+
+
 def bidder_table(v, seoul):
     bb = v.get('by_bidders') or {}
     probs = ['40%', '45%', '50%', '55%', '60%']
@@ -165,6 +174,8 @@ def card(v, today):
         pb = v.get('payback')
         if pb and not pb.get('error') and pb.get('years'):
             L.append(f"📈 월세 {pb['monthly_rent_manwon']}만 × 약 {pb['years']:.1f}년({pb['months']}개월)이면 50% 가격 {pb['price_manwon'] / 1e4:.2f}억 <span class=\"g\">(대출·세금·비용 제외 단순 계산)</span>")
+    gw = gap_warn(v)
+    if gw: L.append(f'<span class="warn">{gw}</span>')
     sa = v.get('small_danji_adj') or {}
     if sa.get('applied'):
         L.append('<span class="g s">🏘 소규모 단지(300세대 미만) −3% 보정 적용</span>')
