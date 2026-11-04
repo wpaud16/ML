@@ -1,0 +1,33 @@
+name: morning brief (JM's Schedule)
+
+# 매일 07:45 KST(22:45 UTC) 아침 브리핑 메일. Claude 예약 작업을 대신하는 Python 버전 (2026-11-04~).
+# TEST_MODE=1 동안은 제목에 [테스트], 구글 문서·트래커는 읽기만 한다.
+on:
+  schedule:
+    - cron: '45 22 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: morning-brief
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Brief
+        working-directory: brief
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          TEST_MODE: '1'
+        run: python run_brief.py

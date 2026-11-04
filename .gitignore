@@ -1,1 +1,5 @@
 __pycache__/
+
+# 구글 인증 파일은 절대 커밋하지 않음
+client_secret*.json
+google_creds.json
