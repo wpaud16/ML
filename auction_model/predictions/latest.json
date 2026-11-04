@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T02:24:02+09:00",
+ "generated_at": "2026-11-05T07:19:29+09:00",
  "date": "2026-11-05",
  "tenant_overrides": 0,
  "model": "앙상블(부스팅+군집별회귀)",
@@ -9,12 +9,12 @@
   "max_low_manwon": null
  },
  "counts": {
-  "predicted": 456,
+  "predicted": 457,
   "skipped": 473,
-  "failed": 506,
+  "failed": 505,
   "by_category": {
-   "아파트": 99,
-   "오피스텔": 357
+   "아파트": 101,
+   "오피스텔": 356
   }
  },
  "errors": [],
@@ -66,7 +66,7 @@
     },
     "est_eok": 42.84,
     "range_eok": [
-     35.38,
+     36.54,
      43.5
     ],
     "used": [
@@ -75,15 +75,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 23.0,
+    "spread_pct": 19.0,
     "low_vs_est_pct": 95,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -18%"
+     "주변 단지 시세가 이 단지보다 -15%"
     ],
     "nearby": {
-     "eok": 35.38,
+     "eok": 36.54,
+     "ratio": 0.8483,
      "n_danji": 7,
      "basis": "대치동 연식 ±10년",
      "per_pyeong_manwon": 10722,
@@ -117,7 +118,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -17.9,
+    "nearby_vs_own_pct": -15.2,
     "weighted": {
      "eok": 41.0,
      "cap_by_offer": true,
@@ -665,7 +666,7 @@
      "6m_pct": -1.4,
      "12m_pct": 0.1
     },
-    "est_eok": 29.51,
+    "est_eok": 29.27,
     "range_eok": [
      26.53,
      31.55
@@ -677,14 +678,16 @@
      "주변"
     ],
     "spread_pct": 18.9,
-    "low_vs_est_pct": 115,
+    "low_vs_est_pct": 116,
     "richgo_vs_est_pct": 1.8,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
-     "출처 간 차이 큼"
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 -11%"
     ],
     "nearby": {
-     "eok": 28.02,
+     "eok": 27.53,
+     "ratio": 0.8881,
      "n_danji": 4,
      "basis": "청담동 연식 ±10년",
      "per_pyeong_manwon": 8240,
@@ -713,7 +716,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -9.6,
+    "nearby_vs_own_pct": -11.2,
     "weighted": {
      "eok": 27.63,
      "cap_by_offer": false,
@@ -933,7 +936,7 @@
     },
     "est_eok": 31.28,
     "range_eok": [
-     20.24,
+     17.14,
      33.0
     ],
     "used": [
@@ -942,15 +945,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 63.0,
+    "spread_pct": 92.5,
     "low_vs_est_pct": 84,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -39%"
+     "주변 단지 시세가 이 단지보다 -48%"
     ],
     "nearby": {
-     "eok": 20.24,
+     "eok": 17.14,
+     "ratio": 0.52,
      "n_danji": 27,
      "basis": "역삼동 연식 ±10년",
      "per_pyeong_manwon": 6134,
@@ -984,7 +988,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -38.6,
+    "nearby_vs_own_pct": -48.0,
     "weighted": {
      "eok": 30.15,
      "cap_by_offer": false,
@@ -1464,7 +1468,7 @@
     },
     "est_eok": 32.43,
     "range_eok": [
-     19.63,
+     17.01,
      33.23
     ],
     "used": [
@@ -1473,15 +1477,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 69.3,
+    "spread_pct": 95.4,
     "low_vs_est_pct": 79,
     "richgo_vs_est_pct": -0.4,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -40%"
+     "주변 단지 시세가 이 단지보다 -48%"
     ],
     "nearby": {
-     "eok": 19.63,
+     "eok": 17.01,
+     "ratio": 0.5234,
      "n_danji": 27,
      "basis": "역삼동 연식 ±10년",
      "per_pyeong_manwon": 6134,
@@ -1515,7 +1520,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -39.6,
+    "nearby_vs_own_pct": -47.7,
     "weighted": {
      "eok": 29.95,
      "cap_by_offer": true,
@@ -1986,7 +1991,7 @@
     "est_eok": 3.73,
     "range_eok": [
      3.46,
-     7.47
+     7.48
     ],
     "used": [
      "리치고",
@@ -1994,7 +1999,7 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 115.9,
+    "spread_pct": 116.2,
     "low_vs_est_pct": 29,
     "richgo_vs_est_pct": 0.0,
     "flags": [
@@ -2002,7 +2007,8 @@
      "주변 단지 시세가 이 단지보다 +104%"
     ],
     "nearby": {
-     "eok": 7.47,
+     "eok": 7.48,
+     "ratio": 2.0382,
      "n_danji": 17,
      "basis": "논현동 연식 ±10년",
      "per_pyeong_manwon": 5336,
@@ -2036,7 +2042,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 103.5,
+    "nearby_vs_own_pct": 103.8,
     "weighted": {
      "eok": 3.5,
      "cap_by_offer": true,
@@ -2279,7 +2285,7 @@
      "6m_pct": -1.4,
      "12m_pct": 0.1
     },
-    "est_eok": 48.29,
+    "est_eok": 47.19,
     "range_eok": [
      43.65,
      50.04
@@ -2291,13 +2297,14 @@
      "주변"
     ],
     "spread_pct": 14.6,
-    "low_vs_est_pct": 106,
+    "low_vs_est_pct": 108,
     "richgo_vs_est_pct": 4.8,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)"
     ],
     "nearby": {
-     "eok": 48.82,
+     "eok": 46.62,
+     "ratio": 0.9762,
      "n_danji": 19,
      "basis": "도곡동 연식 ±10년",
      "per_pyeong_manwon": 7628,
@@ -2331,7 +2338,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 2.2,
+    "nearby_vs_own_pct": -2.4,
     "weighted": {
      "eok": 47.18,
      "cap_by_offer": false,
@@ -2672,7 +2679,7 @@
     "est_eok": 26.98,
     "range_eok": [
      26.27,
-     32.57
+     30.97
     ],
     "used": [
      "리치고",
@@ -2680,17 +2687,18 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 24.0,
+    "spread_pct": 17.9,
     "low_vs_est_pct": 83,
     "richgo_vs_est_pct": 5.1,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "리치고 시세가 종합보다 +5%",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +24%"
+     "주변 단지 시세가 이 단지보다 +18%"
     ],
     "nearby": {
-     "eok": 32.57,
+     "eok": 30.97,
+     "ratio": 1.1777,
      "n_danji": 13,
      "basis": "청담동 연식 ±10년",
      "per_pyeong_manwon": 7237,
@@ -2724,7 +2732,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 23.8,
+    "nearby_vs_own_pct": 17.8,
     "weighted": {
      "eok": 26.61,
      "cap_by_offer": false,
@@ -3155,7 +3163,7 @@
     "est_eok": 18.48,
     "range_eok": [
      17.75,
-     24.63
+     24.62
     ],
     "used": [
      "리치고",
@@ -3163,7 +3171,7 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 38.8,
+    "spread_pct": 38.7,
     "low_vs_est_pct": 81,
     "richgo_vs_est_pct": 0.0,
     "flags": [
@@ -3171,7 +3179,8 @@
      "주변 단지 시세가 이 단지보다 +35%"
     ],
     "nearby": {
-     "eok": 24.63,
+     "eok": 24.62,
+     "ratio": 1.3493,
      "n_danji": 5,
      "basis": "세곡동 연식 ±10년",
      "per_pyeong_manwon": 5597,
@@ -3205,7 +3214,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 35.0,
+    "nearby_vs_own_pct": 34.9,
     "weighted": {
      "eok": 18.92,
      "cap_by_offer": false,
@@ -3558,7 +3567,7 @@
     "est_eok": 2.92,
     "range_eok": [
      2.35,
-     6.75
+     6.76
     ],
     "used": [
      "리치고",
@@ -3566,7 +3575,7 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 187.2,
+    "spread_pct": 187.7,
     "low_vs_est_pct": 89,
     "richgo_vs_est_pct": 0.0,
     "flags": [
@@ -3574,7 +3583,8 @@
      "주변 단지 시세가 이 단지보다 +142%"
     ],
     "nearby": {
-     "eok": 6.75,
+     "eok": 6.76,
+     "ratio": 2.4226,
      "n_danji": 27,
      "basis": "역삼동 연식 ±10년",
      "per_pyeong_manwon": 6134,
@@ -3608,7 +3618,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 141.9,
+    "nearby_vs_own_pct": 142.3,
     "weighted": {
      "eok": 2.5,
      "cap_by_offer": false,
@@ -3846,7 +3856,7 @@
     },
     "est_eok": 30.66,
     "range_eok": [
-     25.47,
+     25.19,
      31.41
     ],
     "used": [
@@ -3855,15 +3865,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 23.3,
+    "spread_pct": 24.7,
     "low_vs_est_pct": 90,
     "richgo_vs_est_pct": 1.1,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -18%"
+     "주변 단지 시세가 이 단지보다 -19%"
     ],
     "nearby": {
-     "eok": 25.47,
+     "eok": 25.19,
+     "ratio": 0.811,
      "n_danji": 19,
      "basis": "서초동 연식 ±10년",
      "per_pyeong_manwon": 7491,
@@ -3897,7 +3908,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -18.0,
+    "nearby_vs_own_pct": -18.9,
     "weighted": {
      "eok": 31.29,
      "cap_by_offer": false,
@@ -4399,6 +4410,7 @@
     "flags": [],
     "nearby": {
      "eok": 47.1,
+     "ratio": 0.97,
      "n_danji": 8,
      "basis": "잠원동 연식 ±10년",
      "per_pyeong_manwon": 13458,
@@ -5062,10 +5074,10 @@
      "6m_pct": 13.8,
      "12m_pct": 21.8
     },
-    "est_eok": 15.84,
+    "est_eok": 15.4,
     "range_eok": [
-     15.25,
-     17.22
+     10.57,
+     16.12
     ],
     "used": [
      "리치고",
@@ -5073,14 +5085,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 12.9,
-    "low_vs_est_pct": 80,
+    "spread_pct": 52.5,
+    "low_vs_est_pct": 82,
     "richgo_vs_est_pct": 3.7,
     "flags": [
-     "주변 단지 시세가 이 단지보다 +11%"
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 -32%"
     ],
     "nearby": {
-     "eok": 17.22,
+     "eok": 10.57,
+     "ratio": 0.6799,
      "n_danji": 15,
      "basis": "암사동 연식 ±10년",
      "per_pyeong_manwon": 3826,
@@ -5114,7 +5128,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 10.7,
+    "nearby_vs_own_pct": -32.0,
     "weighted": {
      "eok": 15.12,
      "cap_by_offer": false,
@@ -5452,7 +5466,7 @@
      "6m_pct": 13.8,
      "12m_pct": 21.8
     },
-    "est_eok": 10.86,
+    "est_eok": 11.98,
     "range_eok": [
      6.98,
      12.5
@@ -5464,15 +5478,15 @@
      "주변"
     ],
     "spread_pct": 79.1,
-    "low_vs_est_pct": 95,
+    "low_vs_est_pct": 87,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -15%"
+     "출처 간 차이 큼"
     ],
     "nearby": {
-     "eok": 9.99,
+     "eok": 12.23,
+     "ratio": 1.0434,
      "n_danji": 13,
      "basis": "강일동 연식 ±10년",
      "per_pyeong_manwon": 4162,
@@ -5506,7 +5520,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -14.8,
+    "nearby_vs_own_pct": 4.4,
     "weighted": {
      "eok": 7.41,
      "cap_by_offer": false,
@@ -5772,6 +5786,230 @@
    },
    "payback": null
   },
+  "2026타경50243[1]": {
+   "key": "2026타경50243[1]",
+   "auction_id": "C65XPVPZ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호동 28 용명브릿지아파트 101동 6층606호",
+   "appr_manwon": 72300,
+   "low_manwon": 72300,
+   "fails": 0,
+   "bidding_date": "2026-11-16",
+   "area": 90.01,
+   "danji_id": "a6qvRBn",
+   "danji_name": "용명브릿지",
+   "name": "용명브릿지",
+   "case": "2026타경50243",
+   "keyword": "토지거래허가구역",
+   "pyeong": "36",
+   "appr_eok": 7.23,
+   "low_eok": 7.23,
+   "richgo_sise_eok": 8.15,
+   "appr_vs_sise": 0.887,
+   "sise": {
+    "richgo_eok": 8.15,
+    "richgo_source": "OFFER",
+    "trade": {
+     "eok": 7.15,
+     "date": "2021-08-14",
+     "months_ago": 62.8,
+     "adj_eok": 10.34,
+     "trend_since_pct": 44.6
+    },
+    "offer": {
+     "min_eok": 8.15,
+     "max_eok": 8.15,
+     "count": 1,
+     "rep_eok": 8.15
+    },
+    "trend": {
+     "3m_pct": 12.0,
+     "6m_pct": 13.8,
+     "12m_pct": 21.8
+    }
+   },
+   "model": "앙상블(부스팅+군집별회귀)",
+   "jeonse_ratio": null,
+   "sgg_adj_pct": 1.1,
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 7.23,
+      "45%": 7.23,
+      "50%": 7.23,
+      "55%": 7.24,
+      "60%": 7.29
+     },
+     "2명": {
+      "40%": 7.23,
+      "45%": 7.26,
+      "50%": 7.3,
+      "55%": 7.34,
+      "60%": 7.38
+     },
+     "3명": {
+      "40%": 7.4,
+      "45%": 7.45,
+      "50%": 7.51,
+      "55%": 7.56,
+      "60%": 7.6
+     },
+     "5명": {
+      "40%": 7.5,
+      "45%": 7.55,
+      "50%": 7.59,
+      "55%": 7.63,
+      "60%": 7.67
+     },
+     "8명": {
+      "40%": 7.74,
+      "45%": 7.79,
+      "50%": 7.84,
+      "55%": 7.88,
+      "60%": 7.93
+     },
+     "13명": {
+      "40%": 8.02,
+      "45%": 8.07,
+      "50%": 8.12,
+      "55%": 8.18,
+      "60%": 8.24
+     }
+    },
+    "price_eok": {
+     "1명": 7.29,
+     "2명": 7.38,
+     "3명": 7.54,
+     "5명": 7.65,
+     "8명": 7.83,
+     "13명": 8.03
+    },
+    "expected_bidders": 1,
+    "expected_range": [
+     1,
+     2
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 4.04%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "fail": {
+    "prob_pct": 48,
+    "level": "보통",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
+   },
+   "households": 44,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 73634,
+     "45%": 74266,
+     "50%": 74882,
+     "55%": 75482,
+     "60%": 76110
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 72300,
+    "45%": 72300,
+    "50%": 72636,
+    "55%": 73217,
+    "60%": 73827
+   },
+   "bid_by_prob_eok": {
+    "40%": 7.23,
+    "45%": 7.23,
+    "50%": 7.26,
+    "55%": 7.32,
+    "60%": 7.38
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 72500,
+     "bid_eok": 7.25,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 73000,
+     "bid_eok": 7.3,
+     "prob": 53
+    },
+    {
+     "bid_manwon": 73500,
+     "bid_eok": 7.35,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 74000,
+     "bid_eok": 7.4,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 74500,
+     "bid_eok": 7.45,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 75000,
+     "bid_eok": 7.5,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 75500,
+     "bid_eok": 7.55,
+     "prob": 71
+    },
+    {
+     "bid_manwon": 76000,
+     "bid_eok": 7.6,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 72636,
+   "p50_ensemble_eok": 7.26,
+   "model_error_note": "평균 오차 약 5.67% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [
+    "소규모 단지(44세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "강제경매",
+     "base_date": "2026-02-23"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   },
+   "court": "서울동부지방법원",
+   "category": "아파트",
+   "station": {
+    "name": "굽은다리",
+    "distance_m": 304,
+    "walk_min": 5,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "station5": {
+    "name": "굽은다리",
+    "distance_m": 304,
+    "walk_min": 5
+   },
+   "safety": {
+    "grade": "보통",
+    "reasons": [
+     "리치고 기준 권리 문제 없음 · 법원 명세서 미확인"
+    ]
+   },
+   "payback": null
+  },
   "2026타경50101[1]": {
    "key": "2026타경50101[1]",
    "auction_id": "C42BLWEB",
@@ -5811,7 +6049,7 @@
      "6m_pct": 13.8,
      "12m_pct": 21.8
     },
-    "est_eok": 11.23,
+    "est_eok": 11.39,
     "range_eok": [
      10.25,
      11.84
@@ -5823,13 +6061,14 @@
      "주변"
     ],
     "spread_pct": 15.5,
-    "low_vs_est_pct": 71,
+    "low_vs_est_pct": 70,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼"
     ],
     "nearby": {
-     "eok": 11.31,
+     "eok": 11.63,
+     "ratio": 1.0436,
      "n_danji": 9,
      "basis": "둔촌동 연식 ±10년",
      "per_pyeong_manwon": 4188,
@@ -5863,7 +6102,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 1.5,
+    "nearby_vs_own_pct": 4.4,
     "weighted": {
      "eok": 11.64,
      "cap_by_offer": false,
@@ -6154,7 +6393,7 @@
     "est_eok": 6.85,
     "range_eok": [
      6.5,
-     9.19
+     7.82
     ],
     "used": [
      "리치고",
@@ -6162,15 +6401,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 41.4,
+    "spread_pct": 20.3,
     "low_vs_est_pct": 98,
     "richgo_vs_est_pct": 0.1,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +34%"
+     "주변 단지 시세가 이 단지보다 +14%"
     ],
     "nearby": {
-     "eok": 9.19,
+     "eok": 7.82,
+     "ratio": 1.1414,
      "n_danji": 3,
      "basis": "중곡동 동 전체",
      "per_pyeong_manwon": 2785,
@@ -6194,7 +6434,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 34.2,
+    "nearby_vs_own_pct": 14.2,
     "weighted": {
      "eok": 6.87,
      "cap_by_offer": false,
@@ -6412,7 +6652,7 @@
     },
     "est_eok": 26.5,
     "range_eok": [
-     16.81,
+     20.94,
      27.7
     ],
     "used": [
@@ -6420,16 +6660,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 64.8,
+    "spread_pct": 32.3,
     "low_vs_est_pct": 95,
     "richgo_vs_est_pct": 2.2,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -38%"
+     "주변 단지 시세가 이 단지보다 -23%"
     ],
     "nearby": {
-     "eok": 16.81,
+     "eok": 20.94,
+     "ratio": 0.7728,
      "n_danji": 6,
      "basis": "광장동 연식 ±10년",
      "per_pyeong_manwon": 5094,
@@ -6463,7 +6704,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -38.0
+    "nearby_vs_own_pct": -22.7
    },
    "model": "앙상블(부스팅+군집별회귀)",
    "jeonse_ratio": 0.527,
@@ -6888,7 +7129,7 @@
     "est_eok": 8.33,
     "range_eok": [
      7.3,
-     13.2
+     13.32
     ],
     "used": [
      "리치고",
@@ -6896,16 +7137,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 80.8,
+    "spread_pct": 82.5,
     "low_vs_est_pct": 62,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +64%"
+     "주변 단지 시세가 이 단지보다 +66%"
     ],
     "nearby": {
-     "eok": 13.2,
+     "eok": 13.32,
+     "ratio": 1.6585,
      "n_danji": 10,
      "basis": "방이동 연식 ±10년",
      "per_pyeong_manwon": 5500,
@@ -6939,7 +7181,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 64.4,
+    "nearby_vs_own_pct": 65.9,
     "weighted": {
      "eok": 7.0,
      "cap_by_offer": true,
@@ -7216,26 +7458,27 @@
      "6m_pct": 2.5,
      "12m_pct": 8.2
     },
-    "est_eok": 19.51,
+    "est_eok": 19.0,
     "range_eok": [
-     19.0,
-     29.54
+     13.74,
+     19.51
     ],
     "used": [
      "리치고",
      "KB",
      "주변"
     ],
-    "spread_pct": 55.5,
-    "low_vs_est_pct": 29,
+    "spread_pct": 42.0,
+    "low_vs_est_pct": 30,
     "richgo_vs_est_pct": 1.3,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +53%"
+     "주변 단지 시세가 이 단지보다 -29%"
     ],
     "nearby": {
-     "eok": 29.54,
+     "eok": 13.74,
+     "ratio": 0.7135,
      "n_danji": 14,
      "basis": "풍납동 연식 ±10년",
      "per_pyeong_manwon": 4842,
@@ -7269,7 +7512,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 53.4
+    "nearby_vs_own_pct": -28.6
    },
    "model": "앙상블(부스팅+군집별회귀)",
    "jeonse_ratio": 0.476,
@@ -7587,7 +7830,7 @@
     },
     "est_eok": 29.13,
     "range_eok": [
-     12.13,
+     12.5,
      29.95
     ],
     "used": [
@@ -7596,15 +7839,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 146.9,
+    "spread_pct": 139.6,
     "low_vs_est_pct": 77,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -59%"
+     "주변 단지 시세가 이 단지보다 -57%"
     ],
     "nearby": {
-     "eok": 12.13,
+     "eok": 12.5,
+     "ratio": 0.427,
      "n_danji": 10,
      "basis": "가락동 연식 ±15년",
      "per_pyeong_manwon": 3792,
@@ -7638,7 +7882,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -58.6,
+    "nearby_vs_own_pct": -57.3,
     "weighted": {
      "eok": 26.5,
      "cap_by_offer": true,
@@ -8103,7 +8347,7 @@
     },
     "est_eok": 21.08,
     "range_eok": [
-     14.82,
+     12.72,
      22.17
     ],
     "used": [
@@ -8112,15 +8356,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 49.6,
+    "spread_pct": 74.3,
     "low_vs_est_pct": 20,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -31%"
+     "주변 단지 시세가 이 단지보다 -41%"
     ],
     "nearby": {
-     "eok": 14.82,
+     "eok": 12.72,
+     "ratio": 0.594,
      "n_danji": 22,
      "basis": "가락동 연식 ±10년",
      "per_pyeong_manwon": 4630,
@@ -8154,7 +8399,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -30.8,
+    "nearby_vs_own_pct": -40.6,
     "weighted": {
      "eok": 19.9,
      "cap_by_offer": true,
@@ -8504,7 +8749,7 @@
     },
     "est_eok": 32.24,
     "range_eok": [
-     25.69,
+     25.53,
      33.39
     ],
     "used": [
@@ -8513,7 +8758,7 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 30.0,
+    "spread_pct": 30.8,
     "low_vs_est_pct": 111,
     "richgo_vs_est_pct": 0.6,
     "flags": [
@@ -8521,7 +8766,8 @@
      "주변 단지 시세가 이 단지보다 -23%"
     ],
     "nearby": {
-     "eok": 25.69,
+     "eok": 25.53,
+     "ratio": 0.7695,
      "n_danji": 6,
      "basis": "잠실동 연식 ±10년",
      "per_pyeong_manwon": 7784,
@@ -8555,7 +8801,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -22.6,
+    "nearby_vs_own_pct": -23.1,
     "weighted": {
      "eok": 29.5,
      "cap_by_offer": true,
@@ -9061,7 +9307,7 @@
     },
     "est_eok": 30.12,
     "range_eok": [
-     21.21,
+     15.6,
      30.49
     ],
     "used": [
@@ -9070,15 +9316,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 43.8,
+    "spread_pct": 95.4,
     "low_vs_est_pct": 108,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -30%"
+     "주변 단지 시세가 이 단지보다 -48%"
     ],
     "nearby": {
-     "eok": 21.21,
+     "eok": 15.6,
+     "ratio": 0.5161,
      "n_danji": 7,
      "basis": "문정동 연식 ±10년",
      "per_pyeong_manwon": 4419,
@@ -9112,7 +9359,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -29.8,
+    "nearby_vs_own_pct": -48.4,
     "weighted": {
      "eok": 27.9,
      "cap_by_offer": true,
@@ -9571,6 +9818,7 @@
     ],
     "nearby": {
      "eok": 20.88,
+     "ratio": 0.7402,
      "n_danji": 5,
      "basis": "방이동 연식 ±10년",
      "per_pyeong_manwon": 6141,
@@ -10020,7 +10268,7 @@
     "est_eok": 18.2,
     "range_eok": [
      17.5,
-     20.04
+     19.81
     ],
     "used": [
      "리치고",
@@ -10028,14 +10276,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 14.5,
+    "spread_pct": 13.2,
     "low_vs_est_pct": 75,
     "richgo_vs_est_pct": 1.2,
-    "flags": [
-     "주변 단지 시세가 이 단지보다 +11%"
-    ],
+    "flags": [],
     "nearby": {
-     "eok": 20.04,
+     "eok": 19.81,
+     "ratio": 1.0951,
      "n_danji": 4,
      "basis": "오금동 연식 ±10년",
      "per_pyeong_manwon": 5138,
@@ -10064,7 +10311,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 10.8,
+    "nearby_vs_own_pct": 9.5,
     "weighted": {
      "eok": 17.35,
      "cap_by_offer": true,
@@ -10414,7 +10661,7 @@
     "est_eok": 17.03,
     "range_eok": [
      16.5,
-     33.69
+     25.29
     ],
     "used": [
      "리치고",
@@ -10422,16 +10669,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 104.2,
+    "spread_pct": 53.3,
     "low_vs_est_pct": 64,
     "richgo_vs_est_pct": 0.7,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +99%"
+     "주변 단지 시세가 이 단지보다 +49%"
     ],
     "nearby": {
-     "eok": 33.69,
+     "eok": 25.29,
+     "ratio": 1.4901,
      "n_danji": 12,
      "basis": "금곡동 연식 ±10년",
      "per_pyeong_manwon": 5434,
@@ -10465,7 +10713,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 98.5,
+    "nearby_vs_own_pct": 49.0,
     "weighted": {
      "eok": 17.28,
      "cap_by_offer": false,
@@ -10797,7 +11045,7 @@
     "est_eok": 20.15,
     "range_eok": [
      19.95,
-     33.15
+     29.13
     ],
     "used": [
      "리치고",
@@ -10805,16 +11053,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 66.2,
+    "spread_pct": 46.0,
     "low_vs_est_pct": 79,
     "richgo_vs_est_pct": 1.5,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +66%"
+     "주변 단지 시세가 이 단지보다 +46%"
     ],
     "nearby": {
-     "eok": 33.15,
+     "eok": 29.13,
+     "ratio": 1.4563,
      "n_danji": 3,
      "basis": "백현동 연식 ±10년",
      "per_pyeong_manwon": 6766,
@@ -10838,7 +11087,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 65.8,
+    "nearby_vs_own_pct": 45.6,
     "weighted": {
      "eok": 20.53,
      "cap_by_offer": false,
@@ -11204,7 +11453,7 @@
     "est_eok": 16.24,
     "range_eok": [
      15.61,
-     23.0
+     23.65
     ],
     "used": [
      "리치고",
@@ -11212,15 +11461,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 47.3,
+    "spread_pct": 51.5,
     "low_vs_est_pct": 65,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +42%"
+     "주변 단지 시세가 이 단지보다 +46%"
     ],
     "nearby": {
-     "eok": 23.0,
+     "eok": 23.65,
+     "ratio": 1.4563,
      "n_danji": 3,
      "basis": "백현동 연식 ±10년",
      "per_pyeong_manwon": 6766,
@@ -11244,7 +11494,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 41.6,
+    "nearby_vs_own_pct": 45.6,
     "weighted": {
      "eok": 15.81,
      "cap_by_offer": false,
@@ -11581,7 +11831,7 @@
     },
     "est_eok": 6.52,
     "range_eok": [
-     6.31,
+     6.21,
      7.39
     ],
     "used": [
@@ -11590,14 +11840,15 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 17.1,
+    "spread_pct": 19.0,
     "low_vs_est_pct": 67,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼"
     ],
     "nearby": {
-     "eok": 6.31,
+     "eok": 6.21,
+     "ratio": 0.9513,
      "n_danji": 5,
      "basis": "하대원동 연식 ±10년",
      "per_pyeong_manwon": 1972,
@@ -11631,7 +11882,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -3.4,
+    "nearby_vs_own_pct": -4.9,
     "weighted": {
      "eok": 6.8,
      "cap_by_offer": false,
@@ -11885,7 +12136,7 @@
     },
     "est_eok": 4.72,
     "range_eok": [
-     4.49,
+     4.48,
      4.81
     ],
     "used": [
@@ -11894,12 +12145,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 7.1,
+    "spread_pct": 7.4,
     "low_vs_est_pct": 68,
     "richgo_vs_est_pct": 0.2,
     "flags": [],
     "nearby": {
-     "eok": 4.49,
+     "eok": 4.48,
+     "ratio": 0.9328,
      "n_danji": 9,
      "basis": "퇴계원읍 연식 ±10년",
      "per_pyeong_manwon": 1402,
@@ -11933,7 +12185,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -6.5,
+    "nearby_vs_own_pct": -6.7,
     "weighted": {
      "eok": 4.75,
      "cap_by_offer": false,
@@ -12198,6 +12450,7 @@
     "flags": [],
     "nearby": {
      "eok": 4.61,
+     "ratio": 1.0472,
      "n_danji": 9,
      "basis": "퇴계원읍 연식 ±10년",
      "per_pyeong_manwon": 1441,
@@ -12488,6 +12741,7 @@
     ],
     "nearby": {
      "eok": 2.17,
+     "ratio": 0.8846,
      "n_danji": 11,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 943,
@@ -12725,7 +12979,7 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 5.2,
+    "est_eok": 4.96,
     "range_eok": [
      4.89,
      5.85
@@ -12743,7 +12997,8 @@
      "출처 간 차이 큼"
     ],
     "nearby": {
-     "eok": 5.4,
+     "eok": 4.91,
+     "ratio": 0.9825,
      "n_danji": 14,
      "basis": "평내동 연식 ±10년",
      "per_pyeong_manwon": 1150,
@@ -12777,7 +13032,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 8.0,
+    "nearby_vs_own_pct": -1.8,
     "weighted": {
      "eok": 4.9,
      "cap_by_offer": true,
@@ -13024,6 +13279,7 @@
     ],
     "nearby": {
      "eok": 3.09,
+     "ratio": 1.1738,
      "n_danji": 28,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 908,
@@ -13305,6 +13561,7 @@
     ],
     "nearby": {
      "eok": 3.18,
+     "ratio": 1.2294,
      "n_danji": 28,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 908,
@@ -13568,7 +13825,7 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 3.24,
+    "est_eok": 3.25,
     "range_eok": [
      3.22,
      3.27
@@ -13580,11 +13837,12 @@
      "주변"
     ],
     "spread_pct": 1.6,
-    "low_vs_est_pct": 75,
+    "low_vs_est_pct": 74,
     "richgo_vs_est_pct": -1.1,
     "flags": [],
     "nearby": {
-     "eok": 3.22,
+     "eok": 3.26,
+     "ratio": 1.002,
      "n_danji": 18,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 1006,
@@ -13618,7 +13876,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -0.9,
+    "nearby_vs_own_pct": 0.3,
     "weighted": {
      "eok": 3.0,
      "cap_by_offer": true,
@@ -13848,10 +14106,10 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 3.61,
+    "est_eok": 3.5,
     "range_eok": [
-     3.44,
-     4.01
+     3.4,
+     3.67
     ],
     "used": [
      "리치고",
@@ -13859,15 +14117,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 16.6,
-    "low_vs_est_pct": 100,
+    "spread_pct": 7.9,
+    "low_vs_est_pct": 104,
     "richgo_vs_est_pct": -3.1,
-    "flags": [
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +13%"
-    ],
+    "flags": [],
     "nearby": {
-     "eok": 4.01,
+     "eok": 3.4,
+     "ratio": 0.9575,
      "n_danji": 28,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 890,
@@ -13901,7 +14157,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 13.0,
+    "nearby_vs_own_pct": -4.2,
     "weighted": {
      "eok": 3.45,
      "cap_by_offer": true,
@@ -14106,7 +14362,7 @@
     "est_eok": 2.42,
     "range_eok": [
      2.32,
-     3.2
+     3.32
     ],
     "used": [
      "리치고",
@@ -14114,15 +14370,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 37.9,
+    "spread_pct": 43.1,
     "low_vs_est_pct": 78,
     "richgo_vs_est_pct": -3.5,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +33%"
+     "주변 단지 시세가 이 단지보다 +38%"
     ],
     "nearby": {
-     "eok": 3.2,
+     "eok": 3.32,
+     "ratio": 1.3837,
      "n_danji": 13,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 970,
@@ -14156,7 +14413,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 33.3,
+    "nearby_vs_own_pct": 38.3,
     "weighted": {
      "eok": 1.98,
      "cap_by_offer": true,
@@ -14383,7 +14640,7 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 3.83,
+    "est_eok": 3.85,
     "range_eok": [
      3.8,
      3.9
@@ -14395,11 +14652,12 @@
      "주변"
     ],
     "spread_pct": 2.6,
-    "low_vs_est_pct": 93,
+    "low_vs_est_pct": 92,
     "richgo_vs_est_pct": -1.4,
     "flags": [],
     "nearby": {
-     "eok": 3.8,
+     "eok": 3.86,
+     "ratio": 1.0018,
      "n_danji": 23,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 1086,
@@ -14433,7 +14691,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -1.3,
+    "nearby_vs_own_pct": 0.3,
     "weighted": {
      "eok": 3.55,
      "cap_by_offer": true,
@@ -14655,7 +14913,7 @@
     },
     "est_eok": 3.13,
     "range_eok": [
-     2.87,
+     2.9,
      3.17
     ],
     "used": [
@@ -14664,12 +14922,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 10.5,
+    "spread_pct": 9.3,
     "low_vs_est_pct": 17,
     "richgo_vs_est_pct": -1.0,
     "flags": [],
     "nearby": {
-     "eok": 2.87,
+     "eok": 2.9,
+     "ratio": 0.9205,
      "n_danji": 14,
      "basis": "평내동 연식 ±10년",
      "per_pyeong_manwon": 1147,
@@ -14703,7 +14962,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -8.9,
+    "nearby_vs_own_pct": -7.9,
     "weighted": {
      "eok": 2.9,
      "cap_by_offer": true,
@@ -14933,7 +15192,7 @@
     },
     "est_eok": 2.83,
     "range_eok": [
-     2.75,
+     2.79,
      3.3
     ],
     "used": [
@@ -14942,14 +15201,15 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 20.0,
+    "spread_pct": 18.3,
     "low_vs_est_pct": 106,
     "richgo_vs_est_pct": -1.1,
     "flags": [
      "출처 간 차이 큼"
     ],
     "nearby": {
-     "eok": 2.75,
+     "eok": 2.79,
+     "ratio": 0.9773,
      "n_danji": 25,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 860,
@@ -14983,7 +15243,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -3.5,
+    "nearby_vs_own_pct": -2.1,
     "weighted": {
      "eok": 2.82,
      "cap_by_offer": true,
@@ -15193,10 +15453,10 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 7.97,
+    "est_eok": 7.63,
     "range_eok": [
      7.0,
-     9.06
+     8.1
     ],
     "used": [
      "리치고",
@@ -15204,15 +15464,15 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 29.4,
-    "low_vs_est_pct": 101,
+    "spread_pct": 15.7,
+    "low_vs_est_pct": 106,
     "richgo_vs_est_pct": 0.0,
     "flags": [
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +16%"
+     "출처 간 차이 큼"
     ],
     "nearby": {
-     "eok": 9.06,
+     "eok": 7.43,
+     "ratio": 0.9482,
      "n_danji": 25,
      "basis": "와부읍 연식 ±10년",
      "per_pyeong_manwon": 1812,
@@ -15246,7 +15506,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 15.6,
+    "nearby_vs_own_pct": -5.2,
     "weighted": {
      "eok": 7.28,
      "cap_by_offer": false,
@@ -15458,7 +15718,7 @@
     },
     "est_eok": 5.17,
     "range_eok": [
-     3.08,
+     3.11,
      5.4
     ],
     "used": [
@@ -15467,15 +15727,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 75.3,
+    "spread_pct": 73.6,
     "low_vs_est_pct": 66,
     "richgo_vs_est_pct": -1.1,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -41%"
+     "주변 단지 시세가 이 단지보다 -40%"
     ],
     "nearby": {
-     "eok": 3.08,
+     "eok": 3.11,
+     "ratio": 0.599,
      "n_danji": 8,
      "basis": "평내동 연식 ±15년",
      "per_pyeong_manwon": 1232,
@@ -15509,7 +15770,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -40.8,
+    "nearby_vs_own_pct": -40.2,
     "weighted": {
      "eok": 5.1,
      "cap_by_offer": true,
@@ -15758,7 +16019,7 @@
     },
     "est_eok": 6.63,
     "range_eok": [
-     5.98,
+     5.94,
      6.71
     ],
     "used": [
@@ -15767,14 +16028,15 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 12.2,
+    "spread_pct": 13.0,
     "low_vs_est_pct": 74,
     "richgo_vs_est_pct": 0.5,
     "flags": [
-     "주변 단지 시세가 이 단지보다 -10%"
+     "주변 단지 시세가 이 단지보다 -11%"
     ],
     "nearby": {
-     "eok": 5.98,
+     "eok": 5.94,
+     "ratio": 0.8913,
      "n_danji": 25,
      "basis": "와부읍 연식 ±10년",
      "per_pyeong_manwon": 1812,
@@ -15808,7 +16070,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -10.3,
+    "nearby_vs_own_pct": -10.9,
     "weighted": {
      "eok": 5.6,
      "cap_by_offer": true,
@@ -16071,7 +16333,7 @@
     "est_eok": 8.16,
     "range_eok": [
      8.0,
-     9.61
+     9.0
     ],
     "used": [
      "리치고",
@@ -16079,15 +16341,15 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 20.1,
+    "spread_pct": 12.5,
     "low_vs_est_pct": 69,
     "richgo_vs_est_pct": 1.5,
     "flags": [
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +19%"
+     "주변 단지 시세가 이 단지보다 +11%"
     ],
     "nearby": {
-     "eok": 9.61,
+     "eok": 9.0,
+     "ratio": 1.1115,
      "n_danji": 20,
      "basis": "별내동 연식 ±10년",
      "per_pyeong_manwon": 2088,
@@ -16121,7 +16383,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 18.6,
+    "nearby_vs_own_pct": 11.1,
     "weighted": {
      "eok": 7.9,
      "cap_by_offer": true,
@@ -16394,7 +16656,7 @@
     },
     "est_eok": 6.15,
     "range_eok": [
-     5.2,
+     5.41,
      6.66
     ],
     "used": [
@@ -16403,15 +16665,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 28.1,
+    "spread_pct": 23.1,
     "low_vs_est_pct": 102,
     "richgo_vs_est_pct": -3.8,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -17%"
+     "주변 단지 시세가 이 단지보다 -14%"
     ],
     "nearby": {
-     "eok": 5.2,
+     "eok": 5.41,
+     "ratio": 0.8631,
      "n_danji": 23,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 1084,
@@ -16445,7 +16708,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -17.1,
+    "nearby_vs_own_pct": -13.7,
     "weighted": {
      "eok": 6.0,
      "cap_by_offer": true,
@@ -16680,6 +16943,7 @@
     "flags": [],
     "nearby": {
      "eok": 6.16,
+     "ratio": 0.9482,
      "n_danji": 25,
      "basis": "와부읍 연식 ±10년",
      "per_pyeong_manwon": 1812,
@@ -16956,7 +17220,7 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 3.83,
+    "est_eok": 3.85,
     "range_eok": [
      3.8,
      3.9
@@ -16972,7 +17236,8 @@
     "richgo_vs_est_pct": -1.4,
     "flags": [],
     "nearby": {
-     "eok": 3.8,
+     "eok": 3.86,
+     "ratio": 1.0018,
      "n_danji": 23,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 1086,
@@ -17006,7 +17271,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -1.3,
+    "nearby_vs_own_pct": 0.3,
     "weighted": {
      "eok": 3.55,
      "cap_by_offer": true,
@@ -17247,7 +17512,7 @@
     "est_eok": 7.19,
     "range_eok": [
      7.0,
-     7.61
+     7.62
     ],
     "used": [
      "리치고",
@@ -17255,12 +17520,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 8.7,
+    "spread_pct": 8.9,
     "low_vs_est_pct": 58,
     "richgo_vs_est_pct": 0.0,
     "flags": [],
     "nearby": {
-     "eok": 7.61,
+     "eok": 7.62,
+     "ratio": 1.0744,
      "n_danji": 4,
      "basis": "다산동 연식 ±10년",
      "per_pyeong_manwon": 2239,
@@ -17289,7 +17555,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 7.3,
+    "nearby_vs_own_pct": 7.5,
     "weighted": {
      "eok": 7.0,
      "cap_by_offer": true,
@@ -17546,10 +17812,10 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 3.61,
+    "est_eok": 3.5,
     "range_eok": [
-     3.44,
-     4.01
+     3.4,
+     3.67
     ],
     "used": [
      "리치고",
@@ -17557,15 +17823,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 16.6,
-    "low_vs_est_pct": 101,
+    "spread_pct": 7.9,
+    "low_vs_est_pct": 104,
     "richgo_vs_est_pct": -3.1,
-    "flags": [
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +13%"
-    ],
+    "flags": [],
     "nearby": {
-     "eok": 4.01,
+     "eok": 3.4,
+     "ratio": 0.9575,
      "n_danji": 28,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 890,
@@ -17599,7 +17863,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 13.0,
+    "nearby_vs_own_pct": -4.2,
     "weighted": {
      "eok": 3.45,
      "cap_by_offer": true,
@@ -17812,7 +18076,7 @@
     "est_eok": 8.52,
     "range_eok": [
      8.3,
-     11.7
+     10.05
     ],
     "used": [
      "리치고",
@@ -17820,15 +18084,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 41.0,
+    "spread_pct": 21.1,
     "low_vs_est_pct": 24,
     "richgo_vs_est_pct": 0.4,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +38%"
+     "주변 단지 시세가 이 단지보다 +18%"
     ],
     "nearby": {
-     "eok": 11.7,
+     "eok": 10.05,
+     "ratio": 1.1826,
      "n_danji": 4,
      "basis": "다산동 연식 ±10년",
      "per_pyeong_manwon": 2018,
@@ -17857,7 +18122,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 37.6,
+    "nearby_vs_own_pct": 18.2,
     "weighted": {
      "eok": 8.26,
      "cap_by_offer": false,
@@ -18129,10 +18394,10 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 4.97,
+    "est_eok": 4.91,
     "range_eok": [
-     4.86,
-     5.39
+     4.24,
+     5.0
     ],
     "used": [
      "리치고",
@@ -18140,12 +18405,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 10.9,
-    "low_vs_est_pct": 92,
+    "spread_pct": 17.9,
+    "low_vs_est_pct": 93,
     "richgo_vs_est_pct": 0.0,
-    "flags": [],
+    "flags": [
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 -14%"
+    ],
     "nearby": {
-     "eok": 5.39,
+     "eok": 4.24,
+     "ratio": 0.8572,
      "n_danji": 14,
      "basis": "평내동 연식 ±10년",
      "per_pyeong_manwon": 1147,
@@ -18179,7 +18448,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 8.9,
+    "nearby_vs_own_pct": -14.3,
     "weighted": {
      "eok": 4.5,
      "cap_by_offer": true,
@@ -18406,7 +18675,7 @@
     },
     "est_eok": 5.17,
     "range_eok": [
-     3.08,
+     3.11,
      5.4
     ],
     "used": [
@@ -18415,15 +18684,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 75.3,
+    "spread_pct": 73.6,
     "low_vs_est_pct": 67,
     "richgo_vs_est_pct": -1.1,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -41%"
+     "주변 단지 시세가 이 단지보다 -40%"
     ],
     "nearby": {
-     "eok": 3.08,
+     "eok": 3.11,
+     "ratio": 0.599,
      "n_danji": 8,
      "basis": "평내동 연식 ±15년",
      "per_pyeong_manwon": 1232,
@@ -18457,7 +18727,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -40.8,
+    "nearby_vs_own_pct": -40.2,
     "weighted": {
      "eok": 5.1,
      "cap_by_offer": true,
@@ -18698,7 +18968,7 @@
     "est_eok": 5.88,
     "range_eok": [
      5.8,
-     6.82
+     6.83
     ],
     "used": [
      "리치고",
@@ -18706,7 +18976,7 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 17.6,
+    "spread_pct": 17.8,
     "low_vs_est_pct": 72,
     "richgo_vs_est_pct": 0.0,
     "flags": [
@@ -18714,7 +18984,8 @@
      "주변 단지 시세가 이 단지보다 +17%"
     ],
     "nearby": {
-     "eok": 6.82,
+     "eok": 6.83,
+     "ratio": 1.168,
      "n_danji": 16,
      "basis": "호평동 연식 ±10년",
      "per_pyeong_manwon": 1422,
@@ -18748,7 +19019,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 16.6,
+    "nearby_vs_own_pct": 16.8,
     "weighted": {
      "eok": 5.8,
      "cap_by_offer": true,
@@ -19002,7 +19273,7 @@
     },
     "est_eok": 2.54,
     "range_eok": [
-     1.92,
+     2.12,
      2.65
     ],
     "used": [
@@ -19011,15 +19282,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 38.0,
+    "spread_pct": 25.0,
     "low_vs_est_pct": 50,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -26%"
+     "주변 단지 시세가 이 단지보다 -18%"
     ],
     "nearby": {
-     "eok": 1.92,
+     "eok": 2.12,
+     "ratio": 0.8192,
      "n_danji": 11,
      "basis": "진건읍 연식 ±10년",
      "per_pyeong_manwon": 802,
@@ -19053,7 +19325,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -25.9,
+    "nearby_vs_own_pct": -18.1,
     "weighted": {
      "eok": 2.49,
      "cap_by_offer": false,
@@ -19276,7 +19548,7 @@
     "est_eok": 11.41,
     "range_eok": [
      11.1,
-     11.87
+     11.54
     ],
     "used": [
      "리치고",
@@ -19284,12 +19556,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 6.9,
+    "spread_pct": 4.0,
     "low_vs_est_pct": 89,
     "richgo_vs_est_pct": 0.0,
     "flags": [],
     "nearby": {
-     "eok": 11.87,
+     "eok": 11.54,
+     "ratio": 1.0183,
      "n_danji": 27,
      "basis": "다산동 연식 ±10년",
      "per_pyeong_manwon": 3124,
@@ -19323,7 +19596,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 4.8,
+    "nearby_vs_own_pct": 1.9,
     "weighted": {
      "eok": 11.0,
      "cap_by_offer": true,
@@ -19616,6 +19889,7 @@
     ],
     "nearby": {
      "eok": 4.78,
+     "ratio": 1.1248,
      "n_danji": 11,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 1406,
@@ -19890,24 +20164,25 @@
     "est_eok": 2.0,
     "range_eok": [
      1.71,
-     2.64
+     2.69
     ],
     "used": [
      "리치고",
      "KB",
      "주변"
     ],
-    "spread_pct": 54.4,
+    "spread_pct": 57.3,
     "low_vs_est_pct": 67,
     "richgo_vs_est_pct": -7.8,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "리치고 시세가 종합보다 -8%",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +42%"
+     "주변 단지 시세가 이 단지보다 +45%"
     ],
     "nearby": {
-     "eok": 2.64,
+     "eok": 2.69,
+     "ratio": 1.4499,
      "n_danji": 7,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 825,
@@ -19941,7 +20216,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 42.3
+    "nearby_vs_own_pct": 45.0
    },
    "model": "앙상블(부스팅+군집별회귀)",
    "jeonse_ratio": 0.775,
@@ -20130,7 +20405,7 @@
     "est_eok": 5.94,
     "range_eok": [
      5.53,
-     7.77
+     7.53
     ],
     "used": [
      "리치고",
@@ -20138,15 +20413,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 40.5,
+    "spread_pct": 36.2,
     "low_vs_est_pct": 108,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +34%"
+     "주변 단지 시세가 이 단지보다 +30%"
     ],
     "nearby": {
-     "eok": 7.77,
+     "eok": 7.53,
+     "ratio": 1.3036,
      "n_danji": 15,
      "basis": "호평동 연식 ±10년",
      "per_pyeong_manwon": 1387,
@@ -20180,7 +20456,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 34.4,
+    "nearby_vs_own_pct": 30.3,
     "weighted": {
      "eok": 5.5,
      "cap_by_offer": true,
@@ -20389,7 +20665,7 @@
     },
     "est_eok": 2.49,
     "range_eok": [
-     2.17,
+     2.19,
      2.65
     ],
     "used": [
@@ -20398,15 +20674,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 22.1,
+    "spread_pct": 21.0,
     "low_vs_est_pct": 69,
     "richgo_vs_est_pct": -0.7,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -13%"
+     "주변 단지 시세가 이 단지보다 -12%"
     ],
     "nearby": {
-     "eok": 2.17,
+     "eok": 2.19,
+     "ratio": 0.874,
      "n_danji": 11,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 943,
@@ -20440,7 +20717,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -13.2,
+    "nearby_vs_own_pct": -12.4,
     "weighted": {
      "eok": 2.35,
      "cap_by_offer": true,
@@ -20670,7 +20947,7 @@
     "est_eok": 1.93,
     "range_eok": [
      1.85,
-     2.07
+     2.08
     ],
     "used": [
      "리치고",
@@ -20678,14 +20955,15 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 11.9,
+    "spread_pct": 12.4,
     "low_vs_est_pct": 96,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "주변 단지 시세가 이 단지보다 +11%"
     ],
     "nearby": {
-     "eok": 2.07,
+     "eok": 2.08,
+     "ratio": 1.1126,
      "n_danji": 8,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 864,
@@ -20719,7 +20997,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 10.7,
+    "nearby_vs_own_pct": 11.2,
     "weighted": {
      "eok": 1.85,
      "cap_by_offer": true,
@@ -20925,7 +21203,7 @@
     },
     "est_eok": 10.1,
     "range_eok": [
-     9.83,
+     9.84,
      10.35
     ],
     "used": [
@@ -20934,12 +21212,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 5.3,
+    "spread_pct": 5.2,
     "low_vs_est_pct": 74,
     "richgo_vs_est_pct": 0.0,
     "flags": [],
     "nearby": {
-     "eok": 9.83,
+     "eok": 9.84,
+     "ratio": 0.9648,
      "n_danji": 27,
      "basis": "다산동 연식 ±10년",
      "per_pyeong_manwon": 3073,
@@ -20973,7 +21252,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -3.6,
+    "nearby_vs_own_pct": -3.5,
     "weighted": {
      "eok": 9.8,
      "cap_by_offer": true,
@@ -21256,10 +21535,10 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 9.91,
+    "est_eok": 9.76,
     "range_eok": [
      9.55,
-     10.65
+     10.18
     ],
     "used": [
      "리치고",
@@ -21267,14 +21546,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 11.5,
-    "low_vs_est_pct": 93,
+    "spread_pct": 6.6,
+    "low_vs_est_pct": 94,
     "richgo_vs_est_pct": 0.0,
-    "flags": [
-     "주변 단지 시세가 이 단지보다 +10%"
-    ],
+    "flags": [],
     "nearby": {
-     "eok": 10.65,
+     "eok": 9.87,
+     "ratio": 1.0233,
      "n_danji": 20,
      "basis": "별내동 연식 ±10년",
      "per_pyeong_manwon": 2088,
@@ -21308,7 +21586,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 10.4,
+    "nearby_vs_own_pct": 2.3,
     "weighted": {
      "eok": 9.5,
      "cap_by_offer": true,
@@ -21561,6 +21839,7 @@
     ],
     "nearby": {
      "eok": 3.04,
+     "ratio": 0.7514,
      "n_danji": 19,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 922,
@@ -21849,6 +22128,7 @@
     ],
     "nearby": {
      "eok": 2.91,
+     "ratio": 1.3786,
      "n_danji": 28,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 908,
@@ -22127,6 +22407,7 @@
     ],
     "nearby": {
      "eok": 3.92,
+     "ratio": 1.1566,
      "n_danji": 12,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 956,
@@ -22379,6 +22660,7 @@
     "flags": [],
     "nearby": {
      "eok": 10.47,
+     "ratio": 1.0826,
      "n_danji": 25,
      "basis": "다산동 연식 ±10년",
      "per_pyeong_manwon": 3173,
@@ -22699,7 +22981,7 @@
     },
     "est_eok": 10.87,
     "range_eok": [
-     10.45,
+     10.29,
      11.08
     ],
     "used": [
@@ -22708,12 +22990,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 6.0,
+    "spread_pct": 7.7,
     "low_vs_est_pct": 76,
     "richgo_vs_est_pct": 1.6,
     "flags": [],
     "nearby": {
-     "eok": 10.45,
+     "eok": 10.29,
+     "ratio": 0.9429,
      "n_danji": 27,
      "basis": "다산동 연식 ±10년",
      "per_pyeong_manwon": 3073,
@@ -22747,7 +23030,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -4.2,
+    "nearby_vs_own_pct": -5.7,
     "weighted": {
      "eok": 10.81,
      "cap_by_offer": false,
@@ -23048,7 +23331,7 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 3.24,
+    "est_eok": 3.25,
     "range_eok": [
      3.22,
      3.27
@@ -23064,7 +23347,8 @@
     "richgo_vs_est_pct": -1.1,
     "flags": [],
     "nearby": {
-     "eok": 3.22,
+     "eok": 3.26,
+     "ratio": 1.002,
      "n_danji": 18,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 1006,
@@ -23098,7 +23382,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -0.9,
+    "nearby_vs_own_pct": 0.3,
     "weighted": {
      "eok": 3.0,
      "cap_by_offer": true,
@@ -23331,7 +23615,7 @@
     "est_eok": 2.48,
     "range_eok": [
      2.38,
-     3.58
+     3.69
     ],
     "used": [
      "리치고",
@@ -23339,15 +23623,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 50.4,
+    "spread_pct": 55.0,
     "low_vs_est_pct": 101,
     "richgo_vs_est_pct": -2.9,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +46%"
+     "주변 단지 시세가 이 단지보다 +51%"
     ],
     "nearby": {
-     "eok": 3.58,
+     "eok": 3.69,
+     "ratio": 1.5069,
      "n_danji": 24,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 1085,
@@ -23381,7 +23666,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 46.1,
+    "nearby_vs_own_pct": 50.6,
     "weighted": {
      "eok": 2.3,
      "cap_by_offer": true,
@@ -23587,7 +23872,7 @@
     },
     "est_eok": 3.41,
     "range_eok": [
-     2.88,
+     2.95,
      3.63
     ],
     "used": [
@@ -23596,15 +23881,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 26.0,
+    "spread_pct": 23.1,
     "low_vs_est_pct": 70,
     "richgo_vs_est_pct": -2.4,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -17%"
+     "주변 단지 시세가 이 단지보다 -14%"
     ],
     "nearby": {
-     "eok": 2.88,
+     "eok": 2.95,
+     "ratio": 0.8565,
      "n_danji": 27,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 901,
@@ -23638,7 +23924,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -16.5,
+    "nearby_vs_own_pct": -14.5,
     "weighted": {
      "eok": 2.95,
      "cap_by_offer": true,
@@ -23870,7 +24156,7 @@
     },
     "est_eok": 3.73,
     "range_eok": [
-     3.63,
+     3.62,
      4.02
     ],
     "used": [
@@ -23879,12 +24165,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 10.7,
+    "spread_pct": 11.0,
     "low_vs_est_pct": 49,
     "richgo_vs_est_pct": 0.0,
     "flags": [],
     "nearby": {
-     "eok": 3.63,
+     "eok": 3.62,
+     "ratio": 0.9513,
      "n_danji": 5,
      "basis": "금곡동 연식 ±10년",
      "per_pyeong_manwon": 1133,
@@ -23918,7 +24205,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -4.7,
+    "nearby_vs_own_pct": -5.0,
     "weighted": {
      "eok": 3.1,
      "cap_by_offer": true,
@@ -24158,7 +24445,7 @@
     "est_eok": 3.56,
     "range_eok": [
      3.4,
-     4.34
+     4.0
     ],
     "used": [
      "리치고",
@@ -24166,15 +24453,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 27.6,
+    "spread_pct": 17.6,
     "low_vs_est_pct": 71,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +25%"
+     "주변 단지 시세가 이 단지보다 +15%"
     ],
     "nearby": {
-     "eok": 4.34,
+     "eok": 4.0,
+     "ratio": 1.1492,
      "n_danji": 23,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 1086,
@@ -24208,7 +24496,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 24.7,
+    "nearby_vs_own_pct": 14.9,
     "weighted": {
      "eok": 3.42,
      "cap_by_offer": false,
@@ -24447,7 +24735,7 @@
     "est_eok": 3.54,
     "range_eok": [
      3.15,
-     4.54
+     4.86
     ],
     "used": [
      "리치고",
@@ -24455,15 +24743,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 44.1,
+    "spread_pct": 54.3,
     "low_vs_est_pct": 47,
     "richgo_vs_est_pct": -4.4,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +38%"
+     "주변 단지 시세가 이 단지보다 +47%"
     ],
     "nearby": {
-     "eok": 4.54,
+     "eok": 4.86,
+     "ratio": 1.4714,
      "n_danji": 23,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 1080,
@@ -24497,7 +24786,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 37.6,
+    "nearby_vs_own_pct": 47.3,
     "weighted": {
      "eok": 2.9,
      "cap_by_offer": true,
@@ -24726,7 +25015,7 @@
     },
     "est_eok": 3.13,
     "range_eok": [
-     2.87,
+     2.9,
      3.17
     ],
     "used": [
@@ -24735,12 +25024,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 10.5,
+    "spread_pct": 9.3,
     "low_vs_est_pct": 68,
     "richgo_vs_est_pct": -1.0,
     "flags": [],
     "nearby": {
-     "eok": 2.87,
+     "eok": 2.9,
+     "ratio": 0.9205,
      "n_danji": 14,
      "basis": "평내동 연식 ±10년",
      "per_pyeong_manwon": 1147,
@@ -24774,7 +25064,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -8.9,
+    "nearby_vs_own_pct": -7.9,
     "weighted": {
      "eok": 2.9,
      "cap_by_offer": true,
@@ -25007,7 +25297,7 @@
     "est_eok": 3.51,
     "range_eok": [
      3.32,
-     4.68
+     4.93
     ],
     "used": [
      "리치고",
@@ -25015,16 +25305,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 41.0,
+    "spread_pct": 48.5,
     "low_vs_est_pct": 79,
     "richgo_vs_est_pct": -5.2,
     "flags": [
      "리치고 시세가 종합보다 -5%",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +34%"
+     "주변 단지 시세가 이 단지보다 +41%"
     ],
     "nearby": {
-     "eok": 4.68,
+     "eok": 4.93,
+     "ratio": 1.409,
      "n_danji": 19,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 975,
@@ -25058,7 +25349,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 33.7,
+    "nearby_vs_own_pct": 40.9,
     "weighted": {
      "eok": 3.3,
      "cap_by_offer": true,
@@ -25311,6 +25602,7 @@
     "flags": [],
     "nearby": {
      "eok": 7.9,
+     "ratio": 0.9381,
      "n_danji": 21,
      "basis": "별내동 연식 ±10년",
      "per_pyeong_manwon": 2078,
@@ -25617,7 +25909,7 @@
     "est_eok": 1.85,
     "range_eok": [
      1.8,
-     2.13
+     2.44
     ],
     "used": [
      "리치고",
@@ -25625,15 +25917,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 18.3,
+    "spread_pct": 35.6,
     "low_vs_est_pct": 100,
     "richgo_vs_est_pct": -0.2,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +18%"
+     "주변 단지 시세가 이 단지보다 +36%"
     ],
     "nearby": {
-     "eok": 2.13,
+     "eok": 2.44,
+     "ratio": 1.3566,
      "n_danji": 13,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 970,
@@ -25667,7 +25960,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 18.3,
+    "nearby_vs_own_pct": 35.6,
     "weighted": {
      "eok": 1.85,
      "cap_by_offer": true,
@@ -25880,7 +26173,7 @@
     "est_eok": 5.16,
     "range_eok": [
      4.9,
-     6.52
+     6.53
     ],
     "used": [
      "리치고",
@@ -25888,7 +26181,7 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 33.1,
+    "spread_pct": 33.3,
     "low_vs_est_pct": 82,
     "richgo_vs_est_pct": 0.0,
     "flags": [
@@ -25896,7 +26189,8 @@
      "주변 단지 시세가 이 단지보다 +30%"
     ],
     "nearby": {
-     "eok": 6.52,
+     "eok": 6.53,
+     "ratio": 1.3036,
      "n_danji": 15,
      "basis": "호평동 연식 ±10년",
      "per_pyeong_manwon": 1387,
@@ -25930,7 +26224,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 30.1,
+    "nearby_vs_own_pct": 30.3,
     "weighted": {
      "eok": 4.98,
      "cap_by_offer": true,
@@ -26181,7 +26475,7 @@
     "est_eok": 1.74,
     "range_eok": [
      1.47,
-     2.07
+     2.26
     ],
     "used": [
      "리치고",
@@ -26189,16 +26483,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 40.8,
+    "spread_pct": 53.7,
     "low_vs_est_pct": 21,
     "richgo_vs_est_pct": -8.1,
     "flags": [
      "리치고 시세가 종합보다 -8%",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +29%"
+     "주변 단지 시세가 이 단지보다 +41%"
     ],
     "nearby": {
-     "eok": 2.07,
+     "eok": 2.26,
+     "ratio": 1.4117,
      "n_danji": 9,
      "basis": "화도읍 연식 ±10년",
      "per_pyeong_manwon": 943,
@@ -26232,7 +26527,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 29.4,
+    "nearby_vs_own_pct": 41.2,
     "weighted": {
      "eok": 1.5,
      "cap_by_offer": true,
@@ -26464,6 +26759,7 @@
     "flags": [],
     "nearby": {
      "eok": 2.14,
+     "ratio": 0.9637,
      "n_danji": 28,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 890,
@@ -26740,6 +27036,7 @@
     ],
     "nearby": {
      "eok": 10.62,
+     "ratio": 0.9124,
      "n_danji": 25,
      "basis": "다산동 연식 ±10년",
      "per_pyeong_manwon": 3124,
@@ -27063,7 +27360,7 @@
     },
     "est_eok": 5.43,
     "range_eok": [
-     4.68,
+     4.69,
      5.65
     ],
     "used": [
@@ -27072,7 +27369,7 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 20.7,
+    "spread_pct": 20.5,
     "low_vs_est_pct": 93,
     "richgo_vs_est_pct": 0.0,
     "flags": [
@@ -27080,7 +27377,8 @@
      "주변 단지 시세가 이 단지보다 -15%"
     ],
     "nearby": {
-     "eok": 4.68,
+     "eok": 4.69,
+     "ratio": 0.8511,
      "n_danji": 15,
      "basis": "호평동 연식 ±10년",
      "per_pyeong_manwon": 1338,
@@ -27114,7 +27412,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -15.1,
+    "nearby_vs_own_pct": -14.9,
     "weighted": {
      "eok": 5.0,
      "cap_by_offer": true,
@@ -27352,7 +27650,7 @@
     "est_eok": 1.8,
     "range_eok": [
      1.76,
-     1.82
+     1.87
     ],
     "used": [
      "리치고",
@@ -27360,12 +27658,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 3.4,
+    "spread_pct": 6.2,
     "low_vs_est_pct": 77,
     "richgo_vs_est_pct": -2.5,
     "flags": [],
     "nearby": {
-     "eok": 1.82,
+     "eok": 1.87,
+     "ratio": 1.0363,
      "n_danji": 11,
      "basis": "진건읍 연식 ±10년",
      "per_pyeong_manwon": 827,
@@ -27399,7 +27698,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 1.1,
+    "nearby_vs_own_pct": 3.9,
     "weighted": {
      "eok": 1.75,
      "cap_by_offer": true,
@@ -27639,6 +27938,7 @@
     "flags": [],
     "nearby": {
      "eok": 6.86,
+     "ratio": 0.9697,
      "n_danji": 21,
      "basis": "별내동 연식 ±10년",
      "per_pyeong_manwon": 2078,
@@ -27935,7 +28235,7 @@
     "est_eok": 7.15,
     "range_eok": [
      6.95,
-     9.4
+     8.61
     ],
     "used": [
      "리치고",
@@ -27943,15 +28243,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 35.3,
+    "spread_pct": 23.9,
     "low_vs_est_pct": 101,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +34%"
+     "주변 단지 시세가 이 단지보다 +23%"
     ],
     "nearby": {
-     "eok": 9.4,
+     "eok": 8.61,
+     "ratio": 1.2293,
      "n_danji": 20,
      "basis": "별내동 연식 ±10년",
      "per_pyeong_manwon": 2088,
@@ -27985,7 +28286,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 34.3,
+    "nearby_vs_own_pct": 23.0,
     "weighted": {
      "eok": 6.6,
      "cap_by_offer": true,
@@ -28197,7 +28498,7 @@
     },
     "est_eok": 3.08,
     "range_eok": [
-     2.97,
+     3.0,
      3.3
     ],
     "used": [
@@ -28206,12 +28507,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 11.1,
+    "spread_pct": 10.0,
     "low_vs_est_pct": 79,
     "richgo_vs_est_pct": -0.9,
     "flags": [],
     "nearby": {
-     "eok": 2.97,
+     "eok": 3.0,
+     "ratio": 0.9688,
      "n_danji": 27,
      "basis": "오남읍 연식 ±10년",
      "per_pyeong_manwon": 901,
@@ -28245,7 +28547,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -4.2,
+    "nearby_vs_own_pct": -3.2,
     "weighted": {
      "eok": 2.9,
      "cap_by_offer": true,
@@ -28478,7 +28780,7 @@
     "est_eok": 2.77,
     "range_eok": [
      2.71,
-     4.38
+     4.06
     ],
     "used": [
      "리치고",
@@ -28486,15 +28788,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 61.6,
+    "spread_pct": 49.8,
     "low_vs_est_pct": 78,
     "richgo_vs_est_pct": -1.6,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +59%"
+     "주변 단지 시세가 이 단지보다 +48%"
     ],
     "nearby": {
-     "eok": 4.38,
+     "eok": 4.06,
+     "ratio": 1.4749,
      "n_danji": 13,
      "basis": "호평동 연식 ±10년",
      "per_pyeong_manwon": 1413,
@@ -28528,7 +28831,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 59.3,
+    "nearby_vs_own_pct": 47.6,
     "weighted": {
      "eok": 2.55,
      "cap_by_offer": true,
@@ -28756,7 +29059,7 @@
     "est_eok": 4.45,
     "range_eok": [
      4.42,
-     5.1
+     4.74
     ],
     "used": [
      "리치고",
@@ -28764,15 +29067,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 15.4,
+    "spread_pct": 7.2,
     "low_vs_est_pct": 71,
     "richgo_vs_est_pct": 0.0,
-    "flags": [
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +15%"
-    ],
+    "flags": [],
     "nearby": {
-     "eok": 5.1,
+     "eok": 4.74,
+     "ratio": 1.0689,
      "n_danji": 23,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 1086,
@@ -28806,7 +29107,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 15.1,
+    "nearby_vs_own_pct": 7.0,
     "weighted": {
      "eok": 4.44,
      "cap_by_offer": false,
@@ -29044,7 +29345,7 @@
      "6m_pct": 7.9,
      "12m_pct": 11.5
     },
-    "est_eok": 3.67,
+    "est_eok": 3.68,
     "range_eok": [
      3.6,
      3.82
@@ -29060,7 +29361,8 @@
     "richgo_vs_est_pct": -0.0,
     "flags": [],
     "nearby": {
-     "eok": 3.75,
+     "eok": 3.76,
+     "ratio": 1.0431,
      "n_danji": 14,
      "basis": "평내동 연식 ±10년",
      "per_pyeong_manwon": 1172,
@@ -29094,7 +29396,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 4.2,
+    "nearby_vs_own_pct": 4.4,
     "weighted": {
      "eok": 3.35,
      "cap_by_offer": true,
@@ -29328,7 +29630,7 @@
     "est_eok": 3.51,
     "range_eok": [
      3.46,
-     3.69
+     3.71
     ],
     "used": [
      "리치고",
@@ -29336,12 +29638,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 6.6,
+    "spread_pct": 7.2,
     "low_vs_est_pct": 72,
     "richgo_vs_est_pct": -0.4,
     "flags": [],
     "nearby": {
-     "eok": 3.69,
+     "eok": 3.71,
+     "ratio": 1.0689,
      "n_danji": 23,
      "basis": "진접읍 연식 ±10년",
      "per_pyeong_manwon": 1086,
@@ -29375,7 +29678,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 6.3,
+    "nearby_vs_own_pct": 6.9,
     "weighted": {
      "eok": 3.3,
      "cap_by_offer": true,
@@ -29608,7 +29911,7 @@
      "6m_pct": 10.8,
      "12m_pct": 22.1
     },
-    "est_eok": 7.22,
+    "est_eok": 7.33,
     "range_eok": [
      6.99,
      7.6
@@ -29620,11 +29923,12 @@
      "주변"
     ],
     "spread_pct": 8.7,
-    "low_vs_est_pct": 95,
+    "low_vs_est_pct": 93,
     "richgo_vs_est_pct": -3.0,
     "flags": [],
     "nearby": {
-     "eok": 7.24,
+     "eok": 7.46,
+     "ratio": 1.0367,
      "n_danji": 20,
      "basis": "인창동 연식 ±10년",
      "per_pyeong_manwon": 2262,
@@ -29658,7 +29962,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 0.6,
+    "nearby_vs_own_pct": 3.6,
     "weighted": {
      "eok": 6.6,
      "cap_by_offer": true,
@@ -29891,7 +30195,7 @@
     "est_eok": 8.07,
     "range_eok": [
      7.15,
-     11.23
+     11.05
     ],
     "used": [
      "리치고",
@@ -29899,15 +30203,16 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 57.1,
+    "spread_pct": 54.5,
     "low_vs_est_pct": 93,
     "richgo_vs_est_pct": 1.6,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +40%"
+     "주변 단지 시세가 이 단지보다 +38%"
     ],
     "nearby": {
-     "eok": 11.23,
+     "eok": 11.05,
+     "ratio": 1.3818,
      "n_danji": 4,
      "basis": "교문동 연식 ±10년",
      "per_pyeong_manwon": 3208,
@@ -29936,7 +30241,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 40.4,
+    "nearby_vs_own_pct": 38.1,
     "weighted": {
      "eok": 7.8,
      "cap_by_offer": true,
@@ -30175,7 +30480,7 @@
     "est_eok": 4.23,
     "range_eok": [
      3.85,
-     5.48
+     6.29
     ],
     "used": [
      "리치고",
@@ -30183,16 +30488,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 42.3,
+    "spread_pct": 63.4,
     "low_vs_est_pct": 60,
     "richgo_vs_est_pct": 0.0,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +35%"
+     "주변 단지 시세가 이 단지보다 +55%"
     ],
     "nearby": {
-     "eok": 5.48,
+     "eok": 6.29,
+     "ratio": 1.5535,
      "n_danji": 13,
      "basis": "수택동 연식 ±10년",
      "per_pyeong_manwon": 2383,
@@ -30226,7 +30532,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 35.3,
+    "nearby_vs_own_pct": 55.3,
     "weighted": {
      "eok": 4.42,
      "cap_by_offer": false,
@@ -30454,10 +30760,10 @@
      "6m_pct": 10.8,
      "12m_pct": 22.1
     },
-    "est_eok": 11.55,
+    "est_eok": 11.06,
     "range_eok": [
      10.6,
-     15.35
+     11.9
     ],
     "used": [
      "리치고",
@@ -30465,15 +30771,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 44.8,
-    "low_vs_est_pct": 62,
+    "spread_pct": 12.3,
+    "low_vs_est_pct": 65,
     "richgo_vs_est_pct": 0.0,
-    "flags": [
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +37%"
-    ],
+    "flags": [],
     "nearby": {
-     "eok": 15.35,
+     "eok": 10.92,
+     "ratio": 0.9746,
      "n_danji": 13,
      "basis": "교문동 연식 ±10년",
      "per_pyeong_manwon": 3267,
@@ -30507,7 +30811,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 37.1,
+    "nearby_vs_own_pct": -2.5,
     "weighted": {
      "eok": 11.73,
      "cap_by_offer": false,
@@ -30835,6 +31139,7 @@
     ],
     "nearby": {
      "eok": 7.64,
+     "ratio": 0.8848,
      "n_danji": 23,
      "basis": "인창동 연식 ±10년",
      "per_pyeong_manwon": 2388,
@@ -31150,10 +31455,10 @@
      "6m_pct": 10.8,
      "12m_pct": 22.1
     },
-    "est_eok": 6.85,
+    "est_eok": 6.94,
     "range_eok": [
      6.4,
-     7.3
+     7.42
     ],
     "used": [
      "리치고",
@@ -31161,14 +31466,17 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 14.1,
-    "low_vs_est_pct": 90,
+    "spread_pct": 15.9,
+    "low_vs_est_pct": 89,
     "richgo_vs_est_pct": 0.0,
     "flags": [
-     "최근 6개월 실거래 없음 (거래 적음)"
+     "최근 6개월 실거래 없음 (거래 적음)",
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 +13%"
     ],
     "nearby": {
-     "eok": 7.12,
+     "eok": 7.42,
+     "ratio": 1.1297,
      "n_danji": 10,
      "basis": "인창동 연식 ±10년",
      "per_pyeong_manwon": 2374,
@@ -31202,7 +31510,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 8.4,
+    "nearby_vs_own_pct": 12.9,
     "weighted": {
      "eok": 7.32,
      "cap_by_offer": false,
@@ -31439,6 +31747,7 @@
     "flags": [],
     "nearby": {
      "eok": 10.15,
+     "ratio": 1.0018,
      "n_danji": 13,
      "basis": "교문동 연식 ±10년",
      "per_pyeong_manwon": 3273,
@@ -31764,10 +32073,10 @@
      "6m_pct": 10.8,
      "12m_pct": 22.1
     },
-    "est_eok": 10.19,
+    "est_eok": 10.02,
     "range_eok": [
-     9.95,
-     10.42
+     9.67,
+     10.3
     ],
     "used": [
      "리치고",
@@ -31775,12 +32084,13 @@
      "KB",
      "주변"
     ],
-    "spread_pct": 4.7,
-    "low_vs_est_pct": 78,
+    "spread_pct": 6.5,
+    "low_vs_est_pct": 79,
     "richgo_vs_est_pct": 0.0,
     "flags": [],
     "nearby": {
-     "eok": 10.42,
+     "eok": 9.67,
+     "ratio": 0.9589,
      "n_danji": 8,
      "basis": "갈매동 연식 ±10년",
      "per_pyeong_manwon": 2368,
@@ -31814,7 +32124,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 3.4,
+    "nearby_vs_own_pct": -4.1,
     "weighted": {
      "eok": 10.57,
      "cap_by_offer": false,
@@ -32101,7 +32411,7 @@
      "6m_pct": 10.8,
      "12m_pct": 22.1
     },
-    "est_eok": 9.27,
+    "est_eok": 9.11,
     "range_eok": [
      8.62,
      9.36
@@ -32113,11 +32423,12 @@
      "주변"
     ],
     "spread_pct": 8.6,
-    "low_vs_est_pct": 71,
+    "low_vs_est_pct": 72,
     "richgo_vs_est_pct": 0.6,
     "flags": [],
     "nearby": {
-     "eok": 9.24,
+     "eok": 8.92,
+     "ratio": 0.9589,
      "n_danji": 8,
      "basis": "갈매동 연식 ±10년",
      "per_pyeong_manwon": 2368,
@@ -32151,7 +32462,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -0.6,
+    "nearby_vs_own_pct": -4.1,
     "weighted": {
      "eok": 9.44,
      "cap_by_offer": false,
@@ -32378,6 +32689,324 @@
    },
    "court": "남양주지원",
    "category": "아파트",
+   "safety": {
+    "grade": "보통",
+    "reasons": [
+     "리치고 기준 권리 문제 없음 · 법원 명세서 미확인"
+    ]
+   },
+   "payback": null
+  },
+  "2026타경50031[1]": {
+   "key": "2026타경50031[1]",
+   "auction_id": "C59RTRUR",
+   "region": "경기 하남시",
+   "address": "경기도 하남시 망월동 1170 미사강변효성해링턴플레이스엔에이치에프 2901동 10층 1001호",
+   "appr_manwon": 105000,
+   "low_manwon": 105000,
+   "fails": 0,
+   "bidding_date": "2026-11-16",
+   "area": 84.92,
+   "danji_id": "a2jAdUo",
+   "danji_name": "미사강변효성해링턴플레이스엔에이치에프",
+   "name": "미사강변효성해링턴플레이스엔에이치에프",
+   "case": "2026타경50031",
+   "keyword": "토지거래허가구역",
+   "pyeong": "35",
+   "appr_eok": 10.5,
+   "low_eok": 10.5,
+   "richgo_sise_eok": 12.9,
+   "appr_vs_sise": 0.814,
+   "sise": {
+    "richgo_eok": 12.9,
+    "richgo_source": "MOLIT",
+    "trade": {
+     "eok": 12.9,
+     "date": "2026-10-22",
+     "months_ago": 0.4,
+     "adj_eok": 12.9,
+     "trend_since_pct": 0.0
+    },
+    "trend": {
+     "3m_pct": 3.5,
+     "6m_pct": 8.1,
+     "12m_pct": 20.9
+    },
+    "est_eok": 12.9,
+    "range_eok": [
+     12.9,
+     12.9
+    ],
+    "used": [
+     "실거래"
+    ],
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 81,
+    "richgo_vs_est_pct": 0.0,
+    "flags": [],
+    "weighted": {
+     "eok": 12.51,
+     "cap_by_offer": false,
+     "floor": 10,
+     "parts": [
+      {
+       "key": "trade3",
+       "eok": 12.5,
+       "weight": 0.6,
+       "note": "최근 3개월 실거래 5건"
+      },
+      {
+       "key": "floor",
+       "eok": 12.47,
+       "weight": 0.2,
+       "note": "층 보정 6개월 실거래 6건 (물건 10층)"
+      },
+      {
+       "key": "appr",
+       "eok": 12.69,
+       "weight": 0.05,
+       "note": "감정가 × 1년 시세 변동 +20.9%"
+      }
+     ]
+    }
+   },
+   "model": "앙상블(부스팅+군집별회귀)",
+   "jeonse_ratio": null,
+   "sgg_adj_pct": 0.2,
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 10.52,
+      "45%": 10.64,
+      "50%": 10.74,
+      "55%": 10.83,
+      "60%": 10.9
+     },
+     "2명": {
+      "40%": 11.13,
+      "45%": 11.19,
+      "50%": 11.25,
+      "55%": 11.31,
+      "60%": 11.37
+     },
+     "3명": {
+      "40%": 11.31,
+      "45%": 11.4,
+      "50%": 11.48,
+      "55%": 11.55,
+      "60%": 11.62
+     },
+     "5명": {
+      "40%": 11.56,
+      "45%": 11.63,
+      "50%": 11.69,
+      "55%": 11.76,
+      "60%": 11.82
+     },
+     "8명": {
+      "40%": 12.03,
+      "45%": 12.1,
+      "50%": 12.18,
+      "55%": 12.25,
+      "60%": 12.32
+     },
+     "13명": {
+      "40%": 12.51,
+      "45%": 12.59,
+      "50%": 12.68,
+      "55%": 12.76,
+      "60%": 12.86
+     }
+    },
+    "price_eok": {
+     "1명": 10.91,
+     "2명": 11.38,
+     "3명": 11.53,
+     "5명": 11.79,
+     "8명": 12.17,
+     "13명": 12.53
+    },
+    "expected_bidders": 4,
+    "expected_range": [
+     2,
+     7
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 4.04%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "fail": {
+    "prob_pct": 6,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
+   },
+   "households": 1401,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 116246,
+     "45%": 117243,
+     "50%": 118216,
+     "55%": 119163,
+     "60%": 120156
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 116246,
+    "45%": 117243,
+    "50%": 118216,
+    "55%": 119163,
+    "60%": 120156
+   },
+   "bid_by_prob_eok": {
+    "40%": 11.62,
+    "45%": 11.72,
+    "50%": 11.82,
+    "55%": 11.92,
+    "60%": 12.02
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 113500,
+     "bid_eok": 11.35,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 114000,
+     "bid_eok": 11.4,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 114500,
+     "bid_eok": 11.45,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 115000,
+     "bid_eok": 11.5,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 115500,
+     "bid_eok": 11.55,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 116000,
+     "bid_eok": 11.6,
+     "prob": 39
+    },
+    {
+     "bid_manwon": 116500,
+     "bid_eok": 11.65,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 117000,
+     "bid_eok": 11.7,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 117500,
+     "bid_eok": 11.75,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 118000,
+     "bid_eok": 11.8,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 118500,
+     "bid_eok": 11.85,
+     "prob": 51
+    },
+    {
+     "bid_manwon": 119000,
+     "bid_eok": 11.9,
+     "prob": 54
+    },
+    {
+     "bid_manwon": 119500,
+     "bid_eok": 11.95,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 120000,
+     "bid_eok": 12.0,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 120500,
+     "bid_eok": 12.05,
+     "prob": 62
+    },
+    {
+     "bid_manwon": 121000,
+     "bid_eok": 12.1,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 121500,
+     "bid_eok": 12.15,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 122000,
+     "bid_eok": 12.2,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 122500,
+     "bid_eok": 12.25,
+     "prob": 70
+    },
+    {
+     "bid_manwon": 123000,
+     "bid_eok": 12.3,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 123500,
+     "bid_eok": 12.35,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 118216,
+   "p50_ensemble_eok": 11.82,
+   "model_error_note": "평균 오차 약 5.67% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
+   "warnings": [],
+   "notes": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2024-10-28"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   },
+   "court": "성남지원",
+   "category": "아파트",
+   "station": {
+    "name": "미사",
+    "distance_m": 514,
+    "walk_min": 9,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "station5": {
+    "name": "미사",
+    "distance_m": 514,
+    "walk_min": 9
+   },
    "safety": {
     "grade": "보통",
     "reasons": [
@@ -35843,24 +36472,22 @@
      "6m_pct": 13.8,
      "12m_pct": 21.8
     },
-    "est_eok": 1.28,
+    "est_eok": 1.41,
     "range_eok": [
-     1.1,
+     1.28,
      1.54
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
-    "spread_pct": 40.0,
-    "low_vs_est_pct": 37,
-    "richgo_vs_est_pct": -7.6,
+    "spread_pct": 20.3,
+    "low_vs_est_pct": 34,
+    "richgo_vs_est_pct": -14.1,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
-     "리치고 시세가 종합보다 -8%",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +29%"
+     "주변 단지 시세가 이 단지보다 +20%"
     ],
     "nearby": {
      "eok": 1.54,
@@ -35878,7 +36505,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 29.4
+    "nearby_vs_own_pct": 20.3
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -36740,24 +37367,22 @@
      "6m_pct": 13.8,
      "12m_pct": 21.8
     },
-    "est_eok": 1.09,
+    "est_eok": 1.16,
     "range_eok": [
      1.0,
      1.32
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
     "spread_pct": 32.0,
-    "low_vs_est_pct": 61,
-    "richgo_vs_est_pct": -9.4,
+    "low_vs_est_pct": 57,
+    "richgo_vs_est_pct": -17.3,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
-     "리치고 시세가 종합보다 -9%",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -17%"
+     "주변 단지 시세가 이 단지보다 -24%"
     ],
     "nearby": {
      "eok": 1.0,
@@ -36779,7 +37404,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -17.0
+    "nearby_vs_own_pct": -24.2
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -38132,23 +38757,21 @@
      "6m_pct": 13.8,
      "12m_pct": 21.8
     },
-    "est_eok": 3.2,
+    "est_eok": 3.08,
     "range_eok": [
      2.54,
      3.61
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
     "spread_pct": 42.1,
-    "low_vs_est_pct": 78,
-    "richgo_vs_est_pct": -6.0,
+    "low_vs_est_pct": 81,
+    "richgo_vs_est_pct": -11.4,
     "flags": [
-     "리치고 시세가 종합보다 -6%",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -25%"
+     "주변 단지 시세가 이 단지보다 -30%"
     ],
     "nearby": {
      "eok": 2.54,
@@ -38166,7 +38789,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -25.4
+    "nearby_vs_own_pct": -29.6
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -41974,6 +42597,199 @@
     "years": 15.7,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    }
+  },
+  "2025타경10161[1]": {
+   "key": "2025타경10161[1]",
+   "category": "오피스텔",
+   "auction_id": "C54DWBJN",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 화곡동 926-3 메종드로제  제2층 제203호",
+   "appr_manwon": 32800,
+   "low_manwon": 4402,
+   "fails": 9,
+   "bidding_date": "2026-11-10",
+   "area": 51.55,
+   "danji_id": "a1glDWv",
+   "danji_name": "메종드로제",
+   "court": "서울남부지방법원",
+   "station": {
+    "name": "까치산",
+    "distance_m": 478,
+    "walk_min": 8
+   },
+   "name": "메종드로제",
+   "case": "2025타경10161",
+   "keyword": "선순위임차권,대항력있는임차인",
+   "pyeong": "20",
+   "appr_eok": 3.28,
+   "low_eok": 0.44,
+   "richgo_sise_eok": 2.7,
+   "appr_vs_sise": 1.215,
+   "sise": {
+    "richgo_eok": 2.7,
+    "richgo_source": "OFFER",
+    "trade": {
+     "eok": 2.6,
+     "date": "2026-08-26",
+     "months_ago": 2.3,
+     "adj_eok": 2.65,
+     "trend_since_pct": 1.8
+    },
+    "offer": {
+     "min_eok": 2.6,
+     "max_eok": 2.8,
+     "count": null,
+     "rep_eok": 2.7
+    },
+    "trend": {
+     "3m_pct": 4.1,
+     "6m_pct": 9.3,
+     "12m_pct": 22.8
+    },
+    "est_eok": 2.65,
+    "range_eok": [
+     2.65,
+     2.65
+    ],
+    "used": [
+     "실거래"
+    ],
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 17,
+    "richgo_vs_est_pct": 2.0,
+    "flags": []
+   },
+   "model": "오피스텔 랜덤포레스트+부스팅",
+   "bid_by_prob_manwon": {
+    "40%": 17764,
+    "45%": 17934,
+    "50%": 18099,
+    "55%": 18270,
+    "60%": 18457
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.78,
+    "45%": 1.79,
+    "50%": 1.81,
+    "55%": 1.83,
+    "60%": 1.85
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 17500,
+     "bid_eok": 1.75,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 18000,
+     "bid_eok": 1.8,
+     "prob": 47
+    },
+    {
+     "bid_manwon": 18500,
+     "bid_eok": 1.85,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 19000,
+     "bid_eok": 1.9,
+     "prob": 72
+    }
+   ],
+   "p50_ensemble_manwon": 18099,
+   "p50_ensemble_eok": 1.81,
+   "income": {
+    "jeonse_manwon": null,
+    "jeonse_ratio": null,
+    "est_monthly_rent_manwon": null,
+    "deposit_assumed_manwon": 1000,
+    "rent_conversion_rate": 0.0606,
+    "rent_basis": null,
+    "gross_yield_pct_at_p50": null
+   },
+   "fail": {
+    "prob_pct": 1,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 47.4% · 예측 정확도 75.5%"
+   },
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 1.8,
+      "45%": 1.81,
+      "50%": 1.83,
+      "55%": 1.85,
+      "60%": 1.86
+     },
+     "2명": {
+      "40%": 1.79,
+      "45%": 1.81,
+      "50%": 1.83,
+      "55%": 1.86,
+      "60%": 1.87
+     },
+     "3명": {
+      "40%": 1.8,
+      "45%": 1.81,
+      "50%": 1.82,
+      "55%": 1.84,
+      "60%": 1.85
+     },
+     "5명": {
+      "40%": 1.8,
+      "45%": 1.82,
+      "50%": 1.83,
+      "55%": 1.85,
+      "60%": 1.88
+     },
+     "8명 이상": {
+      "40%": 1.85,
+      "45%": 1.85,
+      "50%": 1.86,
+      "55%": 1.89,
+      "60%": 1.91
+     }
+    },
+    "price_eok": {
+     "1명": 1.83,
+     "2명": 1.83,
+     "3명": 1.82,
+     "5명": 1.83,
+     "8명 이상": 1.86
+    },
+    "expected_bidders": 4,
+    "expected_range": [
+     1,
+     8
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
+   "warnings": [],
+   "risk": {
+    "keywords": [
+     "선순위임차권",
+     "대항력있는임차인"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": true,
+     "right_risk": true,
+     "base_right": "압류",
+     "base_date": "2022-12-07"
+    },
+    "resale": false,
+    "decision": "hide",
+    "reason": "대항력 임차인: 키워드·요약 모두 있음 / 인수 권리: 키워드·요약 모두 있음"
+   },
+   "safety": {
+    "grade": "위험",
+    "reasons": [
+     "대항력 임차인: 키워드·요약 모두 있음 / 인수 권리: 키워드·요약 모두 있음"
+    ]
+   },
+   "payback": null
   },
   "2025타경11089[1]": {
    "key": "2025타경11089[1]",
@@ -53031,18 +53847,17 @@
      "6m_pct": 6.2,
      "12m_pct": 23.7
     },
-    "est_eok": 1.56,
+    "est_eok": 1.58,
     "range_eok": [
-     1.53,
+     1.58,
      1.58
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 3.4,
+    "spread_pct": 0.0,
     "low_vs_est_pct": 18,
-    "richgo_vs_est_pct": -1.7,
+    "richgo_vs_est_pct": -3.3,
     "flags": []
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
@@ -53755,18 +54570,17 @@
      "6m_pct": 6.2,
      "12m_pct": 23.7
     },
-    "est_eok": 2.58,
+    "est_eok": 2.65,
     "range_eok": [
-     2.5,
+     2.65,
      2.65
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 6.2,
-    "low_vs_est_pct": 72,
-    "richgo_vs_est_pct": -3.0,
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 70,
+    "richgo_vs_est_pct": -5.8,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)"
     ]
@@ -57814,18 +58628,17 @@
      "6m_pct": 9.7,
      "12m_pct": 21.3
     },
-    "est_eok": 2.61,
+    "est_eok": 2.63,
     "range_eok": [
-     2.6,
+     2.63,
      2.63
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 1.0,
+    "spread_pct": 0.0,
     "low_vs_est_pct": 92,
-    "richgo_vs_est_pct": -0.5,
+    "richgo_vs_est_pct": -1.0,
     "flags": []
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
@@ -58002,22 +58815,21 @@
      "6m_pct": 9.7,
      "12m_pct": 21.3
     },
-    "est_eok": 3.6,
+    "est_eok": 3.15,
     "range_eok": [
      2.47,
      3.82
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
     "spread_pct": 54.7,
-    "low_vs_est_pct": 67,
-    "richgo_vs_est_pct": -3.0,
+    "low_vs_est_pct": 77,
+    "richgo_vs_est_pct": -5.8,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -33%"
+     "주변 단지 시세가 이 단지보다 -35%"
     ],
     "nearby": {
      "eok": 2.47,
@@ -58039,7 +58851,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -33.4
+    "nearby_vs_own_pct": -35.3
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -58187,215 +58999,6 @@
     "monthly_rent_manwon": 146,
     "months": 183,
     "years": 15.3,
-    "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
-   }
-  },
-  "2026타경3640[1]": {
-   "key": "2026타경3640[1]",
-   "category": "오피스텔",
-   "auction_id": "C65ZTTLF",
-   "region": "서울 구로구",
-   "address": "서울특별시 구로구 구로동 104-8 비즈트위트레드  제18층 제1804호",
-   "appr_manwon": 19000,
-   "low_manwon": 19000,
-   "fails": 0,
-   "bidding_date": "2026-11-18",
-   "area": 28.22,
-   "danji_id": "a4SCTBG",
-   "danji_name": "비즈트위트레드",
-   "court": "서울남부지방법원",
-   "station": {
-    "name": "대림",
-    "distance_m": 505,
-    "walk_min": 9
-   },
-   "name": "비즈트위트레드",
-   "case": "2026타경3640",
-   "keyword": "토지거래허가구역",
-   "pyeong": "14",
-   "appr_eok": 1.9,
-   "low_eok": 1.9,
-   "richgo_sise_eok": 1.81,
-   "appr_vs_sise": 1.05,
-   "sise": {
-    "richgo_eok": 1.81,
-    "richgo_source": "OFFER",
-    "trade": {
-     "eok": 1.83,
-     "date": "2026-06-17",
-     "months_ago": 4.6,
-     "adj_eok": 1.94,
-     "trend_since_pct": 6.1
-    },
-    "offer": {
-     "min_eok": 1.79,
-     "max_eok": 1.82,
-     "count": null,
-     "rep_eok": 1.81
-    },
-    "trend": {
-     "3m_pct": 4.4,
-     "6m_pct": 9.7,
-     "12m_pct": 21.3
-    },
-    "est_eok": 1.39,
-    "range_eok": [
-     0.83,
-     1.94
-    ],
-    "used": [
-     "실거래",
-     "주변"
-    ],
-    "spread_pct": 133.7,
-    "low_vs_est_pct": 137,
-    "richgo_vs_est_pct": -6.8,
-    "flags": [
-     "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -57%"
-    ],
-    "nearby": {
-     "eok": 0.83,
-     "n_danji": 2,
-     "basis": "같은 동 오피스텔 · 전용 ±30% · 12개월 실거래",
-     "per_m2_manwon": 295,
-     "detail": [
-      {
-       "name": "그로리",
-       "per_m2": 371
-      },
-      {
-       "name": "현대",
-       "per_m2": 218
-      }
-     ]
-    },
-    "nearby_vs_own_pct": -57.2
-   },
-   "model": "오피스텔 랜덤포레스트+부스팅",
-   "bid_by_prob_manwon": {
-    "40%": 19000,
-    "45%": 19000,
-    "50%": 19000,
-    "55%": 19062,
-    "60%": 19257
-   },
-   "bid_by_prob_eok": {
-    "40%": 1.9,
-    "45%": 1.9,
-    "50%": 1.9,
-    "55%": 1.91,
-    "60%": 1.93
-   },
-   "prob_by_bid_5m": [
-    {
-     "bid_manwon": 19000,
-     "bid_eok": 1.9,
-     "prob": 53
-    },
-    {
-     "bid_manwon": 19500,
-     "bid_eok": 1.95,
-     "prob": 66
-    }
-   ],
-   "p50_ensemble_manwon": 19000,
-   "p50_ensemble_eok": 1.9,
-   "income": {
-    "jeonse_manwon": 15300,
-    "jeonse_ratio": 0.845,
-    "est_monthly_rent_manwon": 72,
-    "deposit_assumed_manwon": 1000,
-    "rent_conversion_rate": 0.0606,
-    "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 4.56
-   },
-   "fail": {
-    "prob_pct": 86,
-    "level": "높음",
-    "note": "백테스트: 이 회차 유형 평균 유찰률 98.8% · 예측 정확도 98.8%"
-   },
-   "by_bidders": {
-    "bid_by_prob_eok": {
-     "1명": {
-      "40%": 1.9,
-      "45%": 1.9,
-      "50%": 1.9,
-      "55%": 1.9,
-      "60%": 1.9
-     },
-     "2명": {
-      "40%": 1.9,
-      "45%": 1.9,
-      "50%": 1.9,
-      "55%": 1.9,
-      "60%": 1.9
-     },
-     "3명": {
-      "40%": 1.9,
-      "45%": 1.9,
-      "50%": 1.9,
-      "55%": 1.9,
-      "60%": 1.9
-     },
-     "5명": {
-      "40%": 1.9,
-      "45%": 1.9,
-      "50%": 1.9,
-      "55%": 1.9,
-      "60%": 1.93
-     },
-     "8명 이상": {
-      "40%": 1.9,
-      "45%": 1.9,
-      "50%": 1.91,
-      "55%": 1.94,
-      "60%": 1.95
-     }
-    },
-    "price_eok": {
-     "1명": 1.9,
-     "2명": 1.9,
-     "3명": 1.9,
-     "5명": 1.9,
-     "8명 이상": 1.91
-    },
-    "expected_bidders": 2,
-    "expected_range": [
-     1,
-     3
-    ],
-    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
-    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
-   },
-   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
-   "warnings": [],
-   "risk": {
-    "keywords": [
-     "토지거래허가구역"
-    ],
-    "summary": {
-     "registry": true,
-     "tenant_risk": false,
-     "right_risk": false,
-     "base_right": "강제경매",
-     "base_date": "2026-02-11"
-    },
-    "resale": false,
-    "decision": "show",
-    "reason": ""
-   },
-   "safety": {
-    "grade": "보통",
-    "reasons": [
-     "리치고 기준 권리 문제 없음 · 법원 명세서 미확인"
-    ]
-   },
-   "payback": {
-    "price_manwon": 19000,
-    "monthly_rent_manwon": 72,
-    "months": 264,
-    "years": 22.0,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    }
   },
@@ -60443,18 +61046,17 @@
      "6m_pct": 9.7,
      "12m_pct": 21.3
     },
-    "est_eok": 2.61,
+    "est_eok": 2.63,
     "range_eok": [
-     2.6,
+     2.63,
      2.63
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 1.0,
-    "low_vs_est_pct": 102,
-    "richgo_vs_est_pct": -0.5,
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 101,
+    "richgo_vs_est_pct": -1.0,
     "flags": []
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
@@ -70818,22 +71420,21 @@
      "6m_pct": 2.3,
      "12m_pct": 5.7
     },
-    "est_eok": 1.77,
+    "est_eok": 1.93,
     "range_eok": [
-     1.74,
+     1.77,
      2.08
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
-    "spread_pct": 19.5,
-    "low_vs_est_pct": 34,
-    "richgo_vs_est_pct": -1.0,
+    "spread_pct": 17.5,
+    "low_vs_est_pct": 31,
+    "richgo_vs_est_pct": -2.0,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +19%"
+     "주변 단지 시세가 이 단지보다 +18%"
     ],
     "nearby": {
      "eok": 2.08,
@@ -70851,7 +71452,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 18.5
+    "nearby_vs_own_pct": 17.5
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -73046,22 +73647,21 @@
      "6m_pct": 2.7,
      "12m_pct": 11.2
     },
-    "est_eok": 1.2,
+    "est_eok": 1.02,
     "range_eok": [
      0.84,
      1.21
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
     "spread_pct": 44.0,
-    "low_vs_est_pct": 87,
-    "richgo_vs_est_pct": -0.4,
+    "low_vs_est_pct": 102,
+    "richgo_vs_est_pct": -0.8,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -30%"
+     "주변 단지 시세가 이 단지보다 -31%"
     ],
     "nearby": {
      "eok": 0.84,
@@ -73083,7 +73683,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -30.3
+    "nearby_vs_own_pct": -30.6
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -77415,6 +78015,251 @@
     "monthly_rent_manwon": 134,
     "months": 144,
     "years": 12.0,
+    "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
+   }
+  },
+  "2025타경455[1]": {
+   "key": "2025타경455[1]",
+   "category": "오피스텔",
+   "auction_id": "C83AOESM",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 방이동 34 집앤사잠실프리미어  12층1202호",
+   "appr_manwon": 68300,
+   "low_manwon": 54640,
+   "fails": 1,
+   "bidding_date": "2026-11-16",
+   "area": 38.9,
+   "danji_id": "a4FZMGN",
+   "danji_name": "집앤사잠실프리미어",
+   "court": "서울동부지방법원",
+   "station": {
+    "name": "잠실",
+    "distance_m": 348,
+    "walk_min": 6
+   },
+   "name": "집앤사잠실프리미어",
+   "case": "2025타경455",
+   "keyword": "토지거래허가구역",
+   "pyeong": "19",
+   "appr_eok": 6.83,
+   "low_eok": 5.464,
+   "richgo_sise_eok": 6.333,
+   "appr_vs_sise": 1.078,
+   "sise": {
+    "richgo_eok": 6.33,
+    "richgo_source": "OFFER",
+    "offer": {
+     "min_eok": 6.0,
+     "max_eok": 7.0,
+     "count": null,
+     "rep_eok": 6.33
+    },
+    "trend": {
+     "3m_pct": 0.8,
+     "6m_pct": 2.5,
+     "12m_pct": 8.2
+    },
+    "nearby": {
+     "eok": 2.17,
+     "n_danji": 3,
+     "basis": "같은 동 오피스텔 · 전용 ±30% · 12개월 실거래",
+     "per_m2_manwon": 558,
+     "detail": [
+      {
+       "name": "청호",
+       "per_m2": 558
+      },
+      {
+       "name": "피스티",
+       "per_m2": 1513
+      },
+      {
+       "name": "쌩모리빌",
+       "per_m2": 540
+      }
+     ]
+    },
+    "est_eok": 2.17,
+    "range_eok": [
+     2.17,
+     2.17
+    ],
+    "used": [
+     "주변"
+    ],
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 252,
+    "flags": []
+   },
+   "model": "오피스텔 랜덤포레스트+부스팅",
+   "bid_by_prob_manwon": {
+    "40%": 55701,
+    "45%": 56236,
+    "50%": 56753,
+    "55%": 57288,
+    "60%": 57875
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.57,
+    "45%": 5.62,
+    "50%": 5.68,
+    "55%": 5.73,
+    "60%": 5.79
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 55000,
+     "bid_eok": 5.5,
+     "prob": 34
+    },
+    {
+     "bid_manwon": 55500,
+     "bid_eok": 5.55,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 56000,
+     "bid_eok": 5.6,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 56500,
+     "bid_eok": 5.65,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 57000,
+     "bid_eok": 5.7,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 57500,
+     "bid_eok": 5.75,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 58000,
+     "bid_eok": 5.8,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 58500,
+     "bid_eok": 5.85,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 59000,
+     "bid_eok": 5.9,
+     "prob": 68
+    },
+    {
+     "bid_manwon": 59500,
+     "bid_eok": 5.95,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 60000,
+     "bid_eok": 6.0,
+     "prob": 75
+    }
+   ],
+   "p50_ensemble_manwon": 56753,
+   "p50_ensemble_eok": 5.68,
+   "income": {
+    "jeonse_manwon": 45000,
+    "jeonse_ratio": 0.711,
+    "est_monthly_rent_manwon": 222,
+    "deposit_assumed_manwon": 1000,
+    "rent_conversion_rate": 0.0606,
+    "rent_basis": "해당 평형 전세 시세",
+    "gross_yield_pct_at_p50": 4.7
+   },
+   "fail": {
+    "prob_pct": 29,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 47.4% · 예측 정확도 75.5%"
+   },
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 5.53,
+      "45%": 5.58,
+      "50%": 5.63,
+      "55%": 5.68,
+      "60%": 5.72
+     },
+     "2명": {
+      "40%": 5.6,
+      "45%": 5.66,
+      "50%": 5.71,
+      "55%": 5.79,
+      "60%": 5.83
+     },
+     "3명": {
+      "40%": 5.64,
+      "45%": 5.68,
+      "50%": 5.7,
+      "55%": 5.76,
+      "60%": 5.79
+     },
+     "5명": {
+      "40%": 5.67,
+      "45%": 5.73,
+      "50%": 5.77,
+      "55%": 5.83,
+      "60%": 5.91
+     },
+     "8명 이상": {
+      "40%": 5.8,
+      "45%": 5.82,
+      "50%": 5.85,
+      "55%": 5.94,
+      "60%": 5.98
+     }
+    },
+    "price_eok": {
+     "1명": 5.63,
+     "2명": 5.71,
+     "3명": 5.7,
+     "5명": 5.77,
+     "8명 이상": 5.85
+    },
+    "expected_bidders": 1,
+    "expected_range": [
+     1,
+     2
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
+   "warnings": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2023-04-06"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   },
+   "safety": {
+    "grade": "보통",
+    "reasons": [
+     "리치고 기준 권리 문제 없음 · 법원 명세서 미확인"
+    ]
+   },
+   "payback": {
+    "price_manwon": 56753,
+    "monthly_rent_manwon": 222,
+    "months": 256,
+    "years": 21.3,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    }
   },
@@ -82762,23 +83607,22 @@
      "6m_pct": 4.9,
      "12m_pct": 14.4
     },
-    "est_eok": 3.19,
+    "est_eok": 2.79,
     "range_eok": [
      2.09,
      3.48
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
     "spread_pct": 66.5,
-    "low_vs_est_pct": 100,
-    "richgo_vs_est_pct": -4.4,
+    "low_vs_est_pct": 115,
+    "richgo_vs_est_pct": -8.4,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -37%"
+     "주변 단지 시세가 이 단지보다 -40%"
     ],
     "nearby": {
      "eok": 2.09,
@@ -82796,7 +83640,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": -37.3
+    "nearby_vs_own_pct": -39.9
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -89590,18 +90434,17 @@
      "6m_pct": 4.9,
      "12m_pct": 14.4
     },
-    "est_eok": 1.5,
+    "est_eok": 1.56,
     "range_eok": [
-     1.45,
+     1.56,
      1.56
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 7.8,
-    "low_vs_est_pct": 31,
-    "richgo_vs_est_pct": -3.7,
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 30,
+    "richgo_vs_est_pct": -7.2,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)"
     ]
@@ -90213,18 +91056,17 @@
      "6m_pct": 4.9,
      "12m_pct": 14.4
     },
-    "est_eok": 1.5,
+    "est_eok": 1.56,
     "range_eok": [
-     1.45,
+     1.56,
      1.56
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 7.8,
-    "low_vs_est_pct": 30,
-    "richgo_vs_est_pct": -3.7,
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 29,
+    "richgo_vs_est_pct": -7.2,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)"
     ]
@@ -93067,18 +93909,17 @@
      "6m_pct": 4.9,
      "12m_pct": 14.4
     },
-    "est_eok": 1.41,
+    "est_eok": 1.47,
     "range_eok": [
-     1.35,
+     1.47,
      1.47
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 9.2,
-    "low_vs_est_pct": 78,
-    "richgo_vs_est_pct": -4.4,
+    "spread_pct": 0.0,
+    "low_vs_est_pct": 75,
+    "richgo_vs_est_pct": -8.4,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)"
     ]
@@ -98073,16 +98914,15 @@
     },
     "est_eok": 2.81,
     "range_eok": [
-     2.8,
+     2.81,
      2.81
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
-    "spread_pct": 0.4,
+    "spread_pct": 0.0,
     "low_vs_est_pct": 67,
-    "richgo_vs_est_pct": -0.2,
+    "richgo_vs_est_pct": -0.4,
     "flags": []
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
@@ -99995,23 +100835,22 @@
      "6m_pct": 6.3,
      "12m_pct": 11.6
     },
-    "est_eok": 1.21,
+    "est_eok": 1.71,
     "range_eok": [
-     1.14,
+     1.21,
      2.2
     ],
     "used": [
-     "리치고",
      "실거래",
      "주변"
     ],
-    "spread_pct": 93.0,
-    "low_vs_est_pct": 112,
-    "richgo_vs_est_pct": -3.0,
+    "spread_pct": 81.8,
+    "low_vs_est_pct": 80,
+    "richgo_vs_est_pct": -5.9,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +87%"
+     "주변 단지 시세가 이 단지보다 +82%"
     ],
     "nearby": {
      "eok": 2.2,
@@ -100029,7 +100868,7 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 87.2
+    "nearby_vs_own_pct": 81.8
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
@@ -102979,225 +103818,6 @@
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    }
   },
-  "2026타경100871[1]": {
-   "key": "2026타경100871[1]",
-   "category": "오피스텔",
-   "auction_id": "C18SYKAD",
-   "region": "서울 중구",
-   "address": "서울특별시 중구 필동1가 3-5 브릴란테남산  4층402호",
-   "appr_manwon": 51800,
-   "low_manwon": 51800,
-   "fails": 0,
-   "bidding_date": "2026-11-10",
-   "area": 33.16,
-   "danji_id": "a1IEKmn",
-   "danji_name": "브릴란테남산",
-   "court": "서울중앙지방법원",
-   "station": {
-    "name": "충무로",
-    "distance_m": 227,
-    "walk_min": 4
-   },
-   "name": "브릴란테남산",
-   "case": "2026타경100871",
-   "keyword": "토지거래허가구역",
-   "pyeong": "17",
-   "appr_eok": 5.18,
-   "low_eok": 5.18,
-   "richgo_sise_eok": 5.471,
-   "appr_vs_sise": 0.947,
-   "sise": {
-    "richgo_eok": 5.47,
-    "richgo_source": "OFFER",
-    "offer": {
-     "min_eok": 4.8,
-     "max_eok": 6.5,
-     "count": null,
-     "rep_eok": 5.47
-    },
-    "trend": {
-     "3m_pct": 1.7,
-     "6m_pct": 6.9,
-     "12m_pct": 18.9
-    }
-   },
-   "model": "오피스텔 랜덤포레스트+부스팅",
-   "bid_by_prob_manwon": {
-    "40%": 53798,
-    "45%": 54314,
-    "50%": 54814,
-    "55%": 55331,
-    "60%": 55897
-   },
-   "bid_by_prob_eok": {
-    "40%": 5.38,
-    "45%": 5.43,
-    "50%": 5.48,
-    "55%": 5.53,
-    "60%": 5.59
-   },
-   "prob_by_bid_5m": [
-    {
-     "bid_manwon": 52500,
-     "bid_eok": 5.25,
-     "prob": 29
-    },
-    {
-     "bid_manwon": 53000,
-     "bid_eok": 5.3,
-     "prob": 33
-    },
-    {
-     "bid_manwon": 53500,
-     "bid_eok": 5.35,
-     "prob": 37
-    },
-    {
-     "bid_manwon": 54000,
-     "bid_eok": 5.4,
-     "prob": 42
-    },
-    {
-     "bid_manwon": 54500,
-     "bid_eok": 5.45,
-     "prob": 47
-    },
-    {
-     "bid_manwon": 55000,
-     "bid_eok": 5.5,
-     "prob": 52
-    },
-    {
-     "bid_manwon": 55500,
-     "bid_eok": 5.55,
-     "prob": 57
-    },
-    {
-     "bid_manwon": 56000,
-     "bid_eok": 5.6,
-     "prob": 61
-    },
-    {
-     "bid_manwon": 56500,
-     "bid_eok": 5.65,
-     "prob": 65
-    },
-    {
-     "bid_manwon": 57000,
-     "bid_eok": 5.7,
-     "prob": 68
-    },
-    {
-     "bid_manwon": 57500,
-     "bid_eok": 5.75,
-     "prob": 72
-    },
-    {
-     "bid_manwon": 58000,
-     "bid_eok": 5.8,
-     "prob": 75
-    }
-   ],
-   "p50_ensemble_manwon": 54814,
-   "p50_ensemble_eok": 5.48,
-   "income": {
-    "jeonse_manwon": 47000,
-    "jeonse_ratio": 0.859,
-    "est_monthly_rent_manwon": 232,
-    "deposit_assumed_manwon": 1000,
-    "rent_conversion_rate": 0.0606,
-    "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 5.09
-   },
-   "fail": {
-    "prob_pct": 98,
-    "level": "높음",
-    "note": "백테스트: 이 회차 유형 평균 유찰률 98.8% · 예측 정확도 98.8%"
-   },
-   "by_bidders": {
-    "bid_by_prob_eok": {
-     "1명": {
-      "40%": 5.31,
-      "45%": 5.35,
-      "50%": 5.41,
-      "55%": 5.45,
-      "60%": 5.49
-     },
-     "2명": {
-      "40%": 5.32,
-      "45%": 5.38,
-      "50%": 5.43,
-      "55%": 5.5,
-      "60%": 5.54
-     },
-     "3명": {
-      "40%": 5.36,
-      "45%": 5.4,
-      "50%": 5.42,
-      "55%": 5.48,
-      "60%": 5.51
-     },
-     "5명": {
-      "40%": 5.39,
-      "45%": 5.45,
-      "50%": 5.48,
-      "55%": 5.54,
-      "60%": 5.62
-     },
-     "8명 이상": {
-      "40%": 5.52,
-      "45%": 5.53,
-      "50%": 5.56,
-      "55%": 5.65,
-      "60%": 5.69
-     }
-    },
-    "price_eok": {
-     "1명": 5.41,
-     "2명": 5.43,
-     "3명": 5.42,
-     "5명": 5.48,
-     "8명 이상": 5.56
-    },
-    "expected_bidders": 1,
-    "expected_range": [
-     1,
-     2
-    ],
-    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
-    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
-   },
-   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
-   "warnings": [],
-   "risk": {
-    "keywords": [
-     "토지거래허가구역"
-    ],
-    "summary": {
-     "registry": true,
-     "tenant_risk": false,
-     "right_risk": false,
-     "base_right": "근저당권",
-     "base_date": "2023-10-04"
-    },
-    "resale": false,
-    "decision": "show",
-    "reason": ""
-   },
-   "safety": {
-    "grade": "보통",
-    "reasons": [
-     "리치고 기준 권리 문제 없음 · 법원 명세서 미확인"
-    ]
-   },
-   "payback": {
-    "price_manwon": 54814,
-    "monthly_rent_manwon": 232,
-    "months": 236,
-    "years": 19.7,
-    "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
-   }
-  },
   "2024타경125893[1]": {
    "key": "2024타경125893[1]",
    "category": "오피스텔",
@@ -103648,7 +104268,6 @@
      2.17
     ],
     "used": [
-     "리치고",
      "실거래"
     ],
     "spread_pct": 0.0,
@@ -105996,19 +106615,6 @@
    }
   },
   {
-   "key": "2026타경50243[1]",
-   "auction_id": "C65XPVPZ",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호동 28 용명브릿지아파트 101동 6층606호",
-   "appr_manwon": 72300,
-   "low_manwon": 72300,
-   "fails": 0,
-   "bidding_date": "2026-11-16",
-   "area": 90.01,
-   "danji_id": "a6qvRBn",
-   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
-  },
-  {
    "key": "2025타경52331[1]",
    "auction_id": "C67BRHQT",
    "region": "서울 강동구",
@@ -106657,19 +107263,6 @@
    }
   },
   {
-   "key": "2026타경50031[1]",
-   "auction_id": "C59RTRUR",
-   "region": "경기 하남시",
-   "address": "경기도 하남시 망월동 1170 미사강변효성해링턴플레이스엔에이치에프 2901동 10층 1001호",
-   "appr_manwon": 105000,
-   "low_manwon": 105000,
-   "fails": 0,
-   "bidding_date": "2026-11-16",
-   "area": 84.92,
-   "danji_id": "a2jAdUo",
-   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
-  },
-  {
    "key": "2026타경234[1]",
    "auction_id": "C72XRJJQ",
    "region": "경기 하남시",
@@ -106697,19 +107290,6 @@
    }
   },
   {
-   "key": "2025타경103145[1]",
-   "category": "오피스텔",
-   "auction_id": "C16PUIQM",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 역삼동 825-24 강남역효성해링턴타워더퍼스트  4층406호",
-   "appr_manwon": 26200,
-   "low_manwon": 26200,
-   "fails": 0,
-   "bidding_date": "2026-11-12",
-   "area": 24.77,
-   "reason": "예측 실패: JSONDecodeError: Expecting value: line 1 column 245685 (char 245684)"
-  },
-  {
    "key": "2026타경59[1]",
    "category": "오피스텔",
    "auction_id": "C28WNTRT",
@@ -106733,20 +107313,7 @@
    "fails": 0,
    "bidding_date": "2026-11-18",
    "area": 30.22,
-   "reason": "단지 못 찾음 (확인 12곳)"
-  },
-  {
-   "key": "2026타경101115[1]",
-   "category": "오피스텔",
-   "auction_id": "C35RNMSY",
-   "region": "서울 강남구",
-   "address": "서울특별시 강남구 대치동 622-1 대치클래시아  10층1003호",
-   "appr_manwon": 67300,
-   "low_manwon": 67300,
-   "fails": 0,
-   "bidding_date": "2026-11-18",
-   "area": 30.22,
-   "reason": "단지 못 찾음 (확인 12곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경103304[1]",
@@ -107136,7 +107703,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 43.84,
-   "reason": "단지 못 찾음 (확인 14곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경51821[1]",
@@ -107475,19 +108042,6 @@
    "bidding_date": "2026-11-06",
    "area": 12.47,
    "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
-  },
-  {
-   "key": "2025타경10161[1]",
-   "category": "오피스텔",
-   "auction_id": "C54DWBJN",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 화곡동 926-3 메종드로제  제2층 제203호",
-   "appr_manwon": 32800,
-   "low_manwon": 4402,
-   "fails": 9,
-   "bidding_date": "2026-11-10",
-   "area": 51.55,
-   "reason": "예측 실패: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
   },
   {
    "key": "2026타경4195[1]",
@@ -108046,7 +108600,7 @@
    "fails": 0,
    "bidding_date": "2026-11-17",
    "area": null,
-   "reason": "단지 못 찾음 (확인 17곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2026타경4937[1]",
@@ -108137,7 +108691,7 @@
    "fails": 0,
    "bidding_date": "2026-11-17",
    "area": 20.99,
-   "reason": "단지 못 찾음 (확인 11곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2026타경4368[1]",
@@ -108813,7 +109367,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 30.52,
-   "reason": "단지 못 찾음 (확인 11곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경9379[1]",
@@ -108826,7 +109380,7 @@
    "fails": 1,
    "bidding_date": "",
    "area": 26.57,
-   "reason": "단지 못 찾음 (확인 18곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경8564[1]",
@@ -108839,7 +109393,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 23.14,
-   "reason": "단지 못 찾음 (확인 18곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경13373[1]",
@@ -108852,7 +109406,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 26.57,
-   "reason": "단지 못 찾음 (확인 18곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경9177[1]",
@@ -108865,7 +109419,7 @@
    "fails": 1,
    "bidding_date": "",
    "area": 23.65,
-   "reason": "단지 못 찾음 (확인 21곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2024타경117959[7]",
@@ -108917,7 +109471,7 @@
    "fails": 1,
    "bidding_date": "",
    "area": 28.08,
-   "reason": "단지 못 찾음 (확인 18곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경9631[1]",
@@ -108930,7 +109484,7 @@
    "fails": 1,
    "bidding_date": "",
    "area": 29.48,
-   "reason": "단지 못 찾음 (확인 13곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경13267[1]",
@@ -108943,7 +109497,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 27.41,
-   "reason": "단지 못 찾음 (확인 19곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2024타경135100[1]",
@@ -108956,7 +109510,7 @@
    "fails": 3,
    "bidding_date": "",
    "area": 28.84,
-   "reason": "단지 못 찾음 (확인 18곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경9291[1]",
@@ -108969,7 +109523,7 @@
    "fails": 1,
    "bidding_date": "",
    "area": 25.46,
-   "reason": "단지 못 찾음 (확인 21곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경11672[1]",
@@ -108995,7 +109549,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 42.44,
-   "reason": "단지 못 찾음 (확인 18곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경13694[1]",
@@ -109008,7 +109562,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 26.94,
-   "reason": "단지 못 찾음 (확인 21곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경13219[1]",
@@ -109021,7 +109575,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 41.87,
-   "reason": "단지 못 찾음 (확인 18곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경8657[1]",
@@ -109034,7 +109588,7 @@
    "fails": 1,
    "bidding_date": "",
    "area": 51.89,
-   "reason": "단지 못 찾음 (확인 21곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2026타경104[1]",
@@ -109346,7 +109900,7 @@
    "fails": 2,
    "bidding_date": "2026-11-16",
    "area": 23.73,
-   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+   "reason": "예측 실패: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
   },
   {
    "key": "2024타경461[3]",
@@ -109737,6 +110291,19 @@
    "bidding_date": "2026-11-17",
    "area": 45.67,
    "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  },
+  {
+   "key": "2026타경3640[1]",
+   "category": "오피스텔",
+   "auction_id": "C65ZTTLF",
+   "region": "서울 구로구",
+   "address": "서울특별시 구로구 구로동 104-8 비즈트위트레드  제18층 제1804호",
+   "appr_manwon": 19000,
+   "low_manwon": 19000,
+   "fails": 0,
+   "bidding_date": "2026-11-18",
+   "area": 28.22,
+   "reason": "예측 실패: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
   },
   {
    "key": "2026타경5140[1]",
@@ -110347,7 +110914,7 @@
    "fails": 0,
    "bidding_date": "2026-11-17",
    "area": 21.93,
-   "reason": "단지 못 찾음 (확인 13곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2026타경3361[1]",
@@ -111156,19 +111723,6 @@
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
-   "key": "2025타경103851[2]",
-   "category": "오피스텔",
-   "auction_id": "C55LSWGA",
-   "region": "서울 동작구",
-   "address": "서울특별시 동작구 상도동 324-41  2층202호",
-   "appr_manwon": 25000,
-   "low_manwon": 20000,
-   "fails": 1,
-   "bidding_date": "",
-   "area": 43.53,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
    "key": "2025타경103851[1]",
    "category": "오피스텔",
    "auction_id": "C56ROYBT",
@@ -111349,19 +111903,6 @@
    "bidding_date": "2026-11-16",
    "area": 69.53,
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경455[1]",
-   "category": "오피스텔",
-   "auction_id": "C83AOESM",
-   "region": "서울 송파구",
-   "address": "서울특별시 송파구 방이동 34 집앤사잠실프리미어  12층1202호",
-   "appr_manwon": 68300,
-   "low_manwon": 54640,
-   "fails": 1,
-   "bidding_date": "2026-11-16",
-   "area": 38.9,
-   "reason": "예측 실패: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
   },
   {
    "key": "2026타경50113[1]",
@@ -111972,7 +112513,7 @@
    "fails": 2,
    "bidding_date": "",
    "area": 21.76,
-   "reason": "단지 못 찾음 (확인 12곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경13717[1]",
@@ -112313,29 +112854,16 @@
    "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
   },
   {
-   "key": "2025타경51391[1]",
+   "key": "2025타경51944[1]",
    "category": "오피스텔",
-   "auction_id": "C80ONUBT",
+   "auction_id": "C75OLYIM",
    "region": "서울 은평구",
-   "address": "서울특별시 은평구 응암동 84-4 에스엠벨리체 비동 6층602호",
-   "appr_manwon": 27900,
-   "low_manwon": 17856,
-   "fails": 6,
-   "bidding_date": "",
-   "area": 41.04,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경51693[1]",
-   "category": "오피스텔",
-   "auction_id": "C86XDEWF",
-   "region": "서울 은평구",
-   "address": "서울특별시 은평구 녹번동 80-7 에스엠벨리체  9층903호",
-   "appr_manwon": 28700,
-   "low_manwon": 18368,
+   "address": "서울특별시 은평구 응암동 590-18 양지스카이뷰  6층601호",
+   "appr_manwon": 25500,
+   "low_manwon": 13056,
    "fails": 4,
    "bidding_date": "",
-   "area": 39.22,
+   "area": null,
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
@@ -112469,6 +112997,19 @@
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
+   "key": "2026타경100871[1]",
+   "category": "오피스텔",
+   "auction_id": "C18SYKAD",
+   "region": "서울 중구",
+   "address": "서울특별시 중구 필동1가 3-5 브릴란테남산  4층402호",
+   "appr_manwon": 51800,
+   "low_manwon": 51800,
+   "fails": 0,
+   "bidding_date": "2026-11-10",
+   "area": 33.16,
+   "reason": "예측 실패: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
    "key": "2025타경104420[1]",
    "category": "오피스텔",
    "auction_id": "C39JIKAT",
@@ -112479,7 +113020,7 @@
    "fails": 0,
    "bidding_date": "2026-11-18",
    "area": 22.31,
-   "reason": "단지 못 찾음 (확인 10곳)"
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2025타경104492[1]",
@@ -119314,7 +119855,7 @@
     "bidders": 1,
     "second_manwon": null,
     "diff_pct": 0.0,
-    "band": "60% 초과"
+    "band": "최저가 단일"
    },
    {
     "key": "2024타경62768[1]",
