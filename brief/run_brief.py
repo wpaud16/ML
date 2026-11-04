@@ -7,7 +7,7 @@ import quote
 import schedule_doc
 import auction_mail
 import market
-import gemini
+import claude_summary
 
 TO = os.environ.get('BRIEF_TO', 'wpaud16@naver.com')
 TEST = os.environ.get('TEST_MODE', '1') == '1'
@@ -38,12 +38,8 @@ def main():
         print('market errors:', errs)
         if all(v is None for v in data.values()):
             fails.append('증시 숫자')
-        ai = None
-        try:
-            nums = market.render(data, errs)[1]
-            ai = gemini.market_summary(today.isoformat(), nums)
-        except Exception:
-            traceback.print_exc(); fails.append('증시 해설(Gemini)')
+        # 해설은 실패해도 빈칸 (다른 섹션·실패 표시에 영향 없음)
+        ai = claude_summary.market_summary(today.isoformat(), market.render(data, errs)[1])
         h, t = market.render(data, errs, ai); H.append(h); T.append(t)
     except Exception:
         traceback.print_exc(); fails.append('증시 숫자')
