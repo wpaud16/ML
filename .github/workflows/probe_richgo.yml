@@ -1,0 +1,25 @@
+name: probe richgo (수동, 페이지 구조 탐색)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe
+        working-directory: auction_model/dev
+        run: python3 probe_richgo.py a1ZDEBj
+      - name: Commit
+        run: |
+          git config user.name "auction-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add auction_model/dev/probe
+          git diff --cached --quiet && exit 0
+          git commit -m "probe: 리치고 페이지 구조 샘플"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep 5; done
