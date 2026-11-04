@@ -155,8 +155,18 @@ def auction_detail(aid):
     return next_data(raw).get('auctionPageData') or None
 
 
+def sold_already(pg):
+    """상세 페이지에 낙찰가가 있으면 이미 매각된 물건 (재매각 표시 물건은 제외)."""
+    if not pg or not pg.get('sellingPrice'):
+        return False
+    kw = f"{pg.get('keyword') or ''} {pg.get('historyKeyword') or ''}"
+    return '재매각' not in kw
+
+
 def band_of(actual, prices):
     """실제 낙찰가가 앙상블 확률 가격표의 어느 구간인지."""
+    if prices['40%'] == prices['60%']:
+        return '최저가 단일'   # 확률표가 최저가 하나로 모인 경우 (예상 1명)
     lv = [(40, prices['40%']), (45, prices['45%']), (50, prices['50%']), (55, prices['55%']), (60, prices['60%'])]
     if actual < lv[0][1]: return '40% 미만'
     if actual >= lv[-1][1]: return '60% 초과'
@@ -332,6 +342,8 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
             if st_m is None or st_m > OT_STATION_M:
                 return 'skip', dict(base, danji_id=dj, reason=f'역세권아님({st_name or "역 정보 없음"} {st_m}m)')
             pg = auction_detail(it['id']) or {}
+            if sold_already(pg):
+                return 'skip', dict(base, danji_id=dj, reason='매각완료')
             p = om.predict_dict(dj, it['id'], 0, df=odf, cfg=ocfg, models=models)
             rk = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
             if rk['decision'] == 'check':
@@ -379,16 +391,18 @@ def main():
                 skipped.append(dict(base, reason='면적미달')); continue
             if it['lowestSellingPrice'] > MAX_LOW:
                 skipped.append(dict(base, reason='예산초과')); continue
+            try:
+                pg = auction_detail(it['id']) or {}
+            except Exception:
+                pg = {}
+            if sold_already(pg):
+                skipped.append(dict(base, reason='매각완료')); continue
             dj, how = find_danji(it, cache)
             if not dj:
                 failed.append(dict(base, reason=how)); continue
             try:
                 p = ap.predict_dict(dj, it['id'], df=df, cfg=cfg)
                 items[key] = dict(base, danji_id=dj, danji_name=p.get('name'), **{k: v for k, v in p.items() if k not in ('address', 'area')})
-                try:
-                    pg = auction_detail(it['id']) or {}
-                except Exception:
-                    pg = {}
                 items[key]['risk'] = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
                 items[key]['court'] = pg.get('caseSite')
                 items[key]['category'] = '아파트'

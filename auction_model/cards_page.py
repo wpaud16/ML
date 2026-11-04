@@ -211,7 +211,7 @@ def scorecard(rows, cat):
     if sold:
         err = sum(abs(r['diff_pct']) for r in sold) / len(sold)
         w5 = sum(1 for r in sold if abs(r['diff_pct']) <= 5)
-        mid = sum(1 for r in sold if (r.get('band') or '') not in ('', '60% 초과') and not (r.get('band') or '').startswith('40% 미만'))
+        mid = sum(1 for r in sold if (r.get('band') or '') not in ('', '60% 초과', '최저가 단일') and not (r.get('band') or '').startswith('40% 미만'))
         out.append(f'<div class="g s">낙찰 {len(sold)}건 · 평균 오차 {err:.1f}% · ±5% 안 {w5}건 · 40~60% 구간 안 {mid}건</div>')
     t = ['<table class="sc"><col style="width:28%"><col style="width:11%"><col><col><col><col style="width:14%">',
          '<tr><th>물건</th><th>기일</th><th>예상(50%)</th><th>실제</th><th>차이</th><th>인원<br><span class="sub">실제/예상</span></th></tr>']
@@ -220,6 +220,8 @@ def scorecard(rows, cat):
         d = datetime.strptime(r['bidding_date'], '%Y-%m-%d'); dd = f'{d.month}/{d.day}'
         if r.get('status') == '매각' and r.get('actual_manwon'):
             act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>'; df = r.get('diff_pct') or 0
+            bp = r.get('bid_by_prob_manwon') or {}
+            if bp.get('40%') == bp.get('60%'): r = dict(r, band='최저가 단일')
             diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span><br><span class="sub">{E(r.get("band") or "")}</span>'
         else:
             act = f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'; diff = '-'
