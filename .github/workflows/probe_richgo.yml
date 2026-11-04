@@ -2,6 +2,11 @@ name: probe richgo (수동, 페이지 구조 탐색)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'auction_model/dev/probe_richgo.py'
+      - '.github/workflows/probe_richgo.yml'
 
 permissions:
   contents: write
