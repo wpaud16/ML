@@ -87,6 +87,7 @@
 - 할 일: 통합 실행 파일(예: `local_runner/run_all.py` + `install.ps1`) — 단계별(collect/predict/outfit/brief) 실행, 로그 파일, 실패해도 다음 단계 진행,
   작업 스케줄러 3개(03:00/06:00/08:00, 절전 깨우기·놓친 실행 즉시·로그온 무관), 비밀값은 노트북 로컬 .env(저장소에 올리지 않음, GOOGLE_* 3개·MOLIT_API_KEY),
   GitHub 예약은 예비로 시각 뒤로(경매 05:00, 날씨 07:00, 브리핑 09:00 근처) + 기존 '이미 보냄/결과 있음' 건너뛰기 유지.
+  증시 해설: 사용자 결정 B — 노트북 Claude Code CLI(`claude -p`, 구독 사용량)로, 여유 있으면 실행·한도면 생략. `brief/claude_summary.py` 에 구현됨 → 노트북 .env 에 BRIEF_SUMMARY=cli, claude 로그인 확인.
   비밀값은 GitHub 에서 다시 볼 수 없음 → 구글 OAuth 재발급(google_api.py 방식, 이때 drive 쓰기 권한도 추가하면 Steward 자동 업로드 가능), 국토부 키는 공공데이터포털 마이페이지에서 확인.
 
 ## 7. 사용자 선호

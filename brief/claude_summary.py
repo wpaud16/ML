@@ -1,7 +1,8 @@
-"""증시 해설 — Claude API + 웹 검색 (환경변수 ANTHROPIC_API_KEY 가 있을 때만).
-실패(키 없음·크레딧 소진·한도 초과·응답 이상)하면 None 을 돌려주고, 메일에서는 해설 칸만 비운다.
+"""증시 해설 — 두 방법 중 하나 (없거나 실패하면 None → 메일에서 해설 칸만 비움).
+1) 노트북의 Claude Code CLI (`claude -p`, 구독 사용량) — 환경변수 BRIEF_SUMMARY=cli 일 때 (2026-11-05 사용자 결정: 여유 있으면 실행, 한도 차면 생략)
+2) Claude API + 웹 검색 — ANTHROPIC_API_KEY 가 있을 때
 """
-import json, os, re
+import json, os, re, shutil, subprocess
 
 MODEL = os.environ.get('BRIEF_CLAUDE_MODEL', 'claude-opus-5-5')
 
@@ -21,7 +22,30 @@ PROMPT = """오늘은 {today} (한국시간 아침)입니다. 아래 숫자는 �
 up/down 은 각각 2~4개, week 는 3~6개, themes 는 2~3개. 휴장이었다면 reasons 첫 줄에 휴장이라고 쓰고 직전 거래일 기준으로 정리."""
 
 
+def _parse(txt):
+    m = re.search(r'\{.*\}', txt or '', re.S)
+    return json.loads(m.group()) if m else None
+
+
+def cli_summary(today, numbers_text):
+    """노트북 Claude Code CLI 로 해설. 사용량 한도·시간 초과·오류면 None (해설 생략)."""
+    exe = shutil.which('claude')
+    if not exe:
+        print('claude cli: 없음 → 해설 생략'); return None
+    try:
+        r = subprocess.run([exe, '-p', PROMPT.format(today=today, numbers=numbers_text), '--output-format', 'text',
+                            '--allowedTools', 'WebSearch,WebFetch'], capture_output=True, text=True, encoding='utf-8', timeout=900)
+        out = _parse(r.stdout)
+        if r.returncode != 0 or not out:
+            print('claude cli: 실패/한도 →', r.returncode, (r.stderr or r.stdout)[-200:]); return None
+        print('claude cli ok'); return out
+    except Exception as e:
+        print('claude cli: 오류 →', type(e).__name__, str(e)[:200]); return None
+
+
 def market_summary(today, numbers_text):
+    if os.environ.get('BRIEF_SUMMARY', '').strip().lower() == 'cli':
+        return cli_summary(today, numbers_text)
     if not os.environ.get('ANTHROPIC_API_KEY', '').strip():
         print('claude: ANTHROPIC_API_KEY 없음 → 해설 생략')
         return None
