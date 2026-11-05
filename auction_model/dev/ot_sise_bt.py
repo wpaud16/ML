@@ -118,6 +118,27 @@ def trade_sise(row, g, ch, lag_days=30, months=12, k=3, tol=0.15):
     return float(np.median(vals)), len(w), float((T - w.date.max()).days / 30.4)
 
 
+def trade_m(row, g, ch, lag_days=30, months=12, tol=0.15):
+    """아파트 M 과 같은 방식 (2026-11-05): 12개월 전용 ±15% 거래 ㎡당 × 면적, 단지 지수로 오늘 값 보정, 반감기 3개월 가중 평균.
+    반환 (가중 평균, neff, 분산)."""
+    if g is None: return np.nan, 0.0, np.nan
+    T = pd.Timestamp(row.date); cut = T - pd.Timedelta(days=lag_days)
+    w = g[(g.date < cut) & (g.date >= T - pd.DateOffset(months=months)) & ((g.area / row.area - 1).abs() <= tol)]
+    if not len(w): return np.nan, 0.0, np.nan
+    ms = sorted(ch); m = T.strftime('%Y-%m')
+    def idx(mm):
+        pr = [x for x in ms if x <= mm]
+        return ch[pr[-1]] if pr else None
+    vals, wts = [], []
+    for _, t in w.iterrows():
+        a, b = idx(m), idx(t.date.strftime('%Y-%m'))
+        vals.append(t.price / t.area * row.area * (a / b if a and b else 1.0))
+        wts.append(0.5 ** (((T - t.date).days / 30.4) / 3))
+    vals, wts = np.array(vals), np.array(wts)
+    disp = float(np.std(vals, ddof=1) / np.mean(vals)) if len(vals) >= 3 else 0.1
+    return float(np.sum(vals * wts) / wts.sum()), float(wts.sum()), disp
+
+
 def rolling(df, label, start='2025-02-01'):
     df = df.sort_values('date').reset_index(drop=True)
     df['y'] = np.log(df.sell / df.mkt)
@@ -141,7 +162,8 @@ def main(paths):
     rows = []
     for i, r in base.iterrows():
         s, n, age = trade_sise(r, gm.get(r.danji), (addr.get(r.danji) or {}).get('chart') or {})
-        rows.append(dict(auction_id=r.auction_id, trade_sise=s, trade_n=n, trade_age_m=age))
+        tm, ne, dp = trade_m(r, gm.get(r.danji), (addr.get(r.danji) or {}).get('chart') or {})
+        rows.append(dict(auction_id=r.auction_id, trade_sise=s, trade_n=n, trade_age_m=age, tm=tm, neff=ne, disp=dp))
     ts = pd.DataFrame(rows); ts.to_csv(OUT, index=False)
     b = base.merge(ts, on='auction_id')
     has = b.trade_sise.notna()
@@ -156,6 +178,8 @@ def main(paths):
         'C_평균': np.where(has, (b.trade_sise + b.mkt) / 2, b.mkt),
         'D_리치고70실거래30': np.where(has, 0.3 * b.trade_sise + 0.7 * b.mkt, b.mkt),
     }
+    wm = (b.neff / (b.neff + 2)).clip(upper=0.7).fillna(0) * (1 - (b.disp.fillna(0.1) / 0.2).clip(0, 1) * 0.5)
+    variants['M_아파트방식'] = np.where(b.tm.notna(), wm * b.tm + (1 - wm) * b.mkt, b.mkt)
     res = b[['auction_id', 'date', 'station_m', 'fails']].copy(); res['has'] = has.values
     for k, v in variants.items():
         d = om.enrich(b.assign(mkt=v))
