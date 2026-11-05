@@ -164,7 +164,7 @@ def fit_predict(name, tr, te, T):
 def load_train():
     df = pd.read_csv(os.path.join(HERE, 'auction_train.csv'))
     df['date'] = pd.to_datetime(df.date)
-    df = df.sort_values('date').reset_index(drop=True)
+    df = df.sort_values('date', kind='mergesort').reset_index(drop=True)   # 같은 날짜 행 순서 고정 (2026-11-05)
     df['seoul'] = (df.sd == '서울').astype(int)
     df['y'] = np.log(df.r_sell_mkt)
     return df
