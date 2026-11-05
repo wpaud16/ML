@@ -149,6 +149,7 @@ def finish_apt(new, old):
     n['regulated'] = [ap.regulated_at(t, s, g) for t, s, g in zip(T, n.sd, n.sgg)]
     n['loan_ratio'] = [ap.loan_ratio(t, s, g, m) for t, s, g, m in zip(T, n.sd, n.sgg, n.mkt)]
     comb = pd.concat([old.assign(date=pd.to_datetime(old.date)), n.assign(date=T)], ignore_index=True)
+    comb['seoul'] = (comb.sd == '서울').astype(int)   # 저장 파일엔 seoul 열이 없어 최근 낙찰가율이 자기 값으로 잡히던 버그 (2026-11-05)
     n['heat'] = [ap.recent_heat(comb, s, t) for s, t in zip(n.seoul, T)]
     return n[[c for c in old.columns if c in n.columns]]
 
