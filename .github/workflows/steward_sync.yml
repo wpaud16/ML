@@ -3,15 +3,7 @@ name: steward sync (드라이브 경제/Steward 업로드)
 # 브리핑 시스템 파일·매뉴얼을 구글드라이브 '경제/Steward' 에 올림 (2026-11-05). 매뉴얼·코드가 바뀌면 자동 갱신.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'STEWARD.md'
-      - 'HANDOFF.md'
-      - 'brief/**'
-      - 'outfit/*.py'
-      - 'auction_model/*.py'
-      - '.github/workflows/*.yml'
+  # push 자동 실행은 꺼 둠: 구글 인증이 drive.readonly 라 업로드 403 (2026-11-05). 쓰기 권한 재발급 후 다시 켤 것
 
 permissions:
   contents: write

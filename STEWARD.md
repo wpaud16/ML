@@ -97,7 +97,14 @@
 | 국토부 오류 | 공공데이터포털 활용신청 승인 상태·일일 한도 확인. 실패해도 리치고 시세로 계속 예측 |
 | 코디 링크 404 | GitHub Pages 배포 지연 — 몇 분 뒤 다시 |
 
-## 7. 관련 문서·데이터
+## 7. 코드 받기
+
+- 전체 코드 (zip): https://github.com/wpaud16/ML/archive/refs/heads/main.zip
+- 브리핑 `brief/` · 날씨 `outfit/` · 경매 `auction_model/` · 자동 실행 `.github/workflows/`
+- 드라이브 자동 업로드(`brief/steward_sync.py`, 워크플로 `steward_sync.yml`)는 준비돼 있으나 구글 인증 권한이 드라이브 읽기 전용이라 현재 꺼 둠.
+  켜려면 OAuth 를 드라이브 쓰기 권한으로 다시 발급해 GOOGLE_REFRESH_TOKEN 갱신.
+
+## 8. 관련 문서·데이터
 
 - 할 일 문서 "JM's Schedule": https://docs.google.com/document/d/16r3j5QD_VJZKxL9hOxbv-Aj58jNbp92nCM4szeKrq6Y/edit
 - 오늘의 문장 시트 "JM's 말모음"
