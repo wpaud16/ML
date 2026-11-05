@@ -32,7 +32,7 @@
 ## 1. 매일 자동 실행 (KST)
 | 시각 | 무엇 | 어디서 | 상태 |
 |---|---|---|---|
-| 03:00 | 법원자료 수집(임차인·문건) | 노트북 LAPTOP-M47J0JTR 작업 스케줄러 `AuctionTenants` | 11/4 업로드 누락 원인 미확인 |
+| 03:00 | 법원자료 수집(임차인·문건) | 노트북 LAPTOP-M47J0JTR 작업 스케줄러 `AuctionTenants` | 노트북 꺼지면 수집 안 됨. GitHub 서버(미국)는 법원 사이트 웹방화벽에 차단(11/5 시험) → 노트북 유지, 필요 시 국내 서버 |
 | 21:17·23:17·01:17·03:17 | 경매 예측 배치 → `predictions/latest.json` + 웹페이지 | Actions `auction_predict.yml` (결과 있으면 건너뜀, 코드 push 로도 실행) | 약 95분 |
 | 04:13~07:13 매시 | 날씨·코디 메일 (하루 1통) | Actions `outfit.yml` | Python 전환 완료, Claude 예약 작업 trig_014ofhU8tyCW8NDDpN3Nd2mT 끔 |
 | 04:23~07:23 매시 | [테스트] JM's Schedule (Python, 하루 1통) | Actions `morning_brief.yml` (TEST_MODE=1) | 비교 기간 |
