@@ -132,8 +132,10 @@ def m_sise(sd, sgg, emd, jibun_addr, area, address, richgo_won, today=None, lag_
     if m is None or not len(m):
         out['note'] = '국토부 자료 없음'; return out
     jb = (jibun_addr or '').split()[-1] if jibun_addr else None
-    c = m[(m.umdNm == emd) & (m.jb == jb) & ((m.area - area).abs() <= 1.0)] if jb else m.iloc[:0]
-    top = m[(m.umdNm == emd) & (m.jb == jb)].top.max() if jb else np.nan
+    # 읍·면 지역: 국토부 umdNm = '오남읍 양지리', 리치고 emd = '오남읍' 또는 '양지리' → 띄어쓰기 단위로 비교 (2026-11-05 수정)
+    same = m.umdNm.map(lambda u: u == emd or emd in str(u).split()) if emd else m.umdNm.map(lambda u: False)
+    c = m[same & (m.jb == jb) & ((m.area - area).abs() <= 1.0)] if jb else m.iloc[:0]
+    top = m[same & (m.jb == jb)].top.max() if jb else np.nan
     fb = fbin(floor_of(address), top); tp = FP.get(fb, 1.0)
     rf = richgo_won * tp
     out.update(floor_bin=fb, fprem=tp, richgo_floor=rf, mkt=rf, no_trade=True if jb else None)
