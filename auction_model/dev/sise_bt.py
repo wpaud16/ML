@@ -93,7 +93,12 @@ for i, r in df.iterrows():
             tp = FP.get(fbin(case_floor(i), top), 1.0); out['fprem_case'] = tp; out['fb_case'] = fbin(case_floor(i), top)
             tf = t.assign(adj=t.adj * tp / t.fprem)
             tt = tf[tf.d >= r.date - pd.DateOffset(months=12)]
-            if len(tt): out['tr12f'] = float(tt.adj.median())
+            if len(tt):
+                out['tr12f'] = float(tt.adj.median())
+                # 최근 거래일수록 큰 가중 (반감기 3개월) 가중 평균, 유효 거래 수
+                age = (r.date - tt.d).dt.days.values / 30.4; wt = 0.5 ** (age / 3)
+                out['tr12fw'] = float(np.sum(wt * tt.adj.values) / wt.sum()); out['neff'] = float(wt.sum())
+                out['disp'] = float(tt.adj.std() / tt.adj.mean()) if len(tt) >= 3 else np.nan
             for mo in (3, 6, 12):
                 tt = t[t.d >= r.date - pd.DateOffset(months=mo)]
                 out[f'n{mo}'] = len(tt)
@@ -123,12 +128,20 @@ V['H 층보정 실거래12m(없으면 리치고)'] = S.tr12f.fillna(df.mkt)
 V['I 층보정 실거래40·리치고60'] = 0.4 * S.tr12f.fillna(df.mkt) + 0.6 * df.mkt
 V['J 층보정 실거래50·리치고(층보정)50'] = 0.5 * S.tr12f.fillna(df.mkt * S.fprem_case.fillna(1)) + 0.5 * df.mkt * S.fprem_case.fillna(1)
 V['K 리치고×층보정'] = df.mkt * S.fprem_case.fillna(1)
+RF = df.mkt * S.fprem_case.fillna(1)
+for k in (1, 2, 4):   # 거래 많을수록 실거래 비중↑: w = neff/(neff+k), 최대 0.7
+    w = (S.neff / (S.neff + k)).clip(upper=0.7).fillna(0)
+    V[f'L 최근성가중 실거래 w=n/(n+{k})'] = w * S.tr12fw.fillna(RF) + (1 - w) * RF
+w = (S.neff / (S.neff + 2)).clip(upper=0.7).fillna(0) * (1 - (S.disp.fillna(0.1) / 0.2).clip(0, 1) * 0.5)
+V['M 최근성+분산(들쭉날쭉하면 실거래↓)'] = w * S.tr12fw.fillna(RF) + (1 - w) * RF
 if os.environ.get('ONLY'):
     V = {k: v for k, v in V.items() if k[0] in os.environ['ONLY']}
 
 
-def run(mkt):
+def run(mkt, feat=None):
     d = df.copy(); d['mkt'] = mkt.values
+    if feat is not None:   # 실거래÷시세 비율을 입력으로 (모델이 가중치 학습) — jeonse 자리를 빌리지 않고 py_share 옆에 추가
+        d['trade_rel'] = feat.values
     d['r_sell_mkt'] = d.sell / d.mkt; d['r_appr_mkt'] = d.appr / d.mkt; d['r_low_mkt'] = d.low / d.mkt; d['y'] = np.log(d.r_sell_mkt)
     d['heat'] = [ap.recent_heat(d, s, t) for s, t in zip(d.seoul, d.date)]
     d['loan_ratio'] = [ap.loan_ratio(t, s, g, x) for t, s, g, x in zip(d.date, d.sd, d.sgg, d.mkt)]
@@ -142,6 +155,16 @@ def run(mkt):
 
 
 E_ = {k: run(v) for k, v in V.items()}
+if 'N' in os.environ.get('ONLY', 'N'):
+    _prep = ap.prep
+    def prep2(d):
+        X = _prep(d); X['trade_rel'] = np.log(d['trade_rel']) if 'trade_rel' in d else np.nan; return X
+    ap.prep = prep2
+    for nm in list(ap.MEMBERS):
+        k_, c_, dc = ap.MEMBERS[nm]; ap.MEMBERS[nm] = (k_, c_ + ['trade_rel'], dc)
+    J = V.get('J 층보정 실거래50·리치고(층보정)50', 0.5 * S.tr12f.fillna(RF) + 0.5 * RF)
+    E_['N J + 실거래÷리치고 비율을 모델 입력'] = run(J, (S.tr12f / RF).fillna(1.0))
+    ap.prep = _prep
 has = S.tr12.notna()
 res = []
 for k, e in E_.items():
