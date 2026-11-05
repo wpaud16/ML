@@ -14,7 +14,7 @@ on:
       - '.github/workflows/*.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: steward-sync
@@ -33,3 +33,9 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
         run: python3 steward_sync.py
+      - name: Save log
+        if: always()
+        run: |
+          git config user.name "steward-bot"; git config user.email "actions@users.noreply.github.com"
+          git add brief/steward_sync.log; git diff --cached --quiet && exit 0
+          git commit -m "steward: 업로드 기록"; for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && exit 0; sleep 5; done

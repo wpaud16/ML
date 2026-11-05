@@ -39,7 +39,15 @@ def upload(path, parent):
         return json.load(r), bool(ex)
 
 
-if __name__ == '__main__':
+def scopes():
+    try:
+        r = urllib.request.urlopen('https://oauth2.googleapis.com/tokeninfo?access_token=' + g.token(), timeout=30)
+        return json.load(r).get('scope')
+    except Exception as e:
+        return f'확인 실패 {e}'
+
+
+def main():
     n = 0
     for sub, pats in GROUPS.items():
         parent = folder(sub, STEWARD) if sub else STEWARD
@@ -48,3 +56,16 @@ if __name__ == '__main__':
                 r, upd = upload(p, parent); n += 1
                 print(('갱신' if upd else '추가'), (sub + '/' if sub else '') + r['name'])
     print('완료', n, '개')
+
+
+if __name__ == '__main__':
+    log = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'steward_sync.log'), 'w')
+    log.write(f'scope: {scopes()}\n')
+    try:
+        main()
+    except Exception as e:
+        log.write(f'오류: {type(e).__name__}: {str(e)[:600]}\n'); raise
+    finally:
+        log.close()
+
+
