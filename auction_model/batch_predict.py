@@ -336,6 +336,18 @@ def page_stations(page_id, kind='danji'):
     return sorted(out)
 
 
+def near_list(sts, limit_m, n=2):
+    """가까운 역 최대 n개 (역 이름 중복 제거). 2번째부터는 limit_m(도보 기준) 안에 있을 때만 (2026-11-05 사용자 요청: 가까운 역 2개)."""
+    out, seen = [], set()
+    for d, nm, ln in sts:
+        nm = (nm or '').removesuffix('역')
+        if not nm or nm in seen: continue
+        if out and d > limit_m: break
+        seen.add(nm); out.append(dict(name=nm, distance_m=d, walk_min=int(-(-d * 1.3 // 80)), lines=ln))
+        if len(out) >= n: break
+    return out
+
+
 def officetel_items(items, skipped, failed, cache, now, workers=8):
     from concurrent.futures import ThreadPoolExecutor
     import officetel_model as om
@@ -391,8 +403,12 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
                     p['sise'] = nearby.merge_into_sise(p['sise'], nb, base['low_manwon'])
             except Exception:
                 pass
+            try:
+                sts2 = near_list(page_stations(dj, 'officetel'), OT_STATION_M)
+            except Exception:
+                sts2 = []
             return 'ok', dict(base, danji_id=dj, danji_name=p.get('name'), court=pg.get('caseSite'),
-                              station=dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80))),
+                              station=dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80))), stations=sts2,
                               **{k: v for k, v in p.items() if k not in ('address', 'area', 'category')}, risk=rk)
         except SystemExit as e:
             return 'fail', dict(base, reason=f'예측 실패: {e}')
@@ -456,6 +472,7 @@ def main():
                     if sts:
                         d0, n0, l0 = sts[0]
                         items[key]['station'] = dict(name=n0, distance_m=d0, walk_min=int(-(-d0 * 1.3 // 80)), lines=l0)
+                        items[key]['stations'] = near_list(sts, 920)   # 도보 15분 안 역 최대 2개
                         s8 = [x for x in sts if any('8호선' in ln for ln in x[2])]
                         if s8:
                             items[key]['station8'] = dict(name=s8[0][1], distance_m=s8[0][0], walk_min=int(-(-s8[0][0] * 1.3 // 80)))

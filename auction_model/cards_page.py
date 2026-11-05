@@ -38,6 +38,14 @@ def m_line(v):
     return [f'🎯 모델 시세 <b>{v["model_sise_eok"]:.2f}억</b> <span class="g">({why})</span>']
 
 
+def station_text(v, short=False):
+    """가까운 역 (2개 이상이면 2개, 2026-11-05). short=True: '교대 7분 · 서초 9분'."""
+    sl = v.get('stations') or ([v['station']] if (v.get('station') or {}).get('name') else [])
+    if short:
+        return ' · '.join(f"{E(x['name'])} {x['walk_min']}분" for x in sl)
+    return ' · '.join(f"{E(x['name'])}역 도보 약 {x['walk_min']}분 ({x['distance_m']}m)" for x in sl)
+
+
 def keep(v):
     if v.get('category') not in ('아파트', '오피스텔'): return False
     if (v.get('risk') or {}).get('decision', 'show') != 'show': return False
@@ -215,20 +223,23 @@ def card(v, today):
     bd = v.get('bidding_date') or ''
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
     f = v.get('fail') or {}
-    line = f"유찰 {v.get('fails') or 0}회"
+    line = f"🔁 유찰 {v.get('fails') or 0}회"
     if f.get('prob_pct') is not None and not f.get('error'): line += f" · 유찰 확률(이번 회차) {f['prob_pct']}% · {f.get('level', '')}"
     L.append(line)
-    L.append(f'감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b> ({low / appr * 100:.0f}%) · 보증금 {v["low_manwon"] * 0.1:,.0f}만')
-    st = v.get('station')
-    if st and st.get('name'):
-        L.append(f"🚇 {E(st['name'])}역 도보 약 {st['walk_min']}분 ({st['distance_m']}m)")
-    s8 = v.get('station8')
-    s5 = v.get('station5')
-    if cat == '아파트' and s5 and st and s5['name'] != st['name'] and s5['distance_m'] <= 920:
+    bs = base_sise(v)   # 2026-11-05 사용자 요청: 최저가 % 는 시세 대비, 시세는 모델 시세 한 줄만
+    L.append(f'💰 감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b>' + (f' (시세 대비 {low / bs * 100:.0f}%)' if bs else '')
+             + f' · 보증금 {v["low_manwon"] * 0.1:,.0f}만')
+    stt = station_text(v)
+    if stt:
+        L.append(f"🚇 {stt}")
+    s8 = v.get('station8'); s5 = v.get('station5')
+    names = {x['name'] for x in (v.get('stations') or [])} | {(v.get('station') or {}).get('name')}
+    if cat == '아파트' and s5 and s5['name'].removesuffix('역') not in names and s5['name'] not in names and s5['distance_m'] <= 920:
         L.append(f"🚇 5호선 {E(s5['name'])}역 도보 약 {s5['walk_min']}분 ({s5['distance_m']}m)")
-    if cat == '아파트' and s8 and st and s8['name'] != st['name'] and s8['distance_m'] <= 920:
+    if cat == '아파트' and s8 and s8['name'].removesuffix('역') not in names and s8['name'] not in names and s8['distance_m'] <= 920:
         L.append(f"🚇 8호선 {E(s8['name'])}역 도보 약 {s8['walk_min']}분 ({s8['distance_m']}m)")
-    L += sise_lines(v, appr, low)
+    if bs:
+        L.append(f'🎯 매매 시세 <b>{bs:.2f}억</b>')
     if cat == '오피스텔':
         inc = v.get('income') or {}
         if inc.get('est_monthly_rent_manwon'):
