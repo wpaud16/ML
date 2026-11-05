@@ -51814,11 +51814,16 @@
 "date": "2026-11-03",
 "low_manwon": 24640,
 "fails": 4
+},
+{
+"date": "2026-12-08",
+"low_manwon": 19712,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-03",
+"last_seen": "2026-11-05",
 "checked": "2026-11-05"
 },
 "C61IHGTM": {
@@ -51835,11 +51840,16 @@
 "date": "2026-11-03",
 "low_manwon": 13900,
 "fails": 0
+},
+{
+"date": "2026-12-08",
+"low_manwon": 11120,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-03",
+"last_seen": "2026-11-05",
 "checked": "2026-11-05"
 },
 "C18ZKGBO": {
@@ -51856,11 +51866,16 @@
 "date": "2026-11-04",
 "low_manwon": 37600,
 "fails": 1
+},
+{
+"date": "2026-12-09",
+"low_manwon": 30080,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-04",
+"status": "진행중",
+"last_seen": "2026-11-05",
 "checked": "2026-11-05"
 },
 "C38XIXXX": {
@@ -51898,11 +51913,16 @@
 "date": "2026-11-04",
 "low_manwon": 17600,
 "fails": 1
+},
+{
+"date": "2026-12-09",
+"low_manwon": 14080,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-04",
+"status": "진행중",
+"last_seen": "2026-11-05",
 "checked": "2026-11-05"
 },
 "C76SPQTA": {
@@ -51940,11 +51960,16 @@
 "date": "2026-11-04",
 "low_manwon": 25040,
 "fails": 1
+},
+{
+"date": "2026-12-09",
+"low_manwon": 20032,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-04",
+"status": "진행중",
+"last_seen": "2026-11-05",
 "checked": "2026-11-05"
 },
 "C08ZBXGJ": {
@@ -58455,6 +58480,66 @@
 "date": "",
 "low_manwon": 11600,
 "fails": 1
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C89WUSSO": {
+"case": "2025타경700[1]",
+"address": "서울특별시 중구 남창동 5 ",
+"sgg": "중구",
+"emd": "남창동",
+"type": "연립",
+"area": 18545.51,
+"land_area": 2438.6,
+"appr_manwon": 11400,
+"rounds": [
+{
+"date": "2026-11-26",
+"low_manwon": 2988,
+"fails": 6
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C66IHOSX": {
+"case": "2026타경100257[1]",
+"address": "서울특별시 중구 묵정동 35 힐스테이트남산 101동 1층110호",
+"sgg": "중구",
+"emd": "묵정동",
+"type": "연립",
+"area": 32.22,
+"land_area": 41,
+"appr_manwon": 121900,
+"rounds": [
+{
+"date": "2026-12-02",
+"low_manwon": 97520,
+"fails": 1
+}
+],
+"first_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-05"
+},
+"C93MRNWY": {
+"case": "2025타경90[1]",
+"address": "서울특별시 중구 마른내로4가길 22",
+"sgg": "중구",
+"emd": "인현동1가",
+"type": "연립",
+"area": 581.82,
+"land_area": 339.4,
+"appr_manwon": 39124,
+"rounds": [
+{
+"date": "2026-12-02",
+"low_manwon": 12820,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-05",

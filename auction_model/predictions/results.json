@@ -29,10 +29,11 @@
   "diff_pct": 9.0,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 30100,
-   "pct_of_sise": 86.4,
-   "actual_pct_of_sise": 89.1
+   "label": "2명 60%",
+   "manwon": 29100,
+   "pct_of_sise": 83.5,
+   "actual_pct_of_sise": 89.1,
+   "sise_basis": "리치고"
   }
  },
  "2024타경120408[1]|2026-11-04": {
@@ -65,10 +66,11 @@
   "diff_pct": 4.6,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 55%",
-   "manwon": 19800,
-   "pct_of_sise": 93.7,
-   "actual_pct_of_sise": 93.8
+   "label": "2명 60%",
+   "manwon": 19500,
+   "pct_of_sise": 92.2,
+   "actual_pct_of_sise": 93.8,
+   "sise_basis": "리치고"
   }
  },
  "2024타경120477[1]|2026-11-04": {
@@ -104,7 +106,8 @@
    "label": "1명 50%",
    "manwon": 25300,
    "pct_of_sise": 95.5,
-   "actual_pct_of_sise": 95.5
+   "actual_pct_of_sise": 95.5,
+   "sise_basis": "리치고"
   }
  },
  "2024타경144784[1]|2026-11-04": {
@@ -137,10 +140,11 @@
   "diff_pct": 6.3,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 20600,
-   "pct_of_sise": 88.6,
-   "actual_pct_of_sise": 89.4
+   "label": "1명 60%",
+   "manwon": 19600,
+   "pct_of_sise": 84.3,
+   "actual_pct_of_sise": 89.4,
+   "sise_basis": "리치고"
   }
  },
  "2024타경146957[1]|2026-11-04": {
@@ -173,10 +177,11 @@
   "diff_pct": 10.4,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 26800,
-   "pct_of_sise": 92.4,
-   "actual_pct_of_sise": 96.6
+   "label": "1명 60%",
+   "manwon": 25700,
+   "pct_of_sise": 88.6,
+   "actual_pct_of_sise": 96.6,
+   "sise_basis": "리치고"
   }
  },
  "2024타경3470[1]|2026-11-04": {
@@ -313,10 +318,11 @@
   "diff_pct": 2.8,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 55%",
-   "manwon": 28700,
-   "pct_of_sise": 95.7,
-   "actual_pct_of_sise": 95.7
+   "label": "1명 60%",
+   "manwon": 28000,
+   "pct_of_sise": 93.3,
+   "actual_pct_of_sise": 95.7,
+   "sise_basis": "리치고"
   }
  },
  "2024타경63150[1]|2026-11-03": {
@@ -349,7 +355,8 @@
    "label": "전체 60%",
    "manwon": 27813,
    "pct_of_sise": 71.3,
-   "actual_pct_of_sise": 71.1
+   "actual_pct_of_sise": 71.1,
+   "sise_basis": "리치고"
   }
  },
  "2024타경63150[1]|2026-11-04": {
@@ -382,10 +389,11 @@
   "diff_pct": 1.5,
   "band": "55~60%",
   "closest": {
-   "label": "2명 60%",
+   "label": "3명 60%",
    "manwon": 27600,
    "pct_of_sise": 70.8,
-   "actual_pct_of_sise": 71.1
+   "actual_pct_of_sise": 71.1,
+   "sise_basis": "리치고"
   }
  },
  "2024타경63389[1]|2026-11-03": {
@@ -418,7 +426,8 @@
    "label": "전체 50%",
    "manwon": 22205,
    "pct_of_sise": 87.1,
-   "actual_pct_of_sise": 86.8
+   "actual_pct_of_sise": 86.8,
+   "sise_basis": "리치고"
   }
  },
  "2024타경63389[1]|2026-11-04": {
@@ -711,10 +720,11 @@
   "diff_pct": 9.7,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 9700,
-   "pct_of_sise": 90.7,
-   "actual_pct_of_sise": 92.4
+   "label": "2명 55%",
+   "manwon": 9300,
+   "pct_of_sise": 86.9,
+   "actual_pct_of_sise": 92.4,
+   "sise_basis": "리치고"
   }
  },
  "2025타경104616[1]|2026-11-04": {
@@ -747,10 +757,11 @@
   "diff_pct": 8.8,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 23500,
-   "pct_of_sise": 82.6,
-   "actual_pct_of_sise": 84.0
+   "label": "2명 60%",
+   "manwon": 22500,
+   "pct_of_sise": 79.1,
+   "actual_pct_of_sise": 84.0,
+   "sise_basis": "리치고"
   }
  },
  "2025타경11424[1]|2026-11-04": {
@@ -783,10 +794,11 @@
   "diff_pct": 12.0,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 8300,
-   "pct_of_sise": 68.5,
-   "actual_pct_of_sise": 72.6
+   "label": "3명 55%",
+   "manwon": 8000,
+   "pct_of_sise": 66.1,
+   "actual_pct_of_sise": 72.6,
+   "sise_basis": "리치고"
   }
  },
  "2025타경12547[1]|2026-11-04": {
@@ -819,10 +831,11 @@
   "diff_pct": -2.8,
   "band": "40% 미만",
   "closest": {
-   "label": "1명 40%",
-   "manwon": 15000,
-   "pct_of_sise": 63.8,
-   "actual_pct_of_sise": 63.2
+   "label": "3명 40%",
+   "manwon": 15100,
+   "pct_of_sise": 64.3,
+   "actual_pct_of_sise": 63.2,
+   "sise_basis": "리치고"
   }
  },
  "2025타경13284[1]|2026-11-04": {
@@ -855,10 +868,11 @@
   "diff_pct": -7.7,
   "band": "40% 미만",
   "closest": {
-   "label": "1명 40%",
-   "manwon": 10400,
-   "pct_of_sise": 80.6,
-   "actual_pct_of_sise": 76.1
+   "label": "2명 40%",
+   "manwon": 10500,
+   "pct_of_sise": 81.3,
+   "actual_pct_of_sise": 76.1,
+   "sise_basis": "리치고"
   }
  },
  "2025타경13352[1]|2026-11-02": {
@@ -913,10 +927,11 @@
   "diff_pct": 8.6,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 25300,
-   "pct_of_sise": 90.4,
-   "actual_pct_of_sise": 91.6
+   "label": "1명 60%",
+   "manwon": 24000,
+   "pct_of_sise": 85.7,
+   "actual_pct_of_sise": 91.6,
+   "sise_basis": "리치고"
   }
  },
  "2025타경13693[1]|2026-11-04": {
@@ -949,10 +964,11 @@
   "diff_pct": 5.3,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 30600,
-   "pct_of_sise": 66.5,
-   "actual_pct_of_sise": 67.0
+   "label": "3명 60%",
+   "manwon": 29800,
+   "pct_of_sise": 64.8,
+   "actual_pct_of_sise": 67.0,
+   "sise_basis": "리치고"
   }
  },
  "2025타경13745[1]|2026-11-04": {
@@ -985,10 +1001,11 @@
   "diff_pct": 5.0,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 55%",
-   "manwon": 25100,
-   "pct_of_sise": 79.7,
-   "actual_pct_of_sise": 79.3
+   "label": "2명 60%",
+   "manwon": 24400,
+   "pct_of_sise": 77.5,
+   "actual_pct_of_sise": 79.3,
+   "sise_basis": "리치고"
   }
  },
  "2025타경13822[1]|2026-11-04": {
@@ -1021,10 +1038,11 @@
   "diff_pct": 6.7,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 22700,
-   "pct_of_sise": 81.8,
-   "actual_pct_of_sise": 82.5
+   "label": "2명 60%",
+   "manwon": 21800,
+   "pct_of_sise": 78.6,
+   "actual_pct_of_sise": 82.5,
+   "sise_basis": "리치고"
   }
  },
  "2025타경13931[1]|2026-11-03": {
@@ -1094,7 +1112,7 @@
    "55%": 52309,
    "60%": 52845
   },
-  "status": "결과대기",
+  "status": "유찰",
   "checked": "2026-11-05",
   "expected_bidders": 1,
   "expected_range": [
@@ -1119,7 +1137,7 @@
    "55%": 52180,
    "60%": 52714
   },
-  "status": "결과대기",
+  "status": "유찰",
   "checked": "2026-11-05",
   "expected_bidders": 1,
   "expected_range": [
@@ -1254,7 +1272,8 @@
    "label": "전체 60%",
    "manwon": 15608,
    "pct_of_sise": 94.6,
-   "actual_pct_of_sise": 97.4
+   "actual_pct_of_sise": 97.4,
+   "sise_basis": "리치고"
   }
  },
  "2025타경51381[1]|2026-11-04": {
@@ -1287,10 +1306,11 @@
   "diff_pct": 10.3,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 15200,
-   "pct_of_sise": 98.1,
-   "actual_pct_of_sise": 103.7
+   "label": "1명 60%",
+   "manwon": 14800,
+   "pct_of_sise": 95.5,
+   "actual_pct_of_sise": 103.7,
+   "sise_basis": "리치고"
   }
  },
  "2025타경51557[1]|2026-11-04": {
@@ -1323,10 +1343,11 @@
   "diff_pct": 7.5,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 17900,
-   "pct_of_sise": 96.8,
-   "actual_pct_of_sise": 99.8
+   "label": "1명 60%",
+   "manwon": 17400,
+   "pct_of_sise": 94.1,
+   "actual_pct_of_sise": 99.8,
+   "sise_basis": "리치고"
   }
  },
  "2025타경51793[1]|2026-11-03": {
@@ -1346,7 +1367,7 @@
    "55%": 17622,
    "60%": 17802
   },
-  "status": "결과대기",
+  "status": "유찰",
   "checked": "2026-11-05",
   "expected_bidders": 3,
   "expected_range": [
@@ -1371,7 +1392,7 @@
    "55%": 17674,
    "60%": 17855
   },
-  "status": "결과대기",
+  "status": "유찰",
   "checked": "2026-11-05",
   "expected_bidders": 3,
   "expected_range": [
@@ -1459,10 +1480,11 @@
   "diff_pct": 3.7,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 55%",
-   "manwon": 21500,
-   "pct_of_sise": 76.1,
-   "actual_pct_of_sise": 76.4
+   "label": "2명 60%",
+   "manwon": 20800,
+   "pct_of_sise": 73.6,
+   "actual_pct_of_sise": 76.4,
+   "sise_basis": "리치고"
   }
  },
  "2025타경52197[1]|2026-11-03": {
@@ -1570,7 +1592,8 @@
    "label": "1명 40%",
    "manwon": 7700,
    "pct_of_sise": 84.9,
-   "actual_pct_of_sise": 84.9
+   "actual_pct_of_sise": 84.9,
+   "sise_basis": "리치고"
   }
  },
  "2025타경71670[1]|2026-10-31": {
@@ -1773,7 +1796,8 @@
    "label": "전체 40%",
    "manwon": 11641,
    "pct_of_sise": 67.3,
-   "actual_pct_of_sise": 67.6
+   "actual_pct_of_sise": 67.6,
+   "sise_basis": "리치고"
   }
  },
  "2025타경8595[1]|2026-11-04": {
@@ -1806,10 +1830,11 @@
   "diff_pct": 8.7,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 10800,
-   "pct_of_sise": 89.2,
-   "actual_pct_of_sise": 91.1
+   "label": "1명 55%",
+   "manwon": 10300,
+   "pct_of_sise": 85.1,
+   "actual_pct_of_sise": 91.1,
+   "sise_basis": "리치고"
   }
  },
  "2025타경8882[1]|2026-11-02": {
@@ -1839,7 +1864,8 @@
    "label": "전체 60%",
    "manwon": 19758,
    "pct_of_sise": 90.8,
-   "actual_pct_of_sise": 100.5
+   "actual_pct_of_sise": 100.5,
+   "sise_basis": "리치고"
   }
  },
  "2025타경8882[1]|2026-11-03": {
@@ -1872,10 +1898,11 @@
   "diff_pct": 13.2,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 20600,
-   "pct_of_sise": 94.7,
-   "actual_pct_of_sise": 100.5
+   "label": "1명 60%",
+   "manwon": 19700,
+   "pct_of_sise": 90.6,
+   "actual_pct_of_sise": 100.5,
+   "sise_basis": "리치고"
   }
  },
  "2025타경9378[1]|2026-11-04": {
@@ -1908,10 +1935,11 @@
   "diff_pct": 9.5,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 21200,
-   "pct_of_sise": 88.3,
-   "actual_pct_of_sise": 91.1
+   "label": "2명 60%",
+   "manwon": 20400,
+   "pct_of_sise": 85.0,
+   "actual_pct_of_sise": 91.1,
+   "sise_basis": "리치고"
   }
  },
  "2025타경9629[1]|2026-11-04": {
@@ -1944,10 +1972,11 @@
   "diff_pct": 8.3,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 15100,
-   "pct_of_sise": 93.3,
-   "actual_pct_of_sise": 95.8
+   "label": "1명 60%",
+   "manwon": 14400,
+   "pct_of_sise": 89.0,
+   "actual_pct_of_sise": 95.8,
+   "sise_basis": "리치고"
   }
  },
  "2025타경9640[1]|2026-11-04": {
@@ -1980,10 +2009,11 @@
   "diff_pct": 13.1,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 28100,
-   "pct_of_sise": 112.4,
-   "actual_pct_of_sise": 122.5
+   "label": "1명 60%",
+   "manwon": 27500,
+   "pct_of_sise": 110.0,
+   "actual_pct_of_sise": 122.5,
+   "sise_basis": "리치고"
   }
  },
  "2025타경9914[1]|2026-11-04": {
@@ -2016,10 +2046,11 @@
   "diff_pct": 5.0,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 14700,
-   "pct_of_sise": 111.4,
-   "actual_pct_of_sise": 112.1
+   "label": "1명 60%",
+   "manwon": 14200,
+   "pct_of_sise": 107.6,
+   "actual_pct_of_sise": 112.1,
+   "sise_basis": "리치고"
   }
  },
  "2026타경100316[1]|2026-11-04": {
@@ -2039,7 +2070,7 @@
    "55%": 462471,
    "60%": 466323
   },
-  "status": "결과대기",
+  "status": "유찰",
   "checked": "2026-11-05",
   "expected_bidders": 2,
   "expected_range": [
@@ -2077,7 +2108,8 @@
    "label": "전체 60%",
    "manwon": 10325,
    "pct_of_sise": 84.6,
-   "actual_pct_of_sise": 84.7
+   "actual_pct_of_sise": 84.7,
+   "sise_basis": "리치고"
   }
  },
  "2026타경10323[1]|2026-11-04": {
@@ -2113,7 +2145,8 @@
    "label": "2명 60%",
    "manwon": 10300,
    "pct_of_sise": 84.4,
-   "actual_pct_of_sise": 84.7
+   "actual_pct_of_sise": 84.7,
+   "sise_basis": "리치고"
   }
  },
  "2026타경10907[1]|2026-11-03": {
@@ -2319,7 +2352,7 @@
    "55%": 15050,
    "60%": 15175
   },
-  "status": "결과대기",
+  "status": "유찰",
   "checked": "2026-11-05",
   "expected_bidders": 3,
   "expected_range": [
@@ -2491,10 +2524,11 @@
   "diff_pct": 5.5,
   "band": "60% 초과",
   "closest": {
-   "label": "8명 이상 60%",
-   "manwon": 15600,
-   "pct_of_sise": 100.6,
-   "actual_pct_of_sise": 102.0
+   "label": "1명 60%",
+   "manwon": 15200,
+   "pct_of_sise": 98.1,
+   "actual_pct_of_sise": 102.0,
+   "sise_basis": "리치고"
   }
  },
  "2026타경50520[1]|2026-11-03": {
