@@ -196,13 +196,24 @@
    "55%": 93663,
    "60%": 94443
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-05",
   "expected_bidders": 13,
   "expected_range": [
    12,
    23
-  ]
+  ],
+  "actual_manwon": 107180,
+  "bidders": 31,
+  "second_manwon": 107108,
+  "diff_pct": 15.3,
+  "band": "60% 초과",
+  "closest": {
+   "label": "13명 60%",
+   "manwon": 94600,
+   "pct_of_sise": 81.3,
+   "actual_pct_of_sise": 92.1
+  }
  },
  "2024타경6202[1]|2026-11-01": {
   "key": "2024타경6202[1]",
@@ -680,13 +691,24 @@
    "55%": 9097,
    "60%": 9190
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-05",
   "expected_bidders": 2,
   "expected_range": [
    1,
    2
-  ]
+  ],
+  "actual_manwon": 9882,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 9.7,
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 9700,
+   "pct_of_sise": 90.7,
+   "actual_pct_of_sise": 92.4
+  }
  },
  "2025타경104616[1]|2026-11-04": {
   "key": "2025타경104616[1]",
@@ -2060,13 +2082,24 @@
    "55%": 10206,
    "60%": 10310
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-05",
   "expected_bidders": 2,
   "expected_range": [
    1,
    4
-  ]
+  ],
+  "actual_manwon": 10334,
+  "bidders": 3,
+  "second_manwon": 9316,
+  "diff_pct": 2.2,
+  "band": "60% 초과",
+  "closest": {
+   "label": "2명 60%",
+   "manwon": 10300,
+   "pct_of_sise": 84.4,
+   "actual_pct_of_sise": 84.7
+  }
  },
  "2026타경10907[1]|2026-11-03": {
   "key": "2026타경10907[1]",
@@ -2160,13 +2193,24 @@
    "55%": 18693,
    "60%": 18849
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-05",
   "expected_bidders": 7,
   "expected_range": [
    7,
    9
-  ]
+  ],
+  "actual_manwon": 18788,
+  "bidders": 2,
+  "second_manwon": 16278,
+  "diff_pct": 1.3,
+  "band": "55~60%",
+  "closest": {
+   "label": "8명 50%",
+   "manwon": 18800,
+   "pct_of_sise": 84.7,
+   "actual_pct_of_sise": 84.7
+  }
  },
  "2026타경20723[1]|2026-11-04": {
   "key": "2026타경20723[1]",
@@ -2185,13 +2229,24 @@
    "55%": 27181,
    "60%": 27408
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-05",
   "expected_bidders": 3,
   "expected_range": [
    4,
    4
-  ]
+  ],
+  "actual_manwon": 27777,
+  "bidders": 6,
+  "second_manwon": 26300,
+  "diff_pct": 3.0,
+  "band": "60% 초과",
+  "closest": {
+   "label": "5명 55%",
+   "manwon": 27700,
+   "pct_of_sise": 90.2,
+   "actual_pct_of_sise": 90.4
+  }
  },
  "2026타경20738[1]|2026-11-04": {
   "key": "2026타경20738[1]",
@@ -2210,13 +2265,24 @@
    "55%": 59372,
    "60%": 59866
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-05",
   "expected_bidders": 9,
   "expected_range": [
    9,
    12
-  ]
+  ],
+  "actual_manwon": 64705,
+  "bidders": 13,
+  "second_manwon": 63290,
+  "diff_pct": 9.9,
+  "band": "60% 초과",
+  "closest": {
+   "label": "13명 60%",
+   "manwon": 61900,
+   "pct_of_sise": 87.5,
+   "actual_pct_of_sise": 91.5
+  }
  },
  "2026타경20745[1]|2026-11-04": {
   "key": "2026타경20745[1]",
@@ -2260,13 +2326,24 @@
    "55%": 83614,
    "60%": 84310
   },
-  "status": "결과대기",
+  "status": "매각",
   "checked": "2026-11-05",
   "expected_bidders": 7,
   "expected_range": [
    7,
    9
-  ]
+  ],
+  "actual_manwon": 87150,
+  "bidders": 6,
+  "second_manwon": 86411,
+  "diff_pct": 5.1,
+  "band": "60% 초과",
+  "closest": {
+   "label": "13명 40%",
+   "manwon": 87300,
+   "pct_of_sise": 93.3,
+   "actual_pct_of_sise": 93.1
+  }
  },
  "2026타경20998[1]|2026-11-04": {
   "key": "2026타경20998[1]",
