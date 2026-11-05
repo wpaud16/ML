@@ -13,7 +13,7 @@
 | 21:17 · 23:17 · 01:17 · 03:17 | 경매 낙찰가 예측 배치 (그날 결과 있으면 건너뜀) | `auction_predict.yml` | `auction_model/predictions/latest.json`, 웹페이지 `auction_model/page/` |
 | 04:13 · 05:13 · 06:13 · 07:13 | 날씨·코디 메일 (하루 1통) | `outfit.yml` | 메일 + `outfit/날짜/` 카드 페이지 |
 | 04:23 · 05:23 · 06:23 · 07:23 | JM's Schedule 브리핑 메일 (하루 1통) | `morning_brief.yml` | 메일 (오늘의 문장·할 일·증시·경매 요약) |
-| 매월 1일 02:00 | 경매 모델 재학습 | `auction_retrain.yml` | 학습 데이터·보정값 갱신 |
+| 매월 2일 02:00 | 경매 모델 재학습 | `auction_retrain.yml` | 학습 데이터·보정값 갱신 |
 
 - GitHub 예약 실행은 몇 시간씩 밀리거나 빠지는 날이 있어 여러 번 예약 + "이미 했으면 건너뜀" 방식.
 - 수신: wpaud16@naver.com
