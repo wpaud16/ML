@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: auction-predict
+  group: auction-retrain   # 2026-11-05: 예측 배치가 cancel-in-progress 라 같은 그룹이면 재학습이 취소될 수 있어 분리
   cancel-in-progress: false
 
 jobs:
