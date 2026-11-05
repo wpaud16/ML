@@ -1,0 +1,35 @@
+name: steward sync (드라이브 경제/Steward 업로드)
+
+# 브리핑 시스템 파일·매뉴얼을 구글드라이브 '경제/Steward' 에 올림 (2026-11-05). 매뉴얼·코드가 바뀌면 자동 갱신.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'STEWARD.md'
+      - 'HANDOFF.md'
+      - 'brief/**'
+      - 'outfit/*.py'
+      - 'auction_model/*.py'
+      - '.github/workflows/*.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: steward-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload
+        working-directory: brief
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+        run: python3 steward_sync.py
