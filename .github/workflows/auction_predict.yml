@@ -30,7 +30,7 @@ permissions:
 
 concurrency:
   group: auction-predict
-  cancel-in-progress: false
+  cancel-in-progress: true   # 2026-11-05: 새 코드 push 시 이전 실행 취소 (결과는 마지막 코드 기준만 필요)
 
 jobs:
   check:
