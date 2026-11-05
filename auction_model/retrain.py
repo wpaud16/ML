@@ -102,7 +102,8 @@ def rows_from_page(kind, pid, since):
                         mom12=idx(m) / idx(ap.mshift(m, 12)) - 1,
                         dd24=idx(m) / max(ch[x] for x in ms if ap.mshift(m, 24) <= x <= m) - 1,
                         lag_m=((T - pd.Timestamp(reg[:10])).days / 30.4) if reg else np.nan,
-                        keyword=kw, station_m=st, case=a.get('caseName'), auction_id=a.get('auctionId')))
+                        keyword=kw, station_m=st, case=a.get('caseName'), auction_id=a.get('auctionId'),
+                        jibun=((d.get('basic') or {}).get('address') or {}).get('jibun'), address=a.get('address')))
     return out
 
 
@@ -134,6 +135,11 @@ def collect(kind, ids, since, workers=12):
 def finish_apt(new, old):
     if new.empty: return new
     n = new[(new.risk_decision == 'show') & (~new.resale)].copy()
+    # 2026-11-05: 시세 = M (리치고 + 국토부 실거래 가중, 매각일 30일 전까지 계약된 거래만 — 백테스트와 같은 기준)
+    import molit
+    n['mkt_richgo'] = n.mkt
+    ms = [molit.m_sise(r.sd, r.sgg, r.emd, r.get('jibun'), r.area, r.get('address'), r.mkt, today=r.date, lag_days=30) for _, r in n.iterrows()]
+    n['mkt'] = [x['mkt'] for x in ms]; n['m_w'] = [x.get('w', 0) for x in ms]; n['m_n12'] = [x.get('n12', 0) for x in ms]
     n['seoul'] = (n.sd == '서울').astype(int)
     n['r_sell_mkt'] = n.sell / n.mkt; n['r_appr_mkt'] = n.appr / n.mkt; n['r_low_mkt'] = n.low / n.mkt
     n = n[n.r_sell_mkt.between(0.5, 1.6) & n.r_appr_mkt.between(0.6, 2.0) & (n.area >= 25)]

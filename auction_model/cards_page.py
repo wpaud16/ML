@@ -25,6 +25,19 @@ def md(d):
     return f'{t.month}/{t.day}({WD[t.weekday()]})'
 
 
+def m_line(v):
+    """모델 시세(M) 한 줄 (2026-11-05: 아파트 예측에 쓰는 시세 = 리치고 + 국토부 실거래 가중)."""
+    m = v.get('m_sise') or {}
+    if not m or not v.get('model_sise_eok'): return []
+    if m.get('no_trade') is True:
+        why = '1년 실거래 없음 · 리치고' + (f' × 층 보정({m.get("floor_bin")})' if m.get('fprem') and m['fprem'] != 1 else '')
+    elif m.get('no_trade') is None:
+        why = '리치고' + (f' · {E(m.get("note") or "")}' if m.get('note') else '')
+    else:
+        why = f'리치고 {m.get("richgo_floor") or m.get("richgo"):.2f}억 · 1년 실거래 {m.get("n12")}건 {m.get("trade_w"):.2f}억 · 실거래 비중 {m.get("w", 0) * 100:.0f}%'
+    return [f'🎯 모델 시세 <b>{v["model_sise_eok"]:.2f}억</b> <span class="g">({why})</span>']
+
+
 def keep(v):
     if v.get('category') not in ('아파트', '오피스텔'): return False
     if (v.get('risk') or {}).get('decision', 'show') != 'show': return False
@@ -54,6 +67,7 @@ def sise_lines(v, appr, low):
         nb = s.get('nearby')
         if nb: src.append(f"주변 {nb['eok']:.2f}억({nb['n_danji']}개 단지)")
         if src: out.append(f'<span class="g s">{" · ".join(src)}</span>')
+        out += m_line(v)
         tr = s.get('trend') or {}
         tt = [f'{lab} {tr[k]:+.1f}%' for k, lab in (('3m_pct', '3개월'), ('12m_pct', '1년')) if tr.get(k) is not None]
         if tt: out.append(f'<span class="g s">단지 시세 추세 {" · ".join(tt)}</span>')
@@ -71,7 +85,7 @@ def sise_lines(v, appr, low):
     rs = v.get('richgo_sise_eok')
     if rs:
         lab = {'OFFER': '리치고 · 매물 호가 기반 · 최근 실거래·KB 없음', 'MOLIT': '리치고 시세 없음 → 최근 실거래 기준', 'BLDG': '추정: 같은 건물 다른 면적 ㎡당 가격 × 면적', 'NEARBY': '추정: 주변 오피스텔 ㎡당 실거래 × 면적'}.get(s.get('richgo_source'), '리치고')
-        return [f'매매 시세 {rs:.2f}억 <span class="g">({lab} · 감정가는 시세의 {appr / rs * 100:.0f}% · 최저가는 {low / rs * 100:.0f}%)</span>']
+        return [f'매매 시세 {rs:.2f}억 <span class="g">({lab} · 감정가는 시세의 {appr / rs * 100:.0f}% · 최저가는 {low / rs * 100:.0f}%)</span>'] + m_line(v)
     return []
 
 
@@ -332,6 +346,8 @@ def build(src, dst):
     parts, nav, total = [], [], {}
     for cat, title, anchor in (('아파트', '🏢 아파트', 'apt'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)', 'ot')):
         xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v.get('bidding_date') or '9999', v.get('danji_name') or ''))
+        nt = [v for v in xs if v.get('no_trade_12m') is True]   # 1년 실거래 0건 → 따로 (2026-11-05 사용자 결정: 예측 오차 큼)
+        xs = [v for v in xs if v.get('no_trade_12m') is not True]
         total[cat] = len(xs)
         nav.append(f'<a href="#{anchor}">{title.split(" (")[0]} {len(xs)}</a>')
         parts.append(f'<h2 id="{anchor}">{title} · {len(xs)}건</h2>')
@@ -343,6 +359,10 @@ def build(src, dst):
             parts.append(f'<h3>{lab} ({len(g)}건)</h3>')
             parts += [card(v, today) for v in g]
         if not xs: parts.append('<p class="g">표시할 물건 없음</p>')
+        if nt:
+            parts.append(f'<h3>🔍 실거래 없음 (참고) · {len(nt)}건</h3><p class="g s">최근 1년 같은 평형 실거래가 없어 시세가 불확실한 물건 — '
+                         '백테스트에서 이런 물건은 평균 오차 약 6.1% (다른 물건 4.6%), 메일에는 넣지 않음</p>')
+            parts += [card(v, today) for v in nt]
         if cat == '아파트':
             um = unmatched(d, today)
             if um:

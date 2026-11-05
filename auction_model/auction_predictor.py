@@ -180,6 +180,7 @@ def recent_heat(df, seoul, T):
 
 # ---------------- target row from Richgo complex page ----------------
 _PAGES = {}
+USE_M = os.environ.get('USE_M', '1') == '1'   # M 시세 사용 (학습 데이터 mkt 도 M, 2026-11-05)
 
 
 def fetch(url):
@@ -294,6 +295,14 @@ def target_row(danji, auction_id, df, kind='danji'):
     mkt = best[3] * 1e4
     bj = d.get('bjdInfo') or {}
     sd, sgg, emd = bj.get('sd'), bj.get('sgg'), bj.get('emd')
+    richgo_mkt, msise = mkt, None
+    if kind == 'danji' and USE_M:   # 2026-11-05 확정: 아파트 모델 시세 = M (리치고 + 국토부 실거래 가중, molit.py)
+        try:
+            import molit
+            msise = molit.m_sise(sd, sgg, emd, ((d.get('basic') or {}).get('address') or {}).get('jibun'), area, a.get('address'), mkt)
+            mkt = float(msise['mkt'])
+        except Exception as e:
+            msise = dict(note=f'M 시세 실패: {type(e).__name__}: {str(e)[:80]}', no_trade=None)
     kw = (a.get('keyword') or '') + ' ' + (a.get('historyKeyword') or '')
     reg = a.get('registrationDate')
     row = dict(appr=a['appraisedPrice'], low=a['lowestSellingPrice'], fails=a.get('numberOfFailures') or 0,
@@ -314,10 +323,13 @@ def target_row(danji, auction_id, df, kind='danji'):
     row['regulated'] = regulated_at(T, sd, sgg); row['loan_ratio'] = loan_ratio(T, sd, sgg, mkt)
     info = dict(name=d.get('name'), case=a.get('caseName'), address=a.get('address'), keyword=kw.strip(),
                 pyeong=best[1], area=area, appr_eok=round(row['appr'] / 1e8, 3), low_eok=round(row['low'] / 1e8, 3),
-                fails=row['fails'], bidding_date=str(T.date()), richgo_sise_eok=round(mkt / 1e8, 3),
-                appr_vs_sise=round(row['r_appr_mkt'], 3))
+                fails=row['fails'], bidding_date=str(T.date()), richgo_sise_eok=round(richgo_mkt / 1e8, 3),
+                model_sise_eok=round(mkt / 1e8, 3), appr_vs_sise=round(row['r_appr_mkt'], 3))
+    if msise is not None:
+        info['m_sise'] = {k: (round(v / 1e8, 3) if k in ('mkt', 'richgo', 'richgo_floor', 'trade_w') and v else v) for k, v in msise.items()}
+        info['no_trade_12m'] = msise.get('no_trade')   # True = 1년 실거래 0건(메일 숨김), None = 확인 못 함
     try:
-        info['sise'] = sise_detail(best[2], ch, mkt, row['low'], (best[2].get('memeOfferCount')))
+        info['sise'] = sise_detail(best[2], ch, richgo_mkt, row['low'], (best[2].get('memeOfferCount')))
     except Exception as e:
         info['sise'] = dict(error=f'{type(e).__name__}: {e}'[:150])
     return pd.DataFrame([row]), info

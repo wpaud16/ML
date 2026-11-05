@@ -179,7 +179,8 @@ def build(today, now_hour=None):
     hour = now_hour if now_hour is not None else dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).hour
     lo = today.isoformat() if hour < 10 else (today + dt.timedelta(days=1)).isoformat()
     sold = sold_keys()  # 이미 낙찰된 물건은 목록에서 뺀다 (성적표에만)
-    items = [v for v in L['items'].values() if cp.keep(v) and (v.get('bidding_date') or '') >= lo and v['key'] not in sold]
+    items = [v for v in L['items'].values() if cp.keep(v) and (v.get('bidding_date') or '') >= lo and v['key'] not in sold
+             and v.get('no_trade_12m') is not True]   # 1년 실거래 0건 아파트는 메일에서 숨김 (웹페이지 '실거래 없음(참고)', 2026-11-05)
     pk = prev_keys(today)
     H = [f'<div style="font-weight:bold;font-size:17px">🏠 경매 알림</div>']
     H += [f'<div style="color:#d93025;font-size:13px">{E(n)}</div>' for n in notes]
