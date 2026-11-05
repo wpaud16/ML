@@ -1,4 +1,4 @@
-# 세션 인계 (2026-11-05 새벽 기준)
+# 세션 인계 (2026-11-05 오후 기준)
 
 새 세션 시작 시: 이 문서를 먼저 읽고 이어서 진행. 저장소 wpaud16/ML (public).
 - 연결: `add_repo owner=wpaud16 repo=ML access=push` → `git clone --depth 1 https://github.com/wpaud16/ml /home/user/ml`
@@ -13,14 +13,18 @@
 
 ## 0. 진행 로드맵 (2026-11-05 사용자 지정, 순서대로)
 1. **명확한 시세 확정** ✅ 11/5 확정: 아파트 = M 가중 시세(층 보정 실거래 12개월[최근성 반감기 3개월] 과 층 보정 리치고를 거래 수·분산에 따라 섞음, 실거래 비중 최대 70%) + 현재 앙상블 (백테스트 5.08→4.78%, dev/combo_bt.py), 오피스텔 = 리치고 유지. 과정: 국토부 실거래(공공데이터포털, Secret MOLIT_API_KEY) 수집 `dev/molit_collect.py`·`dev_molit.yml` → `dev/sise_bt.py` 로 시세 기준 7가지(리치고·실거래 6/12개월·최근 1건·혼합·분위) 백테스트. 아파트 먼저, 오피스텔도 같은 방식.
-2. 시세를 기반으로 예측 모델 재설정 및 확인 ← 진행 중. 적용할 것 (11/5 사용자 결정):
-   - 아파트 모델 시세 = M (학습 데이터 mkt 도 M 으로 재계산 후 재학습·보정), 매일 국토부 실거래 수집(최근 13개월, 검색 지역)
-   - 유찰 물건 예측가 상한 = 직전 회차 최저가 × 1.05 (백테스트 4.78→4.74%)
+2. 시세를 기반으로 예측 모델 재설정 및 확인 ← 코드 적용 완료(커밋 4332df3), 11/5 13:34 시작 배치 결과 확인 대기. 적용 내용:
+   - 아파트 모델 시세 = M (`molit.py`; 학습 데이터 mkt → M, 원래 값 mkt_richgo; 보정 재계산 최근 오차 5.67→5.39%), 매일 국토부 실거래 수집(시군구별 13개월 캐시 `molit_cache/`), 재학습 새 사례도 M
+   - 결과 필드: model_sise_eok, m_sise, no_trade_12m(True=숨김, None=확인 못 함→숨기지 않음). 카드에 🎯 모델 시세 줄
+   - 성적표 '가장 가까운 칸' 열 (closest: 'N명 P%' · 가격 · 시세 대비 %), 기존 48건 채움
+   - (사용자가 뺌) 유찰 물건 예측가 상한 = 직전 최저가 × 1.05
    - 1년 실거래 0건 아파트: 메일에서 숨김, 웹페이지는 '🔍 실거래 없음(참고)' 칸에 따로 (보이는 물건 오차 4.78→4.60%), 학습은 전체 유지
    - 미채택: 실거래 없을 때 감정가 섞기, 고정 −1.8% 보정(시기별 치우침 불안정)
 3. 메일 공유 양식 부분 수정
-   - 입찰가마다 시세 대비 % 함께 표기 (예: 14억 (89.5%)) — 기준 시세 = 확정된 M 시세 (11/5 요청)
-4. 브리핑에 필요한 모든 파일·매뉴얼(md)을 구글드라이브 '경제' 폴더 안 'Steward' 폴더에 업로드 ('경제' 폴더 없음 → 새로 만들기, 사용자 확인 11/5)
+   - 입찰가마다 시세 대비 % 함께 표기 (예: 14억 (89.5%)) — 기준 시세 = 모델 시세. 코드 완료, 원격 브랜치 `pending/sise-pct`(e449b63) 에 보관 → M 배치 끝나면 main 에 cherry-pick·push (지금 push 하면 배치 취소됨)
+4. 드라이브 업로드: 기존 '경제' 폴더(17vN8AZK…) 안 'Steward'(11GxjJi_52o__L9ebgY9VFethEgZy0nuo) 에 STEWARD.md(매뉴얼) + 핵심 파일(HANDOFF, brief·outfit·workflows) — Claude 드라이브 커넥터로 직접. 경매 코드는 매뉴얼의 zip 링크.
+   자동 업로드(`brief/steward_sync.py`·`steward_sync.yml`)는 구글 토큰이 drive.readonly 라 403 → push 트리거 꺼 둠(쓰기 권한 재발급 시 사용).
+- auction_predict.yml concurrency cancel-in-progress: true (11/5) — 경매 코드 push 하면 진행 중 배치 취소 후 새로 시작.
 - 11/5 변경: 예약 실행 지연 대비 여러 번 예약+하루 1회(경매 21·23·01·03시, 날씨 04~07시 :13, 브리핑 04~07시 :23), 수동 발송 = outfit 커밋 메시지 [실행] / brief/trigger.txt push.
   11/5 Claude 브리핑은 주간 한도 초과로 실패 → Python 브리핑(테스트 모드)으로 대체 발송. 정식 전환은 사용자가 안정됐다고 할 때.
 - 실험①(최저가÷시세→인원→낙찰가): 모델이 최저가 비율은 이미 반영(구간별 치우침 ±1%), 남은 오차는 실제 인원(2명↓ −5%, 13명↑ +4%). 허수로 낙찰가가 덜 오르는 현상은 안 보임. 64236 은 시세 과소 추정 사례.
@@ -29,10 +33,10 @@
 | 시각 | 무엇 | 어디서 | 상태 |
 |---|---|---|---|
 | 03:00 | 법원자료 수집(임차인·문건) | 노트북 LAPTOP-M47J0JTR 작업 스케줄러 `AuctionTenants` | 11/4 업로드 누락 원인 미확인 |
-| 03:40 | 경매 예측 배치 → `predictions/latest.json` + 웹페이지 `auction_model/page/` | Actions `auction_predict.yml` (코드 push 로도 실행) | 76~151분 걸렸음 → 속도 개선 반영(아래) |
-| 05:47 | 날씨·코디 메일 | Actions `outfit.yml` → `outfit/run_outfit.py` | **Python 전환 완료, Claude 예약 작업 trig_014ofhU8tyCW8NDDpN3Nd2mT 끔** |
-| 07:45 | JM's Schedule 브리핑 | **Claude 예약 작업 trig_0179rvk2D2q2hDcCBZKnbPoX (켜져 있음)** | 비교 기간 |
-| 07:45 | [테스트] JM's Schedule (Python) | Actions `morning_brief.yml` → `brief/run_brief.py` (TEST_MODE=1) | 비교 기간 |
+| 21:17·23:17·01:17·03:17 | 경매 예측 배치 → `predictions/latest.json` + 웹페이지 | Actions `auction_predict.yml` (결과 있으면 건너뜀, 코드 push 로도 실행) | 약 95분 |
+| 04:13~07:13 매시 | 날씨·코디 메일 (하루 1통) | Actions `outfit.yml` | Python 전환 완료, Claude 예약 작업 trig_014ofhU8tyCW8NDDpN3Nd2mT 끔 |
+| 04:23~07:23 매시 | [테스트] JM's Schedule (Python, 하루 1통) | Actions `morning_brief.yml` (TEST_MODE=1) | 비교 기간 |
+| 07:45 | JM's Schedule 브리핑 | Claude 예약 작업 trig_0179rvk2D2q2hDcCBZKnbPoX (켜져 있음) | 11/5 주간 한도 초과로 실패 |
 
 ## 2. 아침 브리핑 Python 버전 (`brief/`)
 - `google_api.py`(OAuth·시트·문서·드라이브·Gmail), `quote.py`(오늘의 문장), `schedule_doc.py`(할 일 섹션·이월·운동 Day·식사 시간, 쓰기는 TEST_MODE=0 일 때만 — 임시 문서로 쓰기 검증 완료),
