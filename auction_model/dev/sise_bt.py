@@ -1,6 +1,6 @@
 """시세 기준 백테스트 (2026-11-05, 사용자 요청: 모델 시세를 리치고 하나 말고 여러 방면으로).
 국토부 실거래(dev/molit/apt.csv.gz)로 매각 당시 시세를 다시 만들고, 모델 시세(mkt)를 바꿔 같은 시간 순 월별 검증(2024-07~).
-- 매칭: 같은 시군구·동, 전용 ±1㎡, 준공연도 ±1 (단지 여러 개면 그 면적 거래가 가장 많은 단지)
+- 매칭: 리치고 단지 지번(dev/probe/danji_info.json) = 국토부 동+지번 → 없으면 같은 시군구·동, 전용 ±1㎡, 준공연도 ±1 (거래 가장 많은 단지)
 - 정보 누출 방지: 매각일 30일 전까지 계약된 거래만 (실거래 신고 기한 30일)
 - 추세 보정: 같은 시군구 월별 ㎡당 중앙값 지수 (3개월 이동 중앙)
 - 직거래·해제 거래 제외
@@ -32,13 +32,26 @@ def idx(sgg, p):
 
 
 G = {k: g for k, g in m.groupby(['sgg', 'umdNm'])}
-rows = []
+INFO = json.load(open(os.path.join(HERE, 'probe', 'danji_info.json')))
+m['jb'] = m.jibun.astype(str).str.strip()
+
+
+def jibun_of(danji):
+    a = (((INFO.get(danji) or {}).get('basic') or {}).get('address') or {}).get('jibun') or ''
+    return a.split()[-1] if a else None
+
+
+rows = []; how = {}
 for i, r in df.iterrows():
     g = G.get((r.sgg, r.emd))
     out = dict(i=i)
     if g is not None:
         by = r.date.year - r.age
-        c = g[(g.area.sub(r.area).abs() <= 1.0) & (g.by.sub(by).abs() <= 1)]
+        jb = jibun_of(r.danji)
+        c = g[(g.jb == jb) & (g.area.sub(r.area).abs() <= 1.0)] if jb else g.iloc[:0]
+        out['how'] = '지번' if len(c) else '면적·준공'
+        if not len(c):
+            c = g[(g.area.sub(r.area).abs() <= 1.0) & (g.by.sub(by).abs() <= 1)]
         if len(c):
             seqs = c.aptSeq.value_counts()
             seq = seqs.index[0]; out['n_seq'] = len(seqs)
@@ -56,6 +69,7 @@ for i, r in df.iterrows():
                 out['tr12_q60'] = float(tt.adj.quantile(.6))
     rows.append(out)
 S = pd.DataFrame(rows).set_index('i')
+print('매칭 방법', S.how.value_counts().to_dict())
 print('매칭', S.n_seq.notna().sum(), '/', len(df), ' 12개월 거래 있음', S.tr12.notna().sum(), ' 6개월', S.tr6.notna().sum(), ' 3개월', S.tr3.notna().sum(), flush=True)
 print('실거래12m ÷ 리치고 중앙', (S.tr12 / df.mkt).median().round(3), ' 낙찰가 ÷ 실거래12m 중앙', (df.sell / S.tr12).median().round(3))
 
