@@ -61,23 +61,31 @@ def tracker_rows():
 
 
 def summary_row(v, today, new=False):
+    """물건 한 개 (2026-11-05 사용자 지정 형식):
+    11/10(화) D-4 · 최저 입찰 27.69억
+    🔁 유찰 0회 · 이번 회차 유찰 확률 n% · 🚇 교대 7분
+    🎯 예상 낙찰가 50%: 29.38억 (시세 대비 93.5%) · 👥 2명 입찰 예상"""
     gw = cp.gap_warn(v)
     bb = v.get('by_bidders') or {}
     n = bb.get('expected_bidders'); ex = cp.exp_row(v['category'], n)
     p50 = ((bb.get('bid_by_prob_eok') or {}).get(ex) or v['bid_by_prob_eok'])['50%']
     st = v.get('station') or {}
+    f = v.get('fail') or {}
     gu = (v.get('region') or '').split(' ', 1)[-1]
     case = v['key'].replace('[1]', '')
-    line2 = (f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · "
-             f"50% {p50:.2f}억" + (f' ({p50 / cp.base_sise(v) * 100:.1f}%)' if cp.base_sise(v) else '') + (f' · {n}명' if n else '') + (f" · 🚇 {E(st['name'])} {st['walk_min']}분" if st.get('name') else '')
-             + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>'
-             + ('<br><span style="color:#d93025;font-size:12px">⚠ 감정 후 시세 상승 — 실제가가 예측보다 높을 수 있음</span>' if gw else ''))
+    bs = cp.base_sise(v)
+    l1 = f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 입찰 <b>{v['low_manwon'] / 1e4:.2f}억</b>"
+    l2 = f"🔁 유찰 {v.get('fails') or 0}회" + (f" · 이번 회차 유찰 확률 {f['prob_pct']}%" if f.get('prob_pct') is not None and not f.get('error') else '') \
+         + (f" · 🚇 {E(st['name'])} {st['walk_min']}분" if st.get('name') else '')
+    l3 = f"🎯 예상 낙찰가 50%: <b>{p50:.2f}억</b>" + (f' (시세 대비 {p50 / bs * 100:.1f}%)' if bs else '') + (f' · 👥 {n}명 입찰 예상' if n else '') \
+         + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>'
+    warn = '<br><span style="color:#d93025;font-size:12px">⚠ 감정 후 시세 상승 — 실제가가 예측보다 높을 수 있음</span>' if gw else ''
     tag = '<span style="color:#d93025;font-weight:bold;font-size:12px">New</span> ' if new else ''
-    h = (f'<div style="border-bottom:1px solid #ddd;padding:6px 0">{tag}<b>{E(v.get("danji_name") or "")}</b> '
+    h = (f'<div style="border-bottom:1px solid #ddd;padding:8px 0;line-height:1.6">{tag}<b>{E(v.get("danji_name") or "")}</b> '
          f'<span style="{GRAY}">{v.get("area")}㎡ · {E(gu)} {E(case)}</span>'
-         + f'<br>{line2}</div>')
-    t = (('[New] ' if new else '') + f"{v.get('danji_name')} {v.get('area')}㎡ · {gu} {case}\n  {md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · 50% {p50:.2f}억"
-         + (f' ({p50 / cp.base_sise(v) * 100:.1f}%)' if cp.base_sise(v) else '') + (f' · {n}명' if n else ''))
+         f'<br>{l1}<br>{l2}<br>{l3}{warn}</div>')
+    strip = lambda x: re.sub(r'<[^>]+>', '', x).replace(' · 상세', '')
+    t = ('[New] ' if new else '') + f"{v.get('danji_name')} {v.get('area')}㎡ · {gu} {case}\n  {strip(l1)}\n  {strip(l2)}\n  {strip(l3)}"
     return h, t
 
 
@@ -184,8 +192,10 @@ def build(today, now_hour=None):
     pk = prev_keys(today)
     H = [f'<div style="font-weight:bold;font-size:17px">🏠 경매 알림</div>']
     H += [f'<div style="color:#d93025;font-size:13px">{E(n)}</div>' for n in notes]
-    H.append(f'<p style="text-align:center;margin:12px 0"><a href="{PAGE}" style="display:inline-block;background:#1F1D1A;color:#ffffff;'
-             'text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">📄 경매 전체 카드 · 모델 성적표 보기</a></p>')
+    # 버튼이 일부 메일 앱에서 눌리지 않는다는 보고(2026-11-05) → 새 창 열기 + 아래에 일반 링크도
+    H.append(f'<p style="text-align:center;margin:12px 0 4px"><a href="{PAGE}" target="_blank" rel="noopener" style="display:inline-block;background:#1F1D1A;color:#ffffff;'
+             'text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">📄 경매 전체 카드 · 모델 성적표 보기</a></p>'
+             f'<p style="text-align:center;margin:0 0 12px;font-size:12px"><a href="{PAGE}" target="_blank" rel="noopener" style="color:#1a73e8">{PAGE}</a></p>')
     T = ['🏠 경매 알림'] + notes + [f'📄 경매 전체 카드: {PAGE}']
     cnt = dict(new=0, total=0)
     for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)')):
@@ -200,28 +210,7 @@ def build(today, now_hour=None):
             H.append(f'<div style="{GRAY}">진행 중인 물건 없음</div>')
         for v in xs:
             h, t = summary_row(v, today, is_new(v, pk)); H.append(h); T.append(t)
-        if cat == '아파트':
-            um = [f for f in cp.unmatched(L, lo)]
-            if um:
-                H.append(f'<div style="font-weight:bold;margin:14px 0 4px">🔍 예측 불가 물건 ({len(um)}건 · 단지 못 찾음)</div>')
-                T.append(f'▶ 🔍 예측 불가 물건 ({len(um)}건)')
-                for f in um:
-                    nm = (f.get('address') or '').split(' ', 2)[-1]
-                    gu = (f.get('region') or '').split(' ', 1)[-1]
-                    ln2 = (f"{md(f['bidding_date'])} {dday(f['bidding_date'], today)} · 최저 {f['low_manwon'] / 1e4:.2f}억 · 감정 {f['appr_manwon'] / 1e4:.2f}억 · 유찰 {f.get('fails') or 0}회")
-                    H.append(f'<div style="border-bottom:1px solid #ddd;padding:6px 0"><b>{E(nm)}</b> <span style="{GRAY}">{f.get("area")}㎡ · {E(gu)} {E(f["key"].replace("[1]", ""))}</span>'
-                             f'<br>{ln2} · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(f["auction_id"])}">상세</a></div>')
-                    T.append(f'{nm} · {gu} {f["key"]}\n  {ln2}')
-    foot = ['🛡 안전 = 법원 매각물건명세서로 인수 금액 0원 확인 · 보통 = 리치고 기준 권리 문제 없음(명세서 미확인) · 주의·위험은 숨김',
-            '📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12) · 대출·세금·비용 제외 단순 계산',
-            '검색 지역: 서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리(8호선역 도보 15분 이내) / 하남(5호선역 도보 15분 이내)',
-            '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 가격 오차 약 ±6% · 확률 오차 약 ±5%p',
-            '🏬 오피스텔 입찰가 = 오피스텔 전용 모델(랜덤포레스트+부스팅) · 월세는 전세 시세 × 전월세전환율로 추정',
-            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세의 중앙값 (호가 제외)',
-            '🎲 유찰 확률 = 회차별 낙찰·유찰 이력으로 학습한 모델',
-            '⚠️ 주거용 오피스텔은 세법상 주택 수에 들어갈 수 있어요 — 세무사·은행에 확인',
-            f'<a style="color:#1a73e8" href="https://docs.google.com/document/d/{TRACKER}/edit">경매 트래커 열기</a>',
-            '권리분석은 등기 기준 자동요약을 바탕으로 한 1차 추정입니다. 점유자·대항력은 매각물건명세서에서, 대출 한도는 은행에서 직접 확인하세요. 역 도보시간은 직선거리 기준 추정입니다.']
-    H.append(f'<div style="{GRAY};margin-top:18px;line-height:1.6">' + '<br>'.join(foot) + '</div>')
-    T.append('\n' + '\n'.join(re.sub(r'<[^>]+>', '', f) for f in foot))
+    # 안내문(모델·시세·지역 설명)은 웹페이지 맨 아래로 옮김 (2026-11-05 사용자 요청)
+    H.append(f'<div style="{GRAY};margin-top:18px">모델·시세 설명과 검색 지역은 <a style="color:#1a73e8" href="{PAGE}#foot">웹페이지 맨 아래</a>에 있어요 · 입찰 권유가 아닙니다</div>')
+    T.append(f'\n모델·시세 설명: {PAGE}')
     return '\n'.join(H), '\n'.join(T), cnt

@@ -7,7 +7,7 @@ predictions/latest.json → page/index.html (GitHub Pages: https://wpaud16.githu
   - 남양주·구리 아파트는 8호선역 도보 15분(직선 920m) 이내만
   python3 cards_page.py [latest.json] [출력 html]
 """
-import json, os, sys, html
+import json, os, re, sys, html
 from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -209,7 +209,8 @@ def card(v, today):
     case = key.split('[')[0] + (f' [{no}]' if no != '1' else '')
     hh = f' <span class="hh">{v["households"]:,}세대</span>' if cat == '아파트' and v.get('households') else ''
     grade = (v.get('safety') or {}).get('grade', '보통')
-    L = [f'<div class="t">{E(v.get("danji_name") or "")}{hh} · 전용 {v.get("area")}㎡ · 🛡 {grade}</div>',
+    new = '<span class="new">New</span> ' if v.get('_new') else ''   # 어제 예측 파일에 없던 물건 (2026-11-05)
+    L = [f'<div class="t">{new}{E(v.get("danji_name") or "")}{hh} · 전용 {v.get("area")}㎡ · 🛡 {grade}</div>',
          f'<div class="g s">{E(gu)} · {E(case)} · {E(v.get("court") or "")}</div>', '<b>📋 기본 정보</b>']
     bd = v.get('bidding_date') or ''
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
@@ -339,7 +340,8 @@ th,td{background:#000;color:#fff;border:1px solid #fff;padding:9px 2px}
 td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333}
 a{color:#1a73e8}
 table.sc{font-size:12px} table.sc td{padding:8px 2px} .sub{font-size:11px;color:#BBBBBB}
-.foot{color:var(--mut);font-size:12px;margin-top:24px}
+.foot{color:var(--mut);font-size:12px;margin-top:24px;line-height:1.7}
+.new{color:#d93025;font-size:12px;font-weight:bold}
 """
 
 JS = """
@@ -349,10 +351,21 @@ var n=Math.round((d-today)/864e5);e.textContent=n>0?('D-'+n):(n==0?'D-day':'기�
 """
 
 
+def prev_keys(day, pred_dir):
+    """이 예측 날짜 이전 가장 최근 예측 파일의 물건 키 (New 판정, 메일과 같은 기준). 없으면 None."""
+    try:
+        fs = sorted(f for f in os.listdir(pred_dir) if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.json', f) and f[:10] < day)
+        return set(json.load(open(os.path.join(pred_dir, fs[-1])))['items']) if fs else None
+    except Exception:
+        return None
+
+
 def build(src, dst):
     d = json.load(open(src))
     now = datetime.now(KST); today = now.strftime('%Y-%m-%d')
     items = [v for v in d['items'].values() if keep(v)]
+    pk = prev_keys(d.get('date') or today, os.path.dirname(src))
+    for v in items: v['_new'] = pk is not None and v['key'] not in pk
     soon = (now + timedelta(days=7)).strftime('%Y-%m-%d')
     parts, nav, total = [], [], {}
     for cat, title, anchor in (('아파트', '🏢 아파트', 'apt'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)', 'ot')):
@@ -374,11 +387,7 @@ def build(src, dst):
             parts.append(f'<h3>🔍 실거래 없음 (참고) · {len(nt)}건</h3><p class="g s">최근 1년 같은 평형 실거래가 없어 시세가 불확실한 물건 — '
                          '백테스트에서 이런 물건은 평균 오차 약 6.1% (다른 물건 4.6%), 메일에는 넣지 않음</p>')
             parts += [card(v, today) for v in nt]
-        if cat == '아파트':
-            um = unmatched(d, today)
-            if um:
-                parts.append(f'<h3>🔍 예측 불가 (단지 못 찾음) · {len(um)}건</h3>')
-                parts += [unmatched_card(f) for f in um]
+        # 예측 불가(단지 못 찾음) 물건은 표시하지 않음 (2026-11-05 사용자 요청: 이상한 물건이 많음)
     res = results_14d(today)
     nav.append('<a href="#score">📊 성적표</a>')
     parts.append('<h2 id="score">📊 모델 성적표 (최근 14일)</h2>')
@@ -390,10 +399,15 @@ def build(src, dst):
         for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔')):
             parts.append(f'<h3>{title}</h3>' + scorecard(res, cat))
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
-    foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 남양주·구리 아파트는 8호선역 도보 15분 이내만 · 하남은 5호선역 도보 15분 이내만<br>'
-            '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅 · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
-            '⚖ 가중 시세 = 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(상한) · 감정가 시차 보정 5% (직거래 제외)<br>'
-            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 입찰가 모델은 리치고 시세 기준<br>'
+    foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 1년 실거래 없는 아파트는 \'실거래 없음(참고)\'에 따로<br>'
+            '검색 지역: 서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리(8호선역 도보 15분 이내) / 하남(5호선역 도보 15분 이내) · 오피스텔은 서울 역 도보 10분<br>'
+            '🛡 안전 = 법원 매각물건명세서로 인수 금액 0원 확인 · 보통 = 리치고 기준 권리 문제 없음(명세서 미확인) · 주의·위험은 숨김<br>'
+            '🎯 모델 시세(아파트) = 리치고 시세와 국토부 실거래(최근 12개월, 최근일수록 가중, 층 보정)를 거래 수·흩어진 정도에 따라 섞은 값 — 입찰가와 % 의 기준<br>'
+            '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅(시세는 리치고) · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'
+            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 참고용<br>'
+            '⚖ 가중 시세 = 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(상한) · 감정가 시차 보정 5% (직거래 제외) — 참고용<br>'
+            '🎲 유찰 확률 = 회차별 낙찰·유찰 이력으로 학습한 모델 · 📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12), 대출·세금·비용 제외 단순 계산<br>'
+            '⚠️ 주거용 오피스텔은 세법상 주택 수에 들어갈 수 있어요 — 세무사·은행에 확인<br>'
             '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'
             '권리분석은 등기 기준 자동요약을 바탕으로 한 1차 추정입니다. 점유자·대항력은 매각물건명세서에서, 대출 한도는 은행에서 직접 확인하세요. 입찰 권유가 아닙니다.')
     doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
@@ -402,7 +416,7 @@ def build(src, dst):
 <h1>🏠 경매 전체 카드</h1><div class="meta">예측 {E(gen)} 기준 · 아파트 {total['아파트']}건 · 오피스텔 {total['오피스텔']}건 · 매각기일 순</div>
 <div class="nav">{''.join(nav)}</div>
 {''.join(parts)}
-<div class="foot">{foot}</div></div><script>{JS}</script></body></html>"""
+<div class="foot" id="foot">{foot}</div></div><script>{JS}</script></body></html>"""
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     open(dst, 'w').write(doc)
     print('page', dst, total, f'{len(doc.encode()) / 1024:.0f}KB')
