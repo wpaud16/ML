@@ -68,6 +68,24 @@ if __name__ == '__main__':
                 time.sleep(0.2)
         json.dump(rep, open(os.path.join(OUT, 'test.json'), 'w'), ensure_ascii=False, indent=1, default=list)
         print(json.dumps(rep, ensure_ascii=False, default=list)[:3000])
+    elif mode == 'eup':   # 읍·면 동이 있는 시군구만 다시 받아 apt.csv.gz 에 합치기 (2026-11-05)
+        kind = 'apt'; rows = []
+        targets = {k: v for k, v in N['apt'].items() if any(str(e).endswith(('읍', '면')) for e in v)}
+        print('대상', list(targets))
+        for (sd, sgg), emds in targets.items():
+            lawd = CODE.get((sd, sgg))
+            for ym in months():
+                page = 1
+                while True:
+                    code, msg, items, total = call(kind, lawd, ym, page)
+                    if code not in ('00', '000'): break
+                    rows += [dict(x, sd=sd, sgg=sgg) for x in items if set(str(x.get('umdNm')).split()) & emds and x.get('umdNm') not in emds]
+                    if page * 1000 >= total: break
+                    page += 1
+            print(sgg, len(rows), flush=True)
+        old = pd.read_csv(os.path.join(OUT, 'apt.csv.gz'), dtype=str)
+        pd.concat([old, pd.DataFrame(rows).astype(str)], ignore_index=True).drop_duplicates().to_csv(os.path.join(OUT, 'apt.csv.gz'), index=False, compression='gzip')
+        print('추가', len(rows))
     else:
         for kind in ('apt', 'ot'):
             rows, log = [], {}
@@ -79,7 +97,7 @@ if __name__ == '__main__':
                     while True:
                         code, msg, items, total = call(kind, lawd, ym, page)
                         if code not in ('00', '000'): log[f'{sgg} {ym}'] = f'{code} {msg}'; break
-                        rows += [dict(x, sd=sd, sgg=sgg) for x in items if x.get('umdNm') in emds]
+                        rows += [dict(x, sd=sd, sgg=sgg) for x in items if x.get('umdNm') in emds or set(str(x.get('umdNm')).split()) & emds]   # 읍·면 '진접읍 장현리' ↔ '진접읍' (2026-11-05)
                         if page * 1000 >= total: break
                         page += 1
                 print(kind, sgg, len(rows), flush=True)

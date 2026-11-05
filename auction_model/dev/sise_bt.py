@@ -76,6 +76,9 @@ def jibun_of(danji):
 rows = []; how = {}
 for i, r in df.iterrows():
     g = G.get((r.sgg, r.emd))
+    if g is None:   # 읍·면: 국토부 '진접읍 장현리' ↔ 리치고 '진접읍' (운영 molit.m_sise 와 같은 규칙, 2026-11-05)
+        ks = [k for k in G if k[0] == r.sgg and r.emd in str(k[1]).split()]
+        g = pd.concat([G[k] for k in ks]) if ks else None
     out = dict(i=i)
     if g is not None:
         by = r.date.year - r.age

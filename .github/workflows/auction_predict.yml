@@ -23,6 +23,8 @@ on:
       - 'auction_model/fail_model.py'
       - 'auction_model/fail_config.json'
       - 'auction_model/auction_train.csv'
+      - 'auction_model/molit.py'
+      - 'auction_model/nearby.py'
       - '.github/workflows/auction_predict.yml'
 
 permissions:

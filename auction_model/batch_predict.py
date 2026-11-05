@@ -208,7 +208,7 @@ def closest_cell(it, actual_manwon):
     sise = (it.get('model_sise_eok') or it.get('richgo_sise_eok') or 0) * 1e4
     return dict(label=lab, manwon=int(round(v)), pct_of_sise=round(v / sise * 100, 1) if sise else None,
                 actual_pct_of_sise=round(actual_manwon / sise * 100, 1) if sise else None,
-                sise_basis='M' if it.get('model_sise_eok') else '리치고')
+                sise_basis='M' if (it.get('model_sise_eok') and (it.get('category') or '아파트') == '아파트' and it.get('m_sise')) else '리치고')
 
 
 def update_results(today):
