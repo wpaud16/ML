@@ -8,7 +8,8 @@
 - 단지 매칭: officetel/ot_addr.json (리치고 단지 지번) ↔ 국토부 시군구+번지, 실패 시 같은 동+단지명
 - 당시 실거래 시세: 매각일 30일 전까지 공개됐을 거래(계약일 기준 매각일-30일 이전, 12개월 이내), 같은 단지
   전용면적 ±15% → ㎡당 가격 × 해당 물건 면적, 최근 3건 각각 단지 시세 지수로 매각월까지 보정 후 중앙값
-- 비교: A 현재(리치고) / B 실거래 시세(없으면 리치고) / C 둘의 평균 — 월별 롤링 2025-02~2026-10, RF+부스팅
+- 비교: A 현재(리치고) / B 실거래 시세(없으면 리치고) / C 둘의 평균 / D 리치고70·실거래30 (2026-11-05 추가)
+- 2026-11-05: 국토부 API 수집본(dev/molit/ot.csv.gz)도 입력으로 받음 (11/3 결과: 실거래 있는 건 A 5.99% vs B 6.40% — 실거래가 더 나빴음) — 월별 롤링 2025-02~2026-10, RF+부스팅
 """
 import sys, os, re, json, glob, warnings
 import numpy as np, pandas as pd
@@ -61,6 +62,19 @@ def read_molit(paths):
     out['date'] = pd.to_datetime(out.ym.str[:6] + out.day.str.zfill(2).str[:2], format='%Y%m%d', errors='coerce')
     out = out[out.date.notna()].drop_duplicates()
     print('국토부 거래', len(out), out.date.min().date(), '~', out.date.max().date())
+    return out
+
+
+def read_api(path):
+    """국토부 API 수집본(dev/molit/ot.csv.gz, 2026-11-05) → read_molit 과 같은 형식."""
+    d = pd.read_csv(path, dtype=str)
+    if 'cdealType' in d: d = d[d.cdealType.fillna('') == '']
+    out = pd.DataFrame({'sgg_full': d.sgg.str.strip() + ' ' + d.umdNm.str.strip(), 'bunji': d.jibun.astype(str).str.strip(),
+                        'name': d.offiNm.astype(str).str.strip(), 'area': pd.to_numeric(d.excluUseAr, errors='coerce'),
+                        'price': pd.to_numeric(d.dealAmount.str.replace(',', ''), errors='coerce') * 1e4,
+                        'date': pd.to_datetime(d.dealYear + '-' + d.dealMonth.str.zfill(2) + '-' + d.dealDay.str.zfill(2), errors='coerce')})
+    out = out.dropna(subset=['price', 'area', 'date']).drop_duplicates()
+    print('국토부 API 거래', len(out), out.date.min().date(), '~', out.date.max().date())
     return out
 
 
@@ -121,7 +135,7 @@ def rolling(df, label, start='2025-02-01'):
 
 def main(paths):
     addr = json.load(open(ADDR))
-    trades = read_molit(paths)
+    trades = read_api(paths[0]) if paths and paths[0].endswith('.csv.gz') else read_molit(paths)
     gm = match_danji(trades, addr)
     base = pd.read_csv(om.TRAIN)
     rows = []
@@ -140,6 +154,7 @@ def main(paths):
         'A_현재': b.mkt,
         'B_실거래': b.trade_sise.fillna(b.mkt),
         'C_평균': np.where(has, (b.trade_sise + b.mkt) / 2, b.mkt),
+        'D_리치고70실거래30': np.where(has, 0.3 * b.trade_sise + 0.7 * b.mkt, b.mkt),
     }
     res = b[['auction_id', 'date', 'station_m', 'fails']].copy(); res['has'] = has.values
     for k, v in variants.items():
