@@ -222,13 +222,16 @@ def card(v, today):
          f'<div class="g s">{E(gu)} · {E(case)} · {E(v.get("court") or "")}</div>', '<b>📋 기본 정보</b>']
     bd = v.get('bidding_date') or ''
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
+    # 순서 (2026-11-05 사용자 지정): 매매 시세 → 감정가·최저가 → 유찰 → 가까운 역
+    bs = base_sise(v)   # 모델 시세 (아파트 M, 오피스텔 리치고)
+    if bs:
+        L.append(f'🎯 매매 시세 <b>{bs:.2f}억</b>')
+    L.append(f'💰 감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b>' + (f' (시세 대비 {low / bs * 100:.0f}%)' if bs else '')
+             + f' · 보증금 {v["low_manwon"] * 0.1:,.0f}만')
     f = v.get('fail') or {}
     line = f"🔁 유찰 {v.get('fails') or 0}회"
     if f.get('prob_pct') is not None and not f.get('error'): line += f" · 유찰 확률(이번 회차) {f['prob_pct']}% · {f.get('level', '')}"
     L.append(line)
-    bs = base_sise(v)   # 2026-11-05 사용자 요청: 최저가 % 는 시세 대비, 시세는 모델 시세 한 줄만
-    L.append(f'💰 감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b>' + (f' (시세 대비 {low / bs * 100:.0f}%)' if bs else '')
-             + f' · 보증금 {v["low_manwon"] * 0.1:,.0f}만')
     stt = station_text(v)
     if stt:
         L.append(f"🚇 {stt}")
@@ -238,8 +241,6 @@ def card(v, today):
         L.append(f"🚇 5호선 {E(s5['name'])}역 도보 약 {s5['walk_min']}분 ({s5['distance_m']}m)")
     if cat == '아파트' and s8 and s8['name'].removesuffix('역') not in names and s8['name'] not in names and s8['distance_m'] <= 920:
         L.append(f"🚇 8호선 {E(s8['name'])}역 도보 약 {s8['walk_min']}분 ({s8['distance_m']}m)")
-    if bs:
-        L.append(f'🎯 매매 시세 <b>{bs:.2f}억</b>')
     if cat == '오피스텔':
         inc = v.get('income') or {}
         if inc.get('est_monthly_rent_manwon'):
