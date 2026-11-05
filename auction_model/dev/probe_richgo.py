@@ -1,29 +1,11 @@
-"""리치고 탐색 (2026-11-05): 학습 사례(아파트 1,413건)의 경매 물건 주소(층·호) — 시세 층 보정 백테스트용 (dev/probe/case_addr.json).
-단지 페이지 auctionInfo(과거 경매 포함)에서 auction_id 의 address."""
-import json, os, sys, csv
-from concurrent.futures import ThreadPoolExecutor
-HERE = os.path.dirname(os.path.abspath(__file__)); AM = os.path.dirname(HERE); sys.path.insert(0, AM)
-import nearby
-OUT = os.path.join(HERE, 'probe')
-rows = list(csv.DictReader(open(os.path.join(AM, 'court_backfill', 'apt_case_map.csv'), encoding='utf-8')))
-need = {}
-for r in rows: need.setdefault(r['danji'], set()).add(r['auction_id'])
-
-
-def one(dj):
-    d = nearby.page_props('danji', dj).get('data') or {}
-    out = {}
-    def flat(x):
-        if not x: return
-        if x.get('auctionId') in need[dj]:
-            out[x['auctionId']] = dict(address=x.get('address'), floor=x.get('floor'), dong=x.get('dong'), ho=x.get('ho'), keys=sorted(x)[:60])
-        for s in x.get('subList') or []: flat(s)
-    flat(d.get('auctionInfo'))
-    return out
-
-
+"""탐색 (2026-11-05): 메일의 '경매 전체 카드' 버튼이 반응 없다는 사용자 보고 → 웹페이지 응답 확인."""
+import json, os, subprocess
+HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, 'probe'); os.makedirs(OUT, exist_ok=True)
 res = {}
-with ThreadPoolExecutor(8) as ex:
-    for o in ex.map(one, sorted(need)): res.update(o)
-json.dump(res, open(os.path.join(OUT, 'case_addr.json'), 'w'), ensure_ascii=False, indent=0)
-print(len(res), '/', len(rows))
+for u in ['https://wpaud16.github.io/ML/auction_model/page/', 'https://wpaud16.github.io/ML/auction_model/page/index.html',
+          'https://wpaud16.github.io/ML/outfit/2026-11-05/', 'https://wpaud16.github.io/ML/']:
+    r = subprocess.run(['curl', '-sL', '-m', '30', '-o', '/tmp/p.html', '-w', '%{http_code} %{size_download} %{url_effective}', u], capture_output=True, text=True)
+    head = open('/tmp/p.html', encoding='utf-8', errors='replace').read()[:300] if os.path.exists('/tmp/p.html') else ''
+    res[u] = dict(status=r.stdout, head=head)
+json.dump(res, open(os.path.join(OUT, 'pages.json'), 'w'), ensure_ascii=False, indent=1)
+print(json.dumps(res, ensure_ascii=False)[:1500])
