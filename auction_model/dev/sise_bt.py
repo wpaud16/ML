@@ -110,6 +110,8 @@ for i, r in df.iterrows():
                 out['tr12_q60'] = float(tt.adj.quantile(.6))
     rows.append(out)
 S = pd.DataFrame(rows).set_index('i')
+S.to_csv(os.path.join(HERE, 'sise_bt_S.csv'))   # 학습 사례 전체의 당시 시세 값 (combo_bt.py 입력)
+if os.environ.get('S_ONLY'): sys.exit(0)
 print('매칭 방법', S.how.value_counts().to_dict())
 print('매칭', S.n_seq.notna().sum(), '/', len(df), ' 12개월 거래 있음', S.tr12.notna().sum(), ' 6개월', S.tr6.notna().sum(), ' 3개월', S.tr3.notna().sum(), flush=True)
 print('실거래12m ÷ 리치고 중앙', (S.tr12 / df.mkt).median().round(3), ' 낙찰가 ÷ 실거래12m 중앙', (df.sell / S.tr12).median().round(3))

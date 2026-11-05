@@ -1,5 +1,5 @@
 """시세 × 모델 동시 비교 (2026-11-05, 사용자 요청: 시세와 모델을 같이 검증해 최고 조합 찾기).
-시세 후보는 dev/sise_bt_rows.csv(= sise_bt.py 가 만든 매각 당시 실거래·층 보정 값)로 다시 만든다.
+시세 후보는 dev/sise_bt_S.csv(= sise_bt.py 가 만든 매각 당시 실거래·층 보정 값)로 다시 만든다.
 같은 시간 순 월별 검증(2024-07~), 최근 사례 가중(1년 감쇠). 지표 = 실제 낙찰가 대비 평균 오차."""
 import os, sys, warnings
 import numpy as np, pandas as pd
@@ -11,7 +11,7 @@ import lightgbm as lgb, xgboost as xgb
 from catboost import CatBoostRegressor
 
 df = ap.load_train()
-S = pd.read_csv(os.path.join(HERE, 'sise_bt_rows.csv'), index_col=0).reindex(df.index)
+S = pd.read_csv(os.path.join(HERE, 'sise_bt_S.csv'), index_col=0).reindex(df.index)
 RF_ = df.mkt * S.fprem_case.fillna(1)
 w = (S.neff / (S.neff + 2)).clip(upper=0.7).fillna(0) * (1 - (S.disp.fillna(0.1) / 0.2).clip(0, 1) * 0.5)
 SISE = {'A 리치고': df.mkt,
