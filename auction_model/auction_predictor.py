@@ -512,6 +512,12 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     g = f"{row.sd.iloc[0]} {row.sgg.iloc[0] or ''}"
     sgg_adj = float((cfg.get('sgg_adj') or {}).get(g, 0.0))   # 구별 치우침 보정 (calibrate 에서 계산)
     c_raw += sgg_adj
+    # 감정 후 시세 상승형 (감정가 < 시세 85% & 1년 +8%↑): 감정가·최저가 대신 '시세 × 최근 120일 낙찰가율'로 예측 (2026-11-05 사용자 제안,
+    # 백테스트 상승형 40건 오차 8.54→7.48%, 치우침 +3.8→+0.7%, 전체 4.71→4.67%)
+    gap_shift = 0.0
+    if float(row.r_appr_mkt.iloc[0]) < 0.85 and float(row.mom12.fillna(0).iloc[0]) > 0.08 and float(row.heat.iloc[0]) > 0:
+        gap_shift = float(np.log(row.heat.iloc[0])) - c_raw
+        c_raw += gap_shift
     mkt, low = float(row.mkt.iloc[0]), float(row.low.iloc[0])
     pool, a, b = cfg['resid_pool'], cfg['calib_a'], cfg['calib_b']
     hh = row.hh.iloc[0]
@@ -541,13 +547,13 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     if small:
         notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
                      f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
-    bidders = bidder_scenarios(df, row, T, low, mkt, (1 + (SMALL_ADJ if small else 0.0)) * np.exp(sgg_adj) - 1, cfg)
+    bidders = bidder_scenarios(df, row, T, low, mkt, (1 + (SMALL_ADJ if small else 0.0)) * np.exp(sgg_adj + gap_shift) - 1, cfg)
     _jr = row.jeonse_ratio.iloc[0]
     if _jr != _jr and 'jeonse_ratio_bldg' in row: _jr = row.jeonse_ratio_bldg.iloc[0]
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
                jeonse_ratio=None if _jr != _jr else round(float(_jr), 3),
                sgg_adj_pct=round((np.exp(sgg_adj) - 1) * 100, 1),
-               by_bidders=bidders,
+               by_bidders=bidders, gap_rule=(round(gap_shift * 100, 1) if gap_shift else None),
                fail=_fail_info('apt', row),
                households=None if pd.isna(hh) else int(hh),
                small_danji_adj=dict(applied=small, adj_pct=SMALL_ADJ * 100 if small else 0.0,

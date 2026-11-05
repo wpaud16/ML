@@ -11,7 +11,7 @@ import lightgbm as lgb, xgboost as xgb
 from catboost import CatBoostRegressor
 
 df = ap.load_train()
-S = pd.read_csv(os.path.join(HERE, 'sise_bt_S.csv'), index_col=0).reindex(df.index)
+S = pd.read_csv(os.path.join(HERE, os.environ.get('SFILE', 'sise_bt_S.csv')), index_col=0).reindex(df.index)
 RF_ = df.mkt * S.fprem_case.fillna(1)
 w = (S.neff / (S.neff + 2)).clip(upper=0.7).fillna(0) * (1 - (S.disp.fillna(0.1) / 0.2).clip(0, 1) * 0.5)
 SISE = {'A 리치고': df.mkt,

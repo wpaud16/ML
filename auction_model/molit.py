@@ -145,8 +145,9 @@ def m_sise(sd, sgg, emd, jibun_addr, area, address, richgo_won, today=None, lag_
     ix = m[m.d <= cut].groupby('p').ppa.median().sort_index()
     ix = ix.reindex(pd.period_range(ix.index.min(), ix.index.max(), freq='M')).interpolate(limit_direction='both').rolling(3, min_periods=1).median()
     I = float(ix.iloc[-1])
-    # 거래가 × (오늘 지수 / 거래월 지수) × (이 물건 층 비율 / 그 거래 층 비율)
-    adj = t.price.values * np.array([I / float(ix.get(p, I)) for p in t.p]) * np.array([tp / FP.get(fbin(f, tt), 1.0) for f, tt in zip(t.floor, t.top)])
+    # 거래가 × (이 물건 층 비율 / 그 거래 층 비율). 시군구 지수 추세 보정은 뺌 (2026-11-05: 거래 단지 구성에 따라 출렁여
+    # 힐스테이트다산 실거래 평균이 12억대→9.6억으로 깎임. 백테스트 보정 없음 4.71% vs 있음 4.77%) — 최근 거래 가중(반감기 3개월)만 사용
+    adj = t.price.values * np.array([tp / FP.get(fbin(f, tt), 1.0) for f, tt in zip(t.floor, t.top)])
     age = (t0 - t.d).dt.days.values / 30.4; wt = 0.5 ** (age / 3)
     tw = float(np.sum(wt * adj) / wt.sum()); neff = float(wt.sum())
     disp = float(np.std(adj, ddof=1) / np.mean(adj)) if len(adj) >= 3 else 0.1

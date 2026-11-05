@@ -26,6 +26,7 @@ ix = ix.reindex(pd.period_range(ix.index.min(), ix.index.max(), freq='M')).inter
 
 
 def idx(sgg, p):
+    if os.environ.get('IDX') == 'none': return 1.0   # 추세 보정 없음 (2026-11-05: 시군구 지수가 거래 단지 구성에 따라 출렁임)
     s = ix.get(sgg)
     if s is None: return np.nan
     p = min(max(p, s.index[0]), s.index[-1]); return float(s.loc[p])
@@ -110,7 +111,7 @@ for i, r in df.iterrows():
                 out['tr12_q60'] = float(tt.adj.quantile(.6))
     rows.append(out)
 S = pd.DataFrame(rows).set_index('i')
-S.to_csv(os.path.join(HERE, 'sise_bt_S.csv'))   # 학습 사례 전체의 당시 시세 값 (combo_bt.py 입력)
+S.to_csv(os.path.join(HERE, 'sise_bt_S' + ('_noidx' if os.environ.get('IDX') == 'none' else '') + '.csv'))   # 학습 사례 전체의 당시 시세 값 (combo_bt.py 입력)
 if os.environ.get('S_ONLY'): sys.exit(0)
 print('매칭 방법', S.how.value_counts().to_dict())
 print('매칭', S.n_seq.notna().sum(), '/', len(df), ' 12개월 거래 있음', S.tr12.notna().sum(), ' 6개월', S.tr6.notna().sum(), ' 3개월', S.tr3.notna().sum(), flush=True)
