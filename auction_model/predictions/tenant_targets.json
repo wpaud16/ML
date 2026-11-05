@@ -1,6 +1,6 @@
 {
  "date": "2026-11-05",
- "n": 513,
+ "n": 515,
  "items": [
   {
    "key": "2022타경54440[1]",
@@ -134,15 +134,6 @@
    "item_no": 1,
    "court": "서울남부지방법원",
    "auction_id": "C66UXHKP",
-   "bidding_date": "2026-11-05",
-   "category": "오피스텔"
-  },
-  {
-   "key": "2024타경124445[1]",
-   "case": "2024타경124445",
-   "item_no": 1,
-   "court": "서울남부지방법원",
-   "auction_id": "C05JEJZC",
    "bidding_date": "2026-11-05",
    "category": "오피스텔"
   },
@@ -597,6 +588,15 @@
    "category": "오피스텔"
   },
   {
+   "key": "2025타경103942[1]",
+   "case": "2025타경103942",
+   "item_no": 1,
+   "court": "서울중앙지방법원",
+   "auction_id": "C64ICUON",
+   "bidding_date": "2026-11-26",
+   "category": "아파트"
+  },
+  {
    "key": "2025타경104017[1]",
    "case": "2025타경104017",
    "item_no": 1,
@@ -840,15 +840,6 @@
    "category": "오피스텔"
   },
   {
-   "key": "2025타경11101[1]",
-   "case": "2025타경11101",
-   "item_no": 1,
-   "court": "서울남부지방법원",
-   "auction_id": "C40UQWXM",
-   "bidding_date": "2026-11-05",
-   "category": "오피스텔"
-  },
-  {
    "key": "2025타경11237[1]",
    "case": "2025타경11237",
    "item_no": 1,
@@ -930,6 +921,15 @@
    "category": "오피스텔"
   },
   {
+   "key": "2025타경12106[1]",
+   "case": "2025타경12106",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C32HHKPA",
+   "bidding_date": "2026-11-17",
+   "category": "오피스텔"
+  },
+  {
    "key": "2025타경12143[1]",
    "case": "2025타경12143",
    "item_no": 1,
@@ -945,6 +945,15 @@
    "court": "서울남부지방법원",
    "auction_id": "C01OFTYS",
    "bidding_date": "2026-11-17",
+   "category": "오피스텔"
+  },
+  {
+   "key": "2025타경12222[1]",
+   "case": "2025타경12222",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C23DPYWA",
+   "bidding_date": "2026-11-05",
    "category": "오피스텔"
   },
   {
@@ -1197,15 +1206,6 @@
    "court": "서울남부지방법원",
    "auction_id": "C73PPSOL",
    "bidding_date": "2026-11-26",
-   "category": "오피스텔"
-  },
-  {
-   "key": "2025타경13725[1]",
-   "case": "2025타경13725",
-   "item_no": 1,
-   "court": "서울남부지방법원",
-   "auction_id": "C59XYERU",
-   "bidding_date": "2026-11-05",
    "category": "오피스텔"
   },
   {
@@ -2271,15 +2271,6 @@
    "category": "아파트"
   },
   {
-   "key": "2025타경52356[1]",
-   "case": "2025타경52356",
-   "item_no": 1,
-   "court": "서울동부지방법원",
-   "auction_id": "C99QNYCX",
-   "bidding_date": "2026-11-16",
-   "category": "오피스텔"
-  },
-  {
    "key": "2025타경52365[1]",
    "case": "2025타경52365",
    "item_no": 1,
@@ -3261,15 +3252,6 @@
    "category": "오피스텔"
   },
   {
-   "key": "2026타경3450[1]",
-   "case": "2026타경3450",
-   "item_no": 1,
-   "court": "서울남부지방법원",
-   "auction_id": "C25CWOHL",
-   "bidding_date": "2026-11-05",
-   "category": "오피스텔"
-  },
-  {
    "key": "2026타경3493[1]",
    "case": "2026타경3493",
    "item_no": 1,
@@ -3486,12 +3468,30 @@
    "category": "오피스텔"
   },
   {
+   "key": "2026타경3925[1]",
+   "case": "2026타경3925",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C70IUTLH",
+   "bidding_date": "2026-11-05",
+   "category": "오피스텔"
+  },
+  {
    "key": "2026타경3943[1]",
    "case": "2026타경3943",
    "item_no": 1,
    "court": "서울남부지방법원",
    "auction_id": "C68LGFBP",
    "bidding_date": "2026-11-11",
+   "category": "오피스텔"
+  },
+  {
+   "key": "2026타경3944[1]",
+   "case": "2026타경3944",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C15XRMOD",
+   "bidding_date": "2026-12-04",
    "category": "오피스텔"
   },
   {
@@ -3699,6 +3699,15 @@
    "court": "서울남부지방법원",
    "auction_id": "C41JMGHQ",
    "bidding_date": "2026-11-11",
+   "category": "오피스텔"
+  },
+  {
+   "key": "2026타경4310[1]",
+   "case": "2026타경4310",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C27LSEVO",
+   "bidding_date": "2026-11-26",
    "category": "오피스텔"
   },
   {
@@ -4222,6 +4231,15 @@
    "auction_id": "C10NORMF",
    "bidding_date": "2026-11-10",
    "category": "아파트"
+  },
+  {
+   "key": "2026타경5252[1]",
+   "case": "2026타경5252",
+   "item_no": 1,
+   "court": "서울남부지방법원",
+   "auction_id": "C89NRIQH",
+   "bidding_date": "2026-11-10",
+   "category": "오피스텔"
   },
   {
    "key": "2026타경5300[1]",
