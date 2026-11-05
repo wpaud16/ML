@@ -32,6 +32,37 @@ def idx(sgg, p):
 
 
 m['jb'] = m.jibun.astype(str).str.strip()
+# 층 보정 (2026-11-05): 단지 안 상대 층 구간별 가격 차이 — 2024-07 이전 거래로만 추정(검증 기간 정보 누출 방지)
+m['top'] = m.groupby('aptSeq').floor.transform('max')
+
+
+def fbin(f, top):
+    if pd.isna(f) or pd.isna(top) or top < 3: return 'mid'
+    if f <= 1: return '1층'
+    if f <= 3: return '2~3층'
+    if f >= top: return '꼭대기'
+    r = f / top
+    return '저층' if r < 1 / 3 else ('중층' if r < 2 / 3 else '고층')
+
+
+m['fb'] = [fbin(f, t) for f, t in zip(m.floor, m.top)]
+_e = m[m.d < '2024-07-01'].copy(); _e['lp'] = np.log(_e.ppa)
+_e['res'] = _e.lp - _e.groupby(['aptSeq', 'ym', _e.area.round(0)]).lp.transform('mean')
+_e = _e[_e.groupby(['aptSeq', 'ym', _e.area.round(0)]).lp.transform('size') >= 2]
+FP = _e.groupby('fb').res.mean(); FP = np.exp(FP - FP.get('중층', 0))
+print('층 구간별 가격 (중층=1)', FP.round(3).to_dict(), ' 표본', _e.groupby('fb').size().to_dict())
+m['fprem'] = m.fb.map(FP).fillna(1.0)
+CASE = json.load(open(os.path.join(HERE, 'probe', 'case_addr.json')))
+AMAP = pd.read_csv(os.path.join(os.path.dirname(HERE), 'court_backfill', 'apt_case_map.csv')).set_index('index').auction_id
+import re as _re
+
+
+def case_floor(i):
+    a = (CASE.get(AMAP.get(i, '')) or {}).get('address') or ''
+    x = _re.search(r'(\d+)층', a)
+    return int(x.group(1)) if x else (1 if '지하' in a else np.nan)
+
+
 G = {k: g for k, g in m.groupby(['sgg', 'umdNm'])}
 INFO = json.load(open(os.path.join(HERE, 'probe', 'danji_info.json')))
 
@@ -58,6 +89,11 @@ for i, r in df.iterrows():
             t = c[(c.aptSeq == seq) & (c.d <= r.date - pd.Timedelta(days=30))].sort_values('d')
             Tp = (r.date - pd.Timedelta(days=30)).to_period('M'); I = idx(r.sgg, Tp)
             t = t.assign(adj=t.price * [I / idx(r.sgg, p) for p in t.ym])
+            top = c[c.aptSeq == seq].top.max() if len(c) else np.nan
+            tp = FP.get(fbin(case_floor(i), top), 1.0); out['fprem_case'] = tp; out['fb_case'] = fbin(case_floor(i), top)
+            tf = t.assign(adj=t.adj * tp / t.fprem)
+            tt = tf[tf.d >= r.date - pd.DateOffset(months=12)]
+            if len(tt): out['tr12f'] = float(tt.adj.median())
             for mo in (3, 6, 12):
                 tt = t[t.d >= r.date - pd.DateOffset(months=mo)]
                 out[f'n{mo}'] = len(tt)
@@ -80,6 +116,15 @@ V = {'A 리치고(현재)': df.mkt,
      'E 리치고·실거래12m 중앙(=평균)': ((df.mkt + S.tr12.fillna(df.mkt)) / 2),
      'F 리치고70·실거래12m 30': (0.7 * df.mkt + 0.3 * S.tr12.fillna(df.mkt)),
      'G 실거래12m 60%분위(없으면 리치고)': S.tr12_q60.fillna(df.mkt)}
+# 2026-11-05 사용자 요청: 섞는 비율 (실거래 비중 w)
+for w in (0.4, 0.6, 0.7):
+    V[f'W 실거래{int(w*100)}·리치고{int(100-w*100)}'] = w * S.tr12.fillna(df.mkt) + (1 - w) * df.mkt
+V['H 층보정 실거래12m(없으면 리치고)'] = S.tr12f.fillna(df.mkt)
+V['I 층보정 실거래40·리치고60'] = 0.4 * S.tr12f.fillna(df.mkt) + 0.6 * df.mkt
+V['J 층보정 실거래50·리치고(층보정)50'] = 0.5 * S.tr12f.fillna(df.mkt * S.fprem_case.fillna(1)) + 0.5 * df.mkt * S.fprem_case.fillna(1)
+V['K 리치고×층보정'] = df.mkt * S.fprem_case.fillna(1)
+if os.environ.get('ONLY'):
+    V = {k: v for k, v in V.items() if k[0] in os.environ['ONLY']}
 
 
 def run(mkt):
