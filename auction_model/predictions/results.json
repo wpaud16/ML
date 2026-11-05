@@ -27,7 +27,13 @@
   "bidders": 5,
   "second_manwon": 30400,
   "diff_pct": 9.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 30100,
+   "pct_of_sise": 86.4,
+   "actual_pct_of_sise": 89.1
+  }
  },
  "2024타경120408[1]|2026-11-04": {
   "key": "2024타경120408[1]",
@@ -57,7 +63,13 @@
   "bidders": 2,
   "second_manwon": 16000,
   "diff_pct": 4.6,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 55%",
+   "manwon": 19800,
+   "pct_of_sise": 93.7,
+   "actual_pct_of_sise": 93.8
+  }
  },
  "2024타경120477[1]|2026-11-04": {
   "key": "2024타경120477[1]",
@@ -87,7 +99,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -0.7,
-  "band": "45~50%"
+  "band": "45~50%",
+  "closest": {
+   "label": "1명 50%",
+   "manwon": 25300,
+   "pct_of_sise": 95.5,
+   "actual_pct_of_sise": 95.5
+  }
  },
  "2024타경144784[1]|2026-11-04": {
   "key": "2024타경144784[1]",
@@ -117,7 +135,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 6.3,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 20600,
+   "pct_of_sise": 88.6,
+   "actual_pct_of_sise": 89.4
+  }
  },
  "2024타경146957[1]|2026-11-04": {
   "key": "2024타경146957[1]",
@@ -147,7 +171,13 @@
   "bidders": 2,
   "second_manwon": 26270,
   "diff_pct": 10.4,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 26800,
+   "pct_of_sise": 92.4,
+   "actual_pct_of_sise": 96.6
+  }
  },
  "2024타경3470[1]|2026-11-04": {
   "key": "2024타경3470[1]",
@@ -195,7 +225,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 0.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 40%",
+   "manwon": 35600,
+   "pct_of_sise": 103.0,
+   "actual_pct_of_sise": 103.0
+  }
  },
  "2024타경6202[1]|2026-11-04": {
   "key": "2024타경6202[1]",
@@ -225,7 +261,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 0.0,
-  "band": "최저가 단일"
+  "band": "최저가 단일",
+  "closest": {
+   "label": "1명 40%",
+   "manwon": 35600,
+   "pct_of_sise": 103.0,
+   "actual_pct_of_sise": 103.0
+  }
  },
  "2024타경62768[1]|2026-11-04": {
   "key": "2024타경62768[1]",
@@ -255,7 +297,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 2.8,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 55%",
+   "manwon": 28700,
+   "pct_of_sise": 95.7,
+   "actual_pct_of_sise": 95.7
+  }
  },
  "2024타경63150[1]|2026-11-03": {
   "key": "2024타경63150[1]",
@@ -282,7 +330,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 1.7,
-  "band": "55~60%"
+  "band": "55~60%",
+  "closest": {
+   "label": "전체 60%",
+   "manwon": 27813,
+   "pct_of_sise": 71.3,
+   "actual_pct_of_sise": 71.1
+  }
  },
  "2024타경63150[1]|2026-11-04": {
   "key": "2024타경63150[1]",
@@ -312,7 +366,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 1.5,
-  "band": "55~60%"
+  "band": "55~60%",
+  "closest": {
+   "label": "2명 60%",
+   "manwon": 27600,
+   "pct_of_sise": 70.8,
+   "actual_pct_of_sise": 71.1
+  }
  },
  "2024타경63389[1]|2026-11-03": {
   "key": "2024타경63389[1]",
@@ -339,7 +399,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -0.3,
-  "band": "45~50%"
+  "band": "45~50%",
+  "closest": {
+   "label": "전체 50%",
+   "manwon": 22205,
+   "pct_of_sise": 87.1,
+   "actual_pct_of_sise": 86.8
+  }
  },
  "2024타경63389[1]|2026-11-04": {
   "key": "2024타경63389[1]",
@@ -388,7 +454,13 @@
   "bidders": 10,
   "second_manwon": 151689,
   "diff_pct": 10.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 60%",
+   "manwon": 144453,
+   "pct_of_sise": 79.2,
+   "actual_pct_of_sise": 85.5
+  }
  },
  "2024타경64236[1]|2026-11-04": {
   "key": "2024타경64236[1]",
@@ -418,7 +490,13 @@
   "bidders": 10,
   "second_manwon": 151689,
   "diff_pct": 7.1,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "13명 60%",
+   "manwon": 154100,
+   "pct_of_sise": 84.5,
+   "actual_pct_of_sise": 85.5
+  }
  },
  "2024타경83810[1]|2026-11-01": {
   "key": "2024타경83810[1]",
@@ -441,7 +519,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 6.7,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 60%",
+   "manwon": 45813,
+   "pct_of_sise": 79.3,
+   "actual_pct_of_sise": 83.1
+  }
  },
  "2024타경83810[1]|2026-11-04": {
   "key": "2024타경83810[1]",
@@ -471,7 +555,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 6.9,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "13명 55%",
+   "manwon": 48000,
+   "pct_of_sise": 83.1,
+   "actual_pct_of_sise": 83.1
+  }
  },
  "2025타경102542[1]|2026-11-03": {
   "key": "2025타경102542[1]",
@@ -626,7 +716,13 @@
   "bidders": 2,
   "second_manwon": 22500,
   "diff_pct": 8.8,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 23500,
+   "pct_of_sise": 82.6,
+   "actual_pct_of_sise": 84.0
+  }
  },
  "2025타경11424[1]|2026-11-04": {
   "key": "2025타경11424[1]",
@@ -656,7 +752,13 @@
   "bidders": 7,
   "second_manwon": 8516,
   "diff_pct": 12.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 8300,
+   "pct_of_sise": 68.5,
+   "actual_pct_of_sise": 72.6
+  }
  },
  "2025타경12547[1]|2026-11-04": {
   "key": "2025타경12547[1]",
@@ -686,7 +788,13 @@
   "bidders": 2,
   "second_manwon": 14800,
   "diff_pct": -2.8,
-  "band": "40% 미만"
+  "band": "40% 미만",
+  "closest": {
+   "label": "1명 40%",
+   "manwon": 15000,
+   "pct_of_sise": 63.8,
+   "actual_pct_of_sise": 63.2
+  }
  },
  "2025타경13284[1]|2026-11-04": {
   "key": "2025타경13284[1]",
@@ -716,7 +824,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -7.7,
-  "band": "40% 미만"
+  "band": "40% 미만",
+  "closest": {
+   "label": "1명 40%",
+   "manwon": 10400,
+   "pct_of_sise": 80.6,
+   "actual_pct_of_sise": 76.1
+  }
  },
  "2025타경13352[1]|2026-11-02": {
   "key": "2025타경13352[1]",
@@ -768,7 +882,13 @@
   "bidders": 2,
   "second_manwon": 21008,
   "diff_pct": 8.6,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 25300,
+   "pct_of_sise": 90.4,
+   "actual_pct_of_sise": 91.6
+  }
  },
  "2025타경13693[1]|2026-11-04": {
   "key": "2025타경13693[1]",
@@ -798,7 +918,13 @@
   "bidders": 2,
   "second_manwon": 26510,
   "diff_pct": 5.3,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 30600,
+   "pct_of_sise": 66.5,
+   "actual_pct_of_sise": 67.0
+  }
  },
  "2025타경13745[1]|2026-11-04": {
   "key": "2025타경13745[1]",
@@ -828,7 +954,13 @@
   "bidders": 2,
   "second_manwon": 22180,
   "diff_pct": 5.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 55%",
+   "manwon": 25100,
+   "pct_of_sise": 79.7,
+   "actual_pct_of_sise": 79.3
+  }
  },
  "2025타경13822[1]|2026-11-04": {
   "key": "2025타경13822[1]",
@@ -858,7 +990,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 6.7,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 22700,
+   "pct_of_sise": 81.8,
+   "actual_pct_of_sise": 82.5
+  }
  },
  "2025타경13931[1]|2026-11-03": {
   "key": "2025타경13931[1]",
@@ -981,7 +1119,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 0.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 40%",
+   "manwon": 38300,
+   "pct_of_sise": 102.7,
+   "actual_pct_of_sise": 102.7
+  }
  },
  "2025타경4459[1]|2026-11-01": {
   "key": "2025타경4459[1]",
@@ -1004,7 +1148,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 3.9,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 60%",
+   "manwon": 83346,
+   "pct_of_sise": 102.3,
+   "actual_pct_of_sise": 104.3
+  }
  },
  "2025타경4459[1]|2026-11-04": {
   "key": "2025타경4459[1]",
@@ -1034,7 +1184,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 3.3,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "5명 60%",
+   "manwon": 85000,
+   "pct_of_sise": 104.3,
+   "actual_pct_of_sise": 104.3
+  }
  },
  "2025타경51381[1]|2026-11-03": {
   "key": "2025타경51381[1]",
@@ -1061,7 +1217,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 5.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 60%",
+   "manwon": 15608,
+   "pct_of_sise": 94.6,
+   "actual_pct_of_sise": 97.4
+  }
  },
  "2025타경51381[1]|2026-11-04": {
   "key": "2025타경51381[1]",
@@ -1091,7 +1253,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 10.3,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 15200,
+   "pct_of_sise": 98.1,
+   "actual_pct_of_sise": 103.7
+  }
  },
  "2025타경51557[1]|2026-11-04": {
   "key": "2025타경51557[1]",
@@ -1121,7 +1289,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 7.5,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 17900,
+   "pct_of_sise": 96.8,
+   "actual_pct_of_sise": 99.8
+  }
  },
  "2025타경51793[1]|2026-11-03": {
   "key": "2025타경51793[1]",
@@ -1251,7 +1425,13 @@
   "bidders": 7,
   "second_manwon": 20569,
   "diff_pct": 3.7,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 55%",
+   "manwon": 21500,
+   "pct_of_sise": 76.1,
+   "actual_pct_of_sise": 76.4
+  }
  },
  "2025타경52197[1]|2026-11-03": {
   "key": "2025타경52197[1]",
@@ -1353,7 +1533,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -2.8,
-  "band": "40% 미만"
+  "band": "40% 미만",
+  "closest": {
+   "label": "1명 40%",
+   "manwon": 7700,
+   "pct_of_sise": 84.9,
+   "actual_pct_of_sise": 84.9
+  }
  },
  "2025타경71670[1]|2026-10-31": {
   "key": "2025타경71670[1]",
@@ -1376,7 +1562,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -4.7,
-  "band": "40% 미만"
+  "band": "40% 미만",
+  "closest": {
+   "label": "전체 40%",
+   "manwon": 9938,
+   "pct_of_sise": 80.1,
+   "actual_pct_of_sise": 77.7
+  }
  },
  "2025타경71670[1]|2026-11-01": {
   "key": "2025타경71670[1]",
@@ -1399,7 +1591,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -4.5,
-  "band": "40% 미만"
+  "band": "40% 미만",
+  "closest": {
+   "label": "전체 40%",
+   "manwon": 9917,
+   "pct_of_sise": 80.0,
+   "actual_pct_of_sise": 77.7
+  }
  },
  "2025타경71670[1]|2026-11-02": {
   "key": "2025타경71670[1]",
@@ -1428,7 +1626,13 @@
   "expected_range": [
    4,
    9
-  ]
+  ],
+  "closest": {
+   "label": "2명 60%",
+   "manwon": 9600,
+   "pct_of_sise": 77.4,
+   "actual_pct_of_sise": 77.7
+  }
  },
  "2025타경71670[1]|2026-11-03": {
   "key": "2025타경71670[1]",
@@ -1458,7 +1662,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -3.7,
-  "band": "40% 미만"
+  "band": "40% 미만",
+  "closest": {
+   "label": "3명 40%",
+   "manwon": 9700,
+   "pct_of_sise": 78.2,
+   "actual_pct_of_sise": 77.7
+  }
  },
  "2025타경71670[1]|2026-11-04": {
   "key": "2025타경71670[1]",
@@ -1488,7 +1698,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": -2.7,
-  "band": "40% 미만"
+  "band": "40% 미만",
+  "closest": {
+   "label": "3명 40%",
+   "manwon": 9700,
+   "pct_of_sise": 78.2,
+   "actual_pct_of_sise": 77.7
+  }
  },
  "2025타경788[1]|2026-11-03": {
   "key": "2025타경788[1]",
@@ -1515,7 +1731,13 @@
   "bidders": 3,
   "second_manwon": 10533,
   "diff_pct": -1.5,
-  "band": "40~45%"
+  "band": "40~45%",
+  "closest": {
+   "label": "전체 40%",
+   "manwon": 11641,
+   "pct_of_sise": 67.3,
+   "actual_pct_of_sise": 67.6
+  }
  },
  "2025타경8595[1]|2026-11-04": {
   "key": "2025타경8595[1]",
@@ -1545,7 +1767,13 @@
   "bidders": 2,
   "second_manwon": 10200,
   "diff_pct": 8.7,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 10800,
+   "pct_of_sise": 89.2,
+   "actual_pct_of_sise": 91.1
+  }
  },
  "2025타경8882[1]|2026-11-02": {
   "key": "2025타경8882[1]",
@@ -1569,7 +1797,13 @@
   "bidders": null,
   "second_manwon": null,
   "diff_pct": 12.9,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 60%",
+   "manwon": 19758,
+   "pct_of_sise": 90.8,
+   "actual_pct_of_sise": 100.5
+  }
  },
  "2025타경8882[1]|2026-11-03": {
   "key": "2025타경8882[1]",
@@ -1599,7 +1833,13 @@
   "bidders": null,
   "second_manwon": null,
   "diff_pct": 13.2,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 20600,
+   "pct_of_sise": 94.7,
+   "actual_pct_of_sise": 100.5
+  }
  },
  "2025타경9378[1]|2026-11-04": {
   "key": "2025타경9378[1]",
@@ -1629,7 +1869,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 9.5,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 21200,
+   "pct_of_sise": 88.3,
+   "actual_pct_of_sise": 91.1
+  }
  },
  "2025타경9629[1]|2026-11-04": {
   "key": "2025타경9629[1]",
@@ -1659,7 +1905,13 @@
   "bidders": 2,
   "second_manwon": 14683,
   "diff_pct": 8.3,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 15100,
+   "pct_of_sise": 93.3,
+   "actual_pct_of_sise": 95.8
+  }
  },
  "2025타경9640[1]|2026-11-04": {
   "key": "2025타경9640[1]",
@@ -1689,7 +1941,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 13.1,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 28100,
+   "pct_of_sise": 112.4,
+   "actual_pct_of_sise": 122.5
+  }
  },
  "2025타경9914[1]|2026-11-04": {
   "key": "2025타경9914[1]",
@@ -1719,7 +1977,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 5.0,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 14700,
+   "pct_of_sise": 111.4,
+   "actual_pct_of_sise": 112.1
+  }
  },
  "2026타경100316[1]|2026-11-04": {
   "key": "2026타경100316[1]",
@@ -1771,7 +2035,13 @@
   "bidders": 3,
   "second_manwon": 9316,
   "diff_pct": 2.1,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "전체 60%",
+   "manwon": 10325,
+   "pct_of_sise": 84.6,
+   "actual_pct_of_sise": 84.7
+  }
  },
  "2026타경10323[1]|2026-11-04": {
   "key": "2026타경10323[1]",
@@ -2123,7 +2393,13 @@
   "bidders": 1,
   "second_manwon": null,
   "diff_pct": 5.5,
-  "band": "60% 초과"
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 이상 60%",
+   "manwon": 15600,
+   "pct_of_sise": 100.6,
+   "actual_pct_of_sise": 102.0
+  }
  },
  "2026타경50520[1]|2026-11-03": {
   "key": "2026타경50520[1]",
@@ -2327,7 +2603,13 @@
   "expected_range": [
    2,
    5
-  ]
+  ],
+  "closest": {
+   "label": "5명 60%",
+   "manwon": 179200,
+   "pct_of_sise": 96.6,
+   "actual_pct_of_sise": 96.6
+  }
  },
  "2026타경52[1]|2026-11-04": {
   "key": "2026타경52[1]",
@@ -2357,7 +2639,13 @@
   "bidders": 4,
   "second_manwon": 175900,
   "diff_pct": 1.4,
-  "band": "55~60%"
+  "band": "55~60%",
+  "closest": {
+   "label": "5명 55%",
+   "manwon": 179300,
+   "pct_of_sise": 96.6,
+   "actual_pct_of_sise": 96.6
+  }
  },
  "2026타경5796[1]|2026-11-04": {
   "key": "2026타경5796[1]",

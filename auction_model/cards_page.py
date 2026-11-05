@@ -267,8 +267,8 @@ def scorecard(rows, cat):
         w5 = sum(1 for r in sold if abs(r['diff_pct']) <= 5)
         mid = sum(1 for r in sold if (r.get('band') or '') not in ('', '60% 초과', '최저가 단일') and not (r.get('band') or '').startswith('40% 미만'))
         out.append(f'<div class="g s">낙찰 {len(sold)}건 · 평균 오차 {err:.1f}% · ±5% 안 {w5}건 · 40~60% 구간 안 {mid}건</div>')
-    t = ['<table class="sc"><col style="width:28%"><col style="width:11%"><col><col><col><col style="width:14%">',
-         '<tr><th>물건</th><th>기일</th><th>예상(50%)</th><th>실제</th><th>차이</th><th>인원<br><span class="sub">실제/예상</span></th></tr>']
+    t = ['<table class="sc"><col style="width:23%"><col style="width:9%"><col style="width:12%"><col style="width:12%"><col style="width:13%"><col style="width:19%"><col style="width:12%">',
+         '<tr><th>물건</th><th>기일</th><th>예상(50%)</th><th>실제</th><th>차이</th><th>가장 가까운 칸<br><span class="sub">시세 대비</span></th><th>인원<br><span class="sub">실제/예상</span></th></tr>']
     for r in rows:
         p50 = r['bid_by_prob_manwon']['50%'] / 1e4
         d = datetime.strptime(r['bidding_date'], '%Y-%m-%d'); dd = f'{d.month}/{d.day}'
@@ -279,14 +279,17 @@ def scorecard(rows, cat):
             diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span><br><span class="sub">{E(r.get("band") or "")}</span>'
         else:
             act = f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'; diff = '-'
+        cl = r.get('closest') if r.get('status') == '매각' else None
+        near = (f'{E(cl["label"])}<br><b>{cl["manwon"] / 1e4:.2f}</b>' + (f'<br><span class="sub">({cl["pct_of_sise"]:.1f}%)</span>' if cl.get('pct_of_sise') else '')) if cl else '-'
         b = r.get('bidders'); x = r.get('expected_bidders')
         ppl = f'<b>{b if b is not None else "-"}</b>/{x if x is not None else "-"}'
         name = f'{E(r.get("danji_name") or "")}<br><span class="sub">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡</span>'
-        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}', act, diff, ppl)) + '</tr>')
+        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}', act, diff, near, ppl)) + '</tr>')
     t.append('</table>')
     out.append(''.join(t))
     out.append('<div class="g s">예상 = 기일 전에 기록한 앙상블 낙찰확률 50% 가격 · 인원 = 실제 응찰자 수 / 기일 전 모델이 예상한 인원 · '
-               '구간 = 실제 낙찰가가 확률표의 어디에 있었는지 (40~60% 안이면 모델 범위 안)</div>')
+               '구간 = 실제 낙찰가가 확률표의 어디에 있었는지 (40~60% 안이면 모델 범위 안) · '
+               '가장 가까운 칸 = 실제 낙찰가와 가장 비슷했던 인원별 확률표 칸과 그 가격 (괄호는 예측에 쓴 시세 대비 %)</div>')
     return ''.join(out)
 
 

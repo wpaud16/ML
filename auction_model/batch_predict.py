@@ -192,6 +192,22 @@ def band_of(actual, prices):
     return '-'
 
 
+def closest_cell(it, actual_manwon):
+    """실제 낙찰가와 가장 가까운 확률표 칸 (2026-11-05 사용자 요청: 성적표에 'N명 40% - 9억 (시세대비 N%)').
+    인원별 표(by_bidders)가 있으면 그 칸들, 없으면 전체 확률표. 시세 = 그 예측에 쓴 모델 시세."""
+    cells = []
+    for nm, row in ((it.get('by_bidders') or {}).get('bid_by_prob_eok') or {}).items():
+        for pk, v in (row or {}).items():
+            if v: cells.append((f'{nm} {pk}', v * 1e4))
+    if not cells:
+        cells = [(f'전체 {pk}', v) for pk, v in (it.get('bid_by_prob_manwon') or {}).items() if v]
+    if not cells or not actual_manwon: return None
+    lab, v = min(cells, key=lambda c: abs(c[1] - actual_manwon))
+    sise = (it.get('model_sise_eok') or it.get('richgo_sise_eok') or 0) * 1e4
+    return dict(label=lab, manwon=int(round(v)), pct_of_sise=round(v / sise * 100, 1) if sise else None,
+                actual_pct_of_sise=round(actual_manwon / sise * 100, 1) if sise else None)
+
+
 def update_results(today):
     """과거 예측 파일에서 매각기일이 지난 물건을 골라 실제 결과를 기록 (입찰 전에 만든 예측만 사용)."""
     res = json.load(open(RESULTS_PATH)) if os.path.exists(RESULTS_PATH) else {}
@@ -219,6 +235,8 @@ def update_results(today):
         if bd >= today or bd < str((datetime.fromisoformat(today) - timedelta(days=30)).date()): continue
         if rid in res and res[rid].get('expected_bidders') is None and (it.get('by_bidders') or {}).get('expected_bidders'):
             res[rid].update(expected_bidders=it['by_bidders']['expected_bidders'], expected_range=it['by_bidders'].get('expected_range'))
+        if rid in res and res[rid].get('actual_manwon') and not res[rid].get('closest'):
+            res[rid]['closest'] = closest_cell(it, res[rid]['actual_manwon'])   # 예전 기록 채우기
         if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지'): continue
         page = auction_detail(it['auction_id'])
         status, actual, bidders, second = '결과대기', None, None, None
@@ -240,7 +258,8 @@ def update_results(today):
         if actual:
             p50 = it['bid_by_prob_manwon']['50%']
             r.update(actual_manwon=actual, bidders=bidders, second_manwon=second,
-                     diff_pct=round((actual / p50 - 1) * 100, 1), band=band_of(actual, it['bid_by_prob_manwon']))
+                     diff_pct=round((actual / p50 - 1) * 100, 1), band=band_of(actual, it['bid_by_prob_manwon']),
+                     closest=closest_cell(it, actual))
         res[rid] = r
     json.dump(dict(sorted(res.items())), open(RESULTS_PATH, 'w'), ensure_ascii=False, indent=1)
     lo = str((datetime.fromisoformat(today) - timedelta(days=7)).date())
