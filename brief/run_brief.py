@@ -65,6 +65,8 @@ def main():
     g.send_mail(TO, subject, html_body, top_t + '\n\n'.join(T))
     print('sent:', subject)
     # 하루 1통 기록 (2026-11-05: 예약 여러 번 → 워크플로가 이 파일 있으면 건너뜀)
+    if TEST:
+        return   # 예시(테스트) 메일은 기록하지 않음
     import datetime as _dt
     day = _dt.datetime.now(_dt.timezone(_dt.timedelta(hours=9))).date().isoformat()
     os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sent'), exist_ok=True)

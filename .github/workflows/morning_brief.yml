@@ -54,7 +54,8 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TEST_MODE: '0'   # 2026-11-05 사용자 결정: 정식 전환 (문서에 오늘 섹션 생성·이월, [테스트] 제거). Claude 브리핑 예약 작업은 끔
+          # 2026-11-05 정식 전환(0): 문서에 오늘 섹션 생성·이월. 단 push 커밋 메시지에 [테스트] 가 있으면 예시 메일(문서 읽기만, 제목 [테스트])
+          TEST_MODE: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[테스트]') && '1' || '0' }}
         run: python run_brief.py
       - name: Commit sent mark (하루 1통)
         run: |
