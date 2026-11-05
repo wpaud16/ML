@@ -31,9 +31,9 @@ def idx(sgg, p):
     p = min(max(p, s.index[0]), s.index[-1]); return float(s.loc[p])
 
 
+m['jb'] = m.jibun.astype(str).str.strip()
 G = {k: g for k, g in m.groupby(['sgg', 'umdNm'])}
 INFO = json.load(open(os.path.join(HERE, 'probe', 'danji_info.json')))
-m['jb'] = m.jibun.astype(str).str.strip()
 
 
 def jibun_of(danji):
