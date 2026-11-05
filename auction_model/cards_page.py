@@ -105,6 +105,16 @@ def gap_warn(v):
     return ''
 
 
+def base_sise(v):
+    """입찰가 % 기준 시세(억): 예측에 쓴 모델 시세 (아파트 M, 오피스텔 리치고)."""
+    return v.get('model_sise_eok') or v.get('richgo_sise_eok')
+
+
+def pct_of(v, x):
+    b = base_sise(v)
+    return f'{x / b * 100:.1f}%' if (b and x) else ''
+
+
 def bidder_table(v, seoul):
     bb = v.get('by_bidders') or {}
     probs = ['40%', '45%', '50%', '55%', '60%']
@@ -122,10 +132,11 @@ def bidder_table(v, seoul):
         cells = [f'<td class="lab{" hi" if hi else ""}">{"▶ " if hi else ""}{E(lab)}</td>']
         for p in probs:
             cls = ' hi' if (hi or p == '50%') else ''
-            cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}</td>')
+            pc = pct_of(v, vals.get(p))   # 2026-11-05 사용자 요청: 입찰가마다 시세 대비 %
+            cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}' + (f'<br><span class="sub">{pc}</span>' if pc else '') + '</td>')
         t.append('<tr>' + ''.join(cells) + '</tr>')
     t.append('</table>')
-    note = '단위 억 · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
+    note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
     f = v.get('fail') or {}
     if seoul and f.get('level') in ('보통', '높음'):
         note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"

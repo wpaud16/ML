@@ -69,7 +69,7 @@ def summary_row(v, today, new=False):
     gu = (v.get('region') or '').split(' ', 1)[-1]
     case = v['key'].replace('[1]', '')
     line2 = (f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · "
-             f"50% {p50:.2f}억" + (f' ({n}명)' if n else '') + (f" · 🚇 {E(st['name'])} {st['walk_min']}분" if st.get('name') else '')
+             f"50% {p50:.2f}억" + (f' ({p50 / cp.base_sise(v) * 100:.1f}%)' if cp.base_sise(v) else '') + (f' · {n}명' if n else '') + (f" · 🚇 {E(st['name'])} {st['walk_min']}분" if st.get('name') else '')
              + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>'
              + ('<br><span style="color:#d93025;font-size:12px">⚠ 감정 후 시세 상승 — 실제가가 예측보다 높을 수 있음</span>' if gw else ''))
     tag = '<span style="color:#d93025;font-weight:bold;font-size:12px">New</span> ' if new else ''
@@ -77,7 +77,7 @@ def summary_row(v, today, new=False):
          f'<span style="{GRAY}">{v.get("area")}㎡ · {E(gu)} {E(case)}</span>'
          + f'<br>{line2}</div>')
     t = (('[New] ' if new else '') + f"{v.get('danji_name')} {v.get('area')}㎡ · {gu} {case}\n  {md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 {v['low_manwon'] / 1e4:.2f}억 · 50% {p50:.2f}억"
-         + (f' ({n}명)' if n else ''))
+         + (f' ({p50 / cp.base_sise(v) * 100:.1f}%)' if cp.base_sise(v) else '') + (f' · {n}명' if n else ''))
     return h, t
 
 
