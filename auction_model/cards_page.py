@@ -306,7 +306,7 @@ def scorecard(rows, cat):
         mid = sum(1 for r in sold if (r.get('band') or '') not in ('', '60% 초과', '최저가 단일') and not (r.get('band') or '').startswith('40% 미만'))
         out.append(f'<div class="g s">낙찰 {len(sold)}건 · 평균 오차 {err:.1f}% · ±5% 안 {w5}건 · 40~60% 구간 안 {mid}건</div>')
     t = ['<table class="sc"><col style="width:23%"><col style="width:9%"><col style="width:12%"><col style="width:12%"><col style="width:13%"><col style="width:19%"><col style="width:12%">',
-         '<tr><th>물건</th><th>기일</th><th>예상(50%)</th><th>실제</th><th>차이</th><th>가장 가까운 칸<br><span class="sub">시세 대비</span></th><th>인원<br><span class="sub">실제/예상</span></th></tr>']
+         '<tr><th>물건</th><th>기일</th><th>예상(50%)</th><th>실제</th><th>차이</th><th>가장 가까운 칸<br><span class="sub">예상 인원 기준 · 시세 대비</span></th><th>인원<br><span class="sub">실제/예상</span></th></tr>']
     for r in rows:
         p50 = r['bid_by_prob_manwon']['50%'] / 1e4
         d = datetime.strptime(r['bidding_date'], '%Y-%m-%d'); dd = f'{d.month}/{d.day}'
@@ -314,7 +314,7 @@ def scorecard(rows, cat):
             act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>'; df = r.get('diff_pct') or 0
             bp = r.get('bid_by_prob_manwon') or {}
             if bp.get('40%') == bp.get('60%'): r = dict(r, band='최저가 단일')
-            diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span><br><span class="sub">{E(r.get("band") or "")}</span>'
+            diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span>'   # 구간(60% 초과 등) 표시는 뺌 (2026-11-05)
         else:
             act = f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'; diff = '-'
         cl = r.get('closest') if r.get('status') == '매각' else None
@@ -326,8 +326,7 @@ def scorecard(rows, cat):
     t.append('</table>')
     out.append(''.join(t))
     out.append('<div class="g s">예상 = 기일 전에 기록한 앙상블 낙찰확률 50% 가격 · 인원 = 실제 응찰자 수 / 기일 전 모델이 예상한 인원 · '
-               '구간 = 실제 낙찰가가 확률표의 어디에 있었는지 (40~60% 안이면 모델 범위 안) · '
-               '가장 가까운 칸 = 실제 낙찰가와 가장 비슷했던 인원별 확률표 칸과 그 가격 (괄호는 예측에 쓴 시세 대비 %)</div>')
+               '가장 가까운 칸 = 예상 인원 줄에서 실제 낙찰가와 가장 비슷했던 확률 칸과 그 가격 (괄호는 예측에 쓴 시세 대비 % — 11/5 이전 예측은 리치고 시세, 이후는 모델 시세 M)</div>')
     return ''.join(out)
 
 

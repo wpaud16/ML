@@ -193,19 +193,22 @@ def band_of(actual, prices):
 
 
 def closest_cell(it, actual_manwon):
-    """실제 낙찰가와 가장 가까운 확률표 칸 (2026-11-05 사용자 요청: 성적표에 'N명 40% - 9억 (시세대비 N%)').
-    인원별 표(by_bidders)가 있으면 그 칸들, 없으면 전체 확률표. 시세 = 그 예측에 쓴 모델 시세."""
-    cells = []
-    for nm, row in ((it.get('by_bidders') or {}).get('bid_by_prob_eok') or {}).items():
-        for pk, v in (row or {}).items():
-            if v: cells.append((f'{nm} {pk}', v * 1e4))
-    if not cells:
+    """실제 낙찰가와 가장 가까운 확률 칸 — 예상 인원 줄 안에서 (2026-11-05 사용자 요청: '3명 45% · 9억 (시세 대비 N%)').
+    인원별 표가 없으면 전체 확률표. 시세 = 그 예측에 쓴 모델 시세."""
+    import cards_page as _cp
+    bb = it.get('by_bidders') or {}
+    row = _cp.exp_row(it.get('category') or '아파트', bb.get('expected_bidders'))
+    tbl = (bb.get('bid_by_prob_eok') or {}).get(row) if row else None
+    if tbl:
+        cells = [(f'{row} {pk}', v * 1e4) for pk, v in tbl.items() if v]
+    else:
         cells = [(f'전체 {pk}', v) for pk, v in (it.get('bid_by_prob_manwon') or {}).items() if v]
     if not cells or not actual_manwon: return None
     lab, v = min(cells, key=lambda c: abs(c[1] - actual_manwon))
     sise = (it.get('model_sise_eok') or it.get('richgo_sise_eok') or 0) * 1e4
     return dict(label=lab, manwon=int(round(v)), pct_of_sise=round(v / sise * 100, 1) if sise else None,
-                actual_pct_of_sise=round(actual_manwon / sise * 100, 1) if sise else None)
+                actual_pct_of_sise=round(actual_manwon / sise * 100, 1) if sise else None,
+                sise_basis='M' if it.get('model_sise_eok') else '리치고')
 
 
 def update_results(today):
@@ -235,7 +238,7 @@ def update_results(today):
         if bd >= today or bd < str((datetime.fromisoformat(today) - timedelta(days=30)).date()): continue
         if rid in res and res[rid].get('expected_bidders') is None and (it.get('by_bidders') or {}).get('expected_bidders'):
             res[rid].update(expected_bidders=it['by_bidders']['expected_bidders'], expected_range=it['by_bidders'].get('expected_range'))
-        if rid in res and res[rid].get('actual_manwon') and not res[rid].get('closest'):
+        if rid in res and res[rid].get('actual_manwon') and (res[rid].get('closest') or {}).get('sise_basis') is None:
             res[rid]['closest'] = closest_cell(it, res[rid]['actual_manwon'])   # 예전 기록 채우기
         if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지'): continue
         page = auction_detail(it['auction_id'])
