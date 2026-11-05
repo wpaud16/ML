@@ -1,7 +1,7 @@
 name: morning brief (JM's Schedule)
 
 # 매일 07:45 KST(22:45 UTC) 아침 브리핑 메일. Claude 예약 작업을 대신하는 Python 버전 (2026-11-04~).
-# TEST_MODE=1 동안은 제목에 [테스트], 구글 문서·트래커는 읽기만 한다.
+# 2026-11-05 정식 전환(TEST_MODE=0): 매일 JM's Schedule 문서에 오늘 섹션 생성·이월 후 메일.
 on:
   # 2026-11-05: 예약 실행 지연 대비 KST 04:23·05:23·06:23·07:23 네 번, 오늘 보냈으면(brief/sent/날짜.txt) 건너뜀
   schedule:
@@ -54,7 +54,7 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          TEST_MODE: '1'
+          TEST_MODE: '0'   # 2026-11-05 사용자 결정: 정식 전환 (문서에 오늘 섹션 생성·이월, [테스트] 제거). Claude 브리핑 예약 작업은 끔
         run: python run_brief.py
       - name: Commit sent mark (하루 1통)
         run: |

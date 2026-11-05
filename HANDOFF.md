@@ -35,8 +35,8 @@
 | 03:00 | 법원자료 수집(임차인·문건) | 노트북 LAPTOP-M47J0JTR 작업 스케줄러 `AuctionTenants` | 노트북 꺼지면 수집 안 됨. GitHub 서버(미국)는 법원 사이트 웹방화벽에 차단(11/5 시험) → 노트북 유지, 필요 시 국내 서버 |
 | 21:17·23:17·01:17·03:17 | 경매 예측 배치 → `predictions/latest.json` + 웹페이지 | Actions `auction_predict.yml` (결과 있으면 건너뜀, 코드 push 로도 실행) | 약 95분 |
 | 04:13~07:13 매시 | 날씨·코디 메일 (하루 1통) | Actions `outfit.yml` | Python 전환 완료, Claude 예약 작업 trig_014ofhU8tyCW8NDDpN3Nd2mT 끔 |
-| 04:23~07:23 매시 | [테스트] JM's Schedule (Python, 하루 1통) | Actions `morning_brief.yml` (TEST_MODE=1) | 비교 기간 |
-| 07:45 | JM's Schedule 브리핑 | Claude 예약 작업 trig_0179rvk2D2q2hDcCBZKnbPoX (켜져 있음) | 11/5 주간 한도 초과로 실패 |
+| 04:23~07:23 매시 | JM's Schedule 브리핑 (Python, 하루 1통) | Actions `morning_brief.yml` (TEST_MODE=0, 11/5 정식 전환) | 문서 섹션 생성·이월 |
+| (꺼짐) | JM's Schedule 브리핑 (Claude) | Claude 예약 작업 trig_0179rvk2D2q2hDcCBZKnbPoX | 11/5 Python 정식 전환으로 끔 |
 
 ## 2. 아침 브리핑 Python 버전 (`brief/`)
 - `google_api.py`(OAuth·시트·문서·드라이브·Gmail), `quote.py`(오늘의 문장), `schedule_doc.py`(할 일 섹션·이월·운동 Day·식사 시간, 쓰기는 TEST_MODE=0 일 때만 — 임시 문서로 쓰기 검증 완료),
@@ -80,6 +80,10 @@
 2. 2026타경50031: 검색 지역 어디에도 없음(리치고 검색도 없음) → 사용자에게 주소·유형 받아 확인(하남이면 이제 나올 수 있음).
 3. 노트북 법원자료 업로드 누락 원인(이전 인계 문서 auction_model/... 참고), 취하 위험 모델 적용 여부(사용자 결정 대기).
 4. 권한: 사용자가 매번 승인 묻는 것을 싫어함 → 모드 Auto 사용 또는 사용자가 직접 `.claude/settings.json` 에 allow 규칙 커밋(Claude 가 직접 추가하는 건 정책상 거부됨).
+
+## 6-1. 이번 주 일요일(11/8) 예정
+- 계속 켜두는 윈도우 노트북(Python·Git 설치됨)에 통합 실행(03시 법원자료+예측, 06시 날씨, 08시 브리핑) 설치 — 원격 제어 연결 또는 그 노트북의 Claude 앱에서. GitHub 예약은 예비로 시각을 뒤로.
+- 기존 노트북 `AuctionTenants` 작업의 프로그램 경로 확인 필요(수집 코드가 저장소에 없음). 11/3 이후 법원자료 업로드 없음.
 
 ## 7. 사용자 선호
 - 항상 한국어, **답변은 압축해서**. 불명확하면 질문, 여러 요청은 하나씩, 중간중간 진행 정리, 목적에서 벗어나지 않기.
