@@ -16,8 +16,8 @@
    "55%": 20721,
    "60%": 20882
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 4,
   "expected_range": [
    4,
@@ -565,8 +565,8 @@
    "55%": 36200,
    "60%": 36200
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -707,13 +707,25 @@
    "55%": 20261,
    "60%": 20469
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
    2
-  ]
+  ],
+  "actual_manwon": 22696,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 13.1,
+  "band": "60% 초과",
+  "closest": {
+   "label": "1명 60%",
+   "manwon": 20400,
+   "pct_of_sise": 88.7,
+   "actual_pct_of_sise": 98.7,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경103936[1]|2026-11-03": {
   "key": "2025타경103936[1]",
@@ -733,7 +745,7 @@
    "60%": 23195
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -758,7 +770,7 @@
    "60%": 23319
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -783,7 +795,7 @@
    "60%": 23438
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -807,13 +819,25 @@
    "55%": 20320,
    "60%": 20528
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
    3
-  ]
+  ],
+  "actual_manwon": 22136,
+  "bidders": 2,
+  "second_manwon": 18969,
+  "diff_pct": 10.0,
+  "band": "60% 초과",
+  "closest": {
+   "label": "2명 60%",
+   "manwon": 20300,
+   "pct_of_sise": 72.8,
+   "actual_pct_of_sise": 79.4,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경104017[1]|2026-11-05": {
   "key": "2025타경104017[1]",
@@ -833,7 +857,7 @@
    "60%": 23631
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -857,8 +881,8 @@
    "55%": 21358,
    "60%": 21577
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -882,8 +906,8 @@
    "55%": 415554,
    "60%": 418785
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -945,7 +969,7 @@
    "60%": 32161
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -1007,7 +1031,7 @@
    "60%": 32000
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1031,8 +1055,8 @@
    "55%": 19163,
    "60%": 19360
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1056,8 +1080,8 @@
    "55%": 40857,
    "60%": 41275
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1081,13 +1105,25 @@
    "55%": 16894,
    "60%": 17067
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
    2
-  ]
+  ],
+  "actual_manwon": 17981,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": 7.4,
+  "band": "60% 초과",
+  "closest": {
+   "label": "1명 60%",
+   "manwon": 17000,
+   "pct_of_sise": 78.2,
+   "actual_pct_of_sise": 82.7,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경11424[1]|2026-11-04": {
   "key": "2025타경11424[1]",
@@ -1143,8 +1179,8 @@
    "55%": 36200,
    "60%": 36200
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1169,7 +1205,7 @@
    "60%": 30137
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -1289,8 +1325,8 @@
    "55%": 21570,
    "60%": 21791
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 3,
   "expected_range": [
    1,
@@ -1351,13 +1387,25 @@
    "55%": 20416,
    "60%": 20625
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 3,
   "expected_range": [
    1,
    5
-  ]
+  ],
+  "actual_manwon": 22006,
+  "bidders": 9,
+  "second_manwon": 21797,
+  "diff_pct": 8.8,
+  "band": "60% 초과",
+  "closest": {
+   "label": "3명 60%",
+   "manwon": 20700,
+   "pct_of_sise": 73.9,
+   "actual_pct_of_sise": 78.6,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경13693[1]|2026-11-04": {
   "key": "2025타경13693[1]",
@@ -1413,13 +1461,25 @@
    "55%": 10191,
    "60%": 10295
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
    3
-  ]
+  ],
+  "actual_manwon": 9110,
+  "bidders": 1,
+  "second_manwon": null,
+  "diff_pct": -9.8,
+  "band": "40% 미만",
+  "closest": {
+   "label": "2명 40%",
+   "manwon": 9800,
+   "pct_of_sise": 79.8,
+   "actual_pct_of_sise": 74.2,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경13745[1]|2026-11-04": {
   "key": "2025타경13745[1]",
@@ -1512,8 +1572,8 @@
    "55%": 22171,
    "60%": 22398
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1537,13 +1597,25 @@
    "55%": 8979,
    "60%": 9071
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
    4
-  ]
+  ],
+  "actual_manwon": 8612,
+  "bidders": 3,
+  "second_manwon": 8512,
+  "diff_pct": -3.2,
+  "band": "40% 미만",
+  "closest": {
+   "label": "2명 40%",
+   "manwon": 8700,
+   "pct_of_sise": 68.8,
+   "actual_pct_of_sise": 68.1,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경13931[1]|2026-11-03": {
   "key": "2025타경13931[1]",
@@ -1562,8 +1634,8 @@
    "55%": 32598,
    "60%": 32932
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1587,8 +1659,8 @@
    "55%": 32561,
    "60%": 32895
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1612,8 +1684,8 @@
    "55%": 32578,
    "60%": 32911
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1638,7 +1710,7 @@
    "60%": 36100
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1662,8 +1734,8 @@
    "55%": 33027,
    "60%": 33365
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1687,8 +1759,8 @@
    "55%": 26124,
    "60%": 26392
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1713,7 +1785,7 @@
    "60%": 26193
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1738,7 +1810,7 @@
    "60%": 20160
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1762,8 +1834,8 @@
    "55%": 25023,
    "60%": 25280
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -1850,6 +1922,31 @@
    "sise_basis": "M"
   }
  },
+ "2025타경430[1]|2026-11-06": {
+  "key": "2025타경430[1]",
+  "auction_id": "C10VQDGG",
+  "category": "오피스텔",
+  "danji_name": "신마곡벽산블루밍",
+  "area": 46.83,
+  "region": "서울 강서구",
+  "bidding_date": "2026-11-06",
+  "pred_date": "2026-11-06",
+  "low_manwon": 6492,
+  "bid_by_prob_manwon": {
+   "40%": 23535,
+   "45%": 23761,
+   "50%": 23980,
+   "55%": 24206,
+   "60%": 24454
+  },
+  "status": "결과대기",
+  "checked": "2026-11-07",
+  "expected_bidders": 3,
+  "expected_range": [
+   1,
+   5
+  ]
+ },
  "2025타경4459[1]|2026-11-01": {
   "key": "2025타경4459[1]",
   "danji_name": "구리갈매푸르지오",
@@ -1934,8 +2031,8 @@
    "55%": 25700,
    "60%": 25700
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -1959,8 +2056,8 @@
    "55%": 35500,
    "60%": 35500
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -2143,7 +2240,7 @@
    "60%": 17786
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 3,
   "expected_range": [
    1,
@@ -2254,8 +2351,8 @@
    "55%": 21187,
    "60%": 21404
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 3,
   "expected_range": [
    1,
@@ -2279,8 +2376,8 @@
    "55%": 21362,
    "60%": 21581
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 3,
   "expected_range": [
    1,
@@ -2304,8 +2401,8 @@
    "55%": 21361,
    "60%": 21580
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 3,
   "expected_range": [
    1,
@@ -2558,8 +2655,8 @@
    "55%": 33009,
    "60%": 33266
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 5,
   "expected_range": [
    4,
@@ -2583,13 +2680,25 @@
    "55%": 35367,
    "60%": 35661
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 6,
   "expected_range": [
    6,
    9
-  ]
+  ],
+  "actual_manwon": 37388,
+  "bidders": 4,
+  "second_manwon": 37137,
+  "diff_pct": 6.6,
+  "band": "60% 초과",
+  "closest": {
+   "label": "5명 60%",
+   "manwon": 34900,
+   "pct_of_sise": 79.2,
+   "actual_pct_of_sise": 84.9,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경72645[1]|2026-11-05": {
   "key": "2025타경72645[1]",
@@ -2608,13 +2717,25 @@
    "55%": 40323,
    "60%": 40659
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 8,
   "expected_range": [
    8,
    9
-  ]
+  ],
+  "actual_manwon": 41390,
+  "bidders": 23,
+  "second_manwon": 41378,
+  "diff_pct": 3.5,
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 60%",
+   "manwon": 41000,
+   "pct_of_sise": 85.2,
+   "actual_pct_of_sise": 86.0,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경72665[1]|2026-11-05": {
   "key": "2025타경72665[1]",
@@ -2633,13 +2754,25 @@
    "55%": 22623,
    "60%": 22811
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 7,
   "expected_range": [
    4,
    8
-  ]
+  ],
+  "actual_manwon": 20800,
+  "bidders": 5,
+  "second_manwon": 19690,
+  "diff_pct": -7.3,
+  "band": "40% 미만",
+  "closest": {
+   "label": "5명 40%",
+   "manwon": 22000,
+   "pct_of_sise": 85.0,
+   "actual_pct_of_sise": 80.4,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경72726[1]|2026-11-05": {
   "key": "2025타경72726[1]",
@@ -2658,13 +2791,25 @@
    "55%": 28372,
    "60%": 28608
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 7,
   "expected_range": [
    4,
    8
-  ]
+  ],
+  "actual_manwon": 26137,
+  "bidders": 4,
+  "second_manwon": 25339,
+  "diff_pct": -7.1,
+  "band": "40% 미만",
+  "closest": {
+   "label": "5명 40%",
+   "manwon": 28000,
+   "pct_of_sise": 87.1,
+   "actual_pct_of_sise": 81.3,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경72849[1]|2026-11-05": {
   "key": "2025타경72849[1]",
@@ -2683,8 +2828,8 @@
    "55%": 75100,
    "60%": 75100
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -2709,7 +2854,7 @@
    "60%": 68300
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -2804,8 +2949,8 @@
    "55%": 33528,
    "60%": 33871
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -2897,8 +3042,8 @@
    "55%": 17254,
    "60%": 17431
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3033,8 +3178,8 @@
    "55%": 21791,
    "60%": 22014
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3121,7 +3266,7 @@
    "60%": 21200
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3146,7 +3291,7 @@
    "60%": 23151
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3292,7 +3437,7 @@
    "60%": 51647
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3317,7 +3462,7 @@
    "60%": 51160
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3515,7 +3660,7 @@
    "60%": 71900
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -3540,7 +3685,7 @@
    "60%": 71900
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3564,8 +3709,8 @@
    "55%": 24456,
    "60%": 24707
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3589,8 +3734,8 @@
    "55%": 7452,
    "60%": 7528
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3614,8 +3759,8 @@
    "55%": 24458,
    "60%": 24708
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3640,7 +3785,7 @@
    "60%": 18560
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3664,13 +3809,25 @@
    "55%": 7053,
    "60%": 7125
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "매각",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
    3
-  ]
+  ],
+  "actual_manwon": 6424,
+  "bidders": 2,
+  "second_manwon": 6400,
+  "diff_pct": -8.1,
+  "band": "40% 미만",
+  "closest": {
+   "label": "2명 40%",
+   "manwon": 6900,
+   "pct_of_sise": 77.3,
+   "actual_pct_of_sise": 71.9,
+   "sise_basis": "리치고"
+  }
  },
  "2026타경4540[1]|2026-11-02": {
   "key": "2026타경4540[1]",
@@ -3762,7 +3919,7 @@
    "60%": 28268
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -3924,7 +4081,7 @@
    "60%": 23900
   },
   "status": "결과대기",
-  "checked": "2026-11-06",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -4096,8 +4253,8 @@
    "55%": 8574,
    "60%": 8661
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -4121,8 +4278,8 @@
    "55%": 8559,
    "60%": 8647
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -4146,8 +4303,8 @@
    "55%": 27700,
    "60%": 27818
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -4171,8 +4328,8 @@
    "55%": 27700,
    "60%": 27879
   },
-  "status": "결과대기",
-  "checked": "2026-11-06",
+  "status": "유찰",
+  "checked": "2026-11-07",
   "expected_bidders": 2,
   "expected_range": [
    1,
