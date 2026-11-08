@@ -406,8 +406,8 @@ def scorecard(rows, cat, tracked=None):
         w5 = sum(1 for r in sold if abs(r['diff_pct']) <= 5)
         mid = sum(1 for r in sold if (r.get('band') or '') not in ('', '60% 초과', '최저가 단일') and not (r.get('band') or '').startswith('40% 미만'))
         out.append(f'<div class="g s">낙찰 {len(sold)}건 · 평균 오차 {err:.1f}% · ±5% 안 {w5}건 · 40~60% 구간 안 {mid}건</div>')
-    t = ['<table class="sc"><col style="width:20%"><col style="width:8%"><col style="width:12%"><col style="width:12%"><col style="width:11%"><col style="width:17%"><col style="width:10%"><col style="width:10%">',
-         '<tr><th>물건</th><th>기일</th><th>예상(50%)<br><span class="sub">시세 대비</span></th><th>실제<br><span class="sub">시세 대비</span></th><th>차이</th><th>가장 가까운 칸<br><span class="sub">예상 인원 기준 · 시세 대비</span></th><th>인원<br><span class="sub">실제/예상</span></th><th>바로<br>가기</th></tr>']
+    t = ['<table class="sc"><col style="width:17%"><col style="width:7%"><col style="width:11%"><col style="width:12%"><col style="width:11%"><col style="width:9%"><col style="width:15%"><col style="width:9%"><col style="width:9%">',
+         '<tr><th>물건</th><th>기일</th><th>종합(50%)<br><span class="sub">시세 대비</span></th><th>예상 인원 줄(50%)<br><span class="sub">차이</span></th><th>실제<br><span class="sub">시세 대비</span></th><th>차이<br><span class="sub">종합 기준</span></th><th>가장 가까운 칸<br><span class="sub">예상 인원 기준 · 시세 대비</span></th><th>인원<br><span class="sub">실제/예상</span></th><th>바로<br>가기</th></tr>']
     for r in rows:
         rid = f"{r['key']}|{r['bidding_date']}"
         it = tracked.get(rid) or {}
@@ -426,13 +426,24 @@ def scorecard(rows, cat, tracked=None):
         near = (f'{E(cl["label"])}<br><b>{cl["manwon"] / 1e4:.2f}</b>' + (f'<br><span class="sub">({cl["pct_of_sise"]:.1f}%)</span>' if cl.get('pct_of_sise') else '')) if cl else '-'
         b = r.get('bidders'); x = r.get('expected_bidders')
         ppl = f'<b>{b if b is not None else "-"}</b>/{x if x is not None else "-"}'
+        # 예상 인원 줄 50% (카드 ▶ 줄) — 종합과 비교용 (2026-11-08 사용자 요청)
+        bb = ((r.get('rescored_pred') or {}).get('by_bidders') or it.get('by_bidders') or {})
+        lab = exp_row(r['category'], x if x is not None else bb.get('expected_bidders'))
+        e50 = ((bb.get('bid_by_prob_eok') or {}).get(lab) or {}).get('50%') if lab else None
+        if e50:
+            row_ = f'<span class="sub">{E(lab)}</span><br>{e50:.2f}' + pct_sub(e50 * 1e4, sise)
+            if r.get('status') == '매각' and r.get('actual_manwon'):
+                d2 = (r['actual_manwon'] / (e50 * 1e4) - 1) * 100
+                row_ += f'<br><span style="color:{"#FF6B6B" if d2 > 0 else "#6FA8FF"}">{d2:+.1f}%</span>'
+        else:
+            row_ = '-'
         name = f'{E(r.get("danji_name") or "")}<br><span class="sub">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡</span>'
         aid = r.get('auction_id') or it.get('auction_id')
         go = f'<a href="#{card_id(aid, r["bidding_date"])}">이동</a>' if aid and it else '-'
-        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}{star}' + pct_sub(p50m, sise), act, diff, near, ppl, go)) + '</tr>')
+        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}{star}' + pct_sub(p50m, sise), row_, act, diff, near, ppl, go)) + '</tr>')
     t.append('</table>')
     out.append(''.join(t))
-    out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 예상 = 기일 전에 기록한 앙상블 낙찰확률 50% 가격 · 괄호 % = 예측에 쓴 시세(아파트 모델 시세 M, 오피스텔 리치고) 대비 · '
+    out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 종합 = 기일 전에 기록한 인원 가정 없는 앙상블 낙찰확률 50% 가격 · 예상 인원 줄 = 카드 ▶ 줄의 50% 가격(아래 % = 실제와 차이) ·괄호 % = 예측에 쓴 시세(아파트 모델 시세 M, 오피스텔 리치고) 대비 · '
                '<sup>*</sup> = 11/5 이전(리치고 시세) 예측을 11/8 현재 M 시세 모델로 다시 계산한 값(그 기일 이전 학습 사례만 사용, 사후 계산) · '
                '인원 = 실제 응찰자 수 / 예상 인원 · 가장 가까운 칸 = 예상 인원 줄에서 실제 낙찰가와 가장 비슷했던 확률 칸 · 바로가기 = 위 \'기일 지남\' 카드로 이동</div>')
     return ''.join(out)
