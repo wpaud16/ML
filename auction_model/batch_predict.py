@@ -21,6 +21,12 @@ KST = timezone(timedelta(hours=9))
 REGIONS = [('서울', '강남구'), ('서울', '서초구'), ('서울', '강동구'), ('서울', '광진구'), ('서울', '송파구'),
            ('경기', '성남시 수정구'), ('경기', '성남시 분당구'), ('경기', '성남시 중원구'), ('경기', '남양주시'), ('경기', '구리시'),
            ('경기', '하남시')]
+REGIONS_PATH = os.path.join(HERE, 'search_regions.json')   # 2026-11-08: 검색 지역은 GUI(local_runner/region_gui.pyw)로 수정
+try:
+    _rc = json.load(open(REGIONS_PATH, encoding='utf-8'))
+    REGIONS = [tuple(x) for x in _rc.get('apt') or REGIONS]
+except Exception:
+    _rc = {}
 MIN_AREA, MAX_LOW = 0.0, float("inf")   # 2026-11-02 사용자 요청으로 면적·최저가 필터 해제
 MAP_PATH = os.path.join(HERE, 'danji_map.json')
 OUT_DIR = os.path.join(HERE, 'predictions')
@@ -257,7 +263,13 @@ def update_results(today):
         r = dict(key=k, auction_id=it.get('auction_id'), category=it.get('category', '아파트'), danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
                  bidding_date=bd, pred_date=it['pred_date'], low_manwon=it.get('low_manwon'),
                  bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today,
-                 expected_bidders=(it.get('by_bidders') or {}).get('expected_bidders'), expected_range=(it.get('by_bidders') or {}).get('expected_range'))
+                 expected_bidders=(it.get('by_bidders') or {}).get('expected_bidders'), expected_range=(it.get('by_bidders') or {}).get('expected_range'),
+                 sise_manwon=int(round((it.get('model_sise_eok') or it.get('richgo_sise_eok') or 0) * 1e4)) or None)   # 성적표 시세 대비 % (2026-11-08)
+        old = res.get(rid) or {}
+        if old.get('rescored'):   # dev/rescore_pred_m.py 로 M 시세 재계산한 값 유지 (2026-11-08)
+            for f in ('orig_bid_by_prob_manwon', 'bid_by_prob_manwon', 'rescored', 'rescored_pred', 'expected_bidders', 'expected_range', 'sise_manwon'):
+                r[f] = old.get(f)
+            it = dict(it, **(old.get('rescored_pred') or {}))
         if actual:
             p50 = it['bid_by_prob_manwon']['50%']
             r.update(actual_manwon=actual, bidders=bidders, second_manwon=second,
@@ -316,6 +328,7 @@ def risk_check(keyword, appr_vs_sise, rights):
 # ---------------- 서울 오피스텔 (2026-11-02~) ----------------
 SEOUL_GU = ['강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구',
             '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구']
+if _rc.get('ot') is not None: SEOUL_GU = list(_rc['ot'])   # 오피스텔 검색 구 (GUI)
 OT_STATION_M = 615   # 역 도보 10분 ≈ 직선 615m (도보분 = 직선거리 × 1.3 ÷ 80)
 
 

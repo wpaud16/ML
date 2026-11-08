@@ -101,7 +101,11 @@
 - 설치 위치: 이 노트북 = LAPTOP-M47J0JTR. `C:\auction_pc\ML\local_runner\run_all.py night|outfit|brief` (+`--test --force --no-mail --steps`), 등록 `install.ps1`(관리자, S4U·WakeToRun·StartWhenAvailable, 기존 AuctionTenants 끔). 비밀값 `C:\auction_pc\.env`(저장소 밖), 로그 `C:\auction_pc\logs\`.
 - Actions 예비: 경매 KST 06:07·07:07, 날씨 07:13·08:13, 브리핑 09:23·10:23 (기존 건너뛰기 유지).
 - 11/3 이후 법원자료 누락 원인: Playwright 업데이트 후 Chromium 미설치 → 설치함. 남은 문제: tenant_targets 에 지난 기일(2026-01) 남양주지원 물건이 앞에 와 '사건 조회 결과 없음'/타임아웃으로 시간 소모.
-- 시험(11/8): 코디 생성 OK, 예측 36분(525건)·웹페이지 OK, Claude CLI 는 로그인 필요(없으면 해설 생략). 남은 것: .env 값 입력, 작업 등록(관리자), claude 로그인, 메일·push(S4U) 실제 시험.
+- 시험(11/8): 코디 생성 OK, 예측 36분(525건)·웹페이지 OK, Claude CLI 는 로그인 필요(없으면 해설 생략). 남은 것: .env 값 입력, claude 로그인.
+- 작업 등록: 관리자 없이 `install.ps1 -Interactive` 로 등록함(로그온 상태에서만 실행, 잠금·절전 OK). 로그온 무관(S4U)은 PC 앞에서 관리자로 재실행 + .env GITHUB_TOKEN.
+- 11/8 웹페이지·날씨 수정: 성적표 = 추적 물건(기일 전 웹페이지 표시 keep)만, 예상·실제 아래 시세 대비 %, 바로가기 열(→ '기일 지남 · 최근 2주' 카드, id p-<auction_id>-<기일>),
+  기일 지남 칸 = 최근 2주 추적 물건 + 결과 줄, 카드에 동·호(층), 상세 보기 새 창. 11/5 이전 아파트 예측은 `dev/rescore_pred_m.py` 로 M 모델 사후 재계산(26건, 기일 이전 학습만, results.json rescored·orig_bid_by_prob_manwon 보관, 유찰 후 회차 바뀐 6건은 원래 값).
+  검색 지역 = `auction_model/search_regions.json` (GUI `local_runner/region_gui.pyw`, 바탕화면 '경매 검색 지역'). 날씨 카드 = 오늘만 + 6·9·12·15·18·21시 기온.
 
 ## 7. 사용자 선호
 - 항상 한국어, **답변은 압축해서**. 불명확하면 질문, 여러 요청은 하나씩, 중간중간 진행 정리, 목적에서 벗어나지 않기.

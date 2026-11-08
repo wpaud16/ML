@@ -205,11 +205,55 @@ def unmatched_card(f):
          f'감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b> ({low / appr * 100:.0f}%) · 유찰 {f.get("fails") or 0}회' if appr else '',
          f'<span class="g s">🔍 예측 불가: {E(f.get("reason") or "")} — 리치고 단지 페이지가 없어 시세·모델 예측 없음</span>']
     if f.get('auction_id'):
-        L.append(f'<a href="https://m.richgo.ai/auctionMobile/{E(f["auction_id"])}">상세 보기 →</a>')
+        L.append(f'<a href="https://m.richgo.ai/auctionMobile/{E(f["auction_id"])}" target="_blank" rel="noopener">상세 보기 ↗</a>')
     return f'<div class="card">' + '<br>'.join(x for x in L if x) + '</div>'
 
 
-def card(v, today):
+def region_text():
+    """검색 지역 문구 (search_regions.json, 2026-11-08 GUI 로 수정)."""
+    try:
+        rc = json.load(open(os.path.join(HERE, 'search_regions.json'), encoding='utf-8'))
+    except Exception:
+        return '-'
+    by = {}
+    for sd, sgg in rc.get('apt') or []:
+        city, _, gu = sgg.partition(' ')
+        name = f'{sd} {city}' if gu else sd
+        by.setdefault(name, []).append((gu or city).removesuffix('구') if gu or sd == '서울' else city)
+    note = {'남양주시': '(8호선역 도보 15분 이내)', '구리시': '(8호선역 도보 15분 이내)', '하남시': '(5호선역 도보 15분 이내)'}
+    apt = ' / '.join(f"{k} {'·'.join(v)}" if k != '경기' else '경기 ' + '·'.join(x + note.get(x, '') for x in v) for k, v in by.items())
+    ot = rc.get('ot') or []
+    ot_t = '서울 전체' if len(ot) >= 25 else '서울 ' + '·'.join(g.removesuffix('구') for g in ot)
+    return f'아파트 {apt} · 오피스텔 {ot_t}(역 도보 10분)'
+
+
+def unit_text(v):
+    """주소에서 동·호·층 (2026-11-08 사용자 요청: 상세 정보에 몇 동 몇 호). 법정동(역삼동 등)은 지번 뒤에서만 찾아 제외."""
+    a = v.get('address') or ''
+    m = re.search(r'\d+(?:-\d+)?,?\s', a)
+    tail = a[m.end():] if m else a
+    dong = re.search(r'(?:^|\s)(?:제)?([0-9A-Za-z]+|[가-힣])동(?=\s|제|\d|$)', tail)
+    ho = re.findall(r'(?:제)?([0-9A-Za-z]+)호', tail)
+    fl = re.findall(r'(?:제)?(?:지하)?(\d+)층', tail)
+    parts = ([f'{dong.group(1)}동'] if dong else []) + ([f'{ho[-1]}호'] if ho else [])
+    if not parts: return ''
+    return ' '.join(parts) + (f' ({fl[-1]}층)' if fl else '')
+
+
+def result_line(r):
+    """기일 지난 카드의 실제 결과 한 줄 (2026-11-08)."""
+    if not r: return '<b>📊 결과:</b> 확인 전'
+    st = r.get('status') or '결과대기'
+    if st != '매각' or not r.get('actual_manwon'):
+        return f'<b>📊 결과:</b> {E(st)}'
+    a = r['actual_manwon']; s = r.get('sise_manwon')
+    out = f'<b>📊 결과: 매각 {a / 1e4:.2f}억</b>' + (f' (시세 대비 {a / s * 100:.1f}%)' if s else '')
+    if r.get('bidders') is not None: out += f' · 응찰 {r["bidders"]}명'
+    if r.get('diff_pct') is not None: out += f' · 예상(50%) 대비 {r["diff_pct"]:+.1f}%'
+    return out
+
+
+def card(v, today, cid=None, res=None):
     cat = v['category']; reg = v.get('region') or ''; seoul = reg.startswith('서울')
     gu = reg.split(' ', 1)[-1]
     appr, low = v['appr_manwon'] / 1e4, v['low_manwon'] / 1e4
@@ -222,6 +266,9 @@ def card(v, today):
          f'<div class="g s">{E(gu)} · {E(case)} · {E(v.get("court") or "")}</div>', '<b>📋 기본 정보</b>']
     bd = v.get('bidding_date') or ''
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
+    ut = unit_text(v)
+    if ut: L.append(f'🏠 {E(ut)}')
+    if cid: L.append(result_line(res))
     # 순서 (2026-11-05 사용자 지정): 매매 시세 → 감정가·최저가 → 유찰 → 가까운 역
     bs = base_sise(v)   # 모델 시세 (아파트 M, 오피스텔 리치고)
     if bs:
@@ -260,21 +307,59 @@ def card(v, today):
     body += '<div class="sec">' + bidder_table(v, seoul) + '</div>'
     body += '<div class="sec">' + '<br>'.join(rights(v, seoul)) + '</div>'
     if v.get('auction_id'):
-        body += f'<div class="sec"><a href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세 보기 →</a></div>'
-    return f'<div class="card" data-d="{bd}">{body}</div>'
+        body += f'<div class="sec"><a href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}" target="_blank" rel="noopener">상세 보기 ↗</a></div>'
+    idattr = f' id="{cid}"' if cid else ''
+    return f'<div class="card"{idattr} data-d="{bd}">{body}</div>'
 
 
-def results_14d(today):
-    """predictions/results.json 최근 14일 (같은 물건은 매각 우선·최신 기일 하나)."""
+def tracked_past(today, pred_dir, days=14):
+    """추적했던 물건 = 기일 전 예측 파일에서 웹페이지에 표시됐던(keep) 물건, 기일이 최근 days일 안에 지난 것 (2026-11-08 사용자 요청).
+    반환 {'키|기일': 기일 전 마지막 예측 항목}."""
+    lo = (datetime.strptime(today, '%Y-%m-%d') - timedelta(days=days)).strftime('%Y-%m-%d')
+    out, shown = {}, set()
     try:
-        R = json.load(open(os.path.join(HERE, 'predictions', 'results.json'))).values()
+        fs = sorted(f for f in os.listdir(pred_dir) if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.json', f))
+    except Exception:
+        return {}
+    for fn in fs:
+        if fn[:10] < (datetime.strptime(lo, '%Y-%m-%d') - timedelta(days=21)).strftime('%Y-%m-%d'): continue
+        try:
+            items = json.load(open(os.path.join(pred_dir, fn), encoding='utf-8'))['items']
+        except Exception:
+            continue
+        for k, it in items.items():
+            bd = it.get('bidding_date') or ''
+            if not (lo <= bd < today) or fn[:10] > bd: continue
+            rid = f'{k}|{bd}'
+            it = dict(it, category=it.get('category') or '아파트')   # 초기 예측 파일은 아파트에 category 없음
+            if keep(it): shown.add(rid)
+            out[rid] = dict(it, pred_date=fn[:10])
+    return {rid: v for rid, v in out.items() if rid in shown}
+
+
+def card_id(aid, bd):
+    return f'p-{aid}-{bd}'
+
+
+def results_all():
+    try:
+        return json.load(open(os.path.join(HERE, 'predictions', 'results.json'), encoding='utf-8'))
     except Exception:
         return None
+
+
+def results_14d(today, RS=None, tracked=None):
+    """predictions/results.json 최근 14일 (같은 물건은 매각 우선·최신 기일 하나). tracked 가 있으면 추적했던 물건만."""
+    if RS is None: RS = results_all()
+    if RS is None:
+        return None
+    R = RS.values()
     t = datetime.strptime(today, '%Y-%m-%d')
     lo = (t - timedelta(days=14)).strftime('%Y-%m-%d')
     best = {}
     for r in R:
         if not (lo <= r['bidding_date'] < today): continue
+        if tracked is not None and f"{r['key']}|{r['bidding_date']}" not in tracked: continue
         r = dict(r); r['category'] = r.get('category') or '아파트'
         b = best.get(r['key'])
         if b is None or (r['status'] == '매각', r['bidding_date']) > (b['status'] == '매각', b['bidding_date']):
@@ -295,9 +380,14 @@ def retrain_line(today):
             f"오피스텔 +{x['ot_added']}건 (오차 {x['ot_mape_before']}% → {x['ot_mape_after']}%)")
 
 
-def scorecard(rows, cat):
+def pct_sub(x, s):
+    return f'<br><span class="sub">({x / s * 100:.1f}%)</span>' if (x and s) else ''
+
+
+def scorecard(rows, cat, tracked=None):
+    tracked = tracked or {}
     rows = sorted([r for r in rows if r['category'] == cat], key=lambda r: r['bidding_date'], reverse=True)
-    if not rows: return '<p class="g">최근 14일 결과 없음 (예측 기록은 10/31부터 쌓는 중)</p>'
+    if not rows: return '<p class="g">최근 14일 추적 물건 결과 없음</p>'
     sold = [r for r in rows if r.get('status') == '매각' and r.get('diff_pct') is not None]
     out = []
     if sold:
@@ -305,13 +395,17 @@ def scorecard(rows, cat):
         w5 = sum(1 for r in sold if abs(r['diff_pct']) <= 5)
         mid = sum(1 for r in sold if (r.get('band') or '') not in ('', '60% 초과', '최저가 단일') and not (r.get('band') or '').startswith('40% 미만'))
         out.append(f'<div class="g s">낙찰 {len(sold)}건 · 평균 오차 {err:.1f}% · ±5% 안 {w5}건 · 40~60% 구간 안 {mid}건</div>')
-    t = ['<table class="sc"><col style="width:23%"><col style="width:9%"><col style="width:12%"><col style="width:12%"><col style="width:13%"><col style="width:19%"><col style="width:12%">',
-         '<tr><th>물건</th><th>기일</th><th>예상(50%)</th><th>실제</th><th>차이</th><th>가장 가까운 칸<br><span class="sub">예상 인원 기준 · 시세 대비</span></th><th>인원<br><span class="sub">실제/예상</span></th></tr>']
+    t = ['<table class="sc"><col style="width:20%"><col style="width:8%"><col style="width:12%"><col style="width:12%"><col style="width:11%"><col style="width:17%"><col style="width:10%"><col style="width:10%">',
+         '<tr><th>물건</th><th>기일</th><th>예상(50%)<br><span class="sub">시세 대비</span></th><th>실제<br><span class="sub">시세 대비</span></th><th>차이</th><th>가장 가까운 칸<br><span class="sub">예상 인원 기준 · 시세 대비</span></th><th>인원<br><span class="sub">실제/예상</span></th><th>바로<br>가기</th></tr>']
     for r in rows:
-        p50 = r['bid_by_prob_manwon']['50%'] / 1e4
+        rid = f"{r['key']}|{r['bidding_date']}"
+        it = tracked.get(rid) or {}
+        sise = r.get('sise_manwon') or (base_sise(it) or 0) * 1e4 or None
+        p50m = r['bid_by_prob_manwon']['50%']; p50 = p50m / 1e4
+        star = '<sup>*</sup>' if r.get('rescored') else ''
         d = datetime.strptime(r['bidding_date'], '%Y-%m-%d'); dd = f'{d.month}/{d.day}'
         if r.get('status') == '매각' and r.get('actual_manwon'):
-            act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>'; df = r.get('diff_pct') or 0
+            act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>' + pct_sub(r['actual_manwon'], sise); df = r.get('diff_pct') or 0
             bp = r.get('bid_by_prob_manwon') or {}
             if bp.get('40%') == bp.get('60%'): r = dict(r, band='최저가 단일')
             diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span>'   # 구간(60% 초과 등) 표시는 뺌 (2026-11-05)
@@ -322,11 +416,14 @@ def scorecard(rows, cat):
         b = r.get('bidders'); x = r.get('expected_bidders')
         ppl = f'<b>{b if b is not None else "-"}</b>/{x if x is not None else "-"}'
         name = f'{E(r.get("danji_name") or "")}<br><span class="sub">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡</span>'
-        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}', act, diff, near, ppl)) + '</tr>')
+        aid = r.get('auction_id') or it.get('auction_id')
+        go = f'<a href="#{card_id(aid, r["bidding_date"])}">이동</a>' if aid and it else '-'
+        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}{star}' + pct_sub(p50m, sise), act, diff, near, ppl, go)) + '</tr>')
     t.append('</table>')
     out.append(''.join(t))
-    out.append('<div class="g s">예상 = 기일 전에 기록한 앙상블 낙찰확률 50% 가격 · 인원 = 실제 응찰자 수 / 기일 전 모델이 예상한 인원 · '
-               '가장 가까운 칸 = 예상 인원 줄에서 실제 낙찰가와 가장 비슷했던 확률 칸과 그 가격 (괄호는 예측에 쓴 시세 대비 % — 11/5 이전 예측은 리치고 시세, 이후는 모델 시세 M)</div>')
+    out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 예상 = 기일 전에 기록한 앙상블 낙찰확률 50% 가격 · 괄호 % = 예측에 쓴 시세(아파트 모델 시세 M, 오피스텔 리치고) 대비 · '
+               '<sup>*</sup> = 11/5 이전(리치고 시세) 예측을 11/8 현재 M 시세 모델로 다시 계산한 값(그 기일 이전 학습 사례만 사용, 사후 계산) · '
+               '인원 = 실제 응찰자 수 / 예상 인원 · 가장 가까운 칸 = 예상 인원 줄에서 실제 낙찰가와 가장 비슷했던 확률 칸 · 바로가기 = 위 \'기일 지남\' 카드로 이동</div>')
     return ''.join(out)
 
 
@@ -341,7 +438,8 @@ h1{font-size:19px;margin:6px 0 2px} .meta{color:var(--mut);font-size:12px;margin
 .nav a{border:1px solid var(--bd);border-radius:16px;padding:4px 12px;color:var(--fg);text-decoration:none;font-size:13px}
 h2{font-size:19px;margin:22px 0 6px;padding-bottom:4px;border-bottom:2px solid var(--bd)}
 h3{font-size:15px;margin:16px 0 8px}
-.card{border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px;overflow:hidden}
+.card{border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px;overflow:hidden;scroll-margin-top:60px}
+.card:target{outline:3px solid #1a73e8}
 .t{font-weight:bold;font-size:15px} .hh{font-weight:normal;color:var(--mut);font-size:12px}
 .g{color:var(--mut)} .s{font-size:12px} .n{font-weight:normal;font-size:13px}
 .warn{color:#d93025;font-size:12px}
@@ -378,6 +476,15 @@ def build(src, dst):
     pk = prev_keys(d.get('date') or today, os.path.dirname(src))
     for v in items: v['_new'] = pk is not None and v['key'] not in pk
     soon = (now + timedelta(days=7)).strftime('%Y-%m-%d')
+    # 기일 지난 추적 물건 2주 (2026-11-08 사용자 요청: 성적표 물건을 기일 지남 칸에서 2주 동안 관리)
+    RS = results_all() or {}
+    tracked = tracked_past(today, os.path.dirname(src))
+    for v in items:
+        bd = v.get('bidding_date') or ''
+        if bd and bd < today: tracked.setdefault(f"{v['key']}|{bd}", v)
+    for rid, v in list(tracked.items()):
+        rp = (RS.get(rid) or {}).get('rescored_pred')
+        if rp: tracked[rid] = dict(v, **rp)   # M 시세로 다시 계산한 예측으로 카드 표시
     parts, nav, total = [], [], {}
     for cat, title, anchor in (('아파트', '🏢 아파트', 'apt'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)', 'ot')):
         xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v.get('bidding_date') or '9999', v.get('danji_name') or ''))
@@ -387,19 +494,23 @@ def build(src, dst):
         nav.append(f'<a href="#{anchor}">{title.split(" (")[0]} {len(xs)}</a>')
         parts.append(f'<h2 id="{anchor}">{title} · {len(xs)}건</h2>')
         groups = (('🔔 7일 이내', [v for v in xs if today <= (v.get('bidding_date') or '') <= soon]),
-                  ('📅 그 이후', [v for v in xs if (v.get('bidding_date') or '9999') > soon]),
-                  ('⏳ 기일 지남 · 결과 대기', [v for v in xs if (v.get('bidding_date') or '9999') < today]))
+                  ('📅 그 이후', [v for v in xs if (v.get('bidding_date') or '9999') > soon]))
         for lab, g in groups:
             if not g: continue
             parts.append(f'<h3>{lab} ({len(g)}건)</h3>')
             parts += [card(v, today) for v in g]
+        past = sorted(((rid, v) for rid, v in tracked.items() if (v.get('category') or '아파트') == cat),
+                      key=lambda x: (x[1].get('bidding_date') or '', x[1].get('danji_name') or ''), reverse=True)
+        if past:
+            parts.append(f'<h3 id="past-{anchor}">⏳ 기일 지남 · 최근 2주 ({len(past)}건)</h3>')
+            parts += [card(v, today, cid=card_id(v.get('auction_id'), v.get('bidding_date')), res=RS.get(rid)) for rid, v in past]
         if not xs: parts.append('<p class="g">표시할 물건 없음</p>')
         if nt:
             parts.append(f'<h3>🔍 실거래 없음 (참고) · {len(nt)}건</h3><p class="g s">최근 1년 같은 평형 실거래가 없어 시세가 불확실한 물건 — '
                          '백테스트에서 이런 물건은 평균 오차 약 6.1% (다른 물건 4.6%), 메일에는 넣지 않음</p>')
             parts += [card(v, today) for v in nt]
         # 예측 불가(단지 못 찾음) 물건은 표시하지 않음 (2026-11-05 사용자 요청: 이상한 물건이 많음)
-    res = results_14d(today)
+    res = results_14d(today, RS, tracked)
     nav.append('<a href="#score">📊 성적표</a>')
     parts.append('<h2 id="score">📊 모델 성적표 (최근 14일)</h2>')
     rt = retrain_line(today)
@@ -408,10 +519,10 @@ def build(src, dst):
         parts.append('<p class="g">성적표를 만들지 못했습니다</p>')
     else:
         for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔')):
-            parts.append(f'<h3>{title}</h3>' + scorecard(res, cat))
+            parts.append(f'<h3>{title}</h3>' + scorecard(res, cat, tracked))
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
     foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 1년 실거래 없는 아파트는 \'실거래 없음(참고)\'에 따로<br>'
-            '검색 지역: 서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리(8호선역 도보 15분 이내) / 하남(5호선역 도보 15분 이내) · 오피스텔은 서울 역 도보 10분<br>'
+            f'검색 지역: {E(region_text())}<br>'
             '🛡 안전 = 법원 매각물건명세서로 인수 금액 0원 확인 · 보통 = 리치고 기준 권리 문제 없음(명세서 미확인) · 주의·위험은 숨김<br>'
             '🎯 모델 시세(아파트) = 리치고 시세와 국토부 실거래(최근 12개월, 최근일수록 가중, 층 보정)를 거래 수·흩어진 정도에 따라 섞은 값 — 입찰가와 % 의 기준<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) · 🏬 오피스텔 = 랜덤포레스트+부스팅(시세는 리치고) · 가격 오차 약 ±6% · 확률 오차 약 ±5%p<br>'

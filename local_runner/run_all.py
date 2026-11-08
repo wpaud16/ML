@@ -168,7 +168,7 @@ def s_page():
 
 def s_push_auction():
     push(['auction_model/predictions', 'auction_model/page', 'auction_model/molit_cache', 'auction_model/danji_map.json',
-          'auction_model/villa', 'auction_model/officetel'], f'auction: 예측 결과 {today()} (노트북)')
+          'auction_model/villa', 'auction_model/officetel', 'auction_model/search_regions.json'], f'auction: 예측 결과 {today()} (노트북)')
 
 
 def mail_env():
