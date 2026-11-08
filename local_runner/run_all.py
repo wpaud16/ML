@@ -42,8 +42,8 @@ def load_env():
 
 
 def find_git():
-    for p in (os.environ.get('GIT_EXE'), shutil.which('git'),
-              os.path.join(os.environ.get('LOCALAPPDATA', ''), r'Programs\PortableGit\cmd\git.exe'),
+    for p in (os.environ.get('GIT_EXE'),
+              os.path.join(os.environ.get('LOCALAPPDATA', ''), r'Programs\PortableGit\cmd\git.exe'), shutil.which('git'),
               os.path.join(os.environ.get('LOCALAPPDATA', ''), r'Programs\MinGit\cmd\git.exe'),
               r'C:\Program Files\Git\cmd\git.exe'):
         if p and os.path.exists(p):
@@ -101,10 +101,12 @@ def git(*args, check=True):
 
 
 def pull():
-    rc, _ = git('pull', '--rebase', '--autostash', '-X', 'theirs', check=False)
-    if rc != 0:
+    for n in range(3):
+        if git('pull', '--rebase', '--autostash', '-X', 'theirs', 'origin', 'main', check=False)[0] == 0:
+            return
         git('rebase', '--abort', check=False)
-        log('pull 실패 → 현재 사본으로 진행')
+        time.sleep(15)
+    log('pull 실패 → 현재 사본으로 진행')
 
 
 def push(paths, msg):
@@ -115,7 +117,7 @@ def push(paths, msg):
         log('변경 없음 → 커밋 생략'); return
     git('-c', 'user.name=laptop-bot', '-c', 'user.email=laptop@users.noreply.github.com', 'commit', '-q', '-m', msg)
     for n in range(1, 6):
-        if git('pull', '--rebase', '-X', 'theirs', check=False)[0] == 0 and git('push', 'origin', 'HEAD:main', check=False)[0] == 0:
+        if git('pull', '--rebase', '-X', 'theirs', 'origin', 'main', check=False)[0] == 0 and git('push', 'origin', 'HEAD:main', check=False)[0] == 0:
             log(f'push 완료 ({n})'); return
         git('rebase', '--abort', check=False)
         time.sleep(10)

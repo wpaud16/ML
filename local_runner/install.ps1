@@ -2,7 +2,8 @@
 #   powershell -ExecutionPolicy Bypass -File C:\auction_pc\ML\local_runner\install.ps1
 # 03:00 night(법원자료→예측→웹페이지→push) / 06:00 outfit / 08:00 brief
 # 절전이어도 깨움(WakeToRun, 전원 연결 시), 놓친 예약은 켜지자마자(StartWhenAvailable), 로그온 무관(S4U: 비밀번호 저장 안 함)
-param([string]$User = "$env:USERDOMAIN\$env:USERNAME")
+# -Interactive: 관리자 없이 등록 (로그온된 동안만 실행 — 화면 잠금·절전은 OK, 로그아웃/재부팅 후 미로그온이면 안 돎)
+param([string]$User = "$env:USERDOMAIN\$env:USERNAME", [switch]$Interactive)
 
 $ErrorActionPreference = 'Stop'
 $runner = Join-Path $PSScriptRoot 'run_all.py'
@@ -15,13 +16,15 @@ $jobs = @(
     @{ Name = 'ML_Outfit'; At = '06:00'; Arg = 'outfit'; Limit = 1 },
     @{ Name = 'ML_Brief';  At = '08:00'; Arg = 'brief';  Limit = 1 }
 )
-$principal = New-ScheduledTaskPrincipal -UserId $User -LogonType S4U -RunLevel Limited
+$logon = if ($Interactive) { 'Interactive' } else { 'S4U' }
+$principal = New-ScheduledTaskPrincipal -UserId $User -LogonType $logon -RunLevel Limited
+if ($Interactive) { $py = $py -replace 'python\.exe$', 'pythonw.exe' }   # 로그온 상태에선 콘솔 창 안 뜨게
 foreach ($j in $jobs) {
     $action = New-ScheduledTaskAction -Execute $py -Argument "`"$runner`" $($j.Arg)" -WorkingDirectory $PSScriptRoot
     $trigger = New-ScheduledTaskTrigger -Daily -At $j.At
     $settings = New-ScheduledTaskSettingsSet -WakeToRun -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
         -ExecutionTimeLimit (New-TimeSpan -Hours $j.Limit) -MultipleInstances IgnoreNew -RestartCount 1 -RestartInterval (New-TimeSpan -Minutes 10)
-    Register-ScheduledTask -TaskPath '\ML\' -TaskName $j.Name -Action $action -Trigger $trigger -Settings $settings -Principal $principal -Force | Out-Null
+    Register-ScheduledTask -TaskPath '\ML\' -TaskName $j.Name -Action $action -Trigger $trigger -Settings $settings -Principal $principal -Force -ErrorAction Stop | Out-Null
     Write-Host "등록: \ML\$($j.Name) $($j.At) ($($j.Arg))"
 }
 
