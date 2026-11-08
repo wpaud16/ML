@@ -115,6 +115,10 @@
   - 법원 수집기(`C:\auction_pc\tenants_job.py`, 저장소 밖) 수정: 기일 지난 대상 건너뜀(11/8 기준 22건), '조회 결과 없음'은 3일 캐시, 물건상세조회 비활성(다음 기일 미지정)이면 기일내역 생략. 시험 6건 모두 성공(건당 약 25초).
   - S4U 재등록 준비: install.ps1 은 .env GITHUB_TOKEN 이 비면 중단. 바탕화면 'ML 예약작업 로그아웃에도 실행 (관리자)' = 관리자 권한으로 install.ps1 실행(UAC 승인 필요, PC 앞에서).
   - 남은 것(사용자): .env 값(GOOGLE_* 3개·MOLIT_API_KEY·GITHUB_TOKEN = wpaud16/ML Contents 읽기/쓰기 fine-grained 토큰) → 바탕화면 바로가기 실행 → `claude` 로그인.
+- 11/8 밤: .env 값 모두 입력됨. **브리핑 관리 프로그램** `local_runner/briefing_app.py` → `python local_runner/build_app.py` 로 `local_runner/dist/브리핑관리.exe`(저장소에 포함, 11.7MB) + 설치 폴더(C:\auction_pc)에 복사, 바탕화면 '브리핑 관리'.
+  탭: 실행(지금/시험/예측·웹페이지만) · 예약(시각 편집, 로그인 중 등록 / 로그아웃에도 등록 = 자기 자신을 관리자로 재실행 `--register s4u`) · 경매 지역(region_gui.pyw 의 build() 를 저장소에서 불러옴) · 설치·상태(설치·점검, .env 열기, 구글 토큰 발급 google_auth.py, Claude 로그인).
+  다른 PC: 빈 폴더에 exe + .env → 설치·점검이 파이썬 3.11(python.org, 사용자 설치)·MinGit(tools/)·저장소 clone·requirements.txt·Playwright 를 준비. 빈 폴더 시험: clone·패키지·브라우저·코디 실행 OK(파이썬·git 내려받기 경로는 이 PC 에 이미 있어 미시험).
+  수집기는 저장소 `local_runner/tenants_job.py` 로 옮김(C:\auction_pc\tenants_job.py 는 더 안 씀). run_all 은 매 실행 시 `playwright install chromium`(코디 카드 '브라우저 없음' 실패 대응).
 
 ## 7. 사용자 선호
 - 항상 한국어, **답변은 압축해서**. 불명확하면 질문, 여러 요청은 하나씩, 중간중간 진행 정리, 목적에서 벗어나지 않기.
