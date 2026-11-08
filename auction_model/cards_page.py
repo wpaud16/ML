@@ -364,6 +364,15 @@ def results_14d(today, RS=None, tracked=None):
         b = best.get(r['key'])
         if b is None or (r['status'] == '매각', r['bidding_date']) > (b['status'] == '매각', b['bidding_date']):
             best[r['key']] = r
+    # 추적했는데 결과가 아직 없는 물건(기일 변경·결과 미수집)도 성적표에 '결과 미확인'으로 (2026-11-08: 기일 지남 칸과 건수 맞춤)
+    for rid, v in (tracked or {}).items():
+        k, bd = rid.rsplit('|', 1)
+        if k in best or not (lo <= bd < today): continue
+        p = (v.get('bid_by_prob_eok') or {}).get('50%')
+        if not isinstance(p, (int, float)): continue
+        best[k] = dict(key=k, bidding_date=bd, category=v.get('category') or '아파트', status='결과 미확인',
+                       bid_by_prob_manwon={'50%': p * 1e4}, danji_name=v.get('danji_name'), area=v.get('area'),
+                       auction_id=v.get('auction_id'), expected_bidders=None)
     return list(best.values())
 
 
@@ -485,6 +494,13 @@ def build(src, dst):
     for rid, v in list(tracked.items()):
         rp = (RS.get(rid) or {}).get('rescored_pred')
         if rp: tracked[rid] = dict(v, **rp)   # M 시세로 다시 계산한 예측으로 카드 표시
+    # 기일 변경으로 같은 물건이 여러 기일로 잡히면 하나만 (매각 결과 우선 → 최신 기일) — 성적표와 같은 기준 (2026-11-08)
+    one = {}
+    for rid, v in tracked.items():
+        k, bd = rid.rsplit('|', 1)
+        s = ((RS.get(rid) or {}).get('status') == '매각', rid in RS, bd)
+        if k not in one or s > one[k][0]: one[k] = (s, rid)
+    tracked = {rid: tracked[rid] for _, rid in one.values()}
     parts, nav, total = [], [], {}
     for cat, title, anchor in (('아파트', '🏢 아파트', 'apt'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)', 'ot')):
         xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v.get('bidding_date') or '9999', v.get('danji_name') or ''))
