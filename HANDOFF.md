@@ -97,6 +97,12 @@
   증시 해설: 사용자 결정 B — 노트북 Claude Code CLI(`claude -p`, 구독 사용량)로, 여유 있으면 실행·한도면 생략. `brief/claude_summary.py` 에 구현됨 → 노트북 .env 에 BRIEF_SUMMARY=cli, claude 로그인 확인.
   비밀값은 GitHub 에서 다시 볼 수 없음 → 구글 OAuth 재발급(google_api.py 방식, 이때 drive 쓰기 권한도 추가하면 Steward 자동 업로드 가능), 국토부 키는 공공데이터포털 마이페이지에서 확인.
 
+### 6-1 진행 (11/8)
+- 설치 위치: 이 노트북 = LAPTOP-M47J0JTR. `C:\auction_pc\ML\local_runner\run_all.py night|outfit|brief` (+`--test --force --no-mail --steps`), 등록 `install.ps1`(관리자, S4U·WakeToRun·StartWhenAvailable, 기존 AuctionTenants 끔). 비밀값 `C:\auction_pc\.env`(저장소 밖), 로그 `C:\auction_pc\logs\`.
+- Actions 예비: 경매 KST 06:07·07:07, 날씨 07:13·08:13, 브리핑 09:23·10:23 (기존 건너뛰기 유지).
+- 11/3 이후 법원자료 누락 원인: Playwright 업데이트 후 Chromium 미설치 → 설치함. 남은 문제: tenant_targets 에 지난 기일(2026-01) 남양주지원 물건이 앞에 와 '사건 조회 결과 없음'/타임아웃으로 시간 소모.
+- 시험(11/8): 코디 생성 OK, 예측 36분(525건)·웹페이지 OK, Claude CLI 는 로그인 필요(없으면 해설 생략). 남은 것: .env 값 입력, 작업 등록(관리자), claude 로그인, 메일·push(S4U) 실제 시험.
+
 ## 7. 사용자 선호
 - 항상 한국어, **답변은 압축해서**. 불명확하면 질문, 여러 요청은 하나씩, 중간중간 진행 정리, 목적에서 벗어나지 않기.
 - 사용자는 실행·확인을 Claude 가 직접 하길 원함(버튼 누르기 요청 최소화).
