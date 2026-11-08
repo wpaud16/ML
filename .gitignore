@@ -6,3 +6,7 @@ google_creds.json
 outfit/.mail.json
 catboost_info/
 outfit/.skip
+
+# 노트북 통합 실행 (2026-11-08)
+.env
+local_runner/logs/

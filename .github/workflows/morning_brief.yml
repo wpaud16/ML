@@ -4,11 +4,10 @@ name: morning brief (JM's Schedule)
 # 2026-11-05 정식 전환(TEST_MODE=0): 매일 JM's Schedule 문서에 오늘 섹션 생성·이월 후 메일.
 on:
   # 2026-11-05: 예약 실행 지연 대비 KST 04:23·05:23·06:23·07:23 네 번, 오늘 보냈으면(brief/sent/날짜.txt) 건너뜀
+  # 2026-11-08: 노트북 08:00 통합 실행이 주 실행 → 예비로 KST 09:23·10:23 (brief/sent/날짜.txt 있으면 건너뜀)
   schedule:
-    - cron: '23 19 * * *'
-    - cron: '23 20 * * *'
-    - cron: '23 21 * * *'
-    - cron: '23 22 * * *'
+    - cron: '23 0 * * *'
+    - cron: '23 1 * * *'
   workflow_dispatch:
   push:   # 수동 발송용: brief/trigger.txt 수정 push → 바로 실행 (2026-11-05)
     branches: [main]
