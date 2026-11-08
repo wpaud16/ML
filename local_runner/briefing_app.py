@@ -143,7 +143,36 @@ def register(logon):
             f'Register-ScheduledTask -TaskPath "{TASK_PATH}" -TaskName "{name}" -Action $a -Trigger $t -Settings $s -Principal $p -Force | Out-Null',
             f'Write-Output "등록: {name} {at} ({logon})"']
     lines.append('if (Get-ScheduledTask -TaskName "AuctionTenants" -ErrorAction SilentlyContinue) { Disable-ScheduledTask -TaskName "AuctionTenants" | Out-Null }')
-    return ps('\n'.join(lines))
+    code, out = ps('\n'.join(lines))
+    if code == 0:
+        out += '\n' + push_schedule()
+    return code, out
+
+
+def push_schedule():
+    """예약 시각을 저장소 local_runner/schedule.json 에 올림 → GitHub 예비 감시(backup.yml)가 이 시각 기준으로 판단 (2026-11-08)."""
+    st = settings().get('schedule', {})
+    sch = {job: dict(time=st.get(job, {}).get('time', d), enabled=st.get(job, {}).get('enabled', True)) for job, _, _, d in JOBS}
+    p = os.path.join(LR, 'schedule.json')
+    json.dump(sch, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    git = find_git()
+    if not git: return '⚠ git 없음 → 예약 시각을 GitHub 에 못 올림'
+    env = dict(os.environ, GCM_INTERACTIVE='never', GIT_TERMINAL_PROMPT='0')
+    tok = read_env().get('GITHUB_TOKEN')
+    if tok:
+        env.update(GIT_CONFIG_COUNT='1', GIT_CONFIG_KEY_0='http.https://github.com/.extraheader',
+                   GIT_CONFIG_VALUE_0='Authorization: Basic ' + base64.b64encode(f'x-access-token:{tok}'.encode()).decode())
+    g = lambda *a: subprocess.run([git, '-C', REPO, *a], capture_output=True, text=True, encoding='utf-8', errors='replace', env=env, creationflags=NOWIN)
+    g('add', 'local_runner/schedule.json')
+    if g('diff', '--cached', '--quiet').returncode == 0:
+        return 'GitHub 예비 감시 시각: 변경 없음'
+    g('-c', 'user.name=laptop-bot', '-c', 'user.email=laptop@users.noreply.github.com', 'commit', '-q', '-m',
+      'schedule: 노트북 예약 시각 ' + ' '.join(f"{k} {v['time']}{'' if v['enabled'] else '(끔)'}" for k, v in sch.items()) + ' [skip ci]')
+    for _ in range(3):
+        if g('pull', '-q', '--rebase', '-X', 'theirs', 'origin', 'main').returncode == 0 and g('push', '-q', 'origin', 'HEAD:main').returncode == 0:
+            return 'GitHub 예비 감시 시각도 바꿨어요 (노트북이 예약 시각 15분 뒤까지 시작 안 하면 GitHub 이 대신 실행)'
+        g('rebase', '--abort')
+    return '⚠ 예약 시각 GitHub 반영 실패 — 다음 경매 새벽 작업 때 다시 올라감'
 
 
 def task_status():

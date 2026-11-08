@@ -1,0 +1,5 @@
+{
+ "night": {"time": "03:00", "enabled": true},
+ "outfit": {"time": "06:00", "enabled": true},
+ "brief": {"time": "07:30", "enabled": true}
+}

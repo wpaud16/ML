@@ -129,6 +129,28 @@ def today():
     return dt.datetime.now(KST).date()
 
 
+def heartbeat(job):
+    """노트북 시작 기록을 push (Actions 예비 감시 backup.yml 이 '노트북 꺼짐' 판단에 씀, 2026-11-08).
+    Actions 가 같은 작업을 이미 시작했으면(진행 중) 겹치지 않게 False."""
+    import json
+    sys.path.insert(0, HERE)
+    import backup_due as bd
+    now = dt.datetime.now(KST); day = bd.target_day(job, now).isoformat()
+    hb = os.path.join(HERE, 'heartbeat')
+    a = bd.jload(os.path.join(hb, 'actions.json')).get(job) or {}
+    if not ARGS.force and a.get('date') == day and now < dt.datetime.fromisoformat(a['at']) + dt.timedelta(minutes=bd.MAX_MIN[job]):
+        log(f"GitHub Actions 예비 실행이 {a['at'][11:16]} 에 시작함 → 겹치지 않게 건너뜀"); return False
+    os.makedirs(hb, exist_ok=True)
+    p = os.path.join(hb, 'laptop.json'); d = bd.jload(p)
+    d[job] = dict(date=day, at=now.isoformat(timespec='seconds'))
+    json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    try:
+        push(['local_runner/heartbeat/laptop.json'], f'heartbeat: 노트북 {job} 시작 {now:%m-%d %H:%M} [skip ci]')
+    except Exception as e:
+        log(f'시작 기록 push 실패(계속 진행): {e}')
+    return True
+
+
 def ensure_browser():
     """Playwright 브라우저가 없으면 설치 (2026-11-08: 코디 카드 '브라우저 없음' 실패, 다른 PC 첫 실행). 이미 있으면 몇 초."""
     try:
@@ -177,7 +199,7 @@ def s_page():
 
 def s_push_auction():
     push(['auction_model/predictions', 'auction_model/page', 'auction_model/molit_cache', 'auction_model/danji_map.json',
-          'auction_model/villa', 'auction_model/officetel', 'auction_model/search_regions.json'], f'auction: 예측 결과 {today()} (노트북)')
+          'auction_model/villa', 'auction_model/officetel', 'auction_model/search_regions.json', 'local_runner/schedule.json'], f'auction: 예측 결과 {today()} (노트북)')
 
 
 def mail_env():
@@ -242,6 +264,8 @@ def main():
     load_env()
     GIT = find_git(); os.environ['GIT_EXE'] = GIT
     pull()
+    if not ARGS.test and not ARGS.steps and not heartbeat(ARGS.job):
+        log(f'===== {ARGS.job} 끝: 건너뜀 (Actions 진행 중)'); return 0
     ensure_browser()
     only = set(ARGS.steps.split(',')) if ARGS.steps else None
     fails = []

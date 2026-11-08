@@ -1,0 +1,48 @@
+name: backup (노트북 예비 실행 감시)
+
+# 2026-11-08: 노트북(브리핑 관리 프로그램)이 주 실행. 10분마다 local_runner/backup_due.py 로 판단해
+# 노트북이 예약 시각 + 15분까지 시작 기록이 없거나(꺼짐), 시작 후 최대 시간 안에 안 끝나면(멈춤) 해당 워크플로를 바로 실행.
+# 범위: KST 00:00~11:59 (UTC 15:00~02:59). GitHub 예약은 몇 분~수십 분 늦게 돌 수 있음.
+on:
+  schedule:
+    - cron: '*/10 15-23 * * *'
+    - cron: '*/10 0-2 * * *'
+  workflow_dispatch:
+  push:   # 판단 코드 수정 시 시험(판단만 출력, 실행 안 함)
+    branches: [main]
+    paths:
+      - 'local_runner/backup_due.py'
+      - '.github/workflows/backup.yml'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: backup-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decide
+        id: d
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then python3 local_runner/backup_due.py; exit 0; fi
+          python3 local_runner/backup_due.py --mark > run.txt
+          cat run.txt
+          echo "n=$(grep -c . run.txt || true)" >> $GITHUB_OUTPUT
+      - name: Mark + dispatch
+        if: steps.d.outputs.n != '' && steps.d.outputs.n != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "backup-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add local_runner/heartbeat/actions.json
+          git commit -q -m "backup: 예비 실행 $(TZ=Asia/Seoul date '+%F %H:%M') $(tr '\n' ' ' < run.txt)"
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs origin main && git push -q origin HEAD:main && break; sleep 5; done
+          while read wf; do [ -n "$wf" ] && gh workflow run "$wf" --ref main && echo "실행: $wf"; done < run.txt

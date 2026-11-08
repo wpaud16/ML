@@ -5,8 +5,8 @@ name: morning brief (JM's Schedule)
 on:
   # 2026-11-05: 예약 실행 지연 대비 KST 04:23·05:23·06:23·07:23 네 번, 오늘 보냈으면(brief/sent/날짜.txt) 건너뜀
   # 2026-11-08: 노트북 08:00 통합 실행이 주 실행 → 예비로 KST 09:23·10:23 (brief/sent/날짜.txt 있으면 건너뜀)
+  # 2026-11-08 밤: 주 예비는 backup.yml(10분마다 노트북 상태 확인 → 바로 실행). 아래는 그것도 밀릴 때의 마지막 안전망 KST 10:23
   schedule:
-    - cron: '23 0 * * *'
     - cron: '23 1 * * *'
   workflow_dispatch:
   push:   # 수동 발송용: brief/trigger.txt 수정 push → 바로 실행 (2026-11-05)
