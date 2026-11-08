@@ -14,13 +14,16 @@ CSS='''*{box-sizing:border-box;margin:0;padding:0}body{font-family:"Noto Sans CJ
 def cover():
     lv=d["level"]
     sc="".join(f'<div style="flex:1;border-radius:10px;padding:8px 4px;text-align:center;font-size:11px;background:{"#1F1D1A" if l==lv else "#ffffffb0"};color:{"#F4F1EC" if l==lv else "#7A746B"}"><b style="display:block;font-size:13px;color:{"#E8C27A" if l==lv else "#1F1D1A"}">{r}</b><b>{l}</b><br>{t}</div>' for r,l,t in [("~5mm","약한 비","우산 있으면 OK"),("5~20mm","보통 비","우산 필수"),("20~50mm","많은 비","신발 젖음"),("50mm~","매우 많은 비","외출 자제")])
-    rows="".join(f'<tr><td style="color:#7A746B;width:96px;padding:3px 0">{e(k)}</td><td style="padding:3px 0">{e(v)}</td></tr>' for k,v in d["rain"])
+    rows="".join(f'<tr><td style="color:#7A746B;width:96px;padding:2px 0">{e(k)}</td><td style="padding:2px 0">{e(v)}</td></tr>' for k,v in d["rain"])
+    # 시간대별 기온 (2026-11-08 사용자 요청)
+    hr="".join(f'<div style="flex:1;text-align:center;background:{"#DCE6F0" if x["rain"] else "#ffffffb0"};border-radius:10px;padding:6px 0"><div style="font-size:12px;color:#7A746B">{x["h"]}시</div><div style="font-size:16px;line-height:1.3">{e(x["icon"])}</div><div style="font-size:17px;font-weight:700">{x["t"]}°</div></div>' for x in d.get("hourly",[]))
+    hr=f'<div style="display:flex;gap:5px;margin:0 0 12px">{hr}</div>' if hr else ''
     return f'''<div class="card" style="background:#F4F1EC"><div class="no">01 / 04</div>
 <div class="kick">TODAY'S WEATHER</div><div style="font-size:26px;font-weight:900;margin-top:6px">{e(d["date"])}</div><div style="font-size:15px;color:#7A746B">서울 강동구 · {e(d["sky"])} · {e(d["sub"])}</div>
-<div style="display:flex;gap:28px;margin:18px 0 16px"><div><div style="font-size:15px;color:#7A746B">최저</div><div style="font-size:84px;font-weight:900;line-height:1;color:#3E6E9E;letter-spacing:-3px">{e(d["tmin"])}°</div></div>
-<div><div style="font-size:15px;color:#7A746B">최고</div><div style="font-size:84px;font-weight:900;line-height:1;color:#C0583A;letter-spacing:-3px">{e(d["tmax"])}°</div></div></div>
-<div style="background:#fff;border-radius:16px;padding:16px 18px"><div style="font-size:17px;font-weight:700;margin-bottom:6px">{e(d["rain_title"])}</div><table style="font-size:15px;border-collapse:collapse;width:100%">{rows}</table>
-<div style="font-size:11px;color:#9A9389;margin:10px 0 4px">하루 강수량 기준</div><div style="display:flex;gap:5px">{sc}</div></div>
+<div style="display:flex;gap:28px;margin:12px 0 12px"><div><div style="font-size:14px;color:#7A746B">최저</div><div style="font-size:64px;font-weight:900;line-height:1;color:#3E6E9E;letter-spacing:-3px">{e(d["tmin"])}°</div></div>
+<div><div style="font-size:14px;color:#7A746B">최고</div><div style="font-size:64px;font-weight:900;line-height:1;color:#C0583A;letter-spacing:-3px">{e(d["tmax"])}°</div></div></div>
+{hr}<div style="background:#fff;border-radius:16px;padding:12px 18px"><div style="font-size:17px;font-weight:700;margin-bottom:4px">{e(d["rain_title"])}</div><table style="font-size:15px;border-collapse:collapse;width:100%">{rows}</table>
+<div style="font-size:11px;color:#9A9389;margin:8px 0 4px">하루 강수량 기준</div><div style="display:flex;gap:5px">{sc}</div></div>
 <div style="background:#1F1D1A;color:#F4F1EC;border-radius:16px;padding:14px 18px;margin-top:14px;font-size:16px;line-height:1.55">{d["guide"].replace("<b>",'<b style="color:#E8C27A">')}</div></div>'''
 BG=["#E9EEF3","#ECEDE4","#E8E9EE"]
 def look(i,lk):
