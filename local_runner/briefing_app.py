@@ -419,9 +419,9 @@ def main():
     if '--register' in sys.argv:   # 관리자 권한으로 다시 실행된 경우
         logon = 'S4U' if 's4u' in [a.lower() for a in sys.argv] else 'Interactive'
         code, out = register(logon)
-        r = tk.Tk(); r.withdraw()
-        (messagebox.showinfo if code == 0 else messagebox.showerror)(APP, out or f'종료 코드 {code}')
-        return
+        r = tk.Tk(); r.withdraw(); r.attributes('-topmost', True)   # 결과 창이 다른 창 뒤에 숨어 프로세스가 남던 문제 (2026-11-08)
+        (messagebox.showinfo if code == 0 else messagebox.showerror)(APP, out or f'종료 코드 {code}', parent=r)
+        r.destroy(); return
     root = tk.Tk()
     try: ttk.Style().theme_use('vista')
     except Exception: pass
