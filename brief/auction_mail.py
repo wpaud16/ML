@@ -60,7 +60,19 @@ def tracker_rows():
     return rows
 
 
-def summary_row(v, today, new=False):
+def court_tag(st):
+    """법원 진행 확인 결과 → (html, text) (2026-11-08 사용자 요청: 당일 실제 진행 여부)."""
+    if not st:
+        return '', ''
+    ok, msg = st
+    if ok is True:
+        return f' · <b style="color:#188038">✅ 법원 확인: {E(msg)}</b>', f' · ✅ 법원 확인: {msg}'
+    if ok is False:
+        return f' · <b style="color:#d93025">❌ 진행 안 함: {E(msg)}</b>', f' · ❌ 진행 안 함: {msg}'
+    return f' · <span style="color:#777">❔ 법원 {E(msg)}</span>', f' · ❔ 법원 {msg}'
+
+
+def summary_row(v, today, new=False, court=None):
     """물건 한 개 (2026-11-05 사용자 지정 형식):
     11/10(화) D-4 · 최저 입찰 27.69억
     🔁 유찰 0회 · 이번 회차 유찰 확률 n% · 🚇 교대 7분
@@ -74,7 +86,8 @@ def summary_row(v, today, new=False):
     gu = (v.get('region') or '').split(' ', 1)[-1]
     case = v['key'].replace('[1]', '')
     bs = cp.base_sise(v)
-    l1 = f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 입찰 <b>{v['low_manwon'] / 1e4:.2f}억</b>"
+    ch, _ = court_tag(court)
+    l1 = f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 입찰 <b>{v['low_manwon'] / 1e4:.2f}억</b>{ch}"
     l2 = f"🔁 유찰 {v.get('fails') or 0}회" + (f" · 이번 회차 유찰 확률 {f['prob_pct']}%" if f.get('prob_pct') is not None and not f.get('error') else '') \
          + (f" · 🚇 {cp.station_text(v, short=True)}" if cp.station_text(v, short=True) else '')
     l3 = f"🎯 예상 낙찰가 50%: <b>{p50:.2f}억</b>" + (f' (시세 대비 {p50 / bs * 100:.1f}%)' if bs else '') + (f' · 👥 {n}명 입찰 예상' if n else '') \
@@ -190,6 +203,13 @@ def build(today, now_hour=None):
     items = [v for v in L['items'].values() if cp.keep(v) and (v.get('bidding_date') or '') >= lo and v['key'] not in sold
              and v.get('no_trade_12m') is not True]   # 1년 실거래 0건 아파트는 메일에서 숨김 (웹페이지 '실거래 없음(참고)', 2026-11-05)
     pk = prev_keys(today)
+    # 오늘 기일 물건은 법원경매정보에서 실제 진행 여부 확인 (노트북에서만, 실패해도 메일은 발송)
+    court = {}
+    try:
+        import court_status
+        court = court_status.check([v for v in items if v['bidding_date'] == today.isoformat()])
+    except Exception as e:
+        print('법원 확인 실패', e)
     H = [f'<div style="font-weight:bold;font-size:17px">🏠 경매 알림</div>']
     H += [f'<div style="color:#d93025;font-size:13px">{E(n)}</div>' for n in notes]
     # 버튼이 일부 메일 앱에서 눌리지 않는다는 보고(2026-11-05) → 새 창 열기 + 아래에 일반 링크도
@@ -209,7 +229,7 @@ def build(today, now_hour=None):
         if not xs:
             H.append(f'<div style="{GRAY}">진행 중인 물건 없음</div>')
         for v in xs:
-            h, t = summary_row(v, today, is_new(v, pk)); H.append(h); T.append(t)
+            h, t = summary_row(v, today, is_new(v, pk), court.get(v['key'])); H.append(h); T.append(t)
     # 안내문(모델·시세·지역 설명)은 웹페이지 맨 아래로 옮김 (2026-11-05 사용자 요청)
     H.append(f'<div style="{GRAY};margin-top:18px">모델·시세 설명과 검색 지역은 <a style="color:#1a73e8" href="{PAGE}#foot">웹페이지 맨 아래</a>에 있어요 · 입찰 권유가 아닙니다</div>')
     T.append(f'\n모델·시세 설명: {PAGE}')
