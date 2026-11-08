@@ -17,6 +17,16 @@ $jobs = @(
     @{ Name = 'ML_Brief';  At = '08:00'; Arg = 'brief';  Limit = 1 }
 )
 $logon = if ($Interactive) { 'Interactive' } else { 'S4U' }
+# S4U(로그온 안 된 상태)에선 Windows 자격 증명 관리자를 못 써서 git push 가 실패 → .env 의 GITHUB_TOKEN 필요 (2026-11-08)
+if (-not $Interactive) {
+    $envf = Join-Path (Split-Path (Split-Path $PSScriptRoot)) '.env'
+    $tok = if (Test-Path $envf) { (Select-String -Path $envf -Pattern '^GITHUB_TOKEN=(.+)$' | Select-Object -First 1) } else { $null }
+    if (-not $tok) {
+        Write-Host "중단: $envf 에 GITHUB_TOKEN 이 비어 있어요. 토큰을 넣은 뒤 다시 실행하세요 (없이 등록하면 매일 push 실패)." -ForegroundColor Red
+        Write-Host '(로그온 중에만 도는 지금 방식 유지: -Interactive)'
+        exit 1
+    }
+}
 $principal = New-ScheduledTaskPrincipal -UserId $User -LogonType $logon -RunLevel Limited
 if ($Interactive) { $py = $py -replace 'python\.exe$', 'pythonw.exe' }   # 로그온 상태에선 콘솔 창 안 뜨게
 foreach ($j in $jobs) {
