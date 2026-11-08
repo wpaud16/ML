@@ -44,6 +44,7 @@ def load_env():
 def find_git():
     for p in (os.environ.get('GIT_EXE'),
               os.path.join(os.environ.get('LOCALAPPDATA', ''), r'Programs\PortableGit\cmd\git.exe'), shutil.which('git'),
+              os.path.join(BASE, 'tools', 'MinGit', 'cmd', 'git.exe'),   # 관리 프로그램이 설치한 git (다른 PC)
               os.path.join(os.environ.get('LOCALAPPDATA', ''), r'Programs\MinGit\cmd\git.exe'),
               r'C:\Program Files\Git\cmd\git.exe'):
         if p and os.path.exists(p):
@@ -128,9 +129,17 @@ def today():
     return dt.datetime.now(KST).date()
 
 
+def ensure_browser():
+    """Playwright 브라우저가 없으면 설치 (2026-11-08: 코디 카드 '브라우저 없음' 실패, 다른 PC 첫 실행). 이미 있으면 몇 초."""
+    try:
+        run([sys.executable, '-m', 'playwright', 'install', 'chromium'], timeout=900, check=False)
+    except Exception as e:
+        log(f'브라우저 확인 실패(계속 진행): {e}')
+
+
 # ---------- 단계 ----------
 def s_collect():
-    job = os.environ.get('TENANT_JOB') or os.path.join(BASE, 'tenants_job.py')
+    job = os.environ.get('TENANT_JOB') or os.path.join(HERE, 'tenants_job.py')   # 2026-11-08 저장소로 옮김
     if not os.path.exists(job):
         raise RuntimeError(f'수집 프로그램 없음: {job}')
     a = [sys.executable, job, '--budget-min', os.environ.get('TENANT_BUDGET_MIN', '35')]
@@ -231,8 +240,9 @@ def main():
             os.remove(f)
     log(f'===== {ARGS.job} 시작 {" ".join(sys.argv[2:])}')
     load_env()
-    GIT = find_git()
+    GIT = find_git(); os.environ['GIT_EXE'] = GIT
     pull()
+    ensure_browser()
     only = set(ARGS.steps.split(',')) if ARGS.steps else None
     fails = []
     for name, fn in JOBS[ARGS.job]:

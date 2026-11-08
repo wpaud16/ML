@@ -1,7 +1,7 @@
 """오늘 매각기일 물건이 법원경매정보(courtauction.go.kr)에서 실제로 진행되는지 확인 (2026-11-08 사용자 요청).
 사건 조회 화면의 '물건상태'(매각준비 -> 매각공고 …), '기일정보'(다음 매각기일), '사건항고/정지여부', '종국결과'로 판정.
-노트북의 법원 수집기(C:\\auction_pc\\tenants_job.py, 환경변수 TENANT_JOB)의 조회 코드를 그대로 쓴다.
-수집기가 없거나(GitHub Actions) 조회에 실패하면 표시하지 않는다(메일은 그대로 발송)."""
+법원 수집기(local_runner/tenants_job.py, 환경변수 TENANT_JOB)의 조회 코드를 그대로 쓴다.
+GitHub Actions(COURT_CHECK=0)이거나 조회에 실패하면 표시하지 않는다(메일은 그대로 발송)."""
 import os, re, sys, time
 
 BUDGET_SEC = int(os.environ.get('COURT_CHECK_SEC', '420'))
@@ -9,7 +9,7 @@ STOP_WORDS = ('변경', '연기', '정지', '취하', '취소', '기각', '각�
 
 
 def _tj():
-    p = os.environ.get('TENANT_JOB') or r'C:\auction_pc\tenants_job.py'
+    p = os.environ.get('TENANT_JOB') or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'local_runner', 'tenants_job.py')
     if not os.path.exists(p):
         return None
     sys.path.insert(0, os.path.dirname(p))
@@ -46,6 +46,8 @@ def check(items, log=print):
     """items: 예측 항목(dict: key, court, bidding_date) → {key: (ok, 문구)}."""
     if not items:
         return {}
+    if os.environ.get('COURT_CHECK') == '0' or os.environ.get('GITHUB_ACTIONS'):
+        log('법원 확인 건너뜀 (Actions)'); return {}
     try:
         tj = _tj()
     except Exception as e:

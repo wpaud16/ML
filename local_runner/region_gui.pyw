@@ -1,6 +1,6 @@
 """경매 검색 지역 설정 GUI (2026-11-08). 서울·경기 시군구를 체크해 저장 → 다음 예측부터 적용.
-'저장 후 지금 검색' 은 run_all.py night 의 예측·웹페이지·push 단계만 바로 실행 (법원자료 수집 제외).
-실행: 바탕화면 '경매 검색 지역' 바로가기 또는 pythonw region_gui.pyw"""
+통합 관리 프로그램(briefing_app.py '경매 지역' 탭)이 build() 를 불러 쓰고, 단독 실행도 된다(pythonw region_gui.pyw).
+'저장 후 지금 검색' 은 run_all.py night 의 예측·웹페이지·push 단계만 바로 실행 (법원자료 수집 제외)."""
 import json, os, subprocess, sys
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -24,16 +24,17 @@ def load():
         return {'apt': [], 'ot': list(SEOUL)}
 
 
-def main():
+def build(parent, run_cb=None):
+    """parent 안에 지역 체크 화면을 만든다. run_cb: '저장 후 지금 검색' 때 부를 함수 (없으면 run_all.py 직접 실행)."""
     cfg = load()
     apt = {tuple(x) for x in cfg.get('apt') or []}
     ot = set(cfg.get('ot') or [])
-    root = tk.Tk(); root.title('경매 검색 지역'); root.geometry('820x820')
-    nb = ttk.Notebook(root); nb.pack(fill='both', expand=True, padx=8, pady=8)
+    bar = ttk.Frame(parent); bar.pack(side='bottom', fill='x', padx=8, pady=(0, 8))   # 버튼이 화면 밖으로 밀리지 않게 먼저 아래에
+    nb = ttk.Notebook(parent); nb.pack(fill='both', expand=True, padx=6, pady=6)
     V = {}
 
-    def grid(parent, title, names, checked, key, cols):
-        f = ttk.LabelFrame(parent, text=title); f.pack(fill='x', padx=6, pady=6)
+    def grid(p, title, names, checked, key, cols):
+        f = ttk.LabelFrame(p, text=title); f.pack(fill='x', padx=6, pady=6)
         vs = []
         for i, n in enumerate(names):
             v = tk.BooleanVar(value=checked(n)); vs.append(v)
@@ -44,10 +45,10 @@ def main():
         ttk.Button(b, text='전체 해제', command=lambda: [v.set(False) for v in vs]).pack(side='left', padx=2)
 
     t1 = ttk.Frame(nb); nb.add(t1, text='🏢 아파트')
-    grid(t1, '서울', SEOUL, lambda n: ('서울', n) in apt, 'apt서울', 6)
-    grid(t1, '경기 (남양주·구리 = 8호선역, 하남 = 5호선역 도보 15분 이내만 표시)', GYEONGGI, lambda n: ('경기', n) in apt, 'apt경기', 4)
+    grid(t1, '서울', SEOUL, lambda n: ('서울', n) in apt, 'apt서울', 7)
+    grid(t1, '경기 (남양주·구리 = 8호선역, 하남 = 5호선역 도보 15분 이내만 표시)', GYEONGGI, lambda n: ('경기', n) in apt, 'apt경기', 5)
     t2 = ttk.Frame(nb); nb.add(t2, text='🏬 오피스텔 (서울 · 역 도보 10분)')
-    grid(t2, '서울', SEOUL, lambda n: n in ot, 'ot', 6)
+    grid(t2, '서울', SEOUL, lambda n: n in ot, 'ot', 7)
 
     def save():
         new = dict(cfg)
@@ -61,21 +62,26 @@ def main():
 
     def on_save():
         n = save()
-        if n: messagebox.showinfo('경매 검색 지역', f"저장했어요 (아파트 {len(n['apt'])}곳, 오피스텔 {len(n['ot'])}구).\n내일 03시 예측부터 적용됩니다.")
+        if n: messagebox.showinfo('경매 검색 지역', f"저장했어요 (아파트 {len(n['apt'])}곳, 오피스텔 {len(n['ot'])}구).\n다음 03시 예측부터 적용됩니다.")
 
     def on_run():
         n = save()
         if not n: return
+        if run_cb:
+            run_cb(); return
         py = sys.executable.replace('pythonw.exe', 'python.exe')
         subprocess.Popen([py, os.path.join(HERE, 'run_all.py'), 'night', '--steps', 'predict,page,push', '--force'],
                          cwd=HERE, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
-        messagebox.showinfo('경매 검색 지역', '저장하고 검색(예측)을 시작했어요. 약 30분~1시간 뒤 웹페이지에 반영됩니다.\n'
-                            '진행 기록: C:\\auction_pc\\logs\\오늘날짜_night.log')
+        messagebox.showinfo('경매 검색 지역', '저장하고 검색(예측)을 시작했어요. 약 30분~1시간 뒤 웹페이지에 반영됩니다.')
 
-    bar = ttk.Frame(root); bar.pack(fill='x', padx=8, pady=(0, 8))
     ttk.Button(bar, text='저장', command=on_save).pack(side='right', padx=4)
     ttk.Button(bar, text='저장 후 지금 검색', command=on_run).pack(side='right', padx=4)
     ttk.Label(bar, text='체크한 지역만 리치고 경매 목록에서 검색합니다.').pack(side='left')
+
+
+def main():
+    root = tk.Tk(); root.title('경매 검색 지역'); root.geometry('820x820')
+    build(root)
     root.mainloop()
 
 
