@@ -408,7 +408,7 @@ def scorecard(rows, cat, tracked=None):
         out.append(f'<div class="g s">낙찰 {len(sold)}건 · 평균 오차 {err:.1f}% · ±5% 안 {w5}건 · 40~60% 구간 안 {mid}건</div>')
     # 2026-11-08 사용자 요청: 차이 = 종합·인원 줄 둘 다, '가장 가까운 칸' 열 제거
     t = ['<table class="sc"><col style="width:20%"><col style="width:8%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:12%"><col style="width:9%"><col style="width:9%">',
-         '<tr><th>물건</th><th>기일</th><th>종합(50%)<br><span class="sub">시세 대비</span></th><th>예상 인원 줄(50%)<br><span class="sub">시세 대비</span></th><th>실제<br><span class="sub">시세 대비</span></th><th>차이<br><span class="sub">종합<br>인원 줄</span></th><th>인원<br><span class="sub">실제/예상</span></th><th>바로<br>가기</th></tr>']
+         '<tr><th>물건</th><th>기일</th><th>종합(50%)<br><span class="sub">시세 대비</span></th><th>예상 인원 줄(50%)<br><span class="sub">시세 대비</span></th><th>실제<br><span class="sub">시세 대비</span></th><th>차이<br><span class="sub">종합 / 인원 줄</span></th><th>인원<br><span class="sub">실제/예상</span></th><th>바로<br>가기</th></tr>']
     for r in rows:
         rid = f"{r['key']}|{r['bidding_date']}"
         it = tracked.get(rid) or {}
@@ -433,7 +433,7 @@ def scorecard(rows, cat, tracked=None):
             row_ = f'<span class="sub">{E(lab)}</span><br>{e50:.2f}' + pct_sub(e50 * 1e4, sise)
             if diff != '-':
                 d2 = (r['actual_manwon'] / (e50 * 1e4) - 1) * 100
-                diff += f'<br><span style="color:{"#FF6B6B" if d2 > 0 else "#6FA8FF"}">{d2:+.1f}%</span>'
+                diff = f'<span style="white-space:nowrap">{diff} / <span style="color:{"#FF6B6B" if d2 > 0 else "#6FA8FF"}">{d2:+.1f}%</span></span>'   # 2026-11-09: 종합 / 인원 줄 한 줄로
         else:
             row_ = '-'
         name = f'{E(r.get("danji_name") or "")}<br><span class="sub">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡</span>'
@@ -442,7 +442,7 @@ def scorecard(rows, cat, tracked=None):
         t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}{star}' + pct_sub(p50m, sise), row_, act, diff, ppl, go)) + '</tr>')
     t.append('</table>')
     out.append(''.join(t))
-    out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 종합 = 기일 전에 기록한 인원 가정 없는 앙상블 낙찰확률 50% 가격 · 예상 인원 줄 = 카드 ▶ 줄의 50% 가격 · 차이 = 실제가 기준 위 종합 · 아래 인원 줄 · 괄호 % = 예측에 쓴 시세(아파트 모델 시세 M, 오피스텔 리치고) 대비 · '
+    out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 종합 = 기일 전에 기록한 인원 가정 없는 앙상블 낙찰확률 50% 가격 · 예상 인원 줄 = 카드 ▶ 줄의 50% 가격 · 차이 = 실제가 기준 종합 / 인원 줄 · 괄호 % = 예측에 쓴 시세(아파트 모델 시세 M, 오피스텔 리치고) 대비 · '
                '<sup>*</sup> = 11/5 이전(리치고 시세) 예측을 11/8 현재 M 시세 모델로 다시 계산한 값(그 기일 이전 학습 사례만 사용, 사후 계산) · '
                '인원 = 실제 응찰자 수 / 예상 인원 · 바로가기 = 위 \'기일 지남\' 카드로 이동</div>')
     return ''.join(out)
