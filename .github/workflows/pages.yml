@@ -1,0 +1,75 @@
+name: pages (웹페이지만 배포)
+
+# 저장소 전체(150MB+) 대신 웹페이지 파일만 배포 → 10분 시간초과 실패 방지
+# 필요 설정: Settings > Pages > Source = "GitHub Actions" (아니면 배포 건너뜀, 실패 메일 없음)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'auction_model/page/**'
+      - 'outfit/**'
+      - 'privacy.html'
+      - '.github/workflows/pages.yml'
+  workflow_run:
+    # GITHUB_TOKEN 으로 push한 커밋은 push 트리거를 깨우지 않으므로 끝난 뒤 배포
+    workflows:
+      - 'auction predictions (daily)'
+      - 'auction model retrain (monthly)'
+      - 'outfit (아침 날씨·코디)'
+      - 'morning brief (JM''s Schedule)'
+      - 'backup (노트북 예비 실행 감시)'
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+    steps:
+      - name: Pages 설정 확인
+        id: cfg
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          t=$(gh api repos/${{ github.repository }}/pages --jq .build_type 2>/dev/null || echo none)
+          echo "build_type=$t"
+          echo "ok=$([ "$t" = workflow ] && echo 1 || echo 0)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.cfg.outputs.ok == '1'
+        with:
+          ref: main
+          sparse-checkout: |
+            auction_model/page
+            outfit
+            privacy.html
+          sparse-checkout-cone-mode: false
+
+      - name: 사이트 폴더 구성
+        if: steps.cfg.outputs.ok == '1'
+        run: |
+          mkdir -p _site/auction_model
+          cp -r auction_model/page _site/auction_model/page
+          rsync -a --exclude='*.py' outfit/ _site/outfit/
+          cp privacy.html _site/ 2>/dev/null || true
+          touch _site/.nojekyll
+          du -sh _site
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.cfg.outputs.ok == '1'
+        with:
+          path: _site
+
+      - uses: actions/deploy-pages@v4
+        if: steps.cfg.outputs.ok == '1'
