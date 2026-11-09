@@ -118,7 +118,7 @@ def push(paths, msg):
         log('변경 없음 → 커밋 생략'); return
     git('-c', 'user.name=laptop-bot', '-c', 'user.email=laptop@users.noreply.github.com', 'commit', '-q', '-m', msg)
     for n in range(1, 6):
-        if git('pull', '--rebase', '-X', 'theirs', 'origin', 'main', check=False)[0] == 0 and git('push', 'origin', 'HEAD:main', check=False)[0] == 0:
+        if git('pull', '--rebase', '--autostash', '-X', 'theirs', 'origin', 'main', check=False)[0] == 0 and git('push', 'origin', 'HEAD:main', check=False)[0] == 0:
             log(f'push 완료 ({n})'); return
         git('rebase', '--abort', check=False)
         time.sleep(10)
@@ -182,8 +182,12 @@ def s_predict():
         log('⚠ MOLIT_API_KEY 없음 → 국토부 실거래는 캐시만 사용')
     p = os.path.join(REPO, 'auction_model', 'predictions', 'latest.json')
     have = json.load(open(p, encoding='utf-8')).get('date') if os.path.exists(p) else None
-    if have == pred_day() and not ARGS.force:
+    # 2026-11-09: 지역을 저장만 하고 아직 안 올렸으면(로컬 변경) 기존 예측이 옛 지역 기준이라 다시 예측
+    regions_changed = git('status', '--porcelain', '--', 'auction_model/search_regions.json', check=False)[1].strip() != ''
+    if have == pred_day() and not ARGS.force and not regions_changed:
         log(f'오늘({have}) 예측 이미 있음 → 건너뜀'); return
+    if regions_changed:
+        log('검색 지역 변경 감지 → 다시 예측')
     # 국토부 실거래 수집(molit_cache)은 batch_predict 안에서 시군구별로 함
     run([sys.executable, 'batch_predict.py'], cwd=os.path.join(REPO, 'auction_model'), timeout=4 * 3600)
 

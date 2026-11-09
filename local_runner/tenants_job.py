@@ -522,7 +522,7 @@ def upload(today):
     git('commit', '-m', f'tenants: 임차인 자료 {today}', '--', OUT_REL, README_REL)
     for n in range(1, 6):
         try:
-            git('pull', '--rebase', '-X', 'theirs')
+            git('pull', '--rebase', '--autostash', '-X', 'theirs')   # 2026-11-09: 저장만 한 지역 파일 등 로컬 변경이 있어도 올라가게
             git('push')
             log(f'업로드 완료 (시도 {n})'); return True
         except Exception as e:
