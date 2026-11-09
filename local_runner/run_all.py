@@ -239,7 +239,13 @@ def s_brief():
     c = find_claude() if os.environ.get('BRIEF_SUMMARY', '').lower() == 'cli' else None
     log(f'증시 해설: {os.environ.get("BRIEF_SUMMARY") or "끔"}' + (f' ({c})' if c else ''))
     run([sys.executable, 'run_brief.py'], cwd=os.path.join(REPO, 'brief'), timeout=1800, extra=mail_env())
-    push(['brief/sent'], f'brief: {d} 메일 발송 기록 (노트북)')
+    # 법원 진행 확인 결과를 웹카드에도 반영 (2026-11-09)
+    if os.path.exists(os.path.join(REPO, 'auction_model', 'predictions', 'court_status.json')):
+        try:
+            run([sys.executable, 'cards_page.py'], cwd=os.path.join(REPO, 'auction_model'), timeout=300)
+        except Exception as e:
+            log(f'웹페이지 다시 만들기 실패(무시): {e}')
+    push(['brief/sent', 'auction_model/predictions/court_status.json', 'auction_model/page'], f'brief: {d} 메일 발송 기록·법원 진행 확인 (노트북)')
 
 
 JOBS = {

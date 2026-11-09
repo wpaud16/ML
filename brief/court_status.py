@@ -84,5 +84,22 @@ def check(items, log=print):
     return out
 
 
+def save(res, day, path):
+    """확인 결과를 웹카드용 파일에 합쳐 저장 (2026-11-09 사용자 요청: 웹카드·메일 둘 다 표시). 30일 지난 것은 지움."""
+    import json, datetime as dt
+    if not res: return
+    try:
+        d = json.load(open(path, encoding='utf-8'))
+    except Exception:
+        d = {}
+    it = d.get('items') or {}
+    at = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec='seconds')
+    for k, (ok, msg) in res.items():
+        it[k] = dict(date=day, ok=ok, msg=msg, at=at)
+    cut = (dt.date.fromisoformat(day) - dt.timedelta(days=30)).isoformat()
+    it = {k: v for k, v in it.items() if (v.get('date') or '') >= cut}
+    json.dump(dict(updated=at, items=it), open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+
 if __name__ == '__main__':   # 시험: python court_status.py 남양주지원 2025타경72200[1] 2026-11-11
     print(check([dict(court=sys.argv[1], key=sys.argv[2], bidding_date=sys.argv[3])]))

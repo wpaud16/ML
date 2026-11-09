@@ -208,6 +208,7 @@ def build(today, now_hour=None):
     try:
         import court_status
         court = court_status.check([v for v in items if v['bidding_date'] == today.isoformat()])
+        court_status.save(court, today.isoformat(), os.path.join(AM, 'predictions', 'court_status.json'))   # 웹카드에도 표시 (2026-11-09)
     except Exception as e:
         print('법원 확인 실패', e)
     H = [f'<div style="font-weight:bold;font-size:17px">🏠 경매 알림</div>']

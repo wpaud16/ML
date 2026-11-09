@@ -196,6 +196,27 @@ def unmatched(d, today):
     return sorted(out, key=lambda f: f.get('bidding_date') or '9999')
 
 
+COURT = {}   # 아침 브리핑이 법원경매정보에서 확인한 당일 진행 여부 (predictions/court_status.json, 2026-11-09)
+
+
+def load_court():
+    try:
+        return json.load(open(os.path.join(HERE, 'predictions', 'court_status.json'), encoding='utf-8')).get('items') or {}
+    except Exception:
+        return {}
+
+
+def court_line(key, bd):
+    """카드용 법원 진행 여부 한 줄 (메일과 같은 표시). 그 기일에 확인한 것만."""
+    c = COURT.get(key)
+    if not c or c.get('date') != bd: return ''
+    ok, msg, at = c.get('ok'), E(c.get('msg') or ''), E((c.get('at') or '')[11:16])
+    when = f' <span class="g s">({at} 확인)</span>' if at else ''
+    if ok is True: return f'<b style="color:#3FB950">✅ 법원 확인: {msg}</b>{when}'
+    if ok is False: return f'<b style="color:#FF6B6B">❌ 진행 안 함: {msg}</b>{when}'
+    return f'<span class="g">❔ 법원 {msg}</span>{when}'
+
+
 def unmatched_card(f):
     appr, low = (f.get('appr_manwon') or 0) / 1e4, (f.get('low_manwon') or 0) / 1e4
     reg = (f.get('region') or '').split(' ', 1)[-1]
@@ -204,6 +225,7 @@ def unmatched_card(f):
     L = [f'<div class="t">{E((f.get("address") or "").split(" ", 2)[-1])}</div>',
          f'<div class="g s">{E(reg)} · {E(f["key"].replace("[1]", ""))} · {E(f.get("court") or "")}{chk}</div>',
          f'매각기일 {md(f["bidding_date"])} · <span class="dday" data-d="{f["bidding_date"]}"></span> · 전용 {f.get("area")}㎡',
+         court_line(f['key'], f.get('bidding_date')),
          f'감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b> ({low / appr * 100:.0f}%) · 유찰 {f.get("fails") or 0}회' if appr else '',
          f'<span class="g s">🔍 예측 불가: {E(f.get("reason") or "")} — 리치고 단지 페이지가 없어 시세·모델 예측 없음</span>']
     if f.get('auction_id'):
@@ -268,6 +290,8 @@ def card(v, today, cid=None, res=None):
          f'<div class="g s">{E(gu)} · {E(case)} · {E(v.get("court") or "")}</div>', '<b>📋 기본 정보</b>']
     bd = v.get('bidding_date') or ''
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
+    cl = court_line(key, bd)
+    if cl: L.append(cl)
     ut = unit_text(v)
     if ut: L.append(f'🏠 {E(ut)}')
     if cid: L.append(result_line(res))
@@ -492,6 +516,7 @@ def prev_keys(day, pred_dir):
 
 def build(src, dst):
     d = json.load(open(src))
+    COURT.clear(); COURT.update(load_court())
     now = datetime.now(KST); today = now.strftime('%Y-%m-%d')
     items = [v for v in d['items'].values() if keep(v)]
     pk = prev_keys(d.get('date') or today, os.path.dirname(src))
