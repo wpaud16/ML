@@ -2132,11 +2132,37 @@
    "60%": 32161
   },
   "status": "결과대기",
-  "checked": "2026-11-09",
+  "checked": "2026-11-10",
   "expected_bidders": 2,
   "expected_range": [
    1,
    2
+  ],
+  "sise_manwon": 29150
+ },
+ "2025타경104598[1]|2026-11-09": {
+  "key": "2025타경104598[1]",
+  "auction_id": "C84EQQOH",
+  "category": "오피스텔",
+  "danji_name": "에르스떼",
+  "area": 34.63,
+  "region": "서울 관악구",
+  "bidding_date": "2026-11-09",
+  "pred_date": "2026-11-09",
+  "low_manwon": 25280,
+  "bid_by_prob_manwon": {
+   "40%": 25647,
+   "45%": 25894,
+   "50%": 26132,
+   "55%": 26378,
+   "60%": 26648
+  },
+  "status": "결과대기",
+  "checked": "2026-11-10",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   3
   ],
   "sise_manwon": 29150
  },
@@ -3838,6 +3864,32 @@
    "sise_basis": "리치고"
   }
  },
+ "2025타경51733[1]|2026-11-09": {
+  "key": "2025타경51733[1]",
+  "auction_id": "C11HQCKP",
+  "category": "아파트",
+  "danji_name": "신동아타워",
+  "area": 58.38,
+  "region": "서울 송파구",
+  "bidding_date": "2026-11-09",
+  "pred_date": "2026-11-08",
+  "low_manwon": 51392,
+  "bid_by_prob_manwon": {
+   "40%": 63711,
+   "45%": 64170,
+   "50%": 64628,
+   "55%": 65100,
+   "60%": 65607
+  },
+  "status": "결과대기",
+  "checked": "2026-11-10",
+  "expected_bidders": 9,
+  "expected_range": [
+   5,
+   12
+  ],
+  "sise_manwon": 80630
+ },
  "2025타경51793[1]|2026-11-03": {
   "key": "2025타경51793[1]",
   "auction_id": "C90SWADM",
@@ -3906,13 +3958,65 @@
    "60%": 17786
   },
   "status": "결과대기",
-  "checked": "2026-11-09",
+  "checked": "2026-11-10",
   "expected_bidders": 3,
   "expected_range": [
    1,
    6
   ],
   "sise_manwon": 28000
+ },
+ "2025타경51793[1]|2026-11-09": {
+  "key": "2025타경51793[1]",
+  "auction_id": "C90SWADM",
+  "category": "오피스텔",
+  "danji_name": "동인에버빌(43-62)",
+  "area": 52.16,
+  "region": "서울 은평구",
+  "bidding_date": "2026-11-09",
+  "pred_date": "2026-11-09",
+  "low_manwon": 14233,
+  "bid_by_prob_manwon": {
+   "40%": 17558,
+   "45%": 17726,
+   "50%": 17890,
+   "55%": 18058,
+   "60%": 18243
+  },
+  "status": "결과대기",
+  "checked": "2026-11-10",
+  "expected_bidders": 3,
+  "expected_range": [
+   1,
+   6
+  ],
+  "sise_manwon": 28500
+ },
+ "2025타경52040[1]|2026-11-09": {
+  "key": "2025타경52040[1]",
+  "auction_id": "C79BGPNI",
+  "category": "아파트",
+  "danji_name": "홍제한양",
+  "area": 120.14,
+  "region": "서울 서대문구",
+  "bidding_date": "2026-11-09",
+  "pred_date": "2026-11-09",
+  "low_manwon": 104000,
+  "bid_by_prob_manwon": {
+   "40%": 117777,
+   "45%": 118627,
+   "50%": 119474,
+   "55%": 120347,
+   "60%": 121282
+  },
+  "status": "결과대기",
+  "checked": "2026-11-10",
+  "expected_bidders": 5,
+  "expected_range": [
+   2,
+   7
+  ],
+  "sise_manwon": 130220
  },
  "2025타경52060[1]|2026-11-03": {
   "key": "2025타경52060[1]",
@@ -6419,7 +6523,7 @@
    "60%": 21200
   },
   "status": "결과대기",
-  "checked": "2026-11-09",
+  "checked": "2026-11-10",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -6445,7 +6549,7 @@
    "60%": 23151
   },
   "status": "결과대기",
-  "checked": "2026-11-09",
+  "checked": "2026-11-10",
   "expected_bidders": 1,
   "expected_range": [
    1,
