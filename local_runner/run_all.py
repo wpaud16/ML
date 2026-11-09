@@ -176,7 +176,7 @@ def s_views():
     if ARGS.test:
         log('테스트 → 관심 수 수집 생략'); return
     try:
-        run([sys.executable, os.path.join(HERE, 'views_job.py'), '--budget-min', os.environ.get('VIEWS_BUDGET_MIN', '25')], cwd=HERE, timeout=40 * 60)
+        run([sys.executable, os.path.join(HERE, 'views_job.py'), '--budget-min', os.environ.get('VIEWS_BUDGET_MIN', '40')], cwd=HERE, timeout=50 * 60)   # 물건당 약 15초 × 130건
     except Exception as e:
         log(f'관심 수 수집 실패(계속 진행): {e}')
 
