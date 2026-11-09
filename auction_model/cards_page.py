@@ -249,7 +249,6 @@ def unmatched_card(f):
          f'<div class="g s">{E(reg)} · {E(f["key"].replace("[1]", ""))} · {E(f.get("court") or "")}{chk}</div>',
          f'매각기일 {md(f["bidding_date"])} · <span class="dday" data-d="{f["bidding_date"]}"></span> · 전용 {f.get("area")}㎡',
          court_line(f['key'], f.get('bidding_date')),
-         views_text(f['key']),
          f'감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b> ({low / appr * 100:.0f}%) · 유찰 {f.get("fails") or 0}회' if appr else '',
          f'<span class="g s">🔍 예측 불가: {E(f.get("reason") or "")} — 리치고 단지 페이지가 없어 시세·모델 예측 없음</span>']
     if f.get('auction_id'):
@@ -316,8 +315,6 @@ def card(v, today, cid=None, res=None):
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
     cl = court_line(key, bd)
     if cl: L.append(cl)
-    vt = views_text(key)
-    if vt: L.append(f'{vt} <span class="g s">({E((VIEWS[key].get("date") or "")[5:].replace("-", "/"))} 기준)</span>')
     ut = unit_text(v)
     if ut: L.append(f'🏠 {E(ut)}')
     if cid: L.append(result_line(res))

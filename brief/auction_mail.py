@@ -88,8 +88,7 @@ def summary_row(v, today, new=False, court=None):
     bs = cp.base_sise(v)
     ch, _ = court_tag(court)
     l1 = f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 입찰 <b>{v['low_manwon'] / 1e4:.2f}억</b>{ch}"
-    vt = cp.views_text(v['key'])   # 법원 관심등록 수 (2026-11-09)
-    l2 = (f"{vt}<br>" if vt else '') + f"🔁 유찰 {v.get('fails') or 0}회" + (f" · 이번 회차 유찰 확률 {f['prob_pct']}%" if f.get('prob_pct') is not None and not f.get('error') else '') \
+    l2 = f"🔁 유찰 {v.get('fails') or 0}회" + (f" · 이번 회차 유찰 확률 {f['prob_pct']}%" if f.get('prob_pct') is not None and not f.get('error') else '') \
          + (f" · 🚇 {cp.station_text(v, short=True)}" if cp.station_text(v, short=True) else '')
     l3 = f"🎯 예상 낙찰가 50%: <b>{p50:.2f}억</b>" + (f' (시세 대비 {p50 / bs * 100:.1f}%)' if bs else '') + (f' · 👥 {n}명 입찰 예상' if n else '') \
          + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>'
