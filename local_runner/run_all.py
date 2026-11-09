@@ -171,6 +171,16 @@ def s_collect():
     pull()   # 수집기가 올린 tenants/latest.json 반영
 
 
+def s_views():
+    """법원 관심등록 수 수집 (2026-11-09). 실패해도 예측·메일은 계속."""
+    if ARGS.test:
+        log('테스트 → 관심 수 수집 생략'); return
+    try:
+        run([sys.executable, os.path.join(HERE, 'views_job.py'), '--budget-min', os.environ.get('VIEWS_BUDGET_MIN', '25')], cwd=HERE, timeout=40 * 60)
+    except Exception as e:
+        log(f'관심 수 수집 실패(계속 진행): {e}')
+
+
 def pred_day():
     # auction_predict.yml 과 같은 규칙: 18시 이후는 다음 날
     return (dt.datetime.now(KST) + dt.timedelta(hours=6)).date().isoformat()
@@ -249,7 +259,7 @@ def s_brief():
 
 
 JOBS = {
-    'night': [('collect', s_collect), ('predict', s_predict), ('page', s_page), ('push', s_push_auction)],
+    'night': [('collect', s_collect), ('predict', s_predict), ('views', s_views), ('page', s_page), ('push', s_push_auction)],
     'outfit': [('outfit', s_outfit)],
     'brief': [('brief', s_brief)],
 }

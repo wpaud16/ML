@@ -88,7 +88,8 @@ def summary_row(v, today, new=False, court=None):
     bs = cp.base_sise(v)
     ch, _ = court_tag(court)
     l1 = f"{md(v['bidding_date'])} {dday(v['bidding_date'], today)} · 최저 입찰 <b>{v['low_manwon'] / 1e4:.2f}억</b>{ch}"
-    l2 = f"🔁 유찰 {v.get('fails') or 0}회" + (f" · 이번 회차 유찰 확률 {f['prob_pct']}%" if f.get('prob_pct') is not None and not f.get('error') else '') \
+    vt = cp.views_text(v['key'])   # 법원 관심등록 수 (2026-11-09)
+    l2 = (f"{vt}<br>" if vt else '') + f"🔁 유찰 {v.get('fails') or 0}회" + (f" · 이번 회차 유찰 확률 {f['prob_pct']}%" if f.get('prob_pct') is not None and not f.get('error') else '') \
          + (f" · 🚇 {cp.station_text(v, short=True)}" if cp.station_text(v, short=True) else '')
     l3 = f"🎯 예상 낙찰가 50%: <b>{p50:.2f}억</b>" + (f' (시세 대비 {p50 / bs * 100:.1f}%)' if bs else '') + (f' · 👥 {n}명 입찰 예상' if n else '') \
          + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>'
@@ -97,7 +98,7 @@ def summary_row(v, today, new=False, court=None):
     h = (f'<div style="border-bottom:1px solid #ddd;padding:8px 0;line-height:1.6">{tag}<b>{E(v.get("danji_name") or "")}</b> '
          f'<span style="{GRAY}">{v.get("area")}㎡ · {E(gu)} {E(case)}</span>'
          f'<br>{l1}<br>{l2}<br>{l3}{warn}</div>')
-    strip = lambda x: re.sub(r'<[^>]+>', '', x).replace(' · 상세', '')
+    strip = lambda x: re.sub(r'<[^>]+>', '', x.replace('<br>', '\n  ')).replace(' · 상세', '')
     t = ('[New] ' if new else '') + f"{v.get('danji_name')} {v.get('area')}㎡ · {gu} {case}\n  {strip(l1)}\n  {strip(l2)}\n  {strip(l3)}"
     return h, t
 
@@ -203,6 +204,7 @@ def build(today, now_hour=None):
     items = [v for v in L['items'].values() if cp.keep(v) and (v.get('bidding_date') or '') >= lo and v['key'] not in sold
              and v.get('no_trade_12m') is not True]   # 1년 실거래 0건 아파트는 메일에서 숨김 (웹페이지 '실거래 없음(참고)', 2026-11-05)
     pk = prev_keys(today)
+    cp.VIEWS.clear(); cp.VIEWS.update(cp.load_views())
     # 오늘 기일 물건은 법원경매정보에서 실제 진행 여부 확인 (노트북에서만, 실패해도 메일은 발송)
     court = {}
     try:

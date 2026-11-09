@@ -206,6 +206,29 @@ def load_court():
         return {}
 
 
+VIEWS = {}   # 법원경매정보 관심등록 수 (predictions/views.json, 새벽 수집, 2026-11-09)
+
+
+def load_views():
+    try:
+        return json.load(open(os.path.join(HERE, 'predictions', 'views.json'), encoding='utf-8')).get('items') or {}
+    except Exception:
+        return {}
+
+
+def views_text(key):
+    """'⭐ 관심 18명 (어제 +3)' — 법원 사이트에 관심물건으로 등록한 사람 수 (입찰 경쟁 신호)."""
+    v = VIEWS.get(key)
+    if not v or v.get('gwans') is None: return ''
+    h = v.get('hist') or {}
+    ds = sorted(d for d in h if d < (v.get('date') or ''))
+    ch = ''
+    if ds:
+        diff = v['gwans'] - h[ds[-1]][1]
+        ch = f' (전일 대비 {diff:+d})' if diff else ' (변동 없음)'
+    return f'⭐ 법원 관심 {v["gwans"]}명{ch}'
+
+
 def court_line(key, bd):
     """카드용 법원 진행 여부 한 줄 (메일과 같은 표시). 그 기일에 확인한 것만."""
     c = COURT.get(key)
@@ -226,6 +249,7 @@ def unmatched_card(f):
          f'<div class="g s">{E(reg)} · {E(f["key"].replace("[1]", ""))} · {E(f.get("court") or "")}{chk}</div>',
          f'매각기일 {md(f["bidding_date"])} · <span class="dday" data-d="{f["bidding_date"]}"></span> · 전용 {f.get("area")}㎡',
          court_line(f['key'], f.get('bidding_date')),
+         views_text(f['key']),
          f'감정가 {appr:.2f}억 · 최저가 <b>{low:.2f}억</b> ({low / appr * 100:.0f}%) · 유찰 {f.get("fails") or 0}회' if appr else '',
          f'<span class="g s">🔍 예측 불가: {E(f.get("reason") or "")} — 리치고 단지 페이지가 없어 시세·모델 예측 없음</span>']
     if f.get('auction_id'):
@@ -292,6 +316,8 @@ def card(v, today, cid=None, res=None):
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
     cl = court_line(key, bd)
     if cl: L.append(cl)
+    vt = views_text(key)
+    if vt: L.append(f'{vt} <span class="g s">({E((VIEWS[key].get("date") or "")[5:].replace("-", "/"))} 기준)</span>')
     ut = unit_text(v)
     if ut: L.append(f'🏠 {E(ut)}')
     if cid: L.append(result_line(res))
@@ -517,6 +543,7 @@ def prev_keys(day, pred_dir):
 def build(src, dst):
     d = json.load(open(src))
     COURT.clear(); COURT.update(load_court())
+    VIEWS.clear(); VIEWS.update(load_views())
     now = datetime.now(KST); today = now.strftime('%Y-%m-%d')
     items = [v for v in d['items'].values() if keep(v)]
     pk = prev_keys(d.get('date') or today, os.path.dirname(src))
