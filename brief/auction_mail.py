@@ -66,7 +66,7 @@ def court_tag(st):
     """법원 진행 확인 결과 → (html, text) (2026-11-08 사용자 요청: 당일 실제 진행 여부)."""
     if not st:
         return '', ''
-    ok, msg = st
+    ok, msg = st[0], st[1]
     if ok is True:
         return f' · <b style="color:#188038">✅ 법원 확인: {E(msg)}</b>', f' · ✅ 법원 확인: {msg}'
     if ok is False:

@@ -56,29 +56,67 @@ def check(items, log=print):
         log('법원 확인 건너뜀: 수집기 없음'); return {}
     from playwright.sync_api import sync_playwright
     out, t0 = {}, time.time()
+
+    def one(s, v):
+        """(ok, 문구, 기일 상세{time, place}) — 진행이면 물건상세조회의 기일내역에서 시각·법정을 읽는다 (2026-11-11 사용자 요청)."""
+        m = re.fullmatch(r'(\d{4})타경(\d+)\[(\d+)\]', v['key'])
+        if not m: return None
+        y, no, item_no = m.groups()
+        _, tbls = s.search(v.get('court'), y, no)
+        basic = tj.table_by_cap(tbls, '사건번호,사건명') or {'rows': []}
+        info = {r[i]: r[i + 1] for r in basic['rows'] for i in range(0, len(r) - 1, 2)}
+        rows, gi = None, None
+        for tb in tbls:
+            mm = re.match(r'mf_wfm_mainFrame_gen_gdsDts_(\d+)_grp_gdsDtsTbl', tb['id'] or '')
+            if mm and tb['rows'] and tb['rows'][0][0] == '물건번호' and tb['rows'][0][1].strip() == item_no:
+                rows, gi = tb['rows'], mm.group(1)
+        if not rows:
+            return (None, f'물건번호 {item_no} 없음', {})
+        ok, msg = judge(info, rows, v['bidding_date'])
+        det = {}
+        if ok is not False:
+            try:
+                pg = s.page
+                b = pg.locator(f'#mf_wfm_mainFrame_gen_gdsDts_{gi}_btn_gdsDtlInq')
+                if b.count() and b.is_enabled():
+                    b.click(); pg.wait_for_load_state('networkidle'); pg.wait_for_timeout(1500)
+                    want = v['bidding_date'].replace('-', '.')
+                    for r in tj.body_rows(tj.table_by_cap(tj.tables(pg), '기일,기일종류,기일장소,최저매각가격,기일결과')):
+                        if len(r) >= 3 and r[0].startswith(want) and '매각' in (r[1] or '') and '결정' not in (r[1] or ''):
+                            tm = re.search(r'\d{1,2}:\d{2}', r[0])
+                            det = dict(time=tm.group(0) if tm else None, place=(r[2] or '').strip() or None, kind=r[1], result=(r[4] if len(r) > 4 else '') or None)
+                            break
+            except Exception as e:
+                log(f"기일내역 읽기 실패 {v['key']}: {str(e)[:100]}")
+        if ok is True and det:
+            msg = '오늘 진행' + (f" · {det['time']}" if det.get('time') else '') + (f" · {det['place']}" if det.get('place') else '')
+        return (ok, msg, det)
+
     with sync_playwright() as pw:
         s = tj.Scraper(pw)
         try:
-            for v in items:
-                if time.time() - t0 > BUDGET_SEC:
-                    log('법원 확인 시간 초과 — 나머지 생략'); break
-                m = re.fullmatch(r'(\d{4})타경(\d+)\[(\d+)\]', v['key'])
-                if not m: continue
-                y, no, item_no = m.groups()
-                try:
-                    _, tbls = s.search(v.get('court'), y, no)
-                    basic = tj.table_by_cap(tbls, '사건번호,사건명') or {'rows': []}
-                    info = {r[i]: r[i + 1] for r in basic['rows'] for i in range(0, len(r) - 1, 2)}
-                    rows = None
-                    for tb in tbls:
-                        if re.match(r'mf_wfm_mainFrame_gen_gdsDts_\d+_grp_gdsDtsTbl', tb['id'] or '') and tb['rows'] \
-                                and tb['rows'][0][0] == '물건번호' and tb['rows'][0][1].strip() == item_no:
-                            rows = tb['rows']
-                    out[v['key']] = judge(info, rows, v['bidding_date']) if rows else (None, f'물건번호 {item_no} 없음')
-                except Exception as e:
-                    out[v['key']] = (None, '확인 못 함')
-                    log(f"법원 확인 실패 {v['key']}: {str(e)[:120]}")
-                log(f"법원 확인 {v['key']}: {out.get(v['key'])}")
+            todo = list(items)
+            for rnd in range(3):   # 2026-11-11: 첫 조회 시간초과로 '확인 못 함' → 실패한 물건은 최대 3번까지 다시
+                retry = []
+                for v in todo:
+                    if time.time() - t0 > BUDGET_SEC:
+                        log('법원 확인 시간 초과 — 나머지 생략'); break
+                    try:
+                        r = one(s, v)
+                        if r is None: continue
+                        out[v['key']] = r
+                    except Exception as e:
+                        out[v['key']] = (None, '확인 못 함', {})
+                        retry.append(v)
+                        log(f"법원 확인 실패({rnd + 1}회) {v['key']}: {str(e)[:120]}")
+                        try:
+                            s.close()
+                        except Exception:
+                            pass
+                        s = tj.Scraper(pw)   # 브라우저를 새로 열어 다시
+                    log(f"법원 확인 {v['key']}: {out.get(v['key'])}")
+                if not retry or time.time() - t0 > BUDGET_SEC: break
+                time.sleep(10); todo = retry
         finally:
             s.close()
     return out
@@ -94,8 +132,10 @@ def save(res, day, path):
         d = {}
     it = d.get('items') or {}
     at = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).isoformat(timespec='seconds')
-    for k, (ok, msg) in res.items():
-        it[k] = dict(date=day, ok=ok, msg=msg, at=at)
+    for k, r in res.items():
+        ok, msg = r[0], r[1]
+        det = r[2] if len(r) > 2 else {}
+        it[k] = dict(date=day, ok=ok, msg=msg, at=at, time=(det or {}).get('time'), place=(det or {}).get('place'))
     cut = (dt.date.fromisoformat(day) - dt.timedelta(days=30)).isoformat()
     it = {k: v for k, v in it.items() if (v.get('date') or '') >= cut}
     json.dump(dict(updated=at, items=it), open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
