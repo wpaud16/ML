@@ -448,10 +448,39 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
     json.dump({k: v for k, v in neg.items() if v >= week_ago}, open(neg_path, 'w'), ensure_ascii=False)
 
 
+RECENT_K, RECENT_DAYS, RECENT_CAP = 15, 60, 0.05
+
+
+def recent_sgg_adj(cfg, today):
+    """성적표 최근 매각(아파트)의 지역별 예측 치우침을 구별 보정에 더함 (2026-11-10 사용자 요청).
+    계기: 11/2~11/10 남양주·구리 18건 실제가 예측보다 평균 +3.8% (학습 데이터에 최근 남양주 사례 부족).
+    결과 예측에는 이미 구별 보정이 들어 있으므로 남은 잔차만 축소(n/(n+K))해서 더함. 날짜순 검증 29건 오차 5.36→5.26%.
+    월간 재학습(retrain)으로 이 사례들이 학습에 들어가면 잔차가 줄어 자연히 작아짐."""
+    try: res = json.load(open(RESULTS_PATH))
+    except Exception: return {}
+    keys = sorted(cfg.get('sgg_adj') or {}, key=len, reverse=True)
+    lo = str((datetime.fromisoformat(today) - timedelta(days=RECENT_DAYS)).date())
+    acc, seen = {}, set()
+    for r in res.values():
+        if r.get('category', '아파트') != '아파트' or r.get('status') != '매각' or not r.get('actual_manwon'): continue
+        if not (lo <= (r.get('bidding_date') or '') < today): continue
+        p = (r.get('bid_by_prob_manwon') or {}).get('50%')
+        k = (r.get('danji_name'), r['actual_manwon'])
+        if not p or k in seen: continue
+        seen.add(k)
+        reg = r.get('region') or ''
+        g = next((x for x in keys if reg.startswith(x)), ' '.join(reg.split()[:2]))
+        acc.setdefault(g, []).append(np.log(r['actual_manwon'] / p))
+    return {g: float(np.clip(np.mean(v) * len(v) / (len(v) + RECENT_K), -RECENT_CAP, RECENT_CAP)) for g, v in acc.items()}
+
+
 def main():
     now = datetime.now(KST)
     cache = json.load(open(MAP_PATH)) if os.path.exists(MAP_PATH) else {}
     cfg = json.load(open(os.path.join(HERE, 'auction_config.json')))
+    radj = recent_sgg_adj(cfg, str(now.date()))   # 최근 성적표 지역 치우침 (cfg 사본에만 더함, 파일은 그대로)
+    cfg['sgg_adj'] = {g: round(float((cfg.get('sgg_adj') or {}).get(g, 0.0) + radj.get(g, 0.0)), 5) for g in set(cfg.get('sgg_adj') or {}) | set(radj)}
+    print('최근 성적표 지역 보정:', {g: f'{v * 100:+.1f}%' for g, v in sorted(radj.items(), key=lambda x: -abs(x[1]))[:8]})
     df = ap.load_train()
     items, skipped, failed, errors = {}, [], [], []
     seen = set()
