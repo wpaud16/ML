@@ -450,6 +450,11 @@
 "date": "2026-11-10",
 "low_manwon": 430000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 430000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -36879,6 +36884,11 @@
 "date": "2026-11-10",
 "low_manwon": 14300,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 14300,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -36897,6 +36907,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 29100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 29100,
 "fails": 0
 }
@@ -36919,6 +36934,11 @@
 "date": "2026-11-10",
 "low_manwon": 29400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 29400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -36937,6 +36957,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 49800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 49800,
 "fails": 0
 }
@@ -37468,6 +37493,11 @@
 "date": "",
 "low_manwon": 26160,
 "fails": 0
+},
+{
+"date": "2026-12-10",
+"low_manwon": 26160,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -37565,6 +37595,11 @@
 "date": "2026-11-10",
 "low_manwon": 44000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 44000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -37583,6 +37618,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 21120,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 21120,
 "fails": 1
 }
@@ -37605,6 +37645,11 @@
 "date": "2026-11-10",
 "low_manwon": 15300,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 15300,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -37623,6 +37668,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 28500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 28500,
 "fails": 0
 }
@@ -38707,6 +38757,11 @@
 "date": "2026-12-08",
 "low_manwon": 15872,
 "fails": 2
+},
+{
+"date": "2026-12-08",
+"low_manwon": 31000,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -38887,6 +38942,11 @@
 "date": "2026-11-10",
 "low_manwon": 46500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 46500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -38907,6 +38967,11 @@
 "date": "2026-11-10",
 "low_manwon": 14305,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 14305,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -38925,6 +38990,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 20224,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 20224,
 "fails": 3
 }
@@ -39005,6 +39075,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 31900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 31900,
 "fails": 0
 }
@@ -40433,6 +40508,11 @@
 "date": "2026-11-10",
 "low_manwon": 10960,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 10960,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -40471,6 +40551,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 2247,
+"fails": 8
+},
+{
+"date": "",
 "low_manwon": 2247,
 "fails": 8
 }
@@ -40513,6 +40598,11 @@
 "date": "2026-11-10",
 "low_manwon": 2611,
 "fails": 12
+},
+{
+"date": "",
+"low_manwon": 2611,
+"fails": 12
 }
 ],
 "first_seen": "2026-11-02",
@@ -40531,6 +40621,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 4089,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 4089,
 "fails": 6
 }
@@ -40553,6 +40648,11 @@
 "date": "2026-11-10",
 "low_manwon": 27200,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 27200,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -40571,6 +40671,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 26480,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 26480,
 "fails": 1
 }
@@ -40593,6 +40698,11 @@
 "date": "2026-11-10",
 "low_manwon": 575,
 "fails": 19
+},
+{
+"date": "",
+"low_manwon": 575,
+"fails": 19
 }
 ],
 "first_seen": "2026-11-02",
@@ -40611,6 +40721,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 32300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 32300,
 "fails": 0
 }
@@ -51070,6 +51185,11 @@
 "date": "",
 "low_manwon": 16384,
 "fails": 4
+},
+{
+"date": "2026-12-08",
+"low_manwon": 13107,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -54692,6 +54812,11 @@
 "date": "2026-11-10",
 "low_manwon": 55800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 55800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -54880,6 +55005,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 8640,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 8640,
 "fails": 1
 }
@@ -55341,6 +55471,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 2952,
+"fails": 10
+},
+{
+"date": "",
 "low_manwon": 2952,
 "fails": 10
 }
@@ -56855,6 +56990,11 @@
 "date": "2026-11-10",
 "low_manwon": 14880,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 14880,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -56873,6 +57013,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 26560,
+"fails": 9
+},
+{
+"date": "",
 "low_manwon": 26560,
 "fails": 9
 }
@@ -56895,6 +57040,11 @@
 "date": "2026-11-10",
 "low_manwon": 23840,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 23840,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -56913,6 +57063,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 34100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 34100,
 "fails": 0
 }
@@ -56935,6 +57090,11 @@
 "date": "2026-11-10",
 "low_manwon": 12157,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 12157,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -56953,6 +57113,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 15500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 15500,
 "fails": 0
 }
@@ -56975,6 +57140,11 @@
 "date": "2026-11-10",
 "low_manwon": 26000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 26000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -56993,6 +57163,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 4361,
+"fails": 8
+},
+{
+"date": "",
 "low_manwon": 4361,
 "fails": 8
 }
@@ -64133,6 +64308,46 @@
 "date": "2026-12-01",
 "low_manwon": 42320,
 "fails": 9
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C53WEMQZ": {
+"case": "2026타경10143[1]",
+"address": "서울특별시 동대문구 장안동 392-6 골든캐슬2 101동 4층402호",
+"sgg": "동대문구",
+"emd": "장안동",
+"type": "다세대",
+"area": 25.61,
+"land_area": 18.23,
+"appr_manwon": 24000,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 24000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C98EEVGF": {
+"case": "2025타경104530[1]",
+"address": "서울특별시 동작구 상도동 259-36 라온파크  1층101호",
+"sgg": "동작구",
+"emd": "상도동",
+"type": "다세대",
+"area": 47.5,
+"land_area": 31.28,
+"appr_manwon": 43800,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 43800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-10",
