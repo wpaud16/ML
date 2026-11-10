@@ -118,6 +118,14 @@ def base_sise(v):
     return v.get('model_sise_eok') or v.get('richgo_sise_eok')
 
 
+GOOD_PCT = 0.88   # 2026-11-10 사용자 요청: 시세 88% 이하 입찰가 칸 초록 표시 (매매 대비 확실한 이득선)
+
+
+def is_good(v, x):
+    b = base_sise(v)
+    return bool(b and x and x / b <= GOOD_PCT)
+
+
 def pct_of(v, x):
     b = base_sise(v)
     return f'{x / b * 100:.1f}%' if (b and x) else ''
@@ -141,12 +149,12 @@ def bidder_table(v, seoul):
         hi = lab == ex
         cells = [f'<td class="lab{" hi" if hi else ""}">{"▶ " if hi else ""}{E(lab)}</td>']
         for p in probs:
-            cls = ' hi' if (hi or p == '50%') else ''
+            cls = (' hi' if (hi or p == '50%') else '') + (' good' if is_good(v, vals.get(p)) else '')
             pc = pct_of(v, vals.get(p))   # 2026-11-05 사용자 요청: 입찰가마다 시세 대비 %
             cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}' + (f'<br><span class="sub">{pc}</span>' if pc else '') + '</td>')
         t.append('<tr>' + ''.join(cells) + '</tr>')
     t.append('</table>')
-    note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준) · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
+    note = f'초록 = 시세 {GOOD_PCT * 100:.0f}% 이하 · 단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준) · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
     f = v.get('fail') or {}
     if seoul and f.get('level') in ('보통', '높음'):
         note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"
@@ -514,7 +522,7 @@ h3{font-size:15px;margin:16px 0 8px}
 .sec{margin-top:10px}
 table{border-collapse:collapse;width:100%;max-width:560px;table-layout:fixed;margin:8px 0;font-size:14px;text-align:center;background:#000;color:#fff;border:2px solid #fff}
 th,td{background:#000;color:#fff;border:1px solid #fff;padding:9px 2px}
-td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333}
+td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333} td.good,td.hi.good{background:rgba(46,204,113,0.35)}
 a{color:#1a73e8}
 table.sc{font-size:12px} table.sc td{padding:8px 2px} .sub{font-size:11px;color:#BBBBBB}
 .foot{color:var(--mut);font-size:12px;margin-top:24px;line-height:1.7}

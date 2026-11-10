@@ -17,6 +17,7 @@ WD = '월화수목금토일'
 GRAY = 'color:#777;font-size:12px'
 CELL = 'background:#000000;color:#FFFFFF;border:1px solid #FFFFFF;padding:9px 2px'
 HL = CELL + ';font-weight:bold;background:#333333'
+GOOD_BG = 'background:#104728'   # 시세 88% 이하 칸 = 초록 35% 를 검은 배경에 섞은 단색 (메일 앱 rgba 미지원 대비)
 TABLE = ('border-collapse:collapse;width:100%;max-width:560px;table-layout:fixed;margin:8px 0;font-size:14px;'
          'text-align:center;background:#000000;color:#FFFFFF;border:2px solid #FFFFFF')
 CLS = {'card': 'border:1px solid #888888;border-radius:10px;padding:12px 14px;margin-bottom:12px',
@@ -43,6 +44,7 @@ def inline(h, today):
     def td(m):
         c = m.group(1).split()
         st = HL if 'hi' in c else CELL
+        if 'good' in c: st += ';' + GOOD_BG
         return f'<td style="{st}{";white-space:nowrap" if "lab" in c else ""}">'
     h = re.sub(r'<td class="([^"]*)">', td, h)
     h = re.sub(r' data-d="[^"]*"', '', h)
