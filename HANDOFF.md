@@ -127,3 +127,4 @@
 
 - 2026-11-10: 입찰 인원별 표에서 입찰가 ≤ 모델 시세 88%(cards_page.GOOD_PCT) 칸 초록 표시 — 웹 td.good rgba(46,204,113,0.35), 메일 auction_mail.GOOD_BG #104728 (커밋 9bdda73)
 - 2026-11-10: 성적표에 아파트 시세 대비 %를 M / 실거래(trade_manwon = 예측 당시 m_sise.trade_w) 두 기준으로 표시, 중앙값 요약 줄 추가 (batch_predict.trade_manwon, cards_page.pct_sub, auction_mail.scorecard)
+- 2026-11-10: 카드 입찰 인원별 표 %도 아파트는 M / 실(실거래 trade_w) 두 줄 (cards_page.trade_sise·pct_of), 초록 기준은 M 유지

@@ -126,9 +126,18 @@ def is_good(v, x):
     return bool(b and x and x / b <= GOOD_PCT)
 
 
+def trade_sise(v):
+    """실거래 기준 시세(억): M 시세 안의 층 보정 실거래 12개월 가중 평균. 아파트·실거래 있는 물건만 (2026-11-10 사용자 요청)."""
+    m = v.get('m_sise') or {}
+    if (v.get('category') or '아파트') != '아파트' or m.get('no_trade') or not m.get('trade_w'): return None
+    return m['trade_w']
+
+
 def pct_of(v, x):
     b = base_sise(v)
-    return f'{x / b * 100:.1f}%' if (b and x) else ''
+    if not (b and x): return ''
+    t = trade_sise(v)
+    return f'M {x / b * 100:.1f}%<br>실 {x / t * 100:.1f}%' if t else f'{x / b * 100:.1f}%'
 
 
 def bidder_table(v, seoul):
@@ -154,7 +163,8 @@ def bidder_table(v, seoul):
             cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}' + (f'<br><span class="sub">{pc}</span>' if pc else '') + '</td>')
         t.append('<tr>' + ''.join(cells) + '</tr>')
     t.append('</table>')
-    note = f'초록 = 시세 {GOOD_PCT * 100:.0f}% 이하 · 단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준) · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
+    ts = trade_sise(v)
+    note = f'초록 = 모델 시세 {GOOD_PCT * 100:.0f}% 이하 · 단위 억 · 아래 % = ' + (f'M 모델 시세 {base_sise(v):.2f}억 / 실 실거래 {ts:.2f}억 대비' if ts else '모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비') + ' · 종합 = 인원 가정 없는 전체 예측(성적표 기준) · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
     f = v.get('fail') or {}
     if seoul and f.get('level') in ('보통', '높음'):
         note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"
