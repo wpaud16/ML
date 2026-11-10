@@ -463,7 +463,7 @@ def recent_sgg_adj(cfg, today):
     acc, seen = {}, set()
     for r in res.values():
         if r.get('category', '아파트') != '아파트' or r.get('status') != '매각' or not r.get('actual_manwon'): continue
-        if not (lo <= (r.get('bidding_date') or '') < today): continue
+        if not (lo <= (r.get('bidding_date') or '') <= today): continue
         p = (r.get('bid_by_prob_manwon') or {}).get('50%')
         k = (r.get('danji_name'), r['actual_manwon'])
         if not p or k in seen: continue

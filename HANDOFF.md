@@ -129,3 +129,4 @@
 - 2026-11-10: 성적표에 아파트 시세 대비 %를 M / 실거래(trade_manwon = 예측 당시 m_sise.trade_w) 두 기준으로 표시, 중앙값 요약 줄 추가 (batch_predict.trade_manwon, cards_page.pct_sub, auction_mail.scorecard)
 - 2026-11-10: 카드 입찰가 표는 M 기준 % 만 (사용자 결정, 실거래 % 는 성적표에만)
 - 2026-11-10: 최근 성적표 지역 치우침 보정 추가 (batch_predict.recent_sgg_adj: 최근 60일 아파트 매각 잔차 log(실제/예상50%) × n/(n+15), ±5% 제한, cfg 사본 sgg_adj 에 더함). 계기 남양주·구리 18건 +3.8%. 날짜순 검증 29건 5.36→5.26%. 적용 첫날 남양주 +1.8%, 구리 +0.6%, 송파 −0.9%
+- 2026-11-10: recent_sgg_adj 날짜 필터 '< today' → '<= today' (당일 결과 포함, 남양주 +0.9%→+1.8%로 정상 반영)
