@@ -95,6 +95,11 @@
 "date": "2026-11-10",
 "low_manwon": 273600,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 273600,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -946,11 +951,16 @@
 "date": "2026-11-09",
 "low_manwon": 410,
 "fails": 18
+},
+{
+"date": "",
+"low_manwon": 410,
+"fails": 18
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-09",
+"status": "진행중",
+"last_seen": "2026-11-10",
 "checked": "2026-11-10"
 },
 "C41LNWWS": {
@@ -970,9 +980,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-09",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 17424,
+"bidders": 1,
+"second_manwon": null,
+"sell_date": "2026-11-09",
+"construct_year": null
 },
 "C54PEXXR": {
 "case": "2025타경51816[1]",
@@ -991,9 +1006,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-09",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 23283,
+"bidders": 1,
+"second_manwon": null,
+"sell_date": "2026-11-09",
+"construct_year": null
 },
 "C69DFAXM": {
 "case": "2025타경51760[1]",
@@ -1009,11 +1029,16 @@
 "date": "2026-11-09",
 "low_manwon": 14848,
 "fails": 2
+},
+{
+"date": "2026-12-14",
+"low_manwon": 11878,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-09",
+"status": "진행중",
+"last_seen": "2026-11-10",
 "checked": "2026-11-10"
 },
 "C71FIFGU": {
@@ -1033,9 +1058,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-09",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 28000,
+"bidders": 1,
+"second_manwon": null,
+"sell_date": "2026-11-09",
+"construct_year": null
 },
 "C82JJTFB": {
 "case": "2025타경51435[1]",
@@ -1054,9 +1084,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-09",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 9500,
+"bidders": 1,
+"second_manwon": null,
+"sell_date": "2026-11-09",
+"construct_year": null
 },
 "C84GPHZL": {
 "case": "2025타경52085[1]",
@@ -1075,9 +1110,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-09",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 35758,
+"bidders": 4,
+"second_manwon": 34700,
+"sell_date": "2026-11-09",
+"construct_year": null
 },
 "C05EGUNO": {
 "case": "2025타경52090[1]",
@@ -3552,6 +3592,11 @@
 "date": "2026-11-10",
 "low_manwon": 396,
 "fails": 18
+},
+{
+"date": "",
+"low_manwon": 396,
+"fails": 18
 }
 ],
 "first_seen": "2026-11-02",
@@ -3612,6 +3657,11 @@
 "date": "2026-11-10",
 "low_manwon": 3392,
 "fails": 10
+},
+{
+"date": "",
+"low_manwon": 3392,
+"fails": 10
 }
 ],
 "first_seen": "2026-11-02",
@@ -3630,6 +3680,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 12960,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 12960,
 "fails": 1
 }
@@ -3652,6 +3707,11 @@
 "date": "2026-11-10",
 "low_manwon": 6912,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 6912,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -3672,6 +3732,11 @@
 "date": "2026-11-10",
 "low_manwon": 44700,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 44700,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -3690,6 +3755,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 27100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 27100,
 "fails": 0
 }
@@ -3732,6 +3802,11 @@
 "date": "2026-11-10",
 "low_manwon": 27600,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 27600,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -3752,6 +3827,11 @@
 "date": "2026-11-10",
 "low_manwon": 28880,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 28880,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -3770,6 +3850,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 14848,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 14848,
 "fails": 2
 }
@@ -9379,6 +9464,11 @@
 "date": "2026-11-10",
 "low_manwon": 37800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 37800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -9399,6 +9489,11 @@
 "date": "2026-11-10",
 "low_manwon": 11804,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 11804,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -9417,6 +9512,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 28600,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 28600,
 "fails": 0
 }
@@ -9459,6 +9559,11 @@
 "date": "2026-11-10",
 "low_manwon": 13824,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 13824,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -9477,6 +9582,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 2888,
+"fails": 10
+},
+{
+"date": "",
 "low_manwon": 2888,
 "fails": 10
 }
@@ -9499,6 +9609,11 @@
 "date": "2026-11-10",
 "low_manwon": 5611,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 5611,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -9517,6 +9632,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 15744,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 15744,
 "fails": 2
 }
@@ -9559,6 +9679,11 @@
 "date": "2026-11-10",
 "low_manwon": 647,
 "fails": 16
+},
+{
+"date": "",
+"low_manwon": 647,
+"fails": 16
 }
 ],
 "first_seen": "2026-11-02",
@@ -9579,6 +9704,11 @@
 "date": "2026-11-10",
 "low_manwon": 7659,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 7659,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -9597,6 +9727,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 15616,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 15616,
 "fails": 3
 }
@@ -20626,6 +20761,11 @@
 "date": "",
 "low_manwon": 32960,
 "fails": 0
+},
+{
+"date": "2026-12-10",
+"low_manwon": 32960,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -20746,6 +20886,11 @@
 "date": "",
 "low_manwon": 32560,
 "fails": 0
+},
+{
+"date": "2026-12-10",
+"low_manwon": 32560,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -20784,6 +20929,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 2641,
+"fails": 10
+},
+{
+"date": "",
 "low_manwon": 2641,
 "fails": 10
 }
@@ -20846,6 +20996,11 @@
 "date": "2026-11-10",
 "low_manwon": 33088,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 33088,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -20864,6 +21019,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 7667,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 7667,
 "fails": 5
 }
@@ -20906,6 +21066,11 @@
 "date": "2026-11-10",
 "low_manwon": 16025,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 16025,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -20924,6 +21089,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 19456,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 19456,
 "fails": 2
 }
@@ -20946,6 +21116,11 @@
 "date": "2026-11-10",
 "low_manwon": 43360,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 43360,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -20966,6 +21141,11 @@
 "date": "2026-11-10",
 "low_manwon": 28800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 28800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -20984,6 +21164,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 2813,
+"fails": 10
+},
+{
+"date": "",
 "low_manwon": 2813,
 "fails": 10
 }
@@ -21026,6 +21211,11 @@
 "date": "2026-11-10",
 "low_manwon": 10547,
 "fails": 13
+},
+{
+"date": "",
+"low_manwon": 10547,
+"fails": 13
 }
 ],
 "first_seen": "2026-11-02",
@@ -21064,6 +21254,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 5913,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 5913,
 "fails": 6
 }
@@ -25357,6 +25552,11 @@
 "date": "",
 "low_manwon": 31129,
 "fails": 4
+},
+{
+"date": "2026-11-30",
+"low_manwon": 24903,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -26940,6 +27140,11 @@
 "date": "2026-11-10",
 "low_manwon": 8400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 8400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -26980,6 +27185,11 @@
 "date": "2026-11-10",
 "low_manwon": 1388,
 "fails": 12
+},
+{
+"date": "",
+"low_manwon": 1388,
+"fails": 12
 }
 ],
 "first_seen": "2026-11-02",
@@ -26998,6 +27208,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 32900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 32900,
 "fails": 0
 }
@@ -27020,6 +27235,11 @@
 "date": "2026-11-10",
 "low_manwon": 3019,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 3019,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -27040,6 +27260,11 @@
 "date": "2026-11-10",
 "low_manwon": 6160,
 "fails": 6
+},
+{
+"date": "",
+"low_manwon": 6160,
+"fails": 6
 }
 ],
 "first_seen": "2026-11-02",
@@ -27058,6 +27283,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 9633,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 9633,
 "fails": 5
 }
@@ -30976,6 +31206,11 @@
 "date": "2026-11-10",
 "low_manwon": 4956,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 4956,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -30996,6 +31231,11 @@
 "date": "2026-11-10",
 "low_manwon": 20880,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 20880,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -31014,6 +31254,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 12864,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 12864,
 "fails": 2
 }
@@ -33897,6 +34142,11 @@
 "date": "2026-11-10",
 "low_manwon": 26300,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 26300,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -33915,6 +34165,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 27500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 27500,
 "fails": 0
 }
@@ -33937,6 +34192,11 @@
 "date": "2026-11-10",
 "low_manwon": 26800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 26800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -33955,6 +34215,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 26800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 26800,
 "fails": 0
 }
@@ -34898,6 +35163,11 @@
 "date": "2026-11-10",
 "low_manwon": 23000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 23000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -34916,6 +35186,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 21200,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 21200,
 "fails": 0
 }
@@ -34938,6 +35213,11 @@
 "date": "2026-11-10",
 "low_manwon": 27200,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 27200,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -34956,6 +35236,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 22700,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 22700,
 "fails": 0
 }
@@ -34978,6 +35263,11 @@
 "date": "2026-11-10",
 "low_manwon": 21680,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 21680,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -34996,6 +35286,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 16480,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 16480,
 "fails": 1
 }
@@ -35018,6 +35313,11 @@
 "date": "2026-11-10",
 "low_manwon": 989,
 "fails": 14
+},
+{
+"date": "",
+"low_manwon": 989,
+"fails": 14
 }
 ],
 "first_seen": "2026-11-02",
@@ -35038,6 +35338,11 @@
 "date": "2026-11-10",
 "low_manwon": 10400,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 10400,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -35056,6 +35361,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 29500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 29500,
 "fails": 0
 }
@@ -35098,6 +35408,11 @@
 "date": "2026-11-10",
 "low_manwon": 1247,
 "fails": 13
+},
+{
+"date": "",
+"low_manwon": 1247,
+"fails": 13
 }
 ],
 "first_seen": "2026-11-02",
@@ -35116,6 +35431,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 10752,
+"fails": 7
+},
+{
+"date": "",
 "low_manwon": 10752,
 "fails": 7
 }
@@ -36942,6 +37262,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 10225,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 10225,
 "fails": 1
 }
@@ -38962,6 +39287,11 @@
 "date": "2026-11-10",
 "low_manwon": 35587,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 35587,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -40303,6 +40633,11 @@
 "date": "2026-11-10",
 "low_manwon": 14800,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 14800,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -40674,6 +41009,11 @@
 "date": "2026-11-10",
 "low_manwon": 19200,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 19200,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -40704,6 +41044,11 @@
 "date": "",
 "low_manwon": 17600,
 "fails": 0
+},
+{
+"date": "2026-12-10",
+"low_manwon": 17600,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -40810,6 +41155,11 @@
 "date": "2026-11-10",
 "low_manwon": 24560,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 24560,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -40828,6 +41178,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 24000,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 24000,
 "fails": 1
 }
@@ -41101,6 +41456,11 @@
 "date": "2026-11-10",
 "low_manwon": 298000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 298000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -41309,9 +41669,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-02",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 150789,
+"bidders": 6,
+"second_manwon": 136200,
+"sell_date": "2026-11-09",
+"construct_year": 37
 },
 "C30SVJRI": {
 "case": "2025타경51332[1]",
@@ -41330,9 +41695,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-02",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 93500,
+"bidders": 1,
+"second_manwon": null,
+"sell_date": "2026-11-09",
+"construct_year": null
 },
 "C53WAMYK": {
 "case": "2025타경51660[1]",
@@ -41351,9 +41721,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-02",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 12920,
+"bidders": 1,
+"second_manwon": null,
+"sell_date": "2026-11-09",
+"construct_year": 11
 },
 "C61SOPHV": {
 "case": "2025타경238[1]",
@@ -41393,9 +41768,14 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "매각",
 "last_seen": "2026-11-02",
-"checked": "2026-11-10"
+"checked": "2026-11-10",
+"sell_manwon": 3001,
+"bidders": 1,
+"second_manwon": null,
+"sell_date": "2026-11-09",
+"construct_year": null
 },
 "C75GHXXN": {
 "case": "2024타경195[1]",
@@ -41414,7 +41794,7 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "진행중",
 "last_seen": "2026-11-02",
 "checked": "2026-11-10"
 },
@@ -42241,6 +42621,11 @@
 "date": "2026-11-10",
 "low_manwon": 64500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 64500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42259,6 +42644,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 65500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 65500,
 "fails": 0
 }
@@ -42281,6 +42671,11 @@
 "date": "2026-11-10",
 "low_manwon": 5888,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 5888,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -42299,6 +42694,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 33200,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 33200,
 "fails": 0
 }
@@ -42321,6 +42721,11 @@
 "date": "2026-11-10",
 "low_manwon": 18200,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 18200,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42339,6 +42744,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 65500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 65500,
 "fails": 0
 }
@@ -42361,6 +42771,11 @@
 "date": "2026-11-10",
 "low_manwon": 65500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 65500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42379,6 +42794,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 65500,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 65500,
 "fails": 0
 }
@@ -42401,6 +42821,11 @@
 "date": "2026-11-10",
 "low_manwon": 30100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 30100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42419,6 +42844,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 17536,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 17536,
 "fails": 6
 }
@@ -42441,6 +42871,11 @@
 "date": "2026-11-10",
 "low_manwon": 5435,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 5435,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -42459,6 +42894,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 65800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 65800,
 "fails": 0
 }
@@ -42481,6 +42921,11 @@
 "date": "2026-11-10",
 "low_manwon": 65800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 65800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42499,6 +42944,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 15600,
+"fails": 9
+},
+{
+"date": "",
 "low_manwon": 15600,
 "fails": 9
 }
@@ -42521,6 +42971,11 @@
 "date": "2026-11-10",
 "low_manwon": 64200,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 64200,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42539,6 +42994,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 65800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 65800,
 "fails": 0
 }
@@ -42561,6 +43021,11 @@
 "date": "2026-11-10",
 "low_manwon": 29100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 29100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42581,6 +43046,11 @@
 "date": "2026-11-10",
 "low_manwon": 5569,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 5569,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -42599,6 +43069,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 3715,
+"fails": 10
+},
+{
+"date": "",
 "low_manwon": 3715,
 "fails": 10
 }
@@ -42641,6 +43116,11 @@
 "date": "2026-11-10",
 "low_manwon": 65800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 65800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -42659,6 +43139,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 33500,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 33500,
 "fails": 5
 }
@@ -43533,6 +44018,11 @@
 "date": "",
 "low_manwon": 19712,
 "fails": 2
+},
+{
+"date": "2026-12-14",
+"low_manwon": 15769,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -43660,6 +44150,11 @@
 "date": "",
 "low_manwon": 32080,
 "fails": 1
+},
+{
+"date": "2026-12-14",
+"low_manwon": 25664,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -45364,6 +45859,11 @@
 "date": "2026-11-10",
 "low_manwon": 790,
 "fails": 12
+},
+{
+"date": "",
+"low_manwon": 790,
+"fails": 12
 }
 ],
 "first_seen": "2026-11-02",
@@ -45384,6 +45884,11 @@
 "date": "2026-11-10",
 "low_manwon": 39000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 39000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -45402,6 +45907,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 7536,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 7536,
 "fails": 4
 }
@@ -45444,6 +45954,11 @@
 "date": "2026-11-10",
 "low_manwon": 5830,
 "fails": 7
+},
+{
+"date": "",
+"low_manwon": 5830,
+"fails": 7
 }
 ],
 "first_seen": "2026-11-02",
@@ -45462,6 +45977,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 6592,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 6592,
 "fails": 2
 }
@@ -48670,6 +49190,11 @@
 "date": "2026-11-10",
 "low_manwon": 292,
 "fails": 17
+},
+{
+"date": "",
+"low_manwon": 292,
+"fails": 17
 }
 ],
 "first_seen": "2026-11-02",
@@ -49330,6 +49855,11 @@
 "date": "2026-11-10",
 "low_manwon": 126500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 126500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -49348,6 +49878,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 225470,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 225470,
 "fails": 0
 }
@@ -51315,6 +51850,11 @@
 "date": "2026-11-10",
 "low_manwon": 13888,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 13888,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -51335,6 +51875,11 @@
 "date": "2026-11-10",
 "low_manwon": 23936,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 23936,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -51353,6 +51898,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 22144,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 22144,
 "fails": 2
 }
@@ -51395,6 +51945,11 @@
 "date": "2026-11-10",
 "low_manwon": 5515,
 "fails": 7
+},
+{
+"date": "",
+"low_manwon": 5515,
+"fails": 7
 }
 ],
 "first_seen": "2026-11-02",
@@ -51413,6 +51968,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 18304,
+"fails": 9
+},
+{
+"date": "",
 "low_manwon": 18304,
 "fails": 9
 }
@@ -51455,6 +52015,11 @@
 "date": "2026-11-10",
 "low_manwon": 8847,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 8847,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -51473,6 +52038,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 17536,
+"fails": 13
+},
+{
+"date": "",
 "low_manwon": 17536,
 "fails": 13
 }
@@ -51575,6 +52145,11 @@
 "date": "2026-11-10",
 "low_manwon": 19840,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 19840,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -51593,6 +52168,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 14720,
+"fails": 6
+},
+{
+"date": "",
 "low_manwon": 14720,
 "fails": 6
 }
@@ -51615,6 +52195,11 @@
 "date": "2026-11-10",
 "low_manwon": 14336,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 14336,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -51633,6 +52218,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 16880,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 16880,
 "fails": 1
 }
@@ -51655,6 +52245,11 @@
 "date": "2026-11-10",
 "low_manwon": 30600,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 30600,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -51673,6 +52268,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 20560,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 20560,
 "fails": 1
 }
@@ -51795,6 +52395,11 @@
 "date": "2026-11-10",
 "low_manwon": 17472,
 "fails": 13
+},
+{
+"date": "",
+"low_manwon": 17472,
+"fails": 13
 }
 ],
 "first_seen": "2026-11-02",
@@ -51813,6 +52418,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 13568,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 13568,
 "fails": 3
 }
@@ -51855,6 +52465,11 @@
 "date": "2026-11-10",
 "low_manwon": 32960,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 32960,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -51873,6 +52488,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 16180,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 16180,
 "fails": 1
 }
@@ -51915,6 +52535,11 @@
 "date": "2026-11-10",
 "low_manwon": 14400,
 "fails": 11
+},
+{
+"date": "",
+"low_manwon": 14400,
+"fails": 11
 }
 ],
 "first_seen": "2026-11-02",
@@ -51933,6 +52558,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 17088,
+"fails": 7
+},
+{
+"date": "",
 "low_manwon": 17088,
 "fails": 7
 }
@@ -51955,6 +52585,11 @@
 "date": "2026-11-10",
 "low_manwon": 10080,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 10080,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -51975,6 +52610,11 @@
 "date": "2026-11-10",
 "low_manwon": 28000,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 28000,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -51993,6 +52633,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 29900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 29900,
 "fails": 0
 }
@@ -52033,6 +52678,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 15859,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 15859,
 "fails": 5
 }
@@ -52115,6 +52765,11 @@
 "date": "2026-11-10",
 "low_manwon": 33000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 33000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -52155,6 +52810,11 @@
 "date": "2026-11-10",
 "low_manwon": 15936,
 "fails": 10
+},
+{
+"date": "",
+"low_manwon": 15936,
+"fails": 10
 }
 ],
 "first_seen": "2026-11-02",
@@ -52173,6 +52833,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 12531,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 12531,
 "fails": 4
 }
@@ -52195,6 +52860,11 @@
 "date": "2026-11-10",
 "low_manwon": 6034,
 "fails": 6
+},
+{
+"date": "",
+"low_manwon": 6034,
+"fails": 6
 }
 ],
 "first_seen": "2026-11-02",
@@ -52213,6 +52883,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 17600,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 17600,
 "fails": 2
 }
@@ -52235,6 +52910,11 @@
 "date": "2026-11-10",
 "low_manwon": 8262,
 "fails": 7
+},
+{
+"date": "",
+"low_manwon": 8262,
+"fails": 7
 }
 ],
 "first_seen": "2026-11-02",
@@ -52253,6 +52933,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 23300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 23300,
 "fails": 0
 }
@@ -52295,6 +52980,11 @@
 "date": "2026-11-10",
 "low_manwon": 20880,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 20880,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -52335,6 +53025,11 @@
 "date": "2026-11-10",
 "low_manwon": 35500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 35500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -52353,6 +53048,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 23800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 23800,
 "fails": 0
 }
@@ -52375,6 +53075,11 @@
 "date": "2026-11-10",
 "low_manwon": 25900,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 25900,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -52395,6 +53100,11 @@
 "date": "2026-11-10",
 "low_manwon": 10393,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 10393,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
@@ -52413,6 +53123,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 23360,
+"fails": 13
+},
+{
+"date": "",
 "low_manwon": 23360,
 "fails": 13
 }
@@ -52475,6 +53190,11 @@
 "date": "2026-11-10",
 "low_manwon": 4268,
 "fails": 9
+},
+{
+"date": "",
+"low_manwon": 4268,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -52493,6 +53213,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 13184,
+"fails": 10
+},
+{
+"date": "",
 "low_manwon": 13184,
 "fails": 10
 }
@@ -54938,7 +55663,7 @@
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-06",
+"last_seen": "2026-11-10",
 "checked": "2026-11-05"
 },
 "C08ZBXGJ": {
@@ -54955,11 +55680,16 @@
 "date": "2026-11-05",
 "low_manwon": 24500,
 "fails": 2
+},
+{
+"date": "2026-12-10",
+"low_manwon": 19600,
+"fails": 3
 }
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05",
+"last_seen": "2026-11-10",
 "checked": "2026-11-10"
 },
 "C26VANMP": {
@@ -54997,11 +55727,16 @@
 "date": "2026-11-05",
 "low_manwon": 31129,
 "fails": 5
+},
+{
+"date": "2026-12-10",
+"low_manwon": 24903,
+"fails": 6
 }
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05",
+"last_seen": "2026-11-10",
 "checked": "2026-11-10"
 },
 "C38ZNGPX": {
@@ -55018,11 +55753,16 @@
 "date": "2026-11-05",
 "low_manwon": 30867,
 "fails": 5
+},
+{
+"date": "2026-12-10",
+"low_manwon": 24693,
+"fails": 6
 }
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05",
+"last_seen": "2026-11-10",
 "checked": "2026-11-10"
 },
 "C57MYBUD": {
@@ -55039,11 +55779,16 @@
 "date": "2026-11-05",
 "low_manwon": 1491,
 "fails": 12
+},
+{
+"date": "2026-12-10",
+"low_manwon": 1192,
+"fails": 12
 }
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05",
+"last_seen": "2026-11-10",
 "checked": "2026-11-10"
 },
 "C60XMLQB": {
@@ -55060,11 +55805,16 @@
 "date": "2026-11-05",
 "low_manwon": 21280,
 "fails": 1
+},
+{
+"date": "2026-12-10",
+"low_manwon": 26600,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
 "status": "진행중",
-"last_seen": "2026-11-05",
+"last_seen": "2026-11-10",
 "checked": "2026-11-10"
 },
 "C69RIFHI": {
@@ -55123,6 +55873,11 @@
 "date": "2026-11-10",
 "low_manwon": 726900,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 726900,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -55143,6 +55898,11 @@
 "date": "2026-11-10",
 "low_manwon": 373100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 373100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -55161,6 +55921,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 13300,
+"fails": 8
+},
+{
+"date": "",
 "low_manwon": 13300,
 "fails": 8
 }
@@ -56250,6 +57015,11 @@
 "date": "2026-11-10",
 "low_manwon": 1986,
 "fails": 12
+},
+{
+"date": "",
+"low_manwon": 1986,
+"fails": 12
 }
 ],
 "first_seen": "2026-11-02",
@@ -56268,6 +57038,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 833,
+"fails": 16
+},
+{
+"date": "",
 "low_manwon": 833,
 "fails": 16
 }
@@ -56328,6 +57103,11 @@
 "rounds": [
 {
 "date": "2026-11-10",
+"low_manwon": 5955,
+"fails": 7
+},
+{
+"date": "",
 "low_manwon": 5955,
 "fails": 7
 }
@@ -62528,6 +63308,11 @@
 "date": "",
 "low_manwon": 33800,
 "fails": 0
+},
+{
+"date": "2026-11-26",
+"low_manwon": 33800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-07",
@@ -62928,6 +63713,426 @@
 "date": "2026-11-23",
 "low_manwon": 23560,
 "fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C52DQZNR": {
+"case": "2026타경10161[1]",
+"address": "서울특별시 강북구 미아동 327-33  5층502호",
+"sgg": "강북구",
+"emd": "미아동",
+"type": "다세대",
+"area": 54.64,
+"land_area": 31.16,
+"appr_manwon": 40700,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 40700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C55EHGQX": {
+"case": "2026타경50001[1]",
+"address": "서울특별시 광진구 구의동 220-55  2층201호",
+"sgg": "광진구",
+"emd": "구의동",
+"type": "다세대",
+"area": 62.85,
+"land_area": 34.11,
+"appr_manwon": 40000,
+"rounds": [
+{
+"date": "2026-11-23",
+"low_manwon": 40000,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C35OFQDC": {
+"case": "2026타경10097[1]",
+"address": "서울특별시 노원구 공릉동 598-27 조은주택  2층201호",
+"sgg": "노원구",
+"emd": "공릉동",
+"type": "다세대",
+"area": 59.92,
+"land_area": 36.54,
+"appr_manwon": 36700,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 36700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C48EDXYV": {
+"case": "2025타경13938[1]",
+"address": "서울특별시 노원구 중계동 42  4층401호",
+"sgg": "노원구",
+"emd": "중계동",
+"type": "연립",
+"area": 65.16,
+"land_area": 35.73,
+"appr_manwon": 27800,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 27800,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C36VPVIM": {
+"case": "2025타경52323[1]",
+"address": "서울특별시 송파구 송파동 94-27  2층201호",
+"sgg": "송파구",
+"emd": "송파동",
+"type": "다세대",
+"area": 32.83,
+"land_area": 22.12,
+"appr_manwon": 40600,
+"rounds": [
+{
+"date": "2026-11-23",
+"low_manwon": 40600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C41XBACM": {
+"case": "2025타경52323[2]",
+"address": "서울특별시 송파구 송파동 94-27  2층202호",
+"sgg": "송파구",
+"emd": "송파동",
+"type": "다세대",
+"area": 30.85,
+"land_area": 20.79,
+"appr_manwon": 38500,
+"rounds": [
+{
+"date": "2026-11-23",
+"low_manwon": 38500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C43APRXX": {
+"case": "2025타경52323[3]",
+"address": "서울특별시 송파구 송파동 94-27  3층301호",
+"sgg": "송파구",
+"emd": "송파동",
+"type": "다세대",
+"area": 32.83,
+"land_area": 22.12,
+"appr_manwon": 40600,
+"rounds": [
+{
+"date": "2026-11-23",
+"low_manwon": 40600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C92FVHII": {
+"case": "2026타경4508[1]",
+"address": "서울특별시 영등포구 양평동1가 147 어반힐  제7층 제703호",
+"sgg": "영등포구",
+"emd": "양평동1가",
+"type": "다세대",
+"area": 26.25,
+"land_area": 11.89,
+"appr_manwon": 30700,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 30700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C07SASXN": {
+"case": "2024타경3528[1]",
+"address": "서울특별시 중구 청계천로 334, 2층나-36호",
+"sgg": "중구",
+"emd": "신당동",
+"type": "연립",
+"area": 5.1,
+"land_area": 1.57,
+"appr_manwon": 28200,
+"rounds": [
+{
+"date": "",
+"low_manwon": 14438,
+"fails": 4
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C31YGCHF": {
+"case": "2025타경13712[1]",
+"address": "서울특별시 중랑구 묵동 122-297 ",
+"sgg": "중랑구",
+"emd": "묵동",
+"type": "연립",
+"area": 408.68,
+"land_area": 162,
+"appr_manwon": 189601,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 189601,
+"fails": 0
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C17KFNZS": {
+"case": "2024타경110821[1]",
+"address": "서울특별시 중랑구 사가정로 415, 1층101호 (면목동,면목동스카이시티)",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 80.86,
+"land_area": 77.92,
+"appr_manwon": 84700,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 67760,
+"fails": 1
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C18QKZPD": {
+"case": "2024타경110821[2]",
+"address": "서울특별시 중랑구 사가정로 415, 1층102호 (면목동,면목동스카이시티)",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 29.66,
+"land_area": 28.58,
+"appr_manwon": 34500,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 27600,
+"fails": 1
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C19MAWKQ": {
+"case": "2025타경12317[1]",
+"address": "서울특별시 중랑구 상봉동 101-19 상봉베스트원아파트  1층107호",
+"sgg": "중랑구",
+"emd": "상봉동",
+"type": "연립",
+"area": 54,
+"land_area": 115.54,
+"appr_manwon": 98800,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 40468,
+"fails": 4
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C19RVCPD": {
+"case": "2025타경12317[6]",
+"address": "서울특별시 중랑구 상봉동 101-19 상봉베스트원아파트  지하2층1호",
+"sgg": "중랑구",
+"emd": "상봉동",
+"type": "연립",
+"area": 112.68,
+"land_area": 251.44,
+"appr_manwon": 45500,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 18636,
+"fails": 4
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C39BFBVQ": {
+"case": "2025타경11967[1]",
+"address": "서울특별시 중랑구 상봉동 116-17 로젠하임  6층606호",
+"sgg": "중랑구",
+"emd": "상봉동",
+"type": "연립",
+"area": 17.84,
+"land_area": 24.03,
+"appr_manwon": 17300,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 2902,
+"fails": 8
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C40FLTDM": {
+"case": "2025타경13661[1]",
+"address": "서울특별시 중랑구 망우동 508-6 더하이어  6층 606호",
+"sgg": "중랑구",
+"emd": "망우동",
+"type": "연립",
+"area": 12.02,
+"land_area": 3.88,
+"appr_manwon": 10700,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 8560,
+"fails": 1
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C51RVSML": {
+"case": "2025타경12670[1]",
+"address": "서울특별시 중랑구 중화동 320-5 ",
+"sgg": "중랑구",
+"emd": "중화동",
+"type": "연립",
+"area": 139.3,
+"land_area": 112.4,
+"appr_manwon": 76043,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 48667,
+"fails": 2
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C65GHCRH": {
+"case": "2024타경110821[5]",
+"address": "서울특별시 중랑구 사가정로 415, 3층301호 (면목동,면목동스카이시티)",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 162.3,
+"land_area": 156.4,
+"appr_manwon": 67100,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 53680,
+"fails": 1
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C74NAIVZ": {
+"case": "2024타경110821[3]",
+"address": "서울특별시 중랑구 사가정로 415, 2층201호 (면목동,면목동스카이시티)",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 82.51,
+"land_area": 79.52,
+"appr_manwon": 43200,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 34560,
+"fails": 1
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C75IQJET": {
+"case": "2026타경10415[1]",
+"address": "서울특별시 중랑구 망우동 506-8 5층 503호",
+"sgg": "중랑구",
+"emd": "망우동",
+"type": "연립",
+"area": 13.42,
+"land_area": 3.14,
+"appr_manwon": 9700,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 7760,
+"fails": 1
+}
+],
+"first_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-10"
+},
+"C78MROYL": {
+"case": "2025타경12135[1]",
+"address": "서울특별시 중랑구 망우동 207-6 세움삼익플라주  4층 401호",
+"sgg": "중랑구",
+"emd": "망우동",
+"type": "연립",
+"area": 54.6,
+"land_area": 25.97,
+"appr_manwon": 52900,
+"rounds": [
+{
+"date": "2026-12-01",
+"low_manwon": 42320,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-10",
