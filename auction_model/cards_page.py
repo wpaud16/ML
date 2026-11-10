@@ -150,12 +150,12 @@ def bidder_table(v, seoul):
         hi = lab == ex
         cells = [f'<td class="lab{" hi" if hi else ""}">{"▶ " if hi else ""}{E(lab)}</td>']
         for p in probs:
-            cls = (' hi' if (hi or p == '50%') else '') + (' good' if is_good(v, vals.get(p)) else '')
+            cls = ' hi' if (hi or p == '50%') else ''   # 2026-11-11 사용자 요청: 88% 이하 초록 칸 제거
             pc = pct_of(v, vals.get(p))   # 2026-11-05 사용자 요청: 입찰가마다 시세 대비 %
             cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}' + (f'<br><span class="sub">{pc}</span>' if pc else '') + '</td>')
         t.append('<tr>' + ''.join(cells) + '</tr>')
     t.append('</table>')
-    note = f'초록 = 모델 시세 {GOOD_PCT * 100:.0f}% 이하 · 단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준) · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
+    note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준) · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
     f = v.get('fail') or {}
     if seoul and f.get('level') in ('보통', '높음'):
         note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"
