@@ -217,6 +217,13 @@ def closest_cell(it, actual_manwon):
                 sise_basis='M' if (it.get('model_sise_eok') and (it.get('category') or '아파트') == '아파트' and it.get('m_sise')) else '리치고')
 
 
+def trade_manwon(it):
+    """성적표 실거래 기준 % 용: 예측 당시 M 시세의 층 보정 실거래 가중 평균(만원). 아파트·실거래 있는 물건만 (2026-11-10 사용자 요청)."""
+    m = it.get('m_sise') or {}
+    if (it.get('category') or '아파트') != '아파트' or m.get('no_trade') or not m.get('trade_w'): return None
+    return int(round(m['trade_w'] * 1e4))
+
+
 def update_results(today):
     """과거 예측 파일에서 매각기일이 지난 물건을 골라 실제 결과를 기록 (입찰 전에 만든 예측만 사용)."""
     res = json.load(open(RESULTS_PATH)) if os.path.exists(RESULTS_PATH) else {}
@@ -246,6 +253,8 @@ def update_results(today):
             res[rid].update(expected_bidders=it['by_bidders']['expected_bidders'], expected_range=it['by_bidders'].get('expected_range'))
         if rid in res and res[rid].get('actual_manwon') and (res[rid].get('closest') or {}).get('sise_basis') is None:
             res[rid]['closest'] = closest_cell(it, res[rid]['actual_manwon'])   # 예전 기록 채우기
+        if rid in res and 'trade_manwon' not in res[rid]:
+            res[rid]['trade_manwon'] = trade_manwon(dict(it, **(res[rid].get('rescored_pred') or {})))   # 예전 기록 채우기
         if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지'): continue
         page = auction_detail(it['auction_id'])
         status, actual, bidders, second = '결과대기', None, None, None
@@ -264,10 +273,11 @@ def update_results(today):
                  bidding_date=bd, pred_date=it['pred_date'], low_manwon=it.get('low_manwon'),
                  bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today,
                  expected_bidders=(it.get('by_bidders') or {}).get('expected_bidders'), expected_range=(it.get('by_bidders') or {}).get('expected_range'),
-                 sise_manwon=int(round((it.get('model_sise_eok') or it.get('richgo_sise_eok') or 0) * 1e4)) or None)   # 성적표 시세 대비 % (2026-11-08)
+                 sise_manwon=int(round((it.get('model_sise_eok') or it.get('richgo_sise_eok') or 0) * 1e4)) or None,   # 성적표 시세 대비 % (2026-11-08)
+                 trade_manwon=trade_manwon(it))
         old = res.get(rid) or {}
         if old.get('rescored'):   # dev/rescore_pred_m.py 로 M 시세 재계산한 값 유지 (2026-11-08)
-            for f in ('orig_bid_by_prob_manwon', 'bid_by_prob_manwon', 'rescored', 'rescored_pred', 'expected_bidders', 'expected_range', 'sise_manwon'):
+            for f in ('orig_bid_by_prob_manwon', 'bid_by_prob_manwon', 'rescored', 'rescored_pred', 'expected_bidders', 'expected_range', 'sise_manwon', 'trade_manwon'):
                 r[f] = old.get(f)
             it = dict(it, **(old.get('rescored_pred') or {}))
         if actual:

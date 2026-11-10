@@ -121,8 +121,13 @@ def scorecard(rows, cat, today):
     for r in rows:
         p50 = r['bid_by_prob_manwon']['50%'] / 1e4
         d = dt.date.fromisoformat(r['bidding_date']); dd = f'{d.month}/{d.day}'
+        sv, tv = r.get('sise_manwon'), (r.get('trade_manwon') if cat == '아파트' else None)
+        def pc(x):   # 2026-11-10 사용자 요청: 시세 대비 % (아파트 M / 실거래 함께)
+            if not (x and sv): return ''
+            t = f'M {x / sv * 100:.0f}%' + (f'<br>실 {x / tv * 100:.0f}%' if tv else '')
+            return f'<br><span style="font-size:10px;color:#BBBBBB">{t}</span>'
         if r.get('status') == '매각' and r.get('actual_manwon'):
-            act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>'
+            act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>' + pc(r['actual_manwon'])
             df = r.get('diff_pct') or 0
             diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span><br><span style="font-size:11px;color:#BBBBBB">{E(r.get("band") or "")}</span>'
             T.append(f"{dd} {r['danji_name']} — 예상 {p50:.2f}억 → 실제 {r['actual_manwon'] / 1e4:.2f}억 ({df:+.1f}%, {r.get('band') or ''})")
@@ -131,11 +136,11 @@ def scorecard(rows, cat, today):
             T.append(f"{dd} {r['danji_name']} — 예상 {p50:.2f}억 → {r.get('status')}")
         ppl = f'<b>{r["bidders"] if r.get("bidders") is not None else "-"}</b>/{r["expected_bidders"] if r.get("expected_bidders") is not None else "-"}'
         name = f'{E(r["danji_name"] or "")}<br><span style="font-size:11px;color:#BBBBBB">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡</span>'
-        tr.append('<tr>' + ''.join(f'<td style="{c};font-size:12px">{x}</td>' for x in (name, dd, f'{p50:.2f}', act, diff, ppl)) + '</tr>')
+        tr.append('<tr>' + ''.join(f'<td style="{c};font-size:12px">{x}</td>' for x in (name, dd, f'{p50:.2f}' + pc(r['bid_by_prob_manwon']['50%']), act, diff, ppl)) + '</tr>')
     h = (f'<div style="{GRAY}">{sm}</div>' if sm else '') + (
         f'<table style="{TABLE};font-size:12px"><col style="width:28%"><col style="width:11%"><col><col><col><col style="width:14%">'
         f'<tr>{th}</tr>{"".join(tr)}</table><div style="{GRAY}">예상 = 기일 전에 기록한 앙상블 낙찰확률 50% 가격 · 인원 = 실제 응찰자 수 / 기일 전 모델이 예상한 인원 · '
-        '구간 = 실제 낙찰가가 확률표의 어디에 있었는지 (40~60% 안이면 모델 범위 안)</div>')
+        '구간 = 실제 낙찰가가 확률표의 어디에 있었는지 (40~60% 안이면 모델 범위 안) · M = 모델 시세 대비, 실 = 실거래 시세 대비</div>')
     return h, (sm + '\n' if sm else '') + '\n'.join(T)
 
 
