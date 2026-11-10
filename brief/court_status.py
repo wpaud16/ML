@@ -4,7 +4,7 @@
 GitHub Actions(COURT_CHECK=0)이거나 조회에 실패하면 표시하지 않는다(메일은 그대로 발송)."""
 import os, re, sys, time
 
-BUDGET_SEC = int(os.environ.get('COURT_CHECK_SEC', '420'))
+BUDGET_SEC = int(os.environ.get('COURT_CHECK_SEC', '720'))   # 물건당 약 10초, 오늘 물건 30~60건
 STOP_WORDS = ('변경', '연기', '정지', '취하', '취소', '기각', '각하', '중지')
 
 

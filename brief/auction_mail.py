@@ -215,7 +215,12 @@ def build(today, now_hour=None):
     court = {}
     try:
         import court_status
-        court = court_status.check([v for v in items if v['bidding_date'] == today.isoformat()])
+        # 웹카드에 나오는 오늘 물건 전부 (메일에서 숨긴 실거래 없음·예측 불가 물건 포함, 2026-11-10: 일부 카드에 표시 누락)
+        td = today.isoformat()
+        cands = [v for v in L['items'].values() if cp.keep(v) and v.get('bidding_date') == td]
+        cands += [f for f in L.get('failed') or [] if (f.get('risk') or {}).get('decision') == 'show' and f.get('bidding_date') == td]
+        seen = set(); cands = [v for v in cands if not (v['key'] in seen or seen.add(v['key']))]
+        court = court_status.check(cands)
         court_status.save(court, today.isoformat(), os.path.join(AM, 'predictions', 'court_status.json'))   # 웹카드에도 표시 (2026-11-09)
     except Exception as e:
         print('법원 확인 실패', e)
