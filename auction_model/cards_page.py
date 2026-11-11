@@ -470,46 +470,56 @@ def scorecard(rows, cat, tracked=None):
             md_ = lambda xs: sorted(xs)[len(xs) // 2] if len(xs) % 2 else sum(sorted(xs)[len(xs) // 2 - 1:len(xs) // 2 + 1]) / 2
             out.append(f'<div class="g s">시세 대비 중앙값({len(mt)}건) · 실제 낙찰가 M {md_([a / s for a, s, t, p in mt]) * 100:.1f}% / 실거래 {md_([a / t for a, s, t, p in mt]) * 100:.1f}%'
                        f' · 예상(50%) M {md_([p / s for a, s, t, p in mt]) * 100:.1f}% / 실거래 {md_([p / t for a, s, t, p in mt]) * 100:.1f}%</div>')
-    # 2026-11-08 사용자 요청: 차이 = 종합·인원 줄 둘 다, '가장 가까운 칸' 열 제거
-    t = ['<table class="sc"><col style="width:20%"><col style="width:8%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:12%"><col style="width:9%"><col style="width:9%">',
-         '<tr><th>물건</th><th>기일</th><th>종합(50%)<br><span class="sub">시세 대비</span></th><th>예상 인원 줄(50%)<br><span class="sub">시세 대비</span></th><th>실제<br><span class="sub">시세 대비</span></th><th>차이<br><span class="sub">종합 / 인원 줄</span></th><th>인원<br><span class="sub">실제/예상</span></th><th>바로<br>가기</th></tr>']
-    for r in rows:
+    # 2026-11-11 사용자 요청: 차이 두 값이 표를 넘침 + 가독성 → 물건마다 두 행(종합 / 인원 줄)으로 나누고, 물건·실제·인원 칸은 두 행을 합침
+    t = ['<table class="sc"><col style="width:25%"><col style="width:12%"><col style="width:20%"><col style="width:15%"><col style="width:17%"><col style="width:11%">',
+         '<tr><th>물건</th><th>기준</th><th>예측<br><span class="sub">50%</span></th><th>차이</th><th>실제<br><span class="sub">낙찰</span></th><th>인원<br><span class="sub">실제</span></th></tr>']
+
+    def pc(x, s, tr):   # 시세 대비 % (M · 실 각 한 줄)
+        if not (x and s): return ''
+        return f'<div class="sub">M {x / s * 100:.1f}%' + (f'<br>실 {x / tr * 100:.1f}%' if tr else '') + '</div>'
+
+    def dcell(v):
+        if v is None: return '<span class="sub">-</span>'
+        c = '#FF6B6B' if v > 0 else '#6FA8FF'
+        return f'<b style="color:{c}">{v:+.1f}%</b>'
+
+    for i, r in enumerate(rows):
         rid = f"{r['key']}|{r['bidding_date']}"
         it = tracked.get(rid) or {}
         sise = r.get('sise_manwon') or (base_sise(it) or 0) * 1e4 or None
         tr_ = r.get('trade_manwon') if r['category'] == '아파트' else None
         p50m = r['bid_by_prob_manwon']['50%']; p50 = p50m / 1e4
         star = '<sup>*</sup>' if r.get('rescored') else ''
-        d = datetime.strptime(r['bidding_date'], '%Y-%m-%d'); dd = f'{d.month}/{d.day}'
-        if r.get('status') == '매각' and r.get('actual_manwon'):
-            act = f'<b>{r["actual_manwon"] / 1e4:.2f}</b>' + pct_sub(r['actual_manwon'], sise, tr_); df = r.get('diff_pct') or 0
-            bp = r.get('bid_by_prob_manwon') or {}
-            if bp.get('40%') == bp.get('60%'): r = dict(r, band='최저가 단일')
-            diff = f'<span style="color:{"#FF6B6B" if df > 0 else "#6FA8FF"}">{df:+.1f}%</span>'   # 구간(60% 초과 등) 표시는 뺌 (2026-11-05)
-        else:
-            act = f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'; diff = '-'
+        d = datetime.strptime(r['bidding_date'], '%Y-%m-%d')
+        sold_ = r.get('status') == '매각' and r.get('actual_manwon')
         b = r.get('bidders'); x = r.get('expected_bidders')
-        ppl = f'<b>{b if b is not None else "-"}</b>/{x if x is not None else "-"}'
-        # 예상 인원 줄 50% (카드 ▶ 줄) — 종합과 비교용 (2026-11-08 사용자 요청)
         bb = ((r.get('rescored_pred') or {}).get('by_bidders') or it.get('by_bidders') or {})
         lab = exp_row(r['category'], x if x is not None else bb.get('expected_bidders'))
         e50 = ((bb.get('bid_by_prob_eok') or {}).get(lab) or {}).get('50%') if lab else None
+        d1 = (r.get('diff_pct') or 0) if sold_ else None
+        lines = [('종합', f'<b>{p50:.2f}</b>{star}' + pc(p50m, sise, tr_), dcell(d1))]
         if e50:
-            row_ = f'<span class="sub">{E(lab)}</span><br>{e50:.2f}' + pct_sub(e50 * 1e4, sise, tr_)
-            if diff != '-':
-                d2 = (r['actual_manwon'] / (e50 * 1e4) - 1) * 100
-                diff = f'<span style="white-space:nowrap">{diff} / <span style="color:{"#FF6B6B" if d2 > 0 else "#6FA8FF"}">{d2:+.1f}%</span></span>'   # 2026-11-09: 종합 / 인원 줄 한 줄로
-        else:
-            row_ = '-'
-        name = f'{E(r.get("danji_name") or "")}<br><span class="sub">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡</span>'
+            d2 = (r['actual_manwon'] / (e50 * 1e4) - 1) * 100 if sold_ else None
+            lines.append((E(lab), f'<b>{e50:.2f}</b>' + pc(e50 * 1e4, sise, tr_), dcell(d2)))
+        act = (f'<b class="big">{r["actual_manwon"] / 1e4:.2f}</b>' + pc(r['actual_manwon'], sise, tr_)) if sold_ else f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'
+        ppl = f'<b class="big">{b if b is not None else "-"}</b><div class="sub">예상<br>{f"{x}명" if x is not None else "-"}</div>'
         aid = r.get('auction_id') or it.get('auction_id')
-        go = f'<a href="#{card_id(aid, r["bidding_date"])}">이동</a>' if aid and it else '-'
-        t.append('<tr>' + ''.join(f'<td>{c}</td>' for c in (name, dd, f'{p50:.2f}{star}' + pct_sub(p50m, sise, tr_), row_, act, diff, ppl, go)) + '</tr>')
+        nm = E(r.get('danji_name') or '')
+        nm = f'<a href="#{card_id(aid, r["bidding_date"])}">{nm}</a>' if aid and it else nm
+        name = f'{nm}<div class="sub">{E(r["key"].replace("[1]", ""))}<br>{r.get("area")}㎡<br><b>{d.month}/{d.day}</b></div>'
+        n = len(lines); z = ' z' if i % 2 else ''
+        for j, (tg, pv, dv) in enumerate(lines):
+            first = j == 0
+            lead = (f'<td class="nm" rowspan="{n}">{name}</td>' if first else '')
+            tail = (f'<td rowspan="{n}">{act}</td><td rowspan="{n}">{ppl}</td>' if first else '')
+            cls = ('top' if first else 'mid') + (' end' if j == n - 1 else '') + z
+            t.append(f'<tr class="{cls}">{lead}<td><span class="tg">{tg}</span></td><td>{pv}</td><td>{dv}</td>{tail}</tr>')
     t.append('</table>')
     out.append(''.join(t))
-    out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 종합 = 기일 전에 기록한 인원 가정 없는 앙상블 낙찰확률 50% 가격 · 예상 인원 줄 = 카드 ▶ 줄의 50% 가격 · 차이 = 실제가 기준 종합 / 인원 줄 · % = 예측에 쓴 시세 대비(아파트: M = 모델 시세, 실 = 예측 당시 층 보정 실거래 12개월 가중 평균 / 오피스텔: 리치고) · '
-               '<sup>*</sup> = 11/5 이전(리치고 시세) 예측을 11/8 현재 M 시세 모델로 다시 계산한 값(그 기일 이전 학습 사례만 사용, 사후 계산) · '
-               '인원 = 실제 응찰자 수 / 예상 인원 · 바로가기 = 위 \'기일 지남\' 카드로 이동</div>')
+    out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 물건 이름을 누르면 위 \'기일 지남\' 카드로 이동 · '
+               '기준: 종합 = 인원 가정 없는 앙상블 낙찰확률 50% 가격, 8명 등 = 카드 ▶ 예상 인원 줄의 50% 가격 · 차이 = 실제 ÷ 예측 − 1 (빨강 = 실제가 더 높음, 파랑 = 더 낮음) · '
+               'M = 모델 시세 대비, 실 = 예측 당시 층 보정 실거래 12개월 가중 평균 대비(오피스텔은 리치고) · '
+               '<sup>*</sup> = 11/5 이전(리치고 시세) 예측을 11/8 현재 M 시세 모델로 다시 계산한 값(사후 계산)</div>')
     return ''.join(out)
 
 
@@ -534,7 +544,17 @@ table{border-collapse:collapse;width:100%;max-width:560px;table-layout:fixed;mar
 th,td{background:#000;color:#fff;border:1px solid #fff;padding:9px 2px}
 td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333} td.good,td.hi.good{background:rgba(46,204,113,0.35)}
 a{color:#1a73e8}
-table.sc{font-size:12px} table.sc td{padding:8px 2px} .sub{font-size:11px;color:#BBBBBB}
+.sub{font-size:11px;color:#BBBBBB}
+table.sc{font-size:12.5px;border:1px solid #555;line-height:1.35}
+table.sc th{background:#1f2a36;border:0;border-bottom:2px solid #6FA8FF;padding:8px 3px;font-size:12.5px;white-space:normal}
+table.sc td{border:0;padding:7px 3px;vertical-align:middle;overflow-wrap:anywhere}
+table.sc tr.end td,table.sc td[rowspan]{border-bottom:1px solid #444}
+table.sc tr.mid td{border-top:1px dashed #333}
+table.sc tr.z td{background:#161616}
+table.sc td.nm{text-align:left;padding-left:6px}
+table.sc td.nm a{font-weight:bold;color:#8AB4F8;text-decoration:none}
+table.sc .tg{display:inline-block;font-size:10.5px;color:#ddd;background:#2b2b2b;border-radius:4px;padding:1px 5px;white-space:nowrap}
+table.sc .big{font-size:14.5px}
 .foot{color:var(--mut);font-size:12px;margin-top:24px;line-height:1.7}
 .new{color:#d93025;font-size:12px;font-weight:bold}
 """
