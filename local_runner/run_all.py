@@ -1,4 +1,4 @@
-"""노트북 통합 실행 (2026-11-08~). Windows 작업 스케줄러가 호출.
+﻿"""노트북 통합 실행 (2026-11-08~). Windows 작업 스케줄러가 호출.
 
   python run_all.py night    # 03:00 법원자료 수집 → 경매 예측(국토부 실거래 포함) → 웹페이지 → push
   python run_all.py outfit   # 06:00 날씨·코디 페이지 push → 메일
@@ -181,6 +181,16 @@ def s_views():
         log(f'관심 수 수집 실패(계속 진행): {e}')
 
 
+def s_results():
+    """성적표 결과를 법원 사건 조회로 먼저 채움 (리치고는 하루 이상 늦음, 2026-11-11). 실패해도 계속."""
+    if ARGS.test:
+        log('테스트 → 법원 결과 확인 생략'); return
+    try:
+        run([sys.executable, os.path.join(HERE, 'results_job.py')], cwd=HERE, timeout=35 * 60)
+    except Exception as e:
+        log(f'법원 결과 확인 실패(계속 진행): {e}')
+
+
 def pred_day():
     # auction_predict.yml 과 같은 규칙: 18시 이후는 다음 날
     return (dt.datetime.now(KST) + dt.timedelta(hours=6)).date().isoformat()
@@ -249,17 +259,19 @@ def s_brief():
     c = find_claude() if os.environ.get('BRIEF_SUMMARY', '').lower() == 'cli' else None
     log(f'증시 해설: {os.environ.get("BRIEF_SUMMARY") or "끔"}' + (f' ({c})' if c else ''))
     run([sys.executable, 'run_brief.py'], cwd=os.path.join(REPO, 'brief'), timeout=1800, extra=mail_env())
+    s_results()   # 어제 기일 결과를 법원에서 확인해 성적표에 (2026-11-11)
     # 법원 진행 확인 결과를 웹카드에도 반영 (2026-11-09)
-    if os.path.exists(os.path.join(REPO, 'auction_model', 'predictions', 'court_status.json')):
+    if True:
         try:
             run([sys.executable, 'cards_page.py'], cwd=os.path.join(REPO, 'auction_model'), timeout=300)
         except Exception as e:
             log(f'웹페이지 다시 만들기 실패(무시): {e}')
-    push(['brief/sent', 'auction_model/predictions/court_status.json', 'auction_model/page'], f'brief: {d} 메일 발송 기록·법원 진행 확인 (노트북)')
+    push(['brief/sent', 'auction_model/predictions/court_status.json', 'auction_model/predictions/court_results.json',
+          'auction_model/predictions/results.json', 'auction_model/page'],f'brief: {d} 메일 발송 기록·법원 진행 확인 (노트북)')
 
 
 JOBS = {
-    'night': [('collect', s_collect), ('predict', s_predict), ('views', s_views), ('page', s_page), ('push', s_push_auction)],
+    'night': [('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction)],
     'outfit': [('outfit', s_outfit)],
     'brief': [('brief', s_brief)],
 }

@@ -502,6 +502,7 @@ def scorecard(rows, cat, tracked=None):
             d2 = (r['actual_manwon'] / (e50 * 1e4) - 1) * 100 if sold_ else None
             lines.append((E(lab), f'<b>{e50:.2f}</b>' + pc(e50 * 1e4, sise, tr_), dcell(d2)))
         act = (f'<b class="big">{r["actual_manwon"] / 1e4:.2f}</b>' + pc(r['actual_manwon'], sise, tr_)) if sold_ else f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'
+        if r.get('source') == '법원': act += '<div class="sub">(법원 확인)</div>'
         ppl = f'<b class="big">{b if b is not None else "-"}</b><div class="sub">예상<br>{f"{x}명" if x is not None else "-"}</div>'
         aid = r.get('auction_id') or it.get('auction_id')
         nm = E(r.get('danji_name') or '')

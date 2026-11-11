@@ -224,10 +224,18 @@ def trade_manwon(it):
     return int(round(m['trade_w'] * 1e4))
 
 
+COURT_RES = {}
+
+
 def update_results(today):
     """과거 예측 파일에서 매각기일이 지난 물건을 골라 실제 결과를 기록 (입찰 전에 만든 예측만 사용)."""
     res = json.load(open(RESULTS_PATH)) if os.path.exists(RESULTS_PATH) else {}
-    snaps = sorted(f for f in os.listdir(OUT_DIR) if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.json', f))
+    global COURT_RES
+    try:   # 법원 사건 조회로 먼저 확인한 결과 (local_runner/results_job.py, 2026-11-11)
+        COURT_RES = json.load(open(os.path.join(OUT_DIR, 'court_results.json'), encoding='utf-8'))
+    except Exception:
+        COURT_RES = {}
+    snaps =sorted(f for f in os.listdir(OUT_DIR) if re.fullmatch(r'\d{4}-\d{2}-\d{2}\.json', f))
     last_pred = {}   # (key, bidding_date) -> 그 기일 당일 또는 이전에 만든 마지막 예측
     for fn in snaps:
         d = fn[:10]
@@ -255,7 +263,9 @@ def update_results(today):
             res[rid]['closest'] = closest_cell(it, res[rid]['actual_manwon'])   # 예전 기록 채우기
         if rid in res and 'trade_manwon' not in res[rid]:
             res[rid]['trade_manwon'] = trade_manwon(dict(it, **(res[rid].get('rescored_pred') or {})))   # 예전 기록 채우기
-        if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지'): continue
+        # 법원에서 먼저 확인한 매각은 리치고에 응찰자 수가 올라올 때까지 다시 확인 (2026-11-11)
+        if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지') \
+                and not (res[rid].get('source') == '법원' and res[rid]['status'] == '매각' and res[rid].get('bidders') is None): continue
         page = auction_detail(it['auction_id'])
         status, actual, bidders, second = '결과대기', None, None, None
         if page:
@@ -269,7 +279,13 @@ def update_results(today):
                 status = '취하'   # 매각가 없이 종료 = 취하·기각 등
             elif (page.get('numberOfFailures') or 0) > (it.get('fails') or 0) or ((page.get('biddingDate') or '')[:10] > bd):
                 status = '유찰'
-        r = dict(key=k, auction_id=it.get('auction_id'), category=it.get('category', '아파트'), danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
+        source = '리치고'
+        cr = COURT_RES.get(rid)
+        if cr and (status == '결과대기' or (status == '유찰' and cr.get('status') != '유찰')):
+            # 리치고에 아직 결과가 없으면 법원 사건 조회 결과 사용 (법원은 당일 올라옴, 응찰자 수는 없음)
+            status = cr['status']; source = '법원'
+            if cr.get('actual_manwon'): actual = cr['actual_manwon']
+        r = dict(source=source,key=k, auction_id=it.get('auction_id'), category=it.get('category', '아파트'), danji_name=it.get('danji_name'), area=it.get('area'), region=it.get('region'),
                  bidding_date=bd, pred_date=it['pred_date'], low_manwon=it.get('low_manwon'),
                  bid_by_prob_manwon=it.get('bid_by_prob_manwon'), status=status, checked=today,
                  expected_bidders=(it.get('by_bidders') or {}).get('expected_bidders'), expected_range=(it.get('by_bidders') or {}).get('expected_range'),
