@@ -39,6 +39,10 @@ def judge(info, item_rows, bidding_date):
     if nd:
         return False, f'기일 변경 → {int(nd[4:6])}/{int(nd[6:8])}'
     last = kv.get('최근입찰결과') or ''
+    m = re.match(r'(\d{4})\.(\d{2})\.(\d{2})\s*매각\(\s*([\d,]+)', last)
+    if m:   # 2026-11-12: 이미 매각된 물건이 리치고 지연으로 새 기일에 올라온 경우
+        won = int(m.group(4).replace(',', ''))
+        return False, f'이미 매각됨 ({int(m.group(2))}/{int(m.group(3))} · {won // 100000000}억 {won % 100000000 // 10000:,}만원)'
     return False, '오늘 기일 없음' + (f' (최근 {last})' if last else '')
 
 

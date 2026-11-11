@@ -186,6 +186,29 @@ def sold_already(pg):
     return '재매각' not in kw
 
 
+_SOLD = None
+
+
+def sold_recent(key, bidding_date):
+    """성적표·법원 결과로 최근 60일 안에 이미 매각된 물건 (2026-11-12: 리치고가 매각을 늦게 반영해 지난 물건이 새 기일로 다시 올라옴,
+    예: 2025타경13525 11/10 매각 → 리치고 11/12 기일). → 매각 기일 'YYYY-MM-DD' 또는 None. 재매각(대금 미납)은 보통 두 달 이상 뒤라 60일로 자름."""
+    global _SOLD
+    if _SOLD is None:
+        _SOLD = {}
+        lo = str((datetime.now(KST) - timedelta(days=60)).date())
+        for fn in ('results.json', 'court_results.json'):
+            try:
+                R = json.load(open(os.path.join(OUT_DIR, fn), encoding='utf-8'))
+            except Exception:
+                continue
+            for rid, r in R.items():
+                k, bd = rid.rsplit('|', 1)
+                if r.get('status') == '매각' and bd >= lo and bd > _SOLD.get(k, ''):
+                    _SOLD[k] = bd
+    d = _SOLD.get(key)
+    return d if d and d < (bidding_date or '9999') else None
+
+
 def band_of(actual, prices):
     """실제 낙찰가가 앙상블 확률 가격표의 어느 구간인지."""
     if prices['40%'] == prices['60%']:
@@ -434,6 +457,9 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
             pg = auction_detail(it['id']) or {}
             if sold_already(pg):
                 return 'skip', dict(base, danji_id=dj, reason='매각완료')
+            sd_ = sold_recent(key, base['bidding_date'])
+            if sd_:
+                return 'skip', dict(base, danji_id=dj, reason=f'매각완료 ({sd_[5:]} 매각, 리치고 미반영)')
             p = om.predict_dict(dj, it['id'], 0, df=odf, cfg=ocfg, models=models)
             rk = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
             if rk['decision'] == 'check':
@@ -527,6 +553,9 @@ def main():
                 pg = {}
             if sold_already(pg):
                 skipped.append(dict(base, reason='매각완료')); continue
+            sd_ = sold_recent(key, base['bidding_date'])
+            if sd_:
+                skipped.append(dict(base, reason=f'매각완료 ({sd_[5:]} 매각, 리치고 미반영)')); continue
             dj, how = find_danji(it, cache)
             if not dj:   # 예측은 못 해도 목록에 표시·추적 (2026-11-05 사용자 요청)
                 failed.append(dict(base, reason=how, category='아파트', court=pg.get('caseSite'),
