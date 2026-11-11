@@ -3478,6 +3478,46 @@
   ],
   "trade_manwon": null
  },
+ "2025타경14177[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2025타경14177[1]",
+  "auction_id": "C85KWAQK",
+  "category": "오피스텔",
+  "danji_name": "도무스캠프",
+  "area": 28.95,
+  "region": "서울 구로구",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 17280,
+  "bid_by_prob_manwon": {
+   "40%": 17280,
+   "45%": 17280,
+   "50%": 17280,
+   "55%": 17280,
+   "60%": 17280
+  },
+  "status": "매각",
+  "checked": "2026-11-12",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   1
+  ],
+  "sise_manwon": 8500,
+  "trade_manwon": null,
+  "actual_manwon": 19033,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 10.1,
+  "band": "최저가 단일",
+  "closest": {
+   "label": "1명 40%",
+   "manwon": 17300,
+   "pct_of_sise": 203.5,
+   "actual_pct_of_sise": 223.9,
+   "sise_basis": "리치고"
+  }
+ },
  "2025타경14204[1]|2026-11-05": {
   "key": "2025타경14204[1]",
   "auction_id": "C17FFVGX",
@@ -3529,6 +3569,34 @@
    2
   ],
   "trade_manwon": null
+ },
+ "2025타경1884[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2025타경1884[1]",
+  "auction_id": "C24UWHEB",
+  "category": "아파트",
+  "danji_name": "금강",
+  "area": 59.86,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 12789,
+  "bid_by_prob_manwon": {
+   "40%": 18765,
+   "45%": 18901,
+   "50%": 19036,
+   "55%": 19175,
+   "60%": 19324
+  },
+  "status": "변경",
+  "checked": "2026-11-12",
+  "expected_bidders": 8,
+  "expected_range": [
+   6,
+   10
+  ],
+  "sise_manwon": 24020,
+  "trade_manwon": 23980
  },
  "2025타경2268[1]|2026-11-03": {
   "key": "2025타경2268[1]",
@@ -5964,6 +6032,174 @@
   },
   "trade_manwon": 12950
  },
+ "2025타경72100[1]|2026-11-11": {
+  "source": "리치고",
+  "key": "2025타경72100[1]",
+  "auction_id": "C27OPZQB",
+  "category": "아파트",
+  "danji_name": "다산아이파크",
+  "area": 97.96,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 102000,
+  "bid_by_prob_manwon": {
+   "40%": 103903,
+   "45%": 104653,
+   "50%": 105400,
+   "55%": 106170,
+   "60%": 106995
+  },
+  "status": "결과대기",
+  "checked": "2026-11-12",
+  "expected_bidders": 2,
+  "expected_range": [
+   1,
+   3
+  ],
+  "sise_manwon": 110240,
+  "trade_manwon": 107890
+ },
+ "2025타경72113[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2025타경72113[1]",
+  "auction_id": "C17YOFBP",
+  "category": "아파트",
+  "danji_name": "평내호평역대명루첸포레스티움",
+  "area": 59.81,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 34650,
+  "bid_by_prob_manwon": {
+   "40%": 45315,
+   "45%": 45642,
+   "50%": 45967,
+   "55%": 46303,
+   "60%": 46663
+  },
+  "status": "변경",
+  "checked": "2026-11-12",
+  "expected_bidders": 10,
+  "expected_range": [
+   7,
+   12
+  ],
+  "sise_manwon": 51520,
+  "trade_manwon": 51010
+ },
+ "2025타경72126[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2025타경72126[1]",
+  "auction_id": "C40AXGLD",
+  "category": "아파트",
+  "danji_name": "남양주두산위브트레지움",
+  "area": 84.95,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 31710,
+  "bid_by_prob_manwon": {
+   "40%": 38226,
+   "45%": 38502,
+   "50%": 38777,
+   "55%": 39060,
+   "60%": 39364
+  },
+  "status": "변경",
+  "checked": "2026-11-12",
+  "expected_bidders": 8,
+  "expected_range": [
+   6,
+   8
+  ],
+  "sise_manwon": 42970,
+  "trade_manwon": 42770
+ },
+ "2025타경72160[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2025타경72160[1]",
+  "auction_id": "C19AWAFE",
+  "category": "아파트",
+  "danji_name": "호평파라곤",
+  "area": 130.64,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 42140,
+  "bid_by_prob_manwon": {
+   "40%": 51104,
+   "45%": 51473,
+   "50%": 51840,
+   "55%": 52219,
+   "60%": 52625
+  },
+  "status": "변경",
+  "checked": "2026-11-12",
+  "expected_bidders": 6,
+  "expected_range": [
+   3,
+   8
+  ],
+  "sise_manwon": 59150,
+  "trade_manwon": 59170
+ },
+ "2025타경72200[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2025타경72200[1]",
+  "auction_id": "C49LSPHG",
+  "category": "아파트",
+  "danji_name": "덕현",
+  "area": 134.98,
+  "region": "경기 구리시",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 72100,
+  "bid_by_prob_manwon": {
+   "40%": 93380,
+   "45%": 94053,
+   "50%": 94725,
+   "55%": 95417,
+   "60%": 96158
+  },
+  "status": "변경",
+  "checked": "2026-11-12",
+  "expected_bidders": 8,
+  "expected_range": [
+   5,
+   10
+  ],
+  "sise_manwon": 107630,
+  "trade_manwon": 103590
+ },
+ "2025타경72305[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2025타경72305[1]",
+  "auction_id": "C72WRFXS",
+  "category": "아파트",
+  "danji_name": "우남",
+  "area": 84.84,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 13370,
+  "bid_by_prob_manwon": {
+   "40%": 13755,
+   "45%": 13855,
+   "50%": 13953,
+   "55%": 14055,
+   "60%": 14165
+  },
+  "status": "변경",
+  "checked": "2026-11-12",
+  "expected_bidders": 2,
+  "expected_range": [
+   1,
+   3
+  ],
+  "sise_manwon": 16050,
+  "trade_manwon": null
+ },
  "2025타경72387[1]|2026-11-05": {
   "key": "2025타경72387[1]",
   "auction_id": "C25GZSNK",
@@ -7363,7 +7599,7 @@
    "60%": 277499
   },
   "status": "연기",
-  "checked": "2026-11-11",
+  "checked": "2026-11-12",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -7391,7 +7627,7 @@
    "60%": 191452
   },
   "status": "연기",
-  "checked": "2026-11-11",
+  "checked": "2026-11-12",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -7607,8 +7843,8 @@
    "55%": 510000,
    "60%": 510000
   },
-  "status": "결과대기",
-  "checked": "2026-11-11",
+  "status": "연기",
+  "checked": "2026-11-12",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -9024,7 +9260,7 @@
    "60%": 62800
   },
   "status": "연기",
-  "checked": "2026-11-11",
+  "checked": "2026-11-12",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -9084,6 +9320,34 @@
    2
   ],
   "trade_manwon": 69180
+ },
+ "2026타경3318[1]|2026-11-11": {
+  "source": "법원",
+  "key": "2026타경3318[1]",
+  "auction_id": "C62XRKKV",
+  "category": "오피스텔",
+  "danji_name": "도무스캠프",
+  "area": 28.82,
+  "region": "서울 구로구",
+  "bidding_date": "2026-11-11",
+  "pred_date": "2026-11-11",
+  "low_manwon": 20720,
+  "bid_by_prob_manwon": {
+   "40%": 20720,
+   "45%": 20720,
+   "50%": 20720,
+   "55%": 20720,
+   "60%": 20720
+  },
+  "status": "유찰",
+  "checked": "2026-11-12",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   1
+  ],
+  "sise_manwon": 8500,
+  "trade_manwon": null
  },
  "2026타경3600[1]|2026-11-05": {
   "key": "2026타경3600[1]",
