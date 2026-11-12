@@ -10,6 +10,12 @@
 - 그 외(배당요구 없음, 확정일자 없음/늦음) → 보증금 전액 인수로 본다
 - 인수 예상액 > 0 → 숨김, 0 → 포함(대항력 임차인 문제는 해소)
 - 대항력 임차인 보증금이 미상(null)이면 인수액을 알 수 없으므로 숨김 (2026-11-03)
+- 5가지 안전 조건 체크 (2026-11-12): ①배당요구(종기 안) ②확정일자 ③순위(전입 다음날·확정일자가 말소기준보다 앞섬)
+  ④재원(배당 재원으로 전액) ⑤전입유지(현황조사서 점유가 임차인인지, 자료 없으면 None=미확인·판정에 안 씀)
+  → note['checks'] 로 저장, 카드에 한 줄 표시. ①~④ 중 하나라도 실패면 기존처럼 인수액이 생겨 숨김.
+- 전세대출 양도로 같은 임차가 2줄로 나오는 경우 (2026-11-12, 304호 사례: 보증금 1.7억 · 한국주택금융공사만 배당요구):
+  전입일·확정일자·보증금이 같은 행은 1건으로 합치고, 한쪽이라도 배당요구했으면 배당요구 O.
+  배당요구가 엇갈리면(금융기관만 요구) flags 에 '대출 양도 금액 확인' → 안전 대신 보통 등급(표시는 함).
 """
 import json, os, re
 from datetime import datetime, timedelta
@@ -62,7 +68,11 @@ def evaluate(t, prices_manwon, low_manwon):
             if not x.get('deposit_manwon'): x['deposit_manwon'] = dep_t if len(opp) == 1 else None
             if reg and '임차권' not in (x.get('occupant') or ''): x['occupant'] = (x.get('occupant') or '') + '(임차권등기)'
     if not opp:
-        return dict(assumed_manwon=0, opposing=0, lines=['법원 명세서상 대항력 임차인 없음'], ok=True)
+        return dict(assumed_manwon=0, opposing=0, lines=['법원 명세서상 대항력 임차인 없음'], ok=True, checks=None, flags=[])
+    opp, flags = _merge_loan_dup(opp, deadline)
+    occ = (t.get('occupancy') or {}).get('occupant_type') or ''
+    stay = True if '임차' in occ else (None if not occ or '미상' in occ or '불명' in occ else False)
+    checks = dict(배당요구=True, 확정일자=True, 순위=True, 재원=True, 전입유지=stay)
     assumed, lines, unknown = 0, [], 0
     opp.sort(key=lambda x: _d(x.get('fixed_date')) or '9999')
     for x in opp:
@@ -73,13 +83,38 @@ def evaluate(t, prices_manwon, low_manwon):
         dep = int(x.get('deposit_manwon') or 0)
         claimed = bool(x.get('claimed_dividend')) or '임차권' in (x.get('occupant') or '')   # 임차권등기권자는 배당요구 없이도 배당
         if claimed and deadline and _d(x.get('claim_date')) and _d(x.get('claim_date')) > deadline: claimed = False
-        first = claimed and _d(x.get('fixed_date')) and _d(x.get('fixed_date')) < base
+        fx = _d(x.get('fixed_date'))
+        # 우선변제 기준일 = max(전입 다음날 0시, 확정일자). 대항력 임차인은 전입 < 말소기준이라 전입 다음날 ≤ 말소기준(0시가 먼저)
+        # → 확정일자가 말소기준보다 앞서면 1순위. 같은 날이면 동순위(안분)라 보수적으로 실패.
+        first = claimed and fx and fx < base
         pay = int(min(dep, max(0, pool))) if first else 0
+        checks['배당요구'] &= claimed; checks['확정일자'] &= bool(fx); checks['순위'] &= bool(first)
+        checks['재원'] &= (not first) or pay >= dep
         pool -= pay
         assumed += dep - pay
         why = '배당요구·확정일자 선순위 → 배당' if first else ('배당요구 없음' if not claimed else '확정일자 없음/늦음')
         lines.append(f"대항력 임차인 보증금 {dep:,}만 · {why}" + (f" {pay:,}만" if first else ''))
-    return dict(assumed_manwon=int(assumed), opposing=len(opp), lines=lines, unknown=unknown, ok=assumed <= 0 and not unknown)
+    lines += [f'⚠ {f}' for f in flags]
+    return dict(assumed_manwon=int(assumed), opposing=len(opp), lines=lines, unknown=unknown, ok=assumed <= 0 and not unknown,
+                checks=checks, flags=flags)
+
+
+def _merge_loan_dup(opp, deadline):
+    """전입일·확정일자·보증금이 같은 행 = 같은 임차(전세대출 보증기관이 보증금 채권을 양수해 따로 신고) → 1건으로 합침."""
+    groups, out, flags = {}, [], []
+    for x in opp:
+        k = (_d(x.get('move_in')), _d(x.get('fixed_date')), x.get('deposit_manwon'))
+        if not x.get('deposit_manwon'): k = (id(x),)
+        groups.setdefault(k, []).append(x)
+    for g in groups.values():
+        if len(g) == 1: out.append(g[0]); continue
+        ok = [x for x in g if x.get('claimed_dividend') and not (deadline and _d(x.get('claim_date')) and _d(x.get('claim_date')) > deadline)]
+        m = dict(ok[0] if ok else g[0])
+        if ok and len(ok) < len(g):
+            flags.append(f"같은 임차(보증금 {m['deposit_manwon']:,}만)가 {len(g)}줄 — 전세대출 양도로 보여 1건으로 계산. "
+                         '한쪽(보증기관 추정)만 배당요구 → 양도 금액이 보증금 일부면 나머지는 낙찰자 인수, 문건송달내역·비고란 확인 필요')
+        out.append(m)
+    return out, flags
 
 
 SIGNALS = [('취하', '취하'), ('변경', '변경'), ('연기', '연기'), ('정지', '정지'), ('기각', '기각'), ('불허가', '불허가'),
@@ -117,6 +152,7 @@ def apply(items, today):
         hard = reason.startswith('특수물건')
         note = dict(source='법원 매각물건명세서', checked=t.get('checked'), assumed_manwon=ev['assumed_manwon'],
                     opposing_tenants=ev['opposing'], unknown_deposit=ev.get('unknown', 0), lines=ev['lines'],
+                    checks=ev.get('checks'), flags=ev.get('flags') or [],
                     caution='압류(세금)가 말소기준이면 당해세가 임차인보다 먼저 배당될 수 있음' if '압류' in ((rk.get('summary') or {}).get('base_right') or '') else None)
         it['tenant'] = note
         if hard: continue
@@ -125,7 +161,8 @@ def apply(items, today):
         elif not ev['ok']:
             rk.update(decision='hide', reason=f"보증금 인수 예상 약 {ev['assumed_manwon']:,}만 (법원 명세서 기준)"); n += 1
         elif not other:
-            rk.update(decision='show', reason='대항력 임차인 배당으로 전액 변제 예상' if ev['opposing'] else '', tenant_cleared=True); n += 1
+            rk.update(decision='show', reason=('대항력 임차인 배당으로 전액 변제 예상 (5가지 조건 통과)' if ev['opposing'] else '')
+                      + (' · 대출 양도 금액 확인 필요' if ev.get('flags') else ''), tenant_cleared=True); n += 1
         else:
             rk.update(reason=' / '.join(other))
     return n

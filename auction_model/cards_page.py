@@ -4,7 +4,7 @@
 predictions/latest.json → page/index.html (GitHub Pages: https://wpaud16.github.io/ML/auction_model/page/)
 메일 카드(브리핑 v24 CARD)와 같은 내용·같은 표 색을 코드로 만든다. 표시 기준도 메일과 같다:
   - risk.decision == show, safety 안전/보통만, 모델 예측 있는 물건만
-  - 남양주·구리 아파트는 8호선역 도보 15분(직선 920m) 이내만
+  - 구리 아파트는 8호선역 도보 15분(직선 920m) 이내만 (남양주는 2026-11-12 사용자 요청으로 제외)
   python3 cards_page.py [latest.json] [출력 html]
 """
 import json, os, re, sys, html
@@ -60,7 +60,8 @@ def keep(v):
     if (v.get('safety') or {}).get('grade', '보통') not in ('안전', '보통'): return False
     if not v.get('bid_by_prob_eok'): return False
     reg = v.get('region') or ''
-    if v.get('category') == '아파트' and ('남양주' in reg or '구리' in reg):
+    if '남양주' in reg: return False   # 2026-11-12 사용자 요청: 남양주 제외, 구리만 유지
+    if v.get('category') == '아파트' and '구리' in reg:
         s8 = v.get('station8')
         if not s8 or s8['distance_m'] > 920: return False
     if v.get('category') == '아파트' and '하남' in reg:   # 하남은 5호선역 도보 15분(직선 920m) 이내만
@@ -181,6 +182,10 @@ def rights(v, seoul):
         ck = tn.get('checked') or ''
         out.append(f'👤 법원 명세서({md(ck).split("(")[0] if ck else "-"})')
         out += [E(x) for x in (tn.get('lines') or [])]
+        ck = tn.get('checks')
+        if ck and tn.get('opposing_tenants'):   # 2026-11-12 대항력 임차인 5가지 안전 조건
+            mk = lambda b: '미확인' if b is None else ('✅' if b else '❌')
+            out.append('🛡 대항력 체크 ' + ' '.join(f'{c}{k} {mk(ck.get(k))}' for c, k in zip('①②③④⑤', ('배당요구', '확정일자', '순위', '재원', '전입유지'))))
         am = tn.get('assumed_manwon') or 0
         out.append('인수 예상 <b>' + ('0원 (배당으로 전액 변제 예상)' if am == 0 else f'{am:,}만') + '</b>')
         if tn.get('caution'): out.append(f'<span class="g s">{E(tn["caution"])}</span>')
@@ -284,7 +289,7 @@ def region_text():
         city, _, gu = sgg.partition(' ')
         name = f'{sd} {city}' if gu else sd
         by.setdefault(name, []).append((gu or city).removesuffix('구') if gu or sd == '서울' else city)
-    note = {'남양주시': '(8호선역 도보 15분 이내)', '구리시': '(8호선역 도보 15분 이내)', '하남시': '(5호선역 도보 15분 이내)'}
+    note = {'구리시': '(8호선역 도보 15분 이내)', '하남시': '(5호선역 도보 15분 이내)'}
     apt = ' / '.join(f"{k} {'·'.join(v)}" if k != '경기' else '경기 ' + '·'.join(x + note.get(x, '') for x in v) for k, v in by.items())
     ot = rc.get('ot') or []
     ot_t = '서울 전체' if len(ot) >= 25 else '서울 ' + '·'.join(g.removesuffix('구') for g in ot)

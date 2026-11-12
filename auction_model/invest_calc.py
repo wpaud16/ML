@@ -40,6 +40,8 @@ def safety(it):
     for x in ci.get('withdraw_signal') or []:
         if x.get('label') in ('유치권 신고', '불허가'): why.append(f"{x.get('label')} 신호")
     if why: return dict(grade='주의', reasons=why)
+    if t and t.get('flags') and not t.get('assumed_manwon') and not t.get('unknown_deposit'):   # 2026-11-12 대출 양도 2줄 → 확인 필요(표시는 함)
+        return dict(grade='보통', reasons=['인수 0원 예상이나 대출 양도 금액 확인 필요'])
     if t and not t.get('assumed_manwon') and not t.get('unknown_deposit'):
         return dict(grade='안전', reasons=['법원 명세서 기준 인수 금액 0원'] + (['세금 교부청구 있음'] if any(n.get('label') == '세금 교부청구' for n in ci.get('notes') or []) else []))
     return dict(grade='보통', reasons=['리치고 기준 권리 문제 없음 · 법원 명세서 미확인'])

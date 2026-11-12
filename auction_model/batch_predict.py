@@ -19,7 +19,7 @@ import auction_predictor as ap
 
 KST = timezone(timedelta(hours=9))
 REGIONS = [('서울', '강남구'), ('서울', '서초구'), ('서울', '강동구'), ('서울', '광진구'), ('서울', '송파구'),
-           ('경기', '성남시 수정구'), ('경기', '성남시 분당구'), ('경기', '성남시 중원구'), ('경기', '남양주시'), ('경기', '구리시'),
+           ('경기', '성남시 수정구'), ('경기', '성남시 분당구'), ('경기', '성남시 중원구'), ('경기', '구리시'),
            ('경기', '하남시')]
 REGIONS_PATH = os.path.join(HERE, 'search_regions.json')   # 2026-11-08: 검색 지역은 GUI(local_runner/region_gui.pyw)로 수정
 try:
