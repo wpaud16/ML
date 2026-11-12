@@ -21633,6 +21633,16 @@
 "date": "",
 "low_manwon": 7667,
 "fails": 5
+},
+{
+"date": "2026-12-15",
+"low_manwon": 6134,
+"fails": 6
+},
+{
+"date": "",
+"low_manwon": 7667,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -21734,6 +21744,16 @@
 "date": "2026-11-10",
 "low_manwon": 43360,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 43360,
+"fails": 1
+},
+{
+"date": "2026-12-15",
+"low_manwon": 34688,
+"fails": 2
 },
 {
 "date": "",
@@ -21896,6 +21916,16 @@
 "date": "",
 "low_manwon": 5913,
 "fails": 6
+},
+{
+"date": "2026-12-15",
+"low_manwon": 4731,
+"fails": 7
+},
+{
+"date": "",
+"low_manwon": 5913,
+"fails": 6
 }
 ],
 "first_seen": "2026-11-02",
@@ -21914,6 +21944,11 @@
 "rounds": [
 {
 "date": "2026-11-12",
+"low_manwon": 25800,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 25800,
 "fails": 0
 }
@@ -21956,6 +21991,11 @@
 "date": "2026-11-12",
 "low_manwon": 19440,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 19440,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -21994,6 +22034,11 @@
 "rounds": [
 {
 "date": "2026-11-12",
+"low_manwon": 23600,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 23600,
 "fails": 1
 }
@@ -22056,6 +22101,11 @@
 "date": "2026-11-12",
 "low_manwon": 25500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 25500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -22116,6 +22166,11 @@
 "date": "2026-11-12",
 "low_manwon": 14080,
 "fails": 4
+},
+{
+"date": "",
+"low_manwon": 14080,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -22134,6 +22189,11 @@
 "rounds": [
 {
 "date": "2026-11-12",
+"low_manwon": 28900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 28900,
 "fails": 0
 }
@@ -22156,6 +22216,11 @@
 "date": "2026-11-12",
 "low_manwon": 22640,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 22640,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22174,6 +22239,11 @@
 "rounds": [
 {
 "date": "2026-11-12",
+"low_manwon": 24600,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 24600,
 "fails": 0
 }
@@ -22196,6 +22266,11 @@
 "date": "2026-11-12",
 "low_manwon": 33160,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 33160,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -22216,6 +22291,11 @@
 "date": "2026-11-12",
 "low_manwon": 25600,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 25600,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22234,6 +22314,11 @@
 "rounds": [
 {
 "date": "2026-11-12",
+"low_manwon": 10956,
+"fails": 3
+},
+{
+"date": "",
 "low_manwon": 10956,
 "fails": 3
 }
@@ -22296,6 +22381,11 @@
 "date": "2026-11-12",
 "low_manwon": 29840,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 29840,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -22314,6 +22404,11 @@
 "rounds": [
 {
 "date": "2026-11-12",
+"low_manwon": 22800,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 22800,
 "fails": 1
 }
@@ -36303,6 +36398,11 @@
 "date": "",
 "low_manwon": 10400,
 "fails": 1
+},
+{
+"date": "2026-12-15",
+"low_manwon": 8320,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -39943,6 +40043,11 @@
 "date": "",
 "low_manwon": 46500,
 "fails": 0
+},
+{
+"date": "2026-12-15",
+"low_manwon": 37200,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -39968,6 +40073,11 @@
 "date": "",
 "low_manwon": 14305,
 "fails": 4
+},
+{
+"date": "2026-12-15",
+"low_manwon": 11444,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -43960,6 +44070,11 @@
 "date": "",
 "low_manwon": 18200,
 "fails": 0
+},
+{
+"date": "2026-12-15",
+"low_manwon": 14560,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -44090,6 +44205,11 @@
 "date": "",
 "low_manwon": 17536,
 "fails": 6
+},
+{
+"date": "2026-12-15",
+"low_manwon": 14028,
+"fails": 7
 }
 ],
 "first_seen": "2026-11-02",
@@ -51564,6 +51684,16 @@
 "date": "",
 "low_manwon": 10035,
 "fails": 3
+},
+{
+"date": "2026-12-08",
+"low_manwon": 8028,
+"fails": 4
+},
+{
+"date": "",
+"low_manwon": 10035,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -53277,6 +53407,16 @@
 "date": "",
 "low_manwon": 24832,
 "fails": 3
+},
+{
+"date": "2026-12-08",
+"low_manwon": 19865,
+"fails": 4
+},
+{
+"date": "",
+"low_manwon": 24832,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -56465,6 +56605,11 @@
 "date": "",
 "low_manwon": 55800,
 "fails": 0
+},
+{
+"date": "2026-12-15",
+"low_manwon": 44640,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -57131,6 +57276,11 @@
 "date": "",
 "low_manwon": 2952,
 "fails": 10
+},
+{
+"date": "2026-12-15",
+"low_manwon": 2362,
+"fails": 11
 }
 ],
 "first_seen": "2026-11-02",
@@ -57499,11 +57649,16 @@
 "date": "2026-11-05",
 "low_manwon": 50900,
 "fails": 0
+},
+{
+"date": "2026-12-10",
+"low_manwon": 40720,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-05",
+"status": "진행중",
+"last_seen": "2026-11-12",
 "checked": "2026-11-12"
 },
 "C31SMGRO": {
@@ -57782,11 +57937,16 @@
 "date": "2026-11-10",
 "low_manwon": 4100,
 "fails": 0
+},
+{
+"date": "2026-12-15",
+"low_manwon": 3280,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
-"last_seen": "2026-11-10",
+"status": "진행중",
+"last_seen": "2026-11-12",
 "checked": "2026-11-12"
 },
 "C52CRALJ": {
@@ -58828,6 +58988,11 @@
 "date": "",
 "low_manwon": 15500,
 "fails": 0
+},
+{
+"date": "2026-12-15",
+"low_manwon": 12400,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -58883,6 +59048,11 @@
 "date": "",
 "low_manwon": 4361,
 "fails": 8
+},
+{
+"date": "2026-12-15",
+"low_manwon": 3489,
+"fails": 9
 }
 ],
 "first_seen": "2026-11-02",
@@ -58938,6 +59108,11 @@
 "date": "",
 "low_manwon": 833,
 "fails": 16
+},
+{
+"date": "2026-12-15",
+"low_manwon": 666,
+"fails": 17
 }
 ],
 "first_seen": "2026-11-02",
@@ -60347,7 +60522,7 @@
 }
 ],
 "first_seen": "2026-11-02",
-"status": "결과대기",
+"status": "진행중",
 "last_seen": "2026-11-10",
 "checked": "2026-11-12"
 },
@@ -65837,7 +66012,7 @@
 ],
 "first_seen": "2026-11-10",
 "status": "진행중",
-"last_seen": "2026-11-11"
+"last_seen": "2026-11-12"
 },
 "C31YGCHF": {
 "case": "2025타경13712[1]",
@@ -66772,6 +66947,246 @@
 {
 "date": "2026-11-24",
 "low_manwon": 22700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C20BYZJM": {
+"case": "2025타경13781[4]",
+"address": "서울특별시 강서구 화곡동 24-35 빌라드다인  제6층 제601호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 17.19,
+"land_area": 10.04,
+"appr_manwon": 23500,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 23500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C21RVNLZ": {
+"case": "2025타경13781[5]",
+"address": "서울특별시 강서구 화곡동 24-35 빌라드다인  제6층 제602호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 26.8,
+"land_area": 15.65,
+"appr_manwon": 35600,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 35600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C45HJKUZ": {
+"case": "2025타경13781[2]",
+"address": "서울특별시 강서구 화곡동 24-35 빌라드다인  제3층 제301호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 23.18,
+"land_area": 13.54,
+"appr_manwon": 28900,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 28900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C45SHTYY": {
+"case": "2025타경10841[1]",
+"address": "서울특별시 강서구 화곡동 162-7 하나아이파크빌  제4층 제401호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.46,
+"land_area": 36.72,
+"appr_manwon": 26600,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 26600,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C53QRSXK": {
+"case": "2025타경13781[3]",
+"address": "서울특별시 강서구 화곡동 24-35 빌라드다인  제4층 제402호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 29.68,
+"land_area": 33.1,
+"appr_manwon": 38100,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 38100,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C75JCKKB": {
+"case": "2025타경13781[1]",
+"address": "서울특별시 강서구 화곡동 24-35 빌라드다인  제2층 제204호",
+"sgg": "강서구",
+"emd": "화곡동",
+"type": "다세대",
+"area": 23.02,
+"land_area": 13.44,
+"appr_manwon": 28700,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 28700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C52OOBSP": {
+"case": "2025타경104277[1]",
+"address": "서울특별시 관악구 남현동 1064-23 씨에스타운 비동 4층405호",
+"sgg": "관악구",
+"emd": "남현동",
+"type": "다세대",
+"area": 28.33,
+"land_area": 22.4,
+"appr_manwon": 29900,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 29900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C03GQQSK": {
+"case": "2025타경12201[1]",
+"address": "서울특별시 양천구 신월동 197-26  제2층 제202호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 44.41,
+"land_area": 22.16,
+"appr_manwon": 15900,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 15900,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C24WOEZY": {
+"case": "2025타경12201[2]",
+"address": "서울특별시 양천구 신월동 49-2  제3층 제302호",
+"sgg": "양천구",
+"emd": "신월동",
+"type": "다세대",
+"area": 41.2,
+"land_area": 28.11,
+"appr_manwon": 16300,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 16300,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C83UPPRU": {
+"case": "2025타경2751[1]",
+"address": "서울특별시 중구 충무로1가 24-1 밀리오레명동  12층1220호",
+"sgg": "중구",
+"emd": "충무로1가",
+"type": "연립",
+"area": 27.96,
+"land_area": 4.01,
+"appr_manwon": 43700,
+"rounds": [
+{
+"date": "2026-11-26",
+"low_manwon": 43700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C09ZBRDY": {
+"case": "2025타경5995[1]",
+"address": "서울특별시 중랑구 면목동 1-20 ",
+"sgg": "중랑구",
+"emd": "면목동",
+"type": "연립",
+"area": 196,
+"land_area": 101.1,
+"appr_manwon": 104721,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 104721,
+"fails": 0
+}
+],
+"first_seen": "2026-11-12",
+"status": "진행중",
+"last_seen": "2026-11-12"
+},
+"C58CTANK": {
+"case": "2025타경13929[1]",
+"address": "서울특별시 중랑구 묵동 128-76 뜨라네  5층 502호",
+"sgg": "중랑구",
+"emd": "묵동",
+"type": "연립",
+"area": 29.65,
+"land_area": 18.62,
+"appr_manwon": 22400,
+"rounds": [
+{
+"date": "2026-11-24",
+"low_manwon": 22400,
 "fails": 0
 }
 ],
