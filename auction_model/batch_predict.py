@@ -287,8 +287,9 @@ def update_results(today):
         if rid in res and 'trade_manwon' not in res[rid]:
             res[rid]['trade_manwon'] = trade_manwon(dict(it, **(res[rid].get('rescored_pred') or {})))   # 예전 기록 채우기
         # 법원에서 먼저 확인한 매각은 리치고에 응찰자 수가 올라올 때까지 다시 확인 (2026-11-11)
+        # 2026-11-12: 법원 결과는 나중에 바로잡힐 수 있어(덕현: 변경→매각) 리치고 인원이 채워질 때까지 매번 다시 맞춤
         if rid in res and res[rid]['status'] in ('매각', '유찰', '변경', '취하', '기각', '정지') \
-                and not (res[rid].get('source') == '법원' and res[rid]['status'] == '매각' and res[rid].get('bidders') is None): continue
+                and not (res[rid].get('source') == '법원' and res[rid].get('bidders') is None): continue
         page = auction_detail(it['auction_id'])
         status, actual, bidders, second = '결과대기', None, None, None
         if page:
@@ -328,7 +329,7 @@ def update_results(today):
     json.dump(dict(sorted(res.items())), open(RESULTS_PATH, 'w'), ensure_ascii=False, indent=1)
     lo = str((datetime.fromisoformat(today) - timedelta(days=7)).date())
     recent = sorted([r for r in res.values() if lo <= r['bidding_date'] < today], key=lambda r: r['bidding_date'], reverse=True)
-    sold = [r for r in recent if r['status'] == '매각']
+    sold = [r for r in recent if r['status'] == '매각' and r.get('diff_pct') is not None]   # 법원 '매각'인데 가격 미확인은 오차 계산에서 뺌
     summ = dict(window=f'{lo}~{today}', n_checked=len(recent), n_sold=len(sold))
     if sold:
         e = [abs(r['diff_pct']) for r in sold]

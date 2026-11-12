@@ -26,12 +26,19 @@ def pending(today):
         for k, it in (json.load(open(os.path.join(PRED, fn), encoding='utf-8')).get('items') or {}).items():
             bd = it.get('bidding_date') or ''
             if lo <= bd < today and fn[:10] <= bd and it.get('court'):
-                last[f'{k}|{bd}'] = dict(rid=f'{k}|{bd}', key=k, court=it['court'], bidding_date=bd)
+                last[f'{k}|{bd}'] = dict(rid=f'{k}|{bd}', key=k, court=it['court'], bidding_date=bd,
+                                         category=it.get('category', '아파트'), low_manwon=it.get('low_manwon'))
     try:   # 법원에서 이미 결과를 받은 물건은 다시 조회하지 않음 (성적표 제외 물건이 매번 다시 조회되던 문제)
         C = json.load(open(os.path.join(PRED, 'court_results.json'), encoding='utf-8'))
     except Exception:
         C = {}
-    out = [v for rid, v in last.items() if (res.get(rid) or {}).get('status') not in FINAL and rid not in C]
+
+    def unsure(c):   # 2026-11-12 덕현: 최근입찰결과 미갱신으로 '변경'이라 추정했던 것·가격 없는 매각은 다시 확인
+        t = c.get('text') or ''
+        return (c.get('status') == '매각' and not c.get('actual_manwon')) or t.startswith('그 기일 진행 안 함')
+    out = [v for rid, v in last.items()
+           if (rid not in C and (res.get(rid) or {}).get('status') not in FINAL)
+           or (rid in C and unsure(C[rid]) and (res.get(rid) or {}).get('source') != '리치고')]
     return sorted(out, key=lambda v: v['bidding_date'], reverse=True)   # 최근 기일부터 (시간 한도에 걸려도 성적표 위쪽이 먼저 채워지게)
 
 

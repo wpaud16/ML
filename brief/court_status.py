@@ -145,6 +145,13 @@ def parse_result(info, item_rows, bidding_date):
                 return dict(status=w if w != '연기' else '변경', text=last)
         return None
     stage = (kv.get('물건상태') or '').split('->')[-1].strip()
+    lm0 = re.match(r'(\d{4})\.(\d{2})\.(\d{2})', last)
+    if '매각(' in last and lm0 and not last.startswith(want):
+        # 다른 날 이미 매각된 물건 (리치고가 기일만 바꿔 다시 올린 것, 예: 2025타경51488 11/03 매각 → 11/04 기록)
+        return dict(status='변경', text=f'다른 기일에 매각 ({last.splitlines()[0]})')
+    if stage in ('매각', '매각허가', '매각허가결정', '대금납부', '배당', '배당종결') and (not lm0 or ''.join(lm0.groups()) < want.replace('.', '')):
+        # 2026-11-12: 덕현(2025타경72200) 11/11 매각인데 최근입찰결과가 '2026.10.07 유찰'로 남아 '변경'으로 잘못 기록 → 물건상태 '매각'이면 매각 (가격은 매각결과검색에서)
+        return dict(status='매각', text=f'물건상태 {stage} (최근입찰결과 미갱신: {last})')
     if stage == '유찰' and not last:   # 최근입찰결과가 비어 있고 물건상태만 '유찰' (예: 2026타경50257, 11/10)
         return dict(status='유찰', text=f'물건상태 {stage}')
     for w in ('취하', '기각', '정지', '변경', '연기', '취소'):
@@ -197,8 +204,93 @@ def fetch_results(items, log=print, budget_sec=1500):
                         except Exception: pass
                         s = tj.Scraper(pw)
                 time.sleep(random.uniform(4, 6))
+            # 매각인데 가격이 없는 것 (최근입찰결과 미갱신) → 매각결과검색에서 가격
+            need = [v for v in items if (out.get(v['rid']) or {}).get('status') == '매각' and not out[v['rid']].get('actual_manwon')]
+            if need and time.time() - t0 < budget_sec:
+                try:
+                    for rid, amt in fetch_prices(need, log=log, pg=s.page).items():
+                        out[rid]['actual_manwon'] = amt; out[rid]['text'] += f' · 매각결과검색 {amt:,}만원'
+                except Exception as e:
+                    log(f'매각가 확인 실패: {str(e)[:100]}')
         finally:
             s.close()
+    return out
+
+
+RSLT_URL = 'https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ158M00.xml'
+
+
+def _manwon(label):
+    m = re.fullmatch(r'(?:(\d+)억)?(?:(\d+)천만)?원', label.replace(' ', ''))
+    return (int(m.group(1) or 0) * 10000 + int(m.group(2) or 0) * 1000) if m else None
+
+
+def _sale_search(pg, court, typ, low_min_manwon, log):
+    """법원 '매각결과검색'(PGJ158M00): 그 법원·용도의 최근 매각 물건 (매각가 maeAmt 포함). 사건 조회의 '최근입찰결과'가 늦게 갱신될 때 가격 확인용."""
+    import json as _j
+    pg.goto(RSLT_URL, wait_until='networkidle'); pg.wait_for_timeout(2500)
+    pg.select_option('#mf_wfm_mainFrame_sbx_dspslRsltSrchCortOfc', label=court.split()[-1]); pg.wait_for_timeout(1200)
+    pg.select_option('#mf_wfm_mainFrame_sbx_dspslRsltSrchLclLst', label='건물'); pg.wait_for_timeout(1000)
+    pg.select_option('#mf_wfm_mainFrame_sbx_dspslRsltSrchMclLst', label='주거용건물'); pg.wait_for_timeout(1000)
+    pg.select_option('#mf_wfm_mainFrame_sbx_dspslRsltSrchSclLst', label=typ); pg.wait_for_timeout(800)
+    pg.select_option('#mf_wfm_mainFrame_sbx_dspslRsltLst', label='매각'); pg.wait_for_timeout(800)
+    opts = pg.eval_on_selector('#mf_wfm_mainFrame_sbx_dspslRsltSrchDspslAmtMin', 'e=>[...e.options].map(o=>o.text)')
+    ok = [o for o in opts if _manwon(o) and _manwon(o) <= low_min_manwon * 0.9]
+    if ok:
+        pg.select_option('#mf_wfm_mainFrame_sbx_dspslRsltSrchDspslAmtMin', label=max(ok, key=_manwon)); pg.wait_for_timeout(800)
+
+    def go(click):
+        with pg.expect_response(lambda r: 'DspslSchdRslt' in r.url, timeout=25000) as ri:
+            click()
+        j = _j.loads(ri.value.text())
+        if '차단' in (j.get('message') or ''):
+            raise RuntimeError('법원 차단: ' + j.get('message'))
+        d = j.get('data') or {}
+        return d.get('dlt_srchResult') or [], int((d.get('dma_pageInfo') or {}).get('totalCnt') or 0)
+
+    rows, tot = go(lambda: pg.click('#mf_wfm_mainFrame_btn_dspslRsltSrch'))
+    if tot > len(rows):
+        pg.wait_for_timeout(2000)
+        try:   # 페이지당 40건 (선택하면 바로 다시 조회됨)
+            rows, tot = go(lambda: pg.select_option('#mf_wfm_mainFrame_sbx_pageSize', label='40'))
+        except Exception as e:
+            log(f'매각결과 페이지 크기 변경 실패: {str(e)[:80]}')
+        n, seen = 2, {r.get('docid') for r in rows}
+        while len(seen) < tot and n <= 12:
+            pg.wait_for_timeout(2500)
+            try:
+                loc = pg.locator(f'#mf_wfm_mainFrame_pgl_gdsDtlSrchPage_page_{n}')
+                if not loc.count():
+                    loc = pg.locator('#mf_wfm_mainFrame_pgl_gdsDtlSrchPage_next_btn')   # 페이지 번호 묶음 다음
+                more, _ = go(lambda: loc.first.click(force=True))
+            except Exception as e:
+                log(f'매각결과 {n}쪽 실패: {str(e)[:80]}'); break
+            new = [r for r in more if r.get('docid') not in seen]
+            if not new: break
+            rows += new; seen |= {r.get('docid') for r in new}; n += 1
+    return rows
+
+
+def fetch_prices(items, log=print, pg=None):
+    """items: dict(rid, key, court, bidding_date, category, low_manwon) — 법원 '매각'인데 가격이 없는 것 → {rid: actual_manwon}."""
+    import random
+    groups = {}
+    for v in items:
+        groups.setdefault((v.get('court'), '오피스텔' if v.get('category') == '오피스텔' else '아파트'), []).append(v)
+    out = {}
+    for (court, typ), vs in groups.items():
+        try:
+            rows = _sale_search(pg, court, typ, min(v.get('low_manwon') or 10 ** 6 for v in vs), log)
+        except Exception as e:
+            log(f'매각결과검색 실패 {court} {typ}: {str(e)[:100]}'); continue
+        idx = {(r.get('srnSaNo'), str(r.get('maemulSer')), r.get('maeGiil')): r for r in rows}
+        for v in vs:
+            m = re.fullmatch(r'(\d{4}타경\d+)\[(\d+)\]', v['key'])
+            r = idx.get((m.group(1), m.group(2), v['bidding_date'].replace('-', ''))) if m else None
+            if r and r.get('maeAmt'):
+                out[v['rid']] = int(int(r['maeAmt']) / 1e4)
+            log(f"매각가 {v['rid']}: {out.get(v['rid'])} (검색 {len(rows)}건)")
+        pg.wait_for_timeout(random.uniform(5000, 8000))
     return out
 
 
