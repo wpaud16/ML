@@ -3571,7 +3571,7 @@
   "trade_manwon": null
  },
  "2025타경1884[1]|2026-11-11": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경1884[1]",
   "auction_id": "C24UWHEB",
   "category": "아파트",
@@ -3598,8 +3598,8 @@
   "sise_manwon": 24020,
   "trade_manwon": 23980,
   "actual_manwon": 18388,
-  "bidders": null,
-  "second_manwon": null,
+  "bidders": 11,
+  "second_manwon": 18109,
   "diff_pct": -3.4,
   "band": "40% 미만",
   "closest": {
@@ -6045,7 +6045,7 @@
   "trade_manwon": 12950
  },
  "2025타경72100[1]|2026-11-11": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경72100[1]",
   "auction_id": "C27OPZQB",
   "category": "아파트",
@@ -6072,8 +6072,8 @@
   "sise_manwon": 110240,
   "trade_manwon": 107890,
   "actual_manwon": 103019,
-  "bidders": null,
-  "second_manwon": null,
+  "bidders": 2,
+  "second_manwon": 102100,
   "diff_pct": -2.3,
   "band": "40% 미만",
   "closest": {
@@ -6085,7 +6085,7 @@
   }
  },
  "2025타경72113[1]|2026-11-11": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경72113[1]",
   "auction_id": "C17YOFBP",
   "category": "아파트",
@@ -6112,8 +6112,8 @@
   "sise_manwon": 51520,
   "trade_manwon": 51010,
   "actual_manwon": 50456,
-  "bidders": null,
-  "second_manwon": null,
+  "bidders": 22,
+  "second_manwon": 49777,
   "diff_pct": 9.8,
   "band": "60% 초과",
   "closest": {
@@ -6125,7 +6125,7 @@
   }
  },
  "2025타경72126[1]|2026-11-11": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경72126[1]",
   "auction_id": "C40AXGLD",
   "category": "아파트",
@@ -6152,8 +6152,8 @@
   "sise_manwon": 42970,
   "trade_manwon": 42770,
   "actual_manwon": 38380,
-  "bidders": null,
-  "second_manwon": null,
+  "bidders": 8,
+  "second_manwon": 38283,
   "diff_pct": -1.0,
   "band": "40~45%",
   "closest": {
@@ -6165,7 +6165,7 @@
   }
  },
  "2025타경72160[1]|2026-11-11": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경72160[1]",
   "auction_id": "C19AWAFE",
   "category": "아파트",
@@ -6192,8 +6192,8 @@
   "sise_manwon": 59150,
   "trade_manwon": 59170,
   "actual_manwon": 53190,
-  "bidders": null,
-  "second_manwon": null,
+  "bidders": 5,
+  "second_manwon": 51023,
   "diff_pct": 2.6,
   "band": "60% 초과",
   "closest": {
@@ -6205,7 +6205,7 @@
   }
  },
  "2025타경72200[1]|2026-11-11": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경72200[1]",
   "auction_id": "C49LSPHG",
   "category": "아파트",
@@ -6232,8 +6232,8 @@
   "sise_manwon": 107630,
   "trade_manwon": 103590,
   "actual_manwon": 95188,
-  "bidders": null,
-  "second_manwon": null,
+  "bidders": 11,
+  "second_manwon": 92899,
   "diff_pct": 0.5,
   "band": "50~55%",
   "closest": {
