@@ -552,13 +552,16 @@ h1{font-size:19px;margin:6px 0 2px} .meta{color:var(--mut);font-size:12px;margin
 .sub-t.on{border-color:#1a73e8;color:#1a73e8!important;font-weight:bold}
 .js .subs{display:none} .js .subs.on{display:flex}
 .js .pane,.js .mainh,.js .pane-note{display:none} .js .pane.on,.js .pane-note.on{display:block}
-.dchips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
-.dchips a{border:1px dashed var(--bd);border-radius:12px;padding:2px 9px;font-size:12px;color:var(--fg);text-decoration:none}
-.dh{font-size:13px;color:var(--mut);margin:14px 0 6px;scroll-margin-top:110px;border-left:3px solid #1a73e8;padding-left:7px}
+.dchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 0 10px;padding:7px 0;
+ position:sticky;top:var(--navh,88px);z-index:1;background:var(--bg);border-bottom:1px solid var(--bd)}
+.dchips::-webkit-scrollbar{display:none}
+.dchips a{border:1px dashed var(--bd);border-radius:12px;padding:2px 9px;font-size:12px;color:var(--fg);text-decoration:none;white-space:nowrap}
+.dchips a.on{border-style:solid;border-color:#1a73e8;color:#1a73e8;font-weight:bold}
+.dh{font-size:13px;color:var(--mut);margin:14px 0 6px;scroll-margin-top:calc(var(--stk,130px) + 6px);border-left:3px solid #1a73e8;padding-left:7px}
 .pane{scroll-margin-top:110px}
 h2{font-size:19px;margin:22px 0 6px;padding-bottom:4px;border-bottom:2px solid var(--bd)}
 h3{font-size:15px;margin:16px 0 8px}
-.card{border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px;overflow:hidden;scroll-margin-top:115px}
+.card{border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px;overflow:hidden;scroll-margin-top:calc(var(--stk,130px) + 6px)}
 .card:target{outline:3px solid #1a73e8}
 .t{font-weight:bold;font-size:15px} .hh{font-weight:normal;color:var(--mut);font-size:12px}
 .g{color:var(--mut)} .s{font-size:12px} .n{font-weight:normal;font-size:13px}
@@ -598,7 +601,16 @@ function showPane(pid,noSave){var p=D.getElementById(pid);if(!p)return;var m=p.g
  $$('.pane').forEach(function(x){x.classList.toggle('on',x===p);});
  $$('.pane-note').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-main')==m);});
  $$('.sub-t').forEach(function(s){s.classList.toggle('on',s.getAttribute('data-pane')==pid);});
- if(!noSave){save('pane-'+m,pid);save('main',m);}}
+ if(!noSave){save('pane-'+m,pid);save('main',m);}setH();}
+/* 날짜 칸 고정 (2026-11-12): 메뉴 높이 → --navh, 메뉴+날짜칸 → --stk, 지금 보는 날짜 칩 강조 */
+function setH(){var n=D.querySelector('.nav');var nh=n?n.offsetHeight:0;R.style.setProperty('--navh',nh+'px');
+ var c=D.querySelector('.pane.on .dchips');R.style.setProperty('--stk',(nh+(c?c.offsetHeight:0))+'px');spy();}
+function spy(){var c=D.querySelector('.pane.on .dchips');if(!c)return;var lim=c.getBoundingClientRect().bottom+12,cur=null;
+ $$('.pane.on .dh').forEach(function(h){if(h.getBoundingClientRect().top<=lim)cur=h.id;});
+ c.querySelectorAll('a').forEach(function(a){var on=a.getAttribute('href')=='#'+cur;if(on!=a.classList.contains('on')){a.classList.toggle('on',on);
+  if(on&&a.scrollIntoView&&c.scrollWidth>c.clientWidth)c.scrollLeft=a.offsetLeft-c.clientWidth/2+a.offsetWidth/2;}});}
+var tk=0;window.addEventListener('scroll',function(){if(!tk){tk=1;requestAnimationFrame(function(){tk=0;spy();});}},{passive:true});
+window.addEventListener('resize',setH);
 function firstPane(m){var k=load('pane-'+m);if(k&&D.getElementById(k))return k;var p=D.querySelector('.pane[id][data-main="'+m+'"]');return p&&p.id;}
 function go(h,scroll){if(!h)return false;var el=D.getElementById(h);if(!el)return false;
  if(el.classList.contains('tab')||el.classList.contains('mainh')){var pid=firstPane(el.getAttribute('data-main')||h);if(pid)showPane(pid);window.scrollTo(0,0);return true;}
