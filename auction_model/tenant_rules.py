@@ -11,7 +11,7 @@
 - 인수 예상액 > 0 → 숨김, 0 → 포함(대항력 임차인 문제는 해소)
 - 대항력 임차인 보증금이 미상(null)이면 인수액을 알 수 없으므로 숨김 (2026-11-03)
 """
-import json, os
+import json, os, re
 from datetime import datetime, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -35,6 +35,16 @@ def _d(s):
     return (s or '')[:10] or None
 
 
+def _text_tenant(t):
+    """명세서 '매수인에게 인수되는 권리' 칸에 대항력 임차인/임차권등기가 적혀 있으면 (보증금 만원 또는 None, 임차권등기 여부).
+    없으면 None. (2026-11-12: 2025타경103241 — 표에는 보증금 칸이 비어 0으로 읽혔고 이 칸에만 1억8500만 인수가 적혀 있었음)"""
+    a = re.sub(r'\s+', ' ', t.get('assumed_rights_text') or '')
+    if '임차' not in a or not ('인수' in a or '대항' in a): return None
+    m = re.search(r'보증금[^0-9]{0,15}([\d,]{7,})\s*원', a)
+    dep = int(m.group(1).replace(',', '')) // 10000 if m else None
+    return dep, '임차권' in a
+
+
 def evaluate(t, prices_manwon, low_manwon):
     """t: tenants/latest.json 의 한 물건. → dict(assumed_manwon, opposing, lines, ok)."""
     base = _d(t.get('base_right_date'))
@@ -42,13 +52,21 @@ def evaluate(t, prices_manwon, low_manwon):
     deadline = _d(t.get('dividend_deadline'))
     bid = (prices_manwon or {}).get('40%') or low_manwon or 0
     pool = bid * POOL_RATE - COST_MANWON
-    opp = [x for x in t.get('tenants') or [] if _d(x.get('move_in')) and _d(x.get('move_in')) < base]
+    opp = [dict(x) for x in t.get('tenants') or [] if _d(x.get('move_in')) and _d(x.get('move_in')) < base]
+    tt = _text_tenant(t)
+    if tt:
+        dep_t, reg = tt
+        if not opp:   # 표에서 못 잡았어도 명세서 문구에 대항력 임차인이 있으면 그 보증금 전액 인수로 본다
+            opp = [dict(deposit_manwon=dep_t, claimed_dividend=False, fixed_date=None, occupant='임차권' if reg else '')]
+        for x in opp:
+            if not x.get('deposit_manwon'): x['deposit_manwon'] = dep_t if len(opp) == 1 else None
+            if reg and '임차권' not in (x.get('occupant') or ''): x['occupant'] = (x.get('occupant') or '') + '(임차권등기)'
     if not opp:
         return dict(assumed_manwon=0, opposing=0, lines=['법원 명세서상 대항력 임차인 없음'], ok=True)
     assumed, lines, unknown = 0, [], 0
     opp.sort(key=lambda x: _d(x.get('fixed_date')) or '9999')
     for x in opp:
-        if x.get('deposit_manwon') is None:
+        if not x.get('deposit_manwon'):   # 0 은 명세서 보증금 칸이 빈 경우 → 미상으로 본다
             unknown += 1
             lines.append('대항력 임차인 보증금 미상 → 인수액 알 수 없음')
             continue
