@@ -16,6 +16,14 @@ WD = '월화수목금토일'
 E = html.escape
 
 
+def day_label(d):
+    """'2026-11-12' → '11/12(목)'."""
+    try:
+        t = datetime.strptime(d, '%Y-%m-%d'); return f'{t.month}/{t.day}({WD[t.weekday()]})'
+    except Exception:
+        return d or '기일 미정'
+
+
 def eok(x, nd=2):
     return f'{x:.{nd}f}' if x is not None else '-'
 
@@ -531,11 +539,26 @@ CSS = """
 body{margin:0;background:var(--bg);color:var(--fg);font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;font-size:14px;line-height:1.55}
 .wrap{max-width:600px;margin:0 auto;padding:12px 16px 40px}
 h1{font-size:19px;margin:6px 0 2px} .meta{color:var(--mut);font-size:12px;margin-bottom:10px}
-.nav{position:sticky;top:0;background:var(--bg);padding:8px 0;display:flex;gap:8px;flex-wrap:wrap;z-index:2;border-bottom:1px solid var(--bd)}
-.nav a{border:1px solid var(--bd);border-radius:16px;padding:4px 12px;color:var(--fg);text-decoration:none;font-size:13px}
+.nav{position:sticky;top:0;background:var(--bg);padding:8px 0 6px;z-index:2;border-bottom:1px solid var(--bd)}
+.nav a{color:var(--fg);text-decoration:none;white-space:nowrap}
+.nav b{font-weight:600;opacity:.75;font-size:12px}
+.tabs{display:flex;gap:6px}
+.tab{flex:1;text-align:center;border:1px solid var(--bd);border-radius:10px;padding:7px 4px;font-size:14px;font-weight:bold}
+.tab.on{background:#1a73e8;border-color:#1a73e8;color:#fff!important}
+.tab.on b{opacity:.9}
+.subs{display:flex;gap:6px;overflow-x:auto;padding-top:7px;scrollbar-width:none}
+.subs::-webkit-scrollbar{display:none}
+.sub-t{border:1px solid var(--bd);border-radius:16px;padding:4px 11px;font-size:13px}
+.sub-t.on{border-color:#1a73e8;color:#1a73e8!important;font-weight:bold}
+.js .subs{display:none} .js .subs.on{display:flex}
+.js .pane,.js .mainh,.js .pane-note{display:none} .js .pane.on,.js .pane-note.on{display:block}
+.dchips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.dchips a{border:1px dashed var(--bd);border-radius:12px;padding:2px 9px;font-size:12px;color:var(--fg);text-decoration:none}
+.dh{font-size:13px;color:var(--mut);margin:14px 0 6px;scroll-margin-top:110px;border-left:3px solid #1a73e8;padding-left:7px}
+.pane{scroll-margin-top:110px}
 h2{font-size:19px;margin:22px 0 6px;padding-bottom:4px;border-bottom:2px solid var(--bd)}
 h3{font-size:15px;margin:16px 0 8px}
-.card{border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px;overflow:hidden;scroll-margin-top:60px}
+.card{border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:12px;overflow:hidden;scroll-margin-top:115px}
 .card:target{outline:3px solid #1a73e8}
 .t{font-weight:bold;font-size:15px} .hh{font-weight:normal;color:var(--mut);font-size:12px}
 .g{color:var(--mut)} .s{font-size:12px} .n{font-weight:normal;font-size:13px}
@@ -564,6 +587,28 @@ JS = """
 (function(){var t=new Date();var k=new Date(t.getTime()+9*3600e3);var today=Date.UTC(k.getUTCFullYear(),k.getUTCMonth(),k.getUTCDate());
 document.querySelectorAll('.dday').forEach(function(e){var p=e.getAttribute('data-d').split('-');var d=Date.UTC(+p[0],+p[1]-1,+p[2]);
 var n=Math.round((d-today)/864e5);e.textContent=n>0?('D-'+n):(n==0?'D-day':'기일 지남');});})();
+(function(){ /* 탭: 아파트·오피스텔·성적표 → 하위 칸 (2026-11-12) */
+var D=document,R=D.documentElement;R.classList.add('js');
+function $$(s){return Array.prototype.slice.call(D.querySelectorAll(s));}
+function save(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function load(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function showPane(pid,noSave){var p=D.getElementById(pid);if(!p)return;var m=p.getAttribute('data-main');
+ $$('.tab').forEach(function(t){t.classList.toggle('on',t.getAttribute('data-main')==m);});
+ $$('.subs').forEach(function(s){s.classList.toggle('on',s.getAttribute('data-main')==m);});
+ $$('.pane').forEach(function(x){x.classList.toggle('on',x===p);});
+ $$('.pane-note').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-main')==m);});
+ $$('.sub-t').forEach(function(s){s.classList.toggle('on',s.getAttribute('data-pane')==pid);});
+ if(!noSave){save('pane-'+m,pid);save('main',m);}}
+function firstPane(m){var k=load('pane-'+m);if(k&&D.getElementById(k))return k;var p=D.querySelector('.pane[id][data-main="'+m+'"]');return p&&p.id;}
+function go(h,scroll){if(!h)return false;var el=D.getElementById(h);if(!el)return false;
+ if(el.classList.contains('tab')||el.classList.contains('mainh')){var pid=firstPane(el.getAttribute('data-main')||h);if(pid)showPane(pid);window.scrollTo(0,0);return true;}
+ var p=el.closest?el.closest('.pane[id]'):null;if(!p)return false;showPane(p.id);
+ if(scroll){if(el===p)window.scrollTo(0,0);else setTimeout(function(){el.scrollIntoView();},0);}return true;}
+$$('.tab').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var pid=firstPane(t.getAttribute('data-main'));if(pid){showPane(pid);history.replaceState(null,'','#'+pid);}window.scrollTo(0,0);});});
+$$('.sub-t').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var pid=t.getAttribute('data-pane');showPane(pid);history.replaceState(null,'','#'+pid);window.scrollTo(0,0);});});
+window.addEventListener('hashchange',function(){go(location.hash.slice(1),true);});
+if(!go(location.hash.slice(1),true)){var m=load('main')||'apt';var pid=firstPane(m)||firstPane('apt');if(pid)showPane(pid,true);}
+})();
 """
 
 
@@ -601,41 +646,74 @@ def build(src, dst):
         s = ((RS.get(rid) or {}).get('status') == '매각', rid in RS, bd)
         if k not in one or s > one[k][0]: one[k] = (s, rid)
     tracked = {rid: tracked[rid] for _, rid in one.values()}
+    # 2026-11-12 사용자 요청: 아파트·오피스텔·성적표를 탭으로, 그 안을 7일 이내·그 이후·기일 지남 등으로 나누고 날짜별로 바로 이동
     parts, nav, total = [], [], {}
+    subnav = {}   # main -> [(pane_id, label, n)]
+
+    def pane(main, pid, label, n, inner, dates=None):
+        subnav.setdefault(main, []).append((pid, label.split(' · ')[0].replace(' (참고)', ''), n))
+        chips = ''
+        if dates and len(dates) > 1:
+            chips = '<div class="dchips">' + ''.join(f'<a href="#{pid}-{d}">{day_label(d)} <b>{c}</b></a>' for d, c in dates) + '</div>'
+        parts.append(f'<section class="pane" id="{pid}" data-main="{main}"><h3>{label} ({n}건)</h3>{chips}{inner}</section>')
+
+    def by_date(pid, rows, render):
+        """같은 날짜끼리 묶어 날짜 제목(id={pid}-YYYY-MM-DD)을 달고 카드 출력 → (html, [(날짜, 건수)])."""
+        out, dates, cur = [], [], None
+        for x in rows:
+            bd = (x[1] if isinstance(x, tuple) else x).get('bidding_date') or ''
+            if bd != cur:
+                cur = bd; dates.append([bd, 0])
+                out.append(f'<h4 class="dh" id="{pid}-{bd}">{day_label(bd)}</h4>')
+            dates[-1][1] += 1
+            out.append(render(x))
+        html = ''.join(out)
+        for d, c in dates:
+            html = html.replace(f'id="{pid}-{d}">{day_label(d)}</h4>', f'id="{pid}-{d}">{day_label(d)} · {c}건</h4>', 1)
+        return html, dates
+
     for cat, title, anchor in (('아파트', '🏢 아파트', 'apt'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)', 'ot')):
         xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v.get('bidding_date') or '9999', v.get('danji_name') or ''))
         nt = [v for v in xs if v.get('no_trade_12m') is True]   # 1년 실거래 0건 → 따로 (2026-11-05 사용자 결정: 예측 오차 큼)
         xs = [v for v in xs if v.get('no_trade_12m') is not True]
         total[cat] = len(xs)
-        nav.append(f'<a href="#{anchor}">{title.split(" (")[0]} {len(xs)}</a>')
-        parts.append(f'<h2 id="{anchor}">{title} · {len(xs)}건</h2>')
-        groups = (('🔔 7일 이내', [v for v in xs if today <= (v.get('bidding_date') or '') <= soon]),
-                  ('📅 그 이후', [v for v in xs if (v.get('bidding_date') or '9999') > soon]))
-        for lab, g in groups:
+        nav.append((anchor, title.split(' (')[0], len(xs)))
+        parts.append(f'<h2 class="mainh" id="{anchor}" data-main="{anchor}">{title} · {len(xs)}건</h2>')
+        groups = (('soon', '🔔 7일 이내', [v for v in xs if today <= (v.get('bidding_date') or '') <= soon]),
+                  ('later', '📅 그 이후', [v for v in xs if (v.get('bidding_date') or '9999') > soon]))
+        for sid, lab, g in groups:
             if not g: continue
-            parts.append(f'<h3>{lab} ({len(g)}건)</h3>')
-            parts += [card(v, today) for v in g]
+            html, dates = by_date(f'{anchor}-{sid}', g, lambda v: card(v, today))
+            pane(anchor, f'{anchor}-{sid}', lab, len(g), html, dates)
         past = sorted(((rid, v) for rid, v in tracked.items() if (v.get('category') or '아파트') == cat),
                       key=lambda x: (x[1].get('bidding_date') or '', x[1].get('danji_name') or ''), reverse=True)
         if past:
-            parts.append(f'<h3 id="past-{anchor}">⏳ 기일 지남 · 최근 2주 ({len(past)}건)</h3>')
-            parts += [card(v, today, cid=card_id(v.get('auction_id'), v.get('bidding_date')), res=RS.get(rid)) for rid, v in past]
-        if not xs: parts.append('<p class="g">표시할 물건 없음</p>')
+            html, dates = by_date(f'past-{anchor}', past, lambda x: card(x[1], today, cid=card_id(x[1].get('auction_id'), x[1].get('bidding_date')), res=RS.get(x[0])))
+            pane(anchor, f'past-{anchor}', '⏳ 기일 지남 · 최근 2주', len(past), html, dates)
+        if not xs and not past: parts.append(f'<p class="g pane" data-main="{anchor}">표시할 물건 없음</p>')
         if nt:
-            parts.append(f'<h3>🔍 실거래 없음 (참고) · {len(nt)}건</h3><p class="g s">최근 1년 같은 평형 실거래가 없어 시세가 불확실한 물건 — '
-                         '백테스트에서 이런 물건은 평균 오차 약 6.1% (다른 물건 4.6%), 메일에는 넣지 않음</p>')
-            parts += [card(v, today) for v in nt]
+            pane(anchor, f'{anchor}-nt', '🔍 실거래 없음 (참고)', len(nt),
+                 '<p class="g s">최근 1년 같은 평형 실거래가 없어 시세가 불확실한 물건 — 백테스트에서 이런 물건은 평균 오차 약 6.1% (다른 물건 4.6%), 메일에는 넣지 않음</p>'
+                 + ''.join(card(v, today) for v in nt))
         # 예측 불가(단지 못 찾음) 물건은 표시하지 않음 (2026-11-05 사용자 요청: 이상한 물건이 많음)
     res = results_14d(today, RS, tracked)
-    nav.append('<a href="#score">📊 성적표</a>')
-    parts.append('<h2 id="score">📊 모델 성적표 (최근 14일)</h2>')
+    nav.append(('score', '📊 성적표', None))
+    parts.append('<h2 class="mainh" id="score" data-main="score">📊 모델 성적표 (최근 14일)</h2>')
     rt = retrain_line(today)
-    if rt: parts.append(f'<div class="g s">{rt}</div>')
+    if rt: parts.append(f'<div class="g s pane-note" data-main="score">{rt}</div>')
     if res is None:
-        parts.append('<p class="g">성적표를 만들지 못했습니다</p>')
+        parts.append('<p class="g pane" data-main="score">성적표를 만들지 못했습니다</p>')
     else:
-        for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔')):
-            parts.append(f'<h3>{title}</h3>' + scorecard(res, cat, tracked))
+        for cat, title, sid in (('아파트', '🏢 아파트', 'apt'), ('오피스텔', '🏬 오피스텔', 'ot')):
+            n = sum(1 for r in res if (r.get('category') or '아파트') == cat) if isinstance(res, list) else 0
+            subnav.setdefault('score', []).append((f'score-{sid}', title, n or None))
+            parts.append(f'<section class="pane" id="score-{sid}" data-main="score"><h3>{title}</h3>{scorecard(res, cat, tracked)}</section>')
+    navhtml = '<div class="tabs">' + ''.join(
+        f'<a class="tab" href="#{a}" data-main="{a}">{t}' + (f' <b>{n}</b>' if n is not None else '') + '</a>' for a, t, n in nav) + '</div>'
+    navhtml += ''.join(f'<div class="subs" data-main="{m}">' + ''.join(
+        f'<a class="sub-t" href="#{pid}" data-pane="{pid}">{lab}' + (f' <b>{n}</b>' if n else '') + '</a>' for pid, lab, n in L) + '</div>'
+        for m, L in subnav.items())
+    nav = [navhtml]
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
     foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 1년 실거래 없는 아파트는 \'실거래 없음(참고)\'에 따로<br>'
             f'검색 지역: {E(region_text())}<br>'
@@ -650,7 +728,7 @@ def build(src, dst):
             '권리분석은 등기 기준 자동요약을 바탕으로 한 1차 추정입니다. 점유자·대항력은 매각물건명세서에서, 대출 한도는 은행에서 직접 확인하세요. 입찰 권유가 아닙니다.')
     doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<title>경매 전체 카드</title><style>{CSS}</style></head><body><div class="wrap">
+<title>경매 전체 카드</title><script>document.documentElement.classList.add('js')</script><style>{CSS}</style></head><body><div class="wrap">
 <h1>🏠 경매 전체 카드</h1><div class="meta">예측 {E(gen)} 기준 · 아파트 {total['아파트']}건 · 오피스텔 {total['오피스텔']}건 · 매각기일 순</div>
 <div class="nav">{''.join(nav)}</div>
 {''.join(parts)}
