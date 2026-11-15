@@ -181,6 +181,7 @@ def recent_heat(df, seoul, T):
 # ---------------- target row from Richgo complex page ----------------
 _PAGES = {}
 USE_M = os.environ.get('USE_M', '1') == '1'   # M 시세 사용 (학습 데이터 mkt 도 M, 2026-11-05)
+USE_ACC = os.environ.get('USE_ACC', '1') == '1'   # 정확도 개선 앙상블 (acc_model.py, 2026-11-15)
 
 
 def fetch(url):
@@ -242,6 +243,9 @@ def _ot_estimate(d, ot_id, area):
         pv = dict(danjiPriceInfo=dict(memePriceDict={}, memeSource='NEARBY'), households=None)
         return (0, None, pv, round(nb['eok'] * 1e4), None)
     return None
+
+
+ACC_S_COLS = ['s_tr12', 's_tr12f', 's_last', 's_last_age_m', 's_tr3', 's_n12', 's_neff', 's_disp', 's_q60']
 
 
 def target_row(danji, auction_id, df, kind='danji'):
@@ -325,8 +329,12 @@ def target_row(danji, auction_id, df, kind='danji'):
                 pyeong=best[1], area=area, appr_eok=round(row['appr'] / 1e8, 3), low_eok=round(row['low'] / 1e8, 3),
                 fails=row['fails'], bidding_date=str(T.date()), richgo_sise_eok=round(richgo_mkt / 1e8, 3),
                 model_sise_eok=round(mkt / 1e8, 3), appr_vs_sise=round(row['r_appr_mkt'], 3))
+    feat = (msise or {}).get('feat') or {}
+    for k in ACC_S_COLS:   # 실거래 세부값 → 정확도 개선 모델 입력 (2026-11-15)
+        row[k] = feat.get(k, np.nan)
+    row['mkt_richgo'] = richgo_mkt; row['danji'] = danji
     if msise is not None:
-        info['m_sise'] = {k: (round(v / 1e8, 3) if k in ('mkt', 'richgo', 'richgo_floor', 'trade_w') and v else v) for k, v in msise.items()}
+        info['m_sise'] = {k: (round(v / 1e8, 3) if k in ('mkt', 'richgo', 'richgo_floor', 'trade_w') and v else v) for k, v in msise.items() if k != 'feat'}
         info['no_trade_12m'] = msise.get('no_trade')   # True = 1년 실거래 0건(메일 숨김), None = 확인 못 함
     try:
         info['sise'] = sise_detail(best[2], ch, richgo_mkt, row['low'], (best[2].get('memeOfferCount')))
@@ -509,6 +517,7 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     row, info = target_row(danji, auction_id, df)
     T = row.date.iloc[0]
     c_raw = float(np.mean([fit_predict(m, df, row, T)[0] for m in ENSEMBLE]))
+    c_ens = c_raw
     g = f"{row.sd.iloc[0]} {row.sgg.iloc[0] or ''}"
     sgg_adj = float((cfg.get('sgg_adj') or {}).get(g, 0.0))   # 구별 치우침 보정 (calibrate 에서 계산)
     c_raw += sgg_adj
@@ -523,6 +532,19 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     hh = row.hh.iloc[0]
     small = bool(pd.notna(hh) and hh < SMALL_HH)
     c = c_raw + (np.log(1 + SMALL_ADJ) if small else 0.0)
+    # 정확도 개선 앙상블 (2026-11-15, acc_model.py): 위 운영 예측 + 추가 피처 모델 8개 평균, 최저가 +1% 바닥, '3% 안 확률'·정밀 표시.
+    # 확률표는 새 중심의 최근 12개월 오차 분포(정밀 물건은 정밀 그룹 분포) — 백테스트에서 보정 없이 맞아서 a=1, b=0
+    acc, acc_err = None, None
+    if USE_ACC:
+        try:
+            import acc_model
+            acc = acc_model.predict(df, row, c)
+        except Exception as e:
+            acc_err = f'{type(e).__name__}: {str(e)[:120]}'
+    if acc:
+        shift = acc['c_new'] - c
+        c += shift; c_raw += shift
+        pool, a, b = acc['pool'], 1.0, 0.0
 
     def wp(bid, cc=None):
         return 0.0 if bid < low else win_prob(pool, a, b, np.log(bid / mkt) - (c if cc is None else cc))
@@ -547,7 +569,7 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     if small:
         notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
                      f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
-    bidders = bidder_scenarios(df, row, T, low, mkt, (1 + (SMALL_ADJ if small else 0.0)) * np.exp(sgg_adj + gap_shift) - 1, cfg)
+    bidders = bidder_scenarios(df, row, T, low, mkt, float(np.exp(c - c_ens)) - 1, cfg)   # 운영 보정 + 새 앙상블 이동분
     _jr = row.jeonse_ratio.iloc[0]
     if _jr != _jr and 'jeonse_ratio_bldg' in row: _jr = row.jeonse_ratio_bldg.iloc[0]
     out = dict(info, model='앙상블(부스팅+군집별회귀)',
@@ -564,6 +586,15 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
                p50_ensemble_manwon=prices['50%'], p50_ensemble_eok=round(prices['50%'] / 1e4, 2),
                model_error_note=f"평균 오차 약 {cfg['mape_recent']}% (최근 12개월 롤링), 확률 보정 오차 약 ±5%p",
                warnings=warn, notes=notes)
+    if acc:
+        ac = acc_model._RUN.get('cfg') or {}
+        out.update(model='앙상블(운영+랜덤포레스트·LightGBM 8개)', within3_pct=int(round(acc['within3'] * 100)), precise=acc['precise'],
+                   acc=dict(shift_pct=round((np.exp(shift) - 1) * 100, 2), floor_applied=acc['floor_applied'], members=acc['members'],
+                            within3_th=acc['within3_th']),
+                   model_error_note=f"평균 오차 약 {ac.get('mape_recent12')}% (최근 12개월 롤링)"
+                                    + (f", 정밀 물건 약 {ac.get('mape_precise')}%" if acc['precise'] else ''))
+    elif acc_err:
+        out['acc_error'] = acc_err
     return out
 
 

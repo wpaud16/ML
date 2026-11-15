@@ -24,6 +24,8 @@ on:
       - 'auction_model/auction_train.csv'
       - 'auction_model/molit.py'
       - 'auction_model/nearby.py'
+      - 'auction_model/acc_model.py'
+      - 'auction_model/acc_config.json'
       - '.github/workflows/auction_predict.yml'
 
 permissions:
@@ -59,7 +61,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install
-        run: pip install -q numpy pandas scikit-learn
+        run: pip install -q numpy pandas scikit-learn lightgbm   # lightgbm: acc_model.py (2026-11-15)
       - name: Predict
         working-directory: auction_model
         env:

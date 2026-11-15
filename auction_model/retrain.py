@@ -140,6 +140,8 @@ def finish_apt(new, old):
     n['mkt_richgo'] = n.mkt
     ms = [molit.m_sise(r.sd, r.sgg, r.emd, r.get('jibun'), r.area, r.get('address'), r.mkt, today=r.date, lag_days=30) for _, r in n.iterrows()]
     n['mkt'] = [x['mkt'] for x in ms]; n['m_w'] = [x.get('w', 0) for x in ms]; n['m_n12'] = [x.get('n12', 0) for x in ms]
+    for k in ap.ACC_S_COLS:   # 실거래 세부값 (정확도 개선 모델 입력, 2026-11-15)
+        n[k] = [(x.get('feat') or {}).get(k, np.nan) for x in ms]
     n['seoul'] = (n.sd == '서울').astype(int)
     n['r_sell_mkt'] = n.sell / n.mkt; n['r_appr_mkt'] = n.appr / n.mkt; n['r_low_mkt'] = n.low / n.mkt
     n = n[n.r_sell_mkt.between(0.5, 1.6) & n.r_appr_mkt.between(0.6, 2.0) & (n.area >= 25)]
@@ -192,6 +194,11 @@ def main(dry=False):
         out = pd.concat([apt_old, apt_add.assign(date=apt_add.date.astype(str).str[:10])], ignore_index=True).sort_values('date')
         out.to_csv(APT_TRAIN, index=False)
         ap.calibrate(); ap.calibrate_bidders()
+        try:   # 정확도 개선 앙상블·3% 안 확률 재계산 (2026-11-15, 약 10분)
+            import acc_model
+            c = acc_model.calibrate(); info.update(acc_mape_new=c['mape_new'], acc_mape_precise=c['mape_precise'])
+        except Exception as e:
+            info['acc_error'] = f'{type(e).__name__}: {e}'[:200]
     if len(ot_add):
         import officetel_model as om
         # 응찰자 수는 별도 파일(officetel/ot_bidders.csv)에 모은다 (2026-11-03, 오피스텔 인원별 입찰가)

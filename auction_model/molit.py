@@ -122,6 +122,20 @@ def floor_of(address):
     return int(x.group(1)) if x else (1 if '지하' in (address or '') else None)
 
 
+def sise_feat(t, ix, I, tp, t0):
+    """t: 같은 단지·면적 12개월 거래(날짜순). 반환: s_tr12(지수 보정 중앙값), s_tr12f(+층 보정), s_last·s_last_age_m(최근 1건),
+    s_tr3(3개월 중앙값), s_n12, s_neff·s_disp(반감기 3개월 가중 합·흩어짐), s_q60(60% 분위, 3건 이상)."""
+    k = np.array([I / float(ix.get(p, I)) for p in t.p])
+    a = t.price.values * k
+    af = a * np.array([tp / FP.get(fbin(f, tt), 1.0) for f, tt in zip(t.floor, t.top)])
+    age = (t0 - t.d).dt.days.values / 30.4; wt = 0.5 ** (age / 3)
+    r3 = t.d.values >= np.datetime64(t0 - pd.DateOffset(months=3))
+    return dict(s_tr12=float(np.median(a)), s_tr12f=float(np.median(af)), s_last=float(af[-1]), s_last_age_m=float(age[-1]),
+                s_tr3=float(np.median(a[r3])) if r3.any() else np.nan, s_n12=int(len(t)), s_neff=float(wt.sum()),
+                s_disp=float(np.std(af, ddof=1) / np.mean(af)) if len(af) >= 3 else np.nan,
+                s_q60=float(np.quantile(a, .6)) if len(a) >= 3 else np.nan)
+
+
 def m_sise(sd, sgg, emd, jibun_addr, area, address, richgo_won, today=None, lag_days=0):
     """M 시세 (원). today = 기준일(기본 오늘), lag_days = 기준일 이전 며칠까지 계약된 거래만 (재학습: 매각일 −30일, 백테스트와 같게). 반환 dict(mkt, richgo, richgo_floor, trade_w, trade_avg, n12, neff, disp, w, floor_bin, fprem, no_trade, note)."""
     out = dict(mkt=richgo_won, richgo=richgo_won, no_trade=None, n12=0, w=0.0)   # no_trade None = 확인 못 함(숨기지 않음)
@@ -141,10 +155,15 @@ def m_sise(sd, sgg, emd, jibun_addr, area, address, richgo_won, today=None, lag_
     out.update(floor_bin=fb, fprem=tp, richgo_floor=rf, mkt=rf, no_trade=True if jb else None)
     t0 = pd.Timestamp(today or date.today()); cut = t0 - pd.Timedelta(days=lag_days)
     t = c[(c.d >= t0 - pd.DateOffset(months=12)) & (c.d <= cut)]
+    out['feat'] = dict(s_n12=0 if jb else np.nan)
     if not len(t): return out
     ix = m[m.d <= cut].groupby('p').ppa.median().sort_index()
     ix = ix.reindex(pd.period_range(ix.index.min(), ix.index.max(), freq='M')).interpolate(limit_direction='both').rolling(3, min_periods=1).median()
     I = float(ix.iloc[-1])
+    try:   # 정확도 개선 모델용 실거래 세부값 (2026-11-15, dev/sise_bt.py 와 같은 정의: 시군구 지수로 기준일 값 보정, 층 보정)
+        out['feat'] = sise_feat(t.sort_values('d'), ix, I, tp, t0)
+    except Exception as e:
+        out['feat'] = dict(s_n12=int(len(t)), err=str(e)[:80])
     # 거래가 × (이 물건 층 비율 / 그 거래 층 비율). 시군구 지수 추세 보정은 뺌 (2026-11-05: 거래 단지 구성에 따라 출렁여
     # 힐스테이트다산 실거래 평균이 12억대→9.6억으로 깎임. 백테스트 보정 없음 4.71% vs 있음 4.77%) — 최근 거래 가중(반감기 3개월)만 사용
     adj = t.price.values * np.array([tp / FP.get(fbin(f, tt), 1.0) for f, tt in zip(t.floor, t.top)])

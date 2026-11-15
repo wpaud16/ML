@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install
-        run: pip install -q numpy pandas scikit-learn
+        run: pip install -q numpy pandas scikit-learn lightgbm   # lightgbm: acc_model.py (2026-11-15)
       - name: Retrain
         working-directory: auction_model
         env:
@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "auction-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add auction_model/molit_cache auction_model/auction_train.csv auction_model/auction_config.json auction_model/officetel/ot_train.csv auction_model/officetel/ot_config.json auction_model/predictions/retrain_log.json auction_model/fail_rounds.csv auction_model/officetel/ot_fail_rounds.csv auction_model/officetel/ot_bidders.csv auction_model/fail_config.json
+          git add auction_model/molit_cache auction_model/auction_train.csv auction_model/auction_config.json auction_model/officetel/ot_train.csv auction_model/officetel/ot_config.json auction_model/predictions/retrain_log.json auction_model/fail_rounds.csv auction_model/officetel/ot_fail_rounds.csv auction_model/officetel/ot_bidders.csv auction_model/fail_config.json auction_model/acc_config.json auction_model/acc_within3_train.csv
           if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git commit -m "auction: 월간 재학습 $(TZ=Asia/Seoul date +%F)"
           for i in 1 2 3 4 5; do

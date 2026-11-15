@@ -13,6 +13,14 @@
 - 학습 데이터 갱신은 수동.
 - **소규모 단지 보정 (2026-10-31~)**: 300세대 미만 단지는 예측가를 3% 낮춰 `bid_by_prob_*`·`prob_by_bid_5m`에 반영. 보정 전 값은 `small_danji_adj.bid_by_prob_manwon_raw`, 세대수는 `households`, 안내 문구는 `notes` (`warnings`는 권리위험·지분 의심 전용). 근거: 2024-07~2026-10 롤링 백테스트(986건)에서 300세대 미만은 평균 −1.5% 치우침, 10% 넘게 낮게 낙찰된 비율 약 9%(대단지 4~6%); 1회 유찰 물건에서 50% 가격 입찰 시 낙찰률 59%·초과지불 7.0% → 3% 보정 시 46%·5.1%. 값은 `auction_predictor.py`의 `SMALL_HH`, `SMALL_ADJ`.
 
+## 정확도 개선 앙상블 · 3% 안 확률 (2026-11-15~)
+- `acc_model.py`: 아파트 중심 예측 = 운영 예측과 추가 피처 모델 8개(랜덤포레스트 6·LightGBM 2) 평균, 최저가 +1% 바닥 (롤링 백테스트 4.58→4.32%)
+- 추가 피처: 실거래 세부(`auction_train.csv` 의 `s_*`, `molit.sise_feat`), 리치고/M 차이, 최저가/감정가, 같은 단지 과거 낙찰, 동·구 최근 낙찰가율, 구 평균 응찰자
+- `within3_pct` = 예측이 실제 ±3% 안에 들 확률(랜덤포레스트 분류), `precise` = 그 확률이 경계(`acc_config.json` within3_th, 직전 6개월 상위 20%) 이상 → 백테스트 평균 오차 3.16%
+- 확률표: 새 중심의 최근 12개월 오차 분포(`pool_all`), 정밀 물건은 `pool_precise` (보정 없이 맞아서 a=1, b=0)
+- 재계산 `python acc_model.py calibrate` (약 8분, retrain.py 가 자동 실행) · 끄기 `USE_ACC=0` · 실험 `dev/acc_bt.py`·`dev/acc_stack.py`·`dev/acc_bt/REPORT.md`
+- 의존성: lightgbm
+
 ## 매일 자동 계산 (2026-10-31~)
 - `.github/workflows/auction_predict.yml`: 매일 06:10 KST GitHub Actions가 `batch_predict.py` 실행
 - `batch_predict.py`: 관심 10개 지역(서울 강남·서초·강동·광진·송파 / 성남 수정·분당·중원 / 남양주·구리) 진행 중 아파트 경매 → (면적·최저가 필터 없음, 2026-11-02~) → 리치고 단지 자동 연결 → 앙상블 예측
