@@ -11622,7 +11622,7 @@
   "trade_manwon": null
  },
  "2026타경5300[1]|2026-11-15": {
-  "source": "리치고",
+  "source": "법원",
   "key": "2026타경5300[1]",
   "auction_id": "C07EIYNR",
   "category": "오피스텔",
@@ -11639,7 +11639,7 @@
    "55%": 35788,
    "60%": 36155
   },
-  "status": "결과대기",
+  "status": "변경",
   "checked": "2026-11-16",
   "expected_bidders": 1,
   "expected_range": [
