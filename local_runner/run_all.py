@@ -37,7 +37,7 @@ def load_env():
         k, v = k.strip(), v.strip().strip('"\'')
         if v and not os.environ.get(k):
             os.environ[k] = v
-    have = [k for k in ('GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', 'GOOGLE_REFRESH_TOKEN', 'MOLIT_API_KEY', 'GITHUB_TOKEN') if os.environ.get(k)]
+    have = [k for k in ('GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', 'GOOGLE_REFRESH_TOKEN', 'MOLIT_API_KEY', 'GITHUB_TOKEN', 'KAKAO_REST_KEY') if os.environ.get(k)]
     log(f'.env 읽음 (값 있는 키: {", ".join(have) or "없음"})')
 
 
@@ -214,6 +214,10 @@ def s_predict():
 
 def s_page():
     am = os.path.join(REPO, 'auction_model')
+    try:   # 빌라·상가·건물 목록 (2026-11-16) — 실패해도 웹페이지는 만듦
+        run([sys.executable, 'other_items.py'], cwd=am, timeout=2400)
+    except Exception as e:
+        log(f'빌라·상가·건물 수집 실패(계속 진행): {e}')
     run([sys.executable, 'cards_page.py'], cwd=am, timeout=1800)
     try:
         run([sys.executable, 'villa_log.py'], cwd=am, timeout=1800)
@@ -223,7 +227,7 @@ def s_page():
 
 def s_push_auction():
     push(['auction_model/predictions', 'auction_model/page', 'auction_model/molit_cache', 'auction_model/danji_map.json',
-          'auction_model/villa', 'auction_model/officetel', 'auction_model/search_regions.json', 'local_runner/schedule.json'], f'auction: 예측 결과 {today()} (노트북)')
+          'auction_model/villa', 'auction_model/officetel', 'auction_model/geo_cache.json', 'auction_model/search_regions.json', 'local_runner/schedule.json'], f'auction: 예측 결과 {today()} (노트북)')
 
 
 def mail_env():

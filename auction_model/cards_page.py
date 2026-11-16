@@ -552,8 +552,9 @@ h1{font-size:19px;margin:6px 0 2px} .meta{color:var(--mut);font-size:12px;margin
 .nav{position:sticky;top:0;background:var(--bg);padding:8px 0 6px;z-index:2;border-bottom:1px solid var(--bd)}
 .nav a{color:var(--fg);text-decoration:none;white-space:nowrap}
 .nav b{font-weight:600;opacity:.75;font-size:12px}
-.tabs{display:flex;gap:6px}
-.tab{flex:1;text-align:center;border:1px solid var(--bd);border-radius:10px;padding:7px 4px;font-size:14px;font-weight:bold}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;white-space:nowrap;text-align:center;border:1px solid var(--bd);border-radius:10px;padding:7px 4px;font-size:14px;font-weight:bold}
 .tab.on{background:#1a73e8;border-color:#1a73e8;color:#fff!important}
 .tab.on b{opacity:.9}
 .subs{display:flex;gap:6px;overflow-x:auto;padding-top:7px;scrollbar-width:none}
@@ -632,6 +633,53 @@ window.addEventListener('hashchange',function(){go(location.hash.slice(1),true);
 if(!go(location.hash.slice(1),true)){var m=load('main')||'apt';var pid=firstPane(m)||firstPane('apt');if(pid)showPane(pid,true);}
 })();
 """
+
+
+OTHER_CATS = (('빌라', '🏘 빌라', 'villa', '서울 · 다세대·연립 · 역 도보 15분'),
+              ('상가', '🏪 상가', 'shop', '서울 · 구분상가 1칸 · 역 도보 15분'),
+              ('건물', '🏬 건물', 'bldg', '서울 · 꼬마빌딩·상가주택·다가구 · 역 도보 15분 · 최저가 20억 이하'))
+
+
+def load_others(pred_dir):
+    """other_items.py 결과 (빌라·상가·건물, 2026-11-16). 없으면 None."""
+    try:
+        return json.load(open(os.path.join(pred_dir, 'others.json'), encoding='utf-8'))
+    except Exception:
+        return None
+
+
+def other_card(v):
+    """빌라·상가·건물 카드 — 예측 없이 사실만 (2026-11-16)."""
+    addr = re.sub(r'^서울특별시\s+\S+구\s+', '', v.get('address') or '').strip()
+    bd = v.get('bidding_date') or ''
+    appr, low = (v.get('appr_manwon') or 0) / 1e4, (v.get('low_manwon') or 0) / 1e4
+    head = ' · '.join(x for x in [f"{v['area']:.1f}㎡" if v.get('area') else '', (v.get('region') or '').replace('서울 ', ''), v['key'].replace('[1]', '')] if x)
+    L = [f'<div class="t">{E(addr)} <span class="hh">{E(head)}</span></div>',
+         f'<div>📅 {day_label(bd)} <span class="dday" data-d="{E(bd)}"></span> · 유찰 {v.get("fails") or 0}회'
+         + (f' <span class="g s">· {E(v["court"])}</span>' if v.get('court') else '') + '</div>',
+         f'<div>💰 감정 {appr:.2f}억 → 최저 <b>{low:.2f}억</b> <span class="g">({low / appr * 100:.0f}%)</span></div>' if appr else '']
+    sz = []
+    if v['category'] == '건물' and v.get('land_area'):
+        sz.append(f"토지 {v['land_area']:.0f}㎡({v['land_area'] / 3.3058:.0f}평)")
+    if v.get('area'):
+        sz.append(f"건물 {v['area']:.1f}㎡({v['area'] / 3.3058:.1f}평)")
+    if v.get('construct_year'):
+        sz.append(f"{v['construct_year']}년")
+    td = [t for t in (v.get('type_details') or []) if t not in ('대지', '도로')]
+    if td:
+        sz.append('·'.join(td))
+    if sz:
+        L.append(f'<div class="g s">📐 {E(" · ".join(sz))}</div>')
+    st = station_text(v)
+    if st:
+        L.append(f'<div>🚇 {st}</div>')
+    r = v.get('rights') or {}
+    L.append('<div>🛡 등기 기준 인수 권리·대항력 임차인 없음'
+             + (f' <span class="g s">(말소기준 {E(r.get("base_right") or "")} {E(r.get("base_date") or "")})</span>' if r.get('base_right') else '') + '</div>')
+    if v.get('traffic'):
+        L.append(f'<div class="g s">🚌 감정평가서 교통: {E(v["traffic"][:120])}</div>')
+    L.append(f'<div class="s"><a href="https://m.richgo.ai/auctionMobile/{E(v.get("auction_id") or "")}">상세 보기 →</a></div>')
+    return '<div class="card">' + ''.join(x for x in L if x) + '</div>'
 
 
 def prev_keys(day, pred_dir):
@@ -718,6 +766,30 @@ def build(src, dst):
                  '<p class="g s">최근 1년 같은 평형 실거래가 없어 시세가 불확실한 물건 — 백테스트에서 이런 물건은 평균 오차 약 6.1% (다른 물건 4.6%), 메일에는 넣지 않음</p>'
                  + ''.join(card(v, today) for v in nt))
         # 예측 불가(단지 못 찾음) 물건은 표시하지 않음 (2026-11-05 사용자 요청: 이상한 물건이 많음)
+    # 빌라·상가·건물 탭 (2026-11-16 사용자 요청) — 예측 없이 사실만, other_items.py 결과
+    oth = load_others(os.path.dirname(src))
+    for cat, title, anchor, cond in OTHER_CATS:
+        xs = sorted((v for v in ((oth or {}).get('items') or {}).values()
+                     if v.get('category') == cat and (v.get('bidding_date') or '') >= today),
+                    key=lambda v: (v.get('bidding_date') or '9999', v.get('address') or ''))
+        total[cat] = len(xs)
+        nav.append((anchor, title, len(xs)))
+        parts.append(f'<h2 class="mainh" id="{anchor}" data-main="{anchor}">{title} ({E(cond)}) · {len(xs)}건</h2>')
+        parts.append(f'<div class="g s pane-note" data-main="{anchor}">{E(cond)} · 권리 깨끗한 물건만 · 낙찰가 예측 없음(시세 자료 없음)</div>')
+        if oth is None or (not xs and not (oth or {}).get('station_source')):
+            msg = '아직 수집 전입니다' if oth is None else '역 거리 확인용 카카오 키가 없어 표시할 수 없어요 (.env KAKAO_REST_KEY)'
+            parts.append(f'<section class="pane" id="{anchor}-none" data-main="{anchor}"><p class="g">{msg}</p></section>')
+            subnav.setdefault(anchor, []).append((f'{anchor}-none', '안내', None))
+            continue
+        groups = (('soon', '🔔 7일 이내', [v for v in xs if (v.get('bidding_date') or '') <= soon]),
+                  ('later', '📅 그 이후', [v for v in xs if (v.get('bidding_date') or '9999') > soon]))
+        for sid, lab, g in groups:
+            if not g: continue
+            html, dates = by_date(f'{anchor}-{sid}', g, other_card)
+            pane(anchor, f'{anchor}-{sid}', lab, len(g), html, dates)
+        if not xs:
+            parts.append(f'<section class="pane" id="{anchor}-none" data-main="{anchor}"><p class="g">표시할 물건 없음</p></section>')
+            subnav.setdefault(anchor, []).append((f'{anchor}-none', '없음', None))
     res = results_14d(today, RS, tracked)
     nav.append(('score', '📊 성적표', None))
     parts.append('<h2 class="mainh" id="score" data-main="score">📊 모델 성적표 (최근 14일)</h2>')
@@ -747,12 +819,13 @@ def build(src, dst):
             '⚖ 가중 시세 = 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(상한) · 감정가 시차 보정 5% (직거래 제외) — 참고용<br>'
             '🎲 유찰 확률 = 회차별 낙찰·유찰 이력으로 학습한 모델 · 📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12), 대출·세금·비용 제외 단순 계산<br>'
             '⚠️ 주거용 오피스텔은 세법상 주택 수에 들어갈 수 있어요 — 세무사·은행에 확인<br>'
+            '🏘 빌라·🏪 상가·🏬 건물 = 리치고 경매 목록 중 등기 요약상 인수 권리·대항력 임차인 없는 물건 · 역 거리 = 카카오 지도 주소 좌표 기준 직선거리 · 낙찰가 예측 없음, 법원 명세서 미확인<br>'
             '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'
             '권리분석은 등기 기준 자동요약을 바탕으로 한 1차 추정입니다. 점유자·대항력은 매각물건명세서에서, 대출 한도는 은행에서 직접 확인하세요. 입찰 권유가 아닙니다.')
     doc = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
 <title>경매 전체 카드</title><script>document.documentElement.classList.add('js')</script><style>{CSS}</style></head><body><div class="wrap">
-<h1>🏠 경매 전체 카드</h1><div class="meta">예측 {E(gen)} 기준 · 아파트 {total['아파트']}건 · 오피스텔 {total['오피스텔']}건 · 매각기일 순</div>
+<h1>🏠 경매 전체 카드</h1><div class="meta">예측 {E(gen)} 기준 · 아파트 {total['아파트']}건 · 오피스텔 {total['오피스텔']}건 · 빌라 {total.get('빌라', 0)} · 상가 {total.get('상가', 0)} · 건물 {total.get('건물', 0)}건 · 매각기일 순</div>
 <div class="nav">{''.join(nav)}</div>
 {''.join(parts)}
 <div class="foot" id="foot">{foot}</div></div><script>{JS}</script></body></html>"""
