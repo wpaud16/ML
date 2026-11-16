@@ -410,7 +410,10 @@ def tracked_past(today, pred_dir, days=14):
             it = dict(it, category=it.get('category') or '아파트')   # 초기 예측 파일은 아파트에 category 없음
             if keep(it): shown.add(rid)
             out[rid] = dict(it, pred_date=fn[:10])
-    return {rid: v for rid, v in out.items() if rid in shown}
+    # 2026-11-17: 권리 판정 전 파일(10/31~11/1)에서 한 번 표시됐어도, 기일 전 마지막 예측이 숨김(지분매각 등)이면 뺀다
+    def hidden(v):
+        return (v.get('risk') or {}).get('decision') == 'hide' or (v.get('appr_vs_sise') is not None and v['appr_vs_sise'] < 0.6)
+    return {rid: v for rid, v in out.items() if rid in shown and not hidden(v)}
 
 
 def card_id(aid, bd):
