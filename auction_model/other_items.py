@@ -31,16 +31,17 @@ HARD = {'지분': r'지분\s*(?:매각|경매|만)|\d+\s*분의\s*\d+\s*지분\s
 q = urllib.parse.quote
 
 
-def category(ty, td):
-    """리치고 검색 유형 + typeDetails → '빌라'|'상가'|'건물'|None."""
+def category(ty, td, addr=''):
+    """리치고 검색 유형 + typeDetails (+주소) → '빌라'|'상가'|'건물'|None."""
+    unit = bool(re.search(r'\d+층\s*\S*\d+호|\S+호\s*$|지하?\d*층\S*호', addr or ''))   # 'n층 m호' = 집합건물 호실
     # 검색 유형이 맞지 않으면 리치고가 전체 목록을 돌려주므로(예: '연립') typeDetails 로만 판정
     td = set(td or [])
     if td & {'아파트', '오피스텔', '주상복합(상가)', '단독주택', '다중주택'}:
         return None
     if td & {'근린주택', '다가구주택'}:
-        return '건물'
+        return None if unit else '건물'   # 호실 주소인 다가구는 자료 오류로 보고 제외
     if '근린시설' in td:
-        return '건물' if '대지' in td else '상가'
+        return '건물' if '대지' in td and not unit else '상가'
     if td & {'다세대', '연립'}:
         return '빌라'
     return None
@@ -138,8 +139,10 @@ def rights_ok(pg, it):
 
 def traffic_line(pg):
     """감정평가 요항표의 '교통상황' 문장 (참고)."""
-    m = re.search(r'교통(?:상황|관계)?\s*([^\n]{5,160})', (pg or {}).get('appraisalSummary') or '')
-    return m.group(1).strip() if m else None
+    import html
+    t = html.unescape(html.unescape((pg or {}).get('appraisalSummary') or ''))
+    m = re.search(r'교통(?:상황|관계)?\s*([^\n]{5,160})', t)
+    return re.sub(r'["“”]{2,}', '', m.group(1)).strip() if m else None
 
 
 def main():
@@ -156,7 +159,7 @@ def main():
                 if it['id'] in seen or not it.get('appraisedPrice') or not it.get('lowestSellingPrice'):
                     continue
                 seen.add(it['id']); counts['listed'] += 1
-                cat = category(it['_type'], it.get('typeDetails'))
+                cat = category(it['_type'], it.get('typeDetails'), it.get('address'))
                 if cat is None or '오피스텔' in (it.get('typeDetails') or []) or '아파트' in (it.get('typeDetails') or []):
                     counts['wrong_type'] += 1; continue
                 if cat == '건물' and it['lowestSellingPrice'] > BLDG_MAX_LOW:
