@@ -1168,6 +1168,11 @@
 "date": "2026-11-16",
 "low_manwon": 19200,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 19200,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -1206,6 +1211,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 27040,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 27040,
 "fails": 1
 }
@@ -1288,6 +1298,11 @@
 "date": "2026-11-16",
 "low_manwon": 18816,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 18816,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -1306,6 +1321,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 12974,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 12974,
 "fails": 2
 }
@@ -1388,6 +1408,11 @@
 "date": "2026-11-16",
 "low_manwon": 18720,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 18720,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -1446,6 +1471,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 10772,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 10772,
 "fails": 4
 }
@@ -1508,6 +1538,11 @@
 "date": "2026-11-16",
 "low_manwon": 40448,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 40448,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -1526,6 +1561,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 18800,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 18800,
 "fails": 1
 }
@@ -1548,6 +1588,11 @@
 "date": "2026-11-16",
 "low_manwon": 34640,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 34640,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -1566,6 +1611,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 34944,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 34944,
 "fails": 2
 }
@@ -1588,6 +1638,11 @@
 "date": "2026-11-16",
 "low_manwon": 18480,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 18480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -1606,6 +1661,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 34944,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 34944,
 "fails": 2
 }
@@ -1628,6 +1688,11 @@
 "date": "2026-11-16",
 "low_manwon": 37376,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 37376,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -1646,6 +1711,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 22000,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 22000,
 "fails": 1
 }
@@ -1668,6 +1738,11 @@
 "date": "2026-11-16",
 "low_manwon": 7635,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 7635,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -1686,6 +1761,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 40448,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 40448,
 "fails": 2
 }
@@ -1708,6 +1788,11 @@
 "date": "2026-11-16",
 "low_manwon": 10400,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 10400,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -1726,6 +1811,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 15040,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 15040,
 "fails": 2
 }
@@ -2968,6 +3058,11 @@
 "date": "2026-11-16",
 "low_manwon": 18480,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 18480,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -3890,6 +3985,11 @@
 "date": "",
 "low_manwon": 27600,
 "fails": 1
+},
+{
+"date": "2026-12-15",
+"low_manwon": 22080,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -9707,6 +9807,11 @@
 "date": "",
 "low_manwon": 2888,
 "fails": 10
+},
+{
+"date": "2026-12-10",
+"low_manwon": 2310,
+"fails": 11
 }
 ],
 "first_seen": "2026-11-02",
@@ -13095,6 +13200,11 @@
 "date": "",
 "low_manwon": 12720,
 "fails": 1
+},
+{
+"date": "2026-12-17",
+"low_manwon": 10176,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -13120,6 +13230,11 @@
 "date": "",
 "low_manwon": 20383,
 "fails": 0
+},
+{
+"date": "2026-12-17",
+"low_manwon": 16306,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -26757,6 +26872,11 @@
 "date": "2026-11-16",
 "low_manwon": 10096,
 "fails": 8
+},
+{
+"date": "",
+"low_manwon": 10096,
+"fails": 8
 }
 ],
 "first_seen": "2026-11-02",
@@ -26775,6 +26895,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 5439,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 5439,
 "fails": 5
 }
@@ -26817,6 +26942,11 @@
 "date": "2026-11-16",
 "low_manwon": 34720,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 34720,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -26835,6 +26965,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 25600,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 25600,
 "fails": 1
 }
@@ -27420,6 +27555,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 40768,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 40768,
 "fails": 2
 }
@@ -29582,6 +29722,11 @@
 "date": "",
 "low_manwon": 12880,
 "fails": 4
+},
+{
+"date": "2026-12-17",
+"low_manwon": 10304,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -34197,6 +34342,11 @@
 "date": "",
 "low_manwon": 2166,
 "fails": 13
+},
+{
+"date": "2026-12-17",
+"low_manwon": 1732,
+"fails": 14
 }
 ],
 "first_seen": "2026-11-02",
@@ -44178,6 +44328,11 @@
 "date": "2026-11-16",
 "low_manwon": 20240,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 20240,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -44196,6 +44351,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 17984,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 17984,
 "fails": 2
 }
@@ -44236,6 +44396,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 17600,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 17600,
 "fails": 2
 }
@@ -46984,6 +47149,11 @@
 "date": "2026-11-16",
 "low_manwon": 33360,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 33360,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -47002,6 +47172,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 48960,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 48960,
 "fails": 1
 }
@@ -47044,6 +47219,11 @@
 "date": "2026-11-16",
 "low_manwon": 21760,
 "fails": 2
+},
+{
+"date": "",
+"low_manwon": 21760,
+"fails": 2
 }
 ],
 "first_seen": "2026-11-02",
@@ -47062,6 +47242,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 86400,
+"fails": 1
+},
+{
+"date": "",
 "low_manwon": 86400,
 "fails": 1
 }
@@ -47102,6 +47287,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 6753,
+"fails": 4
+},
+{
+"date": "",
 "low_manwon": 6753,
 "fails": 4
 }
@@ -47164,6 +47354,11 @@
 "date": "2026-11-16",
 "low_manwon": 9568,
 "fails": 5
+},
+{
+"date": "",
+"low_manwon": 9568,
+"fails": 5
 }
 ],
 "first_seen": "2026-11-02",
@@ -47182,6 +47377,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 21760,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 21760,
 "fails": 2
 }
@@ -47224,6 +47424,11 @@
 "date": "2026-11-16",
 "low_manwon": 26624,
 "fails": 1
+},
+{
+"date": "",
+"low_manwon": 26624,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -47242,6 +47447,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 9338,
+"fails": 5
+},
+{
+"date": "",
 "low_manwon": 9338,
 "fails": 5
 }
@@ -47282,6 +47492,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 19584,
+"fails": 2
+},
+{
+"date": "",
 "low_manwon": 19584,
 "fails": 2
 }
@@ -49444,6 +49659,11 @@
 "date": "",
 "low_manwon": 31700,
 "fails": 0
+},
+{
+"date": "2026-12-15",
+"low_manwon": 25360,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -55595,6 +55815,11 @@
 "date": "",
 "low_manwon": 17920,
 "fails": 3
+},
+{
+"date": "",
+"low_manwon": 14336,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -58491,6 +58716,11 @@
 "date": "",
 "low_manwon": 8800,
 "fails": 0
+},
+{
+"date": "2026-12-10",
+"low_manwon": 8800,
+"fails": 1
 }
 ],
 "first_seen": "2026-11-02",
@@ -58711,6 +58941,11 @@
 "date": "",
 "low_manwon": 42956,
 "fails": 4
+},
+{
+"date": "2026-12-08",
+"low_manwon": 34365,
+"fails": 4
 }
 ],
 "first_seen": "2026-11-02",
@@ -58730,6 +58965,11 @@
 {
 "date": "",
 "low_manwon": 43673,
+"fails": 4
+},
+{
+"date": "2026-12-08",
+"low_manwon": 34938,
 "fails": 4
 }
 ],
@@ -58770,6 +59010,11 @@
 {
 "date": "",
 "low_manwon": 41625,
+"fails": 4
+},
+{
+"date": "2026-12-08",
+"low_manwon": 33300,
 "fails": 4
 }
 ],
@@ -62437,6 +62682,11 @@
 "date": "2026-11-16",
 "low_manwon": 28700,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 28700,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -62657,6 +62907,11 @@
 "date": "2026-11-16",
 "low_manwon": 389000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 389000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-02",
@@ -62817,6 +63072,11 @@
 "date": "2026-11-16",
 "low_manwon": 15100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 15100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-03",
@@ -62835,6 +63095,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 28383,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 28383,
 "fails": 0
 }
@@ -62955,6 +63220,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 50300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 50300,
 "fails": 0
 }
@@ -63097,6 +63367,11 @@
 "date": "2026-11-16",
 "low_manwon": 24674,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 24674,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-03",
@@ -63115,6 +63390,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 21361,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 21361,
 "fails": 0
 }
@@ -63537,6 +63817,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 34100,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 34100,
 "fails": 0
 }
@@ -64496,6 +64781,11 @@
 "date": "2026-11-16",
 "low_manwon": 12400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 12400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
@@ -64516,6 +64806,11 @@
 "date": "2026-11-16",
 "low_manwon": 11400,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 11400,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
@@ -64534,6 +64829,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 38900,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 38900,
 "fails": 0
 }
@@ -64576,6 +64876,11 @@
 "date": "2026-11-16",
 "low_manwon": 24100,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 24100,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
@@ -64594,6 +64899,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 12400,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 12400,
 "fails": 0
 }
@@ -64634,6 +64944,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 21700,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 21700,
 "fails": 0
 }
@@ -65346,6 +65661,11 @@
 "date": "2026-11-16",
 "low_manwon": 29500,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 29500,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
@@ -65366,6 +65686,11 @@
 "date": "2026-11-16",
 "low_manwon": 35800,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 35800,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
@@ -65384,6 +65709,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 23300,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 23300,
 "fails": 0
 }
@@ -65631,6 +65961,11 @@
 "date": "2026-11-16",
 "low_manwon": 28000,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 28000,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
@@ -65651,6 +65986,11 @@
 "date": "2026-11-16",
 "low_manwon": 58900,
 "fails": 0
+},
+{
+"date": "",
+"low_manwon": 58900,
+"fails": 0
 }
 ],
 "first_seen": "2026-11-05",
@@ -65669,6 +66009,11 @@
 "rounds": [
 {
 "date": "2026-11-16",
+"low_manwon": 28600,
+"fails": 0
+},
+{
+"date": "",
 "low_manwon": 28600,
 "fails": 0
 }
@@ -69651,5 +69996,45 @@
 "first_seen": "2026-11-15",
 "status": "진행중",
 "last_seen": "2026-11-15"
+},
+"C25UKCFH": {
+"case": "2026타경50149[1]",
+"address": "서울특별시 광진구 중곡동 289-8 헤렌하우스  3층302호",
+"sgg": "광진구",
+"emd": "중곡동",
+"type": "다세대",
+"area": 81.53,
+"land_area": 42.98,
+"appr_manwon": 45700,
+"rounds": [
+{
+"date": "2026-11-30",
+"low_manwon": 45700,
+"fails": 0
+}
+],
+"first_seen": "2026-11-16",
+"status": "진행중",
+"last_seen": "2026-11-16"
+},
+"C11EJWZQ": {
+"case": "2026타경10119[1]",
+"address": "서울특별시 동대문구 장안동 293-15 3층 302호",
+"sgg": "동대문구",
+"emd": "장안동",
+"type": "다세대",
+"area": 48.24,
+"land_area": 25.21,
+"appr_manwon": 22500,
+"rounds": [
+{
+"date": "2026-12-08",
+"low_manwon": 22500,
+"fails": 0
+}
+],
+"first_seen": "2026-11-16",
+"status": "진행중",
+"last_seen": "2026-11-16"
 }
 }
