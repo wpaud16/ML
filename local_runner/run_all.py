@@ -191,6 +191,17 @@ def s_results():
         log(f'법원 결과 확인 실패(계속 진행): {e}')
 
 
+def s_hist():
+    """리치고 과거 경매 수집 (빌라·상가·건물 모델 학습용, 2026-11-16~). 자료는 저장소 밖 <상위>/hist 에만. 실패해도 무시."""
+    if ARGS.test:
+        log('테스트 → 과거 경매 수집 생략'); return
+    try:
+        run([sys.executable, 'history_crawl.py', '--budget-min', os.environ.get('HIST_BUDGET_MIN', '120')],
+            cwd=os.path.join(REPO, 'auction_model'), timeout=150 * 60, check=False)
+    except Exception as e:
+        log(f'과거 경매 수집 실패(무시): {e}')
+
+
 def pred_day():
     # auction_predict.yml 과 같은 규칙: 18시 이후는 다음 날
     return (dt.datetime.now(KST) + dt.timedelta(hours=6)).date().isoformat()
@@ -275,7 +286,7 @@ def s_brief():
 
 
 JOBS = {
-    'night': [('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction)],
+    'night': [('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction), ('hist', s_hist)],
     'outfit': [('outfit', s_outfit)],
     'brief': [('brief', s_brief)],
 }
