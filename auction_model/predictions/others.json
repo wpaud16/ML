@@ -1,18 +1,18 @@
 {
  "date": "2026-11-17",
- "generated_at": "2026-11-16T23:10:10+09:00",
+ "generated_at": "2026-11-17T04:15:28+09:00",
  "station_source": "카카오 로컬",
  "counts": {
-  "listed": 2773,
-  "wrong_type": 267,
+  "listed": 2965,
+  "wrong_type": 287,
   "over_budget": 40,
   "no_station": 1,
-  "far": 452,
-  "sold": 10,
-  "rights": 715,
-  "shown": 1288,
+  "far": 483,
+  "sold": 153,
+  "rights": 712,
+  "shown": 1289,
   "by_category": {
-   "빌라": 945,
+   "빌라": 950,
    "상가": 295,
    "건물": 37
   }
@@ -4207,6 +4207,77 @@
      "date": "2026-11-16",
      "type": "매각기일",
      "low_manwon": 28700,
+     "result": null
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경51290[1]": {
+   "key": "2025타경51290[1]",
+   "category": "빌라",
+   "auction_id": "C99WFQCU",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 암사동 482-20 제이디파크빌  3층301호",
+   "emd": "암사동",
+   "type_details": [
+    "다세대"
+   ],
+   "item_type": "다세대/빌라",
+   "appr_manwon": 37400,
+   "low_manwon": 23936,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 29.62,
+   "land_area": 38.04,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "암사",
+     "distance_m": 500,
+     "walk_min": 9,
+     "lines": [
+      "8호선",
+      "사공원역 8호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "암사",
+    "distance_m": 500,
+    "walk_min": 9,
+    "lines": [
+     "8호선",
+     "사공원역 8호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 접근이 가능하며 인근에 버스정류장 및 지하철역(8호선 암사역)이 소재하는 등 교통상황은 양호함.",
+   "rights": {
+    "base_right": "가압류",
+    "base_date": "2022-06-22"
+   },
+   "history": [
+    {
+     "date": "2026-08-31",
+     "type": "매각기일",
+     "low_manwon": 37400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-12",
+     "type": "매각기일",
+     "low_manwon": 29920,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 23936,
      "result": null
     },
     {
@@ -72321,6 +72392,79 @@
     }
    ]
   },
+  "2025타경52567[1]": {
+   "key": "2025타경52567[1]",
+   "category": "빌라",
+   "auction_id": "C41HOVAZ",
+   "region": "서울 성동구",
+   "address": "서울특별시 성동구 응봉동 265-121  비층02호",
+   "emd": "응봉동",
+   "type_details": [
+    "다세대"
+   ],
+   "item_type": "연립주택,다세대/빌라",
+   "appr_manwon": 15100,
+   "low_manwon": 15100,
+   "fails": 0,
+   "bidding_date": "",
+   "area": 25.19,
+   "land_area": 13.98,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "응봉",
+     "distance_m": 527,
+     "walk_min": 9,
+     "lines": [
+      "경의중앙선"
+     ]
+    },
+    {
+     "name": "행당",
+     "distance_m": 542,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "신금호",
+     "distance_m": 820,
+     "walk_min": 14,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "응봉",
+    "distance_m": 527,
+    "walk_min": 9,
+    "lines": [
+     "경의중앙선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 제반차량 진출입이 어려운 골목에 위치하고, 경사지에 소재하여 마을버스가 정기운행되고는 있으나 제반 교통상황은 다소 불편한 편임.",
+   "rights": {
+    "base_right": "가압류",
+    "base_date": "2023-12-29"
+   },
+   "history": [
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 15100,
+     "result": null
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2026타경10115[1]": {
    "key": "2026타경10115[1]",
    "category": "빌라",
@@ -75786,6 +75930,95 @@
     }
    ]
   },
+  "2025타경51215[6]": {
+   "key": "2025타경51215[6]",
+   "category": "빌라",
+   "auction_id": "C39AQKDP",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 삼전동 64-7  3층303호",
+   "emd": "삼전동",
+   "type_details": [
+    "다세대"
+   ],
+   "item_type": "연립주택,다세대/빌라",
+   "appr_manwon": 10200,
+   "low_manwon": 8160,
+   "fails": 1,
+   "bidding_date": "",
+   "area": 26.98,
+   "land_area": 14.97,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "석촌고분",
+     "distance_m": 447,
+     "walk_min": 8,
+     "lines": [
+      "9호선"
+     ]
+    },
+    {
+     "name": "삼전",
+     "distance_m": 569,
+     "walk_min": 10,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "석촌고분",
+    "distance_m": 447,
+    "walk_min": 8,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건에 차량출입 용이하고, 인근에 지하철역 등이 소재하여 전반적인 대중교통 이용편익은 양호함.",
+   "rights": {
+    "base_right": "가압류",
+    "base_date": "2012-08-16"
+   },
+   "history": [
+    {
+     "date": "2026-07-20",
+     "type": "매각기일",
+     "low_manwon": 10200,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-08-31",
+     "type": "매각기일",
+     "low_manwon": 8160,
+     "result": "매각"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": "최고가매각허가결정"
+    },
+    {
+     "date": "2026-10-16",
+     "type": "대금지급기한",
+     "low_manwon": null,
+     "result": "미납"
+    },
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 8160,
+     "result": null
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경52603[1]": {
    "key": "2025타경52603[1]",
    "category": "빌라",
@@ -76005,6 +76238,168 @@
     }
    ]
   },
+  "2025타경51215[4]": {
+   "key": "2025타경51215[4]",
+   "category": "빌라",
+   "auction_id": "C65OOEFS",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 삼전동 64-7  3층301호",
+   "emd": "삼전동",
+   "type_details": [
+    "다세대"
+   ],
+   "item_type": "연립주택,다세대/빌라",
+   "appr_manwon": 9400,
+   "low_manwon": 7520,
+   "fails": 1,
+   "bidding_date": "",
+   "area": 22.95,
+   "land_area": 12.74,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "석촌고분",
+     "distance_m": 447,
+     "walk_min": 8,
+     "lines": [
+      "9호선"
+     ]
+    },
+    {
+     "name": "삼전",
+     "distance_m": 569,
+     "walk_min": 10,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "석촌고분",
+    "distance_m": 447,
+    "walk_min": 8,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건에 차량출입 용이하고, 인근에 지하철역 등이 소재하여 전반적인 대중교통 이용편익은 양호함.",
+   "rights": {
+    "base_right": "가압류",
+    "base_date": "2012-08-16"
+   },
+   "history": [
+    {
+     "date": "2026-07-20",
+     "type": "매각기일",
+     "low_manwon": 9400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-08-31",
+     "type": "매각기일",
+     "low_manwon": 7520,
+     "result": "매각"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": "최고가매각허가결정"
+    },
+    {
+     "date": "2026-10-16",
+     "type": "대금지급기한",
+     "low_manwon": null,
+     "result": "미납"
+    },
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 7520,
+     "result": null
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경52579[1]": {
+   "key": "2025타경52579[1]",
+   "category": "빌라",
+   "auction_id": "C70VNJBX",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 삼전동 11-1  2층201호",
+   "emd": "삼전동",
+   "type_details": [
+    "다세대"
+   ],
+   "item_type": "다세대/빌라",
+   "appr_manwon": 4780,
+   "low_manwon": 4780,
+   "fails": 0,
+   "bidding_date": "",
+   "area": 59.92,
+   "land_area": 27.9,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "삼전",
+     "distance_m": 272,
+     "walk_min": 5,
+     "lines": [
+      "9호선"
+     ]
+    },
+    {
+     "name": "석촌고분",
+     "distance_m": 600,
+     "walk_min": 10,
+     "lines": [
+      "9호선"
+     ]
+    },
+    {
+     "name": "잠실새내",
+     "distance_m": 834,
+     "walk_min": 14,
+     "lines": [
+      "2호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "삼전",
+    "distance_m": 272,
+    "walk_min": 5,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 출입 가능하며 인근에 시내버스정류장 지하철 9호선 \"삼전역\" 이  소재하는바 대중교통이용 편의도는 보통임",
+   "rights": {
+    "base_right": "강제경매",
+    "base_date": "2025-12-29"
+   },
+   "history": [
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 4780,
+     "result": null
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경52433[1]": {
    "key": "2025타경52433[1]",
    "category": "빌라",
@@ -76060,6 +76455,71 @@
      "date": "2026-11-16",
      "type": "매각기일",
      "low_manwon": 28600,
+     "result": null
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경52535[1]": {
+   "key": "2025타경52535[1]",
+   "category": "빌라",
+   "auction_id": "C90MZUEL",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 삼전동 67-12  2층201호",
+   "emd": "삼전동",
+   "type_details": [
+    "다세대"
+   ],
+   "item_type": "연립주택,다세대/빌라",
+   "appr_manwon": 80000,
+   "low_manwon": 80000,
+   "fails": 0,
+   "bidding_date": "",
+   "area": 86.2,
+   "land_area": 50.55,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "석촌고분",
+     "distance_m": 515,
+     "walk_min": 9,
+     "lines": [
+      "9호선"
+     ]
+    },
+    {
+     "name": "삼전",
+     "distance_m": 636,
+     "walk_min": 11,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "석촌고분",
+    "distance_m": 515,
+    "walk_min": 9,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본 건까지 차량 진·출입이 용이하며, 남측 인근 간선도로(삼학사로1길)변에 노선 버스정류장이 소재하고, 북측 약 550미터 지점 간선도로(백제고분로)변에 노선버스정류장 및 전철역(삼전역, 석촌고분역 : 지하철 9호선)이 소재하는 등 전반적인 대중교통 여건은 무난함.",
+   "rights": {
+    "base_right": "강제경매",
+    "base_date": "2026-01-16"
+   },
+   "history": [
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 80000,
      "result": null
     },
     {
@@ -88956,75 +89416,6 @@
      "date": "2026-12-08",
      "type": "매각기일",
      "low_manwon": 17280,
-     "result": null
-    },
-    {
-     "date": "2026-12-15",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경50437[1]": {
-   "key": "2026타경50437[1]",
-   "category": "빌라",
-   "auction_id": "C91SSRWP",
-   "region": "서울 은평구",
-   "address": "서울특별시 은평구 구산동 25-49 벨에어하우스 비동 3층301호",
-   "emd": "구산동",
-   "type_details": [
-    "다세대"
-   ],
-   "item_type": "다세대/빌라",
-   "appr_manwon": 31700,
-   "low_manwon": 20288,
-   "fails": 2,
-   "bidding_date": "2026-12-08",
-   "area": 49.4,
-   "land_area": 31.25,
-   "court": "서울서부지방법원",
-   "stations": [
-    {
-     "name": "구산",
-     "distance_m": 573,
-     "walk_min": 10,
-     "lines": [
-      "6호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "구산",
-    "distance_m": 573,
-    "walk_min": 10,
-    "lines": [
-     "6호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 접근 가능하며 인근 간선 도로변에 노선버스정류장이 소재하고, 인근에 '구산역'(지하철6호선)'이 소재함.",
-   "rights": {
-    "base_right": "압류",
-    "base_date": "2025-02-18"
-   },
-   "history": [
-    {
-     "date": "2026-09-29",
-     "type": "매각기일",
-     "low_manwon": 31700,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-03",
-     "type": "매각기일",
-     "low_manwon": 25360,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-12-08",
-     "type": "매각기일",
-     "low_manwon": 20288,
      "result": null
     },
     {
