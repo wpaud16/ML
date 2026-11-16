@@ -8,6 +8,7 @@ import schedule_doc
 import auction_mail
 import market
 import claude_summary
+import cheongyak
 
 TO = os.environ.get('BRIEF_TO', 'wpaud16@naver.com')
 TEST = os.environ.get('TEST_MODE', '1') == '1'
@@ -19,6 +20,11 @@ def main():
     today = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date()
     label = f'{today.month}월 {today.day}일 ({WD[today.weekday()]})'
     fails, H, T = [], [], []
+    # 청약 웹 검색은 몇 분 걸려서 처음에 따로 시작 (2026-11-16)
+    import threading
+    cy = {}
+    cy_th = threading.Thread(target=lambda: cy.update(r=cheongyak.build(today)), daemon=True)
+    cy_th.start()
 
     try:
         q = quote.today_quote(today)
@@ -48,6 +54,12 @@ def main():
         h, t, _ = auction_mail.build(today); H.append(h); T.append(t)
     except Exception:
         traceback.print_exc(); fails.append('경매 알림')
+
+    # 3b) 청약 알림 — 실패해도 한 줄만 (cheongyak.build 가 처리)
+    cy_th.join(timeout=int(os.environ.get('CHEONGYAK_TIMEOUT', '900')) + 60)
+    h, t = cy.get('r') or ('<div>' + cheongyak.FAIL + '</div>', cheongyak.FAIL)
+    if h:
+        H.append(h); T.append(t)
 
     top_h = top_t = ''
     if TEST:

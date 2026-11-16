@@ -27,20 +27,25 @@ def _parse(txt):
     return json.loads(m.group()) if m else None
 
 
-def cli_summary(today, numbers_text):
-    """노트북 Claude Code CLI 로 해설. 사용량 한도·시간 초과·오류면 None (해설 생략)."""
+def cli_json(prompt, timeout=900, tag='claude cli'):
+    """노트북 Claude Code CLI(웹 검색 허용)로 JSON 하나 받기. 없음·한도·시간 초과·오류면 None."""
     exe = shutil.which('claude')
     if not exe:
-        print('claude cli: 없음 → 해설 생략'); return None
+        print(f'{tag}: 없음 → 생략'); return None
     try:
-        r = subprocess.run([exe, '-p', PROMPT.format(today=today, numbers=numbers_text), '--output-format', 'text',
-                            '--allowedTools', 'WebSearch,WebFetch'], capture_output=True, text=True, encoding='utf-8', timeout=900)
+        r = subprocess.run([exe, '-p', prompt, '--output-format', 'text',
+                            '--allowedTools', 'WebSearch,WebFetch'], capture_output=True, text=True, encoding='utf-8', timeout=timeout)
         out = _parse(r.stdout)
         if r.returncode != 0 or not out:
-            print('claude cli: 실패/한도 →', r.returncode, (r.stderr or r.stdout)[-200:]); return None
-        print('claude cli ok'); return out
+            print(f'{tag}: 실패/한도 →', r.returncode, (r.stderr or r.stdout)[-200:]); return None
+        print(f'{tag} ok'); return out
     except Exception as e:
-        print('claude cli: 오류 →', type(e).__name__, str(e)[:200]); return None
+        print(f'{tag}: 오류 →', type(e).__name__, str(e)[:200]); return None
+
+
+def cli_summary(today, numbers_text):
+    """노트북 Claude Code CLI 로 해설. 사용량 한도·시간 초과·오류면 None (해설 생략)."""
+    return cli_json(PROMPT.format(today=today, numbers=numbers_text))
 
 
 def market_summary(today, numbers_text):
