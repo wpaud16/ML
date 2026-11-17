@@ -37,7 +37,9 @@
    "pct_of_sise": 91.6,
    "actual_pct_of_sise": 94.8,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 100000,
+  "kb_date": "2026-11"
  },
  "2023타경80463[1]|2026-11-10": {
   "key": "2023타경80463[1]",
@@ -76,7 +78,9 @@
    "pct_of_sise": 83.0,
    "actual_pct_of_sise": 94.9,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 70000,
+  "kb_date": "2026-11"
  },
  "2023타경81282[1]|2026-11-05": {
   "key": "2023타경81282[1]",
@@ -102,7 +106,9 @@
    4,
    5
   ],
-  "trade_manwon": 23350
+  "trade_manwon": 23350,
+  "kb_manwon": 24000,
+  "kb_date": "2026-11"
  },
  "2024타경108231[1]|2026-11-10": {
   "key": "2024타경108231[1]",
@@ -141,7 +147,9 @@
    "pct_of_sise": 90.7,
    "actual_pct_of_sise": 95.1,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 102500,
+  "kb_date": "2026-11"
  },
  "2024타경117977[1]|2026-11-04": {
   "key": "2024타경117977[1]",
@@ -179,7 +187,9 @@
    "actual_pct_of_sise": 89.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경120408[1]|2026-11-04": {
   "key": "2024타경120408[1]",
@@ -217,7 +227,9 @@
    "actual_pct_of_sise": 93.8,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경120477[1]|2026-11-04": {
   "key": "2024타경120477[1]",
@@ -255,7 +267,9 @@
    "actual_pct_of_sise": 95.5,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경125893[1]|2026-11-13": {
   "source": "법원",
@@ -283,7 +297,9 @@
    2
   ],
   "sise_manwon": 21000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경125893[1]|2026-11-14": {
   "source": "리치고",
@@ -311,7 +327,9 @@
    2
   ],
   "sise_manwon": 21000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경144784[1]|2026-11-04": {
   "key": "2024타경144784[1]",
@@ -349,7 +367,9 @@
    "actual_pct_of_sise": 89.4,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경146957[1]|2026-11-04": {
   "key": "2024타경146957[1]",
@@ -387,7 +407,9 @@
    "actual_pct_of_sise": 96.6,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경1535[1]|2026-11-17": {
   "source": "리치고",
@@ -427,7 +449,9 @@
    "pct_of_sise": 87.9,
    "actual_pct_of_sise": 92.3,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 110000,
+  "kb_date": "2026-11"
  },
  "2024타경3470[1]|2026-11-04": {
   "key": "2024타경3470[1]",
@@ -629,7 +653,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 106520
+  "trade_manwon": 106520,
+  "kb_manwon": 113000,
+  "kb_date": "2026-11"
  },
  "2024타경461[1]|2026-11-16": {
   "source": "리치고",
@@ -669,7 +695,9 @@
    "pct_of_sise": 97.0,
    "actual_pct_of_sise": 108.5,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경6202[1]|2026-11-01": {
   "key": "2024타경6202[1]",
@@ -869,7 +897,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 34020
+  "trade_manwon": 34020,
+  "kb_manwon": 34750,
+  "kb_date": "2026-11"
  },
  "2024타경6202[1]|2026-11-04": {
   "key": "2024타경6202[1]",
@@ -1071,7 +1101,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 34020
+  "trade_manwon": 34020,
+  "kb_manwon": 34750,
+  "kb_date": "2026-11"
  },
  "2024타경62768[1]|2026-11-04": {
   "key": "2024타경62768[1]",
@@ -1109,7 +1141,9 @@
    "actual_pct_of_sise": 95.7,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경63150[1]|2026-11-03": {
   "key": "2024타경63150[1]",
@@ -1144,7 +1178,9 @@
    "actual_pct_of_sise": 71.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경63150[1]|2026-11-04": {
   "key": "2024타경63150[1]",
@@ -1182,7 +1218,9 @@
    "actual_pct_of_sise": 71.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경63389[1]|2026-11-03": {
   "key": "2024타경63389[1]",
@@ -1217,7 +1255,9 @@
    "actual_pct_of_sise": 86.8,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경63389[1]|2026-11-04": {
   "key": "2024타경63389[1]",
@@ -1243,7 +1283,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2024타경64236[1]|2026-11-02": {
   "key": "2024타경64236[1]",
@@ -1444,7 +1486,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 168620
+  "trade_manwon": 168620,
+  "kb_manwon": 180000,
+  "kb_date": "2026-11"
  },
  "2024타경64236[1]|2026-11-04": {
   "key": "2024타경64236[1]",
@@ -1646,7 +1690,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 168620
+  "trade_manwon": 168620,
+  "kb_manwon": 180000,
+  "kb_date": "2026-11"
  },
  "2024타경71282[1]|2026-11-12": {
   "source": "리치고",
@@ -1686,7 +1732,9 @@
    "pct_of_sise": 91.1,
    "actual_pct_of_sise": 95.0,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 25000,
+  "kb_date": "2026-11"
  },
  "2024타경72971[1]|2026-11-12": {
   "source": "리치고",
@@ -1714,7 +1762,9 @@
    3
   ],
   "sise_manwon": 33120,
-  "trade_manwon": 33450
+  "trade_manwon": 33450,
+  "kb_manwon": 35500,
+  "kb_date": "2026-11"
  },
  "2024타경80132[1]|2026-11-05": {
   "key": "2024타경80132[1]",
@@ -1740,7 +1790,9 @@
    1,
    2
   ],
-  "trade_manwon": 35120
+  "trade_manwon": 35120,
+  "kb_manwon": 35500,
+  "kb_date": "2026-11"
  },
  "2024타경80514[1]|2026-11-10": {
   "key": "2024타경80514[1]",
@@ -1779,7 +1831,9 @@
    "pct_of_sise": 89.9,
    "actual_pct_of_sise": 91.8,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 38500,
+  "kb_date": "2026-11"
  },
  "2024타경83810[1]|2026-11-01": {
   "key": "2024타경83810[1]",
@@ -1979,7 +2033,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 52470
+  "trade_manwon": 52470,
+  "kb_manwon": 61000,
+  "kb_date": "2026-11"
  },
  "2024타경83810[1]|2026-11-04": {
   "key": "2024타경83810[1]",
@@ -2181,7 +2237,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 52470
+  "trade_manwon": 52470,
+  "kb_manwon": 61000,
+  "kb_date": "2026-11"
  },
  "2025타경102542[1]|2026-11-03": {
   "key": "2025타경102542[1]",
@@ -2207,7 +2265,9 @@
    1,
    4
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경102542[1]|2026-11-04": {
   "key": "2025타경102542[1]",
@@ -2233,7 +2293,9 @@
    1,
    4
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경102941[1]|2026-11-12": {
   "source": "리치고",
@@ -2273,7 +2335,9 @@
    "pct_of_sise": 92.3,
    "actual_pct_of_sise": 92.1,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 124000,
+  "kb_date": "2026-11"
  },
  "2025타경103145[1]|2026-11-12": {
   "source": "리치고",
@@ -2301,7 +2365,9 @@
    2
   ],
   "sise_manwon": 26720,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 27000,
+  "kb_date": "2026-11"
  },
  "2025타경103199[1]|2026-11-10": {
   "key": "2025타경103199[1]",
@@ -2340,7 +2406,9 @@
    "pct_of_sise": 85.6,
    "actual_pct_of_sise": 85.5,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 67500,
+  "kb_date": "2026-11"
  },
  "2025타경103241[1]|2026-11-10": {
   "key": "2025타경103241[1]",
@@ -2379,7 +2447,9 @@
    "pct_of_sise": 64.7,
    "actual_pct_of_sise": 18.1,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": 16500,
+  "kb_date": "2026-11"
  },
  "2025타경103485[1]|2026-11-05": {
   "key": "2025타경103485[1]",
@@ -2417,7 +2487,9 @@
    "actual_pct_of_sise": 98.7,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경103936[1]|2026-11-03": {
   "key": "2025타경103936[1]",
@@ -2443,7 +2515,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경103936[1]|2026-11-04": {
   "key": "2025타경103936[1]",
@@ -2469,7 +2543,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경103936[1]|2026-11-05": {
   "key": "2025타경103936[1]",
@@ -2495,7 +2571,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경103938[1]|2026-11-05": {
   "key": "2025타경103938[1]",
@@ -2533,7 +2611,9 @@
    "actual_pct_of_sise": 79.4,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경104017[1]|2026-11-05": {
   "key": "2025타경104017[1]",
@@ -2559,7 +2639,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경104069[1]|2026-11-05": {
   "key": "2025타경104069[1]",
@@ -2585,7 +2667,9 @@
    1,
    1
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경104192[1]|2026-11-17": {
   "source": "리치고",
@@ -2613,7 +2697,9 @@
    5
   ],
   "sise_manwon": 14100,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 13400,
+  "kb_date": "2026-11"
  },
  "2025타경104308[1]|2026-11-05": {
   "key": "2025타경104308[1]",
@@ -2639,7 +2725,9 @@
    1,
    2
   ],
-  "trade_manwon": 429290
+  "trade_manwon": 429290,
+  "kb_manwon": 405000,
+  "kb_date": "2026-11"
  },
  "2025타경104528[1]|2026-11-04": {
   "key": "2025타경104528[1]",
@@ -2677,7 +2765,9 @@
    "actual_pct_of_sise": 92.4,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경104585[1]|2026-11-17": {
   "source": "리치고",
@@ -2705,7 +2795,9 @@
    3
   ],
   "sise_manwon": 42650,
-  "trade_manwon": 41850
+  "trade_manwon": 41850,
+  "kb_manwon": 43000,
+  "kb_date": "2026-11"
  },
  "2025타경104590[1]|2026-11-10": {
   "source": "리치고",
@@ -2733,7 +2825,9 @@
    4
   ],
   "sise_manwon": 313810,
-  "trade_manwon": 306220
+  "trade_manwon": 306220,
+  "kb_manwon": 302500,
+  "kb_date": "2026-11"
  },
  "2025타경104590[1]|2026-11-12": {
   "source": "리치고",
@@ -2761,7 +2855,9 @@
    4
   ],
   "sise_manwon": 313830,
-  "trade_manwon": 306220
+  "trade_manwon": 306220,
+  "kb_manwon": 302500,
+  "kb_date": "2026-11"
  },
  "2025타경104598[1]|2026-11-05": {
   "source": "리치고",
@@ -2789,7 +2885,9 @@
    2
   ],
   "sise_manwon": 29150,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경104598[1]|2026-11-09": {
   "source": "법원",
@@ -2817,7 +2915,9 @@
    3
   ],
   "sise_manwon": 29150,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경104616[1]|2026-11-04": {
   "key": "2025타경104616[1]",
@@ -2855,7 +2955,9 @@
    "actual_pct_of_sise": 84.0,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경104626[1]|2026-11-17": {
   "source": "리치고",
@@ -2895,7 +2997,9 @@
    "pct_of_sise": 91.3,
    "actual_pct_of_sise": 90.7,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 63500,
+  "kb_date": "2026-11"
  },
  "2025타경10467[1]|2026-11-05": {
   "key": "2025타경10467[1]",
@@ -2921,7 +3025,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경10615[1]|2026-11-05": {
   "key": "2025타경10615[1]",
@@ -2947,7 +3053,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경10635[1]|2026-11-05": {
   "key": "2025타경10635[1]",
@@ -2973,7 +3081,9 @@
    1,
    1
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경11101[1]|2026-11-05": {
   "key": "2025타경11101[1]",
@@ -3011,7 +3121,9 @@
    "actual_pct_of_sise": 82.7,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경11424[1]|2026-11-04": {
   "key": "2025타경11424[1]",
@@ -3049,7 +3161,9 @@
    "actual_pct_of_sise": 72.6,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 12800,
+  "kb_date": "2026-11"
  },
  "2025타경11845[1]|2026-11-05": {
   "key": "2025타경11845[1]",
@@ -3075,7 +3189,9 @@
    1,
    1
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경12143[1]|2026-11-05": {
   "key": "2025타경12143[1]",
@@ -3101,7 +3217,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경12547[1]|2026-11-04": {
   "key": "2025타경12547[1]",
@@ -3139,7 +3257,9 @@
    "actual_pct_of_sise": 63.2,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13284[1]|2026-11-04": {
   "key": "2025타경13284[1]",
@@ -3177,7 +3297,9 @@
    "actual_pct_of_sise": 76.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 14500,
+  "kb_date": "2026-11"
  },
  "2025타경13352[1]|2026-11-02": {
   "key": "2025타경13352[1]",
@@ -3200,7 +3322,9 @@
   "checked": "2026-11-03",
   "expected_bidders": null,
   "expected_range": null,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13352[1]|2026-11-05": {
   "key": "2025타경13352[1]",
@@ -3226,7 +3350,9 @@
    1,
    4
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13443[1]|2026-11-10": {
   "key": "2025타경13443[1]",
@@ -3265,7 +3391,9 @@
    "pct_of_sise": 75.7,
    "actual_pct_of_sise": 77.9,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": 32375,
+  "kb_date": "2026-11"
  },
  "2025타경13476[1]|2026-11-04": {
   "key": "2025타경13476[1]",
@@ -3303,7 +3431,9 @@
    "actual_pct_of_sise": 91.6,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13505[1]|2026-11-10": {
   "key": "2025타경13505[1]",
@@ -3342,7 +3472,9 @@
    "pct_of_sise": 85.3,
    "actual_pct_of_sise": 93.2,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13525[1]|2026-11-10": {
   "key": "2025타경13525[1]",
@@ -3381,7 +3513,9 @@
    "pct_of_sise": 89.3,
    "actual_pct_of_sise": 89.1,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 91500,
+  "kb_date": "2026-11"
  },
  "2025타경13575[1]|2026-11-05": {
   "key": "2025타경13575[1]",
@@ -3419,7 +3553,9 @@
    "actual_pct_of_sise": 78.6,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13621[1]|2026-11-10": {
   "key": "2025타경13621[1]",
@@ -3458,7 +3594,9 @@
    "pct_of_sise": 94.5,
    "actual_pct_of_sise": 95.6,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13643[1]|2026-11-13": {
   "source": "리치고",
@@ -3486,7 +3624,9 @@
    2
   ],
   "sise_manwon": 28000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13643[1]|2026-11-14": {
   "source": "리치고",
@@ -3514,7 +3654,9 @@
    2
   ],
   "sise_manwon": 28000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13693[1]|2026-11-04": {
   "key": "2025타경13693[1]",
@@ -3552,7 +3694,9 @@
    "actual_pct_of_sise": 67.0,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13725[1]|2026-11-05": {
   "key": "2025타경13725[1]",
@@ -3590,7 +3734,9 @@
    "actual_pct_of_sise": 74.2,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 14000,
+  "kb_date": "2026-11"
  },
  "2025타경13745[1]|2026-11-04": {
   "key": "2025타경13745[1]",
@@ -3628,7 +3774,9 @@
    "actual_pct_of_sise": 79.3,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13766[1]|2026-11-10": {
   "source": "리치고",
@@ -3656,7 +3804,9 @@
    2
   ],
   "sise_manwon": 10560,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13790[1]|2026-11-17": {
   "source": "리치고",
@@ -3684,7 +3834,9 @@
    1
   ],
   "sise_manwon": 28000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13822[1]|2026-11-04": {
   "key": "2025타경13822[1]",
@@ -3722,7 +3874,9 @@
    "actual_pct_of_sise": 82.5,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13841[1]|2026-11-05": {
   "key": "2025타경13841[1]",
@@ -3748,7 +3902,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 27000,
+  "kb_date": "2026-11"
  },
  "2025타경13896[1]|2026-11-05": {
   "key": "2025타경13896[1]",
@@ -3786,7 +3942,9 @@
    "actual_pct_of_sise": 68.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13918[1]|2026-11-10": {
   "source": "리치고",
@@ -3814,7 +3972,9 @@
    3
   ],
   "sise_manwon": 10560,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13921[1]|2026-11-13": {
   "source": "리치고",
@@ -3842,7 +4002,9 @@
    2
   ],
   "sise_manwon": 8000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13921[1]|2026-11-14": {
   "source": "리치고",
@@ -3870,7 +4032,9 @@
    2
   ],
   "sise_manwon": 8200,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13924[1]|2026-11-17": {
   "source": "리치고",
@@ -3898,7 +4062,9 @@
    3
   ],
   "sise_manwon": 27750,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13931[1]|2026-11-03": {
   "key": "2025타경13931[1]",
@@ -3924,7 +4090,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13931[1]|2026-11-04": {
   "key": "2025타경13931[1]",
@@ -3950,7 +4118,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경13931[1]|2026-11-05": {
   "key": "2025타경13931[1]",
@@ -3976,7 +4146,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14024[1]|2026-11-05": {
   "key": "2025타경14024[1]",
@@ -4002,7 +4174,9 @@
    1,
    1
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14073[1]|2026-11-17": {
   "source": "리치고",
@@ -4042,7 +4216,9 @@
    "pct_of_sise": 68.3,
    "actual_pct_of_sise": 68.3,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14074[1]|2026-11-05": {
   "key": "2025타경14074[1]",
@@ -4068,7 +4244,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14138[1]|2026-11-12": {
   "source": "법원",
@@ -4096,7 +4274,9 @@
    2
   ],
   "sise_manwon": 39660,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14142[1]|2026-11-05": {
   "key": "2025타경14142[1]",
@@ -4122,7 +4302,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14152[1]|2026-11-05": {
   "key": "2025타경14152[1]",
@@ -4148,7 +4330,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14167[1]|2026-11-17": {
   "source": "리치고",
@@ -4188,7 +4372,9 @@
    "pct_of_sise": 102.1,
    "actual_pct_of_sise": 96.5,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14177[1]|2026-11-11": {
   "source": "리치고",
@@ -4228,7 +4414,9 @@
    "pct_of_sise": 203.5,
    "actual_pct_of_sise": 223.9,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14179[1]|2026-11-17": {
   "source": "리치고",
@@ -4268,7 +4456,9 @@
    "pct_of_sise": 197.6,
    "actual_pct_of_sise": 203.6,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14204[1]|2026-11-05": {
   "key": "2025타경14204[1]",
@@ -4294,7 +4484,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경14237[1]|2026-11-05": {
   "key": "2025타경14237[1]",
@@ -4320,7 +4512,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경1884[1]|2026-11-11": {
   "source": "리치고",
@@ -4360,7 +4554,9 @@
    "pct_of_sise": 79.9,
    "actual_pct_of_sise": 76.6,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 26500,
+  "kb_date": "2026-11"
  },
  "2025타경2268[1]|2026-11-03": {
   "key": "2025타경2268[1]",
@@ -4386,7 +4582,9 @@
    1,
    1
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경2268[1]|2026-11-04": {
   "key": "2025타경2268[1]",
@@ -4412,7 +4610,9 @@
    1,
    1
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경2270[1]|2026-11-17": {
   "source": "리치고",
@@ -4440,7 +4640,9 @@
    2
   ],
   "sise_manwon": 34700,
-  "trade_manwon": 34080
+  "trade_manwon": 34080,
+  "kb_manwon": 36500,
+  "kb_date": "2026-11"
  },
  "2025타경2428[1]|2026-11-10": {
   "key": "2025타경2428[1]",
@@ -4479,7 +4681,9 @@
    "pct_of_sise": 91.4,
    "actual_pct_of_sise": 84.9,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 167000,
+  "kb_date": "2026-11"
  },
  "2025타경3491[1]|2026-11-12": {
   "source": "리치고",
@@ -4507,7 +4711,9 @@
    2
   ],
   "sise_manwon": 96230,
-  "trade_manwon": 96030
+  "trade_manwon": 96030,
+  "kb_manwon": 95500,
+  "kb_date": "2026-11"
  },
  "2025타경3675[1]|2026-11-12": {
   "source": "리치고",
@@ -4535,7 +4741,9 @@
    3
   ],
   "sise_manwon": 67130,
-  "trade_manwon": 63390
+  "trade_manwon": 63390,
+  "kb_manwon": 66000,
+  "kb_date": "2026-11"
  },
  "2025타경3729[1]|2026-11-01": {
   "key": "2025타경3729[1]",
@@ -4735,7 +4943,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 37890
+  "trade_manwon": 37890,
+  "kb_manwon": 37500,
+  "kb_date": "2026-11"
  },
  "2025타경430[1]|2026-11-06": {
   "key": "2025타경430[1]",
@@ -4761,7 +4971,9 @@
    1,
    5
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 39000,
+  "kb_date": "2026-11"
  },
  "2025타경4418[1]|2026-11-17": {
   "source": "리치고",
@@ -4801,7 +5013,9 @@
    "pct_of_sise": 86.8,
    "actual_pct_of_sise": 87.0,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 34500,
+  "kb_date": "2026-11"
  },
  "2025타경4459[1]|2026-11-01": {
   "key": "2025타경4459[1]",
@@ -5001,7 +5215,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 80410
+  "trade_manwon": 80410,
+  "kb_manwon": 81500,
+  "kb_date": "2026-11"
  },
  "2025타경4459[1]|2026-11-04": {
   "key": "2025타경4459[1]",
@@ -5203,7 +5419,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 80410
+  "trade_manwon": 80410,
+  "kb_manwon": 81500,
+  "kb_date": "2026-11"
  },
  "2025타경455[1]|2026-11-16": {
   "source": "법원",
@@ -5231,7 +5449,9 @@
    2
   ],
   "sise_manwon": 66000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경455[1]|2026-11-17": {
   "source": "리치고",
@@ -5259,7 +5479,9 @@
    2
   ],
   "sise_manwon": 66000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경4562[1]|2026-11-17": {
   "source": "리치고",
@@ -5299,7 +5521,9 @@
    "pct_of_sise": 89.4,
    "actual_pct_of_sise": 89.4,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 32500,
+  "kb_date": "2026-11"
  },
  "2025타경4623[1]|2026-11-05": {
   "key": "2025타경4623[1]",
@@ -5325,7 +5549,9 @@
    1,
    3
   ],
-  "trade_manwon": 24240
+  "trade_manwon": 24240,
+  "kb_manwon": 25000,
+  "kb_date": "2026-11"
  },
  "2025타경4845[1]|2026-11-05": {
   "key": "2025타경4845[1]",
@@ -5351,7 +5577,9 @@
    1,
    2
   ],
-  "trade_manwon": 36430
+  "trade_manwon": 36430,
+  "kb_manwon": 38500,
+  "kb_date": "2026-11"
  },
  "2025타경50397[1]|2026-11-17": {
   "source": "리치고",
@@ -5391,7 +5619,9 @@
    "pct_of_sise": 77.9,
    "actual_pct_of_sise": 82.0,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경50403[1]|2026-11-17": {
   "source": "리치고",
@@ -5431,7 +5661,9 @@
    "pct_of_sise": 86.3,
    "actual_pct_of_sise": 84.9,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51041[1]|2026-11-10": {
   "key": "2025타경51041[1]",
@@ -5470,7 +5702,9 @@
    "pct_of_sise": 83.9,
    "actual_pct_of_sise": 79.5,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51381[1]|2026-11-03": {
   "key": "2025타경51381[1]",
@@ -5505,7 +5739,9 @@
    "actual_pct_of_sise": 97.4,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51381[1]|2026-11-04": {
   "key": "2025타경51381[1]",
@@ -5543,7 +5779,9 @@
    "actual_pct_of_sise": 103.7,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51439[1]|2026-11-16": {
   "source": "리치고",
@@ -5583,7 +5821,9 @@
    "pct_of_sise": 93.3,
    "actual_pct_of_sise": 91.7,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 162500,
+  "kb_date": "2026-11"
  },
  "2025타경51442[1]|2026-11-17": {
   "source": "리치고",
@@ -5611,7 +5851,9 @@
    2
   ],
   "sise_manwon": 27100,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51557[1]|2026-11-04": {
   "key": "2025타경51557[1]",
@@ -5649,7 +5891,9 @@
    "actual_pct_of_sise": 99.8,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51732[1]|2026-11-16": {
   "source": "리치고",
@@ -5689,7 +5933,9 @@
    "pct_of_sise": 92.5,
    "actual_pct_of_sise": 92.4,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 177500,
+  "kb_date": "2026-11"
  },
  "2025타경51733[1]|2026-11-09": {
   "key": "2025타경51733[1]",
@@ -5728,7 +5974,9 @@
    "pct_of_sise": 81.4,
    "actual_pct_of_sise": 72.2,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 73000,
+  "kb_date": "2026-11"
  },
  "2025타경51793[1]|2026-11-03": {
   "key": "2025타경51793[1]",
@@ -5754,7 +6002,9 @@
    1,
    5
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51793[1]|2026-11-04": {
   "key": "2025타경51793[1]",
@@ -5780,7 +6030,9 @@
    1,
    5
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51793[1]|2026-11-05": {
   "key": "2025타경51793[1]",
@@ -5807,7 +6059,9 @@
    6
   ],
   "sise_manwon": 28000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51793[1]|2026-11-09": {
   "key": "2025타경51793[1]",
@@ -5834,7 +6088,9 @@
    6
   ],
   "sise_manwon": 28500,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경51801[1]|2026-11-10": {
   "key": "2025타경51801[1]",
@@ -5873,7 +6129,9 @@
    "pct_of_sise": 68.0,
    "actual_pct_of_sise": 68.1,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52040[1]|2026-11-09": {
   "source": "리치고",
@@ -5901,7 +6159,9 @@
    7
   ],
   "sise_manwon": 130220,
-  "trade_manwon": 126680
+  "trade_manwon": 126680,
+  "kb_manwon": 130500,
+  "kb_date": "2026-11"
  },
  "2025타경52060[1]|2026-11-03": {
   "key": "2025타경52060[1]",
@@ -5927,7 +6187,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52060[1]|2026-11-04": {
   "key": "2025타경52060[1]",
@@ -5953,7 +6215,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52092[1]|2026-11-04": {
   "key": "2025타경52092[1]",
@@ -5991,7 +6255,9 @@
    "actual_pct_of_sise": 76.4,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52098[1]|2026-11-17": {
   "source": "리치고",
@@ -6019,7 +6285,9 @@
    3
   ],
   "sise_manwon": 48410,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 47500,
+  "kb_date": "2026-11"
  },
  "2025타경52138[1]|2026-11-16": {
   "source": "리치고",
@@ -6059,7 +6327,9 @@
    "pct_of_sise": 93.8,
    "actual_pct_of_sise": 95.1,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 205000,
+  "kb_date": "2026-11"
  },
  "2025타경52183[1]|2026-11-16": {
   "source": "리치고",
@@ -6099,7 +6369,9 @@
    "pct_of_sise": 91.2,
    "actual_pct_of_sise": 93.8,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 287500,
+  "kb_date": "2026-11"
  },
  "2025타경52197[1]|2026-11-03": {
   "key": "2025타경52197[1]",
@@ -6125,7 +6397,9 @@
    1,
    5
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52197[1]|2026-11-04": {
   "key": "2025타경52197[1]",
@@ -6151,7 +6425,9 @@
    1,
    5
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52197[1]|2026-11-05": {
   "key": "2025타경52197[1]",
@@ -6177,7 +6453,9 @@
    1,
    5
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52224[1]|2026-11-17": {
   "source": "리치고",
@@ -6205,7 +6483,9 @@
    3
   ],
   "sise_manwon": 18100,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 19750,
+  "kb_date": "2026-11"
  },
  "2025타경52286[1]|2026-11-17": {
   "source": "리치고",
@@ -6233,7 +6513,9 @@
    2
   ],
   "sise_manwon": 21170,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 21700,
+  "kb_date": "2026-11"
  },
  "2025타경52334[1]|2026-11-17": {
   "source": "리치고",
@@ -6261,7 +6543,9 @@
    2
   ],
   "sise_manwon": 19280,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 20150,
+  "kb_date": "2026-11"
  },
  "2025타경52353[1]|2026-11-16": {
   "source": "법원",
@@ -6289,7 +6573,9 @@
    4
   ],
   "sise_manwon": 273530,
-  "trade_manwon": 272450
+  "trade_manwon": 272450,
+  "kb_manwon": 265000,
+  "kb_date": "2026-11"
  },
  "2025타경52356[1]|2026-11-16": {
   "source": "법원",
@@ -6317,7 +6603,9 @@
    2
   ],
   "sise_manwon": 17100,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 18000,
+  "kb_date": "2026-11"
  },
  "2025타경52356[1]|2026-11-17": {
   "source": "리치고",
@@ -6345,7 +6633,9 @@
    2
   ],
   "sise_manwon": 17070,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 18000,
+  "kb_date": "2026-11"
  },
  "2025타경52365[1]|2026-11-10": {
   "key": "2025타경52365[1]",
@@ -6384,7 +6674,9 @@
    "pct_of_sise": 87.5,
    "actual_pct_of_sise": 94.2,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52394[1]|2026-11-10": {
   "source": "리치고",
@@ -6412,7 +6704,9 @@
    2
   ],
   "sise_manwon": 17600,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경52410[1]|2026-11-16": {
   "source": "리치고",
@@ -6452,7 +6746,9 @@
    "pct_of_sise": 94.1,
    "actual_pct_of_sise": 96.4,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 125000,
+  "kb_date": "2026-11"
  },
  "2025타경52419[1]|2026-11-17": {
   "source": "리치고",
@@ -6480,7 +6776,9 @@
    3
   ],
   "sise_manwon": 27630,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 25500,
+  "kb_date": "2026-11"
  },
  "2025타경52465[1]|2026-11-16": {
   "source": "법원",
@@ -6508,7 +6806,9 @@
    2
   ],
   "sise_manwon": 212860,
-  "trade_manwon": 209420
+  "trade_manwon": 209420,
+  "kb_manwon": 216000,
+  "kb_date": "2026-11"
  },
  "2025타경52516[1]|2026-11-16": {
   "source": "법원",
@@ -6536,7 +6836,9 @@
    2
   ],
   "sise_manwon": 695540,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 695000,
+  "kb_date": "2026-11"
  },
  "2025타경52598[1]|2026-11-02": {
   "key": "2025타경52598[1]",
@@ -6559,7 +6861,9 @@
   "checked": "2026-11-03",
   "expected_bidders": null,
   "expected_range": null,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경53415[1]|2026-11-16": {
   "source": "리치고",
@@ -6587,7 +6891,9 @@
    9
   ],
   "sise_manwon": 171500,
-  "trade_manwon": 149100
+  "trade_manwon": 149100,
+  "kb_manwon": 165000,
+  "kb_date": "2026-11"
  },
  "2025타경5756[1]|2026-11-04": {
   "key": "2025타경5756[1]",
@@ -6625,7 +6931,9 @@
    "actual_pct_of_sise": 84.9,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경71670[1]|2026-10-31": {
   "key": "2025타경71670[1]",
@@ -6825,7 +7133,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 12950
+  "trade_manwon": 12950,
+  "kb_manwon": 13500,
+  "kb_date": "2026-10"
  },
  "2025타경71670[1]|2026-11-01": {
   "key": "2025타경71670[1]",
@@ -7025,7 +7335,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 12950
+  "trade_manwon": 12950,
+  "kb_manwon": 13500,
+  "kb_date": "2026-11"
  },
  "2025타경71670[1]|2026-11-02": {
   "key": "2025타경71670[1]",
@@ -7226,7 +7538,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 12950
+  "trade_manwon": 12950,
+  "kb_manwon": 13500,
+  "kb_date": "2026-11"
  },
  "2025타경71670[1]|2026-11-03": {
   "key": "2025타경71670[1]",
@@ -7428,7 +7742,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 12950
+  "trade_manwon": 12950,
+  "kb_manwon": 13500,
+  "kb_date": "2026-11"
  },
  "2025타경71670[1]|2026-11-04": {
   "key": "2025타경71670[1]",
@@ -7630,7 +7946,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 12950
+  "trade_manwon": 12950,
+  "kb_manwon": 13500,
+  "kb_date": "2026-11"
  },
  "2025타경71712[1]|2026-11-12": {
   "source": "리치고",
@@ -7670,7 +7988,9 @@
    "pct_of_sise": 90.3,
    "actual_pct_of_sise": 95.4,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 85000,
+  "kb_date": "2026-11"
  },
  "2025타경72100[1]|2026-11-11": {
   "source": "리치고",
@@ -7710,7 +8030,9 @@
    "pct_of_sise": 95.5,
    "actual_pct_of_sise": 93.4,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 111000,
+  "kb_date": "2026-11"
  },
  "2025타경72113[1]|2026-11-11": {
   "source": "리치고",
@@ -7750,7 +8072,9 @@
    "pct_of_sise": 89.9,
    "actual_pct_of_sise": 97.9,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 53500,
+  "kb_date": "2026-11"
  },
  "2025타경72126[1]|2026-11-11": {
   "source": "리치고",
@@ -7790,7 +8114,9 @@
    "pct_of_sise": 91.7,
    "actual_pct_of_sise": 89.3,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 43000,
+  "kb_date": "2026-11"
  },
  "2025타경72160[1]|2026-11-11": {
   "source": "리치고",
@@ -7830,7 +8156,9 @@
    "pct_of_sise": 88.6,
    "actual_pct_of_sise": 89.9,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 59000,
+  "kb_date": "2026-11"
  },
  "2025타경72200[1]|2026-11-11": {
   "source": "리치고",
@@ -7870,7 +8198,9 @@
    "pct_of_sise": 89.1,
    "actual_pct_of_sise": 88.4,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 106000,
+  "kb_date": "2026-11"
  },
  "2025타경72282[1]|2026-11-12": {
   "source": "리치고",
@@ -7898,7 +8228,9 @@
    3
   ],
   "sise_manwon": 21390,
-  "trade_manwon": 21760
+  "trade_manwon": 21760,
+  "kb_manwon": 23000,
+  "kb_date": "2026-11"
  },
  "2025타경72296[1]|2026-11-12": {
   "source": "리치고",
@@ -7926,7 +8258,9 @@
    8
   ],
   "sise_manwon": 39560,
-  "trade_manwon": 39240
+  "trade_manwon": 39240,
+  "kb_manwon": 40500,
+  "kb_date": "2026-11"
  },
  "2025타경72305[1]|2026-11-11": {
   "source": "리치고",
@@ -7954,7 +8288,9 @@
    3
   ],
   "sise_manwon": 16050,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 19500,
+  "kb_date": "2026-11"
  },
  "2025타경72305[1]|2026-11-12": {
   "source": "리치고",
@@ -7982,7 +8318,9 @@
    3
   ],
   "sise_manwon": 16050,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 19500,
+  "kb_date": "2026-11"
  },
  "2025타경72387[1]|2026-11-05": {
   "key": "2025타경72387[1]",
@@ -8008,7 +8346,9 @@
    4,
    7
   ],
-  "trade_manwon": 39850
+  "trade_manwon": 39850,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경72429[1]|2026-11-17": {
   "source": "리치고",
@@ -8048,7 +8388,9 @@
    "pct_of_sise": 73.0,
    "actual_pct_of_sise": 62.7,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 40250,
+  "kb_date": "2026-11"
  },
  "2025타경72444[1]|2026-11-12": {
   "source": "리치고",
@@ -8076,7 +8418,9 @@
    3
   ],
   "sise_manwon": 18270,
-  "trade_manwon": 18370
+  "trade_manwon": 18370,
+  "kb_manwon": 18500,
+  "kb_date": "2026-11"
  },
  "2025타경72473[1]|2026-11-05": {
   "key": "2025타경72473[1]",
@@ -8278,7 +8622,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 43140
+  "trade_manwon": 43140,
+  "kb_manwon": 44000,
+  "kb_date": "2026-11"
  },
  "2025타경72645[1]|2026-11-05": {
   "key": "2025타경72645[1]",
@@ -8480,7 +8826,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 46710
+  "trade_manwon": 46710,
+  "kb_manwon": 48000,
+  "kb_date": "2026-11"
  },
  "2025타경72646[1]|2026-11-10": {
   "source": "리치고",
@@ -8508,7 +8856,9 @@
    2
   ],
   "sise_manwon": 48380,
-  "trade_manwon": 48010
+  "trade_manwon": 48010,
+  "kb_manwon": 50000,
+  "kb_date": "2026-11"
  },
  "2025타경72665[1]|2026-11-05": {
   "key": "2025타경72665[1]",
@@ -8710,7 +9060,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 24920
+  "trade_manwon": 24920,
+  "kb_manwon": 26000,
+  "kb_date": "2026-11"
  },
  "2025타경72726[1]|2026-11-05": {
   "key": "2025타경72726[1]",
@@ -8912,7 +9264,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 31410
+  "trade_manwon": 31410,
+  "kb_manwon": 32500,
+  "kb_date": "2026-11"
  },
  "2025타경72777[1]|2026-11-17": {
   "source": "리치고",
@@ -8940,7 +9294,9 @@
    5
   ],
   "sise_manwon": 92670,
-  "trade_manwon": 89710
+  "trade_manwon": 89710,
+  "kb_manwon": 96500,
+  "kb_date": "2026-11"
  },
  "2025타경72849[1]|2026-11-05": {
   "key": "2025타경72849[1]",
@@ -8966,7 +9322,9 @@
    1,
    3
   ],
-  "trade_manwon": 76050
+  "trade_manwon": 76050,
+  "kb_manwon": 80000,
+  "kb_date": "2026-11"
  },
  "2025타경72874[1]|2026-11-17": {
   "source": "리치고",
@@ -8994,7 +9352,9 @@
    2
   ],
   "sise_manwon": 23560,
-  "trade_manwon": 23670
+  "trade_manwon": 23670,
+  "kb_manwon": 25000,
+  "kb_date": "2026-11"
  },
  "2025타경72876[1]|2026-11-05": {
   "key": "2025타경72876[1]",
@@ -9020,7 +9380,9 @@
    1,
    2
   ],
-  "trade_manwon": 67600
+  "trade_manwon": 67600,
+  "kb_manwon": 72000,
+  "kb_date": "2026-11"
  },
  "2025타경788[1]|2026-11-03": {
   "key": "2025타경788[1]",
@@ -9055,7 +9417,9 @@
    "actual_pct_of_sise": 67.6,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경8595[1]|2026-11-04": {
   "key": "2025타경8595[1]",
@@ -9093,7 +9457,9 @@
    "actual_pct_of_sise": 91.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 12800,
+  "kb_date": "2026-11"
  },
  "2025타경8822[1]|2026-11-05": {
   "key": "2025타경8822[1]",
@@ -9119,7 +9485,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경8882[1]|2026-11-02": {
   "key": "2025타경8882[1]",
@@ -9151,7 +9519,9 @@
    "actual_pct_of_sise": 100.5,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경8882[1]|2026-11-03": {
   "key": "2025타경8882[1]",
@@ -9189,7 +9559,9 @@
    "actual_pct_of_sise": 100.5,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경8988[1]|2026-11-05": {
   "key": "2025타경8988[1]",
@@ -9215,7 +9587,9 @@
    1,
    1
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경9378[1]|2026-11-04": {
   "key": "2025타경9378[1]",
@@ -9253,7 +9627,9 @@
    "actual_pct_of_sise": 91.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경9629[1]|2026-11-04": {
   "key": "2025타경9629[1]",
@@ -9291,7 +9667,9 @@
    "actual_pct_of_sise": 95.8,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 15750,
+  "kb_date": "2026-11"
  },
  "2025타경9640[1]|2026-11-04": {
   "key": "2025타경9640[1]",
@@ -9329,7 +9707,9 @@
    "actual_pct_of_sise": 122.5,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경9819[1]|2026-11-05": {
   "key": "2025타경9819[1]",
@@ -9355,7 +9735,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경9914[1]|2026-11-04": {
   "key": "2025타경9914[1]",
@@ -9393,7 +9775,9 @@
    "actual_pct_of_sise": 112.1,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 14300,
+  "kb_date": "2026-11"
  },
  "2026타경100031[1]|2026-11-17": {
   "source": "리치고",
@@ -9433,7 +9817,9 @@
    "pct_of_sise": 86.7,
    "actual_pct_of_sise": 84.3,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 68500,
+  "kb_date": "2026-11"
  },
  "2026타경100240[1]|2026-11-10": {
   "source": "리치고",
@@ -9461,7 +9847,9 @@
    3
   ],
   "sise_manwon": 79400,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경100316[1]|2026-11-04": {
   "key": "2026타경100316[1]",
@@ -9487,7 +9875,9 @@
    2,
    6
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 460000,
+  "kb_date": "2026-11"
  },
  "2026타경10032[1]|2026-11-10": {
   "key": "2026타경10032[1]",
@@ -9526,7 +9916,9 @@
    "pct_of_sise": 91.8,
    "actual_pct_of_sise": 87.9,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 124000,
+  "kb_date": "2026-11"
  },
  "2026타경100393[1]|2026-11-10": {
   "source": "리치고",
@@ -9554,7 +9946,9 @@
    3
   ],
   "sise_manwon": 299810,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 290000,
+  "kb_date": "2026-11"
  },
  "2026타경100393[2]|2026-11-10": {
   "source": "리치고",
@@ -9582,7 +9976,9 @@
    4
   ],
   "sise_manwon": 225740,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 220000,
+  "kb_date": "2026-11"
  },
  "2026타경100399[1]|2026-11-05": {
   "key": "2026타경100399[1]",
@@ -9609,7 +10005,9 @@
    3
   ],
   "sise_manwon": 17930,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경100401[1]|2026-11-10": {
   "key": "2026타경100401[1]",
@@ -9648,7 +10046,9 @@
    "pct_of_sise": 71.0,
    "actual_pct_of_sise": 69.7,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": 13700,
+  "kb_date": "2026-11"
  },
  "2026타경100438[1]|2026-11-05": {
   "source": "리치고",
@@ -9676,7 +10076,9 @@
    2
   ],
   "sise_manwon": 21490,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 21000,
+  "kb_date": "2026-11"
  },
  "2026타경100530[1]|2026-11-10": {
   "key": "2026타경100530[1]",
@@ -9715,7 +10117,9 @@
    "pct_of_sise": 90.7,
    "actual_pct_of_sise": 86.8,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 330000,
+  "kb_date": "2026-11"
  },
  "2026타경100530[2]|2026-11-10": {
   "source": "리치고",
@@ -9743,7 +10147,9 @@
    5
   ],
   "sise_manwon": 307130,
-  "trade_manwon": 319200
+  "trade_manwon": 319200,
+  "kb_manwon": 325000,
+  "kb_date": "2026-11"
  },
  "2026타경100614[1]|2026-11-12": {
   "source": "리치고",
@@ -9771,7 +10177,9 @@
    3
   ],
   "sise_manwon": 20670,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 20500,
+  "kb_date": "2026-11"
  },
  "2026타경100663[1]|2026-11-17": {
   "source": "리치고",
@@ -9799,7 +10207,9 @@
    2
   ],
   "sise_manwon": 8250,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경100871[1]|2026-11-10": {
   "source": "리치고",
@@ -9827,7 +10237,9 @@
    2
   ],
   "sise_manwon": 54710,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경101257[1]|2026-11-17": {
   "source": "리치고",
@@ -9855,7 +10267,9 @@
    2
   ],
   "sise_manwon": 12000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경101269[1]|2026-11-17": {
   "source": "리치고",
@@ -9883,7 +10297,9 @@
    3
   ],
   "sise_manwon": 29870,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 28500,
+  "kb_date": "2026-11"
  },
  "2026타경101303[1]|2026-11-10": {
   "source": "리치고",
@@ -9911,7 +10327,9 @@
    2
   ],
   "sise_manwon": 477070,
-  "trade_manwon": 445500
+  "trade_manwon": 445500,
+  "kb_manwon": 490000,
+  "kb_date": "2026-11"
  },
  "2026타경101335[1]|2026-11-17": {
   "source": "리치고",
@@ -9939,7 +10357,9 @@
    2
   ],
   "sise_manwon": 20350,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경10231[1]|2026-11-10": {
   "key": "2026타경10231[1]",
@@ -9978,7 +10398,9 @@
    "pct_of_sise": 95.7,
    "actual_pct_of_sise": 88.0,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 127500,
+  "kb_date": "2026-11"
  },
  "2026타경10323[1]|2026-11-03": {
   "key": "2026타경10323[1]",
@@ -10013,7 +10435,9 @@
    "actual_pct_of_sise": 84.7,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경10323[1]|2026-11-04": {
   "key": "2026타경10323[1]",
@@ -10051,7 +10475,9 @@
    "actual_pct_of_sise": 84.7,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경10907[1]|2026-11-03": {
   "key": "2026타경10907[1]",
@@ -10077,7 +10503,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경10907[1]|2026-11-04": {
   "key": "2026타경10907[1]",
@@ -10103,7 +10531,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경176[1]|2026-11-04": {
   "key": "2026타경176[1]",
@@ -10293,7 +10723,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 52350
+  "trade_manwon": 52350,
+  "kb_manwon": 53500,
+  "kb_date": "2026-11"
  },
  "2026타경176[1]|2026-11-05": {
   "key": "2026타경176[1]",
@@ -10320,7 +10752,9 @@
    2
   ],
   "sise_manwon": 53290,
-  "trade_manwon": 52350
+  "trade_manwon": 52350,
+  "kb_manwon": 53500,
+  "kb_date": "2026-11"
  },
  "2026타경17[1]|2026-11-10": {
   "key": "2026타경17[1]",
@@ -10359,7 +10793,9 @@
    "pct_of_sise": 86.7,
    "actual_pct_of_sise": 91.9,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경20135[1]|2026-11-10": {
   "key": "2026타경20135[1]",
@@ -10398,7 +10834,9 @@
    "pct_of_sise": 90.1,
    "actual_pct_of_sise": 90.6,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 66000,
+  "kb_date": "2026-11"
  },
  "2026타경20239[1]|2026-11-10": {
   "source": "리치고",
@@ -10426,7 +10864,9 @@
    2
   ],
   "sise_manwon": 74800,
-  "trade_manwon": 71840
+  "trade_manwon": 71840,
+  "kb_manwon": 81000,
+  "kb_date": "2026-11"
  },
  "2026타경20256[1]|2026-11-10": {
   "source": "리치고",
@@ -10454,7 +10894,9 @@
    2
   ],
   "sise_manwon": 34670,
-  "trade_manwon": 35120
+  "trade_manwon": 35120,
+  "kb_manwon": 35500,
+  "kb_date": "2026-11"
  },
  "2026타경20366[1]|2026-11-04": {
   "key": "2026타경20366[1]",
@@ -10656,7 +11098,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 21350
+  "trade_manwon": 21350,
+  "kb_manwon": 21750,
+  "kb_date": "2026-11"
  },
  "2026타경20392[1]|2026-11-10": {
   "key": "2026타경20392[1]",
@@ -10695,7 +11139,9 @@
    "pct_of_sise": 95.7,
    "actual_pct_of_sise": 102.0,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": 61500,
+  "kb_date": "2026-11"
  },
  "2026타경20723[1]|2026-11-04": {
   "key": "2026타경20723[1]",
@@ -10897,7 +11343,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 30780
+  "trade_manwon": 30780,
+  "kb_manwon": 33000,
+  "kb_date": "2026-11"
  },
  "2026타경20738[1]|2026-11-04": {
   "key": "2026타경20738[1]",
@@ -11099,7 +11547,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 64960
+  "trade_manwon": 64960,
+  "kb_manwon": 71000,
+  "kb_date": "2026-11"
  },
  "2026타경20745[1]|2026-11-04": {
   "key": "2026타경20745[1]",
@@ -11125,7 +11575,9 @@
    4,
    5
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 18000,
+  "kb_date": "2026-11"
  },
  "2026타경20818[1]|2026-11-04": {
   "key": "2026타경20818[1]",
@@ -11327,7 +11779,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
    }
   },
-  "trade_manwon": 90080
+  "trade_manwon": 90080,
+  "kb_manwon": 93000,
+  "kb_date": "2026-11"
  },
  "2026타경20838[1]|2026-11-10": {
   "source": "리치고",
@@ -11355,7 +11809,9 @@
    2
   ],
   "sise_manwon": 61440,
-  "trade_manwon": 63620
+  "trade_manwon": 63620,
+  "kb_manwon": 62000,
+  "kb_date": "2026-11"
  },
  "2026타경20998[1]|2026-11-04": {
   "key": "2026타경20998[1]",
@@ -11381,7 +11837,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 69500,
+  "kb_date": "2026-11"
  },
  "2026타경20998[1]|2026-11-05": {
   "key": "2026타경20998[1]",
@@ -11407,7 +11865,9 @@
    1,
    2
   ],
-  "trade_manwon": 69180
+  "trade_manwon": 69180,
+  "kb_manwon": 69500,
+  "kb_date": "2026-11"
  },
  "2026타경3114[1]|2026-11-17": {
   "source": "리치고",
@@ -11447,7 +11907,9 @@
    "pct_of_sise": 84.6,
    "actual_pct_of_sise": 92.7,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3189[1]|2026-11-17": {
   "source": "리치고",
@@ -11487,7 +11949,9 @@
    "pct_of_sise": 84.5,
    "actual_pct_of_sise": 97.1,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3318[1]|2026-11-11": {
   "source": "리치고",
@@ -11515,7 +11979,9 @@
    1
   ],
   "sise_manwon": 8500,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3318[1]|2026-11-12": {
   "source": "법원",
@@ -11543,7 +12009,9 @@
    1
   ],
   "sise_manwon": 8500,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3373[1]|2026-11-12": {
   "source": "법원",
@@ -11571,7 +12039,9 @@
    3
   ],
   "sise_manwon": 27560,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3522[1]|2026-11-12": {
   "source": "리치고",
@@ -11599,7 +12069,9 @@
    2
   ],
   "sise_manwon": 21750,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3546[1]|2026-11-17": {
   "source": "리치고",
@@ -11639,7 +12111,9 @@
    "pct_of_sise": 76.6,
    "actual_pct_of_sise": 76.4,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3600[1]|2026-11-05": {
   "key": "2026타경3600[1]",
@@ -11665,7 +12139,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3628[1]|2026-11-05": {
   "key": "2026타경3628[1]",
@@ -11691,7 +12167,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3716[1]|2026-11-05": {
   "key": "2026타경3716[1]",
@@ -11717,7 +12195,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3800[1]|2026-11-12": {
   "source": "리치고",
@@ -11745,7 +12225,9 @@
    2
   ],
   "sise_manwon": 10670,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 11750,
+  "kb_date": "2026-11"
  },
  "2026타경3818[1]|2026-11-12": {
   "source": "리치고",
@@ -11773,7 +12255,9 @@
    1
   ],
   "sise_manwon": 20300,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3873[1]|2026-11-14": {
   "source": "리치고",
@@ -11801,7 +12285,9 @@
    2
   ],
   "sise_manwon": 8990,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3925[1]|2026-11-05": {
   "key": "2026타경3925[1]",
@@ -11827,7 +12313,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경3943[1]|2026-11-14": {
   "source": "리치고",
@@ -11855,7 +12343,9 @@
    2
   ],
   "sise_manwon": 10900,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4002[1]|2026-11-17": {
   "source": "리치고",
@@ -11883,7 +12373,9 @@
    2
   ],
   "sise_manwon": 30670,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 30000,
+  "kb_date": "2026-11"
  },
  "2026타경4020[1]|2026-11-17": {
   "source": "리치고",
@@ -11923,7 +12415,9 @@
    "pct_of_sise": 82.8,
    "actual_pct_of_sise": 82.2,
    "sise_basis": "리치고"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4078[1]|2026-11-05": {
   "key": "2026타경4078[1]",
@@ -11961,7 +12455,9 @@
    "actual_pct_of_sise": 71.9,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4096[1]|2026-11-12": {
   "source": "법원",
@@ -11989,7 +12485,9 @@
    1
   ],
   "sise_manwon": 25630,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4096[1]|2026-11-13": {
   "source": "법원",
@@ -12017,7 +12515,9 @@
    1
   ],
   "sise_manwon": 25630,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4096[1]|2026-11-14": {
   "source": "리치고",
@@ -12045,7 +12545,9 @@
    1
   ],
   "sise_manwon": 25630,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4284[1]|2026-11-12": {
   "source": "법원",
@@ -12073,7 +12575,9 @@
    2
   ],
   "sise_manwon": 21750,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4371[1]|2026-11-12": {
   "source": "리치고",
@@ -12101,7 +12605,9 @@
    1
   ],
   "sise_manwon": 32090,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4375[1]|2026-11-12": {
   "source": "리치고",
@@ -12129,7 +12635,9 @@
    1
   ],
   "sise_manwon": 26370,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4540[1]|2026-11-02": {
   "key": "2026타경4540[1]",
@@ -12152,7 +12660,9 @@
   "checked": "2026-11-03",
   "expected_bidders": null,
   "expected_range": null,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4689[1]|2026-11-12": {
   "source": "법원",
@@ -12180,7 +12690,9 @@
    1
   ],
   "sise_manwon": 28000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4763[1]|2026-11-17": {
   "source": "리치고",
@@ -12208,7 +12720,9 @@
    4
   ],
   "sise_manwon": 25500,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4814[1]|2026-11-17": {
   "source": "리치고",
@@ -12236,7 +12750,9 @@
    1
   ],
   "sise_manwon": 25300,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경4895[1]|2026-11-17": {
   "source": "리치고",
@@ -12264,7 +12780,9 @@
    2
   ],
   "sise_manwon": 13170,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 14300,
+  "kb_date": "2026-11"
  },
  "2026타경50031[1]|2026-11-16": {
   "source": "리치고",
@@ -12304,7 +12822,9 @@
    "pct_of_sise": 92.9,
    "actual_pct_of_sise": 93.3,
    "sise_basis": "M"
-  }
+  },
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50043[1]|2026-11-10": {
   "source": "리치고",
@@ -12332,7 +12852,9 @@
    2
   ],
   "sise_manwon": 15500,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50070[1]|2026-11-16": {
   "source": "법원",
@@ -12360,7 +12882,9 @@
    2
   ],
   "sise_manwon": 330330,
-  "trade_manwon": 331430
+  "trade_manwon": 331430,
+  "kb_manwon": 325000,
+  "kb_date": "2026-11"
  },
  "2026타경50100[1]|2026-11-16": {
   "source": "법원",
@@ -12388,7 +12912,9 @@
    3
   ],
   "sise_manwon": 216680,
-  "trade_manwon": 220300
+  "trade_manwon": 220300,
+  "kb_manwon": 210000,
+  "kb_date": "2026-11"
  },
  "2026타경5010[1]|2026-11-03": {
   "key": "2026타경5010[1]",
@@ -12414,7 +12940,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5010[1]|2026-11-04": {
   "key": "2026타경5010[1]",
@@ -12440,7 +12968,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5010[1]|2026-11-17": {
   "source": "리치고",
@@ -12468,7 +12998,9 @@
    1
   ],
   "sise_manwon": 25690,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50112[1]|2026-11-05": {
   "key": "2026타경50112[1]",
@@ -12494,7 +13026,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50112[1]|2026-11-17": {
   "source": "리치고",
@@ -12522,7 +13056,9 @@
    2
   ],
   "sise_manwon": 29000,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50156[1]|2026-11-16": {
   "source": "법원",
@@ -12550,7 +13086,9 @@
    2
   ],
   "sise_manwon": 300250,
-  "trade_manwon": 301570
+  "trade_manwon": 301570,
+  "kb_manwon": 294000,
+  "kb_date": "2026-11"
  },
  "2026타경50226[1]|2026-11-10": {
   "source": "리치고",
@@ -12578,7 +13116,9 @@
    2
   ],
   "sise_manwon": 74150,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 73500,
+  "kb_date": "2026-11"
  },
  "2026타경50226[1]|2026-11-12": {
   "source": "법원",
@@ -12606,7 +13146,9 @@
    2
   ],
   "sise_manwon": 74150,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 73500,
+  "kb_date": "2026-11"
  },
  "2026타경50240[1]|2026-11-04": {
   "key": "2026타경50240[1]",
@@ -12644,7 +13186,9 @@
    "actual_pct_of_sise": 102.0,
    "sise_basis": "리치고"
   },
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50243[1]|2026-11-16": {
   "source": "법원",
@@ -12672,7 +13216,9 @@
    3
   ],
   "sise_manwon": 81480,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 80300,
+  "kb_date": "2026-11"
  },
  "2026타경50254[1]|2026-11-16": {
   "source": "법원",
@@ -12700,7 +13246,9 @@
    7
   ],
   "sise_manwon": 156300,
-  "trade_manwon": 135090
+  "trade_manwon": 135090,
+  "kb_manwon": 152500,
+  "kb_date": "2026-11"
  },
  "2026타경50257[1]|2026-11-10": {
   "source": "리치고",
@@ -12728,7 +13276,9 @@
    3
   ],
   "sise_manwon": 236160,
-  "trade_manwon": 236900
+  "trade_manwon": 236900,
+  "kb_manwon": 241500,
+  "kb_date": "2026-11"
  },
  "2026타경50257[1]|2026-11-12": {
   "source": "리치고",
@@ -12756,7 +13306,9 @@
    3
   ],
   "sise_manwon": 236530,
-  "trade_manwon": 237540
+  "trade_manwon": 237540,
+  "kb_manwon": 241500,
+  "kb_date": "2026-11"
  },
  "2026타경50297[1]|2026-11-17": {
   "source": "리치고",
@@ -12784,7 +13336,9 @@
    1
   ],
   "sise_manwon": 32120,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50430[1]|2026-11-17": {
   "source": "리치고",
@@ -12812,7 +13366,9 @@
    2
   ],
   "sise_manwon": 15500,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5046[1]|2026-11-17": {
   "source": "리치고",
@@ -12840,7 +13396,9 @@
    2
   ],
   "sise_manwon": 17700,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50513[1]|2026-11-10": {
   "source": "리치고",
@@ -12868,7 +13426,9 @@
    2
   ],
   "sise_manwon": 15500,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50520[1]|2026-11-03": {
   "key": "2026타경50520[1]",
@@ -12894,7 +13454,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50520[1]|2026-11-04": {
   "key": "2026타경50520[1]",
@@ -12920,7 +13482,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50588[1]|2026-11-03": {
   "key": "2026타경50588[1]",
@@ -12946,7 +13510,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50588[1]|2026-11-04": {
   "key": "2026타경50588[1]",
@@ -12972,7 +13538,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5074[1]|2026-11-17": {
   "source": "리치고",
@@ -13000,7 +13568,9 @@
    2
   ],
   "sise_manwon": 14700,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50757[1]|2026-11-05": {
   "key": "2026타경50757[1]",
@@ -13026,7 +13596,9 @@
    1,
    2
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경50816[1]|2026-11-02": {
   "key": "2026타경50816[1]",
@@ -13052,7 +13624,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 162500,
+  "kb_date": "2026-11"
  },
  "2026타경50816[1]|2026-11-03": {
   "key": "2026타경50816[1]",
@@ -13078,7 +13652,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 162500,
+  "kb_date": "2026-11"
  },
  "2026타경50816[1]|2026-11-04": {
   "key": "2026타경50816[1]",
@@ -13104,7 +13680,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 162500,
+  "kb_date": "2026-11"
  },
  "2026타경51[1]|2026-11-10": {
   "source": "리치고",
@@ -13132,7 +13710,9 @@
    3
   ],
   "sise_manwon": 29000,
-  "trade_manwon": 29760
+  "trade_manwon": 29760,
+  "kb_manwon": 28500,
+  "kb_date": "2026-11"
  },
  "2026타경52[1]|2026-11-02": {
   "key": "2026타경52[1]",
@@ -13333,7 +13913,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 175040
+  "trade_manwon": 175040,
+  "kb_manwon": 177500,
+  "kb_date": "2026-11"
  },
  "2026타경52[1]|2026-11-04": {
   "key": "2026타경52[1]",
@@ -13535,7 +14117,9 @@
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    }
   },
-  "trade_manwon": 175040
+  "trade_manwon": 175040,
+  "kb_manwon": 177500,
+  "kb_date": "2026-11"
  },
  "2026타경5300[1]|2026-11-12": {
   "source": "리치고",
@@ -13563,7 +14147,9 @@
    2
   ],
   "sise_manwon": 41760,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5300[1]|2026-11-13": {
   "source": "법원",
@@ -13591,7 +14177,9 @@
    2
   ],
   "sise_manwon": 41760,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5300[1]|2026-11-14": {
   "source": "법원",
@@ -13619,7 +14207,9 @@
    2
   ],
   "sise_manwon": 41760,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5300[1]|2026-11-15": {
   "source": "법원",
@@ -13647,7 +14237,9 @@
    2
   ],
   "sise_manwon": 41760,
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5796[1]|2026-11-04": {
   "key": "2026타경5796[1]",
@@ -13673,7 +14265,9 @@
    1,
    4
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 8500,
+  "kb_date": "2026-11"
  },
  "2026타경5796[1]|2026-11-05": {
   "key": "2026타경5796[1]",
@@ -13699,7 +14293,9 @@
    1,
    4
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": 8500,
+  "kb_date": "2026-11"
  },
  "2026타경5821[1]|2026-11-04": {
   "key": "2026타경5821[1]",
@@ -13725,7 +14321,9 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2026타경5821[1]|2026-11-05": {
   "key": "2026타경5821[1]",
@@ -13751,6 +14349,8 @@
    1,
    3
   ],
-  "trade_manwon": null
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  }
 }

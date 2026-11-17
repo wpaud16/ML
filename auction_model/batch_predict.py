@@ -316,6 +316,11 @@ def update_results(today):
                  sise_manwon=int(round((it.get('model_sise_eok') or it.get('richgo_sise_eok') or 0) * 1e4)) or None,   # 성적표 시세 대비 % (2026-11-08)
                  trade_manwon=trade_manwon(it))
         old = res.get(rid) or {}
+        # KB 시세 (2026-11-17, kb_sise.py): 예측 당시 값, 없으면 kb_sise.py 가 기일 달 KB 월별 시세로 채운 값 유지
+        if 'kb_manwon' in old:
+            r.update(kb_manwon=old['kb_manwon'], kb_date=old.get('kb_date'))
+        elif (it.get('kb') or {}).get('manwon'):
+            r.update(kb_manwon=it['kb']['manwon'], kb_date=it['kb'].get('date'))
         if old.get('rescored'):   # dev/rescore_pred_m.py 로 M 시세 재계산한 값 유지 (2026-11-08)
             for f in ('orig_bid_by_prob_manwon', 'bid_by_prob_manwon', 'rescored', 'rescored_pred', 'expected_bidders', 'expected_range', 'sise_manwon', 'trade_manwon'):
                 r[f] = old.get(f)

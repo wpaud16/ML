@@ -225,6 +225,10 @@ def s_predict():
 
 def s_page():
     am = os.path.join(REPO, 'auction_model')
+    try:   # KB 시세 (2026-11-17) — 예측 파일·성적표에 KB 값 붙임, 실패해도 웹페이지는 만듦
+        run([sys.executable, 'kb_sise.py'], cwd=am, timeout=3600)
+    except Exception as e:
+        log(f'KB 시세 실패(계속 진행): {e}')
     try:   # 빌라·상가·건물 목록 (2026-11-16) — 실패해도 웹페이지는 만듦
         run([sys.executable, 'other_items.py'], cwd=am, timeout=2400)
     except Exception as e:
@@ -235,7 +239,7 @@ def s_page():
 
 def s_push_auction():
     push(['auction_model/predictions', 'auction_model/page', 'auction_model/molit_cache', 'auction_model/danji_map.json',
-          'auction_model/villa', 'auction_model/officetel', 'auction_model/geo_cache.json', 'auction_model/search_regions.json', 'local_runner/schedule.json'], f'auction: 예측 결과 {today()} (노트북)')
+          'auction_model/villa', 'auction_model/officetel', 'auction_model/geo_cache.json', 'auction_model/kb_cache.json', 'auction_model/search_regions.json', 'local_runner/schedule.json'], f'auction: 예측 결과 {today()} (노트북)')
 
 
 def mail_env():

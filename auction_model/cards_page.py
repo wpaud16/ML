@@ -72,6 +72,16 @@ def keep(v):
     return True
 
 
+def kb_line(v, low):
+    """KB 시세 한 줄 (2026-11-17 사용자 요청, kb_sise.py — KB부동산 매매 일반가)."""
+    k = v.get('kb') or {}
+    if not k.get('eok'): return []
+    rng = f"하한 {k['low'] / 1e4:.2f} ~ 상한 {k['high'] / 1e4:.2f}억 · " if k.get('low') and k.get('high') else ''
+    bs = base_sise(v)
+    vs = f' · 모델 시세의 {k["eok"] / bs * 100:.0f}%' if bs else ''
+    return [f'🏦 KB 시세 <b>{k["eok"]:.2f}억</b> <span class="g">({rng}최저가는 {low / k["eok"] * 100:.0f}%{vs} · {E(k.get("date") or "")} 기준)</span>']
+
+
 def sise_lines(v, appr, low):
     s = v.get('sise') or {}
     if s.get('est_eok') and not s.get('error'):
@@ -346,6 +356,7 @@ def card(v, today, cid=None, res=None):
     bs = base_sise(v)   # 모델 시세 (아파트 M, 오피스텔 리치고)
     if bs:
         L.append(f'🎯 매매 시세 <b>{bs:.2f}억</b>')
+    L += kb_line(v, low)   # KB 시세 (2026-11-17)
     if v.get('within3_pct') is not None:   # 2026-11-15: 예측이 실제 ±3% 안에 들 확률, 상위 20% = 정밀 (acc_model.py)
         L.append(('<b>✅ 정밀</b> · ' if v.get('precise') else '') + f"📐 3% 안 확률 {v['within3_pct']}%"
                  + ('' if v.get('precise') else ' <span class="g">(정밀 기준 상위 20%)</span>'))
@@ -491,13 +502,17 @@ def scorecard(rows, cat, tracked=None):
             md_ = lambda xs: sorted(xs)[len(xs) // 2] if len(xs) % 2 else sum(sorted(xs)[len(xs) // 2 - 1:len(xs) // 2 + 1]) / 2
             out.append(f'<div class="g s">시세 대비 중앙값({len(mt)}건) · 실제 낙찰가 M {md_([a / s for a, s, t, p in mt]) * 100:.1f}% / 실거래 {md_([a / t for a, s, t, p in mt]) * 100:.1f}%'
                        f' · 예상(50%) M {md_([p / s for a, s, t, p in mt]) * 100:.1f}% / 실거래 {md_([p / t for a, s, t, p in mt]) * 100:.1f}%</div>')
+        mk = [(r['actual_manwon'], r['kb_manwon'], r['bid_by_prob_manwon']['50%']) for r in sold if r.get('kb_manwon')]
+        if mk:   # 2026-11-17 사용자 요청: KB 시세 기준도
+            md_ = lambda xs: sorted(xs)[len(xs) // 2] if len(xs) % 2 else sum(sorted(xs)[len(xs) // 2 - 1:len(xs) // 2 + 1]) / 2
+            out.append(f'<div class="g s">KB 시세 대비 중앙값({len(mk)}건) · 실제 낙찰가 {md_([a / k for a, k, p in mk]) * 100:.1f}% · 예상(50%) {md_([p / k for a, k, p in mk]) * 100:.1f}%</div>')
     # 2026-11-11 사용자 요청: 차이 두 값이 표를 넘침 + 가독성 → 물건마다 두 행(종합 / 인원 줄)으로 나누고, 물건·실제·인원 칸은 두 행을 합침
     t = ['<table class="sc"><col style="width:25%"><col style="width:12%"><col style="width:20%"><col style="width:15%"><col style="width:17%"><col style="width:11%">',
          '<tr><th>물건</th><th>기준</th><th>예측<br><span class="sub">50%</span></th><th>차이</th><th>실제<br><span class="sub">낙찰</span></th><th>인원<br><span class="sub">실제</span></th></tr>']
 
-    def pc(x, s, tr):   # 시세 대비 % (M · 실 각 한 줄)
+    def pc(x, s, tr, kb=None):   # 시세 대비 % (M · 실 · KB 각 한 줄, KB 는 2026-11-17)
         if not (x and s): return ''
-        return f'<div class="sub">M {x / s * 100:.1f}%' + (f'<br>실 {x / tr * 100:.1f}%' if tr else '') + '</div>'
+        return f'<div class="sub">M {x / s * 100:.1f}%' + (f'<br>실 {x / tr * 100:.1f}%' if tr else '') + (f'<br>KB {x / kb * 100:.1f}%' if kb else '') + '</div>'
 
     def dcell(v):
         if v is None: return '<span class="sub">-</span>'
@@ -509,6 +524,7 @@ def scorecard(rows, cat, tracked=None):
         it = tracked.get(rid) or {}
         sise = r.get('sise_manwon') or (base_sise(it) or 0) * 1e4 or None
         tr_ = r.get('trade_manwon') if r['category'] == '아파트' else None
+        kb_ = r.get('kb_manwon') or (it.get('kb') or {}).get('manwon')
         p50m = r['bid_by_prob_manwon']['50%']; p50 = p50m / 1e4
         star = '<sup>*</sup>' if r.get('rescored') else ''
         d = datetime.strptime(r['bidding_date'], '%Y-%m-%d')
@@ -518,11 +534,11 @@ def scorecard(rows, cat, tracked=None):
         lab = exp_row(r['category'], x if x is not None else bb.get('expected_bidders'))
         e50 = ((bb.get('bid_by_prob_eok') or {}).get(lab) or {}).get('50%') if lab else None
         d1 = (r.get('diff_pct') or 0) if sold_ else None
-        lines = [('종합', f'<b>{p50:.2f}</b>{star}' + pc(p50m, sise, tr_), dcell(d1))]
+        lines = [('종합', f'<b>{p50:.2f}</b>{star}' + pc(p50m, sise, tr_, kb_), dcell(d1))]
         if e50:
             d2 = (r['actual_manwon'] / (e50 * 1e4) - 1) * 100 if sold_ else None
-            lines.append((E(lab), f'<b>{e50:.2f}</b>' + pc(e50 * 1e4, sise, tr_), dcell(d2)))
-        act = (f'<b class="big">{r["actual_manwon"] / 1e4:.2f}</b>' + pc(r['actual_manwon'], sise, tr_)) if sold_ else f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'
+            lines.append((E(lab), f'<b>{e50:.2f}</b>' + pc(e50 * 1e4, sise, tr_, kb_), dcell(d2)))
+        act = (f'<b class="big">{r["actual_manwon"] / 1e4:.2f}</b>' + pc(r['actual_manwon'], sise, tr_, kb_)) if sold_ else f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'
         if r.get('source') == '법원': act += '<div class="sub">(법원 확인)</div>'
         ppl = f'<b class="big">{b if b is not None else "-"}</b><div class="sub">예상<br>{f"{x}명" if x is not None else "-"}</div>'
         aid = r.get('auction_id') or it.get('auction_id')
@@ -540,7 +556,8 @@ def scorecard(rows, cat, tracked=None):
     out.append(''.join(t))
     out.append('<div class="g s">추적했던 물건(기일 전 웹페이지에 표시된 물건)만 · 물건 이름을 누르면 위 \'기일 지남\' 카드로 이동 · '
                '기준: 종합 = 인원 가정 없는 앙상블 낙찰확률 50% 가격, 8명 등 = 카드 ▶ 예상 인원 줄의 50% 가격 · 차이 = 실제 ÷ 예측 − 1 (빨강 = 실제가 더 높음, 파랑 = 더 낮음) · '
-               'M = 모델 시세 대비, 실 = 예측 당시 층 보정 실거래 12개월 가중 평균 대비(오피스텔은 리치고) · '
+               'M = 모델 시세 대비, 실 = 예측 당시 층 보정 실거래 12개월 가중 평균 대비(오피스텔은 리치고), '
+               'KB = KB부동산 매매 일반가 대비(예측 당시 값, 없으면 기일 달 KB 월별 시세) · '
                '<sup>*</sup> = 11/5 이전(리치고 시세) 예측을 11/8 현재 M 시세 모델로 다시 계산한 값(사후 계산)</div>')
     return ''.join(out)
 
@@ -818,7 +835,8 @@ def build(src, dst):
             '🎯 모델 시세(아파트) = 리치고 시세와 국토부 실거래(최근 12개월, 최근일수록 가중, 층 보정)를 거래 수·흩어진 정도에 따라 섞은 값 — 입찰가와 % 의 기준<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) + 랜덤포레스트·LightGBM 8개 평균, 최저가 +1% 아래는 올림 (2026-11-15~, 백테스트 평균 오차 4.6→4.3%) · 🏬 오피스텔 = 랜덤포레스트+부스팅(시세는 리치고) · 확률 오차 약 ±5%p<br>'
             '📐 3% 안 확률 = 예상 낙찰가(50%)가 실제 낙찰가 ±3% 안에 들 확률 · ✅ 정밀 = 그 확률 상위 20%(백테스트 평균 오차 약 2.8%), 정밀 물건 입찰가표는 정밀 물건끼리의 오차로 계산<br>'
-            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 6개월 이내 KB · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 참고용<br>'
+            '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 참고용<br>'
+            '🏦 KB 시세 = KB부동산 매매 일반가(전용면적이 가장 가까운 평형, ±2㎡) · 하한~상한 = KB 하위·상위 평균가 · 모델 입력 아님, 참고·성적표 비교용<br>'
             '⚖ 가중 시세 = 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(상한) · 감정가 시차 보정 5% (직거래 제외) — 참고용<br>'
             '🎲 유찰 확률 = 회차별 낙찰·유찰 이력으로 학습한 모델 · 📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12), 대출·세금·비용 제외 단순 계산<br>'
             '⚠️ 주거용 오피스텔은 세법상 주택 수에 들어갈 수 있어요 — 세무사·은행에 확인<br>'
