@@ -125,7 +125,7 @@ def main():
                     fails_in_row = 0
                     if not pg:
                         seen[aid] = 'x'; n['skip'] += 1; continue
-                    if pg.get('sd') not in REGIONS or category('', pg.get('typeDetails'), pg.get('address')) is None:
+                    if pg.get('sd') not in REGIONS or category('', pg.get('typeDetails'), pg.get('address')) not in ('상가', '건물'):   # 빌라 끔 (2026-11-17)
                         seen[aid] = 'x'; n['skip'] += 1; continue
                     out.write(json.dumps(row_from(aid, pg), ensure_ascii=False, separators=(',', ':')) + '\n'); n['kept'] += 1
                     bd = (pg.get('biddingDate') or '')[:10]

@@ -47,7 +47,9 @@ def category(ty, td, addr=''):
     return None
 
 
-SEARCH = ['다세대', '연립', '근린시설', '근린주택', '다가구주택']
+# 2026-11-17 사용자 요청: 빌라 끔 → 다세대·연립 검색 안 함, 빌라 판정 물건은 버림 (다시 켜려면 ENABLED·SEARCH 에 되돌림)
+ENABLED = ('상가', '건물')
+SEARCH = ['근린시설', '근린주택', '다가구주택']
 
 
 def list_items(args):
@@ -160,7 +162,7 @@ def main():
                     continue
                 seen.add(it['id']); counts['listed'] += 1
                 cat = category(it['_type'], it.get('typeDetails'), it.get('address'))
-                if cat is None or '오피스텔' in (it.get('typeDetails') or []) or '아파트' in (it.get('typeDetails') or []):
+                if cat not in ENABLED or '오피스텔' in (it.get('typeDetails') or []) or '아파트' in (it.get('typeDetails') or []):
                     counts['wrong_type'] += 1; continue
                 if cat == '건물' and it['lowestSellingPrice'] > BLDG_MAX_LOW:
                     counts['over_budget'] += 1; continue
@@ -220,7 +222,7 @@ def main():
                 items[v['key']] = v; counts['shown'] += 1
             else:
                 counts[kind] += 1
-    counts['by_category'] = {c: sum(v['category'] == c for v in items.values()) for c in ('빌라', '상가', '건물')}
+    counts['by_category'] = {c: sum(v['category'] == c for v in items.values()) for c in ENABLED}
     out = dict(date=day, generated_at=now.isoformat(timespec='seconds'), station_source='카카오 로컬' if have_key else None,
                counts=counts, errors=errors, items=items)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

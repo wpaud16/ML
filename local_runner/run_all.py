@@ -230,10 +230,7 @@ def s_page():
     except Exception as e:
         log(f'빌라·상가·건물 수집 실패(계속 진행): {e}')
     run([sys.executable, 'cards_page.py'], cwd=am, timeout=1800)
-    try:
-        run([sys.executable, 'villa_log.py'], cwd=am, timeout=1800)
-    except Exception as e:
-        log(f'villa_log 실패(무시): {e}')
+    # villa_log.py (빌라 경매 기록)는 2026-11-17 사용자 요청(빌라 끔)으로 멈춤
 
 
 def s_push_auction():
