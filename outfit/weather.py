@@ -15,15 +15,20 @@ def fetch():
     base = (f'https://api.open-meteo.com/v1/forecast?latitude={LAT}&longitude={LON}&timezone=Asia%2FSeoul&forecast_days=1'
             '&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_sum'
             '&hourly=temperature_2m,precipitation,snowfall,weather_code')
-    for extra, name in (('&models=kma_seamless', '기상청 모델'), ('', '기본 모델')):
-        try:
-            with urllib.request.urlopen(base + extra, timeout=30) as r:
-                d = json.load(r)
-            if d['daily']['temperature_2m_max'][0] is not None and d['hourly']['temperature_2m'][12] is not None:
-                d['_src'] = name
-                return d
-        except Exception as e:
-            print('weather', name, e)
+    # 2026-11-18: 06:00 접속이 한 번 끊겨 메일이 안 감 → 2분 간격으로 최대 5번 다시 시도
+    import time
+    for attempt in range(5):
+        if attempt:
+            time.sleep(120)
+        for extra, name in (('&models=kma_seamless', '기상청 모델'), ('', '기본 모델')):
+            try:
+                with urllib.request.urlopen(base + extra, timeout=30) as r:
+                    d = json.load(r)
+                if d['daily']['temperature_2m_max'][0] is not None and d['hourly']['temperature_2m'][12] is not None:
+                    d['_src'] = name
+                    return d
+            except Exception as e:
+                print('weather', attempt + 1, name, e)
     raise RuntimeError('날씨를 가져오지 못했습니다')
 
 
