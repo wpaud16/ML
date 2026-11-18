@@ -411,21 +411,15 @@ def sections(today, test=TEST):
     page = 'https://wpaud16.github.io/ML/events/'   # events_page.py 웹 (종류별·지역구별 보기)
     btn = (f'<p style="text-align:center;margin:4px 0 14px"><a href="{page}" style="display:inline-block;background:#1a73e8;color:#ffffff;'
            'text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">🎁 이벤트·🎪 행사 웹에서 보기 (종류별·지역별)</a></p>')
-    H, T, after = [], [], []
+    after = []
     try:
         h, t, picked, seen = build_prize(today, search=False)
-        H.append(btn + ''.join(h)); T.append(f'웹에서 보기: {page}\n' + '\n'.join(t))
-        if picked and not test:
+        if picked and not test:   # 웹페이지의 NEW 표시·지난 이벤트 유지에 쓰이므로 계속 기록
             after.append(lambda: save_seen(seen, picked, today))
     except Exception as e:
         print('응모 이벤트 섹션 오류:', type(e).__name__, e)
-    if today.weekday() == FEST_WEEKDAY or os.environ.get('FEST_ALWAYS') == '1':
-        try:
-            h, t, _ = build_fest(today, search=False)
-            H.append(''.join(h)); T.append('\n'.join(t))
-        except Exception as e:
-            print('지역 행사 섹션 오류:', type(e).__name__, e)
-    return H, T, lambda: [f() for f in after]
+    # 2026-11-18 사용자 결정: 메일엔 웹 바로가기 버튼만 (이벤트·행사 목록은 웹에서)
+    return [btn], [f'이벤트·행사 웹에서 보기: {page}'], lambda: [f() for f in after]
 
 
 def search(today):

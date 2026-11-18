@@ -344,7 +344,7 @@ let MAP=null,MK=[],GRP={},READY=false;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function initMap(){if(MAP||!window.maplibregl||!document.getElementById('map'))return;
  MAP=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[127.8,36.3],zoom:5.6,
-  cooperativeGestures:true,attributionControl:{compact:true}});
+  attributionControl:{compact:true}});
  MAP.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
  const ready=()=>{if(READY)return;READY=true;softStyle();MAP.resize();drawMarkers(true)};
  // 'load' 를 놓치는 경우가 있어 (탭 전환 직후 등) style.load·idle·주기 확인으로도 시작

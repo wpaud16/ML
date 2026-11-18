@@ -61,11 +61,13 @@ def life_sections(day, test):
     import datetime as dt, traceback as tb
     import quote, schedule_doc, events
     today = dt.date.fromisoformat(day)
+    # 2026-11-18 순서: 날씨(바로가기) → 이벤트·행사(바로가기) → 할 일 → 오늘의 문장
     H, T, fails, after = [], [], [], None
     try:
-        h, t = quote.render(quote.today_quote(today)); H.append(h); T.append(t)
+        h, t, after = events.sections(today, test)
+        H += h; T += t
     except Exception:
-        tb.print_exc(); fails.append('오늘의 문장')
+        tb.print_exc(); fails.append('이벤트·행사 바로가기')
     try:
         r = schedule_doc.plan(today, write=not test)
         h, t = schedule_doc.render(r); H.append(h); T.append(t)
@@ -75,12 +77,9 @@ def life_sections(day, test):
     except Exception:
         tb.print_exc(); fails.append('오늘의 할 일 (문서 읽기/쓰기)')
     try:
-        h, t, after = events.sections(today, test)
-        if not h:
-            fails.append('응모 이벤트')
-        H += h; T += t
+        h, t = quote.render(quote.today_quote(today)); H.append(h); T.append(t)
     except Exception:
-        tb.print_exc(); fails.append('응모 이벤트·지역 행사')
+        tb.print_exc(); fails.append('오늘의 문장')
     return H, T, fails, after
 
 
