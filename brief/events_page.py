@@ -296,15 +296,18 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .empty{color:var(--mut);padding:20px 0;text-align:center}
 .hide{display:none!important}
 .foot{color:var(--mut);font-size:12px;margin-top:20px;line-height:1.6}
-#map{height:340px;border-radius:16px;margin:12px 0 6px;z-index:0;scroll-margin-top:120px;box-shadow:0 2px 10px rgba(0,0,0,.15);overflow:hidden;background:#f2efe9}
+#map{height:340px;border-radius:16px;margin:12px 0 6px;z-index:0;scroll-margin-top:120px;box-shadow:0 2px 10px rgba(0,0,0,.15);overflow:hidden;background:#b9dcf6}
 .mapnote{color:var(--mut);font-size:11px;margin-bottom:6px}
-/* 핀 (카카오맵·네이버지도 느낌): 물방울 모양 + 같은 장소 개수 */
-.pin{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#2f6ff5;border:2.5px solid #fff;
- box-shadow:0 2px 6px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;margin-top:2px}
-.pin b{transform:rotate(45deg);color:#fff;font:700 12px/1 'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
-.pin b:empty::before{content:'';display:block;width:9px;height:9px;border-radius:50%;background:#fff}
-.pin.wk{background:#f04438} .pin.approx{opacity:.6;border-style:dashed}
-.pinw{cursor:pointer;padding-bottom:6px} .pinw:hover .pin{transform:rotate(-45deg) scale(1.12)}
+/* 핀 (카카오맵 즐겨찾기 별 느낌): 노란 동그라미 + 흰 테두리 + 이모지, 작은 꼬리, 숫자 배지 */
+.pinw{position:relative;cursor:pointer;width:38px;height:46px;display:flex;flex-direction:column;align-items:center;transition:transform .15s}
+.pinw:hover{transform:translateY(-2px) scale(1.08)}
+.pin{width:36px;height:36px;border-radius:50%;background:linear-gradient(160deg,#ffd45c,#ffb81c);border:3px solid #fff;
+ box-shadow:0 3px 8px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.pin span{font-size:17px;line-height:1;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6))}
+.pinw .tail{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #fff;margin-top:-2px;filter:drop-shadow(0 2px 1px rgba(0,0,0,.15))}
+.pinw .cnt{position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ff5a5f;color:#fff;
+ font:700 11px/18px 'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-style:normal;text-align:center;border:2px solid #fff;box-sizing:content-box}
+.pinw.approx .pin{opacity:.75}
 /* 팝업: 둥근 카드 */
 .ppw .maplibregl-popup-content{border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.18);padding:0;min-width:220px}
 .ppw .maplibregl-popup-close-button{font-size:18px;color:#888;right:4px;top:2px}
@@ -343,15 +346,29 @@ function initMap(){if(MAP||!window.maplibregl||!document.getElementById('map'))r
  MAP=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[127.8,36.3],zoom:5.6,
   cooperativeGestures:true,attributionControl:{compact:true}});
  MAP.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
- const ready=()=>{if(READY)return;READY=true;
-  MAP.getStyle().layers.forEach(l=>{if(l.type=='symbol'&&l.layout&&l.layout['text-field']){   // 지명: 한글 → 기본 이름
-   try{MAP.setLayoutProperty(l.id,'text-field',['coalesce',['get','name:ko'],['get','name']])}catch(e){}}});
-  MAP.resize();drawMarkers(true)};
+ const ready=()=>{if(READY)return;READY=true;softStyle();MAP.resize();drawMarkers(true)};
  // 'load' 를 놓치는 경우가 있어 (탭 전환 직후 등) style.load·idle·주기 확인으로도 시작
  MAP.on('load',ready);MAP.on('style.load',ready);MAP.on('idle',ready);
  const t=setInterval(()=>{if(READY)return clearInterval(t);if(MAP.isStyleLoaded())ready()},500)}
-function pinEl(n,wk,ex){const d=document.createElement('div');d.className='pinw';
- d.innerHTML='<div class="pin '+(wk?'wk':'')+(ex?'':' approx')+'"><b>'+(n>1?n:'')+'</b></div>';return d}
+/* 카카오맵 느낌 (2026-11-18 사용자 요청): 하얀 땅·하늘색 바다·옅은 경계선, 길·건물·가게 이름은 많이 확대했을 때만, 지명은 한글 */
+function softStyle(){const S=(id,k,v)=>{try{MAP.setPaintProperty(id,k,v)}catch(e){}},Lo=(id,k,v)=>{try{MAP.setLayoutProperty(id,k,v)}catch(e){}};
+ MAP.getStyle().layers.forEach(l=>{const id=l.id,sl=l['source-layer']||'';
+  if(l.type=='background'){S(id,'background-color','#ffffff');return}
+  if(sl=='water'||/water|ocean|sea/.test(id)){if(l.type=='fill')S(id,'fill-color','#b9dcf6');if(l.type=='line')S(id,'line-color','#b9dcf6');return}
+  if(sl=='waterway'){S(id,'line-color','#b9dcf6');return}
+  if(/landcover|landuse|park|wood|grass|sand|ice|wetland|aeroway|hillshade|terrain/.test(sl+id)){Lo(id,'visibility','none');return}
+  if(sl=='building'){Lo(id,'visibility','none');return}
+  if(sl=='transportation'||sl=='transportation_name'||/road|highway|rail|bridge|tunnel|ferry/.test(id)){try{MAP.setLayerZoomRange(id,10,24)}catch(e){}
+   if(l.type=='line')S(id,'line-color','#e9e9ec');return}
+  if(sl=='boundary'){S(id,'line-color','#c8c8cc');return}
+  if(sl=='poi'||sl=='aerodrome_label'||sl=='mountain_peak'||sl=='housenumber'){try{MAP.setLayerZoomRange(id,13,24)}catch(e){}}
+  if(l.type=='symbol'&&l.layout&&l.layout['text-field']){
+   Lo(id,'text-field',['coalesce',['get','name:ko'],['get','name']]);   // 지명: 한글 → 기본 이름
+   S(id,'text-color',sl=='water_name'?'#5b86b0':'#4a4a4f');S(id,'text-halo-color','#ffffff');S(id,'text-halo-width',1.4)}});}
+/* 귀여운 핀: 한 가지 색(노랑) 동그라미 + 행사 종류 이모지, 같은 장소 여러 개면 숫자 배지 */
+function emo(kind){kind=kind||'';return /빛|불꽃/.test(kind)?'✨':/박람|페어/.test(kind)?'🛍️':/마켓/.test(kind)?'🧺':/축제/.test(kind)?'🎉':'🎈'}
+function pinEl(fs,ex){const d=document.createElement('div');d.className='pinw'+(ex?'':' approx');
+ d.innerHTML='<div class="pin"><span>'+emo(fs[0].kind)+'</span></div>'+(fs.length>1?'<i class="cnt">'+fs.length+'</i>':'')+'<div class="tail"></div>';return d}
 function drawMarkers(fit){if(!MAP||!READY)return;MK.forEach(m=>m.remove());MK=[];GRP={};const b=new maplibregl.LngLatBounds();let any=false;
  (window.FEST||[]).forEach(f=>{const c=document.getElementById('f'+f.i);if(!c||c.classList.contains('hide'))return;
   const k=f.lat.toFixed(3)+','+f.lng.toFixed(3);(GRP[k]=GRP[k]||[]).push(f)});
@@ -360,7 +377,7 @@ function drawMarkers(fit){if(!MAP||!READY)return;MK.forEach(m=>m.remove());MK=[]
    (fs.length>1?'<div class="pp-head">이 장소 행사 '+fs.length+'개</div>':'')+fs.map(f=>
    '<a class="pp-item" href="#f'+f.i+'" onclick="return toCard('+f.i+')"><div class="pp-t">'+esc(f.name)+(f.wk?' <span class="pp-wk">이번 주말</span>':'')+'</div>'+
    '<div class="pp-s">'+esc(f.period)+'</div><div class="pp-s">📍 '+esc(f.place)+'</div><div class="pp-s">🎟 '+esc(f.fee)+'</div></a>').join('')+'</div>');
-  const m=new maplibregl.Marker({element:pinEl(fs.length,wk,ex),anchor:'bottom'}).setLngLat([ln,la]).setPopup(pop).addTo(MAP);
+  const m=new maplibregl.Marker({element:pinEl(fs,ex),anchor:'bottom'}).setLngLat([ln,la]).setPopup(pop).addTo(MAP);
   fs.forEach(f=>f._m=m);MK.push(m);b.extend([ln,la]);any=true});
  if(fit&&any)MAP.fitBounds(b,{padding:{top:50,bottom:30,left:30,right:30},maxZoom:13,duration:fit===true?0:600})}
 function toCard(i){const c=document.getElementById('f'+i);if(c){c.scrollIntoView({behavior:'smooth',block:'center'});c.classList.add('flash');setTimeout(()=>c.classList.remove('flash'),1600)}return false}
@@ -383,7 +400,7 @@ def build(today):
             sat, sun = ev.weekend_of(today)
             fest_js.append(dict(i=x['_i'], lat=round(x['_lat'], 5), lng=round(x['_lng'], 5), exact=x['_exact'], name=x['name'],
                                 period=f'{p} ({tag})', place=' · '.join(v for v in [x.get('city') or '', x.get('place') or ''] if v),
-                                fee=x.get('fee') or '입장료 확인 필요', wk=x['_s'] <= sun and x['_e'] >= sat))
+                                fee=x.get('fee') or '입장료 확인 필요', kind=x.get('kind') or '', wk=x['_s'] <= sun and x['_e'] >= sat))
     fest_json = json.dumps(fest_js, ensure_ascii=False).replace('</', '<\\/')
     n_map = len(fest_js)
     # 응모 이벤트: 종류 칩
@@ -440,7 +457,7 @@ def build(today):
 응모 전에 공식 페이지의 유의사항·개인정보 제공 범위를 확인하세요 · 5만원 넘는 경품은 제세공과금(22%)을 당첨자가 내는 경우가 많아요<br>
 Claude 웹 검색으로 매일 새벽 모음 · 공식 페이지에서 확인 못 한 항목은 ⚠ 표시</div></div>
 <div class="pane" id="fest"><div id="map"></div>
-<div class="mapnote">🔴 이번 주말 · 🔵 그 밖 · 핀 숫자 = 같은 장소 행사 수 · 핀을 누르면 행사 목록 · 위 칩으로 거르면 지도도 같이 바뀌어요 ({n_map}/{len(F)}곳)</div>
+<div class="mapnote">🎉 축제 · 🛍️ 박람회·페어 · 🧺 마켓 · ✨ 빛축제·불꽃 · 🎈 기타 · 빨간 숫자 = 같은 장소 행사 수 · 핀을 누르면 행사 목록 · 위 칩으로 거르면 지도도 같이 바뀌어요</div>
 <script>window.FEST={fest_json};</script>{''.join(fparts)}<div class="empty{'' if not F else ' hide'}" id="fest-empty">해당하는 행사가 없습니다</div>
 <div class="foot">시·도 → 시·군·구별 · 시작일 순 · 이미 끝난 행사는 빠짐<br>날짜·입장료는 바뀔 수 있으니 가기 전에 안내 페이지에서 한 번 더 확인하세요 · 매주 월요일 새벽 Claude 웹 검색</div></div>
 </div></body></html>"""
