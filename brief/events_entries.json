@@ -1,0 +1,72 @@
+[
+ {
+  "key": "https://www.nabo.go.kr/ko/fiscalQuiz/quiz.do",
+  "title": "국회예산정책처 11월 재정퀴즈",
+  "org": "국회예산정책처",
+  "url": "https://www.nabo.go.kr/ko/fiscalQuiz/quiz.do?key=2507040020",
+  "entered": "2026-11-18",
+  "announce": null,
+  "where": null,
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "index.go.kr-quiz-2026-11",
+  "title": "지표누리 퀴즈 이벤트",
+  "org": "국가데이터처(지표누리)",
+  "url": "https://www.index.go.kr",
+  "entered": "2026-11-18",
+  "announce": null,
+  "where": null,
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "https://know.tour.go.kr/customer/event/list19Re.do",
+  "title": "[11월 이벤트] 관광지식정보시스템 투어고인사이트 퀴즈",
+  "org": "한국문화관광연구원 (투어고)",
+  "url": "https://know.tour.go.kr/customer/event/list19Re.do",
+  "entered": "2026-11-18",
+  "announce": "2026-11-23",
+  "where": "https://know.tour.go.kr/customer/event/list19Re.do",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "https://nongsaro.go.kr/portal/ps/psx/psxn/eventSur",
+  "title": "숨은 농다락을 찾아라!",
+  "org": "농촌진흥청",
+  "url": "https://nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyDtl.ps?colmnNo=153&infoNo=153&menuId=PS65355",
+  "entered": "2026-11-19",
+  "announce": null,
+  "where": "https://nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyMain.ps?menuId=PS65355",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "https://mcfamily.or.kr/posts/notice/15078",
+  "title": "굿바이, 한울타리&마이서울! 서비스 종료 이벤트",
+  "org": "서울시가족센터 (한울타리)",
+  "url": "https://mcfamily.or.kr/posts/notice/15078",
+  "entered": "2026-11-19",
+  "announce": "2026-12-10",
+  "where": "https://mcfamily.or.kr/posts/notice",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ }
+]

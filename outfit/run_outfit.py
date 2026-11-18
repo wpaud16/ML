@@ -73,6 +73,16 @@ def life_sections(day, test):
         H += h; T += t
     except Exception:
         tb.print_exc(); fails.append('이벤트·행사 바로가기')
+    try:   # 2026-11-19: 대신 응모한 이벤트 당첨 확인 결과 (새 결과 있을 때만)
+        import prize_check
+        h, t, mark = prize_check.render()
+        if h:
+            H.append(h); T.append(t)
+            if not test:
+                prev = after
+                after = lambda: [f() for f in (prev, mark) if f]
+    except Exception:
+        tb.print_exc()
     try:
         r = schedule_doc.plan(today, write=not test)
         h, t = schedule_doc.render(r); H.append(h); T.append(t)

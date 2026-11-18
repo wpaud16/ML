@@ -139,6 +139,15 @@ def prize_card(it, today):
     px = et == 'proxy'
     if et == 'done':
         badges = f'<span class="free">✅ 응모 완료 {E(dn[5:].replace("-", "/"))}</span>'
+        try:   # 당첨 확인 결과 (prize_check.py)
+            import prize_check
+            pe = prize_check.status_of(ev.key_of(it))
+            if pe and pe.get('status') != 'pending':
+                badges += f'<span class="{"new" if pe["status"] == "won" else "cat"}">{E(prize_check.LABEL[pe["status"]])}</span>'
+            elif pe and pe.get('announce'):
+                badges += f'<span class="cat">발표 {E(pe["announce"][5:].replace("-", "/"))}</span>'
+        except Exception:
+            pass
     elif px:
         badges = '<span class="proxy">🤖 대신 응모 가능</span>'
     else:

@@ -269,7 +269,7 @@ def s_outfit():
     if not ARGS.test:
         time.sleep(90)   # GitHub Pages 반영 대기
     run([sys.executable, 'run_outfit.py', 'send'], cwd=od, timeout=600, extra=mail_env())
-    push([f'outfit/{d}/sent.txt', 'brief/events_seen.json', 'brief/events_cache'], f'outfit: {d} 생활 메일 발송 기록 (노트북)')
+    push([f'outfit/{d}/sent.txt', 'brief/events_seen.json', 'brief/events_cache', 'brief/events_entries.json'],f'outfit: {d} 생활 메일 발송 기록 (노트북)')
 
 
 def s_brief():
@@ -311,6 +311,17 @@ def s_events_bg():
     log('이벤트 검색 시작 (백그라운드, 로그: logs/날짜_events.log)')
 
 
+def s_prize_bg():
+    """대신 응모한 이벤트 당첨 확인 (2026-11-19). 발표일 지난 것만 Claude CLI 로 확인, 결과는 06:00 생활 메일에. 기다리지 않음."""
+    if ARGS.test:
+        return
+    find_claude()
+    lf = open(os.path.join(BASE, 'logs', f'{today()}_prize.log'), 'a', encoding='utf-8')
+    subprocess.Popen([sys.executable, 'prize_check.py'], cwd=os.path.join(REPO, 'brief'), env=child_env(),
+                     stdout=lf, stderr=subprocess.STDOUT, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+    log('당첨 확인 시작 (백그라운드, 로그: logs/날짜_prize.log)')
+
+
 def s_events_now():
     """06:00 생활 메일 직전: 야간에 띄운 검색 결과가 없으면(노트북 꺼짐 등) 지금 검색 (최대 25분, 메일이 그만큼 늦어짐)."""
     if events_ready():
@@ -323,7 +334,7 @@ def s_events_now():
 
 
 JOBS = {
-    'night': [('events', s_events_bg), ('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction), ('hist', s_hist)],
+    'night': [('events', s_events_bg), ('prize', s_prize_bg), ('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction), ('hist', s_hist)],
     'outfit': [('outfit', s_outfit)],
     'brief': [('brief', s_brief)],
 }
