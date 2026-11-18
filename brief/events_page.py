@@ -80,6 +80,37 @@ def prize_items(today):
     return res, day
 
 
+# 2026-11-18 사용자 요청: Claude 가 대신 응모할 수 있을 것 같은 이벤트 표시 (로그인·앱·SNS·캡차·막힌 폼 없음)
+PROXY_BLOCK = re.compile(r'form\.naver\.com|naver\.me|kosis\.kr|instagram\.com|facebook\.com|youtube\.com|x\.com|twitter\.com|'
+                         r'kakao\.com|pf\.kakao|play\.google|apps\.apple', re.I)
+PROXY_NEEDS = re.compile(r'로그인|회원\s*가입|회원만|본인\s*인증|휴대폰\s*인증|앱|어플|팔로우|구독|공유|댓글|리그램|인증샷|사진|영상|후기|캡차|자동입력|'
+                        r'설문|만족도|조사|의견|아이디어|공모|랭킹|게임|스탬프|배지랜드', re.I)   # 설문·공모 = 본인 생각이 필요, 게임 = 직접
+DONE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'events_done.json')   # Claude 가 대신 응모한 기록 (개인정보 없이 이벤트 키·날짜만)
+
+
+def done_map():
+    try:
+        return json.load(open(DONE, encoding='utf-8'))
+    except Exception:
+        return {}
+
+
+def proxy_ok(it):
+    if ev.entry_type(it) not in ('form', 'web'):
+        return False
+    if PROXY_BLOCK.search(it.get('url') or ''):
+        return False
+    return not PROXY_NEEDS.search(' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition')))
+
+
+def code_of(it):
+    """요청할 때 쓰는 짧은 번호 (같은 이벤트면 매일 같음)."""
+    import hashlib
+    h = int(hashlib.md5(ev.key_of(it).encode('utf-8')).hexdigest(), 16)
+    abc = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+    return ''.join(abc[(h >> (5 * i)) & 31] for i in range(4))
+
+
 def prize_card(it, today):
     dl = it['_dl']
     if dl:
@@ -90,6 +121,12 @@ def prize_card(it, today):
         n, due = 999, '<span class="g">마감일 확인 필요</span>'
     et = ev.entry_type(it)
     badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>' + ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'][:2])
+    dn = done_map().get(ev.key_of(it))
+    px = proxy_ok(it) and not dn
+    if dn:
+        badges += f'<span class="free">✅ 응모 완료 {E(dn[5:].replace("-", "/"))}</span>'
+    elif px:
+        badges += '<span class="proxy">🤖 대신 응모 가능</span>'
     if it['_new']:
         badges = '<span class="new">NEW</span>' + badges
     w = f' · 총 {it["winners"]:,}명' if isinstance(it.get('winners'), int) and it['winners'] > 0 else ''
@@ -104,8 +141,13 @@ def prize_card(it, today):
         rows.append(f'<div class="g s">필요: {E(it["condition"])}</div>')
     ann = f' · 발표 {ev.md(ev._d(it["announce"]))}' if ev._d(it.get('announce')) else ''
     rows.append(f'<div>⏰ {due}{E(ann)}' + ('' if it.get('checked') else ' <span class="g s">· ⚠ 공식 페이지 미확인</span>') + '</div>')
-    rows.append(f'<a class="btn" href="{E(it["url"])}" target="_blank" rel="noopener">응모하러 가기 →</a>')
-    return (f'<div class="card" data-entry="{et}" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
+    go = f'<a class="btn" href="{E(it["url"])}" target="_blank" rel="noopener">응모하러 가기 →</a>'
+    if px:
+        req = f'이벤트 [{code_of(it)}] 대신 응모해줘 — {it["title"]} {it["url"]}'
+        go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">🤖 대신 응모 요청 복사</button></div>'
+              f'<div class="g s">요청 번호 {code_of(it)}</div>')
+    rows.append(go)
+    return (f'<div class="card" data-entry="{et}" data-proxy="{1 if px else 0}" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
             + ''.join(rows) + '</div>')
 
 
@@ -290,6 +332,11 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .new{background:var(--hot);color:#fff;font-weight:bold} .free{background:#1e8e3e;color:#fff}
 .ent{font-size:11px;border-radius:8px;padding:1px 7px;font-weight:bold;border:1px solid var(--bd)}
 .ent-form{background:#1e8e3e;color:#fff;border-color:#1e8e3e}
+.proxy{font-size:11px;border-radius:8px;padding:1px 7px;font-weight:bold;background:#f3e8fd;color:#7b2cbf}
+@media (prefers-color-scheme:dark){.proxy{background:#3a2550;color:#d9b8ff}}
+.btn.ask{background:none;border:0;padding:0;font:inherit;font-weight:bold;cursor:pointer;color:#7b2cbf}
+@media (prefers-color-scheme:dark){.btn.ask{color:#d9b8ff}}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#323232;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;z-index:99;max-width:90vw;text-align:center}
 .t{font-weight:bold;font-size:15px}
 .g{color:var(--mut)} .s{font-size:12px} .hot{color:var(--hot)}
 .btn{display:inline-block;margin-top:6px;color:var(--acc);font-weight:bold;text-decoration:none}
@@ -333,10 +380,14 @@ function tab(t){$('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t==t));$(
  if(t=='fest')setTimeout(()=>{initMap();if(MAP){MAP.resize();}},60)}
 function pick(t,v,btn){$('.chips[data-t="'+t+'"] .chip').forEach(b=>b.classList.toggle('on',b==btn));
  $('#'+t+' .card').forEach(c=>{let ok=v=='all'||(v=='soon'&&c.dataset.soon=='1')||(v=='new'&&c.dataset.new=='1')||(v=='wk'&&c.dataset.wk=='1')||(v=='free'&&c.dataset.free=='1')
-  ||(c.dataset.cats||'').split(' ').includes(v)||c.dataset.sido==v||c.dataset.entry==v;c.classList.toggle('hide',!ok)});
+  ||(v=='proxy'&&c.dataset.proxy=='1')||(c.dataset.cats||'').split(' ').includes(v)||c.dataset.sido==v||c.dataset.entry==v;c.classList.toggle('hide',!ok)});
  $('#'+t+' .grp').forEach(g=>{g.classList.toggle('hide',!g.querySelector('.card:not(.hide)'))});
  let n=$('#'+t+' .card:not(.hide)').length;document.getElementById(t+'-empty').classList.toggle('hide',n>0);
  if(t=='fest')drawMarkers(true)}
+function toast(m){const d=document.createElement('div');d.className='toast';d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3500)}
+function askProxy(b){const t=b.dataset.req;const ok=()=>toast('복사했어요 · Claude 대화창에 붙여넣어 보내 주세요');
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,()=>prompt('아래 글을 복사해 Claude 에 보내 주세요',t))}
+ else prompt('아래 글을 복사해 Claude 에 보내 주세요',t)}
 document.addEventListener('DOMContentLoaded',()=>{let t=location.hash.slice(1);if(t!='prize'&&t!='fest'){try{t=localStorage.getItem('ev_tab')}catch(e){}}
  tab(t=='fest'?'fest':'prize')});
 /* ---- 지도 (2026-11-18): MapLibre + OpenFreeMap 'liberty' 벡터 지도 (키 필요 없음, 앱 지도 느낌), 이름은 한글 우선 ---- */
@@ -414,6 +465,9 @@ def build(today):
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'new\',this)">🆕 오늘 새로<i>{new}</i></button>')
     if soon:
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'soon\',this)">⏰ 마감 임박<i>{soon}</i></button>')
+    npx = sum(1 for x in P if proxy_ok(x) and ev.key_of(x) not in done_map())
+    if npx:
+        pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'proxy\',this)">🤖 대신 응모 가능<i>{npx}</i></button>')
     ecnt = {k: sum(ev.entry_type(x) == k for x in P) for k in ev.ENTRY}
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(ev.ENTRY[k])}<i>{ecnt[k]}</i></button>'
                for k in ev.ENTRY if ecnt[k]]
@@ -457,7 +511,8 @@ def build(today):
 <div class="pane on" id="prize">{pcards}<div class="empty{'' if not P else ' hide'}" id="prize-empty">해당하는 이벤트가 없습니다</div>
 <div class="foot">무료 응모만 모음 (구매·결제·카드 발급·계좌 개설 필수 이벤트 제외) · 마감 빠른 순 · NEW = 오늘 처음 찾은 이벤트<br>
 응모 전에 공식 페이지의 유의사항·개인정보 제공 범위를 확인하세요 · 5만원 넘는 경품은 제세공과금(22%)을 당첨자가 내는 경우가 많아요<br>
-Claude 웹 검색으로 매일 새벽 모음 · 공식 페이지에서 확인 못 한 항목은 ⚠ 표시</div></div>
+Claude 웹 검색으로 매일 새벽 모음 · 공식 페이지에서 확인 못 한 항목은 ⚠ 표시<br>
+🤖 대신 응모 가능 = 로그인·앱·SNS 없이 이름·연락처만 쓰는 폼으로 보이는 이벤트 · '대신 응모 요청 복사' 후 Claude 앱 대화창에 붙여넣으면 Claude 가 응모하고 결과를 알려줘요 (캡차가 나오면 링크만 드려요)</div></div>
 <div class="pane" id="fest"><div id="map"></div>
 <div class="mapnote">🎉 축제 · 🛍️ 박람회·페어 · 🧺 마켓 · ✨ 빛축제·불꽃 · 🎈 기타 · 빨간 숫자 = 같은 장소 행사 수 · 핀을 누르면 행사 목록 · 위 칩으로 거르면 지도도 같이 바뀌어요</div>
 <script>window.FEST={fest_json};</script>{''.join(fparts)}<div class="empty{'' if not F else ' hide'}" id="fest-empty">해당하는 행사가 없습니다</div>
