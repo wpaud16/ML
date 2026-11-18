@@ -8,6 +8,7 @@ on:
     paths:
       - 'auction_model/page/**'
       - 'outfit/**'
+      - 'events/**'
       - 'privacy.html'
       - '.github/workflows/pages.yml'
   workflow_run:
@@ -53,6 +54,7 @@ jobs:
           sparse-checkout: |
             auction_model/page
             outfit
+            events
             privacy.html
           sparse-checkout-cone-mode: false
 
@@ -62,6 +64,7 @@ jobs:
           mkdir -p _site/auction_model
           cp -r auction_model/page _site/auction_model/page
           rsync -a --exclude='*.py' outfit/ _site/outfit/
+          cp -r events _site/events 2>/dev/null || true   # 응모 이벤트·지역 행사 (2026-11-18)
           cp privacy.html _site/ 2>/dev/null || true
           touch _site/.nojekyll
           du -sh _site
