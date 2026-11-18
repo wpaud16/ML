@@ -369,8 +369,8 @@ function softStyle(){const S=(id,k,v)=>{try{MAP.setPaintProperty(id,k,v)}catch(e
    S(id,'text-color',sl=='water_name'?'#5b86b0':'#4a4a4f');S(id,'text-halo-color','#ffffff');S(id,'text-halo-width',1.4)}});}
 /* 귀여운 핀: 한 가지 색(노랑) 동그라미 + 행사 종류 이모지, 같은 장소 여러 개면 숫자 배지 */
 function emo(kind){kind=kind||'';return /빛|불꽃/.test(kind)?'✨':/박람|페어/.test(kind)?'🛍️':/마켓/.test(kind)?'🧺':/축제/.test(kind)?'🎉':'🎈'}
-function pinEl(fs,ex){const d=document.createElement('div');d.className='pinw'+(ex?'':' approx');
- d.innerHTML='<div class="pin"><span>'+emo(fs[0].kind)+'</span></div>'+(fs.length>1?'<i class="cnt">'+fs.length+'</i>':'')+'<div class="tail"></div>';return d}
+function pinEl(fs,ex){const d=document.createElement('div');   // 바깥 div 는 MapLibre 가 위치(transform)를 잡으므로 꾸밈은 안쪽에만
+ d.innerHTML='<div class="pinw'+(ex?'':' approx')+'"><div class="pin"><span>'+emo(fs[0].kind)+'</span></div>'+(fs.length>1?'<i class="cnt">'+fs.length+'</i>':'')+'<div class="tail"></div></div>';return d}
 function drawMarkers(fit){if(!MAP||!READY)return;MK.forEach(m=>m.remove());MK=[];GRP={};const b=new maplibregl.LngLatBounds();let any=false;
  (window.FEST||[]).forEach(f=>{const c=document.getElementById('f'+f.i);if(!c||c.classList.contains('hide'))return;
   const k=f.lat.toFixed(3)+','+f.lng.toFixed(3);(GRP[k]=GRP[k]||[]).push(f)});
