@@ -88,7 +88,8 @@ def prize_card(it, today):
         due = f'{ev.md(dl)} 마감 · <b class="{"hot" if n <= 3 else ""}">{dd}</b>'
     else:
         n, due = 999, '<span class="g">마감일 확인 필요</span>'
-    badges = ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'][:2])
+    et = ev.entry_type(it)
+    badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>' + ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'][:2])
     if it['_new']:
         badges = '<span class="new">NEW</span>' + badges
     w = f' · 총 {it["winners"]:,}명' if isinstance(it.get('winners'), int) and it['winners'] > 0 else ''
@@ -104,7 +105,7 @@ def prize_card(it, today):
     ann = f' · 발표 {ev.md(ev._d(it["announce"]))}' if ev._d(it.get('announce')) else ''
     rows.append(f'<div>⏰ {due}{E(ann)}' + ('' if it.get('checked') else ' <span class="g s">· ⚠ 공식 페이지 미확인</span>') + '</div>')
     rows.append(f'<a class="btn" href="{E(it["url"])}" target="_blank" rel="noopener">응모하러 가기 →</a>')
-    return (f'<div class="card" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
+    return (f'<div class="card" data-entry="{et}" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
             + ''.join(rows) + '</div>')
 
 
@@ -285,6 +286,8 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .top{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:3px}
 .cat,.new,.free{font-size:11px;border-radius:8px;padding:1px 7px;background:var(--chip)}
 .new{background:var(--hot);color:#fff;font-weight:bold} .free{background:#1e8e3e;color:#fff}
+.ent{font-size:11px;border-radius:8px;padding:1px 7px;font-weight:bold;border:1px solid var(--bd)}
+.ent-form{background:#1e8e3e;color:#fff;border-color:#1e8e3e}
 .t{font-weight:bold;font-size:15px}
 .g{color:var(--mut)} .s{font-size:12px} .hot{color:var(--hot)}
 .btn{display:inline-block;margin-top:6px;color:var(--acc);font-weight:bold;text-decoration:none}
@@ -307,7 +310,7 @@ function tab(t){$('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t==t));$(
  if(t=='fest')setTimeout(()=>{initMap();if(MAP){MAP.invalidateSize();}},60)}
 function pick(t,v,btn){$('.chips[data-t="'+t+'"] .chip').forEach(b=>b.classList.toggle('on',b==btn));
  $('#'+t+' .card').forEach(c=>{let ok=v=='all'||(v=='soon'&&c.dataset.soon=='1')||(v=='new'&&c.dataset.new=='1')||(v=='wk'&&c.dataset.wk=='1')||(v=='free'&&c.dataset.free=='1')
-  ||(c.dataset.cats||'').split(' ').includes(v)||c.dataset.sido==v;c.classList.toggle('hide',!ok)});
+  ||(c.dataset.cats||'').split(' ').includes(v)||c.dataset.sido==v||c.dataset.entry==v;c.classList.toggle('hide',!ok)});
  $('#'+t+' .grp').forEach(g=>{g.classList.toggle('hide',!g.querySelector('.card:not(.hide)'))});
  let n=$('#'+t+' .card:not(.hide)').length;document.getElementById(t+'-empty').classList.toggle('hide',n>0);
  if(t=='fest')drawMarkers(true)}
@@ -362,6 +365,9 @@ def build(today):
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'new\',this)">🆕 오늘 새로<i>{new}</i></button>')
     if soon:
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'soon\',this)">⏰ 마감 임박<i>{soon}</i></button>')
+    ecnt = {k: sum(ev.entry_type(x) == k for x in P) for k in ev.ENTRY}
+    pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(ev.ENTRY[k])}<i>{ecnt[k]}</i></button>'
+               for k in ev.ENTRY if ecnt[k]]
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(CAT_LABEL[k])}<i>{cnt[k]}</i></button>'
                for k in [c for c, _, _ in CATS] + ['etc'] if cnt[k]]
     pcards = ''.join(prize_card(x, today) for x in P) or ''

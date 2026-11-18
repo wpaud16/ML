@@ -39,10 +39,11 @@ PRIZE_PROMPT = """오늘은 {today} (한국시간)입니다. 웹 검색으로 '�
   공식 페이지에서 마감일을 확인하지 못하면 deadline 을 null 로.
 목표 20~40개. 반드시 아래 JSON 하나만 출력 (설명·코드블록 없이). 모르는 값은 null, 날짜는 YYYY-MM-DD.
 {{"items": [{{"title": "이벤트 이름", "org": "주최", "prize": "주요 경품 (예: 갤럭시 S26 3명, 커피 쿠폰 1000명)", "how": "응모 방법 한 줄 (예: 앱 로그인 후 퀴즈 정답 입력)",
-   "condition": "회원가입·앱 설치 등 필요한 것 또는 null", "start": "", "deadline": "", "announce": "당첨 발표일 또는 null",
+   "condition": "회원가입·앱 설치 등 필요한 것 또는 null", "entry": "form|login|app|sns", "start": "", "deadline": "", "announce": "당첨 발표일 또는 null",
    "winners": 0, "kind": "기업|금융|유통·쇼핑|공공기관|방송·언론|스포츠|기타", "url": "공식 응모 페이지", "checked": true}}],
  "sources": ["참고한 사이트 이름"]}}
-checked 는 공식 페이지를 직접 열어 확인했으면 true."""
+checked 는 공식 페이지를 직접 열어 확인했으면 true.
+entry: form = 로그인 없이 웹 양식에 이름·연락처·답만 적어 내면 끝 / login = 사이트 로그인·회원가입 필요 / app = 앱 설치·앱 안에서 / sns = SNS 팔로우·댓글·공유 필요."""
 
 FEST_PROMPT = """오늘은 {today} (한국시간)입니다. 웹 검색으로 {today} ~ {end} 사이에 열리는 한국 지역 행사(축제·박람회·페어·마켓·불꽃놀이·빛축제·전시형 행사·공연형 지역 행사)를 찾아 사실만 JSON 으로 정리하세요.
 
@@ -110,6 +111,27 @@ def alive(url):
         return True
 
 
+ENTRY = {'form': '⚡ 바로 응모', 'web': '🌐 웹에서 응모', 'login': '🔑 로그인 필요', 'app': '📱 앱 필요', 'sns': '💬 SNS 필요'}
+
+
+def entry_type(it):
+    """응모 난이도 (2026-11-18): 검색이 준 entry 값 우선, 없으면 링크·조건 글로 추정."""
+    e = (it.get('entry') or '').strip().lower()
+    if e in ENTRY:
+        return e
+    url = (it.get('url') or '').lower()
+    txt = ' '.join(str(it.get(k) or '') for k in ('condition', 'how'))
+    if re.search(r'앱\s*(설치|다운|가입|로그인|에서|회원)|어플', txt):
+        return 'app'
+    if re.search(r'instagram\.com|facebook\.com|youtube\.com|blog\.naver\.com|x\.com|twitter\.com|tiktok', url) or re.search(r'팔로우|구독|댓글|좋아요|리그램|인스타|유튜브|SNS', txt):
+        return 'sns'
+    if re.search(r'로그인|회원가입|회원\b|회원 ?전용|가입', txt):
+        return 'login'
+    if re.search(r'forms\.gle|docs\.google\.com/forms|naver\.me|form\.naver|surveymonkey|tally\.so|typeform', url):
+        return 'form'
+    return 'web'   # 로그인·앱·SNS 조건이 안 적혀 있음 (들어가 봐야 앎)
+
+
 def key_of(it):
     u = re.sub(r'[?#].*$', '', (it.get('url') or '').strip().rstrip('/'))
     return u or re.sub(r'\s+', '', (it.get('title') or it.get('name') or ''))
@@ -157,8 +179,8 @@ def dday(d, today):
 
 def prize_card(it, today):
     a = f'<a style="color:#1a73e8" href="{E(it["url"])}">응모하러 가기 →</a>'
-    lines = [f'<div><b style="font-size:15px">{E(it["title"])}</b><span style="{GRAY}"> · {E(it.get("org") or "")} · {E(it.get("kind") or "")}</span></div>']
-    t = [f'■ {it["title"]} ({it.get("org") or ""})']
+    lines = [f'<div><b style="font-size:15px">{E(it["title"])}</b><span style="{GRAY}"> · {E(it.get("org") or "")} · {E(ENTRY[entry_type(it)])}</span></div>']
+    t = [f'■ {it["title"]} ({it.get("org") or ""}) {ENTRY[entry_type(it)]}']
     if it.get('prize'):
         w = f' (총 {it["winners"]:,}명)' if isinstance(it.get('winners'), int) and it['winners'] > 0 else ''
         lines.append(f'<div>🎁 {E(it["prize"])}{E(w)}</div>'); t.append(f'🎁 {it["prize"]}{w}')
