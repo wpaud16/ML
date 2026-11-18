@@ -61,7 +61,7 @@ def life_sections(day, test):
     import datetime as dt, traceback as tb
     import quote, schedule_doc, events
     today = dt.date.fromisoformat(day)
-    # 2026-11-18 순서: 날씨(바로가기) → 이벤트·행사(바로가기) → 할 일 → 오늘의 문장
+    # 2026-11-18 순서: 오늘의 문장 → 날씨(바로가기) → 이벤트·행사(바로가기) → 할 일
     H, T, fails, after = [], [], [], None
     try:
         h, t, after = events.sections(today, test)
@@ -76,11 +76,12 @@ def life_sections(day, test):
                  '끝낸 일은 문서에서 체크해 주세요. 내일 아침 자동 정리됩니다.</div>')
     except Exception:
         tb.print_exc(); fails.append('오늘의 할 일 (문서 읽기/쓰기)')
+    top = []   # 2026-11-18: 오늘의 문장은 메일 맨 위 (날씨보다 위)
     try:
-        h, t = quote.render(quote.today_quote(today)); H.append(h); T.append(t)
+        h, t = quote.render(quote.today_quote(today)); top = [(h, t)]
     except Exception:
         tb.print_exc(); fails.append('오늘의 문장')
-    return H, T, fails, after
+    return top, H, T, fails, after
 
 
 def send():
@@ -88,13 +89,13 @@ def send():
         print('skip'); return
     m = json.load(open(os.path.join(HERE, '.mail.json')))
     import google_api as g
-    H, T, fails, after = life_sections(m['day'], m.get('test'))
-    html = m['html']
+    top, H, T, fails, after = life_sections(m['day'], m.get('test'))
+    parts = [h for h, _ in top] + [m['html']] + H
     if fails:
-        html = f'<p style="color:#d93025;font-size:13px">⚠️ 실패: {", ".join(fails)}</p>' + html
+        parts[0] = f'<p style="color:#d93025;font-size:13px">⚠️ 실패: {", ".join(fails)}</p>' + parts[0]
     html = ('<div style="font-family:-apple-system,Segoe UI,Malgun Gothic,sans-serif;max-width:600px;margin:auto;padding:8px;line-height:1.5;color:#222">'
-            + DIV.join([html] + H) + '</div>')
-    g.send_mail(TO, m['subject'], html, '\n\n'.join([m['text']] + T))
+            + DIV.join(parts) + '</div>')
+    g.send_mail(TO, m['subject'], html, '\n\n'.join([t for _, t in top] + [m['text']] + T))
     print('sent:', m['subject'])
     if after:
         try:
