@@ -304,11 +304,10 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .pin b{transform:rotate(45deg);color:#fff;font:700 12px/1 'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
 .pin b:empty::before{content:'';display:block;width:9px;height:9px;border-radius:50%;background:#fff}
 .pin.wk{background:#f04438} .pin.approx{opacity:.6;border-style:dashed}
-.leaflet-marker-icon:hover .pin{transform:rotate(-45deg) scale(1.12)}
+.pinw{cursor:pointer;padding-bottom:6px} .pinw:hover .pin{transform:rotate(-45deg) scale(1.12)}
 /* 팝업: 둥근 카드 */
-.ppw .leaflet-popup-content-wrapper{border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.18);padding:0}
-.ppw .leaflet-popup-content{margin:0;width:auto!important}
-.ppw .leaflet-popup-tip{box-shadow:none}
+.ppw .maplibregl-popup-content{border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.18);padding:0;min-width:220px}
+.ppw .maplibregl-popup-close-button{font-size:18px;color:#888;right:4px;top:2px}
 .pp{max-height:260px;overflow:auto;padding:6px 0;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
 .pp-head{font-size:12px;color:#666;padding:6px 14px 4px;font-weight:bold}
 .pp-note{font-size:11px;color:#888;padding:4px 14px}
@@ -316,9 +315,9 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .pp-item:first-of-type{border-top:0} .pp-item:hover{background:#f6f8fc}
 .pp-t{font-weight:bold;font-size:13.5px;line-height:1.35;margin-bottom:2px} .pp-s{font-size:12px;color:#555;line-height:1.45}
 .pp-wk{color:#f04438;font-size:11px;font-weight:bold}
-.leaflet-control-zoom{border:0!important;box-shadow:0 2px 8px rgba(0,0,0,.2)!important;border-radius:10px!important;overflow:hidden}
-.leaflet-control-zoom a{width:34px!important;height:34px!important;line-height:34px!important;color:#333!important}
-.leaflet-control-attribution{font-size:9px!important;background:rgba(255,255,255,.7)!important}
+.maplibregl-ctrl-group{border-radius:10px!important;box-shadow:0 2px 8px rgba(0,0,0,.2)!important;overflow:hidden}
+.maplibregl-ctrl-group button{width:34px!important;height:34px!important}
+.maplibregl-ctrl-attrib{font-size:9px}
 .links{margin-top:6px;display:flex;gap:14px;flex-wrap:wrap} .links .btn{margin-top:0}
 .card{scroll-margin-top:130px;transition:outline .2s} .card.flash{outline:3px solid var(--acc)}
 """
@@ -328,7 +327,7 @@ document.documentElement.classList.add('js');
 function $(s,r){return (r||document).querySelectorAll(s)}
 function tab(t){$('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t==t));$('.pane').forEach(p=>p.classList.toggle('on',p.id==t));
  $('.chips').forEach(c=>c.classList.toggle('on',c.dataset.t==t));try{localStorage.setItem('ev_tab',t)}catch(e){};history.replaceState(null,'','#'+t);
- if(t=='fest')setTimeout(()=>{initMap();if(MAP){MAP.invalidateSize();}},60)}
+ if(t=='fest')setTimeout(()=>{initMap();if(MAP){MAP.resize();}},60)}
 function pick(t,v,btn){$('.chips[data-t="'+t+'"] .chip').forEach(b=>b.classList.toggle('on',b==btn));
  $('#'+t+' .card').forEach(c=>{let ok=v=='all'||(v=='soon'&&c.dataset.soon=='1')||(v=='new'&&c.dataset.new=='1')||(v=='wk'&&c.dataset.wk=='1')||(v=='free'&&c.dataset.free=='1')
   ||(c.dataset.cats||'').split(' ').includes(v)||c.dataset.sido==v||c.dataset.entry==v;c.classList.toggle('hide',!ok)});
@@ -337,34 +336,34 @@ function pick(t,v,btn){$('.chips[data-t="'+t+'"] .chip').forEach(b=>b.classList.
  if(t=='fest')drawMarkers(true)}
 document.addEventListener('DOMContentLoaded',()=>{let t=location.hash.slice(1);if(t!='prize'&&t!='fest'){try{t=localStorage.getItem('ev_tab')}catch(e){}}
  tab(t=='fest'?'fest':'prize')});
-/* ---- 지도 (Leaflet + OpenStreetMap, 2026-11-18) ---- */
-let MAP=null,LAYER=null,GRP={};
+/* ---- 지도 (2026-11-18): MapLibre + OpenFreeMap 'liberty' 벡터 지도 (키 필요 없음, 앱 지도 느낌), 이름은 한글 우선 ---- */
+let MAP=null,MK=[],GRP={},READY=false;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
-function initMap(){if(MAP||!window.L||!document.getElementById('map'))return;
- MAP=L.map('map',{scrollWheelZoom:false,tap:true,zoomControl:false}).setView([36.3,127.8],7);
- L.control.zoom({position:'bottomright'}).addTo(MAP);
- /* 2026-11-18: 실사 느낌 OSM → 깔끔한 앱 지도 스타일 (CARTO Voyager, 다크 모드는 Dark Matter) */
- const dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
- L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/'+(dark?'dark_all':'voyager')+'/{z}/{x}/{y}{r}.png',
-  {maxZoom:19,subdomains:'abcd',attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(MAP);
- LAYER=L.layerGroup().addTo(MAP);drawMarkers(true)}
-function pinIcon(n,wk,ex){const c=(wk?'wk':'')+(ex?'':' approx');
- return L.divIcon({className:'',html:'<div class="pin '+c+'"><b>'+(n>1?n:'')+'</b></div>',iconSize:[30,40],iconAnchor:[15,38],popupAnchor:[0,-34]})}
-function drawMarkers(fit){if(!MAP)return;LAYER.clearLayers();GRP={};const pts=[];
+function initMap(){if(MAP||!window.maplibregl||!document.getElementById('map'))return;
+ MAP=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[127.8,36.3],zoom:5.6,
+  cooperativeGestures:true,attributionControl:{compact:true}});
+ MAP.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+ MAP.on('load',()=>{READY=true;
+  MAP.getStyle().layers.forEach(l=>{if(l.type=='symbol'&&l.layout&&l.layout['text-field']){   // 지명: 한글 → 기본 이름
+   try{MAP.setLayoutProperty(l.id,'text-field',['coalesce',['get','name:ko'],['get','name']])}catch(e){}}});
+  drawMarkers(true)})}
+function pinEl(n,wk,ex){const d=document.createElement('div');d.className='pinw';
+ d.innerHTML='<div class="pin '+(wk?'wk':'')+(ex?'':' approx')+'"><b>'+(n>1?n:'')+'</b></div>';return d}
+function drawMarkers(fit){if(!MAP||!READY)return;MK.forEach(m=>m.remove());MK=[];GRP={};const b=new maplibregl.LngLatBounds();let any=false;
  (window.FEST||[]).forEach(f=>{const c=document.getElementById('f'+f.i);if(!c||c.classList.contains('hide'))return;
   const k=f.lat.toFixed(3)+','+f.lng.toFixed(3);(GRP[k]=GRP[k]||[]).push(f)});
  Object.entries(GRP).forEach(([k,fs])=>{const [la,ln]=k.split(',').map(Number);const wk=fs.some(f=>f.wk),ex=fs.some(f=>f.exact);
-  const m=L.marker([la,ln],{icon:pinIcon(fs.length,wk,ex),riseOnHover:true});
-  m.bindPopup('<div class="pp">'+(ex?'':'<div class="pp-note">정확한 장소를 못 찾아 시·군·구 중심에 표시</div>')+
+  const pop=new maplibregl.Popup({offset:[0,-38],maxWidth:'290px',className:'ppw',closeButton:true}).setHTML('<div class="pp">'+(ex?'':'<div class="pp-note">정확한 장소를 못 찾아 시·군·구 중심에 표시</div>')+
    (fs.length>1?'<div class="pp-head">이 장소 행사 '+fs.length+'개</div>':'')+fs.map(f=>
    '<a class="pp-item" href="#f'+f.i+'" onclick="return toCard('+f.i+')"><div class="pp-t">'+esc(f.name)+(f.wk?' <span class="pp-wk">이번 주말</span>':'')+'</div>'+
-   '<div class="pp-s">'+esc(f.period)+'</div><div class="pp-s">📍 '+esc(f.place)+'</div><div class="pp-s">🎟 '+esc(f.fee)+'</div></a>').join('')+'</div>',
-   {maxWidth:280,minWidth:220,className:'ppw'});
-  fs.forEach(f=>f._m=m);m.addTo(LAYER);pts.push([la,ln])});
- if(fit&&pts.length)MAP.fitBounds(pts,{padding:[24,24],maxZoom:13})}
+   '<div class="pp-s">'+esc(f.period)+'</div><div class="pp-s">📍 '+esc(f.place)+'</div><div class="pp-s">🎟 '+esc(f.fee)+'</div></a>').join('')+'</div>');
+  const m=new maplibregl.Marker({element:pinEl(fs.length,wk,ex),anchor:'bottom'}).setLngLat([ln,la]).setPopup(pop).addTo(MAP);
+  fs.forEach(f=>f._m=m);MK.push(m);b.extend([ln,la]);any=true});
+ if(fit&&any)MAP.fitBounds(b,{padding:{top:50,bottom:30,left:30,right:30},maxZoom:13,duration:fit===true?0:600})}
 function toCard(i){const c=document.getElementById('f'+i);if(c){c.scrollIntoView({behavior:'smooth',block:'center'});c.classList.add('flash');setTimeout(()=>c.classList.remove('flash'),1600)}return false}
 function focusOn(i){const f=(window.FEST||[]).find(x=>x.i==i);if(!f||!MAP)return true;
- document.getElementById('map').scrollIntoView({behavior:'smooth',block:'center'});MAP.setView([f.lat,f.lng],14);if(f._m)setTimeout(()=>f._m.openPopup(),350);return false}
+ document.getElementById('map').scrollIntoView({behavior:'smooth',block:'center'});MK.forEach(m=>m.getPopup()&&m.getPopup().remove());
+ MAP.flyTo({center:[f.lng,f.lat],zoom:14,duration:700});if(f._m)setTimeout(()=>f._m.togglePopup(),750);return false}
 """
 
 
@@ -425,8 +424,8 @@ def build(today):
     meta_f = f'{fday.month}/{fday.day}(월) 검색 · 앞으로 3주' if fday else '검색 결과 없음'
     html_ = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>응모 이벤트·지역 행사</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script>{JS}</script><style>{CSS}</style></head><body><div class="wrap">
 <h1>🎁 응모 이벤트 · 🎪 지역 행사</h1>
 <div class="meta">{now:%m/%d %H:%M} 갱신 · 이벤트 {E(meta_p)} · 행사 {E(meta_f)}</div>

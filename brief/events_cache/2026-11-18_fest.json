@@ -25,8 +25,9 @@
    "fee": "무료 (사전예약제, 유료 패스트패스 있음)",
    "kind": "마켓",
    "desc": "19세기 영국풍 크리스마스 마켓·회전목마",
-   "url": "https://www.fnnews.com/news/202611081151373965",
-   "checked": true
+   "url": null,
+   "checked": true,
+   "url_was": "https://www.fnnews.com/news/202611081151373965"
   },
   {
    "name": "제58회 서울국제유아교육전",
@@ -39,8 +40,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "유아교육·교구·도서 전시",
-   "url": "https://www.coex.co.kr/event/full-schedules/",
-   "checked": true
+   "url": "https://www.coex.co.kr/exhibitions/%ec%a0%9c58%ed%9a%8c-%ec%84%9c%ec%9a%b8%ea%b5%ad%ec%a0%9c%ec%9c%a0%ec%95%84%ea%b5%90%ec%9c%a1%ec%a0%84/",
+   "checked": true,
+   "url_was": "https://www.coex.co.kr/event/full-schedules/",
+   "url_src": "전시장"
   },
   {
    "name": "글로벌 베이비페어",
@@ -53,8 +56,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "출산·육아용품 전시 판매",
-   "url": "https://www.coex.co.kr/event/full-schedules/",
-   "checked": true
+   "url": "https://www.coex.co.kr/exhibitions/%ea%b8%80%eb%a1%9c%eb%b2%8c-%eb%b2%a0%ec%9d%b4%eb%b9%84%ed%8e%98%ec%96%b4/",
+   "checked": true,
+   "url_was": "https://www.coex.co.kr/event/full-schedules/",
+   "url_src": "전시장"
   },
   {
    "name": "2026 트래블 쇼",
@@ -67,8 +72,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "국내외 여행·웰니스 관광 박람회",
-   "url": "https://www.coex.co.kr/event/full-schedules/",
-   "checked": true
+   "url": "https://www.coex.co.kr/exhibitions/%eb%a7%88%ec%9d%b8%eb%93%9c%ec%bc%80%ec%96%b4-%ec%9b%b0%eb%8b%88%ec%8a%a4-%eb%a1%9c%ec%bb%ac%eb%b0%94%ec%9d%b4%eb%b8%8c-%ed%8a%b8%eb%9e%98%eb%b8%94-%ec%87%bc/",
+   "checked": true,
+   "url_was": "https://www.coex.co.kr/event/full-schedules/",
+   "url_src": "전시장"
   },
   {
    "name": "2026 아트프리즘 제3회 아트페어",
@@ -81,8 +88,10 @@
    "fee": null,
    "kind": "기타",
    "desc": "작가 작품 전시·판매 아트페어",
-   "url": "https://www.coex.co.kr/event/full-schedules/",
-   "checked": true
+   "url": "https://www.coex.co.kr/exhibitions/2026%eb%85%84-%ec%95%84%ed%8a%b8%ed%94%84%eb%a6%ac%ec%a6%98-%ec%a0%9c3%ed%9a%8c-%ec%95%84%ed%8a%b8%ed%8e%98%ec%96%b4/",
+   "checked": true,
+   "url_was": "https://www.coex.co.kr/event/full-schedules/",
+   "url_src": "전시장"
   },
   {
    "name": "2026 소담마켓",
@@ -95,8 +104,10 @@
    "fee": null,
    "kind": "마켓",
    "desc": "소상공인·핸드메이드 마켓",
-   "url": "https://www.coex.co.kr/event/full-schedules/",
-   "checked": true
+   "url": "https://www.coex.co.kr/exhibitions/2026-%ec%86%8c%eb%8b%b4%eb%a7%88%ec%bc%93/",
+   "checked": true,
+   "url_was": "https://www.coex.co.kr/event/full-schedules/",
+   "url_src": "전시장"
   },
   {
    "name": "제436회 웨덱스 웨딩박람회",
@@ -109,8 +120,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "스드메·혼수 웨딩 상담 박람회",
-   "url": "https://www.coex.co.kr/event/full-schedules/",
-   "checked": true
+   "url": "https://www.coex.co.kr/exhibitions/%ec%a0%9c436%ed%9a%8c-%ec%9b%a8%eb%8d%b1%ec%8a%a4-%ec%9b%a8%eb%94%a9%eb%b0%95%eb%9e%8c%ed%9a%8c/",
+   "checked": true,
+   "url_was": "https://www.coex.co.kr/event/full-schedules/",
+   "url_src": "전시장"
   },
   {
    "name": "디자인코리아 2026",
@@ -165,8 +178,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "웹툰 IP 전시·작가 체험 행사",
-   "url": "https://www.coex.co.kr/event/full-schedules/",
-   "checked": true
+   "url": "https://wefe.kr",
+   "checked": true,
+   "url_was": "https://www.coex.co.kr/event/full-schedules/",
+   "url_src": "주최"
   },
   {
    "name": "2026 대한민국 관광기념품 박람회",
@@ -179,8 +194,10 @@
    "fee": "무료",
    "kind": "박람회·페어",
    "desc": "K-굿즈 관광기념품 전시·판매",
-   "url": "https://www.specialtimes.co.kr/news/articleView.html?idxno=485100",
-   "checked": true
+   "url": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=2854855",
+   "checked": true,
+   "url_was": "https://www.specialtimes.co.kr/news/articleView.html?idxno=485100",
+   "url_src": "구석구석"
   },
   {
    "name": "2026 보드게임페스타(시즌2)",
@@ -193,8 +210,10 @@
    "fee": "유료 (2008년 이후 출생자 무료)",
    "kind": "박람회·페어",
    "desc": "보드게임 500여 종 체험·판매",
-   "url": "https://xn--ok0b236bp0a.com/place/3309",
-   "checked": false
+   "url": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=2410727",
+   "checked": false,
+   "url_was": "https://xn--ok0b236bp0a.com/place/3309",
+   "url_src": "구석구석"
   },
   {
    "name": "제7회 김치의 날 X 제4회 위킴 페스티벌",
@@ -207,8 +226,10 @@
    "fee": null,
    "kind": "축제",
    "desc": "김치의 날 기념 김치 문화 행사",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=4151220",
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/",
+   "url_src": "구석구석"
   },
   {
    "name": "제41회 궁디팡팡 캣페스타 서울",
@@ -221,8 +242,9 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "고양이 용품·굿즈 박람회 (동반 불가)",
-   "url": "https://petfairschedule.co.kr/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://petfairschedule.co.kr/"
   },
   {
    "name": "반짝반짝 남산밤길",
@@ -235,8 +257,10 @@
    "fee": "무료",
    "kind": "기타",
    "desc": "남산 야간 트래킹 프로그램",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468296",
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/",
+   "url_src": "지자체"
   },
   {
    "name": "2026 서울 어텀페스타",
@@ -249,8 +273,10 @@
    "fee": "프로그램별 상이",
    "kind": "축제",
    "desc": "서울 전역 가을 공연예술 축제",
-   "url": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1436671",
-   "checked": false
+   "url": "https://news.seoul.go.kr/culture/archives/534503",
+   "checked": false,
+   "url_was": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1436671",
+   "url_src": "지자체"
   },
   {
    "name": "2026 HUG RUN 허그런",
@@ -263,8 +289,10 @@
    "fee": "참가비 별도",
    "kind": "기타",
    "desc": "아동을 위한 기부 마라톤",
-   "url": "https://chukjemoa.co.kr/2026-12/",
-   "checked": false
+   "url": "https://hugrun.kr/",
+   "checked": false,
+   "url_was": "https://chukjemoa.co.kr/2026-12/",
+   "url_src": "주최"
   },
   {
    "name": "2026 메가주 일산 시즌2",
@@ -277,8 +305,10 @@
    "fee": "2차 사전 6,000원 (1차 무료 마감)",
    "kind": "박람회·페어",
    "desc": "반려동물 용품 펫페어 (반려견 동반 가능)",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26042204",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "원더리벳 2026",
@@ -291,8 +321,10 @@
    "fee": null,
    "kind": "기타",
    "desc": "서브컬처·창작 굿즈 문화행사",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26062904",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "2026 대한민국 정부혁신박람회",
@@ -305,8 +337,10 @@
    "fee": "무료",
    "kind": "박람회·페어",
    "desc": "정부혁신 사례 전시·체험",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26060815",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "고양 가구엑스포 & 홈앤리빙 더아트페스타",
@@ -319,8 +353,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "가구·리빙 제품 전시 판매",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26080707",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "제55회 맘앤베이비엑스포",
@@ -333,8 +369,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "임신·출산·육아용품 박람회",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26091701",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "2026 국제아웃도어캠핑&레포츠페스티벌 더 파이널 시즌 PART 2",
@@ -347,8 +385,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "캠핑·아웃도어 장비 전시 판매",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26043007",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "코리아 라면페스타",
@@ -361,8 +401,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "라면 시식·체험 푸드 페어",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26110408",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "제8회 대한민국 사회연대경제박람회",
@@ -375,8 +417,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "사회적경제 기업 제품 전시·판매",
-   "url": "https://www.kintex.com/web/ko/event/list.do",
-   "checked": true
+   "url": "https://www.kintex.com/web/ko/event/view.do?seq=26090101",
+   "checked": true,
+   "url_was": "https://www.kintex.com/web/ko/event/list.do",
+   "url_src": "전시장"
   },
   {
    "name": "2026 우리쌀 우리술 K-라이스페스타",
@@ -389,8 +433,9 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "쌀가공식품·전통주 시음 판매",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/"
   },
   {
    "name": "경기미 디저트 페스타",
@@ -403,8 +448,10 @@
    "fee": null,
    "kind": "축제",
    "desc": "경기미로 만든 디저트 판매·체험",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=3368470",
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/",
+   "url_src": "구석구석"
   },
   {
    "name": "2026 안산 겨울 빛의 나라",
@@ -417,8 +464,9 @@
    "fee": "무료",
    "kind": "빛축제·불꽃",
    "desc": "대형 트리·조명정원·회전목마 빛축제",
-   "url": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2493865",
-   "checked": true
+   "url": null,
+   "checked": true,
+   "url_was": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2493865"
   },
   {
    "name": "운정호수공원 불빛정원",
@@ -431,8 +479,10 @@
    "fee": "무료",
    "kind": "빛축제·불꽃",
    "desc": "불꽃축제 후 이어지는 야간 불빛정원",
-   "url": "http://www.sisunnews.co.kr/news/articleView.html?idxno=249309",
-   "checked": false
+   "url": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=5731ca2a-5bab-4148-94d2-556f59dd0a69",
+   "checked": false,
+   "url_was": "http://www.sisunnews.co.kr/news/articleView.html?idxno=249309",
+   "url_src": "구석구석"
   },
   {
    "name": "2026 인천국제디자인페어(INDEF)",
@@ -445,8 +495,10 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "디자인 제품·작가 전시 판매",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": "https://indef.kr",
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/",
+   "url_src": "주최"
   },
   {
    "name": "2026 인천 김장나눔대축제",
@@ -459,8 +511,9 @@
    "fee": "무료",
    "kind": "축제",
    "desc": "시민 참여 김장 담그기·나눔",
-   "url": "https://www.incheon.go.kr/IC010501",
-   "checked": true
+   "url": null,
+   "checked": true,
+   "url_was": "https://www.incheon.go.kr/IC010501"
   },
   {
    "name": "2026 제4차 제물포웨이브마켓",
@@ -473,8 +526,9 @@
    "fee": "무료",
    "kind": "마켓",
    "desc": "월미도 일대 플리마켓",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/"
   },
   {
    "name": "연수구 크리스마스 문화축제",
@@ -487,8 +541,9 @@
    "fee": "무료",
    "kind": "빛축제·불꽃",
    "desc": "크리스마스 트리 경관·문화공연",
-   "url": "https://onpublic.org/culture/regions/%EC%9D%B8%EC%B2%9C/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://onpublic.org/culture/regions/%EC%9D%B8%EC%B2%9C/"
   },
   {
    "name": "오슬로우 빈티지 크리스마스 마켓",
@@ -501,8 +556,9 @@
    "fee": null,
    "kind": "마켓",
    "desc": "빈티지 소품 크리스마스 마켓",
-   "url": "https://chukjemoa.co.kr/2026-12/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://chukjemoa.co.kr/2026-12/"
   },
   {
    "name": "2026 포항국제불빛축제",
@@ -515,8 +571,10 @@
    "fee": "무료",
    "kind": "빛축제·불꽃",
    "desc": "한·일·프랑스 국제불꽃쇼",
-   "url": "https://www.specialtimes.co.kr/news/articleView.html?idxno=484632",
-   "checked": true
+   "url": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=1a7b7f32-e5a4-47b1-9e35-4a87499eccd8",
+   "checked": true,
+   "url_was": "https://www.specialtimes.co.kr/news/articleView.html?idxno=484632",
+   "url_src": "구석구석"
   },
   {
    "name": "2026 럭키칠곡 크리스마스 마켓",
@@ -529,8 +587,9 @@
    "fee": null,
    "kind": "마켓",
    "desc": "왜관역 앞 크리스마스 마켓",
-   "url": "https://chukjemoa.co.kr/2026-12/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://chukjemoa.co.kr/2026-12/"
   },
   {
    "name": "제13회 해운대 빛축제",
@@ -557,8 +616,9 @@
    "fee": null,
    "kind": "마켓",
    "desc": "크리스마스 마켓·포토존",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/"
   },
   {
    "name": "울산 크리스마스 마켓",
@@ -571,8 +631,9 @@
    "fee": null,
    "kind": "마켓",
    "desc": "크리스마스 마켓·조명 행사",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/"
   },
   {
    "name": "울산문화박람회",
@@ -585,8 +646,9 @@
    "fee": null,
    "kind": "박람회·페어",
    "desc": "지역 문화·예술 콘텐츠 박람회",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/"
   },
   {
    "name": "대전펫페어",
@@ -599,8 +661,9 @@
    "fee": "사전등록(11/26까지) 시 할인",
    "kind": "박람회·페어",
    "desc": "반려동물 용품 박람회",
-   "url": "https://petfairschedule.co.kr/",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://petfairschedule.co.kr/"
   },
   {
    "name": "2026 단단단페스티벌",
@@ -613,8 +676,9 @@
    "fee": null,
    "kind": "축제",
    "desc": "강릉 단오 문화 기반 지역 축제",
-   "url": "https://www.sukbakmagazine.com/news/articleView.html?idxno=69871",
-   "checked": false
+   "url": null,
+   "checked": false,
+   "url_was": "https://www.sukbakmagazine.com/news/articleView.html?idxno=69871"
   },
   {
    "name": "순창 KOREA 떡볶이 페스타",
@@ -627,8 +691,10 @@
    "fee": null,
    "kind": "축제",
    "desc": "고추장 떡볶이 먹거리 축제",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?fstvlCntntsId=870226d8-7912-4405-b4f6-8fadba5ddff0",
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/",
+   "url_src": "구석구석"
   },
   {
    "name": "무안 YD 페스티벌",
@@ -641,8 +707,10 @@
    "fee": null,
    "kind": "축제",
    "desc": "남악신도시 지역 문화축제",
-   "url": "https://tourpia.co.kr/festival/2026-11/",
-   "checked": false
+   "url": "https://tour.muan.go.kr/tour/festival/yd_festival",
+   "checked": false,
+   "url_was": "https://tourpia.co.kr/festival/2026-11/",
+   "url_src": "지자체"
   },
   {
    "name": "양림 크리스마스 문화축제",
@@ -669,8 +737,9 @@
    "fee": "무료",
    "kind": "빛축제·불꽃",
    "desc": "트리·전시·공연 크리스마스 마을",
-   "url": "https://www.sisunnews.co.kr/news/articleView.html?idxno=249741",
-   "checked": true
+   "url": null,
+   "checked": true,
+   "url_was": "https://www.sisunnews.co.kr/news/articleView.html?idxno=249741"
   }
  ],
  "sources": [
@@ -691,5 +760,6 @@
   "onpublic.org 인천 행사",
   "petfairschedule.co.kr",
   "숙박매거진"
- ]
+ ],
+ "links_fixed": "2026-11-18"
 }
