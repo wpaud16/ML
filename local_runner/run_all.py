@@ -258,13 +258,16 @@ def s_outfit():
     run([sys.executable, 'run_outfit.py'], cwd=od, timeout=1200, extra=mail_env())
     if os.path.exists(skip):
         return
-    push([f'outfit/{d}'], f'outfit: {d} 코디 카드 (노트북)')
+    s_events_now()   # 응모 이벤트·지역 행사 검색 결과가 없으면 지금 (2026-11-18)
+    try:   # 응모 이벤트·지역 행사 웹페이지 (events/index.html, 2026-11-18)
+        run([sys.executable, 'events_page.py'], cwd=os.path.join(REPO, 'brief'), timeout=300)
+    except Exception as e:
+        log(f'이벤트 웹페이지 실패(메일은 보냄): {e}')
+    push([f'outfit/{d}', 'events', 'brief/events_cache'], f'outfit: {d} 코디 카드·이벤트 페이지 (노트북)')
     if ARGS.no_mail:
         log('--no-mail → 메일 생략'); return
-    t0 = time.time()
-    s_events_now()   # 응모 이벤트·지역 행사 검색 결과가 없으면 지금 (2026-11-18)
     if not ARGS.test:
-        time.sleep(max(0, 90 - (time.time() - t0)))   # GitHub Pages 반영 대기
+        time.sleep(90)   # GitHub Pages 반영 대기
     run([sys.executable, 'run_outfit.py', 'send'], cwd=od, timeout=600, extra=mail_env())
     push([f'outfit/{d}/sent.txt', 'brief/events_seen.json', 'brief/events_cache'], f'outfit: {d} 생활 메일 발송 기록 (노트북)')
 

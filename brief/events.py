@@ -305,10 +305,13 @@ FEST_WEEKDAY = 0   # 지역 행사: 월요일 (2026-11-18 사용자 결정)
 
 def sections(today, test=TEST):
     """생활 메일용 (html 목록, text 목록, 발송 뒤 부를 함수). 검색은 05:00 events.py search 가 미리 해 둔 캐시만 쓴다."""
+    page = 'https://wpaud16.github.io/ML/events/'   # events_page.py 웹 (종류별·지역구별 보기)
+    btn = (f'<p style="text-align:center;margin:4px 0 14px"><a href="{page}" style="display:inline-block;background:#1a73e8;color:#ffffff;'
+           'text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px">🎁 이벤트·🎪 행사 웹에서 보기 (종류별·지역별)</a></p>')
     H, T, after = [], [], []
     try:
         h, t, picked, seen = build_prize(today, search=False)
-        H.append(''.join(h)); T.append('\n'.join(t))
+        H.append(btn + ''.join(h)); T.append(f'웹에서 보기: {page}\n' + '\n'.join(t))
         if picked and not test:
             after.append(lambda: save_seen(seen, picked, today))
     except Exception as e:
