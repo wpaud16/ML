@@ -23,10 +23,13 @@ function initMap(){if(MAP||!window.maplibregl||!document.getElementById('map'))r
  MAP=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[127.8,36.3],zoom:5.6,
   cooperativeGestures:true,attributionControl:{compact:true}});
  MAP.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
- MAP.on('load',()=>{READY=true;
+ const ready=()=>{if(READY)return;READY=true;
   MAP.getStyle().layers.forEach(l=>{if(l.type=='symbol'&&l.layout&&l.layout['text-field']){   // 지명: 한글 → 기본 이름
    try{MAP.setLayoutProperty(l.id,'text-field',['coalesce',['get','name:ko'],['get','name']])}catch(e){}}});
-  drawMarkers(true)})}
+  MAP.resize();drawMarkers(true)};
+ // 'load' 를 놓치는 경우가 있어 (탭 전환 직후 등) style.load·idle·주기 확인으로도 시작
+ MAP.on('load',ready);MAP.on('style.load',ready);MAP.on('idle',ready);
+ const t=setInterval(()=>{if(READY)return clearInterval(t);if(MAP.isStyleLoaded())ready()},500)}
 function pinEl(n,wk,ex){const d=document.createElement('div');d.className='pinw';
  d.innerHTML='<div class="pin '+(wk?'wk':'')+(ex?'':' approx')+'"><b>'+(n>1?n:'')+'</b></div>';return d}
 function drawMarkers(fit){if(!MAP||!READY)return;MK.forEach(m=>m.remove());MK=[];GRP={};const b=new maplibregl.LngLatBounds();let any=false;
@@ -102,7 +105,7 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .card{scroll-margin-top:130px;transition:outline .2s} .card.flash{outline:3px solid var(--acc)}
 </style></head><body><div class="wrap">
 <h1>🎁 응모 이벤트 · 🎪 지역 행사</h1>
-<div class="meta">11/18 13:39 갱신 · 이벤트 11/18 검색 · 행사 11/18(월) 검색 · 앞으로 3주</div>
+<div class="meta">11/18 13:41 갱신 · 이벤트 11/18 검색 · 행사 11/18(월) 검색 · 앞으로 3주</div>
 <div class="nav"><div class="tabs"><button class="tab on" data-t="prize" onclick="tab('prize')">🎁 응모 이벤트 21</button>
 <button class="tab" data-t="fest" onclick="tab('fest')">🎪 지역 행사 48</button></div>
 <div class="chips on" data-t="prize"><button class="chip on" onclick="pick('prize','all',this)">전체<i>21</i></button><button class="chip" onclick="pick('prize','new',this)">🆕 오늘 새로<i>21</i></button><button class="chip" onclick="pick('prize','soon',this)">⏰ 마감 임박<i>2</i></button><button class="chip" onclick="pick('prize','web',this)">🌐 웹에서 응모<i>6</i></button><button class="chip" onclick="pick('prize','login',this)">🔑 로그인 필요<i>5</i></button><button class="chip" onclick="pick('prize','app',this)">📱 앱 필요<i>3</i></button><button class="chip" onclick="pick('prize','sns',this)">💬 SNS 필요<i>7</i></button><button class="chip" onclick="pick('prize','tech',this)">📱 전자기기<i>1</i></button><button class="chip" onclick="pick('prize','coffee',this)">☕ 커피·음료<i>9</i></button><button class="chip" onclick="pick('prize','food',this)">🍗 먹거리·편의점<i>2</i></button><button class="chip" onclick="pick('prize','voucher',this)">🎫 상품권·포인트<i>10</i></button><button class="chip" onclick="pick('prize','beauty',this)">💄 뷰티·패션<i>1</i></button><button class="chip" onclick="pick('prize','etc',this)">🎁 기타<i>4</i></button></div><div class="chips" data-t="fest"><button class="chip on" onclick="pick('fest','all',this)">전체<i>48</i></button><button class="chip" onclick="pick('fest','wk',this)">🔥 이번 주말<i>22</i></button><button class="chip" onclick="pick('fest','free',this)">무료<i>15</i></button><button class="chip" onclick="pick('fest','서울',this)">서울<i>19</i></button><button class="chip" onclick="pick('fest','경기',this)">경기<i>12</i></button><button class="chip" onclick="pick('fest','인천',this)">인천<i>5</i></button><button class="chip" onclick="pick('fest','부산',this)">부산<i>2</i></button><button class="chip" onclick="pick('fest','광주',this)">광주<i>1</i></button><button class="chip" onclick="pick('fest','대전',this)">대전<i>1</i></button><button class="chip" onclick="pick('fest','울산',this)">울산<i>2</i></button><button class="chip" onclick="pick('fest','강원',this)">강원<i>1</i></button><button class="chip" onclick="pick('fest','전북',this)">전북<i>1</i></button><button class="chip" onclick="pick('fest','전남',this)">전남<i>1</i></button><button class="chip" onclick="pick('fest','경북',this)">경북<i>2</i></button><button class="chip" onclick="pick('fest','제주',this)">제주<i>1</i></button></div></div>

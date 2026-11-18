@@ -343,10 +343,13 @@ function initMap(){if(MAP||!window.maplibregl||!document.getElementById('map'))r
  MAP=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[127.8,36.3],zoom:5.6,
   cooperativeGestures:true,attributionControl:{compact:true}});
  MAP.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
- MAP.on('load',()=>{READY=true;
+ const ready=()=>{if(READY)return;READY=true;
   MAP.getStyle().layers.forEach(l=>{if(l.type=='symbol'&&l.layout&&l.layout['text-field']){   // 지명: 한글 → 기본 이름
    try{MAP.setLayoutProperty(l.id,'text-field',['coalesce',['get','name:ko'],['get','name']])}catch(e){}}});
-  drawMarkers(true)})}
+  MAP.resize();drawMarkers(true)};
+ // 'load' 를 놓치는 경우가 있어 (탭 전환 직후 등) style.load·idle·주기 확인으로도 시작
+ MAP.on('load',ready);MAP.on('style.load',ready);MAP.on('idle',ready);
+ const t=setInterval(()=>{if(READY)return clearInterval(t);if(MAP.isStyleLoaded())ready()},500)}
 function pinEl(n,wk,ex){const d=document.createElement('div');d.className='pinw';
  d.innerHTML='<div class="pin '+(wk?'wk':'')+(ex?'':' approx')+'"><b>'+(n>1?n:'')+'</b></div>';return d}
 function drawMarkers(fit){if(!MAP||!READY)return;MK.forEach(m=>m.remove());MK=[];GRP={};const b=new maplibregl.LngLatBounds();let any=false;
