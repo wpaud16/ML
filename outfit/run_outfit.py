@@ -10,11 +10,16 @@ SEND = os.environ.get('SEND_MAIL', '1') == '1'
 
 
 def recent_titles(today):
-    out = set()
-    for f in sorted(glob.glob(os.path.join(HERE, '20??-??-??', 'd.json')))[-3:]:
-        if os.path.basename(os.path.dirname(f)) < today.isoformat():
+    """{코디 제목: 마지막으로 보여준 게 며칠 전} — 최근 30일 (2026-11-19: 오래 안 본 코디부터 고르게)."""
+    import datetime as dt
+    out = {}
+    for f in sorted(glob.glob(os.path.join(HERE, '20??-??-??', 'd.json')))[-30:]:
+        day = os.path.basename(os.path.dirname(f))
+        if day < today.isoformat():
             try:
-                out |= {l['title'] for l in json.load(open(f))['looks']}
+                ago = (today - dt.date.fromisoformat(day)).days
+                for l in json.load(open(f, encoding='utf-8'))['looks']:
+                    out[l['title']] = min(ago, out.get(l['title'], 999))
             except Exception:
                 pass
     return out
@@ -32,7 +37,7 @@ def main():
         print('오늘 메일 이미 보냄 → 건너뜀'); open(os.path.join(HERE, '.skip'), 'w').close(); return
     d['looks'] = looks.pick(int(d['tmin']), int(d['tmax']), rainy, recent_titles(today), today.toordinal())
     out = os.path.join(HERE, today.isoformat()); os.makedirs(out, exist_ok=True)
-    json.dump(d, open(os.path.join(out, 'd.json'), 'w'), ensure_ascii=False, indent=1)
+    json.dump(d, open(os.path.join(out, 'd.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     try:
         subprocess.run([sys.executable, '../cards.py', 'd.json'], cwd=out, check=True)
         subprocess.run([sys.executable, '../page.py', 'd.json', '.'], cwd=out, check=True)
