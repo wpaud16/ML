@@ -138,6 +138,78 @@ def norm_gu(it):
     return '기타'
 
 
+# ---------------- 행사 장소 좌표 (지도용, 2026-11-18) ----------------
+GEO = os.path.join(HERE, 'events_geo.json')   # 장소 → 좌표 캐시 (카카오 로컬 검색, 키 없으면 캐시만)
+SIDO_FULL = {'서울': '서울특별시', '경기': '경기도', '인천': '인천광역시', '부산': '부산광역시', '대구': '대구광역시', '광주': '광주광역시',
+             '대전': '대전광역시', '울산': '울산광역시', '세종': '세종특별자치시', '강원': '강원특별자치도', '충북': '충청북도', '충남': '충청남도',
+             '전북': '전북특별자치도', '전남': '전라남도', '경북': '경상북도', '경남': '경상남도', '제주': '제주특별자치도'}
+
+
+def _kakao_key():
+    k = os.environ.get('KAKAO_REST_KEY', '').strip()
+    if not k:   # 직접 실행할 때: 저장소 밖 .env 에서 (값은 출력하지 않음)
+        p = os.path.join(os.path.dirname(REPO), '.env')
+        if os.path.exists(p):
+            for raw in open(p, encoding='utf-8-sig'):
+                if raw.strip().startswith('KAKAO_REST_KEY='):
+                    k = raw.split('=', 1)[1].strip().strip('"\'')
+    return k
+
+
+def _kakao(query):
+    import urllib.request, urllib.parse
+    key = _kakao_key()
+    if not key:
+        return None
+    url = 'https://dapi.kakao.com/v2/local/search/keyword.json?' + urllib.parse.urlencode(dict(query=query, size=1))
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={'Authorization': 'KakaoAK ' + key}), timeout=15) as r:
+            docs = json.load(r).get('documents') or []
+    except Exception as e:
+        print('kakao 오류', type(e).__name__); return None
+    if not docs:
+        return None
+    d = docs[0]
+    return dict(lat=float(d['y']), lng=float(d['x']), addr=d.get('road_address_name') or d.get('address_name'), hit=d.get('place_name'))
+
+
+def geocode(items):
+    """행사마다 _lat/_lng 붙임. 장소 이름으로 찾고, 못 찾으면 시·군·구 중심으로 (exact=False)."""
+    cache = json.load(open(GEO, encoding='utf-8')) if os.path.exists(GEO) else {}
+    changed, have_key = False, bool(_kakao_key())
+    for it in items:
+        sido = SIDO_FULL.get(it['_sido'], it['_sido'])
+        place = re.sub(r'\(.*?\)|일대|일원|곳곳|추정|출발', ' ', it.get('place') or '')
+        place = re.split(r'[·,/]|\s등\s|\s외\s', place)[0]
+        # 전시장 안 위치(홀·층·로비·호) 는 지우기: '킨텍스 7~10홀' → '킨텍스'
+        place = re.sub(r'제?\d+\s*전시장|\d+[A-Z]?(\s*[~\-]\s*\d+[A-Z]?)?\s*홀|[A-Z]\s*홀|\d+층.*|로비|동문|서문|컨퍼런스룸.*|\d+호', ' ', place)
+        place = re.sub(r'\s+', ' ', place).strip()
+        gu = it['_gu'] if it['_gu'] != '기타' else ''
+        gu = re.split(r'[·]', gu)[0]
+        words = place.split()
+        shorter = [' '.join(words[:n]) for n in range(len(words) - 1, 0, -1)]   # 긴 장소명이 안 잡히면 앞 단어만
+        tries = ([(f'{gu} {place}', True), (f'{sido} {place}', True), (place, True)]
+                 + [(f'{gu or sido} {s}', True) for s in shorter] + [(f'{sido} {gu}', False), (sido, False)])
+        short = it['_sido']
+        names = {short, SIDO_FULL.get(short, short), gu[:2]} - {''}
+        for q, exact in tries:
+            q = re.sub(r'\s+', ' ', q).strip()
+            if not q or (exact and not place):
+                continue
+            if q not in cache and have_key:   # 키 없으면(클라우드) 캐시에 '없음'을 남기지 않음
+                cache[q] = _kakao(q); changed = True
+            g = cache.get(q)
+            # 엉뚱한 지역 결과 거르기 (예: '포항 불빛축제'가 인천 강화로 잡힘): 주소에 시·도 이름이나 구 이름이 있어야
+            if g and short in SIDO_FULL and not any(n in (g.get('addr') or '') for n in names):
+                continue
+            if g and 33 < g['lat'] < 39 and 124 < g['lng'] < 132:
+                it.update(_lat=g['lat'], _lng=g['lng'], _exact=exact, _addr=g.get('addr'))
+                break
+    if changed:
+        json.dump(cache, open(GEO, 'w', encoding='utf-8'), ensure_ascii=False, indent=1, sort_keys=True)
+    return items
+
+
 def fest_items(today):
     data, day = latest_cache('fest', today)
     if not data:
@@ -159,7 +231,7 @@ def fest_items(today):
     return out, day
 
 
-def fest_card(it, today):
+def fest_card(it, today, idx=0):
     p, tag = ev.period(it['_s'], it['_e'], today)
     sat, sun = ev.weekend_of(today)
     wk = it['_s'] <= sun and it['_e'] >= sat
@@ -177,9 +249,14 @@ def fest_card(it, today):
     rows.append(f'<div>🎟 {E(fee)}</div>')
     if it.get('desc'):
         rows.append(f'<div class="g s">{E(it["desc"])}' + ('' if it.get('checked') else ' · ⚠ 공식 페이지 미확인') + '</div>')
+    links = []
     if re.match(r'https?://', it.get('url') or ''):
-        rows.append(f'<a class="btn" href="{E(it["url"])}" target="_blank" rel="noopener">안내 페이지 →</a>')
-    return (f'<div class="card" data-sido="{E(it["_sido"])}" data-wk="{1 if wk else 0}" data-free="{1 if free else 0}">'
+        links.append(f'<a class="btn" href="{E(it["url"])}" target="_blank" rel="noopener">안내 페이지 →</a>')
+    if it.get('_lat'):
+        links.append(f'<a class="btn" href="#map" onclick="return focusOn({idx})">🗺 지도에서 보기</a>')
+    if links:
+        rows.append('<div class="links">' + ' '.join(links) + '</div>')
+    return (f'<div class="card" id="f{idx}" data-i="{idx}" data-sido="{E(it["_sido"])}" data-wk="{1 if wk else 0}" data-free="{1 if free else 0}">'
             + ''.join(rows) + '</div>')
 
 
@@ -214,26 +291,68 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .empty{color:var(--mut);padding:20px 0;text-align:center}
 .hide{display:none!important}
 .foot{color:var(--mut);font-size:12px;margin-top:20px;line-height:1.6}
+#map{height:320px;border:1px solid var(--bd);border-radius:10px;margin:12px 0 4px;z-index:0;scroll-margin-top:120px}
+.mapnote{color:var(--mut);font-size:11px;margin-bottom:6px}
+.leaflet-tooltip.cnt{background:none;border:0;box-shadow:none;color:#fff;font-weight:bold;font-size:11px;padding:0}
+.leaflet-popup-content a{color:#1a73e8}
+.links{margin-top:6px;display:flex;gap:14px;flex-wrap:wrap} .links .btn{margin-top:0}
+.card{scroll-margin-top:130px;transition:outline .2s} .card.flash{outline:3px solid var(--acc)}
 """
 
 JS = """
 document.documentElement.classList.add('js');
 function $(s,r){return (r||document).querySelectorAll(s)}
 function tab(t){$('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t==t));$('.pane').forEach(p=>p.classList.toggle('on',p.id==t));
- $('.chips').forEach(c=>c.classList.toggle('on',c.dataset.t==t));try{localStorage.setItem('ev_tab',t)}catch(e){};history.replaceState(null,'','#'+t)}
+ $('.chips').forEach(c=>c.classList.toggle('on',c.dataset.t==t));try{localStorage.setItem('ev_tab',t)}catch(e){};history.replaceState(null,'','#'+t);
+ if(t=='fest')setTimeout(()=>{initMap();if(MAP){MAP.invalidateSize();}},60)}
 function pick(t,v,btn){$('.chips[data-t="'+t+'"] .chip').forEach(b=>b.classList.toggle('on',b==btn));
  $('#'+t+' .card').forEach(c=>{let ok=v=='all'||(v=='soon'&&c.dataset.soon=='1')||(v=='new'&&c.dataset.new=='1')||(v=='wk'&&c.dataset.wk=='1')||(v=='free'&&c.dataset.free=='1')
   ||(c.dataset.cats||'').split(' ').includes(v)||c.dataset.sido==v;c.classList.toggle('hide',!ok)});
  $('#'+t+' .grp').forEach(g=>{g.classList.toggle('hide',!g.querySelector('.card:not(.hide)'))});
- let n=$('#'+t+' .card:not(.hide)').length;document.getElementById(t+'-empty').classList.toggle('hide',n>0)}
+ let n=$('#'+t+' .card:not(.hide)').length;document.getElementById(t+'-empty').classList.toggle('hide',n>0);
+ if(t=='fest')drawMarkers(true)}
 document.addEventListener('DOMContentLoaded',()=>{let t=location.hash.slice(1);if(t!='prize'&&t!='fest'){try{t=localStorage.getItem('ev_tab')}catch(e){}}
  tab(t=='fest'?'fest':'prize')});
+/* ---- 지도 (Leaflet + OpenStreetMap, 2026-11-18) ---- */
+let MAP=null,LAYER=null,GRP={};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function initMap(){if(MAP||!window.L||!document.getElementById('map'))return;
+ MAP=L.map('map',{scrollWheelZoom:false,tap:true}).setView([36.3,127.8],7);
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(MAP);
+ LAYER=L.layerGroup().addTo(MAP);drawMarkers(true)}
+function drawMarkers(fit){if(!MAP)return;LAYER.clearLayers();GRP={};const pts=[];
+ (window.FEST||[]).forEach(f=>{const c=document.getElementById('f'+f.i);if(!c||c.classList.contains('hide'))return;
+  const k=f.lat.toFixed(3)+','+f.lng.toFixed(3);(GRP[k]=GRP[k]||[]).push(f)});
+ Object.entries(GRP).forEach(([k,fs])=>{const [la,ln]=k.split(',').map(Number);const wk=fs.some(f=>f.wk),ex=fs.some(f=>f.exact);
+  const m=L.circleMarker([la,ln],{radius:Math.min(7+fs.length*1.5,18),color:wk?'#d93025':'#1a73e8',weight:2,fillOpacity:ex?.65:.25,dashArray:ex?null:'4 3'});
+  m.bindPopup('<div style="max-height:220px;overflow:auto;min-width:200px">'+(ex?'':'<div style="color:#777;font-size:11px">정확한 장소를 못 찾아 시·군·구 중심에 표시</div>')+fs.map(f=>
+   '<div style="margin:6px 0"><a href="#f'+f.i+'" onclick="return toCard('+f.i+')"><b>'+esc(f.name)+'</b></a>'+(f.wk?' <span style="color:#d93025;font-size:11px">이번 주말</span>':'')+
+   '<br><span style="font-size:12px">'+esc(f.period)+'<br>📍 '+esc(f.place)+'<br>🎟 '+esc(f.fee)+'</span></div>').join('')+'</div>');
+  if(fs.length>1)m.bindTooltip(String(fs.length),{permanent:true,direction:'center',className:'cnt'});
+  fs.forEach(f=>f._m=m);m.addTo(LAYER);pts.push([la,ln])});
+ if(fit&&pts.length)MAP.fitBounds(pts,{padding:[24,24],maxZoom:13})}
+function toCard(i){const c=document.getElementById('f'+i);if(c){c.scrollIntoView({behavior:'smooth',block:'center'});c.classList.add('flash');setTimeout(()=>c.classList.remove('flash'),1600)}return false}
+function focusOn(i){const f=(window.FEST||[]).find(x=>x.i==i);if(!f||!MAP)return true;
+ document.getElementById('map').scrollIntoView({behavior:'smooth',block:'center'});MAP.setView([f.lat,f.lng],14);if(f._m)setTimeout(()=>f._m.openPopup(),350);return false}
 """
 
 
 def build(today):
     P, pday = prize_items(today)
     F, fday = fest_items(today)
+    geocode(F)
+    for i, x in enumerate(F):
+        x['_i'] = i
+    fest_js = []
+    for x in F:
+        if x.get('_lat'):
+            p, tag = ev.period(x['_s'], x['_e'], today)
+            sat, sun = ev.weekend_of(today)
+            fest_js.append(dict(i=x['_i'], lat=round(x['_lat'], 5), lng=round(x['_lng'], 5), exact=x['_exact'], name=x['name'],
+                                period=f'{p} ({tag})', place=' · '.join(v for v in [x.get('city') or '', x.get('place') or ''] if v),
+                                fee=x.get('fee') or '입장료 확인 필요', wk=x['_s'] <= sun and x['_e'] >= sat))
+    fest_json = json.dumps(fest_js, ensure_ascii=False).replace('</', '<\\/')
+    n_map = len(fest_js)
     # 응모 이벤트: 종류 칩
     cnt = {k: sum(k in x['_cats'] for x in P) for k in list(CAT_LABEL)}
     soon = sum(1 for x in P if x['_dl'] and (x['_dl'] - today).days <= 3)
@@ -265,13 +384,16 @@ def build(today):
                 gus.append(x['_gu'])
         gus.sort(key=lambda u: (u == '기타', u))
         inner = ''.join(f'<div class="grp"><h3>{E(u)} · {sum(x["_gu"] == u for x in g)}개</h3>'
-                        + ''.join(fest_card(x, today) for x in g if x['_gu'] == u) + '</div>' for u in gus)
+                        + ''.join(fest_card(x, today, x['_i']) for x in g if x['_gu'] == u) + '</div>' for u in gus)
         fparts.append(f'<div class="grp"><h2>{E(s)} <span class="g s">{len(g)}개</span></h2>{inner}</div>')
     now = dt.datetime.now(ev.KST)
     meta_p = f'{pday.month}/{pday.day} 검색' if pday else '검색 결과 없음'
     meta_f = f'{fday.month}/{fday.day}(월) 검색 · 앞으로 3주' if fday else '검색 결과 없음'
     html_ = f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>응모 이벤트·지역 행사</title><script>{JS}</script><style>{CSS}</style></head><body><div class="wrap">
+<title>응모 이벤트·지역 행사</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>{JS}</script><style>{CSS}</style></head><body><div class="wrap">
 <h1>🎁 응모 이벤트 · 🎪 지역 행사</h1>
 <div class="meta">{now:%m/%d %H:%M} 갱신 · 이벤트 {E(meta_p)} · 행사 {E(meta_f)}</div>
 <div class="nav"><div class="tabs"><button class="tab on" data-t="prize" onclick="tab('prize')">🎁 응모 이벤트 {len(P)}</button>
@@ -281,7 +403,9 @@ def build(today):
 <div class="foot">무료 응모만 모음 (구매·결제·카드 발급·계좌 개설 필수 이벤트 제외) · 마감 빠른 순 · NEW = 오늘 처음 찾은 이벤트<br>
 응모 전에 공식 페이지의 유의사항·개인정보 제공 범위를 확인하세요 · 5만원 넘는 경품은 제세공과금(22%)을 당첨자가 내는 경우가 많아요<br>
 Claude 웹 검색으로 매일 새벽 모음 · 공식 페이지에서 확인 못 한 항목은 ⚠ 표시</div></div>
-<div class="pane" id="fest">{''.join(fparts)}<div class="empty{'' if not F else ' hide'}" id="fest-empty">해당하는 행사가 없습니다</div>
+<div class="pane" id="fest"><div id="map"></div>
+<div class="mapnote">🔴 이번 주말 · 🔵 그 밖 · 점선 = 정확한 장소를 못 찾아 시·군·구 중심 · 숫자 = 같은 장소 행사 수 · 위 칩으로 거르면 지도도 같이 바뀌어요 ({n_map}/{len(F)}곳 표시)</div>
+<script>window.FEST={fest_json};</script>{''.join(fparts)}<div class="empty{'' if not F else ' hide'}" id="fest-empty">해당하는 행사가 없습니다</div>
 <div class="foot">시·도 → 시·군·구별 · 시작일 순 · 이미 끝난 행사는 빠짐<br>날짜·입장료는 바뀔 수 있으니 가기 전에 안내 페이지에서 한 번 더 확인하세요 · 매주 월요일 새벽 Claude 웹 검색</div></div>
 </div></body></html>"""
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

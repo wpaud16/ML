@@ -263,7 +263,7 @@ def s_outfit():
         run([sys.executable, 'events_page.py'], cwd=os.path.join(REPO, 'brief'), timeout=300)
     except Exception as e:
         log(f'이벤트 웹페이지 실패(메일은 보냄): {e}')
-    push([f'outfit/{d}', 'events', 'brief/events_cache'], f'outfit: {d} 코디 카드·이벤트 페이지 (노트북)')
+    push([f'outfit/{d}', 'events', 'brief/events_cache', 'brief/events_geo.json'],f'outfit: {d} 코디 카드·이벤트 페이지 (노트북)')
     if ARGS.no_mail:
         log('--no-mail → 메일 생략'); return
     if not ARGS.test:
