@@ -12,7 +12,8 @@ REPO = os.path.dirname(HERE)
 KST = dt.timezone(dt.timedelta(hours=9))
 DEFAULT = {'night': '03:00', 'outfit': '06:00', 'brief': '08:00'}
 GRACE_MIN = 15                                         # 예약 시각 후 이만큼 지나도 노트북 시작 기록이 없으면 꺼진 것으로 봄
-MAX_MIN = {'night': 180, 'outfit': 30, 'brief': 40}    # 노트북·Actions 한 번 실행에 걸리는 최대 시간
+MAX_MIN = {'night': 180, 'outfit': 60, 'brief': 40}    # 노트북·Actions 한 번 실행에 걸리는 최대 시간
+# 2026-11-18: outfit 30→60분 (날씨 재시도 최대 8분 + 응모 이벤트 검색이 없으면 메일 전에 최대 25분) — 30분이면 노트북이 아직 도는데 Actions 가 겹쳐 2통 보낼 수 있음
 WORKFLOW = {'night': 'auction_predict.yml', 'outfit': 'outfit.yml', 'brief': 'morning_brief.yml'}
 HB = os.path.join(HERE, 'heartbeat')
 

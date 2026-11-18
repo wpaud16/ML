@@ -128,6 +128,8 @@ def prize_select(data, today, seen):
         if st and st > today + dt.timedelta(days=7):
             continue
         k = key_of(it)
+        if any(x['_k'] == k for x in new + soon):   # 같은 검색에 같은 이벤트가 두 번 나온 경우
+            continue
         if k in seen:
             if dl and (dl - today).days <= SOON and not seen[k].get('soon_sent'):
                 soon.append(dict(it, _k=k, _dl=dl))
@@ -202,6 +204,8 @@ def save_seen(seen, picked, today):
     for it in new:
         seen[it['_k']] = dict(first=today.isoformat(), deadline=it.get('deadline'),
                               item={k: v for k, v in it.items() if not k.startswith('_')})
+        if it['_dl'] and (it['_dl'] - today).days <= SOON:   # 처음 보낼 때 이미 마감 임박이면 다음 날 또 알리지 않음
+            seen[it['_k']]['soon_sent'] = today.isoformat()
     for it in soon:
         seen.setdefault(it['_k'], dict(first=today.isoformat(), deadline=it.get('deadline'),
                                        item={k: v for k, v in it.items() if not k.startswith('_')}))['soon_sent'] = today.isoformat()
