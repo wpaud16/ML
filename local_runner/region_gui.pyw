@@ -44,25 +44,68 @@ def build(parent, run_cb=None):
         ttk.Button(b, text='전체 선택', command=lambda: [v.set(True) for v in vs]).pack(side='left', padx=2)
         ttk.Button(b, text='전체 해제', command=lambda: [v.set(False) for v in vs]).pack(side='left', padx=2)
 
+    # 2026-11-18: 종류별 최저가 범위 (억, 비우면 제한 없음)
+    price = cfg.get('price') or {}
+    P = {}
+
+    def price_box(p, key, default=(None, None)):
+        f = ttk.LabelFrame(p, text='최저가 범위 (억 원 · 비워 두면 제한 없음)'); f.pack(fill='x', padx=6, pady=6)
+        lo, hi = (list(price.get(key, default) or [None, None]) + [None, None])[:2]
+        a = tk.StringVar(value='' if lo is None else f'{lo:g}'); b = tk.StringVar(value='' if hi is None else f'{hi:g}')
+        ttk.Entry(f, textvariable=a, width=8, justify='right').pack(side='left', padx=(8, 2), pady=6)
+        ttk.Label(f, text='억 이상  ~').pack(side='left')
+        ttk.Entry(f, textvariable=b, width=8, justify='right').pack(side='left', padx=(8, 2))
+        ttk.Label(f, text='억 이하').pack(side='left')
+        P[key] = (a, b)
+
     t1 = ttk.Frame(nb); nb.add(t1, text='🏢 아파트')
+    price_box(t1, 'apt')
     grid(t1, '서울', SEOUL, lambda n: ('서울', n) in apt, 'apt서울', 7)
     grid(t1, '경기 (남양주·구리 = 8호선역, 하남 = 5호선역 도보 15분 이내만 표시)', GYEONGGI, lambda n: ('경기', n) in apt, 'apt경기', 5)
-    t2 = ttk.Frame(nb); nb.add(t2, text='🏬 오피스텔 (서울 · 역 도보 10분)')
-    grid(t2, '서울', SEOUL, lambda n: n in ot, 'ot', 7)
+    t2 = ttk.Frame(nb); nb.add(t2, text='🏬 오피스텔')
+    price_box(t2, 'ot')
+    grid(t2, '서울 (역 도보 10분)', SEOUL, lambda n: n in ot, 'ot', 7)
+    for key, title, default in (('shop', '🏪 상가', (None, None)), ('bldg', '🏙 건물', (None, 20))):
+        sel = cfg.get(key)
+        sel = set(SEOUL if sel is None else sel)
+        t = ttk.Frame(nb); nb.add(t, text=title)
+        price_box(t, key, default)
+        grid(t, '서울 (역 도보 15분)', SEOUL, lambda n, s=sel: n in s, key, 7)
+
+    def num(s):
+        s = s.strip().replace(',', '').replace('억', '')
+        if not s:
+            return None
+        return float(s)
 
     def save():
         new = dict(cfg)
         new['apt'] = [['서울', n] for n in SEOUL if V[('apt서울', n)].get()] + [['경기', n] for n in GYEONGGI if V[('apt경기', n)].get()]
-        new['ot'] = [n for n in SEOUL if V[('ot', n)].get()]
-        if not new['apt'] and not new['ot']:
+        for k in ('ot', 'shop', 'bldg'):
+            new[k] = [n for n in SEOUL if V[(k, n)].get()]
+        if not any(new[k] for k in ('apt', 'ot', 'shop', 'bldg')):
             messagebox.showwarning('경매 검색 지역', '하나 이상 선택하세요'); return None
+        pr = {}
+        names = {'apt': '아파트', 'ot': '오피스텔', 'shop': '상가', 'bldg': '건물'}
+        for k, (a, b) in P.items():
+            try:
+                lo, hi = num(a.get()), num(b.get())
+            except ValueError:
+                messagebox.showwarning('경매 검색 지역', f'{names[k]} 최저가 범위는 숫자(억)로 적어 주세요'); return None
+            if lo is not None and hi is not None and lo > hi:
+                messagebox.showwarning('경매 검색 지역', f'{names[k]} 최저가: 하한이 상한보다 커요'); return None
+            pr[k] = [lo, hi]
+        new['price'] = pr
+        new['_note'] = ('경매 검색 조건 (local_runner/region_gui.pyw 로 수정). apt = 아파트 시군구, ot/shop/bldg = 오피스텔·상가·건물 서울 구, '
+                        'price = 종류별 최저가 범위 [하한억, 상한억] (null = 제한 없음).')
         with open(CFG, 'w', encoding='utf-8') as fp:
             json.dump(new, fp, ensure_ascii=False, indent=1)
         return new
 
     def on_save():
         n = save()
-        if n: messagebox.showinfo('경매 검색 지역', f"저장했어요 (아파트 {len(n['apt'])}곳, 오피스텔 {len(n['ot'])}구).\n다음 03시 예측부터 적용됩니다.")
+        if n: messagebox.showinfo('경매 검색 지역', f"저장했어요 (아파트 {len(n['apt'])}곳, 오피스텔 {len(n['ot'])}구, "
+                                               f"상가 {len(n['shop'])}구, 건물 {len(n['bldg'])}구).\n다음 03시 예측부터 적용됩니다.")
 
     def on_run():
         n = save()
@@ -76,7 +119,7 @@ def build(parent, run_cb=None):
 
     ttk.Button(bar, text='저장', command=on_save).pack(side='right', padx=4)
     ttk.Button(bar, text='저장 후 지금 검색', command=on_run).pack(side='right', padx=4)
-    ttk.Label(bar, text='체크한 지역만 리치고 경매 목록에서 검색합니다.').pack(side='left')
+    ttk.Label(bar, text='체크한 지역·최저가 범위 안의 물건만 검색합니다.').pack(side='left')
 
 
 def main():

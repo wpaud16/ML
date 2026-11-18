@@ -19,12 +19,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from batch_predict import get, next_data, auction_detail, sold_already, sold_recent  # noqa: E402
 from villa_log import GU as SEOUL_GU  # noqa: E402   서울 25개 구 전체 (오피스텔 GUI 지역과 별개)
+import search_cfg  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
 OUT = os.path.join(HERE, 'predictions', 'others.json')
 GEO = os.path.join(HERE, 'geo_cache.json')
 WALK_M = 920            # 도보 15분 ≈ 직선 920m (도보분 = 직선 × 1.3 ÷ 80)
-BLDG_MAX_LOW = 20e8     # 건물 최저가 20억 이하
+BLDG_MAX_LOW = 20e8     # (옛 값) 건물 최저가 범위는 이제 search_cfg (기본 20억 이하)
 HARD = {'지분': r'지분\s*(?:매각|경매|만)|\d+\s*분의\s*\d+\s*지분\s*(?:매각|경매)', '유치권': r'유치권',
         '법정지상권': r'법정지상권', '대지권없음': r'대지권\s*(?:없|미등기)', '건물만': r'건물만\s*(?:매각|경매)',
         '토지만': r'토지만\s*(?:매각|경매)', '별도등기': r'별도\s*등기', '분묘': r'분묘'}
@@ -153,9 +154,13 @@ def main():
     geo = json.load(open(GEO, encoding='utf-8')) if os.path.exists(GEO) else {}
     have_key = bool(os.environ.get('KAKAO_REST_KEY', '').strip())
     errors, cand, seen = [], [], set()
-    counts = dict(listed=0, wrong_type=0, over_budget=0, no_station=0, far=0, sold=0, rights=0, shown=0)
+    counts = dict(listed=0, wrong_type=0, other_region=0, over_budget=0, no_station=0, far=0, sold=0, rights=0, shown=0)
+    # 2026-11-18: 상가·건물 지역·최저가 범위는 search_regions.json (경매 지역 GUI)
+    rc = search_cfg.load()
+    cat_gu = {c: set(search_cfg.gus(c, rc)) for c in ENABLED}
+    all_gu = [g for g in SEOUL_GU if any(g in s for s in cat_gu.values())]
     with ThreadPoolExecutor(6) as ex:
-        for items, err in ex.map(list_items, [(g, t) for g in SEOUL_GU for t in SEARCH]):
+        for items, err in ex.map(list_items, [(g, t) for g in all_gu for t in SEARCH]):
             if err: errors.append(err)
             for it in items:
                 if it['id'] in seen or not it.get('appraisedPrice') or not it.get('lowestSellingPrice'):
@@ -164,7 +169,9 @@ def main():
                 cat = category(it['_type'], it.get('typeDetails'), it.get('address'))
                 if cat not in ENABLED or '오피스텔' in (it.get('typeDetails') or []) or '아파트' in (it.get('typeDetails') or []):
                     counts['wrong_type'] += 1; continue
-                if cat == '건물' and it['lowestSellingPrice'] > BLDG_MAX_LOW:
+                if it['_gu'] not in cat_gu[cat]:
+                    counts['other_region'] += 1; continue
+                if not search_cfg.price_ok(cat, it['lowestSellingPrice'], rc):
                     counts['over_budget'] += 1; continue
                 cand.append((cat, it))
     # 역 거리 (카카오, 순차·캐시)

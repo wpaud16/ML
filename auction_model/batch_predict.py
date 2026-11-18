@@ -16,6 +16,7 @@ import pandas as pd
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import auction_predictor as ap
+import search_cfg   # 종류별 최저가 범위 (2026-11-18)
 
 KST = timezone(timedelta(hours=9))
 REGIONS = [('서울', '강남구'), ('서울', '서초구'), ('서울', '강동구'), ('서울', '광진구'), ('서울', '송파구'),
@@ -450,6 +451,8 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
                     fails=it.get('numberOfFailures'), bidding_date=(it.get('biddingDate') or '')[:10], area=it.get('buildingTotalArea'))
         if not it.get('appraisedPrice') or not it.get('lowestSellingPrice'):
             return 'skip', dict(base, reason='가격정보없음')
+        if not search_cfg.price_ok('오피스텔', it['lowestSellingPrice'], _rc):
+            return 'skip', dict(base, reason='최저가 범위 밖')
         try:
             if neg.get(it['id'], '') >= week_ago and not cache.get(it['id']):
                 return 'fail', dict(base, reason='단지 못 찾음 (7일 내 재시도 안 함)')
@@ -551,8 +554,8 @@ def main():
                 skipped.append(dict(base, reason='아파트 아님')); continue
             if (it.get('buildingTotalArea') or 0) < MIN_AREA:
                 skipped.append(dict(base, reason='면적미달')); continue
-            if it['lowestSellingPrice'] > MAX_LOW:
-                skipped.append(dict(base, reason='예산초과')); continue
+            if it['lowestSellingPrice'] > MAX_LOW or not search_cfg.price_ok('아파트', it['lowestSellingPrice'], _rc):
+                skipped.append(dict(base, reason='최저가 범위 밖')); continue
             try:
                 pg = auction_detail(it['id']) or {}
             except Exception:

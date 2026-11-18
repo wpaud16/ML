@@ -305,7 +305,10 @@ def region_text():
     apt = ' / '.join(f"{k} {'·'.join(v)}" if k != '경기' else '경기 ' + '·'.join(x + note.get(x, '') for x in v) for k, v in by.items())
     ot = rc.get('ot') or []
     ot_t = '서울 전체' if len(ot) >= 25 else '서울 ' + '·'.join(g.removesuffix('구') for g in ot)
-    return f'아파트(전용 50㎡ 이상) {apt} · 오피스텔 {ot_t}(역 도보 10분)'
+    import search_cfg
+    pa, po = search_cfg.price_text('아파트', rc), search_cfg.price_text('오피스텔', rc)
+    return (f'아파트(전용 50㎡ 이상{", " + pa if pa else ""}) {apt} · '
+            f'오피스텔 {ot_t}(역 도보 10분{", " + po if po else ""})')
 
 
 def unit_text(v):
@@ -656,8 +659,16 @@ if(!go(location.hash.slice(1),true)){var m=load('main')||'apt';var pid=firstPane
 
 
 # 빌라 탭은 2026-11-17 사용자 요청으로 뺌
-OTHER_CATS = (('상가', '🏪 상가', 'shop', '서울 · 구분상가 1칸 · 역 도보 15분'),
-              ('건물', '🏙 건물', 'bldg', '서울 · 꼬마빌딩·상가주택·다가구 · 역 도보 15분 · 최저가 20억 이하'))
+def _other_cond(cat, base):
+    """2026-11-18: 지역·최저가 범위는 search_regions.json (경매 지역 GUI)."""
+    import search_cfg
+    g = search_cfg.gus(cat)
+    where = '서울' if len(g) >= 25 else '서울 ' + '·'.join(x.removesuffix('구') for x in g)
+    return ' · '.join(x for x in (where, base, search_cfg.price_text(cat)) if x)
+
+
+OTHER_CATS = (('상가', '🏪 상가', 'shop', _other_cond('상가', '구분상가 1칸 · 역 도보 15분')),
+              ('건물', '🏙 건물', 'bldg', _other_cond('건물', '꼬마빌딩·상가주택·다가구 · 역 도보 15분')))
 
 
 def load_others(pred_dir):
