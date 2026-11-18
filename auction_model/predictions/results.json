@@ -151,6 +151,36 @@
   "kb_manwon": 102500,
   "kb_date": "2026-11"
  },
+ "2024타경111351[1]|2026-11-18": {
+  "source": "리치고",
+  "key": "2024타경111351[1]",
+  "auction_id": "C28LMADR",
+  "category": "아파트",
+  "danji_name": "신반포2차",
+  "area": 68.91,
+  "region": "서울 서초구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-17",
+  "low_manwon": 232000,
+  "bid_by_prob_manwon": {
+   "40%": 324683,
+   "45%": 327107,
+   "50%": 329608,
+   "55%": 332206,
+   "60%": 334873
+  },
+  "status": "연기",
+  "checked": "2026-11-19",
+  "expected_bidders": 14,
+  "expected_range": [
+   10,
+   16
+  ],
+  "sise_manwon": 377200,
+  "trade_manwon": 384920,
+  "kb_manwon": 370000,
+  "kb_date": "2026-11-13"
+ },
  "2024타경117977[1]|2026-11-04": {
   "key": "2024타경117977[1]",
   "auction_id": "C74QAWXY",
@@ -290,7 +320,7 @@
    "60%": 23893
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -698,6 +728,90 @@
   },
   "kb_manwon": null,
   "kb_date": null
+ },
+ "2024타경5319[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2024타경5319[1]",
+  "auction_id": "C42TBBCL",
+  "category": "오피스텔",
+  "danji_name": "신대방노블루체",
+  "area": 28.21,
+  "region": "서울 관악구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-18",
+  "low_manwon": 18560,
+  "bid_by_prob_manwon": {
+   "40%": 20686,
+   "45%": 20884,
+   "50%": 21077,
+   "55%": 21275,
+   "60%": 21493
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 3,
+  "expected_range": [
+   1,
+   6
+  ],
+  "sise_manwon": 25000,
+  "trade_manwon": null,
+  "actual_manwon": 19100,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": -9.4,
+  "band": "40% 미만",
+  "closest": {
+   "label": "3명 40%",
+   "manwon": 21100,
+   "pct_of_sise": 84.4,
+   "actual_pct_of_sise": 76.4,
+   "sise_basis": "리치고"
+  },
+  "kb_manwon": null,
+  "kb_date": null
+ },
+ "2024타경5531[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2024타경5531[1]",
+  "auction_id": "C59SHMMT",
+  "category": "아파트",
+  "danji_name": "강남데시앙파크",
+  "area": 114.69,
+  "region": "서울 강남구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-18",
+  "low_manwon": 149600,
+  "bid_by_prob_manwon": {
+   "40%": 164417,
+   "45%": 165644,
+   "50%": 166910,
+   "55%": 168226,
+   "60%": 169577
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 4,
+  "expected_range": [
+   2,
+   7
+  ],
+  "sise_manwon": 184630,
+  "trade_manwon": 183130,
+  "kb_manwon": 177500,
+  "kb_date": "2026-11-13",
+  "actual_manwon": 151999,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": -8.9,
+  "band": "40% 미만",
+  "closest": {
+   "label": "3명 40%",
+   "manwon": 165400,
+   "pct_of_sise": 89.6,
+   "actual_pct_of_sise": 82.3,
+   "sise_basis": "M"
+  }
  },
  "2024타경6202[1]|2026-11-01": {
   "key": "2024타경6202[1]",
@@ -2643,6 +2757,48 @@
   "kb_manwon": null,
   "kb_date": null
  },
+ "2025타경104039[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경104039[1]",
+  "auction_id": "C73YZYRC",
+  "category": "오피스텔",
+  "danji_name": "제이타워",
+  "area": 17.8,
+  "region": "서울 종로구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-18",
+  "low_manwon": 16128,
+  "bid_by_prob_manwon": {
+   "40%": 18082,
+   "45%": 18256,
+   "50%": 18424,
+   "55%": 18598,
+   "60%": 18788
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ],
+  "sise_manwon": 22000,
+  "trade_manwon": null,
+  "actual_manwon": 19815,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 7.5,
+  "band": "60% 초과",
+  "closest": {
+   "label": "1명 60%",
+   "manwon": 18700,
+   "pct_of_sise": 85.0,
+   "actual_pct_of_sise": 90.1,
+   "sise_basis": "리치고"
+  },
+  "kb_manwon": null,
+  "kb_date": null
+ },
  "2025타경104069[1]|2026-11-05": {
   "key": "2025타경104069[1]",
   "auction_id": "C92EEYJY",
@@ -2672,7 +2828,7 @@
   "kb_date": null
  },
  "2025타경104192[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경104192[1]",
   "auction_id": "C29ARXGX",
   "category": "오피스텔",
@@ -2690,7 +2846,7 @@
    "60%": 10938
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 3,
   "expected_range": [
    1,
@@ -2769,8 +2925,50 @@
   "kb_manwon": null,
   "kb_date": null
  },
- "2025타경104585[1]|2026-11-17": {
+ "2025타경104552[1]|2026-11-18": {
   "source": "법원",
+  "key": "2025타경104552[1]",
+  "auction_id": "C02BERQY",
+  "category": "오피스텔",
+  "danji_name": "현대비전21",
+  "area": 38.7,
+  "region": "서울 강남구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-18",
+  "low_manwon": 32880,
+  "bid_by_prob_manwon": {
+   "40%": 33782,
+   "45%": 34106,
+   "50%": 34420,
+   "55%": 34745,
+   "60%": 35100
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 2,
+  "expected_range": [
+   1,
+   3
+  ],
+  "sise_manwon": 42330,
+  "trade_manwon": null,
+  "actual_manwon": 35538,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 3.2,
+  "band": "60% 초과",
+  "closest": {
+   "label": "2명 60%",
+   "manwon": 35300,
+   "pct_of_sise": 83.4,
+   "actual_pct_of_sise": 84.0,
+   "sise_basis": "리치고"
+  },
+  "kb_manwon": null,
+  "kb_date": null
+ },
+ "2025타경104585[1]|2026-11-17": {
+  "source": "리치고",
   "key": "2025타경104585[1]",
   "auction_id": "C46LUMWM",
   "category": "아파트",
@@ -2788,7 +2986,7 @@
    "60%": 40471
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -2818,7 +3016,7 @@
    "60%": 294055
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 3,
   "expected_range": [
    2,
@@ -2848,7 +3046,7 @@
    "60%": 293712
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 3,
   "expected_range": [
    2,
@@ -2908,7 +3106,7 @@
    "60%": 26648
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -3026,6 +3224,48 @@
    2
   ],
   "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
+ },
+ "2025타경104690[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경104690[1]",
+  "auction_id": "C75YJUNH",
+  "category": "오피스텔",
+  "danji_name": "아미인",
+  "area": 18.23,
+  "region": "서울 중구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-18",
+  "low_manwon": 14000,
+  "bid_by_prob_manwon": {
+   "40%": 15042,
+   "45%": 15186,
+   "50%": 15326,
+   "55%": 15470,
+   "60%": 15628
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 2,
+  "expected_range": [
+   2,
+   4
+  ],
+  "sise_manwon": 21700,
+  "trade_manwon": null,
+  "actual_manwon": 15301,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": -0.2,
+  "band": "45~50%",
+  "closest": {
+   "label": "2명 45%",
+   "manwon": 15300,
+   "pct_of_sise": 70.5,
+   "actual_pct_of_sise": 70.5,
+   "sise_basis": "리치고"
+  },
   "kb_manwon": null,
   "kb_date": null
  },
@@ -3598,6 +3838,48 @@
   "kb_manwon": null,
   "kb_date": null
  },
+ "2025타경13629[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경13629[1]",
+  "auction_id": "C52KFHSY",
+  "category": "오피스텔",
+  "danji_name": "대현",
+  "area": 40.67,
+  "region": "서울 금천구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-18",
+  "low_manwon": 11673,
+  "bid_by_prob_manwon": {
+   "40%": 13566,
+   "45%": 13697,
+   "50%": 13823,
+   "55%": 13953,
+   "60%": 14096
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 4,
+  "expected_range": [
+   1,
+   6
+  ],
+  "sise_manwon": 22500,
+  "trade_manwon": null,
+  "actual_manwon": 14821,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 7.2,
+  "band": "60% 초과",
+  "closest": {
+   "label": "3명 60%",
+   "manwon": 14300,
+   "pct_of_sise": 63.6,
+   "actual_pct_of_sise": 65.9,
+   "sise_basis": "리치고"
+  },
+  "kb_manwon": null,
+  "kb_date": null
+ },
  "2025타경13643[1]|2026-11-13": {
   "source": "리치고",
   "key": "2025타경13643[1]",
@@ -3809,7 +4091,7 @@
   "kb_date": null
  },
  "2025타경13790[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경13790[1]",
   "auction_id": "C13KGJJX",
   "category": "오피스텔",
@@ -3827,7 +4109,7 @@
    "60%": 33100
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -4037,7 +4319,7 @@
   "kb_date": null
  },
  "2025타경13924[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경13924[1]",
   "auction_id": "C91BUVUP",
   "category": "오피스텔",
@@ -4055,7 +4337,7 @@
    "60%": 20418
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -4267,7 +4549,7 @@
    "60%": 35092
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -4615,7 +4897,7 @@
   "kb_date": null
  },
  "2025타경2270[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경2270[1]",
   "auction_id": "C51APURX",
   "category": "아파트",
@@ -4633,7 +4915,7 @@
    "60%": 41387
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -4685,6 +4967,48 @@
   "kb_manwon": 167000,
   "kb_date": "2026-11"
  },
+ "2025타경3217[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경3217[1]",
+  "auction_id": "C23GWQHC",
+  "category": "아파트",
+  "danji_name": "신마석서희스타힐스",
+  "area": 110.16,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-12",
+  "low_manwon": 16709,
+  "bid_by_prob_manwon": {
+   "40%": 23634,
+   "45%": 23805,
+   "50%": 23974,
+   "55%": 24150,
+   "60%": 24337
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 3,
+  "expected_range": [
+   2,
+   6
+  ],
+  "sise_manwon": 31940,
+  "trade_manwon": 33490,
+  "actual_manwon": 19890,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": -17.0,
+  "band": "40% 미만",
+  "closest": {
+   "label": "3명 40%",
+   "manwon": 23100,
+   "pct_of_sise": 72.3,
+   "actual_pct_of_sise": 62.3,
+   "sise_basis": "M"
+  },
+  "kb_manwon": 33000,
+  "kb_date": "2026-11"
+ },
  "2025타경3491[1]|2026-11-12": {
   "source": "리치고",
   "key": "2025타경3491[1]",
@@ -4713,6 +5037,48 @@
   "sise_manwon": 96230,
   "trade_manwon": 96030,
   "kb_manwon": 95500,
+  "kb_date": "2026-11"
+ },
+ "2025타경3521[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경3521[1]",
+  "auction_id": "C45OPKPP",
+  "category": "아파트",
+  "danji_name": "평내와이즈힐",
+  "area": 59.53,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-12",
+  "low_manwon": 21350,
+  "bid_by_prob_manwon": {
+   "40%": 26514,
+   "45%": 26705,
+   "50%": 26896,
+   "55%": 27093,
+   "60%": 27303
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 9,
+  "expected_range": [
+   8,
+   10
+  ],
+  "sise_manwon": 30550,
+  "trade_manwon": 30230,
+  "actual_manwon": 29263,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 8.8,
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 60%",
+   "manwon": 27400,
+   "pct_of_sise": 89.7,
+   "actual_pct_of_sise": 95.8,
+   "sise_basis": "M"
+  },
+  "kb_manwon": 31750,
   "kb_date": "2026-11"
  },
  "2025타경3675[1]|2026-11-12": {
@@ -4946,6 +5312,66 @@
   "trade_manwon": 37890,
   "kb_manwon": 37500,
   "kb_date": "2026-11"
+ },
+ "2025타경3804[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경3804[1]",
+  "auction_id": "C59UMCTR",
+  "category": "아파트",
+  "danji_name": "마석대림",
+  "area": 134.52,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-12",
+  "low_manwon": 27650,
+  "bid_by_prob_manwon": {
+   "40%": 29092,
+   "45%": 29302,
+   "50%": 29511,
+   "55%": 29727,
+   "60%": 29958
+  },
+  "status": "유찰",
+  "checked": "2026-11-19",
+  "expected_bidders": 3,
+  "expected_range": [
+   2,
+   4
+  ],
+  "sise_manwon": 33240,
+  "trade_manwon": 33140,
+  "kb_manwon": 35250,
+  "kb_date": "2026-11"
+ },
+ "2025타경4115[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경4115[1]",
+  "auction_id": "C99MTYGH",
+  "category": "오피스텔",
+  "danji_name": "방배노블루체서리풀",
+  "area": 28.31,
+  "region": "서울 서초구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-17",
+  "low_manwon": 40800,
+  "bid_by_prob_manwon": {
+   "40%": 43344,
+   "45%": 43760,
+   "50%": 44163,
+   "55%": 44579,
+   "60%": 45036
+  },
+  "status": "유찰",
+  "checked": "2026-11-19",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   3
+  ],
+  "sise_manwon": 54600,
+  "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null
  },
  "2025타경430[1]|2026-11-06": {
   "key": "2025타경430[1]",
@@ -5826,7 +6252,7 @@
   "kb_date": "2026-11"
  },
  "2025타경51442[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경51442[1]",
   "auction_id": "C37RHSTN",
   "category": "오피스텔",
@@ -5843,8 +6269,8 @@
    "55%": 25249,
    "60%": 25507
   },
-  "status": "변경",
-  "checked": "2026-11-18",
+  "status": "유찰",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -6536,7 +6962,7 @@
    "60%": 21685
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -6548,7 +6974,7 @@
   "kb_date": "2026-11"
  },
  "2025타경52353[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경52353[1]",
   "auction_id": "C44GAXYD",
   "category": "아파트",
@@ -6566,7 +6992,7 @@
    "60%": 268028
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    2,
@@ -6578,7 +7004,7 @@
   "kb_date": "2026-11"
  },
  "2025타경52356[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경52356[1]",
   "auction_id": "C99QNYCX",
   "category": "오피스텔",
@@ -6596,7 +7022,7 @@
    "60%": 18621
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -6626,7 +7052,7 @@
    "60%": 18565
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -6769,7 +7195,7 @@
    "60%": 27924
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -6799,7 +7225,7 @@
    "60%": 213440
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -6811,7 +7237,7 @@
   "kb_date": "2026-11"
  },
  "2025타경52516[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경52516[1]",
   "auction_id": "C79ONEQS",
   "category": "아파트",
@@ -6829,7 +7255,7 @@
    "60%": 789844
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -6884,7 +7310,7 @@
    "60%": 144910
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 9,
   "expected_range": [
    3,
@@ -8221,7 +8647,7 @@
    "60%": 19408
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 3,
   "expected_range": [
    3,
@@ -8250,8 +8676,8 @@
    "55%": 34630,
    "60%": 34899
   },
-  "status": "연기",
-  "checked": "2026-11-18",
+  "status": "취하",
+  "checked": "2026-11-19",
   "expected_bidders": 8,
   "expected_range": [
    7,
@@ -8420,6 +8846,48 @@
   "sise_manwon": 18270,
   "trade_manwon": 18370,
   "kb_manwon": 18500,
+  "kb_date": "2026-11"
+ },
+ "2025타경72445[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경72445[1]",
+  "auction_id": "C69JNCCU",
+  "category": "아파트",
+  "danji_name": "동익미라벨38단지",
+  "area": 101.38,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-12",
+  "low_manwon": 56350,
+  "bid_by_prob_manwon": {
+   "40%": 70142,
+   "45%": 70648,
+   "50%": 71152,
+   "55%": 71672,
+   "60%": 72229
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 8,
+  "expected_range": [
+   6,
+   10
+  ],
+  "sise_manwon": 82060,
+  "trade_manwon": 81530,
+  "actual_manwon": 74888,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 5.3,
+  "band": "60% 초과",
+  "closest": {
+   "label": "8명 60%",
+   "manwon": 74400,
+   "pct_of_sise": 90.7,
+   "actual_pct_of_sise": 91.3,
+   "sise_basis": "M"
+  },
+  "kb_manwon": 80000,
   "kb_date": "2026-11"
  },
  "2025타경72473[1]|2026-11-05": {
@@ -8624,6 +9092,66 @@
   },
   "trade_manwon": 43140,
   "kb_manwon": 44000,
+  "kb_date": "2026-11"
+ },
+ "2025타경72514[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경72514[1]",
+  "auction_id": "C89MUEFT",
+  "category": "아파트",
+  "danji_name": "삼신푸른솔17차",
+  "area": 59.63,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-12",
+  "low_manwon": 18500,
+  "bid_by_prob_manwon": {
+   "40%": 18500,
+   "45%": 18500,
+   "50%": 18500,
+   "55%": 18500,
+   "60%": 18500
+  },
+  "status": "유찰",
+  "checked": "2026-11-19",
+  "expected_bidders": 2,
+  "expected_range": [
+   1,
+   3
+  ],
+  "sise_manwon": 17650,
+  "trade_manwon": 17570,
+  "kb_manwon": 18000,
+  "kb_date": "2026-11"
+ },
+ "2025타경72535[1]|2026-11-18": {
+  "source": "법원",
+  "key": "2025타경72535[1]",
+  "auction_id": "C57XBACD",
+  "category": "아파트",
+  "danji_name": "남양주창현도뮤토",
+  "area": 84.99,
+  "region": "경기 남양주시",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-12",
+  "low_manwon": 53700,
+  "bid_by_prob_manwon": {
+   "40%": 53700,
+   "45%": 53700,
+   "50%": 53700,
+   "55%": 53700,
+   "60%": 53700
+  },
+  "status": "유찰",
+  "checked": "2026-11-19",
+  "expected_bidders": 1,
+  "expected_range": [
+   1,
+   2
+  ],
+  "sise_manwon": 52550,
+  "trade_manwon": 52850,
+  "kb_manwon": 56000,
   "kb_date": "2026-11"
  },
  "2025타경72645[1]|2026-11-05": {
@@ -9327,7 +9855,7 @@
   "kb_date": "2026-11"
  },
  "2025타경72874[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2025타경72874[1]",
   "auction_id": "C57YXDFR",
   "category": "아파트",
@@ -9345,7 +9873,7 @@
    "60%": 24900
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -9939,7 +10467,7 @@
    "60%": 277499
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -9969,7 +10497,7 @@
    "60%": 191452
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -10182,7 +10710,7 @@
   "kb_date": "2026-11"
  },
  "2026타경100663[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경100663[1]",
   "auction_id": "C94ZGTYE",
   "category": "오피스텔",
@@ -10200,7 +10728,7 @@
    "60%": 5526
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -10260,7 +10788,7 @@
    "60%": 11304
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -10272,7 +10800,7 @@
   "kb_date": null
  },
  "2026타경101269[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경101269[1]",
   "auction_id": "C24ZTETW",
   "category": "오피스텔",
@@ -10290,7 +10818,7 @@
    "60%": 33096
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -10320,7 +10848,7 @@
    "60%": 510000
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -10332,7 +10860,7 @@
   "kb_date": "2026-11"
  },
  "2026타경101335[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경101335[1]",
   "auction_id": "C21LSRVV",
   "category": "오피스텔",
@@ -10350,7 +10878,7 @@
    "60%": 23308
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -11802,7 +12330,7 @@
    "60%": 62800
   },
   "status": "연기",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12002,7 +12530,7 @@
    "60%": 20720
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12032,7 +12560,7 @@
    "60%": 25442
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12347,8 +12875,50 @@
   "kb_manwon": null,
   "kb_date": null
  },
- "2026타경4002[1]|2026-11-17": {
+ "2026타경3[1]|2026-11-18": {
   "source": "법원",
+  "key": "2026타경3[1]",
+  "auction_id": "C13MFHWF",
+  "category": "오피스텔",
+  "danji_name": "마곡헤리움1차",
+  "area": 29.14,
+  "region": "서울 강서구",
+  "bidding_date": "2026-11-18",
+  "pred_date": "2026-11-18",
+  "low_manwon": 12224,
+  "bid_by_prob_manwon": {
+   "40%": 13683,
+   "45%": 13814,
+   "50%": 13941,
+   "55%": 14072,
+   "60%": 14216
+  },
+  "status": "매각",
+  "checked": "2026-11-19",
+  "expected_bidders": 3,
+  "expected_range": [
+   1,
+   5
+  ],
+  "sise_manwon": 18280,
+  "trade_manwon": null,
+  "kb_manwon": 18000,
+  "kb_date": "2026-11-13",
+  "actual_manwon": 14679,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": 5.3,
+  "band": "60% 초과",
+  "closest": {
+   "label": "3명 60%",
+   "manwon": 14200,
+   "pct_of_sise": 77.7,
+   "actual_pct_of_sise": 80.3,
+   "sise_basis": "리치고"
+  }
+ },
+ "2026타경4002[1]|2026-11-17": {
+  "source": "리치고",
   "key": "2026타경4002[1]",
   "auction_id": "C74OZJIP",
   "category": "오피스텔",
@@ -12366,7 +12936,7 @@
    "60%": 32038
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -12478,7 +13048,7 @@
    "60%": 31400
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12508,7 +13078,7 @@
    "60%": 31400
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12568,7 +13138,7 @@
    "60%": 26652
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12683,7 +13253,7 @@
    "60%": 33100
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12695,7 +13265,7 @@
   "kb_date": null
  },
  "2026타경4763[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경4763[1]",
   "auction_id": "C86QFJZK",
   "category": "오피스텔",
@@ -12713,7 +13283,7 @@
    "60%": 21347
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -12725,7 +13295,7 @@
   "kb_date": null
  },
  "2026타경4814[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경4814[1]",
   "auction_id": "C64DGSYA",
   "category": "오피스텔",
@@ -12743,7 +13313,7 @@
    "60%": 30100
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12755,7 +13325,7 @@
   "kb_date": null
  },
  "2026타경4895[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경4895[1]",
   "auction_id": "C97JIOPC",
   "category": "오피스텔",
@@ -12773,7 +13343,7 @@
    "60%": 13715
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12857,7 +13427,7 @@
   "kb_date": null
  },
  "2026타경50070[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경50070[1]",
   "auction_id": "C35JVJPX",
   "category": "아파트",
@@ -12875,7 +13445,7 @@
    "60%": 365725
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12887,7 +13457,7 @@
   "kb_date": "2026-11"
  },
  "2026타경50100[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경50100[1]",
   "auction_id": "C07UEOGB",
   "category": "아파트",
@@ -12905,7 +13475,7 @@
    "60%": 234313
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -12973,7 +13543,7 @@
   "kb_date": null
  },
  "2026타경5010[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경5010[1]",
   "auction_id": "C31DQIRD",
   "category": "오피스텔",
@@ -12991,7 +13561,7 @@
    "60%": 27107
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -13049,7 +13619,7 @@
    "60%": 29098
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -13061,7 +13631,7 @@
   "kb_date": null
  },
  "2026타경50156[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경50156[1]",
   "auction_id": "C40SDOHZ",
   "category": "아파트",
@@ -13079,7 +13649,7 @@
    "60%": 331919
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -13139,7 +13709,7 @@
    "60%": 80800
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -13191,7 +13761,7 @@
   "kb_date": null
  },
  "2026타경50243[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경50243[1]",
   "auction_id": "C65XPVPZ",
   "category": "아파트",
@@ -13209,7 +13779,7 @@
    "60%": 77949
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -13221,7 +13791,7 @@
   "kb_date": "2026-11"
  },
  "2026타경50254[1]|2026-11-16": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경50254[1]",
   "auction_id": "C07OBSBM",
   "category": "아파트",
@@ -13239,7 +13809,7 @@
    "60%": 146811
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 5,
   "expected_range": [
    2,
@@ -13329,7 +13899,7 @@
    "60%": 32152
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -13358,8 +13928,8 @@
    "55%": 12551,
    "60%": 12680
   },
-  "status": "변경",
-  "checked": "2026-11-18",
+  "status": "유찰",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -13371,7 +13941,7 @@
   "kb_date": null
  },
  "2026타경5046[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경5046[1]",
   "auction_id": "C37GIFWT",
   "category": "오피스텔",
@@ -13389,7 +13959,7 @@
    "60%": 36800
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -13543,7 +14113,7 @@
   "kb_date": null
  },
  "2026타경5074[1]|2026-11-17": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경5074[1]",
   "auction_id": "C51JZIEZ",
   "category": "오피스텔",
@@ -13561,7 +14131,7 @@
    "60%": 14826
   },
   "status": "유찰",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 2,
   "expected_range": [
    1,
@@ -14170,7 +14740,7 @@
    "60%": 36225
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -14200,7 +14770,7 @@
    "60%": 36147
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
@@ -14230,7 +14800,7 @@
    "60%": 36155
   },
   "status": "변경",
-  "checked": "2026-11-18",
+  "checked": "2026-11-19",
   "expected_bidders": 1,
   "expected_range": [
    1,
