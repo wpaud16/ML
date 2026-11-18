@@ -84,7 +84,9 @@ def prize_items(today):
 PROXY_BLOCK = re.compile(r'form\.naver\.com|naver\.me|kosis\.kr|instagram\.com|facebook\.com|youtube\.com|x\.com|twitter\.com|'
                          r'kakao\.com|pf\.kakao|play\.google|apps\.apple', re.I)
 PROXY_NEEDS = re.compile(r'로그인|회원\s*가입|회원만|본인\s*인증|휴대폰\s*인증|앱|어플|팔로우|구독|공유|댓글|리그램|인증샷|사진|영상|후기|캡차|자동입력|'
-                        r'설문|만족도|조사|의견|아이디어|공모|랭킹|게임|스탬프|배지랜드', re.I)   # 설문·공모 = 본인 생각이 필요, 게임 = 직접
+                        r'설문|만족도|조사|의견|아이디어|공모|랭킹|게임|스탬프|배지랜드|'
+                        r'사전\s*등록|행사\s*등록|참가\s*신청|방문|현장|캡[처쳐]|업로드|첨부|찾아라|숨은|사연|작성|인터뷰|이메일|'
+                        r'추천|초대|가입', re.I)   # 2026-11-19: 행사 참석 등록·캡처 업로드·사연 작성도 대신 못 함
 DONE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'events_done.json')   # Claude 가 대신 응모한 기록 (개인정보 없이 이벤트 키·날짜만)
 
 
@@ -123,7 +125,9 @@ def prize_card(it, today):
     badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>' + ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'][:2])
     dn = done_map().get(ev.key_of(it))
     px = proxy_ok(it) and not dn
-    if dn:
+    if dn and dn.startswith('x:'):   # 들어가 보니 대신 못 하는 이벤트 (사유)
+        badges += f'<span class="cat">🙅 대신 응모 불가 · {E(dn[2:])}</span>'
+    elif dn:
         badges += f'<span class="free">✅ 응모 완료 {E(dn[5:].replace("-", "/"))}</span>'
     elif px:
         badges += '<span class="proxy">🤖 대신 응모 가능</span>'
@@ -336,6 +340,8 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 @media (prefers-color-scheme:dark){.proxy{background:#3a2550;color:#d9b8ff}}
 .btn.ask{background:none;border:0;padding:0;font:inherit;font-weight:bold;cursor:pointer;color:#7b2cbf}
 @media (prefers-color-scheme:dark){.btn.ask{color:#d9b8ff}}
+.askall{border:1px dashed #7b2cbf;border-radius:10px;padding:10px 14px;margin-bottom:10px;text-align:center}
+.askall .btn{font-size:15px;margin-top:0}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#323232;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;z-index:99;max-width:90vw;text-align:center}
 .t{font-weight:bold;font-size:15px}
 .g{color:var(--mut)} .s{font-size:12px} .hot{color:var(--hot)}
@@ -385,6 +391,7 @@ function pick(t,v,btn){$('.chips[data-t="'+t+'"] .chip').forEach(b=>b.classList.
  let n=$('#'+t+' .card:not(.hide)').length;document.getElementById(t+'-empty').classList.toggle('hide',n>0);
  if(t=='fest')drawMarkers(true)}
 function toast(m){const d=document.createElement('div');d.className='toast';d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3500)}
+function askAll(){const t=[...$('#prize .card .btn.ask')].map(b=>b.dataset.req).join('\\n\\n');askProxy({dataset:{req:t}})}
 function askProxy(b){const t=b.dataset.req;const ok=()=>toast('복사했어요 · Claude 대화창에 붙여넣어 보내 주세요');
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,()=>prompt('아래 글을 복사해 Claude 에 보내 주세요',t))}
  else prompt('아래 글을 복사해 Claude 에 보내 주세요',t)}
@@ -474,6 +481,9 @@ def build(today):
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(CAT_LABEL[k])}<i>{cnt[k]}</i></button>'
                for k in [c for c, _, _ in CATS] + ['etc'] if cnt[k]]
     pcards = ''.join(prize_card(x, today) for x in P) or ''
+    if npx:   # 2026-11-19 사용자 요청: 대신 응모 가능한 것 한 번에 복사
+        pcards = (f'<div class="askall"><button class="btn ask" onclick="askAll()">🤖 대신 응모 가능 {npx}건 한 번에 복사</button>'
+                  '<div class="g s">복사한 글을 Claude Code 대화창에 붙여넣으면 한꺼번에 응모해요</div></div>') + pcards
     # 지역 행사: 시·도 칩, 시·도 > 시·군·구 묶음
     sidos = [s for s in SIDO_ORDER if any(x['_sido'] == s for x in F)] + sorted({x['_sido'] for x in F} - set(SIDO_ORDER))
     wk = sum(1 for x in F if x['_s'] <= ev.weekend_of(today)[1] and x['_e'] >= ev.weekend_of(today)[0])
