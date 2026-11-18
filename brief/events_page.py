@@ -74,7 +74,7 @@ def prize_items(today):
             continue
         if st and st > today + dt.timedelta(days=7):
             continue
-        res.append(dict(it, _dl=dl, _new=(today - first).days <= 0, _cats=cats_of(it)))
+        res.append(dict(it, _dl=dl, _new=(today - first).days <= 0, _cats=cats_of(it)[:1]))   # 경품 종류도 하나만 (칸 중복 없게)
     far = dt.date(9999, 1, 1)
     res.sort(key=lambda x: (x['_dl'] or far, x.get('title') or ''))
     return res, day
@@ -105,6 +105,19 @@ def proxy_ok(it):
     return not PROXY_NEEDS.search(' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition')))
 
 
+GROUPS = {'done': '✅ 응모 완료', 'proxy': '🤖 대신 응모 가능'}   # + ev.ENTRY (바로·웹·로그인·앱·SNS)
+
+
+def group_of(it):
+    """응모 방식 칸 (하나만): 응모 완료 > 대신 응모 가능 > 원래 응모 방식."""
+    dn = done_map().get(ev.key_of(it))
+    if dn and not dn.startswith('x:'):
+        return 'done'
+    if not dn and proxy_ok(it):
+        return 'proxy'
+    return ev.entry_type(it)
+
+
 def code_of(it):
     """요청할 때 쓰는 짧은 번호 (같은 이벤트면 매일 같음)."""
     import hashlib
@@ -121,16 +134,18 @@ def prize_card(it, today):
         due = f'{ev.md(dl)} 마감 · <b class="{"hot" if n <= 3 else ""}">{dd}</b>'
     else:
         n, due = 999, '<span class="g">마감일 확인 필요</span>'
-    et = ev.entry_type(it)
-    badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>' + ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'][:2])
+    et = group_of(it)   # 응모 방식 칸은 서로 겹치지 않게 하나만 (2026-11-19)
     dn = done_map().get(ev.key_of(it))
-    px = proxy_ok(it) and not dn
+    px = et == 'proxy'
+    if et == 'done':
+        badges = f'<span class="free">✅ 응모 완료 {E(dn[5:].replace("-", "/"))}</span>'
+    elif px:
+        badges = '<span class="proxy">🤖 대신 응모 가능</span>'
+    else:
+        badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>'
+    badges += ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'])
     if dn and dn.startswith('x:'):   # 들어가 보니 대신 못 하는 이벤트 (사유)
         badges += f'<span class="cat">🙅 대신 응모 불가 · {E(dn[2:])}</span>'
-    elif dn:
-        badges += f'<span class="free">✅ 응모 완료 {E(dn[5:].replace("-", "/"))}</span>'
-    elif px:
-        badges += '<span class="proxy">🤖 대신 응모 가능</span>'
     if it['_new']:
         badges = '<span class="new">NEW</span>' + badges
     w = f' · 총 {it["winners"]:,}명' if isinstance(it.get('winners'), int) and it['winners'] > 0 else ''
@@ -472,12 +487,11 @@ def build(today):
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'new\',this)">🆕 오늘 새로<i>{new}</i></button>')
     if soon:
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'soon\',this)">⏰ 마감 임박<i>{soon}</i></button>')
-    npx = sum(1 for x in P if proxy_ok(x) and ev.key_of(x) not in done_map())
-    if npx:
-        pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'proxy\',this)">🤖 대신 응모 가능<i>{npx}</i></button>')
-    ecnt = {k: sum(ev.entry_type(x) == k for x in P) for k in ev.ENTRY}
-    pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(ev.ENTRY[k])}<i>{ecnt[k]}</i></button>'
-               for k in ev.ENTRY if ecnt[k]]
+    labels = {'proxy': GROUPS['proxy'], **ev.ENTRY, 'done': GROUPS['done']}
+    ecnt = {k: sum(group_of(x) == k for x in P) for k in labels}
+    npx = ecnt['proxy']
+    pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(v)}<i>{ecnt[k]}</i></button>'
+               for k, v in labels.items() if ecnt[k]]
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(CAT_LABEL[k])}<i>{cnt[k]}</i></button>'
                for k in [c for c, _, _ in CATS] + ['etc'] if cnt[k]]
     pcards = ''.join(prize_card(x, today) for x in P) or ''
