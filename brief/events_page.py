@@ -354,6 +354,7 @@ function initMap(){if(MAP||!window.maplibregl||!document.getElementById('map'))r
 function softStyle(){const S=(id,k,v)=>{try{MAP.setPaintProperty(id,k,v)}catch(e){}},Lo=(id,k,v)=>{try{MAP.setLayoutProperty(id,k,v)}catch(e){}};
  MAP.getStyle().layers.forEach(l=>{const id=l.id,sl=l['source-layer']||'';
   if(l.type=='background'){S(id,'background-color','#ffffff');return}
+  if(l.type=='raster'||l.type=='hillshade'||/natural_earth|relief/.test(id)){Lo(id,'visibility','none');return}   // 지형 음영 끔
   if(sl=='water'||/water|ocean|sea/.test(id)){if(l.type=='fill')S(id,'fill-color','#b9dcf6');if(l.type=='line')S(id,'line-color','#b9dcf6');return}
   if(sl=='waterway'){S(id,'line-color','#b9dcf6');return}
   if(/landcover|landuse|park|wood|grass|sand|ice|wetland|aeroway|hillshade|terrain/.test(sl+id)){Lo(id,'visibility','none');return}
@@ -364,6 +365,7 @@ function softStyle(){const S=(id,k,v)=>{try{MAP.setPaintProperty(id,k,v)}catch(e
   if(sl=='poi'||sl=='aerodrome_label'||sl=='mountain_peak'||sl=='housenumber'){try{MAP.setLayerZoomRange(id,13,24)}catch(e){}}
   if(l.type=='symbol'&&l.layout&&l.layout['text-field']){
    Lo(id,'text-field',['coalesce',['get','name:ko'],['get','name']]);   // 지명: 한글 → 기본 이름
+   Lo(id,'text-letter-spacing',0);Lo(id,'text-transform','none');
    S(id,'text-color',sl=='water_name'?'#5b86b0':'#4a4a4f');S(id,'text-halo-color','#ffffff');S(id,'text-halo-width',1.4)}});}
 /* 귀여운 핀: 한 가지 색(노랑) 동그라미 + 행사 종류 이모지, 같은 장소 여러 개면 숫자 배지 */
 function emo(kind){kind=kind||'';return /빛|불꽃/.test(kind)?'✨':/박람|페어/.test(kind)?'🛍️':/마켓/.test(kind)?'🧺':/축제/.test(kind)?'🎉':'🎈'}
