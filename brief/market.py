@@ -19,8 +19,15 @@ def yahoo(sym):
     ts, cl = r['timestamp'], r['indicators']['quote'][0]['close']
     pts = [(t, c) for t, c in zip(ts, cl) if c is not None]
     (t1, c1), (_, c0) = pts[-1], pts[-2]
-    off = r['meta'].get('gmtoffset', 0)
+    m = r['meta']
+    off = m.get('gmtoffset', 0)
     day = dt.datetime.fromtimestamp(t1 + off, dt.timezone.utc).date()
+    # 2026-11-19: 야후 일봉의 마지막 날 종가가 비어(None) 있는 경우가 있음 (11/18 KOSPI) → 그날 값은 meta 의 현재가로
+    rt, rp = m.get('regularMarketTime'), m.get('regularMarketPrice')
+    if rt and rp:
+        rday = dt.datetime.fromtimestamp(rt + off, dt.timezone.utc).date()
+        if rday > day:
+            return dict(value=rp, prev=c1, date=rday)
     return dict(value=c1, prev=c0, date=day)
 
 
