@@ -84,6 +84,7 @@ jobs:
       - name: Commit sent mark (하루 1통)
         if: success()
         run: |
+          git add brief/events_seen.json 2>/dev/null || true   # 응모 이벤트 '이미 보냄' 기록 (2026-11-18)
           git add outfit/20*/sent.txt 2>/dev/null || exit 0
           git diff --cached --quiet && exit 0
           git commit -m "outfit: $(TZ=Asia/Seoul date +%F) 메일 발송 기록"

@@ -1,8 +1,9 @@
 ﻿"""노트북 통합 실행 (2026-11-08~). Windows 작업 스케줄러가 호출.
 
   python run_all.py night    # 03:00 법원자료 수집 → 경매 예측(국토부 실거래 포함) → 웹페이지 → push
-  python run_all.py outfit   # 06:00 날씨·코디 페이지 push → 메일
-  python run_all.py brief    # 08:00 할 일·증시·경매 브리핑 메일
+                             #   (시작할 때 응모 이벤트·지역 행사 웹 검색을 백그라운드로 띄움, 2026-11-18~)
+  python run_all.py outfit   # 06:00 '생활' 메일: 날씨·코디 페이지 push → 오늘의 문장·할 일·응모 이벤트·지역 행사
+  python run_all.py brief    # 07:30 '투자' 메일: 증시·경매
 옵션: --test (제목 [테스트], 발송 기록 안 남김, push 안 함)  --force (이미 했어도 다시)  --no-mail  --steps a,b
 
 비밀값은 저장소 밖 <저장소 상위 폴더>/.env (예: C:/auction_pc/.env) 에서만 읽는다.
@@ -260,10 +261,12 @@ def s_outfit():
     push([f'outfit/{d}'], f'outfit: {d} 코디 카드 (노트북)')
     if ARGS.no_mail:
         log('--no-mail → 메일 생략'); return
+    t0 = time.time()
+    s_events_now()   # 응모 이벤트·지역 행사 검색 결과가 없으면 지금 (2026-11-18)
     if not ARGS.test:
-        time.sleep(90)   # GitHub Pages 반영 대기
-    run([sys.executable, 'run_outfit.py', 'send'], cwd=od, timeout=300, extra=mail_env())
-    push([f'outfit/{d}/sent.txt'], f'outfit: {d} 메일 발송 기록 (노트북)')
+        time.sleep(max(0, 90 - (time.time() - t0)))   # GitHub Pages 반영 대기
+    run([sys.executable, 'run_outfit.py', 'send'], cwd=od, timeout=600, extra=mail_env())
+    push([f'outfit/{d}/sent.txt', 'brief/events_seen.json', 'brief/events_cache'], f'outfit: {d} 생활 메일 발송 기록 (노트북)')
 
 
 def s_brief():
@@ -286,8 +289,38 @@ def s_brief():
           'auction_model/predictions/results.json', 'auction_model/page'],f'brief: {d} 메일 발송 기록·법원 진행 확인 (노트북)')
 
 
+def events_ready():
+    from importlib import util
+    sp = util.spec_from_file_location('events', os.path.join(REPO, 'brief', 'events.py')); ev = util.module_from_spec(sp); sp.loader.exec_module(ev)
+    kinds = ['prize'] + (['fest'] if today().weekday() == ev.FEST_WEEKDAY else [])
+    return all(os.path.exists(os.path.join(REPO, 'brief', 'events_cache', f'{today()}_{k}.json')) for k in kinds)
+
+
+def s_events_bg():
+    """응모 이벤트(매일)·지역 행사(월요일) 웹 검색을 03:00 야간 실행 시작 때 따로 띄워 둠 (기다리지 않음, 2026-11-18).
+    결과(brief/events_cache)는 06:00 생활 메일이 읽고 push. 새 예약 작업은 관리자 권한이 없어 못 만들어서 이렇게 함."""
+    if ARGS.test or events_ready():
+        log('이벤트 검색: 테스트이거나 오늘 결과 있음 → 생략'); return
+    find_claude()
+    lf = open(os.path.join(BASE, 'logs', f'{today()}_events.log'), 'a', encoding='utf-8')
+    subprocess.Popen([sys.executable, 'events.py', 'search'], cwd=os.path.join(REPO, 'brief'), env=child_env(),
+                     stdout=lf, stderr=subprocess.STDOUT, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+    log('이벤트 검색 시작 (백그라운드, 로그: logs/날짜_events.log)')
+
+
+def s_events_now():
+    """06:00 생활 메일 직전: 야간에 띄운 검색 결과가 없으면(노트북 꺼짐 등) 지금 검색 (최대 25분, 메일이 그만큼 늦어짐)."""
+    if events_ready():
+        return
+    find_claude()
+    try:
+        run([sys.executable, 'events.py', 'search'], cwd=os.path.join(REPO, 'brief'), timeout=25 * 60, check=False)
+    except Exception as e:
+        log(f'이벤트 검색 실패(메일엔 불러오지 못했다고 나옴): {e}')
+
+
 JOBS = {
-    'night': [('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction), ('hist', s_hist)],
+    'night': [('events', s_events_bg), ('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction), ('hist', s_hist)],
     'outfit': [('outfit', s_outfit)],
     'brief': [('brief', s_brief)],
 }

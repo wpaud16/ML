@@ -39,7 +39,7 @@ def main():
     except Exception:
         traceback.print_exc(); fail.append('카드 이미지 생성')
     url = f'https://wpaud16.github.io/ML/outfit/{today.isoformat()}/'
-    subj = f"[오늘의 코디] {d['date']} {d['tmin']}°/{d['tmax']}°" + (f', ☔ 비 {rain_hour}시부터' if rain_hour is not None else '')
+    subj = f"[JM's Schedule] {d['date']} {d['tmin']}°/{d['tmax']}°" + (f', ☔ 비 {rain_hour}시부터' if rain_hour is not None else '')
     if os.environ.get('TEST_MODE') == '1':
         subj = '[테스트] ' + subj
     btn = (f'<p style="font-family:\'Apple SD Gothic Neo\',\'Malgun Gothic\',sans-serif;font-size:16px;margin:16px 0;text-align:center">'
@@ -51,13 +51,57 @@ def main():
     json.dump(dict(subject=subj, test=os.environ.get('TEST_MODE') == '1', day=today.isoformat(), html=btn, text=f'오늘의 날씨·코디 보기: {url}'), open(os.path.join(HERE, '.mail.json'), 'w'), ensure_ascii=False)
 
 
+DIV = '<hr style="border:none;border-top:1px solid #888888;margin:24px 0">'
+DOC_LINK = 'https://docs.google.com/document/d/16r3j5QD_VJZKxL9hOxbv-Aj58jNbp92nCM4szeKrq6Y/edit'
+
+
+def life_sections(day, test):
+    """2026-11-18 사용자 결정: 아침 '생활' 메일 = 날씨·코디 + 오늘의 문장 + 할 일 + 응모 이벤트 + 지역 행사(월요일).
+    증시·경매는 07:30 '투자' 메일(brief/run_brief.py). 각 섹션은 실패해도 나머지는 보낸다."""
+    import datetime as dt, traceback as tb
+    import quote, schedule_doc, events
+    today = dt.date.fromisoformat(day)
+    H, T, fails, after = [], [], [], None
+    try:
+        h, t = quote.render(quote.today_quote(today)); H.append(h); T.append(t)
+    except Exception:
+        tb.print_exc(); fails.append('오늘의 문장')
+    try:
+        r = schedule_doc.plan(today, write=not test)
+        h, t = schedule_doc.render(r); H.append(h); T.append(t)
+        fails += r['warnings']
+        H.append(f'<div style="color:#777;font-size:12px">📝 <a href="{DOC_LINK}">JM\'s Schedule 문서 열기</a> · '
+                 '끝낸 일은 문서에서 체크해 주세요. 내일 아침 자동 정리됩니다.</div>')
+    except Exception:
+        tb.print_exc(); fails.append('오늘의 할 일 (문서 읽기/쓰기)')
+    try:
+        h, t, after = events.sections(today, test)
+        if not h:
+            fails.append('응모 이벤트')
+        H += h; T += t
+    except Exception:
+        tb.print_exc(); fails.append('응모 이벤트·지역 행사')
+    return H, T, fails, after
+
+
 def send():
     if os.path.exists(os.path.join(HERE, '.skip')):
         print('skip'); return
     m = json.load(open(os.path.join(HERE, '.mail.json')))
     import google_api as g
-    g.send_mail(TO, m['subject'], m['html'], m['text'])
+    H, T, fails, after = life_sections(m['day'], m.get('test'))
+    html = m['html']
+    if fails:
+        html = f'<p style="color:#d93025;font-size:13px">⚠️ 실패: {", ".join(fails)}</p>' + html
+    html = ('<div style="font-family:-apple-system,Segoe UI,Malgun Gothic,sans-serif;max-width:600px;margin:auto;padding:8px;line-height:1.5;color:#222">'
+            + DIV.join([html] + H) + '</div>')
+    g.send_mail(TO, m['subject'], html, '\n\n'.join([m['text']] + T))
     print('sent:', m['subject'])
+    if after:
+        try:
+            after()
+        except Exception:
+            traceback.print_exc()
     if not m.get('test'):
         open(os.path.join(HERE, m['day'], 'sent.txt'), 'w').write(m['subject'] + '\n')
 
