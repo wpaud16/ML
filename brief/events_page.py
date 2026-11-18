@@ -251,8 +251,10 @@ def fest_card(it, today, idx=0):
     if it.get('desc'):
         rows.append(f'<div class="g s">{E(it["desc"])}' + ('' if it.get('checked') else ' · ⚠ 공식 페이지 미확인') + '</div>')
     links = []
-    if re.match(r'https?://', it.get('url') or ''):
-        links.append(f'<a class="btn" href="{E(it["url"])}" target="_blank" rel="noopener">안내 페이지 →</a>')
+    if ev.link_kind(it.get('url')) == 'official':
+        links.append(f'<a class="btn" href="{E(it["url"])}" target="_blank" rel="noopener">공식 페이지 →</a>')
+    else:   # 기사·모음 사이트 링크는 쓰지 않음 (2026-11-18 사용자 요청)
+        links.append(f'<span class="g s">공식 페이지 못 찾음</span> <a class="btn" href="{E(ev.official_search(it["name"]))}" target="_blank" rel="noopener">검색 →</a>')
     if it.get('_lat'):
         links.append(f'<a class="btn" href="#map" onclick="return focusOn({idx})">🗺 지도에서 보기</a>')
     if links:
@@ -294,10 +296,29 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 .empty{color:var(--mut);padding:20px 0;text-align:center}
 .hide{display:none!important}
 .foot{color:var(--mut);font-size:12px;margin-top:20px;line-height:1.6}
-#map{height:320px;border:1px solid var(--bd);border-radius:10px;margin:12px 0 4px;z-index:0;scroll-margin-top:120px}
+#map{height:340px;border-radius:16px;margin:12px 0 6px;z-index:0;scroll-margin-top:120px;box-shadow:0 2px 10px rgba(0,0,0,.15);overflow:hidden;background:#f2efe9}
 .mapnote{color:var(--mut);font-size:11px;margin-bottom:6px}
-.leaflet-tooltip.cnt{background:none;border:0;box-shadow:none;color:#fff;font-weight:bold;font-size:11px;padding:0}
-.leaflet-popup-content a{color:#1a73e8}
+/* 핀 (카카오맵·네이버지도 느낌): 물방울 모양 + 같은 장소 개수 */
+.pin{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#2f6ff5;border:2.5px solid #fff;
+ box-shadow:0 2px 6px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.pin b{transform:rotate(45deg);color:#fff;font:700 12px/1 'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+.pin b:empty::before{content:'';display:block;width:9px;height:9px;border-radius:50%;background:#fff}
+.pin.wk{background:#f04438} .pin.approx{opacity:.6;border-style:dashed}
+.leaflet-marker-icon:hover .pin{transform:rotate(-45deg) scale(1.12)}
+/* 팝업: 둥근 카드 */
+.ppw .leaflet-popup-content-wrapper{border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.18);padding:0}
+.ppw .leaflet-popup-content{margin:0;width:auto!important}
+.ppw .leaflet-popup-tip{box-shadow:none}
+.pp{max-height:260px;overflow:auto;padding:6px 0;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+.pp-head{font-size:12px;color:#666;padding:6px 14px 4px;font-weight:bold}
+.pp-note{font-size:11px;color:#888;padding:4px 14px}
+.pp-item{display:block;padding:8px 14px;text-decoration:none;color:#1d1d1f!important;border-top:1px solid #f0f0f0}
+.pp-item:first-of-type{border-top:0} .pp-item:hover{background:#f6f8fc}
+.pp-t{font-weight:bold;font-size:13.5px;line-height:1.35;margin-bottom:2px} .pp-s{font-size:12px;color:#555;line-height:1.45}
+.pp-wk{color:#f04438;font-size:11px;font-weight:bold}
+.leaflet-control-zoom{border:0!important;box-shadow:0 2px 8px rgba(0,0,0,.2)!important;border-radius:10px!important;overflow:hidden}
+.leaflet-control-zoom a{width:34px!important;height:34px!important;line-height:34px!important;color:#333!important}
+.leaflet-control-attribution{font-size:9px!important;background:rgba(255,255,255,.7)!important}
 .links{margin-top:6px;display:flex;gap:14px;flex-wrap:wrap} .links .btn{margin-top:0}
 .card{scroll-margin-top:130px;transition:outline .2s} .card.flash{outline:3px solid var(--acc)}
 """
@@ -320,18 +341,25 @@ document.addEventListener('DOMContentLoaded',()=>{let t=location.hash.slice(1);i
 let MAP=null,LAYER=null,GRP={};
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function initMap(){if(MAP||!window.L||!document.getElementById('map'))return;
- MAP=L.map('map',{scrollWheelZoom:false,tap:true}).setView([36.3,127.8],7);
- L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(MAP);
+ MAP=L.map('map',{scrollWheelZoom:false,tap:true,zoomControl:false}).setView([36.3,127.8],7);
+ L.control.zoom({position:'bottomright'}).addTo(MAP);
+ /* 2026-11-18: 실사 느낌 OSM → 깔끔한 앱 지도 스타일 (CARTO Voyager, 다크 모드는 Dark Matter) */
+ const dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/'+(dark?'dark_all':'voyager')+'/{z}/{x}/{y}{r}.png',
+  {maxZoom:19,subdomains:'abcd',attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(MAP);
  LAYER=L.layerGroup().addTo(MAP);drawMarkers(true)}
+function pinIcon(n,wk,ex){const c=(wk?'wk':'')+(ex?'':' approx');
+ return L.divIcon({className:'',html:'<div class="pin '+c+'"><b>'+(n>1?n:'')+'</b></div>',iconSize:[30,40],iconAnchor:[15,38],popupAnchor:[0,-34]})}
 function drawMarkers(fit){if(!MAP)return;LAYER.clearLayers();GRP={};const pts=[];
  (window.FEST||[]).forEach(f=>{const c=document.getElementById('f'+f.i);if(!c||c.classList.contains('hide'))return;
   const k=f.lat.toFixed(3)+','+f.lng.toFixed(3);(GRP[k]=GRP[k]||[]).push(f)});
  Object.entries(GRP).forEach(([k,fs])=>{const [la,ln]=k.split(',').map(Number);const wk=fs.some(f=>f.wk),ex=fs.some(f=>f.exact);
-  const m=L.circleMarker([la,ln],{radius:Math.min(7+fs.length*1.5,18),color:wk?'#d93025':'#1a73e8',weight:2,fillOpacity:ex?.65:.25,dashArray:ex?null:'4 3'});
-  m.bindPopup('<div style="max-height:220px;overflow:auto;min-width:200px">'+(ex?'':'<div style="color:#777;font-size:11px">정확한 장소를 못 찾아 시·군·구 중심에 표시</div>')+fs.map(f=>
-   '<div style="margin:6px 0"><a href="#f'+f.i+'" onclick="return toCard('+f.i+')"><b>'+esc(f.name)+'</b></a>'+(f.wk?' <span style="color:#d93025;font-size:11px">이번 주말</span>':'')+
-   '<br><span style="font-size:12px">'+esc(f.period)+'<br>📍 '+esc(f.place)+'<br>🎟 '+esc(f.fee)+'</span></div>').join('')+'</div>');
-  if(fs.length>1)m.bindTooltip(String(fs.length),{permanent:true,direction:'center',className:'cnt'});
+  const m=L.marker([la,ln],{icon:pinIcon(fs.length,wk,ex),riseOnHover:true});
+  m.bindPopup('<div class="pp">'+(ex?'':'<div class="pp-note">정확한 장소를 못 찾아 시·군·구 중심에 표시</div>')+
+   (fs.length>1?'<div class="pp-head">이 장소 행사 '+fs.length+'개</div>':'')+fs.map(f=>
+   '<a class="pp-item" href="#f'+f.i+'" onclick="return toCard('+f.i+')"><div class="pp-t">'+esc(f.name)+(f.wk?' <span class="pp-wk">이번 주말</span>':'')+'</div>'+
+   '<div class="pp-s">'+esc(f.period)+'</div><div class="pp-s">📍 '+esc(f.place)+'</div><div class="pp-s">🎟 '+esc(f.fee)+'</div></a>').join('')+'</div>',
+   {maxWidth:280,minWidth:220,className:'ppw'});
   fs.forEach(f=>f._m=m);m.addTo(LAYER);pts.push([la,ln])});
  if(fit&&pts.length)MAP.fitBounds(pts,{padding:[24,24],maxZoom:13})}
 function toCard(i){const c=document.getElementById('f'+i);if(c){c.scrollIntoView({behavior:'smooth',block:'center'});c.classList.add('flash');setTimeout(()=>c.classList.remove('flash'),1600)}return false}
@@ -410,7 +438,7 @@ def build(today):
 응모 전에 공식 페이지의 유의사항·개인정보 제공 범위를 확인하세요 · 5만원 넘는 경품은 제세공과금(22%)을 당첨자가 내는 경우가 많아요<br>
 Claude 웹 검색으로 매일 새벽 모음 · 공식 페이지에서 확인 못 한 항목은 ⚠ 표시</div></div>
 <div class="pane" id="fest"><div id="map"></div>
-<div class="mapnote">🔴 이번 주말 · 🔵 그 밖 · 점선 = 정확한 장소를 못 찾아 시·군·구 중심 · 숫자 = 같은 장소 행사 수 · 위 칩으로 거르면 지도도 같이 바뀌어요 ({n_map}/{len(F)}곳 표시)</div>
+<div class="mapnote">🔴 이번 주말 · 🔵 그 밖 · 핀 숫자 = 같은 장소 행사 수 · 핀을 누르면 행사 목록 · 위 칩으로 거르면 지도도 같이 바뀌어요 ({n_map}/{len(F)}곳)</div>
 <script>window.FEST={fest_json};</script>{''.join(fparts)}<div class="empty{'' if not F else ' hide'}" id="fest-empty">해당하는 행사가 없습니다</div>
 <div class="foot">시·도 → 시·군·구별 · 시작일 순 · 이미 끝난 행사는 빠짐<br>날짜·입장료는 바뀔 수 있으니 가기 전에 안내 페이지에서 한 번 더 확인하세요 · 매주 월요일 새벽 Claude 웹 검색</div></div>
 </div></body></html>"""

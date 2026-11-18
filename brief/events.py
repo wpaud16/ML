@@ -56,9 +56,83 @@ FEST_PROMPT = """오늘은 {today} (한국시간)입니다. 웹 검색으로 {to
 {{"items": [{{"name": "행사명", "sido": "서울|경기|인천|부산|대구|광주|대전|울산|세종|강원|충북|충남|전북|전남|경북|경남|제주", "city": "시·구",
    "place": "장소 (예: 코엑스 B홀, 광화문광장)", "start": "", "end": "", "hours": "운영 시간 한 줄 또는 null",
    "fee": "입장료 (예: 무료, 사전등록 무료·현장 1만원, 성인 5,000원)", "kind": "축제|박람회·페어|마켓|빛축제·불꽃|기타",
-   "desc": "무엇을 하는지 한 줄 (35자 이내)", "url": "공식 페이지 또는 안내 페이지", "checked": true}}],
+   "desc": "무엇을 하는지 한 줄 (35자 이내)", "url": "공식 페이지 (주최 홈페이지·지자체 공지·전시장의 그 행사 상세 페이지 — 뉴스 기사·블로그·축제 모음 사이트·전시장 전체 일정 목록 금지, 없으면 null)", "checked": true}}],
  "sources": ["참고한 사이트 이름"]}}
 checked 는 날짜·장소를 공식/안내 페이지에서 직접 확인했으면 true."""
+
+
+# ---------------- 행사 링크: 기사·모음 사이트 말고 공식(주최·지자체·전시장 행사) 페이지로 (2026-11-18 사용자 요청) ----------------
+NEWS_RX = re.compile(r'articleView|/news/|/article/|news\.|\.news|newsis|yna\.co\.kr|yonhap|chosun|joongang|donga|hani\.co|khan\.co|'
+                     r'mk\.co\.kr|hankyung|fnnews|edaily|mt\.co\.kr|asiae|heraldcorp|sedaily|kmib|segye|munhwa|nocutnews|ohmynews|'
+                     r'newspim|etoday|ytn|kbs\.co|mbc\.co|sbs\.co|jtbc|tvchosun|channela|mbn|sisunnews|specialtimes|enewstoday|'
+                     r'sukbakmagazine|koreancenter|wikitree|insight\.co|dispatch', re.I)
+AGG_RX = re.compile(r'tourpia|chukjemoa|petfairschedule|onpublic|xn--|festivallife|eventmoa|blog\.|tistory|brunch|post\.naver|'
+                    r'cafe\.|instagram\.com|facebook\.com|youtube\.com|namu\.wiki|wikipedia|search\.naver|google\.com/search|'
+                    r'interpark|ticketlink|yes24|melon|nol\.', re.I)
+# 전시장·포털의 '전체 일정' 목록 페이지 (행사 하나의 페이지가 아님)
+LIST_RX = re.compile(r'coex\.co\.kr/event/full-schedules|kintex\.com/web/ko/event/list|setec\.or\.kr/.*list|atcenter.*list|'
+                     r'/festival/\d{4}-\d{2}|/IC010501$|bsevents/?$', re.I)
+
+
+def link_kind(url):
+    """'official' = 주최·지자체·전시장의 그 행사 페이지 / 'list' = 전시장 전체 일정 목록 / 'bad' = 기사·블로그·모음 사이트·없음."""
+    u = (url or '').strip()
+    if not re.match(r'https?://', u):
+        return 'bad'
+    host = re.sub(r'^https?://([^/]+).*$', r'\1', u).lower()
+    if host.endswith('.go.kr') or host.endswith('.korea.kr'):   # 정부·지자체 (news.seoul.go.kr 같은 지자체 소식도 공식)
+        return 'list' if LIST_RX.search(u) else 'official'
+    if NEWS_RX.search(u) or AGG_RX.search(u):
+        return 'bad'
+    if LIST_RX.search(u):
+        return 'list'
+    return 'official'
+
+
+FIX_PROMPT = """아래 한국 행사들의 '공식 안내 페이지' 주소를 웹 검색으로 찾아 주세요. 오늘은 {today}.
+공식 = 주최측 홈페이지의 그 행사 페이지, 지자체(시·군·구청, ○○문화재단 등) 공지·축제 페이지, 전시장(코엑스·킨텍스·세텍·aT센터·벡스코 등)의 그 행사 상세 페이지, 대한민국 구석구석(korean.visitkorea.or.kr)의 그 행사 상세 페이지.
+금지 = 뉴스 기사, 블로그·카페·SNS, 축제 모음 사이트(tourpia·chukjemoa 등), 전시장 '전체 일정' 목록 페이지, 예매 사이트.
+찾은 주소는 반드시 WebFetch 로 열어 행사 이름·날짜가 맞는지 확인하고, 확인 못 하면 null.
+반드시 아래 JSON 하나만 출력 (설명·코드블록 없이):
+{{"links": [{{"name": "행사명(아래 목록과 똑같이)", "url": "공식 주소 또는 null", "source": "주최|지자체|전시장|구석구석"}}]}}
+
+행사 목록 (이름 | 장소 | 날짜 | 지금 링크):
+{rows}"""
+
+
+def fix_fest_links(data, today):
+    """기사·모음·목록 링크인 행사만 모아 Claude CLI 로 공식 페이지를 다시 찾는다. 못 찾으면 url 비움(웹·메일에 '공식 페이지 못 찾음' + 검색 링크)."""
+    items = [it for it in data.get('items') or [] if isinstance(it, dict) and it.get('name')]
+    need = [it for it in items if link_kind(it.get('url')) != 'official']
+    print(f'행사 링크: 공식 {len(items) - len(need)} / 다시 찾기 {len(need)}')
+    if not need:
+        return data
+    sys.path.insert(0, HERE)
+    import claude_summary
+    found = {}
+    for k in range(0, len(need), 25):   # 한 번에 25개씩
+        chunk = need[k:k + 25]
+        rows = '\n'.join(f"- {it['name']} | {it.get('place') or ''} | {it.get('start')}~{it.get('end')} | {it.get('url') or ''}" for it in chunk)
+        out = claude_summary.cli_json(FIX_PROMPT.format(today=today, rows=rows), timeout=int(os.environ.get('EVENTS_TIMEOUT', '1500')), tag='행사 링크 cli')
+        for l in (out or {}).get('links') or []:
+            if isinstance(l, dict) and l.get('name') and link_kind(l.get('url')) == 'official':
+                found[re.sub(r'\s+', '', l['name'])] = l
+    n = 0
+    for it in need:
+        l = found.get(re.sub(r'\s+', '', it['name']))
+        if l and alive(l['url']):
+            it['url_was'] = it.get('url'); it['url'] = l['url']; it['url_src'] = l.get('source'); n += 1
+        else:
+            it['url_was'] = it.get('url'); it['url'] = None   # 기사·모음 링크는 쓰지 않음
+    print(f'행사 링크: 공식으로 바꿈 {n} / 못 찾음 {len(need) - n}')
+    data['links_fixed'] = today.isoformat()
+    return data
+
+
+def official_search(name):
+    """공식 페이지를 못 찾은 행사: 네이버 검색 링크 (행사명 + 공식)."""
+    import urllib.parse
+    return 'https://search.naver.com/search.naver?query=' + urllib.parse.quote(f'{name} 공식')
 
 
 def now_day():
@@ -90,6 +164,11 @@ def fetch(kind, today, search=True):
     out = claude_summary.cli_json(prompt, timeout=int(os.environ.get('EVENTS_TIMEOUT', '1500')), tag=f'{kind} cli')
     if out is None or not isinstance(out.get('items'), list):
         return None
+    if kind == 'fest':
+        try:
+            out = fix_fest_links(out, today)
+        except Exception as e:
+            print('행사 링크 고치기 실패(원래 링크 유지):', type(e).__name__, e)
     os.makedirs(CACHE, exist_ok=True)
     json.dump(out, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     return out
@@ -279,7 +358,8 @@ def fest_card(it, today):
     sat, sun = weekend_of(today)
     wk = ' 🔥이번 주말' if it['_s'] <= sun and it['_e'] >= sat else ''
     where = ' · '.join(x for x in [it.get('city') or '', it.get('place') or ''] if x)
-    a = f' · <a style="color:#1a73e8" href="{E(it["url"])}">안내 →</a>' if re.match(r'https?://', it.get('url') or '') else ''
+    a = (f' · <a style="color:#1a73e8" href="{E(it["url"])}">공식 페이지 →</a>' if link_kind(it.get('url')) == 'official'
+         else f' · <span style="{GRAY}">공식 페이지 못 찾음</span> <a style="color:#1a73e8" href="{E(official_search(it["name"]))}">검색 →</a>')
     h = [f'<div><b style="font-size:15px">{E(it["name"])}</b><span style="{GRAY}"> · {E(it.get("kind") or "")}</span>'
          f'<span style="color:#d93025;font-size:12px">{wk}</span></div>',
          f'<div>📅 {E(p)} <span style="{GRAY}">({E(tag)})</span>' + (f' · {E(it["hours"])}' if it.get('hours') else '') + '</div>',
@@ -287,7 +367,8 @@ def fest_card(it, today):
          f'<div>🎟 {E(it.get("fee") or "입장료 확인 필요")}{a}</div>',
          f'<div style="{GRAY}">{E(it["desc"])}' + ('' if it.get('checked') else ' · ⚠ 공식 페이지 미확인') + '</div>' if it.get('desc') else '']
     t = [f'■ {it["name"]}{wk}', f'📅 {p} ({tag})' + (f' · {it["hours"]}' if it.get('hours') else ''),
-         f'📍 {where}', f'🎟 {it.get("fee") or "입장료 확인 필요"}', it.get('desc') or '', it.get('url') or '']
+         f'📍 {where}', f'🎟 {it.get("fee") or "입장료 확인 필요"}', it.get('desc') or '',
+         it['url'] if link_kind(it.get('url')) == 'official' else f'공식 페이지 못 찾음 · 검색: {official_search(it["name"])}']
     return f'<div style="{CARD}">' + ''.join(h) + '</div>', '\n'.join(x for x in t if x)
 
 
