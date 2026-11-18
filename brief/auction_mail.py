@@ -234,7 +234,8 @@ def build(today, now_hour=None):
              f'<p style="text-align:center;margin:0 0 12px;font-size:12px"><a href="{PAGE}" target="_blank" rel="noopener" style="color:#1a73e8">{PAGE}</a></p>')
     T = ['🏠 경매 알림'] + notes + [f'📄 경매 전체 카드: {PAGE}']
     cnt = dict(new=0, total=0)
-    for cat, title in (('아파트', '🏢 아파트'), ('오피스텔', '🏬 오피스텔 (서울 · 역 도보 10분)')):
+    # 2026-11-18 사용자 요청: 메일 간단보기는 아파트만 (오피스텔은 웹페이지에서)
+    for cat, title in (('아파트', '🏢 아파트'),):
         xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v['bidding_date'], v.get('danji_name') or ''))
         nn = sum(1 for v in xs if is_new(v, pk))
         cnt['new'] += nn; cnt['total'] += len(xs)
@@ -246,6 +247,10 @@ def build(today, now_hour=None):
             H.append(f'<div style="{GRAY}">진행 중인 물건 없음</div>')
         for v in xs:
             h, t = summary_row(v, today, is_new(v, pk), court.get(v['key'])); H.append(h); T.append(t)
+    n_ot = sum(1 for v in items if v['category'] == '오피스텔')
+    if n_ot:
+        H.append(f'<div style="margin-top:16px">🏬 오피스텔 {n_ot}건은 <a style="color:#1a73e8" href="{PAGE}">웹페이지</a>에서 보세요</div>')
+        T.append(f'\n🏬 오피스텔 {n_ot}건: {PAGE}')
     # 안내문(모델·시세·지역 설명)은 웹페이지 맨 아래로 옮김 (2026-11-05 사용자 요청)
     H.append(f'<div style="{GRAY};margin-top:18px">모델·시세 설명과 검색 지역은 <a style="color:#1a73e8" href="{PAGE}#foot">웹페이지 맨 아래</a>에 있어요 · 입찰 권유가 아닙니다</div>')
     T.append(f'\n모델·시세 설명: {PAGE}')
