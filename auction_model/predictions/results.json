@@ -756,6 +756,8 @@
   ],
   "sise_manwon": 25000,
   "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null,
   "actual_manwon": 19100,
   "bidders": null,
   "second_manwon": null,
@@ -767,9 +769,7 @@
    "pct_of_sise": 84.4,
    "actual_pct_of_sise": 76.4,
    "sise_basis": "리치고"
-  },
-  "kb_manwon": null,
-  "kb_date": null
+  }
  },
  "2024타경5531[1]|2026-11-18": {
   "source": "법원",
@@ -2784,6 +2784,8 @@
   ],
   "sise_manwon": 22000,
   "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null,
   "actual_manwon": 19815,
   "bidders": null,
   "second_manwon": null,
@@ -2795,9 +2797,7 @@
    "pct_of_sise": 85.0,
    "actual_pct_of_sise": 90.1,
    "sise_basis": "리치고"
-  },
-  "kb_manwon": null,
-  "kb_date": null
+  }
  },
  "2025타경104069[1]|2026-11-05": {
   "key": "2025타경104069[1]",
@@ -2952,6 +2952,8 @@
   ],
   "sise_manwon": 42330,
   "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null,
   "actual_manwon": 35538,
   "bidders": null,
   "second_manwon": null,
@@ -2963,9 +2965,7 @@
    "pct_of_sise": 83.4,
    "actual_pct_of_sise": 84.0,
    "sise_basis": "리치고"
-  },
-  "kb_manwon": null,
-  "kb_date": null
+  }
  },
  "2025타경104585[1]|2026-11-17": {
   "source": "리치고",
@@ -3254,6 +3254,8 @@
   ],
   "sise_manwon": 21700,
   "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null,
   "actual_manwon": 15301,
   "bidders": null,
   "second_manwon": null,
@@ -3265,9 +3267,7 @@
    "pct_of_sise": 70.5,
    "actual_pct_of_sise": 70.5,
    "sise_basis": "리치고"
-  },
-  "kb_manwon": null,
-  "kb_date": null
+  }
  },
  "2025타경10615[1]|2026-11-05": {
   "key": "2025타경10615[1]",
@@ -3865,6 +3865,8 @@
   ],
   "sise_manwon": 22500,
   "trade_manwon": null,
+  "kb_manwon": null,
+  "kb_date": null,
   "actual_manwon": 14821,
   "bidders": null,
   "second_manwon": null,
@@ -3876,9 +3878,7 @@
    "pct_of_sise": 63.6,
    "actual_pct_of_sise": 65.9,
    "sise_basis": "리치고"
-  },
-  "kb_manwon": null,
-  "kb_date": null
+  }
  },
  "2025타경13643[1]|2026-11-13": {
   "source": "리치고",
@@ -4994,6 +4994,8 @@
   ],
   "sise_manwon": 31940,
   "trade_manwon": 33490,
+  "kb_manwon": 33000,
+  "kb_date": "2026-11",
   "actual_manwon": 19890,
   "bidders": null,
   "second_manwon": null,
@@ -5005,9 +5007,7 @@
    "pct_of_sise": 72.3,
    "actual_pct_of_sise": 62.3,
    "sise_basis": "M"
-  },
-  "kb_manwon": 33000,
-  "kb_date": "2026-11"
+  }
  },
  "2025타경3491[1]|2026-11-12": {
   "source": "리치고",
@@ -5066,6 +5066,8 @@
   ],
   "sise_manwon": 30550,
   "trade_manwon": 30230,
+  "kb_manwon": 31750,
+  "kb_date": "2026-11",
   "actual_manwon": 29263,
   "bidders": null,
   "second_manwon": null,
@@ -5077,9 +5079,7 @@
    "pct_of_sise": 89.7,
    "actual_pct_of_sise": 95.8,
    "sise_basis": "M"
-  },
-  "kb_manwon": 31750,
-  "kb_date": "2026-11"
+  }
  },
  "2025타경3675[1]|2026-11-12": {
   "source": "리치고",
@@ -8875,6 +8875,8 @@
   ],
   "sise_manwon": 82060,
   "trade_manwon": 81530,
+  "kb_manwon": 80000,
+  "kb_date": "2026-11",
   "actual_manwon": 74888,
   "bidders": null,
   "second_manwon": null,
@@ -8886,9 +8888,7 @@
    "pct_of_sise": 90.7,
    "actual_pct_of_sise": 91.3,
    "sise_basis": "M"
-  },
-  "kb_manwon": 80000,
-  "kb_date": "2026-11"
+  }
  },
  "2025타경72473[1]|2026-11-05": {
   "key": "2025타경72473[1]",
