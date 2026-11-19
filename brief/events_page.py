@@ -105,7 +105,7 @@ def proxy_ok(it):
     return not PROXY_NEEDS.search(' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition')))
 
 
-GROUPS = {'done': '✅ 응모 완료', 'proxy': '🤖 대신 응모 가능', 'help': '🤝 캡처 주면 대신'}   # + ev.ENTRY (바로·웹·로그인·앱·SNS)
+GROUPS = {'done': '✅ 응모 완료', 'proxy': '🤖 대신 응모 가능', 'help': '🤝 같이 응모', 'self': '👤 직접 응모'}   # + ev.ENTRY (바로·웹·로그인·앱·SNS)
 # 2026-11-19 사용자 요청: 팔로우·캡처·로그인 같은 본인 몫만 해서 넘겨주면 나머지(정답 찾기·폼 작성·업로드·제출)는 Claude 가
 HELP_HARD = re.compile(r'현장|방문|사전\s*등록|행사\s*등록|참가\s*신청|앱\s*설치|어플|오프라인|회원\s*가입|신규\s*가입', re.I)
 MINE = [(r'팔로우', '팔로우'), (r'구독', '구독'), (r'좋아요', '좋아요'), (r'댓글', '댓글'), (r'리그램|공유|게시(?!물)|해시태그', 'SNS 게시·공유'),
@@ -132,11 +132,26 @@ def mine_of(it):
     return out or ['링크 열어서 화면 캡처']
 
 
+NOTES = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'events_notes.json')   # 2026-11-20: 원문 확인한 이벤트별 할 일 (직접/Claude/정답)
+
+
+def note_of(it):
+    try:
+        return json.load(open(NOTES, encoding='utf-8')).get(ev.key_of(it)) or {}
+    except Exception:
+        return {}
+
+
 def group_of(it):
-    """응모 방식 칸 (하나만): 응모 완료 > 대신 응모 가능 > 캡처 주면 대신 > 원래 응모 방식."""
+    """응모 방식 칸 (하나만): 응모 완료 > (원문 확인 메모) > 대신 응모 가능 > 캡처 주면 대신 > 원래 응모 방식."""
     dn = done_map().get(ev.key_of(it))
     if dn and not dn.startswith(('x:', 'h:')):
         return 'done'
+    g = note_of(it).get('group')
+    if g in ('proxy', 'help', 'self'):
+        return g
+    if g == 'x':
+        return ev.entry_type(it)
     if not dn and proxy_ok(it):
         return 'proxy'
     if dn and dn.startswith('h:'):   # 들어가 보니 본인 몫(로그인 등)이 있던 것
@@ -179,12 +194,17 @@ def prize_card(it, today):
     elif px:
         badges = '<span class="proxy">🤖 대신 응모 가능</span>'
     elif et == 'help':
-        badges = '<span class="proxy">🤝 캡처 주면 대신</span>'
+        badges = '<span class="proxy">🤝 같이 응모</span>'
+    elif et == 'self':
+        badges = '<span class="ent">👤 직접 응모</span>'
     else:
         badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>'
     badges += ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'])
+    nt = note_of(it)
     if dn and dn.startswith('x:'):   # 들어가 보니 대신 못 하는 이벤트 (사유)
         badges += f'<span class="cat">🙅 대신 응모 불가 · {E(dn[2:])}</span>'
+    elif nt.get('x'):
+        badges += f'<span class="cat">🙅 {E(nt["x"])}</span>'
     if it['_new']:
         badges = '<span class="new">NEW</span>' + badges
     w = f' · 총 {it["winners"]:,}명' if isinstance(it.get('winners'), int) and it['winners'] > 0 else ''
@@ -205,11 +225,19 @@ def prize_card(it, today):
         go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">🤖 대신 응모 요청 복사</button></div>'
               f'<div class="g s">요청 번호 {code_of(it)}</div>')
     elif et == 'help':
-        mine = ' · '.join(mine_of(it))
-        req = f'이벤트 [{code_of(it)}] 캡처 보낼게 나머지 해줘 — {it["title"]} {it["url"]}'
-        rows.append(f'<div>👤 직접: <b>{E(mine)}</b> → 나머지는 Claude</div>')
+        mine = nt.get('mine') or ' · '.join(mine_of(it))
+        req = f'이벤트 [{code_of(it)}] 내 몫 했어 나머지 해줘 — {it["title"]} {it["url"]}'
         go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">🤝 요청 복사</button></div>'
-              f'<div class="g s">요청 번호 {code_of(it)} · 캡처를 같이 붙여넣어 주세요</div>')
+              f'<div class="g s">요청 번호 {code_of(it)}' + (' · 캡처가 있으면 같이 붙여넣어 주세요' if '캡처' in mine else '') + '</div>')
+    if et in ('help', 'self', 'proxy') and nt:   # 원문 확인한 할 일 (2026-11-20)
+        if nt.get('mine'):
+            rows.insert(-1, f'<div>👤 직접: <b>{E(nt["mine"])}</b></div>')
+        if nt.get('claude'):
+            rows.insert(-1, f'<div>🤖 Claude: {E(nt["claude"])}</div>')
+        if nt.get('answer'):
+            rows.insert(-1, f'<div>💡 정답: <b>{E(nt["answer"])}</b></div>')
+    elif et == 'help':
+        rows.insert(-1, f'<div>👤 직접: <b>{E(" · ".join(mine_of(it)))}</b> → 나머지는 Claude <span class="g s">(원문 미확인)</span></div>')
     rows.append(go)
     return (f'<div class="card" data-entry="{et}" data-proxy="{1 if px else 0}" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
             + ''.join(rows) + '</div>')
@@ -532,7 +560,7 @@ def build(today):
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'new\',this)">🆕 오늘 새로<i>{new}</i></button>')
     if soon:
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'soon\',this)">⏰ 마감 임박<i>{soon}</i></button>')
-    labels = {'proxy': GROUPS['proxy'], 'help': GROUPS['help'], **ev.ENTRY, 'done': GROUPS['done']}
+    labels = {'proxy': GROUPS['proxy'], 'help': GROUPS['help'], 'self': GROUPS['self'], **ev.ENTRY, 'done': GROUPS['done']}
     ecnt = {k: sum(group_of(x) == k for x in P) for k in labels}
     npx = ecnt['proxy']
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(v)}<i>{ecnt[k]}</i></button>'

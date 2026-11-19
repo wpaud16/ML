@@ -1,0 +1,160 @@
+{
+ "https://blog.naver.com/eunpyeonggu/224478794877": {
+  "group": "help",
+  "mine": "은평구 인스타 팔로우 + 이 글을 내 블로그·카페에 스크랩 → 팔로우 캡처·스크랩 주소 보내기",
+  "claude": "네이버폼 제출",
+  "code": "8VQL"
+ },
+ "https://forms.gle/cik6fFZic5rA3EdZ8": {
+  "group": "help",
+  "mine": "특구재단 유튜브 구독 + 인터뷰 영상 2편 좋아요·응원 댓글 → 캡처 보내기 (구글 로그인 필요)",
+  "claude": "구글폼 제출",
+  "code": "VASS"
+ },
+ "https://www.instagram.com/p/Df1PKQCJVFd": {
+  "group": "proxy",
+  "mine": "",
+  "claude": "일·생활 균형 홈페이지 만족도 조사 (발표: 1달 내 문자)",
+  "code": "PPET"
+ },
+ "https://www.instagram.com/p/Df1RNJ0FNTs": {
+  "group": "help",
+  "mine": "거제시의회 인스타·유튜브·페북 중 1개 팔로우 → 캡처 보내기",
+  "claude": "네이버폼에 캡처+정답 제출",
+  "answer": "거제시의회",
+  "code": "7NV7"
+ },
+ "https://www.instagram.com/p/Df1MXpjA1SC": {
+  "group": "self",
+  "mine": "@moel_seoulew 팔로우 + 게시물 좋아요 + 댓글로 정답 (폼 없음)",
+  "claude": "",
+  "answer": "고드래곤",
+  "code": "25SN"
+ },
+ "https://data.seoul.go.kr/bsp/wgs/newsletter.do": {
+  "group": "help",
+  "mine": "구독받을 이메일 주소 알려주기",
+  "claude": "구독 신청",
+  "code": "XPAR"
+ },
+ "https://signal.askcuri.com/v/030db12b-8106-4cfe-bb30-5f72bafe6a82": {
+  "group": "self",
+  "mine": "본인 TV 경험 인터뷰(약 20분) — 대신 답할 수 없음",
+  "claude": "",
+  "code": "QM9P"
+ },
+ "https://www.instagram.com/p/DfyUKp2zR11": {
+  "group": "x",
+  "x": "원본 게시물 삭제됨",
+  "code": "MXYD"
+ },
+ "https://www.instagram.com/p/Dfx6WEsGYME": {
+  "group": "help",
+  "mine": "@ilovewood_korea 프로필의 설문 링크 주소만 보내기 (또는 게시물 QR 캡처)",
+  "claude": "설문 응답",
+  "code": "6B7N"
+ },
+ "https://www.instagram.com/p/Df1kNLwD01H": {
+  "group": "help",
+  "mine": "물산업클러스터 SNS 2곳 팔로우 + 게시물에 '참여완료' 댓글 (캡처 불필요)",
+  "claude": "구글폼 만족도 조사",
+  "code": "Z9TL"
+ },
+ "https://modu.go.kr/fron/jdgmn/jdgmnView.do": {
+  "group": "help",
+  "mine": "모두의광장 로그인",
+  "claude": "투표",
+  "code": "73Z9"
+ },
+ "https://epeople.go.kr/cmmn/idea/redirect.do": {
+  "group": "help",
+  "mine": "국민생각함 로그인 (네이버 간편로그인이면 Claude가 시도)",
+  "claude": "설문 응답",
+  "code": "XD98"
+ },
+ "https://www.instagram.com/p/Dfy3QBBiWZS": {
+  "group": "help",
+  "mine": "응모 방법이 게시물 이미지에만 있음 → 이미지 캡처 보내기",
+  "claude": "응모",
+  "code": "NZDB"
+ },
+ "https://www.instagram.com/p/Df4QSy4mcou": {
+  "group": "help",
+  "mine": "@ulju_love 팔로우 + 좋아요·공유 + '참여완료' 댓글 → 팔로우 캡처 보내기",
+  "claude": "프로필 링크 설문 + 인증샷 업로드",
+  "code": "ZSZN"
+ },
+ "https://www.youtube.com/watch": {
+  "group": "self",
+  "mine": "국가데이터처 유튜브 구독·좋아요 + 댓글로 정답·소감 (폼 없음)",
+  "claude": "정답 찾기 (요청하면)",
+  "code": "ER9C"
+ },
+ "https://docs.google.com/forms/d/e/1FAIpQLSf4uoa4dVSDX57TNcGTh4P3wsywdR91Z_zhSrboc7YFV9PHwg/viewform": {
+  "group": "help",
+  "mine": "페트병 분리배출 사진 + 해시태그 4개로 내 SNS 게시 → 게시물 주소 보내기 (구글 로그인 필요)",
+  "claude": "구글폼 제출",
+  "code": "AA5G"
+ },
+ "https://aitestbed.kr/ai-event": {
+  "group": "self",
+  "mine": "AI 코딩 실습 직접 체험 + SNS 공유",
+  "claude": "",
+  "code": "HE9K"
+ },
+ "https://harpersbazaar.co.kr/event/detail/242": {
+  "group": "help",
+  "mine": "응모용 이메일 주소 알려주기",
+  "claude": "덕력고사 10문제 풀기 + 응모 사유 작성",
+  "code": "8CZQ"
+ },
+ "https://www.instagram.com/p/DfyJMbHADH_": {
+  "group": "help",
+  "mine": "게시물에 정답+응원 댓글 → 댓글 화면 캡처 보내기",
+  "claude": "프로필 링크 네이버폼 제출",
+  "answer": "국가균형발전",
+  "code": "ABYQ"
+ },
+ "https://blog.naver.com/PostView.naver": {
+  "group": "help",
+  "mine": "블로그에 정답 공개 댓글",
+  "claude": "퀴즈 정답 찾기 + 네이버폼 설문",
+  "code": "YGA9"
+ },
+ "https://forms.gle/gkaAcooeKdtPqNga7": {
+  "group": "help",
+  "mine": "특구재단 인스타 팔로우·좋아요·댓글 → 캡처 보내기 (구글 로그인 필요)",
+  "claude": "구글폼 만족도 조사",
+  "code": "ZTHU"
+ },
+ "https://www.kca.go.kr/home/sub.do": {
+  "group": "help",
+  "mine": "캠페인 포스터 + #CONSCIOUS_CHOKING #어린이삼킴사고예방 으로 내 SNS 전체공개 게시(12/25까지 유지) → 캡처·주소 보내기",
+  "claude": "네이버폼 설문·제출",
+  "code": "TUJ8"
+ },
+ "https://seoul.co.kr/event/2026SeoulAdAward/index.php": {
+  "group": "proxy",
+  "mine": "",
+  "claude": "후보작 한줄평 (11/23 09시부터 응모 가능)",
+  "code": "YMTT"
+ },
+ "https://www.youtube.com/post/UgkxPQM6qHPIfEFY-3bOR5Qzsu5JS5-vAqhD": {
+  "group": "help",
+  "mine": "한국가스안전공사 유튜브 구독만 (캡처 불필요)",
+  "claude": "네이버폼 만족도 조사",
+  "code": "3M5K"
+ },
+ "https://www.samsung.com/sec/event/lions-victory-2026": {
+  "group": "self",
+  "mine": "삼성닷컴 회원·광고 수신 동의 후 매일 직접 응모",
+  "claude": "",
+  "code": "UKC2"
+ },
+ "https://forms.gle/huw2GuxqUbHNsWNt5": {
+  "group": "help",
+  "mine": "유튜브 구독 + 후보 뮤비 좋아요·감상평 댓글 → 캡처 보내기 (구글 로그인 필요)",
+  "claude": "구글폼 제출",
+  "code": "2KKR"
+ }
+}
