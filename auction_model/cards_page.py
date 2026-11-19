@@ -76,10 +76,7 @@ def kb_line(v, low):
     """KB 시세 한 줄 (2026-11-17 사용자 요청, kb_sise.py — KB부동산 매매 일반가)."""
     k = v.get('kb') or {}
     if not k.get('eok'): return []
-    rng = f"하한 {k['low'] / 1e4:.2f} ~ 상한 {k['high'] / 1e4:.2f}억 · " if k.get('low') and k.get('high') else ''
-    bs = base_sise(v)
-    vs = f' · 모델 시세의 {k["eok"] / bs * 100:.0f}%' if bs else ''
-    return [f'🏦 KB 시세 <b>{k["eok"]:.2f}억</b> <span class="g">({rng}최저가는 {low / k["eok"] * 100:.0f}%{vs} · {E(k.get("date") or "")} 기준)</span>']
+    return [f'🏦 KB 시세 <b>{k["eok"]:.2f}억</b>']   # 2026-11-19 사용자 요청: 뒤 괄호(하한~상한·%·기준일) 제거
 
 
 def sise_lines(v, appr, low):
