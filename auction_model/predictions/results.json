@@ -5054,7 +5054,19 @@
   "sise_manwon": 65000,
   "trade_manwon": null,
   "kb_manwon": null,
-  "kb_date": null
+  "kb_date": null,
+  "actual_manwon": 50350,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": -7.6,
+  "band": "40% 미만",
+  "closest": {
+   "label": "2명 40%",
+   "manwon": 53200,
+   "pct_of_sise": 81.8,
+   "actual_pct_of_sise": 77.5,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경2268[1]|2026-11-03": {
   "key": "2025타경2268[1]",
@@ -5211,7 +5223,19 @@
   "sise_manwon": 40500,
   "trade_manwon": null,
   "kb_manwon": 33400,
-  "kb_date": "2026-11-13"
+  "kb_date": "2026-11-13",
+  "actual_manwon": 31010,
+  "bidders": null,
+  "second_manwon": null,
+  "diff_pct": -5.6,
+  "band": "40% 미만",
+  "closest": {
+   "label": "1명 40%",
+   "manwon": 32100,
+   "pct_of_sise": 79.3,
+   "actual_pct_of_sise": 76.6,
+   "sise_basis": "리치고"
+  }
  },
  "2025타경3217[1]|2026-11-18": {
   "source": "법원",
