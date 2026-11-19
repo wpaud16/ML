@@ -615,19 +615,20 @@ table.sc .tg{display:inline-block;font-size:10.5px;color:#ddd;background:#2b2b2b
 table.sc .big{font-size:14.5px}
 .foot{color:var(--mut);font-size:12px;margin-top:24px;line-height:1.7}
 .new{color:#d93025;font-size:12px;font-weight:bold}
-.fbar{display:flex;gap:8px;align-items:center;padding-top:7px}
+.fbar{display:flex;gap:8px;align-items:center;padding:10px 0 4px}
+.ctag{font-size:11px;color:var(--mut);margin-bottom:2px}
 .fbar button,.fact button{border:1px solid var(--bd);background:var(--bg);color:var(--fg);border-radius:16px;padding:4px 11px;font-size:13px;cursor:pointer}
 .fbar button.on{border-color:#1a73e8;background:#1a73e8;color:#fff}
-#fsum{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#fpanel{border:1px solid var(--bd);border-radius:10px;padding:8px 10px;margin-top:7px;max-height:55vh;overflow-y:auto}
+#fsum{flex:1;min-width:0;font-weight:bold}
+#fpanel{border:1px solid var(--bd);border-radius:10px;padding:8px 10px;margin:4px 0 10px}
 .fl{font-size:12px;font-weight:bold;margin:6px 0 4px}
 .fchips{display:flex;flex-wrap:wrap;gap:6px}
 .fchips button{border:1px dashed var(--bd);background:var(--bg);color:var(--fg);border-radius:14px;padding:3px 10px;font-size:13px;cursor:pointer}
 .fchips button.on{border-style:solid;border-color:#1a73e8;color:#1a73e8;font-weight:bold}
 .fchips button i{font-style:normal;opacity:.6;font-size:11px;margin-left:3px}
 .fact{display:flex;gap:8px;margin-top:10px} #fok{border-color:#1a73e8;background:#1a73e8;color:#fff}
-.card.fh,.dh.fh,.dchips a.fh,.tab.fh{display:none}
 .fempty{color:var(--mut);padding:10px 0}
+#mychips:empty{display:none}
 """
 
 JS = """
@@ -663,44 +664,36 @@ function go(h,scroll){if(!h)return false;var el=D.getElementById(h);if(!el)retur
 $$('.tab').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var pid=firstPane(t.getAttribute('data-main'));if(pid){showPane(pid);history.replaceState(null,'','#'+pid);}window.scrollTo(0,0);});});
 $$('.sub-t').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var pid=t.getAttribute('data-pane');showPane(pid);history.replaceState(null,'','#'+pid);window.scrollTo(0,0);});});
 window.addEventListener('hashchange',function(){go(location.hash.slice(1),true);});
-if(!go(location.hash.slice(1),true)){var m=load('main')||'apt';var pid=firstPane(m)||firstPane('apt');if(pid)showPane(pid,true);}
-/* 내 조건 (2026-11-19): 종류(탭 숨김) + 구(카드 숨김), 저장 → 전체 보기 ↔ 내 조건 한 번에 전환 */
-var CATS=[['apt','아파트'],['ot','오피스텔'],['shop','상가'],['bldg','건물']];
-var F={on:false,cats:[],gus:[]};try{var s=JSON.parse(load('filter')||'null');if(s)F=s;}catch(e){}
-function guOf(c){return c.getAttribute('data-gu')||'';}
-var gcnt={};$$('.pane .card[data-gu]').forEach(function(c){var g=guOf(c);if(g)gcnt[g]=(gcnt[g]||0)+1;});
-var GUS=Object.keys(gcnt).sort();var tmp=null;
+/* 내 조건 탭 (2026-11-19): 고른 종류·구의 다가오는 물건을 각 탭에서 복사해 날짜순으로 */
+var CATS=[['apt','🏢 아파트'],['ot','🏬 오피스텔'],['shop','🏪 상가'],['bldg','🏙 건물']];
+var F={cats:[],gus:[]};try{var s=JSON.parse(load('myf')||'null');if(s&&s.cats)F=s;}catch(e){}
+var SRC=[];CATS.forEach(function(c){$$('#'+c[0]+'-soon .card,#'+c[0]+'-later .card').forEach(function(e){SRC.push({c:c[0],lab:c[1],e:e,d:e.getAttribute('data-d')||'',g:e.getAttribute('data-gu')||''});});});
+var gcnt={};SRC.forEach(function(x){if(x.g)gcnt[x.g]=(gcnt[x.g]||0)+1;});var GUS=Object.keys(gcnt).sort();var tmp=null;
 function chip(box,val,lab,n,sel){var b=D.createElement('button');b.type='button';b.innerHTML=lab+(n!=null?'<i>'+n+'</i>':'');
  b.classList.toggle('on',sel.indexOf(val)>=0);b.onclick=function(){var i=sel.indexOf(val);if(i>=0)sel.splice(i,1);else sel.push(val);b.classList.toggle('on',i<0);};box.appendChild(b);}
 function openP(){tmp={cats:F.cats.slice(),gus:F.gus.slice()};var a=D.getElementById('fcat'),b=D.getElementById('fgu');a.innerHTML='';b.innerHTML='';
- CATS.forEach(function(c){if(D.querySelector('.tab[data-main="'+c[0]+'"]'))chip(a,c[0],c[1],null,tmp.cats);});
+ CATS.forEach(function(c){chip(a,c[0],c[1],SRC.filter(function(x){return x.c==c[0];}).length,tmp.cats);});
  GUS.forEach(function(g){chip(b,g,g,gcnt[g],tmp.gus);});D.getElementById('fpanel').hidden=false;setH();}
-function apply(){var act=F.on&&(F.cats.length||F.gus.length);
- CATS.forEach(function(c){var t=D.querySelector('.tab[data-main="'+c[0]+'"]');if(t)t.classList.toggle('fh',!!(act&&F.cats.length&&F.cats.indexOf(c[0])<0));});
- $$('.pane .card[data-gu]').forEach(function(c){c.classList.toggle('fh',!!(act&&F.gus.length&&F.gus.indexOf(guOf(c))<0));});
- var tabN={};$$('.pane[id]').forEach(function(p){var n=0,h=null,hn=0;var m=p.getAttribute('data-main');
-  function endH(){if(h){h.classList.toggle('fh',hn==0);var a=p.querySelector('.dchips a[href="#'+h.id+'"]');if(a){a.classList.toggle('fh',hn==0);var bb=a.querySelector('b');if(bb)bb.textContent=hn;}
-   h.textContent=h.textContent.replace(/ · \\d+건$/,'')+' · '+hn+'건';}}
-  Array.prototype.forEach.call(p.querySelectorAll('.dh,.card'),function(e){if(e.classList.contains('dh')){endH();h=e;hn=0;}else if(!e.classList.contains('fh')){n++;hn++;}});endH();
-  var st=D.querySelector('.sub-t[data-pane="'+p.id+'"] b');if(st&&p.querySelector('.card'))st.textContent=n;
-  var h3=p.querySelector('h3');if(h3&&p.querySelector('.card'))h3.textContent=h3.textContent.replace(/\\(\\d+건\\)/,'('+n+'건)');
-  var em=p.querySelector('.fempty');if(p.querySelector('.card')){if(n==0&&!em){em=D.createElement('p');em.className='fempty';em.textContent='내 조건에 맞는 물건이 없어요';p.appendChild(em);}if(em)em.hidden=n>0;}
-  if(/-(soon|later)$/.test(p.id))tabN[m]=(tabN[m]||0)+n;});
- Object.keys(tabN).forEach(function(m){var b=D.querySelector('.tab[data-main="'+m+'"] b');if(b)b.textContent=tabN[m];});
- var cur=D.querySelector('.tab.on');if(cur&&cur.classList.contains('fh')){var nx=D.querySelector('.tab:not(.fh)');if(nx){var pid=firstPane(nx.getAttribute('data-main'));if(pid)showPane(pid);}}
- var nm=CATS.filter(function(c){return F.cats.indexOf(c[0])>=0;}).map(function(c){return c[1];});
- var desc=(nm.length?nm.join('·'):'모든 종류')+' · '+(F.gus.length?(F.gus.length>3?F.gus.slice(0,3).join('·')+' 외 '+(F.gus.length-3):F.gus.join('·')):'모든 지역');
- var has=F.cats.length||F.gus.length;D.getElementById('fsum').textContent=act?desc:(has?'전체 보기 중 (내 조건: '+desc+')':'전체 보기 중');
- var fb=D.getElementById('fbtn');fb.classList.toggle('on',!!act);fb.textContent=act?'✅ 내 조건':'⚙️ 내 조건';
- var fa=D.getElementById('fall');fa.hidden=!act;save('filter',JSON.stringify(F));setH();}
-D.getElementById('fbtn').onclick=function(){var p=D.getElementById('fpanel');if(!p.hidden){p.hidden=true;setH();return;}
- if(!F.on&&(F.cats.length||F.gus.length)){F.on=true;apply();return;} openP();};
-D.getElementById('fall').onclick=function(){F.on=false;D.getElementById('fpanel').hidden=true;apply();};
-D.getElementById('fok').onclick=function(){F.cats=tmp.cats;F.gus=tmp.gus;F.on=!!(F.cats.length||F.gus.length);D.getElementById('fpanel').hidden=true;apply();window.scrollTo(0,0);};
-D.getElementById('freset').onclick=function(){tmp.cats.length=0;tmp.gus.length=0;$$('#fpanel .fchips button').forEach(function(b){b.classList.remove('on');});};
+function dl(d){var p=d.split('-');if(p.length<3)return '미정';var w='일월화수목금토'[new Date(Date.UTC(+p[0],+p[1]-1,+p[2])).getUTCDay()];return (+p[1])+'/'+(+p[2])+'('+w+')';}
+function build(){var xs=SRC.filter(function(x){return (!F.cats.length||F.cats.indexOf(x.c)>=0)&&(!F.gus.length||F.gus.indexOf(x.g)>=0);});
+ xs.sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;});
+ var L=D.getElementById('mylist'),C=D.getElementById('mychips');L.innerHTML='';C.innerHTML='';var cur=null,h=null,cnt={};
+ xs.forEach(function(x){if(x.d!==cur){cur=x.d;h=D.createElement('h4');h.className='dh';h.id='my-'+cur;L.appendChild(h);cnt[cur]=0;}cnt[cur]++;
+  var k=x.e.cloneNode(true);k.removeAttribute('id');var t=D.createElement('div');t.className='ctag';t.textContent=x.lab;k.insertBefore(t,k.firstChild);L.appendChild(k);});
+ Object.keys(cnt).forEach(function(d){var e=D.getElementById('my-'+d);e.textContent=dl(d)+' · '+cnt[d]+'건';});
+ if(Object.keys(cnt).length>1)Object.keys(cnt).forEach(function(d){var a=D.createElement('a');a.href='#my-'+d;a.innerHTML=dl(d)+' <b>'+cnt[d]+'</b>';C.appendChild(a);});
+ if(!xs.length){var p=D.createElement('p');p.className='fempty';p.textContent='조건에 맞는 물건이 없어요';L.appendChild(p);}
+ var nm=CATS.filter(function(c){return F.cats.indexOf(c[0])>=0;}).map(function(c){return c[1].split(' ')[1];});
+ var gs=F.gus.length?(F.gus.length>3?F.gus.slice(0,3).join('·')+' 외 '+(F.gus.length-3)+'곳':F.gus.join('·')):'모든 지역';
+ D.getElementById('fsum').textContent=(nm.length?nm.join('·'):'모든 종류')+' · '+gs+' · '+xs.length+'건';
+ var tb=D.querySelector('.tab[data-main="my"]');if(tb){var b=tb.querySelector('b');if(!b){b=D.createElement('b');tb.appendChild(D.createTextNode(' '));tb.appendChild(b);}b.textContent=xs.length;}
+ save('myf',JSON.stringify(F));setH();}
+D.getElementById('fbtn').onclick=function(){var p=D.getElementById('fpanel');if(!p.hidden){p.hidden=true;setH();}else openP();};
+D.getElementById('fcancel').onclick=function(){D.getElementById('fpanel').hidden=true;setH();};
+D.getElementById('fok').onclick=function(){F.cats=tmp.cats;F.gus=tmp.gus;D.getElementById('fpanel').hidden=true;build();window.scrollTo(0,0);};
 D.getElementById('gclr').onclick=function(e){e.preventDefault();tmp.gus.length=0;$$('#fgu button').forEach(function(b){b.classList.remove('on');});};
-D.getElementById('fsum').onclick=function(){openP();};
-apply();
+build();if(!F.cats.length&&!F.gus.length)openP();
+if(!go(location.hash.slice(1),true)){var m=load('main')||'apt';var pid=firstPane(m)||firstPane('apt');if(pid)showPane(pid,true);}
 })();
 """
 
@@ -758,7 +751,7 @@ def other_card(v):
         L.append(f'<div class="g s">🚌 감정평가서 교통: {E(v["traffic"][:120])}</div>')
     L.append(f'<div class="s"><a href="https://m.richgo.ai/auctionMobile/{E(v.get("auction_id") or "")}">상세 보기 →</a></div>')
     gu = (v.get('region') or '').split(' ', 1)[-1]
-    return f'<div class="card" data-gu="{E(gu)}">' + ''.join(x for x in L if x) + '</div>'
+    return f'<div class="card" data-d="{E(bd)}" data-gu="{E(gu)}">' + ''.join(x for x in L if x) + '</div>'
 
 
 def prev_keys(day, pred_dir):
@@ -869,6 +862,14 @@ def build(src, dst):
         if not xs:
             parts.append(f'<section class="pane" id="{anchor}-none" data-main="{anchor}"><p class="g">표시할 물건 없음</p></section>')
             subnav.setdefault(anchor, []).append((f'{anchor}-none', '없음', None))
+    # 2026-11-19 사용자 요청: '내 조건' 탭 — 고른 종류·구의 물건만 한데 모아 날짜순 (카드는 각 탭에서 JS 로 복사, 선택은 기기에 저장)
+    nav.insert(0, ('my', '⭐ 내 조건', None))
+    parts.insert(0, '<h2 class="mainh" id="my" data-main="my">⭐ 내 조건</h2><section class="pane" id="my-list" data-main="my">'
+                    '<div class="fbar"><span id="fsum" class="s"></span><button type="button" id="fbtn">⚙️ 조건 바꾸기</button></div>'
+                    '<div id="fpanel" hidden><div class="fl">종류 <span class="g">(안 고르면 전체)</span></div><div class="fchips" id="fcat"></div>'
+                    '<div class="fl">지역 (구) <span class="g">(안 고르면 전체)</span> <a href="#" id="gclr">모두 해제</a></div><div class="fchips" id="fgu"></div>'
+                    '<div class="fact"><button type="button" id="fok">적용</button><button type="button" id="fcancel">닫기</button></div></div>'
+                    '<div class="dchips" id="mychips"></div><div id="mylist"></div></section>')
     res = results_14d(today, RS, tracked)
     nav.append(('score', '📊 성적표', None))
     parts.append('<h2 class="mainh" id="score" data-main="score">📊 모델 성적표 (최근 14일)</h2>')
@@ -886,12 +887,6 @@ def build(src, dst):
     navhtml += ''.join(f'<div class="subs" data-main="{m}">' + ''.join(
         f'<a class="sub-t" href="#{pid}" data-pane="{pid}">{lab}' + (f' <b>{n}</b>' if n else '') + '</a>' for pid, lab, n in L) + '</div>'
         for m, L in subnav.items())
-    # 2026-11-19 사용자 요청: 내가 고른 종류·구만 보기 (전체 보기와 한 번에 전환, 선택은 이 기기에 저장)
-    navhtml += ('<div class="fbar"><button type="button" id="fbtn">⚙️ 내 조건</button><span id="fsum" class="g s">전체 보기 중</span>'
-                '<button type="button" id="fall" hidden>전체 보기</button></div><div id="fpanel" hidden>'
-                '<div class="fl">종류</div><div class="fchips" id="fcat"></div>'
-                '<div class="fl">지역 (구) <a href="#" id="gclr" class="s">모두 해제</a></div><div class="fchips" id="fgu"></div>'
-                '<div class="fact"><button type="button" id="fok">적용</button><button type="button" id="freset">초기화</button></div></div>')
     nav = [navhtml]
     gen = d.get('generated_at', '')[:16].replace('T', ' ')
     foot = ('표시 기준: 권리 위험·주의 물건과 모델 예측이 없는 물건은 숨김 · 1년 실거래 없는 아파트는 \'실거래 없음(참고)\'에 따로<br>'
