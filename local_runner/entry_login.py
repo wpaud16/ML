@@ -24,9 +24,11 @@ def open_profile(p, headless=False):
 if __name__ == '__main__':
     with sync_playwright() as p:
         ctx = open_profile(p)
+        import sys
+        sites = [u for u in SITES if not sys.argv[1:] or any(a in u for a in sys.argv[1:])]   # 예: python entry_login.py kakao
         pg = ctx.pages[0] if ctx.pages else ctx.new_page()
-        pg.goto(SITES[0])
-        for u in SITES[1:]:
+        pg.goto(sites[0])
+        for u in sites[1:]:
             ctx.new_page().goto(u)
         try:
             while ctx.pages:
