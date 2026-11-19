@@ -18,6 +18,25 @@
    "winners": 213
   }
  },
+ "https://blog.naver.com/PostView.naver": {
+  "deadline": "2026-12-15",
+  "first": "2026-11-20",
+  "item": {
+   "announce": "2026-12-25",
+   "checked": false,
+   "condition": "네이버 로그인",
+   "deadline": "2026-12-15",
+   "entry": "login",
+   "how": "네이버 블로그 이벤트 글을 읽고 퀴즈 정답 댓글",
+   "kind": "기업",
+   "org": "디지털존",
+   "prize": "교촌치킨+콜라 3명, 스타벅스 아메리카노 10명",
+   "start": "2026-11-16",
+   "title": "디지털존 댓글 한 줄 치킨 이벤트",
+   "url": "https://blog.naver.com/PostView.naver?blogId=digital_zone&logNo=224474016040",
+   "winners": 13
+  }
+ },
  "https://blog.naver.com/eunpyeonggu/224478794877": {
   "deadline": "2026-11-22",
   "first": "2026-11-19",
@@ -326,6 +345,63 @@
    "winners": 200
   }
  },
+ "https://seoul.co.kr/event/2026SeoulAdAward/index.php": {
+  "deadline": null,
+  "first": "2026-11-20",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "서울신문 회원 로그인, 1인 1회, 일부 경품 제세공과금 22%",
+   "deadline": null,
+   "entry": "login",
+   "how": "후보작 3편에 40자 내외 한줄평 작성, 경품 수령 정보 입력 후 서울신문 뉴스레터 또는 네이버 뉴스 구독",
+   "kind": "방송·언론",
+   "org": "서울신문",
+   "prize": "시몬스 매트리스(10명)·세라젬·인바디 등 가구·가전, 뷰티, 생활·건강 경품 총 1,000명",
+   "start": "2026-11-23",
+   "title": "2026 서울광고대상 한줄평 독자 이벤트",
+   "url": "https://seoul.co.kr/event/2026SeoulAdAward/index.php",
+   "winners": 1000
+  }
+ },
+ "https://signal.askcuri.com/v/030db12b-8106-4cfe-bb30-5f72bafe6a82": {
+  "deadline": "2026-11-29",
+  "first": "2026-11-20",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": null,
+   "deadline": "2026-11-29",
+   "entry": "form",
+   "how": "설문 끝까지 응답 후 이메일 입력",
+   "kind": "기업",
+   "org": "블랙후즈 (askcuri)",
+   "prize": "네이버페이 포인트 5천원 100명",
+   "start": "2026-11-18",
+   "title": "AI TV 경험 인터뷰 설문",
+   "url": "https://signal.askcuri.com/v/030db12b-8106-4cfe-bb30-5f72bafe6a82?translation=ko",
+   "winners": 100
+  }
+ },
+ "https://tally.so/r/VpL2rN": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-20",
+  "item": {
+   "announce": "2026-12-03",
+   "checked": true,
+   "condition": "아르떼 홈페이지·온라인 아카데미 회원가입",
+   "deadline": "2026-11-30",
+   "entry": "login",
+   "how": "아르떼 온라인 아카데미의 무료 문화다양성 강의를 끝까지 듣고 이수증 PDF를 인증 폼에 제출",
+   "kind": "공공기관",
+   "org": "문화체육관광부·한국문화예술교육진흥원(아르떼)",
+   "prize": "네이버페이 포인트 3만원 20명",
+   "start": "2026-10-27",
+   "title": "2026 문화다양성 온라인 교육 이벤트",
+   "url": "https://tally.so/r/VpL2rN",
+   "winners": 20
+  }
+ },
  "https://www.instagram.com/p/Df1MXpjA1SC": {
   "deadline": "2026-11-24",
   "first": "2026-11-19",
@@ -362,7 +438,8 @@
    "title": "일생활균형 홈페이지 설문 이벤트",
    "url": "https://www.instagram.com/p/Df1PKQCJVFd",
    "winners": 50
-  }
+  },
+  "soon_sent": "2026-11-20"
  },
  "https://www.instagram.com/p/Df1RNJ0FNTs": {
   "deadline": "2026-11-24",
@@ -514,7 +591,8 @@
    "title": "JCA 초성퀴즈 이벤트",
    "url": "https://www.instagram.com/p/DfyhKNMhGg5",
    "winners": 40
-  }
+  },
+  "soon_sent": "2026-11-20"
  },
  "https://www.kca.go.kr/home/sub.do": {
   "deadline": "2026-12-25",
@@ -533,6 +611,158 @@
    "title": "KCA 글로벌 어린이 삼킴사고 예방 캠페인 이벤트",
    "url": "https://www.kca.go.kr/home/sub.do?menukey=4003&mode=view&no=1004582867",
    "winners": 200
+  }
+ },
+ "https://www.lexus.co.kr/content/2026-nov-test-drive": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-20",
+  "item": {
+   "announce": "2026-12-11",
+   "checked": true,
+   "condition": "전시장 방문 시승 (운전 가능 연령 기준은 전시장마다 다름), 5만원 초과 경품은 제세공과금 22% 본인 부담",
+   "deadline": "2026-11-30",
+   "entry": "form",
+   "how": "11/30까지 시승 신청 후 12/6까지 전시장 시승 완료하면 추첨",
+   "kind": "기업",
+   "org": "렉서스코리아",
+   "prize": "소니 WH-1000XM6 1명, 애플워치 시리즈12 3명, 신세계 모바일상품권 3만원 30명",
+   "start": "2026-11-06",
+   "title": "렉서스 11월 전국 시승회",
+   "url": "https://www.lexus.co.kr/content/2026-nov-test-drive/",
+   "winners": 34
+  }
+ },
+ "https://www.nabo.go.kr/ko/fiscalQuiz/quiz.do": {
+  "deadline": null,
+  "first": "2026-11-20",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": null,
+   "deadline": null,
+   "entry": "form",
+   "how": "홈페이지 재정퀴즈 정답 응모 후 이름·휴대폰 번호 등록",
+   "kind": "공공기관",
+   "org": "국회예산정책처",
+   "prize": "모바일 커피쿠폰 (매회 정답자 중 추첨, 인원 미기재)",
+   "start": null,
+   "title": "국회예산정책처 재정퀴즈 이벤트 (월간)",
+   "url": "https://www.nabo.go.kr/ko/fiscalQuiz/quiz.do?key=2507040020",
+   "winners": null
+  }
+ },
+ "https://www.parents.go.kr/usr/wap/detail.do": {
+  "deadline": "2026-12-10",
+  "first": "2026-11-20",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "학부모On누리 회원가입 (1단계는 신규 가입자만)",
+   "deadline": "2026-12-10",
+   "entry": "login",
+   "how": "1단계 학부모On누리 신규 가입, 2단계 교육온 강의 수강 신청, 3단계 1차시 이상 학습",
+   "kind": "공공기관",
+   "org": "국가평생교육진흥원 전국학부모지원센터 (학부모On누리)",
+   "prize": "편의점 상품권 3천원 300명, 5천원 20명",
+   "start": "2026-11-11",
+   "title": "「가입하고, 배우고, 선물받고!」 이벤트",
+   "url": "https://www.parents.go.kr/usr/wap/detail.do?app=10170&seq=8211618",
+   "winners": 320
+  }
+ },
+ "https://www.samsung.com/sec/event/galaxy-suneung-2026/promotion": {
+  "deadline": "2026-12-31",
+  "first": "2026-11-20",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "삼성스토어·통신사 매장 방문, 휴대폰 번호 1개당 1회",
+   "deadline": "2026-12-31",
+   "entry": "app",
+   "how": "갤럭시 체험 매장 시연폰의 '갤럭시 체험하기' 앱에서 영상 2개 시청과 스마트스위치 튜토리얼 완료 후 신청",
+   "kind": "기업",
+   "org": "삼성전자",
+   "prize": "올리브영 모바일 상품권 5천원 (완료자 전원, 추첨 아님)",
+   "start": "2026-11-01",
+   "title": "갤럭시 연말 페스타 - 갤럭시 체험하기 이벤트",
+   "url": "https://www.samsung.com/sec/event/galaxy-suneung-2026/promotion/",
+   "winners": null
+  }
+ },
+ "https://www.samsung.com/sec/event/lions-victory-2026": {
+  "deadline": "2026-11-24",
+  "first": "2026-11-20",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": null,
+   "deadline": "2026-11-24",
+   "entry": "login",
+   "how": "행사 기간 동안 삼성닷컴 이벤트 페이지에서 매일 응모",
+   "kind": "기업",
+   "org": "삼성전자",
+   "prize": "12일간 매일 9명 추첨, 총 108명 (경품 품목은 공식 페이지에서 확인 못 함)",
+   "start": "2026-11-13",
+   "title": "라이온즈 우승 기념 삼성전자 대축제 매일 응모",
+   "url": "https://www.samsung.com/sec/event/lions-victory-2026/",
+   "winners": 108
+  }
+ },
+ "https://www.samsung.com/sec/event/membership_quiz": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-20",
+  "item": {
+   "announce": "2026-12-15",
+   "checked": true,
+   "condition": "삼성닷컴 회원가입·삼성전자 멤버십 회원, 마케팅 동의",
+   "deadline": "2026-11-30",
+   "entry": "login",
+   "how": "삼성닷컴 로그인 후 주차별 퀴즈 정답 제출 (주 1회, 최대 4회)",
+   "kind": "기업",
+   "org": "삼성전자",
+   "prize": "삼성전자 멤버십 포인트 5만P 30명, 3만P 50명, 1만P 300명, 5천P 500명",
+   "start": "2026-11-02",
+   "title": "삼성위크 삼성전자 멤버십 퀴즈",
+   "url": "https://www.samsung.com/sec/event/membership_quiz/",
+   "winners": 880
+  }
+ },
+ "https://www.samsung.com/sec/event/samsungsale/2611": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-20",
+  "item": {
+   "announce": "2026-12-11",
+   "checked": true,
+   "condition": "삼성닷컴 회원가입",
+   "deadline": "2026-11-30",
+   "entry": "login",
+   "how": "삼성닷컴 로그인 후 퀴즈 응모 (구매 불필요)",
+   "kind": "기업",
+   "org": "삼성전자",
+   "prize": "투썸플레이스 아메리카노 R 모바일 상품권 500명",
+   "start": "2026-11-01",
+   "title": "삼성전자와 함께하는 코리아 그랜드 페스티벌 퀴즈 이벤트",
+   "url": "https://www.samsung.com/sec/event/samsungsale/2611/",
+   "winners": 500
+  }
+ },
+ "https://www.wbridge.or.kr/platform/gnrl/notice/selectNoticeView.do": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-20",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "이벤트 기간 중 W브릿지 첫 가입자 (기존 회원·이전 참여자 제외)",
+   "deadline": "2026-11-30",
+   "entry": "login",
+   "how": "W브릿지 신규 회원가입 후 구글폼 설문 제출",
+   "kind": "공공기관",
+   "org": "한국여성과학기술인육성재단(WISET)",
+   "prize": "메가커피 아이스 아메리카노 600명",
+   "start": "2026-11-16",
+   "title": "(앵콜) W브릿지 신규 회원가입 이벤트",
+   "url": "https://www.wbridge.or.kr/platform/gnrl/notice/selectNoticeView.do?ntt_sn=101102&div_code=11",
+   "winners": 600
   }
  },
  "https://www.youtube.com/post/UgkxPQM6qHPIfEFY-3bOR5Qzsu5JS5-vAqhD": {
