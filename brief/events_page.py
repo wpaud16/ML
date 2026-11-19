@@ -84,7 +84,7 @@ def prize_items(today):
 PROXY_BLOCK = re.compile(r'form\.naver\.com|naver\.me|kosis\.kr|instagram\.com|facebook\.com|youtube\.com|x\.com|twitter\.com|'
                          r'kakao\.com|pf\.kakao|play\.google|apps\.apple', re.I)
 PROXY_NEEDS = re.compile(r'로그인|회원\s*가입|회원만|본인\s*인증|휴대폰\s*인증|앱|어플|팔로우|구독|공유|댓글|리그램|인증샷|사진|영상|후기|캡차|자동입력|'
-                        r'설문|만족도|조사|의견|아이디어|공모|랭킹|게임|스탬프|배지랜드|'
+                        r'아이디어|공모|랭킹|게임|스탬프|배지랜드|'   # 2026-11-19: 설문·만족도는 대신 함 (내 말투로 간단히)
                         r'사전\s*등록|행사\s*등록|참가\s*신청|방문|현장|캡[처쳐]|업로드|첨부|찾아라|숨은|사연|작성|인터뷰|이메일|'
                         r'추천|초대|가입', re.I)   # 2026-11-19: 행사 참석 등록·캡처 업로드·사연 작성도 대신 못 함
 DONE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'events_done.json')   # Claude 가 대신 응모한 기록 (개인정보 없이 이벤트 키·날짜만)
@@ -105,16 +105,44 @@ def proxy_ok(it):
     return not PROXY_NEEDS.search(' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition')))
 
 
-GROUPS = {'done': '✅ 응모 완료', 'proxy': '🤖 대신 응모 가능'}   # + ev.ENTRY (바로·웹·로그인·앱·SNS)
+GROUPS = {'done': '✅ 응모 완료', 'proxy': '🤖 대신 응모 가능', 'help': '🤝 캡처 주면 대신'}   # + ev.ENTRY (바로·웹·로그인·앱·SNS)
+# 2026-11-19 사용자 요청: 팔로우·캡처·로그인 같은 본인 몫만 해서 넘겨주면 나머지(정답 찾기·폼 작성·업로드·제출)는 Claude 가
+HELP_HARD = re.compile(r'현장|방문|사전\s*등록|행사\s*등록|참가\s*신청|앱\s*설치|어플|오프라인|회원\s*가입|신규\s*가입', re.I)
+MINE = [(r'팔로우', '팔로우'), (r'구독', '구독'), (r'좋아요', '좋아요'), (r'댓글', '댓글'), (r'리그램|공유|게시(?!물)|해시태그', 'SNS 게시·공유'),
+        (r'로그인', '로그인'), (r'인증|캡[처쳐]', '캡처')]
+
+
+def help_ok(it):
+    if ev.entry_type(it) == 'app':
+        return False
+    return not HELP_HARD.search(' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition')))
+
+
+def mine_of(it):
+    """사용자가 직접 해야 하는 몫."""
+    dn = done_map().get(ev.key_of(it)) or ''
+    if dn.startswith('h:'):
+        return [dn[2:]]
+    t = ' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition'))
+    out = [lab for p, lab in MINE if re.search(p, t)]
+    if re.search(r'팔로우|구독|좋아요|공유|게시(?!물)', t) and '캡처' not in out:
+        out.append('캡처')
+    if not out and re.search(r'instagram\.com', it.get('url') or ''):
+        out = ['인스타 게시물 열어서 캡처(설문·응모 링크 찾게)']
+    return out or ['링크 열어서 화면 캡처']
 
 
 def group_of(it):
-    """응모 방식 칸 (하나만): 응모 완료 > 대신 응모 가능 > 원래 응모 방식."""
+    """응모 방식 칸 (하나만): 응모 완료 > 대신 응모 가능 > 캡처 주면 대신 > 원래 응모 방식."""
     dn = done_map().get(ev.key_of(it))
-    if dn and not dn.startswith('x:'):
+    if dn and not dn.startswith(('x:', 'h:')):
         return 'done'
     if not dn and proxy_ok(it):
         return 'proxy'
+    if dn and dn.startswith('h:'):   # 들어가 보니 본인 몫(로그인 등)이 있던 것
+        return 'help'
+    if not dn and help_ok(it):
+        return 'help'
     return ev.entry_type(it)
 
 
@@ -150,6 +178,8 @@ def prize_card(it, today):
             pass
     elif px:
         badges = '<span class="proxy">🤖 대신 응모 가능</span>'
+    elif et == 'help':
+        badges = '<span class="proxy">🤝 캡처 주면 대신</span>'
     else:
         badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>'
     badges += ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'])
@@ -174,6 +204,12 @@ def prize_card(it, today):
         req = f'이벤트 [{code_of(it)}] 대신 응모해줘 — {it["title"]} {it["url"]}'
         go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">🤖 대신 응모 요청 복사</button></div>'
               f'<div class="g s">요청 번호 {code_of(it)}</div>')
+    elif et == 'help':
+        mine = ' · '.join(mine_of(it))
+        req = f'이벤트 [{code_of(it)}] 캡처 보낼게 나머지 해줘 — {it["title"]} {it["url"]}'
+        rows.append(f'<div>👤 직접: <b>{E(mine)}</b> → 나머지는 Claude</div>')
+        go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">🤝 요청 복사</button></div>'
+              f'<div class="g s">요청 번호 {code_of(it)} · 캡처를 같이 붙여넣어 주세요</div>')
     rows.append(go)
     return (f'<div class="card" data-entry="{et}" data-proxy="{1 if px else 0}" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
             + ''.join(rows) + '</div>')
@@ -496,7 +532,7 @@ def build(today):
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'new\',this)">🆕 오늘 새로<i>{new}</i></button>')
     if soon:
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'soon\',this)">⏰ 마감 임박<i>{soon}</i></button>')
-    labels = {'proxy': GROUPS['proxy'], **ev.ENTRY, 'done': GROUPS['done']}
+    labels = {'proxy': GROUPS['proxy'], 'help': GROUPS['help'], **ev.ENTRY, 'done': GROUPS['done']}
     ecnt = {k: sum(group_of(x) == k for x in P) for k in labels}
     npx = ecnt['proxy']
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(v)}<i>{ecnt[k]}</i></button>'

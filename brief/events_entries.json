@@ -82,5 +82,19 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://mediahub.seoul.go.kr/missions/2000319",
+  "title": "2026년 라이브서울 만족도 조사",
+  "org": "서울시 미디어허브",
+  "url": "https://mediahub.seoul.go.kr/missions/2000319",
+  "entered": "2026-11-19",
+  "announce": null,
+  "where": null,
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]
