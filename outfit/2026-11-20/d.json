@@ -1,0 +1,141 @@
+{
+ "date": "11월 20일 (금)",
+ "tmin": "-4",
+ "tmax": "1",
+ "sky": "🌤 대체로 맑음",
+ "sub": "일교차 5°",
+ "rain_title": "☀️ 오늘 비·눈 소식 없음",
+ "rain": [
+  [
+   "오늘",
+   "비·눈 소식 없음"
+  ]
+ ],
+ "level": "없음",
+ "hourly": [
+  {
+   "h": 6,
+   "t": -3,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 9,
+   "t": -2,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 12,
+   "t": 1,
+   "icon": "🌤",
+   "rain": false
+  },
+  {
+   "h": 15,
+   "t": 1,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 18,
+   "t": 0,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 21,
+   "t": -2,
+   "icon": "☀️",
+   "rain": false
+  }
+ ],
+ "guide": "<b>아침 -4°, 낮 1°.</b> 하루 종일 기온 차가 크지 않아요.",
+ "footer": "날씨: Open-Meteo (기본 모델) · 서울 강동구 · 오늘 예보",
+ "looks": [
+  {
+   "title": "다운 파카 + 크림 니트",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "크루넥 니트 · 크림",
+     "color": "#E8E1D0",
+     "role": "top"
+    },
+    {
+     "name": "다운 파카 · 네이비",
+     "color": "#2B3247",
+     "role": "outer"
+    },
+    {
+     "name": "기모 데님 · 인디고",
+     "color": "#34425E",
+     "role": "bottom"
+    },
+    {
+     "name": "부츠 · 다크브라운",
+     "color": "#4A3125",
+     "role": "shoes"
+    }
+   ],
+   "tip": "파카 후드는 바람 불 때만 쓰기.",
+   "pin": "navy down parka cream crewneck sweater indigo jeans men winter outfit casual"
+  },
+  {
+   "title": "크림 숏패딩 + 차콜 후드",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "후드 스웻셔츠 · 차콜",
+     "color": "#45474B",
+     "role": "top"
+    },
+    {
+     "name": "숏 패딩 · 크림",
+     "color": "#E8E1D0",
+     "role": "outer"
+    },
+    {
+     "name": "기모 이지팬츠 · 그레이",
+     "color": "#A9A9A6",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 블랙",
+     "color": "#242424",
+     "role": "shoes"
+    }
+   ],
+   "tip": "밝은 패딩엔 어두운 하의로 균형.",
+   "pin": "cream short puffer jacket charcoal hoodie grey relaxed pants men winter outfit street style"
+  },
+  {
+   "title": "무스탕 + 블랙 터틀넥",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "터틀넥 니트 · 블랙",
+     "color": "#242424",
+     "role": "top"
+    },
+    {
+     "name": "무스탕 재킷 · 브라운",
+     "color": "#4A3125",
+     "role": "outer"
+    },
+    {
+     "name": "스트레이트 데님 · 블랙",
+     "color": "#2F3134",
+     "role": "bottom"
+    },
+    {
+     "name": "부츠 · 블랙",
+     "color": "#242424",
+     "role": "shoes"
+    }
+   ],
+   "tip": "무스탕은 지퍼 열고, 올블랙 이너로 깔끔하게.",
+   "pin": "brown shearling jacket black turtleneck black jeans men winter outfit korean style"
+  }
+ ]
+}
