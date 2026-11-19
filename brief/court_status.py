@@ -43,6 +43,10 @@ def judge(info, item_rows, bidding_date):
     if m:   # 2026-11-12: 이미 매각된 물건이 리치고 지연으로 새 기일에 올라온 경우
         won = int(m.group(4).replace(',', ''))
         return False, f'이미 매각됨 ({int(m.group(2))}/{int(m.group(3))} · {won // 100000000}억 {won % 100000000 // 10000:,}만원)'
+    lm = re.match(r'(\d{4})\.(\d{2})\.(\d{2})\s*(유찰|변경|연기)', last)
+    if lm and ''.join(lm.groups()[:3]) < want:
+        # 2026-11-19: 리치고가 결과 없이 기일만 하루씩 밀어 올림 (2025타경52465: 11/16 유찰 → 리치고 11/17·11/19 표시)
+        return False, f'리치고 날짜 오류 · 법원 기준 {int(lm.group(2))}/{int(lm.group(3))} {lm.group(4)}, 다음 기일 아직 안 잡힘'
     return False, '오늘 기일 없음' + (f' (최근 {last})' if last else '')
 
 
