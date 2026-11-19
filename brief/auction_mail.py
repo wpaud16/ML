@@ -237,16 +237,30 @@ def build(today, now_hour=None):
     # 2026-11-18 사용자 요청: 메일 간단보기는 아파트만 (오피스텔은 웹페이지에서)
     for cat, title in (('아파트', '🏢 아파트'),):
         xs = sorted((v for v in items if v['category'] == cat), key=lambda v: (v['bidding_date'], v.get('danji_name') or ''))
-        nn = sum(1 for v in xs if is_new(v, pk))
-        cnt['new'] += nn; cnt['total'] += len(xs)
+        nn = sum(1 for v in xs if is_new(v, pk) and (court.get(v['key']) or (None,))[0] is not False)
+        nx = sum(1 for v in xs if (court.get(v['key']) or (None,))[0] is not False)
+        cnt['new'] += nn; cnt['total'] += nx
         H.append(f'<div style="font-weight:bold;font-size:19px;margin-top:22px;padding-bottom:4px;border-bottom:2px solid #888888">{title}</div>')
         T.append(f'\n▶ {title}')
-        H.append(f'<div style="font-weight:bold;margin:12px 0 6px">📋 경매 물건 ({len(xs)}건' + (f' · New {nn}' if nn else '') + ')</div>')
-        T.append(f'▶ 📋 경매 물건 ({len(xs)}건' + (f' · New {nn}' if nn else '') + ')')
+        H.append(f'<div style="font-weight:bold;margin:12px 0 6px">📋 경매 물건 ({nx}건' + (f' · New {nn}' if nn else '') + ')</div>')
+        T.append(f'▶ 📋 경매 물건 ({nx}건' + (f' · New {nn}' if nn else '') + ')')
+        # 2026-11-19 사용자 결정: 기준은 항상 법원 — 법원이 '오늘 진행 안 함'이라 한 물건은 목록에서 빼고 아래에 따로
+        off = [v for v in xs if (court.get(v['key']) or (None,))[0] is False]
+        xs = [v for v in xs if v not in off]
         if not xs:
             H.append(f'<div style="{GRAY}">진행 중인 물건 없음</div>')
         for v in xs:
             h, t = summary_row(v, today, is_new(v, pk), court.get(v['key'])); H.append(h); T.append(t)
+        if off:
+            H.append(f'<div style="font-weight:bold;margin:14px 0 4px">⚖️ 법원 기준 오늘 진행 안 함 ({len(off)}건)</div>')
+            T.append(f'\n▶ ⚖️ 법원 기준 오늘 진행 안 함 ({len(off)}건)')
+            for v in off:
+                gu = (v.get('region') or '').split(' ', 1)[-1]
+                msg = court[v['key']][1]
+                H.append(f'<div style="{GRAY};line-height:1.6">· <b style="color:#222">{E(v.get("danji_name") or "")}</b> {v.get("area")}㎡ · {E(gu)} '
+                         f'{E(v["key"].replace("[1]", ""))} — {E(msg)}</div>')
+                T.append(f"- {v.get('danji_name')} {v.get('area')}㎡ · {gu} {v['key'].replace('[1]', '')} — {msg}")
+            H.append(f'<div style="{GRAY}">리치고 날짜가 법원과 다를 때는 법원(법원경매정보) 기준으로 보여드려요</div>')
     n_ot = sum(1 for v in items if v['category'] == '오피스텔')
     if n_ot:
         H.append(f'<div style="margin-top:16px">🏬 오피스텔 {n_ot}건은 <a style="color:#1a73e8" href="{PAGE}">웹페이지</a>에서 보세요</div>')
