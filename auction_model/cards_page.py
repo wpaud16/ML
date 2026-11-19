@@ -668,7 +668,7 @@ window.addEventListener('hashchange',function(){go(location.hash.slice(1),true);
 var CATS=[['apt','🏢 아파트'],['ot','🏬 오피스텔'],['shop','🏪 상가'],['bldg','🏙 건물']];
 var F={cats:[],gus:[]};try{var s=JSON.parse(load('myf')||'null');if(s&&s.cats)F=s;}catch(e){}
 var SRC=[];CATS.forEach(function(c){$$('#'+c[0]+'-soon .card,#'+c[0]+'-later .card').forEach(function(e){SRC.push({c:c[0],lab:c[1],e:e,d:e.getAttribute('data-d')||'',g:e.getAttribute('data-gu')||''});});});
-var gcnt={};SRC.forEach(function(x){if(x.g)gcnt[x.g]=(gcnt[x.g]||0)+1;});var GUS=Object.keys(gcnt).sort();var tmp=null;
+var gcnt={};SRC.forEach(function(x){if(x.g)gcnt[x.g]=(gcnt[x.g]||0)+1;});F.gus.forEach(function(g){if(!(g in gcnt))gcnt[g]=0;});var GUS=Object.keys(gcnt).sort();var tmp=null;
 function chip(box,val,lab,n,sel){var b=D.createElement('button');b.type='button';b.innerHTML=lab+(n!=null?'<i>'+n+'</i>':'');
  b.classList.toggle('on',sel.indexOf(val)>=0);b.onclick=function(){var i=sel.indexOf(val);if(i>=0)sel.splice(i,1);else sel.push(val);b.classList.toggle('on',i<0);};box.appendChild(b);}
 function openP(){tmp={cats:F.cats.slice(),gus:F.gus.slice()};var a=D.getElementById('fcat'),b=D.getElementById('fgu');a.innerHTML='';b.innerHTML='';
