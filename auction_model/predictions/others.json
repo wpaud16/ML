@@ -1,20 +1,20 @@
 {
- "date": "2026-11-19",
- "generated_at": "2026-11-19T05:10:14+09:00",
+ "date": "2026-11-20",
+ "generated_at": "2026-11-20T04:57:15+09:00",
  "station_source": "카카오 로컬",
  "counts": {
-  "listed": 945,
-  "wrong_type": 423,
+  "listed": 937,
+  "wrong_type": 419,
   "other_region": 0,
-  "over_budget": 41,
+  "over_budget": 39,
   "no_station": 1,
-  "far": 33,
-  "sold": 5,
-  "rights": 101,
+  "far": 35,
+  "sold": 4,
+  "rights": 98,
   "shown": 341,
   "by_category": {
-   "상가": 302,
-   "건물": 39
+   "상가": 301,
+   "건물": 40
   }
  },
  "errors": [],
@@ -1952,92 +1952,6 @@
     }
    ]
   },
-  "2025타경51664[1]": {
-   "key": "2025타경51664[1]",
-   "category": "상가",
-   "auction_id": "C01WSPQU",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 성내동 164-1 씨제이나인파크  2층208호",
-   "emd": "성내동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "근린",
-   "appr_manwon": 20300,
-   "low_manwon": 10393,
-   "fails": 2,
-   "bidding_date": "2027-01-04",
-   "area": 34.93,
-   "land_area": 8.4,
-   "court": "서울동부지방법원",
-   "stations": [
-    {
-     "name": "강동",
-     "distance_m": 99,
-     "walk_min": 2,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "천호",
-     "distance_m": 714,
-     "walk_min": 12,
-     "lines": [
-      "5호선",
-      "8호선"
-     ]
-    },
-    {
-     "name": "길동",
-     "distance_m": 804,
-     "walk_min": 14,
-     "lines": [
-      "5호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "강동",
-    "distance_m": 99,
-    "walk_min": 2,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 진출입이 가능하며, 인근에 노선버스정류장 및 지하철5호선 강동역이 소재하는 등 제반 대중교통상황은 양호함.",
-   "rights": {
-    "base_right": "강제경매",
-    "base_date": "2025-06-26"
-   },
-   "history": [
-    {
-     "date": "2026-08-31",
-     "type": "매각기일",
-     "low_manwon": 20300,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-12",
-     "type": "매각기일",
-     "low_manwon": 16240,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-23",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    },
-    {
-     "date": "2027-01-04",
-     "type": "매각기일",
-     "low_manwon": 10393,
-     "result": null
-    }
-   ]
-  },
   "2025타경348[1]": {
    "key": "2025타경348[1]",
    "category": "상가",
@@ -3706,570 +3620,6 @@
     },
     {
      "date": "2026-12-01",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경49[3]": {
-   "key": "2026타경49[3]",
-   "category": "상가",
-   "auction_id": "C04MOJJU",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제503호",
-   "emd": "마곡동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "기타건물",
-   "appr_manwon": 18500,
-   "low_manwon": 11840,
-   "fails": 2,
-   "bidding_date": "2026-11-19",
-   "area": 32,
-   "land_area": 7.67,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "발산",
-     "distance_m": 525,
-     "walk_min": 9,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡",
-     "distance_m": 652,
-     "walk_min": 11,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡나루",
-     "distance_m": 732,
-     "walk_min": 12,
-     "lines": [
-      "공항철도",
-      "9호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "발산",
-    "distance_m": 525,
-    "walk_min": 9,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2024-03-06"
-   },
-   "history": [
-    {
-     "date": "2026-09-10",
-     "type": "매각기일",
-     "low_manwon": 18500,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "매각기일",
-     "low_manwon": 14800,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 11840,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경4457[1]": {
-   "key": "2026타경4457[1]",
-   "category": "상가",
-   "auction_id": "C13OVUOG",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 등촌동 648-11 한울에이치밸리움2차아파트  제1층 제102호",
-   "emd": "등촌동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 45800,
-   "low_manwon": 29312,
-   "fails": 2,
-   "bidding_date": "2026-11-19",
-   "area": 24.44,
-   "land_area": 7.26,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "등촌",
-     "distance_m": 176,
-     "walk_min": 3,
-     "lines": [
-      "9호선"
-     ]
-    },
-    {
-     "name": "증미",
-     "distance_m": 758,
-     "walk_min": 13,
-     "lines": [
-      "9호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "등촌",
-    "distance_m": 176,
-    "walk_min": 3,
-    "lines": [
-     "9호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본 건까지 차량 진·출입이 가능하고, 남동측 인근에 지하철 9호선 \"등촌역\"이 소재하며, 인근에 노선버스정류장이 소재하여 제반 대중교통 이용여건은 양호한 편임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2020-03-24"
-   },
-   "history": [
-    {
-     "date": "2026-09-10",
-     "type": "매각기일",
-     "low_manwon": 45800,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "매각기일",
-     "low_manwon": 36640,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 29312,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경11359[1]": {
-   "key": "2025타경11359[1]",
-   "category": "건물",
-   "auction_id": "C22VFEAZ",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 화곡동 358-2 ",
-   "emd": "화곡동",
-   "type_details": [
-    "근린시설",
-    "대지"
-   ],
-   "item_type": "기타건물",
-   "appr_manwon": 152388,
-   "low_manwon": 121911,
-   "fails": 1,
-   "bidding_date": "2026-11-19",
-   "area": 208.74,
-   "land_area": 132.2,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "까치산",
-     "distance_m": 729,
-     "walk_min": 12,
-     "lines": [
-      "5호선",
-      "2호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "까치산",
-    "distance_m": 729,
-    "walk_min": 12,
-    "lines": [
-     "5호선",
-     "2호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 출입이 가능하고, 인근에 버스정류장, 근거리에 지하철 2·5호선 까치산역이 소재하는 등 제반 교통상황은 보통임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2021-05-31"
-   },
-   "history": [
-    {
-     "date": "2026-10-21",
-     "type": "매각기일",
-     "low_manwon": 152388,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 121911,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경4457[2]": {
-   "key": "2026타경4457[2]",
-   "category": "상가",
-   "auction_id": "C27SKTIS",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 등촌동 648-11 한울에이치밸리움2차아파트  제1층 제104호",
-   "emd": "등촌동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 52000,
-   "low_manwon": 33280,
-   "fails": 2,
-   "bidding_date": "2026-11-19",
-   "area": 29.4,
-   "land_area": 8.73,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "등촌",
-     "distance_m": 176,
-     "walk_min": 3,
-     "lines": [
-      "9호선"
-     ]
-    },
-    {
-     "name": "증미",
-     "distance_m": 758,
-     "walk_min": 13,
-     "lines": [
-      "9호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "등촌",
-    "distance_m": 176,
-    "walk_min": 3,
-    "lines": [
-     "9호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본 건까지 차량 진·출입이 가능하고, 남동측 인근에 지하철 9호선 \"등촌역\"이 소재하며, 인근에 노선버스정류장이 소재하여 제반 대중교통 이용여건은 양호한 편임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2020-03-24"
-   },
-   "history": [
-    {
-     "date": "2026-09-10",
-     "type": "매각기일",
-     "low_manwon": 52000,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "매각기일",
-     "low_manwon": 41600,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 33280,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경49[2]": {
-   "key": "2026타경49[2]",
-   "category": "상가",
-   "auction_id": "C34DQMIM",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제502호",
-   "emd": "마곡동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "기타건물",
-   "appr_manwon": 19400,
-   "low_manwon": 12416,
-   "fails": 2,
-   "bidding_date": "2026-11-19",
-   "area": 34.49,
-   "land_area": 8.27,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "발산",
-     "distance_m": 525,
-     "walk_min": 9,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡",
-     "distance_m": 652,
-     "walk_min": 11,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡나루",
-     "distance_m": 732,
-     "walk_min": 12,
-     "lines": [
-      "공항철도",
-      "9호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "발산",
-    "distance_m": 525,
-    "walk_min": 9,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2024-03-06"
-   },
-   "history": [
-    {
-     "date": "2026-09-10",
-     "type": "매각기일",
-     "low_manwon": 19400,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "매각기일",
-     "low_manwon": 15520,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 12416,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경49[4]": {
-   "key": "2026타경49[4]",
-   "category": "상가",
-   "auction_id": "C49XESQG",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제504호",
-   "emd": "마곡동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "기타건물",
-   "appr_manwon": 17400,
-   "low_manwon": 11136,
-   "fails": 2,
-   "bidding_date": "2026-11-19",
-   "area": 29.51,
-   "land_area": 7.07,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "발산",
-     "distance_m": 525,
-     "walk_min": 9,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡",
-     "distance_m": 652,
-     "walk_min": 11,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡나루",
-     "distance_m": 732,
-     "walk_min": 12,
-     "lines": [
-      "공항철도",
-      "9호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "발산",
-    "distance_m": 525,
-    "walk_min": 9,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2024-03-06"
-   },
-   "history": [
-    {
-     "date": "2026-09-10",
-     "type": "매각기일",
-     "low_manwon": 17400,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "매각기일",
-     "low_manwon": 13920,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 11136,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경49[1]": {
-   "key": "2026타경49[1]",
-   "category": "상가",
-   "auction_id": "C56HLRET",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제501호",
-   "emd": "마곡동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "기타건물",
-   "appr_manwon": 22400,
-   "low_manwon": 14336,
-   "fails": 2,
-   "bidding_date": "2026-11-19",
-   "area": 39.93,
-   "land_area": 9.57,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "발산",
-     "distance_m": 525,
-     "walk_min": 9,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡",
-     "distance_m": 652,
-     "walk_min": 11,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡나루",
-     "distance_m": 732,
-     "walk_min": 12,
-     "lines": [
-      "공항철도",
-      "9호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "발산",
-    "distance_m": 525,
-    "walk_min": 9,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2024-03-06"
-   },
-   "history": [
-    {
-     "date": "2026-09-10",
-     "type": "매각기일",
-     "low_manwon": 22400,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-21",
-     "type": "매각기일",
-     "low_manwon": 17920,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 14336,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -6474,6 +5824,63 @@
     }
    ]
   },
+  "2026타경78[1]": {
+   "key": "2026타경78[1]",
+   "category": "상가",
+   "auction_id": "C41ZWZGU",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 가양동 273-4 디아인스  제2층 제202호",
+   "emd": "가양동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "연립주택,다세대/빌라",
+   "appr_manwon": 24700,
+   "low_manwon": 24700,
+   "fails": 0,
+   "bidding_date": "2026-12-02",
+   "area": 39.33,
+   "land_area": 13.55,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "양천향교",
+     "distance_m": 364,
+     "walk_min": 6,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "양천향교",
+    "distance_m": 364,
+    "walk_min": 6,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "대상물건까지 차량의 접근이 가능하며, 인근에 버스정류장과 지하철역(9호선 양천향교역)이 소재하여 대중교통여건은 보통임.",
+   "rights": {
+    "base_right": "가압류",
+    "base_date": "2025-01-23"
+   },
+   "history": [
+    {
+     "date": "2026-12-02",
+     "type": "매각기일",
+     "low_manwon": 24700,
+     "result": null
+    },
+    {
+     "date": "2026-12-09",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2026타경5034[3]": {
    "key": "2026타경5034[3]",
    "category": "상가",
@@ -6618,103 +6025,6 @@
      "date": "2026-12-03",
      "type": "매각기일",
      "low_manwon": 16896,
-     "result": null
-    },
-    {
-     "date": "2026-12-10",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경829[1]": {
-   "key": "2025타경829[1]",
-   "category": "상가",
-   "auction_id": "C28FQINA",
-   "region": "서울 강서구",
-   "address": "서울특별시 강서구 마곡동 800-5 리더스타워마곡  제1층 제101호",
-   "emd": "마곡동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 378000,
-   "low_manwon": 154828,
-   "fails": 4,
-   "bidding_date": "2026-12-03",
-   "area": 107.1,
-   "land_area": 24.37,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "발산",
-     "distance_m": 444,
-     "walk_min": 8,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡",
-     "distance_m": 731,
-     "walk_min": 12,
-     "lines": [
-      "5호선"
-     ]
-    },
-    {
-     "name": "마곡나루",
-     "distance_m": 908,
-     "walk_min": 15,
-     "lines": [
-      "공항철도"
-     ]
-    }
-   ],
-   "station": {
-    "name": "발산",
-    "distance_m": 444,
-    "walk_min": 8,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 진·출입이 가능하며, 인근에 노선버스정류장 및 지하철 5호선 '발산역' 및  '마곡역'이 소재하는 바, 대중교통의 이용편의성은 보통임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2025-01-15"
-   },
-   "history": [
-    {
-     "date": "2026-07-23",
-     "type": "매각기일",
-     "low_manwon": 378000,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-08-26",
-     "type": "매각기일",
-     "low_manwon": 302400,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-01",
-     "type": "매각기일",
-     "low_manwon": 241920,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-04",
-     "type": "매각기일",
-     "low_manwon": 193536,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-12-03",
-     "type": "매각기일",
-     "low_manwon": 154828,
      "result": null
     },
     {
@@ -8677,6 +7987,128 @@
     }
    ]
   },
+  "2025타경12465[1]": {
+   "key": "2025타경12465[1]",
+   "category": "상가",
+   "auction_id": "C11ZDRPC",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 마곡동 799-6 메트로비즈타워  제1층 제112호",
+   "emd": "마곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "근린",
+   "appr_manwon": 254300,
+   "low_manwon": 53330,
+   "fails": 7,
+   "bidding_date": "2026-12-16",
+   "area": 69.92,
+   "land_area": 21.21,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "마곡",
+     "distance_m": 304,
+     "walk_min": 5,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "마곡나루",
+     "distance_m": 777,
+     "walk_min": 13,
+     "lines": [
+      "공항철도",
+      "9호선"
+     ]
+    },
+    {
+     "name": "발산",
+     "distance_m": 905,
+     "walk_min": 15,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "마곡",
+    "distance_m": 304,
+    "walk_min": 5,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건으로 제반 차량진입이 가능하며 인근에 버스정류장이 위치하며 북서측 인근에 지하철5호선 마곡역이 위치하여 대중교통상황은 양호한 편임.",
+   "rights": {
+    "base_right": "강제경매",
+    "base_date": "2025-11-04"
+   },
+   "history": [
+    {
+     "date": "2026-03-31",
+     "type": "매각기일",
+     "low_manwon": 254300,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-12-23",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    },
+    {
+     "date": "2026-05-12",
+     "type": "매각기일",
+     "low_manwon": 203440,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-18",
+     "type": "매각기일",
+     "low_manwon": 162752,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-08-05",
+     "type": "매각기일",
+     "low_manwon": 130201,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-08-11",
+     "type": "매각기일",
+     "low_manwon": 130201,
+     "result": "변경"
+    },
+    {
+     "date": "2026-09-03",
+     "type": "매각기일",
+     "low_manwon": 104161,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-14",
+     "type": "매각기일",
+     "low_manwon": 83329,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-12",
+     "type": "매각기일",
+     "low_manwon": 66663,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-12-16",
+     "type": "매각기일",
+     "low_manwon": 53330,
+     "result": null
+    }
+   ]
+  },
   "2025타경13217[1]": {
    "key": "2025타경13217[1]",
    "category": "상가",
@@ -8861,113 +8293,459 @@
     }
    ]
   },
-  "2025타경12465[1]": {
-   "key": "2025타경12465[1]",
+  "2025타경10281[2]": {
+   "key": "2025타경10281[2]",
    "category": "상가",
-   "auction_id": "C11ZDRPC",
+   "auction_id": "C48SFMUK",
    "region": "서울 강서구",
-   "address": "서울특별시 강서구 마곡동 799-6 메트로비즈타워  제1층 제112호",
+   "address": "서울특별시 강서구 마곡동 776-4 엠코지니어스타  제2층 제에이-207호",
    "emd": "마곡동",
    "type_details": [
     "근린시설"
    ],
    "item_type": "근린",
-   "appr_manwon": 254300,
-   "low_manwon": 66663,
-   "fails": 7,
-   "bidding_date": "",
-   "area": 69.92,
-   "land_area": 21.21,
+   "appr_manwon": 89600,
+   "low_manwon": 71680,
+   "fails": 1,
+   "bidding_date": "2027-01-20",
+   "area": 81.37,
+   "land_area": 17.54,
    "court": "서울남부지방법원",
    "stations": [
     {
+     "name": "양천향교",
+     "distance_m": 142,
+     "walk_min": 3,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "양천향교",
+    "distance_m": 142,
+    "walk_min": 3,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량출입 가능하며, 인근에 노선버스정류장 및 지하철역(9호선, 양천향교역)이 소재하는 등 대중교통상황은 보통입니다.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2023-05-15"
+   },
+   "history": [
+    {
+     "date": "2025-11-20",
+     "type": "매각기일",
+     "low_manwon": 89600,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-01-15",
+     "type": "매각기일",
+     "low_manwon": 71680,
+     "result": "변경"
+    },
+    {
+     "date": "2026-08-14",
+     "type": "매각기일",
+     "low_manwon": 71680,
+     "result": "변경"
+    },
+    {
+     "date": "2027-01-20",
+     "type": "매각기일",
+     "low_manwon": 71680,
+     "result": null
+    },
+    {
+     "date": "2027-01-27",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경10281[1]": {
+   "key": "2025타경10281[1]",
+   "category": "상가",
+   "auction_id": "C82HFSUM",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 마곡동 776-4 엠코지니어스타  제2층 제에이-206호",
+   "emd": "마곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "근린",
+   "appr_manwon": 61500,
+   "low_manwon": 49200,
+   "fails": 1,
+   "bidding_date": "2027-01-20",
+   "area": 55.8,
+   "land_area": 12.03,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "양천향교",
+     "distance_m": 142,
+     "walk_min": 3,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "양천향교",
+    "distance_m": 142,
+    "walk_min": 3,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량출입 가능하며, 인근에 노선버스정류장 및 지하철역(9호선, 양천향교역)이 소재하는 등 대중교통상황은 보통입니다.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2023-05-15"
+   },
+   "history": [
+    {
+     "date": "2025-11-20",
+     "type": "매각기일",
+     "low_manwon": 61500,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-01-15",
+     "type": "매각기일",
+     "low_manwon": 49200,
+     "result": "변경"
+    },
+    {
+     "date": "2026-08-14",
+     "type": "매각기일",
+     "low_manwon": 49200,
+     "result": "변경"
+    },
+    {
+     "date": "2027-01-20",
+     "type": "매각기일",
+     "low_manwon": 49200,
+     "result": null
+    },
+    {
+     "date": "2027-01-27",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2026타경49[3]": {
+   "key": "2026타경49[3]",
+   "category": "상가",
+   "auction_id": "C04MOJJU",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제503호",
+   "emd": "마곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "기타건물",
+   "appr_manwon": 18500,
+   "low_manwon": 11840,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 32,
+   "land_area": 7.67,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "발산",
+     "distance_m": 525,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
      "name": "마곡",
-     "distance_m": 304,
-     "walk_min": 5,
+     "distance_m": 652,
+     "walk_min": 11,
      "lines": [
       "5호선"
      ]
     },
     {
      "name": "마곡나루",
-     "distance_m": 777,
-     "walk_min": 13,
+     "distance_m": 732,
+     "walk_min": 12,
      "lines": [
       "공항철도",
       "9호선"
      ]
-    },
-    {
-     "name": "발산",
-     "distance_m": 905,
-     "walk_min": 15,
-     "lines": [
-      "5호선"
-     ]
     }
    ],
    "station": {
-    "name": "마곡",
-    "distance_m": 304,
-    "walk_min": 5,
+    "name": "발산",
+    "distance_m": 525,
+    "walk_min": 9,
     "lines": [
      "5호선"
     ]
    },
    "construct_year": null,
-   "traffic": "본건으로 제반 차량진입이 가능하며 인근에 버스정류장이 위치하며 북서측 인근에 지하철5호선 마곡역이 위치하여 대중교통상황은 양호한 편임.",
+   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
    "rights": {
-    "base_right": "강제경매",
-    "base_date": "2025-11-04"
+    "base_right": "근저당권",
+    "base_date": "2024-03-06"
    },
    "history": [
     {
-     "date": "2026-03-31",
+     "date": "2026-09-10",
      "type": "매각기일",
-     "low_manwon": 254300,
+     "low_manwon": 18500,
      "result": "유찰"
     },
     {
-     "date": "2026-05-12",
+     "date": "2026-10-21",
      "type": "매각기일",
-     "low_manwon": 203440,
+     "low_manwon": 14800,
      "result": "유찰"
     },
     {
-     "date": "2026-06-18",
+     "date": "2026-11-19",
      "type": "매각기일",
-     "low_manwon": 162752,
+     "low_manwon": 11840,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2026타경4457[1]": {
+   "key": "2026타경4457[1]",
+   "category": "상가",
+   "auction_id": "C13OVUOG",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 등촌동 648-11 한울에이치밸리움2차아파트  제1층 제102호",
+   "emd": "등촌동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 45800,
+   "low_manwon": 29312,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 24.44,
+   "land_area": 7.26,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "등촌",
+     "distance_m": 176,
+     "walk_min": 3,
+     "lines": [
+      "9호선"
+     ]
+    },
+    {
+     "name": "증미",
+     "distance_m": 758,
+     "walk_min": 13,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "등촌",
+    "distance_m": 176,
+    "walk_min": 3,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본 건까지 차량 진·출입이 가능하고, 남동측 인근에 지하철 9호선 \"등촌역\"이 소재하며, 인근에 노선버스정류장이 소재하여 제반 대중교통 이용여건은 양호한 편임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2020-03-24"
+   },
+   "history": [
+    {
+     "date": "2026-09-10",
+     "type": "매각기일",
+     "low_manwon": 45800,
      "result": "유찰"
     },
     {
-     "date": "2026-08-05",
+     "date": "2026-10-21",
      "type": "매각기일",
-     "low_manwon": 130201,
+     "low_manwon": 36640,
      "result": "유찰"
     },
     {
-     "date": "2026-08-11",
+     "date": "2026-11-19",
      "type": "매각기일",
-     "low_manwon": 130201,
-     "result": "변경"
+     "low_manwon": 29312,
+     "result": null
     },
     {
-     "date": "2026-09-03",
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경11359[1]": {
+   "key": "2025타경11359[1]",
+   "category": "건물",
+   "auction_id": "C22VFEAZ",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 화곡동 358-2 ",
+   "emd": "화곡동",
+   "type_details": [
+    "근린시설",
+    "대지"
+   ],
+   "item_type": "기타건물",
+   "appr_manwon": 152388,
+   "low_manwon": 121911,
+   "fails": 1,
+   "bidding_date": "",
+   "area": 208.74,
+   "land_area": 132.2,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "까치산",
+     "distance_m": 729,
+     "walk_min": 12,
+     "lines": [
+      "5호선",
+      "2호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "까치산",
+    "distance_m": 729,
+    "walk_min": 12,
+    "lines": [
+     "5호선",
+     "2호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 출입이 가능하고, 인근에 버스정류장, 근거리에 지하철 2·5호선 까치산역이 소재하는 등 제반 교통상황은 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2021-05-31"
+   },
+   "history": [
+    {
+     "date": "2026-10-21",
      "type": "매각기일",
-     "low_manwon": 104161,
+     "low_manwon": 152388,
      "result": "유찰"
     },
     {
-     "date": "2026-10-14",
+     "date": "2026-11-19",
      "type": "매각기일",
-     "low_manwon": 83329,
+     "low_manwon": 121911,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2026타경4457[2]": {
+   "key": "2026타경4457[2]",
+   "category": "상가",
+   "auction_id": "C27SKTIS",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 등촌동 648-11 한울에이치밸리움2차아파트  제1층 제104호",
+   "emd": "등촌동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 52000,
+   "low_manwon": 33280,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 29.4,
+   "land_area": 8.73,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "등촌",
+     "distance_m": 176,
+     "walk_min": 3,
+     "lines": [
+      "9호선"
+     ]
+    },
+    {
+     "name": "증미",
+     "distance_m": 758,
+     "walk_min": 13,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "등촌",
+    "distance_m": 176,
+    "walk_min": 3,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본 건까지 차량 진·출입이 가능하고, 남동측 인근에 지하철 9호선 \"등촌역\"이 소재하며, 인근에 노선버스정류장이 소재하여 제반 대중교통 이용여건은 양호한 편임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2020-03-24"
+   },
+   "history": [
+    {
+     "date": "2026-09-10",
+     "type": "매각기일",
+     "low_manwon": 52000,
      "result": "유찰"
     },
     {
-     "date": "2026-11-12",
+     "date": "2026-10-21",
      "type": "매각기일",
-     "low_manwon": 66663,
+     "low_manwon": 41600,
      "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 33280,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
     }
    ]
   },
@@ -9045,6 +8823,264 @@
      "type": "매각기일",
      "low_manwon": 33792,
      "result": "유찰"
+    }
+   ]
+  },
+  "2026타경49[2]": {
+   "key": "2026타경49[2]",
+   "category": "상가",
+   "auction_id": "C34DQMIM",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제502호",
+   "emd": "마곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "기타건물",
+   "appr_manwon": 19400,
+   "low_manwon": 12416,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 34.49,
+   "land_area": 8.27,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "발산",
+     "distance_m": 525,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "마곡",
+     "distance_m": 652,
+     "walk_min": 11,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "마곡나루",
+     "distance_m": 732,
+     "walk_min": 12,
+     "lines": [
+      "공항철도",
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "발산",
+    "distance_m": 525,
+    "walk_min": 9,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2024-03-06"
+   },
+   "history": [
+    {
+     "date": "2026-09-10",
+     "type": "매각기일",
+     "low_manwon": 19400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "매각기일",
+     "low_manwon": 15520,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 12416,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2026타경49[4]": {
+   "key": "2026타경49[4]",
+   "category": "상가",
+   "auction_id": "C49XESQG",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제504호",
+   "emd": "마곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "기타건물",
+   "appr_manwon": 17400,
+   "low_manwon": 11136,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 29.51,
+   "land_area": 7.07,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "발산",
+     "distance_m": 525,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "마곡",
+     "distance_m": 652,
+     "walk_min": 11,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "마곡나루",
+     "distance_m": 732,
+     "walk_min": 12,
+     "lines": [
+      "공항철도",
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "발산",
+    "distance_m": 525,
+    "walk_min": 9,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2024-03-06"
+   },
+   "history": [
+    {
+     "date": "2026-09-10",
+     "type": "매각기일",
+     "low_manwon": 17400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "매각기일",
+     "low_manwon": 13920,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 11136,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2026타경49[1]": {
+   "key": "2026타경49[1]",
+   "category": "상가",
+   "auction_id": "C56HLRET",
+   "region": "서울 강서구",
+   "address": "서울특별시 강서구 마곡동 774-9 사이언스타  제5층 제501호",
+   "emd": "마곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "기타건물",
+   "appr_manwon": 22400,
+   "low_manwon": 14336,
+   "fails": 2,
+   "bidding_date": "",
+   "area": 39.93,
+   "land_area": 9.57,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "발산",
+     "distance_m": 525,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "마곡",
+     "distance_m": 652,
+     "walk_min": 11,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "마곡나루",
+     "distance_m": 732,
+     "walk_min": 12,
+     "lines": [
+      "공항철도",
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "발산",
+    "distance_m": 525,
+    "walk_min": 9,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량접근이 가능하며, 남동측 인근에 지하철역(5호선: 발산역) 및 간선ㆍ지선버스정류장 등이 소재하는 등 제반교통여건 양호함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2024-03-06"
+   },
+   "history": [
+    {
+     "date": "2026-09-10",
+     "type": "매각기일",
+     "low_manwon": 22400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-21",
+     "type": "매각기일",
+     "low_manwon": 17920,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 14336,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
     }
    ]
   },
@@ -9520,6 +9556,89 @@
     }
    ]
   },
+  "2025타경103550[1]": {
+   "key": "2025타경103550[1]",
+   "category": "상가",
+   "auction_id": "C39RYRXO",
+   "region": "서울 관악구",
+   "address": "서울특별시 관악구 봉천동 1566-10 제일캠퍼스텔  2층201호",
+   "emd": "봉천동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 6500,
+   "low_manwon": 3328,
+   "fails": 3,
+   "bidding_date": "2027-01-06",
+   "area": 15.28,
+   "land_area": 5.64,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "서울대입구",
+     "distance_m": 468,
+     "walk_min": 8,
+     "lines": [
+      "2호선"
+     ]
+    },
+    {
+     "name": "봉천",
+     "distance_m": 652,
+     "walk_min": 11,
+     "lines": [
+      "2호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "서울대입구",
+    "distance_m": 468,
+    "walk_min": 8,
+    "lines": [
+     "2호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량출입이 가능하며, 북동측 인근에 지하철 2호선 '서울대입구역' 및 노선버스 정류장이 소재하는 등 대중교통사정은 양호함.",
+   "rights": {
+    "base_right": "가압류",
+    "base_date": "2024-05-29"
+   },
+   "history": [
+    {
+     "date": "2026-09-09",
+     "type": "매각기일",
+     "low_manwon": 6500,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-14",
+     "type": "매각기일",
+     "low_manwon": 5200,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-18",
+     "type": "매각기일",
+     "low_manwon": 4160,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-06",
+     "type": "매각기일",
+     "low_manwon": 3328,
+     "result": null
+    },
+    {
+     "date": "2027-01-13",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경102601[2]": {
    "key": "2025타경102601[2]",
    "category": "상가",
@@ -9699,83 +9818,6 @@
      "date": "2026-11-18",
      "type": "매각기일",
      "low_manwon": 15520,
-     "result": null
-    },
-    {
-     "date": "2026-11-25",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경103550[1]": {
-   "key": "2025타경103550[1]",
-   "category": "상가",
-   "auction_id": "C39RYRXO",
-   "region": "서울 관악구",
-   "address": "서울특별시 관악구 봉천동 1566-10 제일캠퍼스텔  2층201호",
-   "emd": "봉천동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 6500,
-   "low_manwon": 4160,
-   "fails": 2,
-   "bidding_date": "",
-   "area": 15.28,
-   "land_area": 5.64,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "서울대입구",
-     "distance_m": 468,
-     "walk_min": 8,
-     "lines": [
-      "2호선"
-     ]
-    },
-    {
-     "name": "봉천",
-     "distance_m": 652,
-     "walk_min": 11,
-     "lines": [
-      "2호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "서울대입구",
-    "distance_m": 468,
-    "walk_min": 8,
-    "lines": [
-     "2호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량출입이 가능하며, 북동측 인근에 지하철 2호선 '서울대입구역' 및 노선버스 정류장이 소재하는 등 대중교통사정은 양호함.",
-   "rights": {
-    "base_right": "가압류",
-    "base_date": "2024-05-29"
-   },
-   "history": [
-    {
-     "date": "2026-09-09",
-     "type": "매각기일",
-     "low_manwon": 6500,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-14",
-     "type": "매각기일",
-     "low_manwon": 5200,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-18",
-     "type": "매각기일",
-     "low_manwon": 4160,
      "result": null
     },
     {
@@ -9969,78 +10011,6 @@
     },
     {
      "date": "2026-11-25",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경102646[1]": {
-   "key": "2025타경102646[1]",
-   "category": "건물",
-   "auction_id": "C88FKFBT",
-   "region": "서울 관악구",
-   "address": "서울특별시 관악구 봉천동 1666-50 ",
-   "emd": "봉천동",
-   "type_details": [
-    "다가구주택",
-    "대지"
-   ],
-   "item_type": "단독주택,다가구",
-   "appr_manwon": 191973,
-   "low_manwon": 153579,
-   "fails": 1,
-   "bidding_date": "2026-11-19",
-   "area": 222.94,
-   "land_area": 112.6,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "서울대입구",
-     "distance_m": 219,
-     "walk_min": 4,
-     "lines": [
-      "2호선"
-     ]
-    },
-    {
-     "name": "낙성대",
-     "distance_m": 851,
-     "walk_min": 14,
-     "lines": [
-      "2호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "서울대입구",
-    "distance_m": 219,
-    "walk_min": 4,
-    "lines": [
-     "2호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건 소재 건물까지 차량 진출입 가능하며, 인근에 2호선 서울대입구역 및 버스정류장이 소재하는 등 대중교통 이용편의도는 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2013-12-19"
-   },
-   "history": [
-    {
-     "date": "2026-10-15",
-     "type": "매각기일",
-     "low_manwon": 191973,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 153579,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -10283,6 +10253,78 @@
     },
     {
      "date": "2026-12-17",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경102646[1]": {
+   "key": "2025타경102646[1]",
+   "category": "건물",
+   "auction_id": "C88FKFBT",
+   "region": "서울 관악구",
+   "address": "서울특별시 관악구 봉천동 1666-50 ",
+   "emd": "봉천동",
+   "type_details": [
+    "다가구주택",
+    "대지"
+   ],
+   "item_type": "단독주택,다가구",
+   "appr_manwon": 191973,
+   "low_manwon": 153579,
+   "fails": 1,
+   "bidding_date": "",
+   "area": 222.94,
+   "land_area": 112.6,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "서울대입구",
+     "distance_m": 219,
+     "walk_min": 4,
+     "lines": [
+      "2호선"
+     ]
+    },
+    {
+     "name": "낙성대",
+     "distance_m": 851,
+     "walk_min": 14,
+     "lines": [
+      "2호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "서울대입구",
+    "distance_m": 219,
+    "walk_min": 4,
+    "lines": [
+     "2호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건 소재 건물까지 차량 진출입 가능하며, 인근에 2호선 서울대입구역 및 버스정류장이 소재하는 등 대중교통 이용편의도는 양호함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2013-12-19"
+   },
+   "history": [
+    {
+     "date": "2026-10-15",
+     "type": "매각기일",
+     "low_manwon": 191973,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 153579,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -10860,6 +10902,281 @@
     }
    ]
   },
+  "2024타경1709[4]": {
+   "key": "2024타경1709[4]",
+   "category": "상가",
+   "auction_id": "C27JJQJF",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 아차산로78길 12, 지하층109호 (광장동,워커힐일신아파트 상가동)",
+   "emd": "광장동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가",
+   "appr_manwon": 13980,
+   "low_manwon": 2931,
+   "fails": 7,
+   "bidding_date": "2027-01-04",
+   "area": 15.7,
+   "land_area": 22.22,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "광나루",
+     "distance_m": 718,
+     "walk_min": 12,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "광나루",
+    "distance_m": 718,
+    "walk_min": 12,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량출입 가능하며 근거리에 지하철 5호선 \"광나루역\" 및 노선버스 정류장이 소재함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2021-02-05"
+   },
+   "history": [
+    {
+     "date": "2025-12-01",
+     "type": "매각기일",
+     "low_manwon": 13980,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-11",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    },
+    {
+     "date": "2026-01-19",
+     "type": "매각기일",
+     "low_manwon": 11184,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-03-09",
+     "type": "매각기일",
+     "low_manwon": 8947,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-04-13",
+     "type": "매각기일",
+     "low_manwon": 7157,
+     "result": "변경"
+    },
+    {
+     "date": "2026-07-20",
+     "type": "매각기일",
+     "low_manwon": 7157,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-08-31",
+     "type": "매각기일",
+     "low_manwon": 5726,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-12",
+     "type": "매각기일",
+     "low_manwon": 4581,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 3664,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-04",
+     "type": "매각기일",
+     "low_manwon": 2931,
+     "result": null
+    }
+   ]
+  },
+  "2025타경52362[1]": {
+   "key": "2025타경52362[1]",
+   "category": "상가",
+   "auction_id": "C37VJRWS",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 구의동 224-35 지음스토리  1층101호",
+   "emd": "구의동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 27900,
+   "low_manwon": 22320,
+   "fails": 1,
+   "bidding_date": "2027-01-04",
+   "area": 36.16,
+   "land_area": 47.6,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "구의",
+     "distance_m": 701,
+     "walk_min": 12,
+     "lines": [
+      "2호선"
+     ]
+    },
+    {
+     "name": "강변",
+     "distance_m": 867,
+     "walk_min": 15,
+     "lines": [
+      "2호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "구의",
+    "distance_m": 701,
+    "walk_min": 12,
+    "lines": [
+     "2호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 진출입이 가능하며, 인근에 버스정류장이 소재하는 등 대중교통 이용 편의도 는 무난시됨.",
+   "rights": {
+    "base_right": "가압류",
+    "base_date": "2025-03-20"
+   },
+   "history": [
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 27900,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-04",
+     "type": "매각기일",
+     "low_manwon": 22320,
+     "result": null
+    },
+    {
+     "date": "2027-01-11",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2024타경1709[1]": {
+   "key": "2024타경1709[1]",
+   "category": "상가",
+   "auction_id": "C49OOSNR",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 아차산로78길 12, 지하층101호 (광장동,워커힐일신아파트 상가동)",
+   "emd": "광장동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가",
+   "appr_manwon": 40000,
+   "low_manwon": 20480,
+   "fails": 3,
+   "bidding_date": "2027-01-04",
+   "area": 37.8,
+   "land_area": 53.52,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "광나루",
+     "distance_m": 718,
+     "walk_min": 12,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "광나루",
+    "distance_m": 718,
+    "walk_min": 12,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량출입 가능하며 근거리에 지하철 5호선 \"광나루역\" 및 노선버스 정류장이 소재함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2021-02-05"
+   },
+   "history": [
+    {
+     "date": "2025-12-01",
+     "type": "매각기일",
+     "low_manwon": 40000,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-01-19",
+     "type": "매각기일",
+     "low_manwon": 32000,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-03-09",
+     "type": "매각기일",
+     "low_manwon": 25600,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-04-13",
+     "type": "매각기일",
+     "low_manwon": 20480,
+     "result": "변경"
+    },
+    {
+     "date": "2026-07-20",
+     "type": "매각기일",
+     "low_manwon": 20480,
+     "result": "매각"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    },
+    {
+     "date": "2026-09-11",
+     "type": "대금지급기한",
+     "low_manwon": null,
+     "result": "미납"
+    },
+    {
+     "date": "2027-01-04",
+     "type": "매각기일",
+     "low_manwon": 20480,
+     "result": null
+    },
+    {
+     "date": "2027-01-11",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경51701[3]": {
    "key": "2025타경51701[3]",
    "category": "상가",
@@ -11032,257 +11349,6 @@
     },
     {
      "date": "2027-01-11",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2024타경1709[2]": {
-   "key": "2024타경1709[2]",
-   "category": "상가",
-   "auction_id": "C24AZBJX",
-   "region": "서울 광진구",
-   "address": "서울특별시 광진구 아차산로78길 12, 지하층102호 (광장동,워커힐일신아파트 상가동)",
-   "emd": "광장동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가",
-   "appr_manwon": 134800,
-   "low_manwon": 44171,
-   "fails": 6,
-   "bidding_date": "",
-   "area": 161.2,
-   "land_area": 228.22,
-   "court": "서울동부지방법원",
-   "stations": [
-    {
-     "name": "광나루",
-     "distance_m": 718,
-     "walk_min": 12,
-     "lines": [
-      "5호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "광나루",
-    "distance_m": 718,
-    "walk_min": 12,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량출입 가능하며 근거리에 지하철 5호선 \"광나루역\" 및 노선버스 정류장이 소재함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2021-02-05"
-   },
-   "history": [
-    {
-     "date": "2025-12-01",
-     "type": "매각기일",
-     "low_manwon": 134800,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-01-19",
-     "type": "매각기일",
-     "low_manwon": 107840,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-03-09",
-     "type": "매각기일",
-     "low_manwon": 86272,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-04-13",
-     "type": "매각기일",
-     "low_manwon": 69017,
-     "result": "변경"
-    },
-    {
-     "date": "2026-07-20",
-     "type": "매각기일",
-     "low_manwon": 69017,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-08-31",
-     "type": "매각기일",
-     "low_manwon": 55214,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-12",
-     "type": "매각기일",
-     "low_manwon": 44171,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-23",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2024타경1709[4]": {
-   "key": "2024타경1709[4]",
-   "category": "상가",
-   "auction_id": "C27JJQJF",
-   "region": "서울 광진구",
-   "address": "서울특별시 광진구 아차산로78길 12, 지하층109호 (광장동,워커힐일신아파트 상가동)",
-   "emd": "광장동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가",
-   "appr_manwon": 13980,
-   "low_manwon": 4581,
-   "fails": 6,
-   "bidding_date": "",
-   "area": 15.7,
-   "land_area": 22.22,
-   "court": "서울동부지방법원",
-   "stations": [
-    {
-     "name": "광나루",
-     "distance_m": 718,
-     "walk_min": 12,
-     "lines": [
-      "5호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "광나루",
-    "distance_m": 718,
-    "walk_min": 12,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량출입 가능하며 근거리에 지하철 5호선 \"광나루역\" 및 노선버스 정류장이 소재함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2021-02-05"
-   },
-   "history": [
-    {
-     "date": "2025-12-01",
-     "type": "매각기일",
-     "low_manwon": 13980,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-01-19",
-     "type": "매각기일",
-     "low_manwon": 11184,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-03-09",
-     "type": "매각기일",
-     "low_manwon": 8947,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-04-13",
-     "type": "매각기일",
-     "low_manwon": 7157,
-     "result": "변경"
-    },
-    {
-     "date": "2026-07-20",
-     "type": "매각기일",
-     "low_manwon": 7157,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-08-31",
-     "type": "매각기일",
-     "low_manwon": 5726,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-12",
-     "type": "매각기일",
-     "low_manwon": 4581,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-23",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경52362[1]": {
-   "key": "2025타경52362[1]",
-   "category": "상가",
-   "auction_id": "C37VJRWS",
-   "region": "서울 광진구",
-   "address": "서울특별시 광진구 구의동 224-35 지음스토리  1층101호",
-   "emd": "구의동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 27900,
-   "low_manwon": 27900,
-   "fails": 0,
-   "bidding_date": "",
-   "area": 36.16,
-   "land_area": 47.6,
-   "court": "서울동부지방법원",
-   "stations": [
-    {
-     "name": "구의",
-     "distance_m": 701,
-     "walk_min": 12,
-     "lines": [
-      "2호선"
-     ]
-    },
-    {
-     "name": "강변",
-     "distance_m": 867,
-     "walk_min": 15,
-     "lines": [
-      "2호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "구의",
-    "distance_m": 701,
-    "walk_min": 12,
-    "lines": [
-     "2호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 진출입이 가능하며, 인근에 버스정류장이 소재하는 등 대중교통 이용 편의도 는 무난시됨.",
-   "rights": {
-    "base_right": "가압류",
-    "base_date": "2025-03-20"
-   },
-   "history": [
-    {
-     "date": "2026-11-16",
-     "type": "매각기일",
-     "low_manwon": 27900,
-     "result": null
-    },
-    {
-     "date": "2026-11-23",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -12139,65 +12205,6 @@
     },
     {
      "date": "2026-12-09",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경3554[1]": {
-   "key": "2026타경3554[1]",
-   "category": "상가",
-   "auction_id": "C59MHXIL",
-   "region": "서울 금천구",
-   "address": "서울특별시 금천구 가산동 549-1 한라원앤원타워  제2층 제214호",
-   "emd": "가산동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "기타건물",
-   "appr_manwon": 63700,
-   "low_manwon": 63700,
-   "fails": 0,
-   "bidding_date": "2026-11-19",
-   "area": 74.82,
-   "land_area": 39.98,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "가산디지털단지",
-     "distance_m": 461,
-     "walk_min": 8,
-     "lines": [
-      "7호선",
-      "1호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "가산디지털단지",
-    "distance_m": 461,
-    "walk_min": 8,
-    "lines": [
-     "7호선",
-     "1호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "대상물건까지 차량의 진출입이 가능하며, 인근에 버스정류장 및 지하철역(가산디지털단지역)이 소재하는 등 대중교통 상황은 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2022-09-21"
-   },
-   "history": [
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 63700,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -14283,6 +14290,128 @@
     }
    ]
   },
+  "2026타경74[1]": {
+   "key": "2026타경74[1]",
+   "category": "상가",
+   "auction_id": "C86LYPAJ",
+   "region": "서울 금천구",
+   "address": "서울특별시 금천구 가산동 345-24 가산 아이에스비즈타워  제1층 제103호",
+   "emd": "가산동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 72000,
+   "low_manwon": 57600,
+   "fails": 1,
+   "bidding_date": "2027-01-13",
+   "area": 44.33,
+   "land_area": 10.97,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "가산디지털단지",
+     "distance_m": 835,
+     "walk_min": 14,
+     "lines": [
+      "7호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "가산디지털단지",
+    "distance_m": 835,
+    "walk_min": 14,
+    "lines": [
+     "7호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "대상물건은 차량 접근이 가능하며, 인근에 노선버스 정류장 및 근거리에 지하철 1호선 및 7호선 \"가산디지털단지역\" 및 지하철1호선 \"독산역\"이 소재하는 등 제반 교통상황은 대체로 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2021-09-30"
+   },
+   "history": [
+    {
+     "date": "2026-11-18",
+     "type": "매각기일",
+     "low_manwon": 72000,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-13",
+     "type": "매각기일",
+     "low_manwon": 57600,
+     "result": null
+    },
+    {
+     "date": "2027-01-20",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2026타경3554[1]": {
+   "key": "2026타경3554[1]",
+   "category": "상가",
+   "auction_id": "C59MHXIL",
+   "region": "서울 금천구",
+   "address": "서울특별시 금천구 가산동 549-1 한라원앤원타워  제2층 제214호",
+   "emd": "가산동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "기타건물",
+   "appr_manwon": 63700,
+   "low_manwon": 63700,
+   "fails": 0,
+   "bidding_date": "",
+   "area": 74.82,
+   "land_area": 39.98,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "가산디지털단지",
+     "distance_m": 461,
+     "walk_min": 8,
+     "lines": [
+      "7호선",
+      "1호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "가산디지털단지",
+    "distance_m": 461,
+    "walk_min": 8,
+    "lines": [
+     "7호선",
+     "1호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "대상물건까지 차량의 진출입이 가능하며, 인근에 버스정류장 및 지하철역(가산디지털단지역)이 소재하는 등 대중교통 상황은 양호함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2022-09-21"
+   },
+   "history": [
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 63700,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경802[1]": {
    "key": "2025타경802[1]",
    "category": "상가",
@@ -14352,63 +14481,6 @@
      "date": "2026-11-18",
      "type": "매각기일",
      "low_manwon": 122560,
-     "result": null
-    },
-    {
-     "date": "2026-11-25",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경74[1]": {
-   "key": "2026타경74[1]",
-   "category": "상가",
-   "auction_id": "C86LYPAJ",
-   "region": "서울 금천구",
-   "address": "서울특별시 금천구 가산동 345-24 가산 아이에스비즈타워  제1층 제103호",
-   "emd": "가산동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 72000,
-   "low_manwon": 72000,
-   "fails": 0,
-   "bidding_date": "",
-   "area": 44.33,
-   "land_area": 10.97,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "가산디지털단지",
-     "distance_m": 835,
-     "walk_min": 14,
-     "lines": [
-      "7호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "가산디지털단지",
-    "distance_m": 835,
-    "walk_min": 14,
-    "lines": [
-     "7호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "대상물건은 차량 접근이 가능하며, 인근에 노선버스 정류장 및 근거리에 지하철 1호선 및 7호선 \"가산디지털단지역\" 및 지하철1호선 \"독산역\"이 소재하는 등 제반 교통상황은 대체로 보통임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2021-09-30"
-   },
-   "history": [
-    {
-     "date": "2026-11-18",
-     "type": "매각기일",
-     "low_manwon": 72000,
      "result": null
     },
     {
@@ -16698,9 +16770,9 @@
    ],
    "item_type": "상가,오피스텔,근린",
    "appr_manwon": 24800,
-   "low_manwon": 24800,
-   "fails": 0,
-   "bidding_date": "",
+   "low_manwon": 19840,
+   "fails": 1,
+   "bidding_date": "2027-01-05",
    "area": 38.35,
    "land_area": 4.51,
    "court": "서울서부지방법원",
@@ -16752,7 +16824,19 @@
    },
    "history": [
     {
-     "date": "2026-11-24",
+     "date": "2026-11-17",
+     "type": "매각기일",
+     "low_manwon": 24800,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-05",
+     "type": "매각기일",
+     "low_manwon": 19840,
+     "result": null
+    },
+    {
+     "date": "2027-01-12",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -16773,7 +16857,7 @@
    "item_type": "단독주택,다가구",
    "appr_manwon": 247918,
    "low_manwon": 126934,
-   "fails": 2,
+   "fails": 3,
    "bidding_date": "2027-01-05",
    "area": 201.6,
    "land_area": 147.8,
@@ -16846,15 +16930,21 @@
      "result": "변경"
     },
     {
-     "date": "2026-11-24",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
+     "date": "2026-11-17",
+     "type": "매각기일",
+     "low_manwon": 158667,
+     "result": "유찰"
     },
     {
      "date": "2027-01-05",
      "type": "매각기일",
      "low_manwon": 126934,
+     "result": null
+    },
+    {
+     "date": "2027-01-12",
+     "type": "매각결정기일",
+     "low_manwon": null,
      "result": null
     }
    ]
@@ -17165,176 +17255,6 @@
     },
     {
      "date": "2026-12-22",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경1789[1]": {
-   "key": "2025타경1789[1]",
-   "category": "상가",
-   "auction_id": "C01TLFLA",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 잠원동 76  지층022호",
-   "emd": "잠원동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 42500,
-   "low_manwon": 21760,
-   "fails": 3,
-   "bidding_date": "2026-11-19",
-   "area": 16.12,
-   "land_area": 38.5,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "고속터미널",
-     "distance_m": 336,
-     "walk_min": 6,
-     "lines": [
-      "9호선",
-      "3호선",
-      "7호선"
-     ]
-    },
-    {
-     "name": "신반포",
-     "distance_m": 585,
-     "walk_min": 10,
-     "lines": [
-      "9호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "고속터미널",
-    "distance_m": 336,
-    "walk_min": 6,
-    "lines": [
-     "9호선",
-     "3호선",
-     "7호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건 인근에 지하철 3,7,9호선 고속터미널역이 소재하고, 버스정류장이 근접하여 있어",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2024-03-21"
-   },
-   "history": [
-    {
-     "date": "2026-07-30",
-     "type": "매각기일",
-     "low_manwon": 42500,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-09-03",
-     "type": "매각기일",
-     "low_manwon": 34000,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-15",
-     "type": "매각기일",
-     "low_manwon": 27200,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 21760,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경103005[1]": {
-   "key": "2025타경103005[1]",
-   "category": "상가",
-   "auction_id": "C10AFBNA",
-   "region": "서울 서초구",
-   "address": "서울특별시 서초구 서초동 1601-10 서초어반하이오피스텔  1층107호",
-   "emd": "서초동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 108000,
-   "low_manwon": 55296,
-   "fails": 3,
-   "bidding_date": "2026-11-19",
-   "area": 31.39,
-   "land_area": 22.48,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "남부터미널",
-     "distance_m": 106,
-     "walk_min": 2,
-     "lines": [
-      "3호선"
-     ]
-    },
-    {
-     "name": "교대",
-     "distance_m": 813,
-     "walk_min": 14,
-     "lines": [
-      "3호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "남부터미널",
-    "distance_m": 106,
-    "walk_min": 2,
-    "lines": [
-     "3호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 진출입이 가능하며, 인근에 버스정류장 및 지하철이 3호선(남부터",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2019-12-27"
-   },
-   "history": [
-    {
-     "date": "2026-07-30",
-     "type": "매각기일",
-     "low_manwon": 108000,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-09-03",
-     "type": "매각기일",
-     "low_manwon": 86400,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-15",
-     "type": "매각기일",
-     "low_manwon": 69120,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 55296,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -17922,6 +17842,176 @@
     }
    ]
   },
+  "2025타경1789[1]": {
+   "key": "2025타경1789[1]",
+   "category": "상가",
+   "auction_id": "C01TLFLA",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 잠원동 76  지층022호",
+   "emd": "잠원동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 42500,
+   "low_manwon": 21760,
+   "fails": 3,
+   "bidding_date": "",
+   "area": 16.12,
+   "land_area": 38.5,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "고속터미널",
+     "distance_m": 336,
+     "walk_min": 6,
+     "lines": [
+      "9호선",
+      "3호선",
+      "7호선"
+     ]
+    },
+    {
+     "name": "신반포",
+     "distance_m": 585,
+     "walk_min": 10,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "고속터미널",
+    "distance_m": 336,
+    "walk_min": 6,
+    "lines": [
+     "9호선",
+     "3호선",
+     "7호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건 인근에 지하철 3,7,9호선 고속터미널역이 소재하고, 버스정류장이 근접하여 있어",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2024-03-21"
+   },
+   "history": [
+    {
+     "date": "2026-07-30",
+     "type": "매각기일",
+     "low_manwon": 42500,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-03",
+     "type": "매각기일",
+     "low_manwon": 34000,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "매각기일",
+     "low_manwon": 27200,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 21760,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경103005[1]": {
+   "key": "2025타경103005[1]",
+   "category": "상가",
+   "auction_id": "C10AFBNA",
+   "region": "서울 서초구",
+   "address": "서울특별시 서초구 서초동 1601-10 서초어반하이오피스텔  1층107호",
+   "emd": "서초동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 108000,
+   "low_manwon": 55296,
+   "fails": 3,
+   "bidding_date": "",
+   "area": 31.39,
+   "land_area": 22.48,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "남부터미널",
+     "distance_m": 106,
+     "walk_min": 2,
+     "lines": [
+      "3호선"
+     ]
+    },
+    {
+     "name": "교대",
+     "distance_m": 813,
+     "walk_min": 14,
+     "lines": [
+      "3호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "남부터미널",
+    "distance_m": 106,
+    "walk_min": 2,
+    "lines": [
+     "3호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 진출입이 가능하며, 인근에 버스정류장 및 지하철이 3호선(남부터",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2019-12-27"
+   },
+   "history": [
+    {
+     "date": "2026-07-30",
+     "type": "매각기일",
+     "low_manwon": 108000,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-03",
+     "type": "매각기일",
+     "low_manwon": 86400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "매각기일",
+     "low_manwon": 69120,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 55296,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경52552[2]": {
    "key": "2025타경52552[2]",
    "category": "상가",
@@ -18175,6 +18265,69 @@
     }
    ]
   },
+  "2026타경50302[2]": {
+   "key": "2026타경50302[2]",
+   "category": "상가",
+   "auction_id": "C49TITSD",
+   "region": "서울 성동구",
+   "address": "서울특별시 성동구 용답동 238-1 카서울닷컴  10층1005호",
+   "emd": "용답동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "근린",
+   "appr_manwon": 119000,
+   "low_manwon": 95200,
+   "fails": 1,
+   "bidding_date": "2027-01-04",
+   "area": 285.85,
+   "land_area": 121.58,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "장한평",
+     "distance_m": 453,
+     "walk_min": 8,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "장한평",
+    "distance_m": 453,
+    "walk_min": 8,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 제반차량 출입이 가능하며, 인근에 버스정류장 및 지하철5호선 \"장한평역\"이 소재하는 등 제반교통여건은 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2023-06-29"
+   },
+   "history": [
+    {
+     "date": "2026-11-16",
+     "type": "매각기일",
+     "low_manwon": 119000,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-04",
+     "type": "매각기일",
+     "low_manwon": 95200,
+     "result": null
+    },
+    {
+     "date": "2027-01-11",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경51642[1]": {
    "key": "2025타경51642[1]",
    "category": "상가",
@@ -18189,7 +18342,7 @@
    "item_type": "상가,오피스텔,근린",
    "appr_manwon": 33100,
    "low_manwon": 21184,
-   "fails": 1,
+   "fails": 2,
    "bidding_date": "2027-01-04",
    "area": 44.76,
    "land_area": 9917.4,
@@ -18235,69 +18388,6 @@
      "date": "2027-01-04",
      "type": "매각기일",
      "low_manwon": 21184,
-     "result": null
-    },
-    {
-     "date": "2027-01-11",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경50302[2]": {
-   "key": "2026타경50302[2]",
-   "category": "상가",
-   "auction_id": "C49TITSD",
-   "region": "서울 성동구",
-   "address": "서울특별시 성동구 용답동 238-1 카서울닷컴  10층1005호",
-   "emd": "용답동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "근린",
-   "appr_manwon": 119000,
-   "low_manwon": 119000,
-   "fails": 0,
-   "bidding_date": "",
-   "area": 285.85,
-   "land_area": 121.58,
-   "court": "서울동부지방법원",
-   "stations": [
-    {
-     "name": "장한평",
-     "distance_m": 453,
-     "walk_min": 8,
-     "lines": [
-      "5호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "장한평",
-    "distance_m": 453,
-    "walk_min": 8,
-    "lines": [
-     "5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 제반차량 출입이 가능하며, 인근에 버스정류장 및 지하철5호선 \"장한평역\"이 소재하는 등 제반교통여건은 보통임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2023-06-29"
-   },
-   "history": [
-    {
-     "date": "2026-11-16",
-     "type": "매각기일",
-     "low_manwon": 119000,
-     "result": "유찰"
-    },
-    {
-     "date": "2027-01-04",
-     "type": "매각기일",
-     "low_manwon": 95200,
      "result": null
     },
     {
@@ -19701,105 +19791,6 @@
     },
     {
      "date": "2026-12-15",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경313[1]": {
-   "key": "2025타경313[1]",
-   "category": "상가",
-   "auction_id": "C00GBUFU",
-   "region": "서울 송파구",
-   "address": "서울특별시 송파구 석촌동 256 빌라드그리움석촌  4층406호",
-   "emd": "석촌동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 37600,
-   "low_manwon": 19251,
-   "fails": 3,
-   "bidding_date": "2026-11-23",
-   "area": 41.58,
-   "land_area": 54.7,
-   "court": "서울동부지방법원",
-   "stations": [
-    {
-     "name": "석촌",
-     "distance_m": 561,
-     "walk_min": 10,
-     "lines": [
-      "9호선",
-      "8호선"
-     ]
-    },
-    {
-     "name": "석촌고분",
-     "distance_m": 706,
-     "walk_min": 12,
-     "lines": [
-      "9호선"
-     ]
-    },
-    {
-     "name": "송파",
-     "distance_m": 722,
-     "walk_min": 12,
-     "lines": [
-      "8호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "석촌",
-    "distance_m": 561,
-    "walk_min": 10,
-    "lines": [
-     "9호선",
-     "8호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건 소재 건물까지 차량출입이 가능하고, 인근에 버스정류장 및 근거리에 지하철 8·9호선 석촌역이 소재하는 등 대중교통사정은 보통임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2019-09-02"
-   },
-   "history": [
-    {
-     "date": "2026-04-20",
-     "type": "매각기일",
-     "low_manwon": 37600,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-06-08",
-     "type": "매각기일",
-     "low_manwon": 30080,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-07-27",
-     "type": "매각기일",
-     "low_manwon": 24064,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-09-07",
-     "type": "매각기일",
-     "low_manwon": 19251,
-     "result": "변경"
-    },
-    {
-     "date": "2026-11-23",
-     "type": "매각기일",
-     "low_manwon": 19251,
-     "result": null
-    },
-    {
-     "date": "2026-11-30",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -22118,9 +22109,9 @@
    ],
    "item_type": "다가구",
    "appr_manwon": 94611,
-   "low_manwon": 94611,
-   "fails": 0,
-   "bidding_date": "",
+   "low_manwon": 75689,
+   "fails": 1,
+   "bidding_date": "2027-01-04",
    "area": 372.96,
    "land_area": 166,
    "court": "서울동부지방법원",
@@ -22315,84 +22306,16 @@
      "date": "2026-11-18",
      "type": "매각기일",
      "low_manwon": 50000,
-     "result": null
+     "result": "유찰"
     },
     {
-     "date": "2026-11-25",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2026타경5369[1]": {
-   "key": "2026타경5369[1]",
-   "category": "상가",
-   "auction_id": "C57OAKJZ",
-   "region": "서울 영등포구",
-   "address": "서울특별시 영등포구 당산동2가 16-1 대우아파트 제102동 제2층 제222호",
-   "emd": "당산동2가",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 4900,
-   "low_manwon": 4900,
-   "fails": 0,
-   "bidding_date": "2026-11-19",
-   "area": 21.25,
-   "land_area": 7.23,
-   "court": "서울남부지방법원",
-   "stations": [
-    {
-     "name": "문래",
-     "distance_m": 386,
-     "walk_min": 7,
-     "lines": [
-      "2호선"
-     ]
-    },
-    {
-     "name": "영등포구청",
-     "distance_m": 396,
-     "walk_min": 7,
-     "lines": [
-      "5호선",
-      "2호선"
-     ]
-    },
-    {
-     "name": "양평",
-     "distance_m": 761,
-     "walk_min": 13,
-     "lines": [
-      "5호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "문래",
-    "distance_m": 386,
-    "walk_min": 7,
-    "lines": [
-     "2호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 진출입이 가능하며, 본건 인근으로 지하철 5호선 영등포구청역, 지하철 2호선 문래역 및 노선버스정류장이 소재하는 등 제반 교통여건은 무난시됨.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2022-01-03"
-   },
-   "history": [
-    {
-     "date": "2026-11-19",
+     "date": "2027-01-13",
      "type": "매각기일",
-     "low_manwon": 4900,
+     "low_manwon": 40000,
      "result": null
     },
     {
-     "date": "2026-11-26",
+     "date": "2027-01-20",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -22661,6 +22584,80 @@
     },
     {
      "date": "2026-12-02",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2026타경5369[1]": {
+   "key": "2026타경5369[1]",
+   "category": "상가",
+   "auction_id": "C57OAKJZ",
+   "region": "서울 영등포구",
+   "address": "서울특별시 영등포구 당산동2가 16-1 대우아파트 제102동 제2층 제222호",
+   "emd": "당산동2가",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 4900,
+   "low_manwon": 4900,
+   "fails": 0,
+   "bidding_date": "",
+   "area": 21.25,
+   "land_area": 7.23,
+   "court": "서울남부지방법원",
+   "stations": [
+    {
+     "name": "문래",
+     "distance_m": 386,
+     "walk_min": 7,
+     "lines": [
+      "2호선"
+     ]
+    },
+    {
+     "name": "영등포구청",
+     "distance_m": 396,
+     "walk_min": 7,
+     "lines": [
+      "5호선",
+      "2호선"
+     ]
+    },
+    {
+     "name": "양평",
+     "distance_m": 761,
+     "walk_min": 13,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "문래",
+    "distance_m": 386,
+    "walk_min": 7,
+    "lines": [
+     "2호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 진출입이 가능하며, 본건 인근으로 지하철 5호선 영등포구청역, 지하철 2호선 문래역 및 노선버스정류장이 소재하는 등 제반 교통여건은 무난시됨.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2022-01-03"
+   },
+   "history": [
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 4900,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -23311,9 +23308,9 @@
    ],
    "item_type": "상가,오피스텔,근린",
    "appr_manwon": 72000,
-   "low_manwon": 29491,
+   "low_manwon": 23593,
    "fails": 4,
-   "bidding_date": "",
+   "bidding_date": "2027-01-05",
    "area": 43.82,
    "land_area": 9.23,
    "court": "서울서부지방법원",
@@ -23412,9 +23409,9 @@
    ],
    "item_type": "상가,오피스텔,근린",
    "appr_manwon": 80800,
-   "low_manwon": 21181,
-   "fails": 6,
-   "bidding_date": "",
+   "low_manwon": 16945,
+   "fails": 7,
+   "bidding_date": "2027-01-05",
    "area": 45.87,
    "land_area": 16.35,
    "court": "서울서부지방법원",
@@ -23492,10 +23489,16 @@
      "date": "2026-11-17",
      "type": "매각기일",
      "low_manwon": 21181,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-05",
+     "type": "매각기일",
+     "low_manwon": 16945,
      "result": null
     },
     {
-     "date": "2026-11-24",
+     "date": "2027-01-12",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -23515,7 +23518,7 @@
    "item_type": "상가,오피스텔,근린",
    "appr_manwon": 21600,
    "low_manwon": 11059,
-   "fails": 3,
+   "fails": 4,
    "bidding_date": "",
    "area": 27.65,
    "land_area": null,
@@ -23572,276 +23575,84 @@
      "result": "유찰"
     },
     {
-     "date": "2026-11-24",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
+     "date": "2026-11-17",
+     "type": "매각기일",
+     "low_manwon": 11059,
+     "result": "유찰"
     }
    ]
   },
-  "2025타경104599[2]": {
-   "key": "2025타경104599[2]",
-   "category": "상가",
-   "auction_id": "C40QRWPK",
-   "region": "서울 종로구",
-   "address": "서울특별시 종로구 적선동 80  지하1층39호",
-   "emd": "적선동",
+  "2024타경2032[1]": {
+   "key": "2024타경2032[1]",
+   "category": "건물",
+   "auction_id": "C48UVQWY",
+   "region": "서울 은평구",
+   "address": "서울특별시 은평구 연서로 168",
+   "emd": "대조동",
    "type_details": [
-    "근린시설"
+    "근린주택",
+    "대지"
    ],
    "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 16700,
-   "low_manwon": 16700,
-   "fails": 0,
-   "bidding_date": "2026-11-18",
-   "area": 24.29,
-   "land_area": 4.13,
-   "court": "서울중앙지방법원",
+   "appr_manwon": 220510,
+   "low_manwon": 176408,
+   "fails": 1,
+   "bidding_date": "2026-12-22",
+   "area": 280.04,
+   "land_area": 138.5,
+   "court": "서울서부지방법원",
    "stations": [
     {
-     "name": "경복궁",
-     "distance_m": 59,
-     "walk_min": 1,
-     "lines": [
-      "3호선"
-     ]
-    },
-    {
-     "name": "광화문",
-     "distance_m": 504,
-     "walk_min": 9,
-     "lines": [
-      "5호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "경복궁",
-    "distance_m": 59,
-    "walk_min": 1,
-    "lines": [
-     "3호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량의 접근이 가능하고, 인근에 노선버스정류장이 소재하고 지하철3호선 경복궁역 6번출구와 연결통로가 되어있어 제반 교통상황 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2014-04-22"
-   },
-   "history": [
-    {
-     "date": "2026-11-18",
-     "type": "매각기일",
-     "low_manwon": 16700,
-     "result": null
-    },
-    {
-     "date": "2026-11-25",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경104599[1]": {
-   "key": "2025타경104599[1]",
-   "category": "상가",
-   "auction_id": "C86VYOHN",
-   "region": "서울 종로구",
-   "address": "서울특별시 종로구 적선동 80  지하1층4호",
-   "emd": "적선동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 42200,
-   "low_manwon": 42200,
-   "fails": 0,
-   "bidding_date": "2026-11-18",
-   "area": 135.02,
-   "land_area": 22.94,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "경복궁",
-     "distance_m": 59,
-     "walk_min": 1,
-     "lines": [
-      "3호선"
-     ]
-    },
-    {
-     "name": "광화문",
-     "distance_m": 504,
-     "walk_min": 9,
-     "lines": [
-      "5호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "경복궁",
-    "distance_m": 59,
-    "walk_min": 1,
-    "lines": [
-     "3호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량의 접근이 가능하고, 인근에 노선버스정류장이 소재하고 지하철3호선 경복궁역 6번출구와 연결통로가 되어있어 제반 교통상황 양호함.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2013-06-11"
-   },
-   "history": [
-    {
-     "date": "2026-11-18",
-     "type": "매각기일",
-     "low_manwon": 42200,
-     "result": null
-    },
-    {
-     "date": "2026-11-25",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2024타경2105[1]": {
-   "key": "2024타경2105[1]",
-   "category": "상가",
-   "auction_id": "C64YUGHO",
-   "region": "서울 종로구",
-   "address": "서울특별시 종로구 종로 183, 지2층에스에프지2009호 (인의동,효성주얼리시티)",
-   "emd": "인의동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "근린",
-   "appr_manwon": 29300,
-   "low_manwon": 824,
-   "fails": 16,
-   "bidding_date": "2026-11-19",
-   "area": 29.54,
-   "land_area": 15.8,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "종로5가",
-     "distance_m": 289,
+     "name": "구산",
+     "distance_m": 284,
      "walk_min": 5,
      "lines": [
-      "1호선"
+      "6호선"
      ]
     },
     {
-     "name": "을지로4가",
-     "distance_m": 431,
-     "walk_min": 8,
-     "lines": [
-      "5호선",
-      "2호선"
-     ]
-    },
-    {
-     "name": "종로3가",
-     "distance_m": 556,
+     "name": "연신내",
+     "distance_m": 573,
      "walk_min": 10,
      "lines": [
-      "1호선",
-      "3호선",
-      "5호선"
+      "6호선",
+      "GTX-A",
+      "3호선"
      ]
     }
    ],
    "station": {
-    "name": "종로5가",
-    "distance_m": 289,
+    "name": "구산",
+    "distance_m": 284,
     "walk_min": 5,
     "lines": [
-     "1호선"
+     "6호선"
     ]
    },
    "construct_year": null,
-   "traffic": "본건물 까지 차량출입 가능하고 인근에 지하철 1호선 종로5가역 및 버스승강장이 소재하여",
+   "traffic": "본건까지 차량의 출입이 가능하며,인근에 노선버스정류장 및 지하철\"연신내역\"(3,6호선)이 소재하여  대중교통 등의 제반교통 사정은 양호함.",
    "rights": {
     "base_right": "근저당권",
-    "base_date": "2020-07-24"
+    "base_date": "2002-03-20"
    },
    "history": [
     {
-     "date": "2025-02-06",
+     "date": "2026-11-17",
      "type": "매각기일",
-     "low_manwon": 29300,
+     "low_manwon": 220510,
      "result": "유찰"
     },
     {
-     "date": "2025-12-18",
+     "date": "2026-12-22",
      "type": "매각기일",
-     "low_manwon": 3932,
-     "result": "유찰"
+     "low_manwon": 176408,
+     "result": null
     },
     {
-     "date": "2026-01-29",
-     "type": "매각기일",
-     "low_manwon": 3146,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-03-12",
-     "type": "매각기일",
-     "low_manwon": 2516,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-04-16",
-     "type": "매각기일",
-     "low_manwon": 2013,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-05-21",
-     "type": "매각기일",
-     "low_manwon": 1610,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-06-25",
-     "type": "매각기일",
-     "low_manwon": 1288,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-07-30",
-     "type": "매각기일",
-     "low_manwon": 1031,
-     "result": "매각"
-    },
-    {
-     "date": "2026-08-06",
+     "date": "2026-12-29",
      "type": "매각결정기일",
      "low_manwon": null,
-     "result": "최고가매각허가결정"
-    },
-    {
-     "date": "2026-09-14",
-     "type": "대금지급기한",
-     "low_manwon": null,
-     "result": "미납"
-    },
-    {
-     "date": "2026-10-15",
-     "type": "매각기일",
-     "low_manwon": 1031,
-     "result": "유찰"
-    },
-    {
-     "date": "2025-03-13",
-     "type": "매각기일",
-     "low_manwon": 23440,
-     "result": "유찰"
+     "result": null
     }
    ]
   },
@@ -24424,6 +24235,148 @@
     }
    ]
   },
+  "2025타경104599[2]": {
+   "key": "2025타경104599[2]",
+   "category": "상가",
+   "auction_id": "C40QRWPK",
+   "region": "서울 종로구",
+   "address": "서울특별시 종로구 적선동 80  지하1층39호",
+   "emd": "적선동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 16700,
+   "low_manwon": 13360,
+   "fails": 1,
+   "bidding_date": "2027-01-06",
+   "area": 24.29,
+   "land_area": 4.13,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "경복궁",
+     "distance_m": 59,
+     "walk_min": 1,
+     "lines": [
+      "3호선"
+     ]
+    },
+    {
+     "name": "광화문",
+     "distance_m": 504,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "경복궁",
+    "distance_m": 59,
+    "walk_min": 1,
+    "lines": [
+     "3호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량의 접근이 가능하고, 인근에 노선버스정류장이 소재하고 지하철3호선 경복궁역 6번출구와 연결통로가 되어있어 제반 교통상황 양호함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2014-04-22"
+   },
+   "history": [
+    {
+     "date": "2026-11-18",
+     "type": "매각기일",
+     "low_manwon": 16700,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-06",
+     "type": "매각기일",
+     "low_manwon": 13360,
+     "result": null
+    },
+    {
+     "date": "2027-01-13",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경104599[1]": {
+   "key": "2025타경104599[1]",
+   "category": "상가",
+   "auction_id": "C86VYOHN",
+   "region": "서울 종로구",
+   "address": "서울특별시 종로구 적선동 80  지하1층4호",
+   "emd": "적선동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 42200,
+   "low_manwon": 33760,
+   "fails": 1,
+   "bidding_date": "2027-01-06",
+   "area": 135.02,
+   "land_area": 22.94,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "경복궁",
+     "distance_m": 59,
+     "walk_min": 1,
+     "lines": [
+      "3호선"
+     ]
+    },
+    {
+     "name": "광화문",
+     "distance_m": 504,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "경복궁",
+    "distance_m": 59,
+    "walk_min": 1,
+    "lines": [
+     "3호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량의 접근이 가능하고, 인근에 노선버스정류장이 소재하고 지하철3호선 경복궁역 6번출구와 연결통로가 되어있어 제반 교통상황 양호함.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2013-06-11"
+   },
+   "history": [
+    {
+     "date": "2026-11-18",
+     "type": "매각기일",
+     "low_manwon": 42200,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-06",
+     "type": "매각기일",
+     "low_manwon": 33760,
+     "result": null
+    },
+    {
+     "date": "2027-01-13",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2023타경116465[2]": {
    "key": "2023타경116465[2]",
    "category": "상가",
@@ -24592,6 +24545,142 @@
      "date": "2025-07-10",
      "type": "매각기일",
      "low_manwon": 21145,
+     "result": "유찰"
+    }
+   ]
+  },
+  "2024타경2105[1]": {
+   "key": "2024타경2105[1]",
+   "category": "상가",
+   "auction_id": "C64YUGHO",
+   "region": "서울 종로구",
+   "address": "서울특별시 종로구 종로 183, 지2층에스에프지2009호 (인의동,효성주얼리시티)",
+   "emd": "인의동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "근린",
+   "appr_manwon": 29300,
+   "low_manwon": 824,
+   "fails": 16,
+   "bidding_date": "",
+   "area": 29.54,
+   "land_area": 15.8,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "종로5가",
+     "distance_m": 289,
+     "walk_min": 5,
+     "lines": [
+      "1호선"
+     ]
+    },
+    {
+     "name": "을지로4가",
+     "distance_m": 431,
+     "walk_min": 8,
+     "lines": [
+      "5호선",
+      "2호선"
+     ]
+    },
+    {
+     "name": "종로3가",
+     "distance_m": 556,
+     "walk_min": 10,
+     "lines": [
+      "1호선",
+      "3호선",
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "종로5가",
+    "distance_m": 289,
+    "walk_min": 5,
+    "lines": [
+     "1호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건물 까지 차량출입 가능하고 인근에 지하철 1호선 종로5가역 및 버스승강장이 소재하여",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2020-07-24"
+   },
+   "history": [
+    {
+     "date": "2025-02-06",
+     "type": "매각기일",
+     "low_manwon": 29300,
+     "result": "유찰"
+    },
+    {
+     "date": "2025-12-18",
+     "type": "매각기일",
+     "low_manwon": 3932,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-01-29",
+     "type": "매각기일",
+     "low_manwon": 3146,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-03-12",
+     "type": "매각기일",
+     "low_manwon": 2516,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-04-16",
+     "type": "매각기일",
+     "low_manwon": 2013,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-05-21",
+     "type": "매각기일",
+     "low_manwon": 1610,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-25",
+     "type": "매각기일",
+     "low_manwon": 1288,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-30",
+     "type": "매각기일",
+     "low_manwon": 1031,
+     "result": "매각"
+    },
+    {
+     "date": "2026-08-06",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": "최고가매각허가결정"
+    },
+    {
+     "date": "2026-09-14",
+     "type": "대금지급기한",
+     "low_manwon": null,
+     "result": "미납"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "매각기일",
+     "low_manwon": 1031,
+     "result": "유찰"
+    },
+    {
+     "date": "2025-03-13",
+     "type": "매각기일",
+     "low_manwon": 23440,
      "result": "유찰"
     }
    ]
@@ -24773,285 +24862,6 @@
     },
     {
      "date": "2026-12-09",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경1697[1]": {
-   "key": "2025타경1697[1]",
-   "category": "상가",
-   "auction_id": "C20CEEDO",
-   "region": "서울 중구",
-   "address": "서울특별시 중구 다동 155 센터플레이스  2층218호",
-   "emd": "다동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 51800,
-   "low_manwon": 41440,
-   "fails": 1,
-   "bidding_date": "2026-11-18",
-   "area": 29.03,
-   "land_area": 4.1,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "을지로입구",
-     "distance_m": 204,
-     "walk_min": 4,
-     "lines": [
-      "2호선"
-     ]
-    },
-    {
-     "name": "시청",
-     "distance_m": 341,
-     "walk_min": 6,
-     "lines": [
-      "1호선",
-      "2호선"
-     ]
-    },
-    {
-     "name": "종각",
-     "distance_m": 423,
-     "walk_min": 7,
-     "lines": [
-      "1호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "을지로입구",
-    "distance_m": 204,
-    "walk_min": 4,
-    "lines": [
-     "2호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 제반 차량 접근 가능하며, 인근에 버스정류장 및 전철역(시청역, 을지로입구역 : 지하철 1, 2호선)이 소재하는 등 전반적인 대중교통여건은 양호한 편임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2020-07-29"
-   },
-   "history": [
-    {
-     "date": "2026-08-05",
-     "type": "매각기일",
-     "low_manwon": 51800,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-09-09",
-     "type": "매각기일",
-     "low_manwon": 41440,
-     "result": "변경"
-    },
-    {
-     "date": "2026-11-18",
-     "type": "매각기일",
-     "low_manwon": 41440,
-     "result": null
-    },
-    {
-     "date": "2026-11-25",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경102848[1]": {
-   "key": "2025타경102848[1]",
-   "category": "상가",
-   "auction_id": "C09KNHLL",
-   "region": "서울 중구",
-   "address": "서울특별시 중구 을지로6가 18-185  밀리오레 제지하2층173호",
-   "emd": "을지로6가",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 1420,
-   "low_manwon": 727,
-   "fails": 3,
-   "bidding_date": "2026-11-19",
-   "area": 10,
-   "land_area": null,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "동대문",
-     "distance_m": 300,
-     "walk_min": 5,
-     "lines": [
-      "4호선",
-      "사문화공원역 2호선",
-      "사문화공원역 4호선",
-      "1호선",
-      "사문화공원역 5호선"
-     ]
-    },
-    {
-     "name": "종로5가",
-     "distance_m": 666,
-     "walk_min": 11,
-     "lines": [
-      "1호선"
-     ]
-    },
-    {
-     "name": "신당",
-     "distance_m": 737,
-     "walk_min": 12,
-     "lines": [
-      "6호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "동대문",
-    "distance_m": 300,
-    "walk_min": 5,
-    "lines": [
-     "4호선",
-     "사문화공원역 2호선",
-     "사문화공원역 4호선",
-     "1호선",
-     "사문화공원역 5호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 출입이 가능하며, 인근으로 노선버스정류장 및 지하철 동대문역사문화",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2011-12-23"
-   },
-   "history": [
-    {
-     "date": "2026-07-30",
-     "type": "매각기일",
-     "low_manwon": 1420,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-09-03",
-     "type": "매각기일",
-     "low_manwon": 1136,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-15",
-     "type": "매각기일",
-     "low_manwon": 908,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 727,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
-    }
-   ]
-  },
-  "2025타경103070[1]": {
-   "key": "2025타경103070[1]",
-   "category": "상가",
-   "auction_id": "C87ODXUR",
-   "region": "서울 중구",
-   "address": "서울특별시 중구 묵정동 35 힐스테이트남산 101동 제지1층 제비104호",
-   "emd": "묵정동",
-   "type_details": [
-    "근린시설"
-   ],
-   "item_type": "상가,오피스텔,근린",
-   "appr_manwon": 153000,
-   "low_manwon": 78336,
-   "fails": 3,
-   "bidding_date": "2026-11-19",
-   "area": 37.8,
-   "land_area": 48,
-   "court": "서울중앙지방법원",
-   "stations": [
-    {
-     "name": "충무로",
-     "distance_m": 355,
-     "walk_min": 6,
-     "lines": [
-      "4호선",
-      "3호선"
-     ]
-    },
-    {
-     "name": "을지로4가",
-     "distance_m": 585,
-     "walk_min": 10,
-     "lines": [
-      "2호선",
-      "5호선"
-     ]
-    },
-    {
-     "name": "동대입구",
-     "distance_m": 599,
-     "walk_min": 10,
-     "lines": [
-      "3호선"
-     ]
-    }
-   ],
-   "station": {
-    "name": "충무로",
-    "distance_m": 355,
-    "walk_min": 6,
-    "lines": [
-     "4호선",
-     "3호선"
-    ]
-   },
-   "construct_year": null,
-   "traffic": "본건까지 차량 진출입이 가능하며, 인근에 노선버스정류장 및 지하철 3,4호선 충무로역이 소재하는 등 대중교통 여건은 보통임.",
-   "rights": {
-    "base_right": "근저당권",
-    "base_date": "2024-10-10"
-   },
-   "history": [
-    {
-     "date": "2026-07-30",
-     "type": "매각기일",
-     "low_manwon": 153000,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-09-03",
-     "type": "매각기일",
-     "low_manwon": 122400,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-10-15",
-     "type": "매각기일",
-     "low_manwon": 97920,
-     "result": "유찰"
-    },
-    {
-     "date": "2026-11-19",
-     "type": "매각기일",
-     "low_manwon": 78336,
-     "result": null
-    },
-    {
-     "date": "2026-11-26",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null
@@ -26006,6 +25816,105 @@
     }
    ]
   },
+  "2025타경102848[1]": {
+   "key": "2025타경102848[1]",
+   "category": "상가",
+   "auction_id": "C09KNHLL",
+   "region": "서울 중구",
+   "address": "서울특별시 중구 을지로6가 18-185  밀리오레 제지하2층173호",
+   "emd": "을지로6가",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 1420,
+   "low_manwon": 727,
+   "fails": 3,
+   "bidding_date": "",
+   "area": 10,
+   "land_area": null,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "동대문",
+     "distance_m": 300,
+     "walk_min": 5,
+     "lines": [
+      "4호선",
+      "사문화공원역 2호선",
+      "사문화공원역 4호선",
+      "1호선",
+      "사문화공원역 5호선"
+     ]
+    },
+    {
+     "name": "종로5가",
+     "distance_m": 666,
+     "walk_min": 11,
+     "lines": [
+      "1호선"
+     ]
+    },
+    {
+     "name": "신당",
+     "distance_m": 737,
+     "walk_min": 12,
+     "lines": [
+      "6호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "동대문",
+    "distance_m": 300,
+    "walk_min": 5,
+    "lines": [
+     "4호선",
+     "사문화공원역 2호선",
+     "사문화공원역 4호선",
+     "1호선",
+     "사문화공원역 5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 출입이 가능하며, 인근으로 노선버스정류장 및 지하철 동대문역사문화",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2011-12-23"
+   },
+   "history": [
+    {
+     "date": "2026-07-30",
+     "type": "매각기일",
+     "low_manwon": 1420,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-03",
+     "type": "매각기일",
+     "low_manwon": 1136,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "매각기일",
+     "low_manwon": 908,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 727,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
   "2025타경103244[1]": {
    "key": "2025타경103244[1]",
    "category": "상가",
@@ -26091,6 +26000,100 @@
      "type": "매각기일",
      "low_manwon": 70707,
      "result": "유찰"
+    }
+   ]
+  },
+  "2025타경103070[1]": {
+   "key": "2025타경103070[1]",
+   "category": "상가",
+   "auction_id": "C87ODXUR",
+   "region": "서울 중구",
+   "address": "서울특별시 중구 묵정동 35 힐스테이트남산 101동 제지1층 제비104호",
+   "emd": "묵정동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 153000,
+   "low_manwon": 78336,
+   "fails": 3,
+   "bidding_date": "",
+   "area": 37.8,
+   "land_area": 48,
+   "court": "서울중앙지방법원",
+   "stations": [
+    {
+     "name": "충무로",
+     "distance_m": 355,
+     "walk_min": 6,
+     "lines": [
+      "4호선",
+      "3호선"
+     ]
+    },
+    {
+     "name": "을지로4가",
+     "distance_m": 585,
+     "walk_min": 10,
+     "lines": [
+      "2호선",
+      "5호선"
+     ]
+    },
+    {
+     "name": "동대입구",
+     "distance_m": 599,
+     "walk_min": 10,
+     "lines": [
+      "3호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "충무로",
+    "distance_m": 355,
+    "walk_min": 6,
+    "lines": [
+     "4호선",
+     "3호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 진출입이 가능하며, 인근에 노선버스정류장 및 지하철 3,4호선 충무로역이 소재하는 등 대중교통 여건은 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2024-10-10"
+   },
+   "history": [
+    {
+     "date": "2026-07-30",
+     "type": "매각기일",
+     "low_manwon": 153000,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-03",
+     "type": "매각기일",
+     "low_manwon": 122400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-15",
+     "type": "매각기일",
+     "low_manwon": 97920,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 78336,
+     "result": null
+    },
+    {
+     "date": "2026-11-26",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
     }
    ]
   },
