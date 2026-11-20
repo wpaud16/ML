@@ -152,5 +152,19 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://data.seoul.go.kr/bsp/wgs/newsletter.do",
+  "title": "서울데이터허브 뉴스레터 '데토리' 구독 이벤트",
+  "org": "서울데이터허브",
+  "url": "https://data.seoul.go.kr/bsp/wgs/newsletter.do",
+  "entered": "2026-11-20",
+  "announce": "2026-11-30",
+  "where": "서울데이터허브 공지사항",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]
