@@ -7,7 +7,8 @@ import os
 from playwright.sync_api import sync_playwright
 
 PROFILE = r'C:\auction_pc\entry_profile'
-SITES = ['https://nid.naver.com/nidlogin.login', 'https://accounts.kakao.com/login/', 'https://accounts.google.com/']
+SITES = ['https://nid.naver.com/nidlogin.login', 'https://accounts.kakao.com/login/', 'https://accounts.google.com/',
+         'https://www.instagram.com/accounts/login/']   # 2026-11-21: 인스타 이벤트(팔로우·댓글)도 Claude 가 하도록
 
 
 def open_profile(p, headless=False):

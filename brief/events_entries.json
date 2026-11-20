@@ -180,5 +180,33 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://pf.kakao.com/_MTanX",
+  "title": "한국영유아보육·교육진흥원 카카오톡 친구 추가 이벤트",
+  "org": "한국영유아보육·교육진흥원",
+  "url": "https://pf.kakao.com/_MTanX",
+  "entered": "2026-11-21",
+  "announce": "2026-12-04",
+  "where": "카카오 채널 소식탭",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "https://blog.naver.com/PostView.naver",
+  "title": "디지털존 댓글 한 줄 치킨 이벤트",
+  "org": "디지털존",
+  "url": "https://blog.naver.com/PostView.naver?blogId=digital_zone&logNo=224474016040",
+  "entered": "2026-11-21",
+  "announce": "2026-12-23",
+  "where": "디지털존 블로그",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]

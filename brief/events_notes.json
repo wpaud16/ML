@@ -1,15 +1,17 @@
 {
  "https://blog.naver.com/eunpyeonggu/224478794877": {
   "group": "help",
-  "mine": "은평구 인스타 팔로우 + 이 글을 내 블로그·카페에 스크랩 → 팔로우 캡처·스크랩 주소 보내기",
-  "claude": "네이버폼 제출",
-  "code": "8VQL"
+  "mine": "인스타 로그인 한 번",
+  "claude": "은평구 인스타 팔로우 + 내 네이버 블로그에 스크랩 → 네이버폼 제출",
+  "code": "8VQL",
+  "need": "insta"
  },
  "https://forms.gle/cik6fFZic5rA3EdZ8": {
   "group": "help",
-  "mine": "특구재단 유튜브 구독 + 인터뷰 영상 2편 좋아요·응원 댓글 → 캡처 보내기 (구글 로그인 필요)",
-  "claude": "구글폼 제출",
-  "code": "VASS"
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "특구재단 유튜브 구독 + 인터뷰 영상 2편 좋아요·응원 댓글 → 캡처 → 구글폼 제출",
+  "code": "VASS",
+  "need": "google"
  },
  "https://www.instagram.com/p/Df1PKQCJVFd": {
   "code": "PPET",
@@ -18,17 +20,19 @@
  },
  "https://www.instagram.com/p/Df1RNJ0FNTs": {
   "group": "help",
-  "mine": "거제시의회 인스타·유튜브·페북 중 1개 팔로우 → 캡처 보내기",
-  "claude": "네이버폼에 캡처+정답 제출",
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "거제시의회 유튜브 구독 → 캡처 → 네이버폼 (정답 거제시의회)",
   "answer": "거제시의회",
-  "code": "7NV7"
+  "code": "7NV7",
+  "need": "google"
  },
  "https://www.instagram.com/p/Df1MXpjA1SC": {
-  "group": "self",
-  "mine": "@moel_seoulew 팔로우 + 게시물 좋아요 + 댓글로 정답 (폼 없음)",
-  "claude": "",
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "@moel_seoulew 팔로우·좋아요 + 정답(고드래곤) 댓글",
   "answer": "고드래곤",
-  "code": "25SN"
+  "code": "25SN",
+  "need": "insta"
  },
  "https://data.seoul.go.kr/bsp/wgs/newsletter.do": {
   "group": "help",
@@ -55,21 +59,24 @@
  },
  "https://www.instagram.com/p/Df1kNLwD01H": {
   "group": "help",
-  "mine": "물산업클러스터 SNS 2곳 팔로우 + 게시물에 '참여완료' 댓글 (캡처 불필요)",
-  "claude": "구글폼 만족도 조사",
-  "code": "Z9TL"
+  "mine": "인스타 로그인 한 번",
+  "claude": "SNS 2곳 팔로우 + '참여완료' 댓글 + 구글폼 만족도 조사",
+  "code": "Z9TL",
+  "need": "insta"
  },
  "https://modu.go.kr/fron/jdgmn/jdgmnView.do": {
   "group": "help",
-  "mine": "모두의광장 로그인 (네이버·카카오 모두 비밀번호 다시 입력 필요)",
+  "mine": "모두의광장 로그인 (네이버·카카오 비밀번호 다시 입력 필요)",
   "claude": "투표",
-  "code": "73Z9"
+  "code": "73Z9",
+  "need": "verify"
  },
  "https://epeople.go.kr/cmmn/idea/redirect.do": {
   "group": "help",
-  "mine": "본인인증(휴대폰) 한 번 — 카카오 로그인은 연결해 둠",
+  "mine": "본인인증 (휴대폰) 한 번 — 카카오 로그인은 연결해 둠",
   "claude": "설문 응답 + 이름·연락처 응모",
-  "code": "XD98"
+  "code": "XD98",
+  "need": "verify"
  },
  "https://www.instagram.com/p/Dfy3QBBiWZS": {
   "group": "help",
@@ -79,20 +86,22 @@
  },
  "https://www.instagram.com/p/Df4QSy4mcou": {
   "group": "help",
-  "mine": "@ulju_love 팔로우 + 좋아요·공유 + '참여완료' 댓글 → 팔로우 캡처 보내기",
-  "claude": "프로필 링크 설문 + 인증샷 업로드",
-  "code": "ZSZN"
+  "mine": "인스타 로그인 한 번",
+  "claude": "@ulju_love 팔로우·좋아요 + '참여완료' 댓글 + 설문·인증샷 업로드",
+  "code": "ZSZN",
+  "need": "insta"
  },
  "https://www.youtube.com/watch": {
-  "group": "self",
-  "mine": "국가데이터처 유튜브 구독·좋아요 + 댓글로 정답·소감 (폼 없음)",
-  "claude": "정답 찾기 (요청하면)",
-  "code": "ER9C"
+  "group": "help",
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "국가데이터처 유튜브 구독·좋아요 + 정답·소감 댓글",
+  "code": "ER9C",
+  "need": "google"
  },
  "https://docs.google.com/forms/d/e/1FAIpQLSf4uoa4dVSDX57TNcGTh4P3wsywdR91Z_zhSrboc7YFV9PHwg/viewform": {
-  "group": "help",
-  "mine": "페트병 분리배출 사진 + 해시태그 4개로 내 SNS 게시 → 게시물 주소 보내기 (구글 로그인 필요)",
-  "claude": "구글폼 제출",
+  "group": "self",
+  "mine": "페트병 분리배출 사진을 직접 찍어 SNS 게시 (사진은 본인 것만)",
+  "claude": "",
   "code": "AA5G"
  },
  "https://aitestbed.kr/ai-event": {
@@ -109,10 +118,11 @@
  },
  "https://www.instagram.com/p/DfyJMbHADH_": {
   "group": "help",
-  "mine": "게시물에 정답+응원 댓글 → 댓글 화면 캡처 보내기",
-  "claude": "프로필 링크 네이버폼 제출",
+  "mine": "인스타 로그인 한 번",
+  "claude": "정답(국가균형발전)+응원 댓글 → 캡처 → 네이버폼 제출",
   "answer": "국가균형발전",
-  "code": "ABYQ"
+  "code": "ABYQ",
+  "need": "insta"
  },
  "https://blog.naver.com/PostView.naver": {
   "group": "help",
@@ -122,15 +132,17 @@
  },
  "https://forms.gle/gkaAcooeKdtPqNga7": {
   "group": "help",
-  "mine": "특구재단 인스타 팔로우·좋아요·댓글 → 캡처 보내기 (구글 로그인 필요)",
-  "claude": "구글폼 만족도 조사",
-  "code": "ZTHU"
+  "mine": "인스타 로그인 한 번",
+  "claude": "특구재단 인스타 팔로우·좋아요·댓글 → 캡처 → 구글폼 만족도 조사",
+  "code": "ZTHU",
+  "need": "insta"
  },
  "https://www.kca.go.kr/home/sub.do": {
   "group": "help",
-  "mine": "캠페인 포스터 + #CONSCIOUS_CHOKING #어린이삼킴사고예방 으로 내 SNS 전체공개 게시(12/25까지 유지) → 캡처·주소 보내기",
-  "claude": "네이버폼 설문·제출",
-  "code": "TUJ8"
+  "mine": "인스타 로그인 한 번",
+  "claude": "캠페인 포스터 + 해시태그로 인스타 게시(12/25까지 유지) → 네이버폼 제출",
+  "code": "TUJ8",
+  "need": "insta"
  },
  "https://seoul.co.kr/event/2026SeoulAdAward/index.php": {
   "group": "proxy",
@@ -140,9 +152,10 @@
  },
  "https://www.youtube.com/post/UgkxPQM6qHPIfEFY-3bOR5Qzsu5JS5-vAqhD": {
   "group": "help",
-  "mine": "한국가스안전공사 유튜브 구독만 (캡처 불필요)",
-  "claude": "네이버폼 만족도 조사",
-  "code": "3M5K"
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "한국가스안전공사 유튜브 구독 + 네이버폼 만족도 조사",
+  "code": "3M5K",
+  "need": "google"
  },
  "https://www.samsung.com/sec/event/lions-victory-2026": {
   "group": "self",
@@ -152,14 +165,77 @@
  },
  "https://forms.gle/huw2GuxqUbHNsWNt5": {
   "group": "help",
-  "mine": "유튜브 구독 + 후보 뮤비 좋아요·감상평 댓글 → 캡처 보내기 (구글 로그인 필요)",
-  "claude": "구글폼 제출",
-  "code": "2KKR"
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "유튜브 구독 + 후보 뮤비 좋아요·감상평 댓글 → 캡처 → 구글폼 제출",
+  "code": "2KKR",
+  "need": "google"
  },
  "https://tally.so/r/VpL2rN": {
   "code": "2Q7N",
   "group": "self",
   "mine": "문화다양성 온라인 교육(약 1.5시간) 수강 → 수료증 업로드",
   "claude": "수료증 받으면 폼 제출"
+ },
+ "https://youtu.be/Olh1lLHipEs": {
+  "code": "GQE9",
+  "group": "help",
+  "need": "google",
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "유튜브 영상에 '나에게 사진이란' 댓글"
+ },
+ "https://youtu.be/SBPzcdtYSfo": {
+  "code": "GJEG",
+  "group": "help",
+  "need": "google",
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "영상 구독·좋아요·댓글 → 캡처 → 구글폼 인증 (#HiddenTrip2 공유는 유튜브 공유 링크로)"
+ },
+ "https://forms.gle/F8Lup1dyuegwJYFd9": {
+  "code": "7PWA",
+  "group": "help",
+  "need": "google",
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "영상 구독·좋아요·댓글 → 캡처 → 구글폼 인증"
+ },
+ "https://forms.gle/X92aHfzi9XKi58UC8": {
+  "code": "4DBG",
+  "group": "help",
+  "need": "google",
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "영상 구독·좋아요·댓글 → 캡처 → 구글폼 인증"
+ },
+ "https://youtu.be/vLcXqdzwsA4": {
+  "code": "XW8L",
+  "group": "help",
+  "need": "google",
+  "mine": "구글(유튜브) 로그인 한 번",
+  "claude": "유튜브 구독·좋아요 + 퀴즈 정답·소감 댓글"
+ },
+ "https://www.instagram.com/p/Df9RaqGn_w8": {
+  "code": "ZVH9",
+  "group": "help",
+  "need": "insta",
+  "mine": "인스타 로그인 한 번",
+  "claude": "@yozmgg.mag 팔로우 + 댓글"
+ },
+ "https://forms.gle/KAtBGdC6DrfcYxA57": {
+  "code": "2379",
+  "group": "help",
+  "need": "insta",
+  "mine": "인스타 로그인 한 번",
+  "claude": "팔로우 → 이모지 퀴즈 정답 찾기 → 캡처와 구글폼 제출"
+ },
+ "https://love.seoul.go.kr/event/20169": {
+  "code": "YH66",
+  "group": "help",
+  "need": "verify",
+  "mine": "본인인증 (휴대폰·민간인증서) — 응모 때마다 필요",
+  "claude": "11월호 기사에서 퀴즈 정답 찾아 응모"
+ },
+ "https://forms.gle/JrbSJfc4R15BAt84A": {
+  "code": "ALW9",
+  "group": "self",
+  "mine": "내 아이 RSV 경험 사연 — 대신 지어 쓸 수 없음",
+  "claude": ""
  }
 }

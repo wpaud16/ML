@@ -105,7 +105,15 @@ def proxy_ok(it):
     return not PROXY_NEEDS.search(' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition')))
 
 
-GROUPS = {'done': '✅ 응모 완료', 'proxy': '🤖 대신 응모 가능', 'help': '🤝 같이 응모', 'self': '👤 직접 응모'}   # + ev.ENTRY (바로·웹·로그인·앱·SNS)
+# 2026-11-21 사용자 요청: '바로 할 수 있는 것'이 모호 → 누가 무엇을 하면 되는지로만 나눔 (칸 하나씩)
+GROUPS = {'proxy': '🤖 Claude가 바로 응모', 'google': '🔑 구글 로그인만 → Claude', 'insta': '🔑 인스타 로그인만 → Claude',
+          'verify': '🪪 본인인증·로그인만 직접 → Claude', 'help': '🤝 내 몫 확인 필요', 'self': '👤 직접만 가능', 'done': '✅ 응모 완료'}
+GROUP_TIP = {'proxy': "요청 복사 → Claude 대화창에 붙여넣으면 끝",
+             'google': "PC에서 응모용 창을 열어 구글에 한 번만 로그인해 두면 유튜브 구독·좋아요·댓글·폼까지 Claude가 다 해요",
+             'insta': "응모용 창에서 인스타에 한 번만 로그인해 두면 팔로우·댓글·폼까지 Claude가 다 해요",
+             'verify': "Claude가 창을 열어 두면 본인인증(또는 비밀번호)만 직접 → 나머지는 Claude",
+             'help': "아직 원문을 안 봐서 내 몫이 뭔지 모름 → 요청하면 Claude가 확인",
+             'self': "앱·현장 방문·본인 사진·사연·회원가입·매일 응모처럼 Claude가 대신 못 하는 것"}
 # 2026-11-19 사용자 요청: 팔로우·캡처·로그인 같은 본인 몫만 해서 넘겨주면 나머지(정답 찾기·폼 작성·업로드·제출)는 Claude 가
 HELP_HARD = re.compile(r'현장|방문|사전\s*등록|행사\s*등록|참가\s*신청|앱\s*설치|어플|오프라인|회원\s*가입|신규\s*가입', re.I)
 MINE = [(r'팔로우', '팔로우'), (r'구독', '구독'), (r'좋아요', '좋아요'), (r'댓글', '댓글'), (r'리그램|공유|게시(?!물)|해시태그', 'SNS 게시·공유'),
@@ -147,18 +155,21 @@ def group_of(it):
     dn = done_map().get(ev.key_of(it))
     if dn and not dn.startswith(('x:', 'h:')):
         return 'done'
-    g = note_of(it).get('group')
+    nt = note_of(it)
+    g = nt.get('group')
+    if g == 'help' and nt.get('need') in ('google', 'insta', 'verify'):
+        return nt['need']
     if g in ('proxy', 'help', 'self'):
         return g
-    if g == 'x':
-        return ev.entry_type(it)
+    if g == 'x' or (dn and dn.startswith('x:')):
+        return 'self'
     if not dn and proxy_ok(it):
         return 'proxy'
     if dn and dn.startswith('h:'):   # 들어가 보니 본인 몫(로그인 등)이 있던 것
         return 'help'
     if not dn and help_ok(it):
         return 'help'
-    return ev.entry_type(it)
+    return 'self'   # 로그인·앱·SNS·현장 등 (세부는 카드 배지로)
 
 
 def code_of(it):
@@ -191,14 +202,12 @@ def prize_card(it, today):
                 badges += f'<span class="cat">발표 {E(pe["announce"][5:].replace("-", "/"))}</span>'
         except Exception:
             pass
-    elif px:
-        badges = '<span class="proxy">🤖 대신 응모 가능</span>'
-    elif et == 'help':
-        badges = '<span class="proxy">🤝 같이 응모</span>'
     elif et == 'self':
-        badges = '<span class="ent">👤 직접 응모</span>'
+        badges = '<span class="ent">👤 직접만 가능</span>'
+        if ev.entry_type(it) in ev.ENTRY and ev.entry_type(it) not in ('form', 'web'):
+            badges += f'<span class="cat">{E(ev.ENTRY[ev.entry_type(it)])}</span>'
     else:
-        badges = f'<span class="ent ent-{et}">{E(ev.ENTRY[et])}</span>'
+        badges = f'<span class="proxy">{E(GROUPS[et])}</span>'
     badges += ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'])
     nt = note_of(it)
     if dn and dn.startswith('x:'):   # 들어가 보니 대신 못 하는 이벤트 (사유)
@@ -224,20 +233,27 @@ def prize_card(it, today):
         req = f'이벤트 [{code_of(it)}] 대신 응모해줘 — {it["title"]} {it["url"]}'
         go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">🤖 대신 응모 요청 복사</button></div>'
               f'<div class="g s">요청 번호 {code_of(it)}</div>')
-    elif et == 'help':
+    elif et in ('help', 'google', 'insta', 'verify'):
         mine = nt.get('mine') or ' · '.join(mine_of(it))
-        req = f'이벤트 [{code_of(it)}] 내 몫 했어 나머지 해줘 — {it["title"]} {it["url"]}'
-        go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">🤝 요청 복사</button></div>'
-              f'<div class="g s">요청 번호 {code_of(it)}' + (' · 캡처가 있으면 같이 붙여넣어 주세요' if '캡처' in mine else '') + '</div>')
-    if et in ('help', 'self', 'proxy') and nt:   # 원문 확인한 할 일 (2026-11-20)
+        req = {'google': f'이벤트 [{code_of(it)}] 해줘 (구글 로그인 해둠)',
+               'insta': f'이벤트 [{code_of(it)}] 해줘 (인스타 로그인 해둠)',
+               'verify': f'이벤트 [{code_of(it)}] 같이 하자 — 창 열어주면 본인인증할게',
+               'help': f'이벤트 [{code_of(it)}] 확인하고 할 수 있는 데까지 해줘'}[et] + f' — {it["title"]} {it["url"]}'
+        go = (f'<div class="links">{go}<button class="btn ask" data-req="{E(req)}" onclick="askProxy(this)">📋 요청 복사</button></div>'
+              f'<div class="g s">요청 번호 {code_of(it)}</div>')
+    if et != 'done' and nt:   # 원문 확인한 할 일 (2026-11-20)
         if nt.get('mine'):
-            rows.insert(-1, f'<div>👤 직접: <b>{E(nt["mine"])}</b></div>')
+            rows.insert(-1, f'<div>👤 내가 할 일: <b>{E(nt["mine"])}</b></div>')
+        elif et == 'proxy':
+            rows.insert(-1, '<div>👤 내가 할 일: <b>없음</b></div>')
         if nt.get('claude'):
-            rows.insert(-1, f'<div>🤖 Claude: {E(nt["claude"])}</div>')
+            rows.insert(-1, f'<div>🤖 Claude가 할 일: {E(nt["claude"])}</div>')
         if nt.get('answer'):
             rows.insert(-1, f'<div>💡 정답: <b>{E(nt["answer"])}</b></div>')
     elif et == 'help':
-        rows.insert(-1, f'<div>👤 직접: <b>{E(" · ".join(mine_of(it)))}</b> → 나머지는 Claude <span class="g s">(원문 미확인)</span></div>')
+        rows.insert(-1, f'<div>👤 내가 할 일(추정): <b>{E(" · ".join(mine_of(it)))}</b> → 나머지는 Claude <span class="g s">(원문 미확인)</span></div>')
+    elif et == 'proxy':
+        rows.insert(-1, '<div>👤 내가 할 일: <b>없음</b> <span class="g s">(원문 미확인 · 막히면 알려드려요)</span></div>')
     rows.append(go)
     return (f'<div class="card" data-entry="{et}" data-proxy="{1 if px else 0}" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
             + ''.join(rows) + '</div>')
@@ -430,6 +446,9 @@ h3{font-size:14px;margin:14px 0 6px;color:var(--mut);border-left:3px solid var(-
 @media (prefers-color-scheme:dark){.btn.ask{color:#d9b8ff}}
 .askall{border:1px dashed #7b2cbf;border-radius:10px;padding:10px 14px;margin-bottom:10px;text-align:center}
 .askall .btn{font-size:15px;margin-top:0}
+.summary{border:1px solid var(--bd);border-radius:10px;padding:10px 14px;margin-bottom:10px;display:grid;gap:6px}
+.srow{cursor:pointer;padding:4px 0;border-top:1px solid var(--bd)}
+.summary code{font-size:11px;word-break:break-all}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#323232;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;z-index:99;max-width:90vw;text-align:center}
 .t{font-weight:bold;font-size:15px}
 .g{color:var(--mut)} .s{font-size:12px} .hot{color:var(--hot)}
@@ -479,7 +498,7 @@ function pick(t,v,btn){$('.chips[data-t="'+t+'"] .chip').forEach(b=>b.classList.
  let n=$('#'+t+' .card:not(.hide)').length;document.getElementById(t+'-empty').classList.toggle('hide',n>0);
  if(t=='fest')drawMarkers(true)}
 function toast(m){const d=document.createElement('div');d.className='toast';d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3500)}
-function askAll(){const t=[...$('#prize .card .btn.ask')].map(b=>b.dataset.req).join('\\n\\n');askProxy({dataset:{req:t}})}
+function askAll(){const t=[...$('#prize .card[data-entry=proxy] .btn.ask')].map(b=>b.dataset.req).join('\\n\\n');askProxy({dataset:{req:t}})}
 function askProxy(b){const t=b.dataset.req;const ok=()=>toast('복사했어요 · Claude 대화창에 붙여넣어 보내 주세요');
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,()=>prompt('아래 글을 복사해 Claude 에 보내 주세요',t))}
  else prompt('아래 글을 복사해 Claude 에 보내 주세요',t)}
@@ -560,17 +579,27 @@ def build(today):
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'new\',this)">🆕 오늘 새로<i>{new}</i></button>')
     if soon:
         pchips.append(f'<button class="chip" onclick="pick(\'prize\',\'soon\',this)">⏰ 마감 임박<i>{soon}</i></button>')
-    labels = {'proxy': GROUPS['proxy'], 'help': GROUPS['help'], 'self': GROUPS['self'], **ev.ENTRY, 'done': GROUPS['done']}
+    labels = GROUPS
     ecnt = {k: sum(group_of(x) == k for x in P) for k in labels}
     npx = ecnt['proxy']
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(v)}<i>{ecnt[k]}</i></button>'
                for k, v in labels.items() if ecnt[k]]
+    # 2026-11-21: 맨 위 요약 — 누가 뭘 하면 되는지 한눈에
+    srows = ''.join(f'<div class="srow" onclick="pick(\'prize\',\'{k}\',[...document.querySelectorAll(\'.chip\')].find(c=>c.getAttribute(\'onclick\').includes(\'{k}\')))">'
+                    f'<b>{E(GROUPS[k])} {ecnt[k]}건</b><div class="g s">{E(GROUP_TIP[k])}</div></div>'
+                    for k in GROUP_TIP if ecnt[k])
+    login_cmd = ''
+    if ecnt['google'] or ecnt['insta']:
+        login_cmd = ('<div class="g s">🔑 응모용 창 열기 (PC 터미널): <code>python C:\\auction_pc\\ML\\local_runner\\entry_login.py google instagram</code>'
+                     ' → 로그인하고 창 닫기 → 이 페이지의 요청 복사</div>')
+    summary = (f'<div class="summary"><div><b>지금 상황</b> · 응모 완료 {ecnt["done"]}건 · 남은 {len(P) - ecnt["done"]}건</div>{srows}{login_cmd}</div>')
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(CAT_LABEL[k])}<i>{cnt[k]}</i></button>'
                for k in [c for c, _, _ in CATS] + ['etc'] if cnt[k]]
     pcards = ''.join(prize_card(x, today) for x in P) or ''
     if npx:   # 2026-11-19 사용자 요청: 대신 응모 가능한 것 한 번에 복사
-        pcards = (f'<div class="askall"><button class="btn ask" onclick="askAll()">🤖 대신 응모 가능 {npx}건 한 번에 복사</button>'
+        pcards = (f'<div class="askall"><button class="btn ask" onclick="askAll()">🤖 Claude가 바로 응모 {npx}건 한 번에 복사</button>'
                   '<div class="g s">복사한 글을 Claude Code 대화창에 붙여넣으면 한꺼번에 응모해요</div></div>') + pcards
+    pcards = summary + pcards
     # 지역 행사: 시·도 칩, 시·도 > 시·군·구 묶음
     sidos = [s for s in SIDO_ORDER if any(x['_sido'] == s for x in F)] + sorted({x['_sido'] for x in F} - set(SIDO_ORDER))
     wk = sum(1 for x in F if x['_s'] <= ev.weekend_of(today)[1] and x['_e'] >= ev.weekend_of(today)[0])
@@ -609,7 +638,7 @@ def build(today):
 <div class="foot">무료 응모만 모음 (구매·결제·카드 발급·계좌 개설 필수 이벤트 제외) · 마감 빠른 순 · NEW = 오늘 처음 찾은 이벤트<br>
 응모 전에 공식 페이지의 유의사항·개인정보 제공 범위를 확인하세요 · 5만원 넘는 경품은 제세공과금(22%)을 당첨자가 내는 경우가 많아요<br>
 Claude 웹 검색으로 매일 새벽 모음 · 공식 페이지에서 확인 못 한 항목은 ⚠ 표시<br>
-🤖 대신 응모 가능 = 로그인·앱·SNS 없이 이름·연락처만 쓰는 폼으로 보이는 이벤트 · '대신 응모 요청 복사' 후 Claude 앱 대화창에 붙여넣으면 Claude 가 응모하고 결과를 알려줘요 (캡차가 나오면 링크만 드려요)</div></div>
+카드마다 👤 내가 할 일 · 🤖 Claude가 할 일을 적어 뒀어요 · '요청 복사' 후 Claude 앱 대화창에 붙여넣으면 Claude 가 응모하고 결과를 알려줘요 (캡차가 나오면 링크만 드려요)</div></div>
 <div class="pane" id="fest"><div id="map"></div>
 <div class="mapnote">🎉 축제 · 🛍️ 박람회·페어 · 🧺 마켓 · ✨ 빛축제·불꽃 · 🎈 기타 · 빨간 숫자 = 같은 장소 행사 수 · 핀을 누르면 행사 목록 · 위 칩으로 거르면 지도도 같이 바뀌어요</div>
 <script>window.FEST={fest_json};</script>{''.join(fparts)}<div class="empty{'' if not F else ' hide'}" id="fest-empty">해당하는 행사가 없습니다</div>
