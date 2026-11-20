@@ -166,5 +166,19 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://harpersbazaar.co.kr/event/detail/242",
+  "title": "바자 덕력고사 응시하고 5,000만원 상당 선물 받기",
+  "org": "하퍼스 바자",
+  "url": "https://harpersbazaar.co.kr/event/detail/242",
+  "entered": "2026-11-20",
+  "announce": "2026-12-14",
+  "where": "개별 문자",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]
