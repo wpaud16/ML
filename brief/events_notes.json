@@ -103,8 +103,8 @@
  },
  "https://harpersbazaar.co.kr/event/detail/242": {
   "group": "help",
-  "mine": "바자 회원가입(카카오·네이버 간편가입 가능) — 로그인해야 퀴즈가 열림",
-  "claude": "덕력고사 10문제 + 응모",
+  "mine": "허스트중앙 통합멤버십 가입(휴대폰 본인인증 + 비밀번호 설정) → 카카오 연동",
+  "claude": "덕력고사 10문제 + 응모 (성적표 캡처 댓글은 선택)",
   "code": "8CZQ"
  },
  "https://www.instagram.com/p/DfyJMbHADH_": {
