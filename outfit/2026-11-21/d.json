@@ -1,0 +1,146 @@
+{
+ "date": "11월 21일 (토)",
+ "tmin": "-5",
+ "tmax": "2",
+ "sky": "☀️ 맑음",
+ "sub": "일교차 7°",
+ "rain_title": "☀️ 오늘 비·눈 소식 없음",
+ "rain": [
+  [
+   "오늘",
+   "비·눈 소식 없음"
+  ]
+ ],
+ "level": "없음",
+ "hourly": [
+  {
+   "h": 6,
+   "t": -4,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 9,
+   "t": -4,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 12,
+   "t": 0,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 15,
+   "t": 2,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 18,
+   "t": -1,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 21,
+   "t": -2,
+   "icon": "☀️",
+   "rain": false
+  }
+ ],
+ "guide": "<b>아침 -5°, 낮 2°.</b> 하루 종일 기온 차가 크지 않아요.",
+ "footer": "날씨: Open-Meteo (기본 모델) · 서울 강동구 · 오늘 예보",
+ "looks": [
+  {
+   "title": "카멜 더플코트 + 셔츠 니트",
+   "kind": "shirt",
+   "items": [
+    {
+     "name": "옥스퍼드 셔츠 · 화이트",
+     "color": "#F1EFE8",
+     "role": "top"
+    },
+    {
+     "name": "크루넥 니트 · 네이비",
+     "color": "#2B3247",
+     "role": "top"
+    },
+    {
+     "name": "더플코트 · 카멜",
+     "color": "#A88456",
+     "role": "outer"
+    },
+    {
+     "name": "울 슬랙스 · 차콜",
+     "color": "#45474B",
+     "role": "bottom"
+    },
+    {
+     "name": "로퍼 · 다크브라운",
+     "color": "#4A3125",
+     "role": "shoes"
+    }
+   ],
+   "tip": "셔츠 깃만 니트 밖으로.",
+   "pin": "camel duffle coat white oxford shirt navy crewneck sweater men winter outfit clean"
+  },
+  {
+   "title": "롱 패딩 + 터틀넥",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "터틀넥 니트 · 차콜",
+     "color": "#45474B",
+     "role": "top"
+    },
+    {
+     "name": "롱 패딩 · 블랙",
+     "color": "#242424",
+     "role": "outer"
+    },
+    {
+     "name": "기모 슬랙스 · 블랙",
+     "color": "#242424",
+     "role": "bottom"
+    },
+    {
+     "name": "부츠 · 블랙",
+     "color": "#242424",
+     "role": "shoes"
+    }
+   ],
+   "tip": "목도리 하나 더하면 체감 온도가 확 달라져요.",
+   "pin": "black long puffer coat charcoal turtleneck black trousers men winter outfit korean style"
+  },
+  {
+   "title": "덕다운 숏패딩 + 니트",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "크루넥 니트 · 네이비",
+     "color": "#2B3247",
+     "role": "top"
+    },
+    {
+     "name": "덕다운 숏패딩 · 카키",
+     "color": "#5E6146",
+     "role": "outer"
+    },
+    {
+     "name": "기모 데님 · 인디고",
+     "color": "#34425E",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 블랙",
+     "color": "#242424",
+     "role": "shoes"
+    }
+   ],
+   "tip": "안에 히트텍류 이너 필수.",
+   "pin": "khaki short puffer jacket navy crewneck sweater indigo jeans men winter outfit smart casual"
+  }
+ ]
+}
