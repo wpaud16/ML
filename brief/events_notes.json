@@ -12,10 +12,9 @@
   "code": "VASS"
  },
  "https://www.instagram.com/p/Df1PKQCJVFd": {
-  "group": "proxy",
-  "mine": "",
-  "claude": "일·생활 균형 홈페이지 만족도 조사 (발표: 1달 내 문자)",
-  "code": "PPET"
+  "code": "PPET",
+  "group": "x",
+  "x": "설문 대상 인원 마감"
  },
  "https://www.instagram.com/p/Df1RNJ0FNTs": {
   "group": "help",
@@ -50,8 +49,8 @@
  },
  "https://www.instagram.com/p/Dfx6WEsGYME": {
   "group": "help",
-  "mine": "@ilovewood_korea 프로필의 설문 링크 주소만 보내기 (또는 게시물 QR 캡처)",
-  "claude": "설문 응답",
+  "mine": "연령·성별만 알려주기",
+  "claude": "구글폼 설문 (로그인 불필요, 링크 linktr.ee/2026ilovewood)",
   "code": "6B7N"
  },
  "https://www.instagram.com/p/Df1kNLwD01H": {
@@ -62,14 +61,14 @@
  },
  "https://modu.go.kr/fron/jdgmn/jdgmnView.do": {
   "group": "help",
-  "mine": "모두의광장 로그인",
+  "mine": "모두의광장 로그인 (네이버·카카오 모두 비밀번호 다시 입력 필요)",
   "claude": "투표",
   "code": "73Z9"
  },
  "https://epeople.go.kr/cmmn/idea/redirect.do": {
   "group": "help",
-  "mine": "국민생각함 로그인 (네이버 간편로그인이면 Claude가 시도)",
-  "claude": "설문 응답",
+  "mine": "본인인증(휴대폰) 한 번 — 카카오 로그인은 연결해 둠",
+  "claude": "설문 응답 + 이름·연락처 응모",
   "code": "XD98"
  },
  "https://www.instagram.com/p/Dfy3QBBiWZS": {
@@ -156,5 +155,11 @@
   "mine": "유튜브 구독 + 후보 뮤비 좋아요·감상평 댓글 → 캡처 보내기 (구글 로그인 필요)",
   "claude": "구글폼 제출",
   "code": "2KKR"
+ },
+ "https://tally.so/r/VpL2rN": {
+  "code": "2Q7N",
+  "group": "self",
+  "mine": "문화다양성 온라인 교육(약 1.5시간) 수강 → 수료증 업로드",
+  "claude": "수료증 받으면 폼 제출"
  }
 }
