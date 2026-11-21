@@ -1,19 +1,19 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-21T23:27:19+09:00",
+ "generated_at": "2026-11-22T04:10:46+09:00",
  "station_source": "카카오 로컬",
  "counts": {
-  "listed": 925,
-  "wrong_type": 411,
+  "listed": 939,
+  "wrong_type": 415,
   "other_region": 0,
-  "over_budget": 38,
+  "over_budget": 39,
   "no_station": 1,
-  "far": 36,
-  "sold": 2,
+  "far": 37,
+  "sold": 8,
   "rights": 98,
-  "shown": 339,
+  "shown": 341,
   "by_category": {
-   "상가": 298,
+   "상가": 300,
    "건물": 41
   }
  },
@@ -15028,6 +15028,232 @@
     }
    ]
   },
+  "2025타경13183[2]": {
+   "key": "2025타경13183[2]",
+   "category": "상가",
+   "auction_id": "C58YHVQF",
+   "region": "서울 도봉구",
+   "address": "서울특별시 도봉구 창동 731-19 더프라우드창동1동  제1층 제106호",
+   "emd": "창동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 112800,
+   "low_manwon": 29569,
+   "fails": 6,
+   "bidding_date": "2027-01-26",
+   "area": 47.74,
+   "land_area": 86.56,
+   "court": "서울북부지방법원",
+   "stations": [
+    {
+     "name": "창동",
+     "distance_m": 803,
+     "walk_min": 14,
+     "lines": [
+      "1호선",
+      "4호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "창동",
+    "distance_m": 803,
+    "walk_min": 14,
+    "lines": [
+     "1호선",
+     "4호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량출입 가능하고 인근에 노선버스정류장이 소재하여 대중교통사정은 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2024-10-16"
+   },
+   "history": [
+    {
+     "date": "2026-03-04",
+     "type": "매각기일",
+     "low_manwon": 112800,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-26",
+     "type": "매각기일",
+     "low_manwon": 29569,
+     "result": null
+    },
+    {
+     "date": "2027-02-02",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    },
+    {
+     "date": "2026-04-07",
+     "type": "매각기일",
+     "low_manwon": 90240,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-05-12",
+     "type": "매각기일",
+     "low_manwon": 72192,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-16",
+     "type": "매각기일",
+     "low_manwon": 57753,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-21",
+     "type": "매각기일",
+     "low_manwon": 46202,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-08-25",
+     "type": "매각기일",
+     "low_manwon": 36962,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-07",
+     "type": "매각기일",
+     "low_manwon": 29569,
+     "result": "매각"
+    },
+    {
+     "date": "2026-10-14",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": "최고가매각허가결정"
+    },
+    {
+     "date": "2026-11-18",
+     "type": "대금지급기한",
+     "low_manwon": null,
+     "result": "미납"
+    }
+   ]
+  },
+  "2025타경13183[1]": {
+   "key": "2025타경13183[1]",
+   "category": "상가",
+   "auction_id": "C97DMPXG",
+   "region": "서울 도봉구",
+   "address": "서울특별시 도봉구 창동 731-19 더프라우드창동1동  제1층 제105호",
+   "emd": "창동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 109500,
+   "low_manwon": 28704,
+   "fails": 6,
+   "bidding_date": "2027-01-26",
+   "area": 47.74,
+   "land_area": 86.56,
+   "court": "서울북부지방법원",
+   "stations": [
+    {
+     "name": "창동",
+     "distance_m": 803,
+     "walk_min": 14,
+     "lines": [
+      "1호선",
+      "4호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "창동",
+    "distance_m": 803,
+    "walk_min": 14,
+    "lines": [
+     "1호선",
+     "4호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량출입 가능하고 인근에 노선버스정류장이 소재하여 대중교통사정은 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2024-10-16"
+   },
+   "history": [
+    {
+     "date": "2026-03-04",
+     "type": "매각기일",
+     "low_manwon": 109500,
+     "result": "유찰"
+    },
+    {
+     "date": "2027-01-26",
+     "type": "매각기일",
+     "low_manwon": 28704,
+     "result": null
+    },
+    {
+     "date": "2027-02-02",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    },
+    {
+     "date": "2026-04-07",
+     "type": "매각기일",
+     "low_manwon": 87600,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-05-12",
+     "type": "매각기일",
+     "low_manwon": 70080,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-16",
+     "type": "매각기일",
+     "low_manwon": 56064,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-21",
+     "type": "매각기일",
+     "low_manwon": 44851,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-08-25",
+     "type": "매각기일",
+     "low_manwon": 35881,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-07",
+     "type": "매각기일",
+     "low_manwon": 28704,
+     "result": "매각"
+    },
+    {
+     "date": "2026-10-14",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": "최고가매각허가결정"
+    },
+    {
+     "date": "2026-11-18",
+     "type": "대금지급기한",
+     "low_manwon": null,
+     "result": "미납"
+    }
+   ]
+  },
   "2025타경12296[1]": {
    "key": "2025타경12296[1]",
    "category": "건물",
@@ -23288,7 +23514,7 @@
    "item_type": "상가,오피스텔,근린",
    "appr_manwon": 72000,
    "low_manwon": 23593,
-   "fails": 4,
+   "fails": 5,
    "bidding_date": "2027-01-05",
    "area": 43.82,
    "land_area": 9.23,

@@ -3138,7 +3138,7 @@
   "kb_date": null
  },
  "2025타경104415[1]|2026-11-21": {
-  "source": "리치고",
+  "source": "법원",
   "key": "2025타경104415[1]",
   "auction_id": "C68CDVPG",
   "category": "오피스텔",
@@ -3155,7 +3155,7 @@
    "55%": 23993,
    "60%": 24239
   },
-  "status": "결과대기",
+  "status": "변경",
   "checked": "2026-11-22",
   "expected_bidders": 1,
   "expected_range": [
