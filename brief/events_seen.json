@@ -325,7 +325,8 @@
    "title": "모두의 프로듀서 대국민 투표 이벤트",
    "url": "https://forms.gle/huw2GuxqUbHNsWNt5",
    "winners": 100
-  }
+  },
+  "soon_sent": "2026-11-22"
  },
  "https://harpersbazaar.co.kr/event/detail/242": {
   "deadline": "2026-12-06",
@@ -343,6 +344,25 @@
    "start": "2026-11-16",
    "title": "바자 덕력고사 응시하고 5,000만원 상당 선물 받기",
    "url": "https://harpersbazaar.co.kr/event/detail/242",
+   "winners": null
+  }
+ },
+ "https://korean.visitkorea.or.kr/detail/event_detail.do": {
+  "deadline": null,
+  "first": "2026-11-22",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "개인정보 수집 동의",
+   "deadline": null,
+   "entry": "login",
+   "how": "대한민국 구석구석 배지랜드 랭킹전 참여 후 개인정보 입력해 응모",
+   "kind": "공공기관",
+   "org": "대한민국 구석구석(한국관광공사)",
+   "prize": null,
+   "start": null,
+   "title": "11월! 배지랜드 랭킹전 참여하고, 선물받자!",
+   "url": "https://korean.visitkorea.or.kr/detail/event_detail.do?cotid=7c055841-7f68-4bcf-85be-6e5c9641dbb4",
    "winners": null
   }
  },
@@ -383,7 +403,8 @@
    "title": "알아두면 도움이 되는 11월의 서울퀴즈 (서울사랑 11월호)",
    "url": "https://love.seoul.go.kr/event/20169",
    "winners": 5
-  }
+  },
+  "soon_sent": "2026-11-22"
  },
  "https://mcfamily.or.kr/posts/notice/15078": {
   "deadline": "2026-12-06",
@@ -538,6 +559,26 @@
    "winners": 100
   }
  },
+ "https://sktmembership.tworld.co.kr/mps/pc-bff/program/tday.do": {
+  "deadline": "2026-11-25",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "즉시 확인 (배송정보 입력 12-02~12-06)",
+   "checked": true,
+   "condition": "T 멤버십 보유(SKT 가입자, T우주 LITE 제외), 만 14세 이상",
+   "deadline": "2026-11-25",
+   "entry": "app",
+   "how": "T 멤버십 앱 T day 혜택 카드에서 응모하기",
+   "kind": "기업",
+   "org": "SK텔레콤 T 멤버십",
+   "prize": "알로코리아 미니 마사지건 AMG5 777명",
+   "start": "2026-11-25",
+   "title": "T day 11월 럭키찬스 무선 초경량 미니 전동 마사지건 추첨",
+   "url": "https://sktmembership.tworld.co.kr/mps/pc-bff/program/tday.do",
+   "winners": 777
+  },
+  "soon_sent": "2026-11-22"
+ },
  "https://tally.so/r/VpL2rN": {
   "deadline": "2026-11-30",
   "first": "2026-11-20",
@@ -556,6 +597,45 @@
    "url": "https://tally.so/r/VpL2rN",
    "winners": 20
   }
+ },
+ "https://touredu.visitkorea.or.kr/home/support/promotions/prgs/14567": {
+  "deadline": "2026-12-13",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-12-18",
+   "checked": true,
+   "condition": "관광e배움터 회원가입·로그인",
+   "deadline": "2026-12-13",
+   "entry": "login",
+   "how": "관광e배움터 로그인 후 이벤트 신청하고 기간 내 직무 강좌 수료",
+   "kind": "공공기관",
+   "org": "한국관광공사 관광e배움터",
+   "prize": "갤럭시 버즈 2명, 투썸 스초생 5명, 메가커피 아메리카노 100명",
+   "start": "2026-11-18",
+   "title": "2026년 관광e배움터 하반기 수료왕 이벤트",
+   "url": "https://touredu.visitkorea.or.kr/home/support/promotions/prgs/14567",
+   "winners": 107
+  }
+ },
+ "https://www.instagram.com/imjung0411/p/Df6RABsjx8R": {
+  "deadline": "2026-11-25",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-11-27",
+   "checked": true,
+   "condition": "인스타그램 팔로우",
+   "deadline": "2026-11-25",
+   "entry": "sns",
+   "how": "인스타그램 팔로우 후 다섯 글자 정답 댓글",
+   "kind": "공공기관",
+   "org": "국립대한민국임시정부기념관",
+   "prize": "올리브영 상품권 5천원 10명",
+   "start": "2026-11-19",
+   "title": "임시정부 환국 기념 빈칸 퀴즈 이벤트",
+   "url": "https://www.instagram.com/imjung0411/p/Df6RABsjx8R/",
+   "winners": 10
+  },
+  "soon_sent": "2026-11-22"
  },
  "https://www.instagram.com/p/Df1MXpjA1SC": {
   "deadline": "2026-11-24",
@@ -636,6 +716,25 @@
    "winners": 70
   }
  },
+ "https://www.instagram.com/p/Df3QJWhIDCP": {
+  "deadline": "2026-11-29",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-11-30",
+   "checked": true,
+   "condition": null,
+   "deadline": "2026-11-29",
+   "entry": "form",
+   "how": "네이버폼 만족도 설문 응답",
+   "kind": "공공기관",
+   "org": "경주APEC기념공원",
+   "prize": "네이버페이 1만원 30명",
+   "start": "2026-11-18",
+   "title": "경주APEC기념공원 SNS 만족도 조사",
+   "url": "https://www.instagram.com/p/Df3QJWhIDCP",
+   "winners": 30
+  }
+ },
  "https://www.instagram.com/p/Df4QSy4mcou": {
   "deadline": "2026-11-30",
   "first": "2026-11-19",
@@ -655,6 +754,178 @@
    "winners": 230
   }
  },
+ "https://www.instagram.com/p/Df51Xh1zVh5": {
+  "deadline": "2026-11-26",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-12-03",
+   "checked": true,
+   "condition": "인스타그램 팔로우",
+   "deadline": "2026-11-26",
+   "entry": "sns",
+   "how": "팔로우·좋아요 후 겨울 보습 꿀팁 댓글",
+   "kind": "기업",
+   "org": "브리타 코리아",
+   "prize": "브리타 리켈리 3명",
+   "start": "2026-11-19",
+   "title": "나만의 보습 꿀팁은? 댓글 이벤트",
+   "url": "https://www.instagram.com/p/Df51Xh1zVh5/",
+   "winners": 3
+  }
+ },
+ "https://www.instagram.com/p/Df6R7h6GQdg": {
+  "deadline": "2026-11-26",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-11-30",
+   "checked": true,
+   "condition": "인스타그램 팔로우",
+   "deadline": "2026-11-26",
+   "entry": "sns",
+   "how": "팔로우 후 친구 태그와 좋았던 콘텐츠 댓글, 캡처를 네이버폼으로 제출",
+   "kind": "공공기관",
+   "org": "국가유산채널",
+   "prize": "네이버페이 1만원 20명",
+   "start": "2026-11-19",
+   "title": "국가유산채널 팔로워 4만 기념 이벤트",
+   "url": "https://www.instagram.com/p/Df6R7h6GQdg",
+   "winners": 20
+  }
+ },
+ "https://www.instagram.com/p/Df6XAV3AeyQ": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-11-30 경품 발송",
+   "checked": true,
+   "condition": "SNS 팔로우",
+   "deadline": "2026-11-27",
+   "entry": "sns",
+   "how": "팔로우·좋아요 후 선택지 댓글 작성, 구글폼으로 인증",
+   "kind": "공공기관",
+   "org": "국민통합위원회",
+   "prize": "편의점 모바일 상품권 5천원 30명",
+   "start": "2026-11-19",
+   "title": "가을 밸런스게임 댓글 이벤트",
+   "url": "https://www.instagram.com/p/Df6XAV3AeyQ",
+   "winners": 30
+  }
+ },
+ "https://www.instagram.com/p/Df6amWiH5-X": {
+  "deadline": "2026-11-25",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-11-27",
+   "checked": true,
+   "condition": "인스타그램 팔로우(비공개 계정 제외)",
+   "deadline": "2026-11-25",
+   "entry": "sns",
+   "how": "인스타그램 팔로우·좋아요 후 퀴즈 2문제 정답 댓글",
+   "kind": "금융",
+   "org": "JT저축은행",
+   "prize": "네이버페이 3천원 50명",
+   "start": "2026-11-19",
+   "title": "아동학대 예방 퀴즈 이벤트",
+   "url": "https://www.instagram.com/p/Df6amWiH5-X",
+   "winners": 50
+  },
+  "soon_sent": "2026-11-22"
+ },
+ "https://www.instagram.com/p/Df6mjUSjwKp": {
+  "deadline": "2026-12-03",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-12-10",
+   "checked": true,
+   "condition": "인스타그램 팔로우",
+   "deadline": "2026-12-03",
+   "entry": "sns",
+   "how": "팔로우·좋아요 후 친구 태그해 수험생 응원 댓글",
+   "kind": "공공기관",
+   "org": "강원관광도로",
+   "prize": "투썸플레이스 1만원 상품권 30명",
+   "start": "2026-11-19",
+   "title": "수능 응원 댓글 이벤트",
+   "url": "https://www.instagram.com/p/Df6mjUSjwKp",
+   "winners": 30
+  }
+ },
+ "https://www.instagram.com/p/Df6rLmqCVkp": {
+  "deadline": "2026-12-03",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-12-07",
+   "checked": true,
+   "condition": "인스타그램 팔로우(비공개 계정 제외)",
+   "deadline": "2026-12-03",
+   "entry": "sns",
+   "how": "여행자 유형 테스트 후 팔로우·좋아요하고 결과 유형 댓글",
+   "kind": "공공기관",
+   "org": "로컬100",
+   "prize": "메가MGC커피 5천원권 40명",
+   "start": "2026-11-19",
+   "title": "로컬 여행자 유형 테스트 댓글 이벤트",
+   "url": "https://www.instagram.com/p/Df6rLmqCVkp",
+   "winners": 40
+  }
+ },
+ "https://www.instagram.com/p/Df86QpqPPB-": {
+  "deadline": null,
+  "first": "2026-11-22",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": "인스타그램 팔로우, 성인",
+   "deadline": null,
+   "entry": "sns",
+   "how": "@goodday_busan 팔로우·좋아요 후 '돌아간다/안 돌아간다' 댓글",
+   "kind": "공공기관",
+   "org": "굿데이부산",
+   "prize": "배달의민족 2만원 상품권 5명",
+   "start": "2026-11-20",
+   "title": "밸런스 게임 댓글 이벤트 (배달의민족 2만원)",
+   "url": "https://www.instagram.com/p/Df86QpqPPB-/",
+   "winners": 5
+  }
+ },
+ "https://www.instagram.com/p/Df8VwjQPZk0": {
+  "deadline": "2026-12-03",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-12-11",
+   "checked": true,
+   "condition": "만 14세 이상, 인스타그램 또는 페이스북 공유",
+   "deadline": "2026-12-03",
+   "entry": "sns",
+   "how": "퀴즈를 풀고 게시물 공유 후 공유 화면 캡처를 구글폼으로 제출",
+   "kind": "공공기관",
+   "org": "한국무역협회(KITA)",
+   "prize": "갤럭시탭 S11 1명, 백화점상품권 20만원 3명, JBL CLIP5 8명, 투썸 5천원 100명, 네이버페이 3천원 2000명",
+   "start": "2026-11-20",
+   "title": "수출 1조 달러 기념 대국민 수출퀴즈 이벤트",
+   "url": "https://www.instagram.com/p/Df8VwjQPZk0",
+   "winners": 2112
+  }
+ },
+ "https://www.instagram.com/p/Df8bODINvPI": {
+  "deadline": "2026-11-29",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "2026-12-03",
+   "checked": true,
+   "condition": null,
+   "deadline": "2026-11-29",
+   "entry": "form",
+   "how": "환경보건포털(ehtis.or.kr) 방문 후 QR 또는 링크로 설문 응답",
+   "kind": "공공기관",
+   "org": "한국환경산업기술원",
+   "prize": "BHC 치킨+콜라 100명",
+   "start": "2026-11-20",
+   "title": "환경보건포털 만족도 설문 이벤트",
+   "url": "https://www.instagram.com/p/Df8bODINvPI",
+   "winners": 100
+  }
+ },
  "https://www.instagram.com/p/Df9RaqGn_w8": {
   "deadline": "2026-11-27",
   "first": "2026-11-21",
@@ -672,6 +943,25 @@
    "title": "요즘곡간 매거진 인스타 팔로우 이벤트 2차",
    "url": "https://www.instagram.com/p/Df9RaqGn_w8/",
    "winners": 5
+  }
+ },
+ "https://www.instagram.com/p/DfpU-OMH_HN": {
+  "deadline": "2026-11-29",
+  "first": "2026-11-22",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": null,
+   "deadline": "2026-11-29",
+   "entry": "form",
+   "how": "프로필 링크의 온라인 설문 양식 제출",
+   "kind": "공공기관",
+   "org": "광진구시설관리공단",
+   "prize": "모바일 커피쿠폰 100명",
+   "start": "2026-11-16",
+   "title": "광진구시설관리공단 소식지 공감터 설문 이벤트",
+   "url": "https://www.instagram.com/p/DfpU-OMH_HN",
+   "winners": 100
   }
  },
  "https://www.instagram.com/p/Dfx6WEsGYME": {
@@ -904,6 +1194,26 @@
   },
   "soon_sent": "2026-11-21"
  },
+ "https://www.samsung.com/sec/event/lions-victory-faq": {
+  "deadline": "2026-11-24",
+  "first": "2026-11-22",
+  "item": {
+   "announce": "응모 다음날 15시 삼성닷컴 발표",
+   "checked": true,
+   "condition": "삼성닷컴 회원, 광고성 정보 수신 동의, 만 14세 이상",
+   "deadline": "2026-11-24",
+   "entry": "login",
+   "how": "삼성닷컴 로그인 후 이벤트 페이지에서 하루 1회 응모하기",
+   "kind": "기업",
+   "org": "삼성전자",
+   "prize": "일자별 경품 매일 9명 (12일간 총 108명)",
+   "start": "2026-11-13",
+   "title": "라이온즈 우승 기념 삼성전자 대축제 - 매일매일 경품 축제",
+   "url": "https://www.samsung.com/sec/event/lions-victory-faq/",
+   "winners": 108
+  },
+  "soon_sent": "2026-11-22"
+ },
  "https://www.samsung.com/sec/event/membership_quiz": {
   "deadline": "2026-11-30",
   "first": "2026-11-20",
@@ -1074,6 +1384,25 @@
    "title": "[EVENT] 의학 속 데이터 이야기 퀴즈 이벤트",
    "url": "https://youtu.be/vLcXqdzwsA4",
    "winners": 40
+  }
+ },
+ "https://youtube.com/shorts/ue_FwgszrCg": {
+  "deadline": null,
+  "first": "2026-11-22",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": "유튜브 구독",
+   "deadline": null,
+   "entry": "sns",
+   "how": "유튜브 구독·쇼츠 좋아요 후 응원 댓글, 캡처를 네이버폼으로 제출",
+   "kind": "공공기관",
+   "org": "금천구청",
+   "prize": "배달앱 상품권 1만원 30명",
+   "start": "2026-11-18",
+   "title": "구직자 응원 댓글 이벤트",
+   "url": "https://youtube.com/shorts/ue_FwgszrCg",
+   "winners": 30
   }
  }
 }
