@@ -396,7 +396,9 @@ def card(v, today, cid=None, res=None):
     if v.get('auction_id'):
         body += f'<div class="sec"><a href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}" target="_blank" rel="noopener">상세 보기 ↗</a></div>'
     idattr = f' id="{cid}"' if cid else ''
-    return f'<div class="card"{idattr} data-d="{bd}" data-gu="{E(gu)}">{body}</div>'
+    p50 = (v.get('bid_by_prob_eok') or {}).get('50%')   # 캘린더 요약 줄용 (2026-11-22): 사건번호 · 종합 50% 예상 낙찰가
+    extra = f' data-case="{E(case)}"' + (f' data-p50="{p50:.2f}"' if p50 else '')
+    return f'<div class="card"{idattr} data-d="{bd}" data-gu="{E(gu)}"{extra}>{body}</div>'
 
 
 def tracked_past(today, pred_dir, days=14):
@@ -650,7 +652,7 @@ table.sc .big{font-size:14.5px}
 .cal-sum{display:flex;align-items:center;gap:8px;padding:10px 2px;border-top:1px solid rgba(128,128,128,.25);cursor:pointer;font-size:15px}
 .cal-open h4+.cal-sum{border-top:0}
 .cal-sum .ic{font-size:16px}
-.cal-sum .nm{flex:1;min-width:0;overflow-wrap:anywhere;line-height:1.35}
+.cal-sum .nm{flex:1;min-width:0;overflow-wrap:break-word;word-break:keep-all;line-height:1.35}
 .cal-sum .sb{display:block;color:var(--mut);font-size:12px;font-weight:normal}
 .cal-sum .pr{font-size:13px;white-space:nowrap;text-align:right}
 .cal-sum .pr small{display:block;color:var(--mut);font-size:11.5px}
@@ -713,14 +715,17 @@ function sumOf(x){var c=x.e,t=c.querySelector('.t'),tx=c.textContent,nm='',tags=
  if(t){var q=t.cloneNode(true);q.querySelectorAll('.hh,.new').forEach(function(e){e.remove();});nm=q.textContent.split('·')[0].trim();}
  var sz=t&&(t.textContent.match(/전용 ([0-9.]+)㎡/)||t.textContent.match(/([0-9.]+)㎡/));
  if(tx.indexOf('✅ 정밀')>=0)tags.push('✅정밀');if(t&&t.textContent.indexOf('🛡 안전')>=0)tags.push('🛡안전');
+ var cs=c.getAttribute('data-case')||'',p5=c.getAttribute('data-p50');
  var sub=[x.g].concat(sz?[Math.round(+sz[1]/3.3058)+'평']:[]).concat(tags).filter(Boolean).join(' · ');
  var lo=tx.match(/최저가? ([0-9.]+억)/),pc=tx.match(/최저가 [0-9.]+억 [(]시세 대비 ([0-9]+)%/),pa=tx.match(/최저 [0-9.]+억 [(]([0-9]+)%[)]/);
  var rs=tx.match(/📊 결과: 매각 ([0-9.]+억)/),rd=tx.match(/예상[(]50%[)] 대비 ([-+][0-9.]+%)/),rx=tx.match(/📊 결과: *([가-힣]+(?: 전)?)/),R;
- if(rs)R='<b>매각 '+rs[1]+'</b>'+(rd?'<small>예상 대비 '+rd[1]+'</small>':'');
- else if(rx)R='<b>'+esc(rx[1])+'</b><small>결과</small>';
- else R=(lo?'최저 <b>'+lo[1]+'</b>':'')+(pc?'<small>시세 '+pc[1]+'%</small>':pa?'<small>감정 '+pa[1]+'%</small>':'');
+ var PE=p5?'예상 '+p5+'억':'';
+ if(rs)R='<b>매각 '+rs[1]+'</b><small>'+[PE,rd?'대비 '+rd[1]:''].filter(Boolean).join(' · ')+'</small>';
+ else if(rx)R='<b>'+esc(rx[1])+'</b><small>'+(PE||'결과')+'</small>';
+ else R=(p5?'예상 <b>'+p5+'억</b>':lo?'최저 <b>'+lo[1]+'</b>':'')
+  +'<small>'+[p5&&lo?'최저 '+lo[1]:'',pc?'시세 '+pc[1]+'%':pa?'감정 '+pa[1]+'%':''].filter(Boolean).join(' · ')+'</small>';
  return '<span class="ic">'+x.lab.split(' ')[0]+'</span><span class="nm">'+(c.querySelector('.new')?'<i class="nw">N</i>':'')+esc(nm)
-  +'<span class="sb">'+esc(sub)+'</span></span><span class="pr">'+R+'</span><span class="ar">▾</span>';}
+  +(cs?'<span class="sb">'+esc(cs)+'</span>':'')+'<span class="sb">'+esc(sub)+'</span></span><span class="pr">'+R+'</span><span class="ar">▾</span>';}
 function cal(){var box=D.getElementById('cal');box.innerHTML='';var y=YM[0],m=YM[1],cur=y+'-'+p2(m+1),tm=TD.slice(0,7),ks=Object.keys(BY).sort();
  var MS=ks.map(function(k){return k.slice(0,7);}).concat([tm]).filter(function(v,i,a){return a.indexOf(v)==i;}).sort(),mi=MS.indexOf(cur);
  function goM(s){if(s){YM=[+s.slice(0,4),+s.slice(5,7)-1];cal();setH();}}
@@ -823,7 +828,7 @@ def other_card(v):
         L.append(f'<div class="g s">🚌 감정평가서 교통: {E(v["traffic"][:120])}</div>')
     L.append(f'<div class="s"><a href="https://m.richgo.ai/auctionMobile/{E(v.get("auction_id") or "")}">상세 보기 →</a></div>')
     gu = (v.get('region') or '').split(' ', 1)[-1]
-    return f'<div class="card" data-d="{E(bd)}" data-gu="{E(gu)}">' + ''.join(x for x in L if x) + '</div>'
+    return f'<div class="card" data-d="{E(bd)}" data-gu="{E(gu)}" data-case="{E(v["key"].replace("[1]", ""))}">' + ''.join(x for x in L if x) + '</div>'
 
 
 def prev_keys(day, pred_dir):
