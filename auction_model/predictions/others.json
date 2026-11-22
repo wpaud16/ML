@@ -1,16 +1,16 @@
 {
- "date": "2026-11-22",
- "generated_at": "2026-11-22T04:10:46+09:00",
+ "date": "2026-11-23",
+ "generated_at": "2026-11-23T04:24:46+09:00",
  "station_source": "카카오 로컬",
  "counts": {
-  "listed": 939,
+  "listed": 934,
   "wrong_type": 415,
   "other_region": 0,
-  "over_budget": 39,
+  "over_budget": 38,
   "no_station": 1,
-  "far": 37,
-  "sold": 8,
-  "rights": 98,
+  "far": 36,
+  "sold": 4,
+  "rights": 99,
   "shown": 341,
   "by_category": {
    "상가": 300,
@@ -10351,7 +10351,7 @@
    "item_type": "단독주택,다가구",
    "appr_manwon": 191973,
    "low_manwon": 122863,
-   "fails": 1,
+   "fails": 2,
    "bidding_date": "2026-12-24",
    "area": 222.94,
    "land_area": 112.6,
@@ -10396,15 +10396,21 @@
      "result": "유찰"
     },
     {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 153579,
+     "result": "유찰"
     },
     {
      "date": "2026-12-24",
      "type": "매각기일",
      "low_manwon": 122863,
+     "result": null
+    },
+    {
+     "date": "2026-12-31",
+     "type": "매각결정기일",
+     "low_manwon": null,
      "result": null
     }
    ]
@@ -18065,8 +18071,8 @@
    ],
    "item_type": "상가,오피스텔,근린",
    "appr_manwon": 42500,
-   "low_manwon": 27200,
-   "fails": 3,
+   "low_manwon": 21760,
+   "fails": 4,
    "bidding_date": "",
    "area": 16.12,
    "land_area": 38.5,
@@ -18127,10 +18133,10 @@
      "result": "유찰"
     },
     {
-     "date": "2026-11-26",
-     "type": "매각결정기일",
-     "low_manwon": null,
-     "result": null
+     "date": "2026-11-19",
+     "type": "매각기일",
+     "low_manwon": 21760,
+     "result": "유찰"
     }
    ]
   },
