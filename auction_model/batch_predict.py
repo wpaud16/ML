@@ -484,9 +484,9 @@ def officetel_items(items, skipped, failed, cache, now, workers=8):
                 sts2 = near_list(page_stations(dj, 'officetel'), OT_STATION_M)
             except Exception:
                 sts2 = []
-            return 'ok', dict(base, danji_id=dj, danji_name=p.get('name'), court=pg.get('caseSite'),
+            return 'ok', no_fake_date(dict(base, danji_id=dj, danji_name=p.get('name'), court=pg.get('caseSite'),
                               station=dict(name=st_name, distance_m=st_m, walk_min=int(-(-st_m * 1.3 // 80))), stations=sts2,
-                              **{k: v for k, v in p.items() if k not in ('address', 'area', 'category')}, risk=rk)
+                              **{k: v for k, v in p.items() if k not in ('address', 'area', 'category')}, risk=rk), base)
         except SystemExit as e:
             return 'fail', dict(base, reason=f'예측 실패: {e}')
         except Exception as e:
@@ -523,6 +523,14 @@ def recent_sgg_adj(cfg, today):
         g = next((x for x in keys if reg.startswith(x)), ' '.join(reg.split()[:2]))
         acc.setdefault(g, []).append(np.log(r['actual_manwon'] / p))
     return {g: float(np.clip(np.mean(v) * len(v) / (len(v) + RECENT_K), -RECENT_CAP, RECENT_CAP)) for g, v in acc.items()}
+
+
+def no_fake_date(rec, base):
+    """2026-11-22: 리치고 기일이 비어 있으면(변경·연기 후 새 기일 미정) 예측기가 기준일로 쓴 '오늘'이
+    매각기일로 들어가던 문제 → 기일은 리치고 원래 값만, 없으면 '' (페이지에 '매각기일 미정')."""
+    bd = base.get('bidding_date') or ''
+    rec['bidding_date'] = '' if bd.startswith('9999') else bd
+    return rec
 
 
 def main():
@@ -571,7 +579,7 @@ def main():
                                    risk=risk_check(pg.get('keyword'), None, pg.get('rights')))); continue
             try:
                 p = ap.predict_dict(dj, it['id'], df=df, cfg=cfg)
-                items[key] = dict(base, danji_id=dj, danji_name=p.get('name'), **{k: v for k, v in p.items() if k not in ('address', 'area')})
+                items[key] = no_fake_date(dict(base, danji_id=dj, danji_name=p.get('name'), **{k: v for k, v in p.items() if k not in ('address', 'area')}), base)
                 items[key]['risk'] = risk_check(p.get('keyword'), p.get('appr_vs_sise'), pg.get('rights'))
                 items[key]['court'] = pg.get('caseSite')
                 items[key]['category'] = '아파트'

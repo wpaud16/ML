@@ -860,6 +860,8 @@ def build(src, dst):
         s = ((RS.get(rid) or {}).get('status') == '매각', rid in RS, bd)
         if k not in one or s > one[k][0]: one[k] = (s, rid)
     tracked = {rid: tracked[rid] for _, rid in one.values()}
+    # 2026-11-22: 리치고 기일이 비어 예측일(주말 포함)이 기일로 잘못 들어갔던 기록 → 주말 기일은 빼기 (법원 경매는 평일)
+    tracked = {rid: v for rid, v in tracked.items() if datetime.strptime(rid.rsplit('|', 1)[1], '%Y-%m-%d').weekday() < 5}
     # 2026-11-12 사용자 요청: 아파트·오피스텔·성적표를 탭으로, 그 안을 7일 이내·그 이후·기일 지남 등으로 나누고 날짜별로 바로 이동
     parts, nav, total = [], [], {}
     subnav = {}   # main -> [(pane_id, label, n)]
