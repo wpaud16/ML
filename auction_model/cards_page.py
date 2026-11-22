@@ -628,7 +628,37 @@ table.sc .big{font-size:14.5px}
 .fchips button i{font-style:normal;opacity:.6;font-size:11px;margin-left:3px}
 .fact{display:flex;gap:8px;margin-top:10px} #fok{border-color:#1a73e8;background:#1a73e8;color:#fff}
 .fempty{color:var(--mut);padding:10px 0}
-#mychips:empty{display:none}
+.cal{margin:4px 0 16px}
+.cal-hd{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 10px}
+.cal-hd b{font-size:22px;letter-spacing:1px}
+.cal-hd button{width:32px;height:32px;border-radius:50%;border:0;background:#1a73e8;color:#fff;font-size:18px;cursor:pointer}
+.cal-hd button:disabled{background:#c9c9c9;opacity:.5;cursor:default}
+.cal-past{display:block;width:100%;border:1px dashed var(--bd);background:var(--bg);color:var(--mut);border-radius:8px;padding:6px;font-size:13px;margin-bottom:8px;cursor:pointer}
+.cal-wk{display:grid;grid-template-columns:repeat(5,1fr);text-align:center;background:rgba(128,128,128,.12);padding:9px 0;font-size:14px;color:var(--mut)}
+.cal-row{display:grid;grid-template-columns:repeat(5,1fr);text-align:center}
+.cal-d{padding:10px 0 8px;cursor:pointer;border:1px solid transparent;border-bottom:0;border-radius:6px 6px 0 0;user-select:none}
+.cal-d .dn{font-size:19px}
+.cal-d .dc{font-size:12.5px;color:var(--mut);margin-top:2px}
+.cal-d.has .dc b{color:#1a73e8}
+.cal-d.past{opacity:.45}
+.cal-d.empty{cursor:default}
+.cal-d.today .dn{color:#1a73e8;font-weight:bold}
+.cal-d.sel{border-color:var(--bd);background:var(--bg);position:relative;top:1px;z-index:1;opacity:1}
+.cal-d.sel .dn,.cal-d.sel .dc{font-weight:bold;color:var(--fg)}
+.cal-open{border:1px solid var(--bd);border-radius:0 0 8px 8px;padding:12px 10px 4px;margin-bottom:8px}
+.cal-open h4{margin:0 0 6px;font-size:15px}
+.cal-sum{display:flex;align-items:center;gap:8px;padding:10px 2px;border-top:1px solid rgba(128,128,128,.25);cursor:pointer;font-size:15px}
+.cal-open h4+.cal-sum{border-top:0}
+.cal-sum .ic{font-size:16px}
+.cal-sum .nm{flex:1;min-width:0;overflow-wrap:anywhere;line-height:1.35}
+.cal-sum .sb{display:block;color:var(--mut);font-size:12px;font-weight:normal}
+.cal-sum .pr{font-size:13px;white-space:nowrap;text-align:right}
+.cal-sum .pr small{display:block;color:var(--mut);font-size:11.5px}
+.cal-sum .ar{color:var(--mut);transition:transform .15s}
+.cal-sum.on .ar{transform:rotate(180deg)}
+.cal-sum.on .nm{font-weight:bold}
+.cal-sum .nw{font-style:normal;background:#e8453c;color:#fff;font-size:10px;border-radius:4px;padding:1px 4px;margin-right:5px;vertical-align:2px}
+.cal-open .card{margin:0 0 12px}
 """
 
 JS = """
@@ -664,36 +694,78 @@ function go(h,scroll){if(!h)return false;var el=D.getElementById(h);if(!el)retur
 $$('.tab').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var pid=firstPane(t.getAttribute('data-main'));if(pid){showPane(pid);history.replaceState(null,'','#'+pid);}window.scrollTo(0,0);});});
 $$('.sub-t').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var pid=t.getAttribute('data-pane');showPane(pid);history.replaceState(null,'','#'+pid);window.scrollTo(0,0);});});
 window.addEventListener('hashchange',function(){go(location.hash.slice(1),true);});
-/* 내 조건 탭 (2026-11-19): 고른 종류·구의 다가오는 물건을 각 탭에서 복사해 날짜순으로 */
+/* 캘린더 탭 (2026-11-22, 예전 '내 조건'): 고른 종류·구의 물건을 매각기일 달력으로 → 날짜 누르면 한 줄 요약 → 요약 누르면 카드 */
 var CATS=[['apt','🏢 아파트'],['ot','🏬 오피스텔'],['shop','🏪 상가'],['bldg','🏙 건물']];
-var F={cats:[],gus:[]};try{var s=JSON.parse(load('myf')||'null');if(s&&s.cats)F=s;}catch(e){}
-var SRC=[];CATS.forEach(function(c){$$('#'+c[0]+'-soon .card,#'+c[0]+'-later .card').forEach(function(e){SRC.push({c:c[0],lab:c[1],e:e,d:e.getAttribute('data-d')||'',g:e.getAttribute('data-gu')||''});});});
-var gcnt={};SRC.forEach(function(x){if(x.g)gcnt[x.g]=(gcnt[x.g]||0)+1;});F.gus.forEach(function(g){if(!(g in gcnt))gcnt[g]=0;});var GUS=Object.keys(gcnt).sort();var tmp=null;
+var TD=new Date(Date.now()+9*3600e3).toISOString().slice(0,10);
+function p2(n){return ('0'+n).slice(-2);}
+var F={cats:['apt','ot'],gus:[]};try{var s=JSON.parse(load('myf')||'null');if(s&&s.cats)F=s;}catch(e){}
+var SRC=[];CATS.forEach(function(c){$$('#'+c[0]+'-soon .card,#'+c[0]+'-later .card,#past-'+c[0]+' .card').forEach(function(e){SRC.push({c:c[0],lab:c[1],e:e,d:e.getAttribute('data-d')||'',g:e.getAttribute('data-gu')||''});});});
+var gcnt={};SRC.forEach(function(x){if(x.g&&x.d>=TD)gcnt[x.g]=(gcnt[x.g]||0)+1;});F.gus.forEach(function(g){if(!(g in gcnt))gcnt[g]=0;});var GUS=Object.keys(gcnt).sort();var tmp=null;
 function chip(box,val,lab,n,sel){var b=D.createElement('button');b.type='button';b.innerHTML=lab+(n!=null?'<i>'+n+'</i>':'');
  b.classList.toggle('on',sel.indexOf(val)>=0);b.onclick=function(){var i=sel.indexOf(val);if(i>=0)sel.splice(i,1);else sel.push(val);b.classList.toggle('on',i<0);};box.appendChild(b);}
 function openP(){tmp={cats:F.cats.slice(),gus:F.gus.slice()};var a=D.getElementById('fcat'),b=D.getElementById('fgu');a.innerHTML='';b.innerHTML='';
- CATS.forEach(function(c){chip(a,c[0],c[1],SRC.filter(function(x){return x.c==c[0];}).length,tmp.cats);});
+ CATS.forEach(function(c){chip(a,c[0],c[1],SRC.filter(function(x){return x.c==c[0]&&x.d>=TD;}).length,tmp.cats);});
  GUS.forEach(function(g){chip(b,g,g,gcnt[g],tmp.gus);});D.getElementById('fpanel').hidden=false;setH();}
 function dl(d){var p=d.split('-');if(p.length<3)return '미정';var w='일월화수목금토'[new Date(Date.UTC(+p[0],+p[1]-1,+p[2])).getUTCDay()];return (+p[1])+'/'+(+p[2])+'('+w+')';}
+var BY={},YM=null,SEL=null,SHOWPAST=false;
+function esc(s){return s.replace(/[&<>"]/g,function(x){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[x];});}
+function sumOf(x){var c=x.e,t=c.querySelector('.t'),tx=c.textContent,nm='',tags=[];
+ if(t){var q=t.cloneNode(true);q.querySelectorAll('.hh,.new').forEach(function(e){e.remove();});nm=q.textContent.split('·')[0].trim();}
+ var sz=t&&(t.textContent.match(/전용 ([0-9.]+)㎡/)||t.textContent.match(/([0-9.]+)㎡/));
+ if(tx.indexOf('✅ 정밀')>=0)tags.push('✅정밀');if(t&&t.textContent.indexOf('🛡 안전')>=0)tags.push('🛡안전');
+ var sub=[x.g].concat(sz?[Math.round(+sz[1]/3.3058)+'평']:[]).concat(tags).filter(Boolean).join(' · ');
+ var lo=tx.match(/최저가? ([0-9.]+억)/),pc=tx.match(/최저가 [0-9.]+억 [(]시세 대비 ([0-9]+)%/),pa=tx.match(/최저 [0-9.]+억 [(]([0-9]+)%[)]/);
+ var rs=tx.match(/📊 결과: 매각 ([0-9.]+억)/),rd=tx.match(/예상[(]50%[)] 대비 ([-+][0-9.]+%)/),rx=tx.match(/📊 결과: *([가-힣]+(?: 전)?)/),R;
+ if(rs)R='<b>매각 '+rs[1]+'</b>'+(rd?'<small>예상 대비 '+rd[1]+'</small>':'');
+ else if(rx)R='<b>'+esc(rx[1])+'</b><small>결과</small>';
+ else R=(lo?'최저 <b>'+lo[1]+'</b>':'')+(pc?'<small>시세 '+pc[1]+'%</small>':pa?'<small>감정 '+pa[1]+'%</small>':'');
+ return '<span class="ic">'+x.lab.split(' ')[0]+'</span><span class="nm">'+(c.querySelector('.new')?'<i class="nw">N</i>':'')+esc(nm)
+  +'<span class="sb">'+esc(sub)+'</span></span><span class="pr">'+R+'</span><span class="ar">▾</span>';}
+function cal(){var box=D.getElementById('cal');box.innerHTML='';var y=YM[0],m=YM[1],cur=y+'-'+p2(m+1),tm=TD.slice(0,7),ks=Object.keys(BY).sort();
+ var MS=ks.map(function(k){return k.slice(0,7);}).concat([tm]).filter(function(v,i,a){return a.indexOf(v)==i;}).sort(),mi=MS.indexOf(cur);
+ function goM(s){if(s){YM=[+s.slice(0,4),+s.slice(5,7)-1];cal();setH();}}
+ var hd=D.createElement('div');hd.className='cal-hd';
+ var pv=D.createElement('button');pv.type='button';pv.textContent='‹';pv.disabled=mi<=0;pv.onclick=function(){goM(MS[mi-1]);};
+ var nx=D.createElement('button');nx.type='button';nx.textContent='›';nx.disabled=mi<0||mi>=MS.length-1;nx.onclick=function(){goM(MS[mi+1]);};
+ var tt=D.createElement('b');tt.textContent=y+'.'+(m+1);hd.appendChild(pv);hd.appendChild(tt);hd.appendChild(nx);box.appendChild(hd);
+ /* 주말 기일 물건이 있는 달만 토·일 칸도 (보통 법원 경매는 평일) */
+ var wk=[],w=null,last=new Date(Date.UTC(y,m+1,0)).getUTCDate(),C7=ks.some(function(k){var g=new Date(k+'T00:00:00Z').getUTCDay();return k.slice(0,7)==cur&&(g==0||g==6)&&(SHOWPAST||cur!=tm||k>=TD);});
+ for(var d=1;d<=last;d++){var ix=(new Date(Date.UTC(y,m,d)).getUTCDay()+6)%7;if(!C7&&ix>4)continue;
+  if(!w){w=[];wk.push(w);for(var i=0;i<ix;i++)w.push(null);}else if(ix==0){w=[];wk.push(w);}w.push(y+'-'+p2(m+1)+'-'+p2(d));}
+ var pastW=wk.filter(function(w){return !w.some(function(k){if(!k||k<TD)return false;var g=new Date(k+'T00:00:00Z').getUTCDay();return (g>0&&g<6)||BY[k];});}),fold=cur==tm&&pastW.length>0;
+ if(fold){var pn=0;pastW.forEach(function(w){w.forEach(function(k){if(k&&BY[k])pn+=BY[k].length;});});
+  var pb=D.createElement('button');pb.type='button';pb.className='cal-past';pb.textContent=(SHOWPAST?'▾ 지난 주 접기':'▸ 지난 주 보기')+(pn?' · 결과 '+pn+'건':'');
+  pb.onclick=function(){SHOWPAST=!SHOWPAST;cal();setH();};box.appendChild(pb);}
+ var GT='repeat('+(C7?7:5)+',1fr)';
+ var wh=D.createElement('div');wh.className='cal-wk';wh.style.gridTemplateColumns=GT;wh.innerHTML='<div>월</div><div>화</div><div>수</div><div>목</div><div>금</div>'+(C7?'<div>토</div><div>일</div>':'');box.appendChild(wh);
+ wk.forEach(function(w){if(fold&&!SHOWPAST&&pastW.indexOf(w)>=0)return;var row=D.createElement('div');row.className='cal-row';row.style.gridTemplateColumns=GT;box.appendChild(row);var hit=false;
+  w.forEach(function(k){var c=D.createElement('div');if(!k){c.className='cal-d empty';row.appendChild(c);return;}
+   var n=(BY[k]||[]).length;c.className='cal-d'+(n?' has':'')+(k<TD?' past':'')+(k==TD?' today':'')+(k==SEL?' sel':'');
+   c.innerHTML='<div class="dn">'+k.slice(8)+'</div><div class="dc">('+(n?'<b>'+n+'</b>':'0')+'건)</div>';
+   c.onclick=function(){SEL=k;cal();setH();};if(k==SEL)hit=true;row.appendChild(c);});
+  if(hit)box.appendChild(openDay());});}
+function openDay(){var o=D.createElement('div');o.className='cal-open';var xs=BY[SEL]||[];
+ var h=D.createElement('h4');h.textContent=dl(SEL)+' · '+xs.length+'건'+(SEL<TD?' · 지난 기일':'');o.appendChild(h);
+ if(!xs.length){var p=D.createElement('div');p.className='fempty';p.textContent='이 날은 조건에 맞는 경매가 없어요';o.appendChild(p);}
+ xs.forEach(function(x){var r=D.createElement('div');r.className='cal-sum';r.innerHTML=sumOf(x);var k=x.e.cloneNode(true);k.removeAttribute('id');k.hidden=true;
+  r.onclick=function(){k.hidden=!k.hidden;r.classList.toggle('on',!k.hidden);setH();};o.appendChild(r);o.appendChild(k);});return o;}
 function build(){var xs=SRC.filter(function(x){return (!F.cats.length||F.cats.indexOf(x.c)>=0)&&(!F.gus.length||F.gus.indexOf(x.g)>=0);});
- xs.sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;});
- var L=D.getElementById('mylist'),C=D.getElementById('mychips');L.innerHTML='';C.innerHTML='';var cur=null,h=null,cnt={};
- xs.forEach(function(x){if(x.d!==cur){cur=x.d;h=D.createElement('h4');h.className='dh';h.id='my-'+cur;L.appendChild(h);cnt[cur]=0;}cnt[cur]++;
-  var k=x.e.cloneNode(true);k.removeAttribute('id');var t=D.createElement('div');t.className='ctag';t.textContent=x.lab;k.insertBefore(t,k.firstChild);L.appendChild(k);});
- Object.keys(cnt).forEach(function(d){var e=D.getElementById('my-'+d);e.textContent=dl(d)+' · '+cnt[d]+'건';});
- if(Object.keys(cnt).length>1)Object.keys(cnt).forEach(function(d){var a=D.createElement('a');a.href='#my-'+d;a.innerHTML=dl(d)+' <b>'+cnt[d]+'</b>';C.appendChild(a);});
- if(!xs.length){var p=D.createElement('p');p.className='fempty';p.textContent='조건에 맞는 물건이 없어요';L.appendChild(p);}
+ xs.sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;});BY={};xs.forEach(function(x){if(x.d)(BY[x.d]=BY[x.d]||[]).push(x);});
+ if(!SEL||!BY[SEL]){var up=Object.keys(BY).filter(function(d){return d>=TD;}).sort();SEL=BY[TD]?TD:(up[0]||TD);}
+ YM=[+SEL.slice(0,4),+SEL.slice(5,7)-1];cal();
+ xs=xs.filter(function(x){return x.d>=TD;});
  var nm=CATS.filter(function(c){return F.cats.indexOf(c[0])>=0;}).map(function(c){return c[1].split(' ')[1];});
  var gs=F.gus.length?(F.gus.length>3?F.gus.slice(0,3).join('·')+' 외 '+(F.gus.length-3)+'곳':F.gus.join('·')):'모든 지역';
- D.getElementById('fsum').textContent=(nm.length?nm.join('·'):'모든 종류')+' · '+gs+' · '+xs.length+'건';
+ D.getElementById('fsum').textContent=(nm.length?nm.join('·'):'모든 종류')+' · '+gs+' · 다가오는 '+xs.length+'건';
  var tb=D.querySelector('.tab[data-main="my"]');if(tb){var b=tb.querySelector('b');if(!b){b=D.createElement('b');tb.appendChild(D.createTextNode(' '));tb.appendChild(b);}b.textContent=xs.length;}
  save('myf',JSON.stringify(F));setH();}
 D.getElementById('fbtn').onclick=function(){var p=D.getElementById('fpanel');if(!p.hidden){p.hidden=true;setH();}else openP();};
 D.getElementById('fcancel').onclick=function(){D.getElementById('fpanel').hidden=true;setH();};
 D.getElementById('fok').onclick=function(){F.cats=tmp.cats;F.gus=tmp.gus;D.getElementById('fpanel').hidden=true;build();window.scrollTo(0,0);};
 D.getElementById('gclr').onclick=function(e){e.preventDefault();tmp.gus.length=0;$$('#fgu button').forEach(function(b){b.classList.remove('on');});};
-build();if(!F.cats.length&&!F.gus.length)openP();
-if(!go(location.hash.slice(1),true)){var m=load('main')||'apt';var pid=firstPane(m)||firstPane('apt');if(pid)showPane(pid,true);}
+build();
+/* 2026-11-22: 첫 화면은 항상 캘린더 (주소에 #이 있으면 그 칸) */
+if(!go(location.hash.slice(1),true))showPane('my-list',true);
 })();
 """
 
@@ -863,13 +935,14 @@ def build(src, dst):
             parts.append(f'<section class="pane" id="{anchor}-none" data-main="{anchor}"><p class="g">표시할 물건 없음</p></section>')
             subnav.setdefault(anchor, []).append((f'{anchor}-none', '없음', None))
     # 2026-11-19 사용자 요청: '내 조건' 탭 — 고른 종류·구의 물건만 한데 모아 날짜순 (카드는 각 탭에서 JS 로 복사, 선택은 기기에 저장)
-    nav.insert(0, ('my', '⭐ 내 조건', None))
-    parts.insert(0, '<h2 class="mainh" id="my" data-main="my">⭐ 내 조건</h2><section class="pane" id="my-list" data-main="my">'
+    # 2026-11-22 사용자 요청: '내 조건' → '📅 캘린더' (매각기일 달력, 날짜 → 한 줄 요약 → 카드), 첫 화면
+    nav.insert(0, ('my', '📅 캘린더', None))
+    parts.insert(0, '<h2 class="mainh" id="my" data-main="my">📅 캘린더</h2><section class="pane" id="my-list" data-main="my">'
                     '<div class="fbar"><span id="fsum" class="s"></span><button type="button" id="fbtn">⚙️ 조건 바꾸기</button></div>'
                     '<div id="fpanel" hidden><div class="fl">종류 <span class="g">(안 고르면 전체)</span></div><div class="fchips" id="fcat"></div>'
                     '<div class="fl">지역 (구) <span class="g">(안 고르면 전체)</span> <a href="#" id="gclr">모두 해제</a></div><div class="fchips" id="fgu"></div>'
                     '<div class="fact"><button type="button" id="fok">적용</button><button type="button" id="fcancel">닫기</button></div></div>'
-                    '<div class="dchips" id="mychips"></div><div id="mylist"></div></section>')
+                    '<div class="cal" id="cal"></div></section>')
     res = results_14d(today, RS, tracked)
     nav.append(('score', '📊 성적표', None))
     parts.append('<h2 class="mainh" id="score" data-main="score">📊 모델 성적표 (최근 14일)</h2>')
