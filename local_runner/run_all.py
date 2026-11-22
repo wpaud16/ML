@@ -182,6 +182,16 @@ def s_views():
         log(f'관심 수 수집 실패(계속 진행): {e}')
 
 
+def s_halls():
+    """법원 부동산매각공고 → 물건별 담당계·입찰법정·시간 (2026-11-22). 실패해도 계속."""
+    if ARGS.test:
+        log('테스트 → 담당계 수집 생략'); return
+    try:
+        run([sys.executable, os.path.join(HERE, 'halls_job.py'), '--budget-min', os.environ.get('HALLS_BUDGET_MIN', '25')], cwd=HERE, timeout=35 * 60)
+    except Exception as e:
+        log(f'담당계 수집 실패(계속 진행): {e}')
+
+
 def s_results():
     """성적표 결과를 법원 사건 조회로 먼저 채움 (리치고는 하루 이상 늦음, 2026-11-11). 실패해도 계속."""
     if ARGS.test:
@@ -334,7 +344,7 @@ def s_events_now():
 
 
 JOBS = {
-    'night': [('events', s_events_bg), ('prize', s_prize_bg), ('collect', s_collect), ('predict', s_predict), ('views', s_views), ('results', s_results), ('page', s_page), ('push', s_push_auction), ('hist', s_hist)],
+    'night': [('events', s_events_bg), ('prize', s_prize_bg), ('collect', s_collect), ('predict', s_predict), ('views', s_views), ('halls', s_halls), ('results', s_results), ('page', s_page), ('push', s_push_auction), ('hist', s_hist)],
     'outfit': [('outfit', s_outfit)],
     'brief': [('brief', s_brief)],
 }

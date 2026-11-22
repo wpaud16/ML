@@ -237,6 +237,28 @@ def load_court():
         return {}
 
 
+HALLS = {}   # 법원 부동산매각공고의 담당계·입찰법정·시간 (predictions/halls.json, local_runner/halls_job.py, 2026-11-22)
+
+
+def load_halls():
+    try:
+        return json.load(open(os.path.join(HERE, 'predictions', 'halls.json'), encoding='utf-8')).get('items') or {}
+    except Exception:
+        return {}
+
+
+def hall_lines(key, bd):
+    """'🏛 경매1계 · 입찰법정(제101호) · 10:00 · ☎ …' + 법원 정정·변경 공고 경고. 기일이 다르면(공고 후 변경) 표시 안 함."""
+    h = HALLS.get(key)
+    if not h or h.get('date') != bd: return []
+    tel = re.sub(r'\(구내.*?\)', '', h.get('tel') or '').strip()
+    out = ['🏛 ' + ' · '.join(E(x) for x in (h.get('jdbn'), h.get('place'), h.get('time')) if x)
+           + (f' <span class="g s">☎ {E(tel)}</span>' if tel else '')]
+    for n in h.get('notes') or []:
+        out.append(f'<span class="warn">📢 법원 {E(n.get("kind") or "")} 공고: {E(n.get("text") or "")}</span>')
+    return out
+
+
 VIEWS = {}   # 법원경매정보 관심등록 수 (predictions/views.json, 새벽 수집, 2026-11-09)
 
 
@@ -347,6 +369,7 @@ def card(v, today, cid=None, res=None):
          f'<div class="g s">{E(gu)} · {E(case)} · {E(v.get("court") or "")}</div>', '<b>📋 기본 정보</b>']
     bd = v.get('bidding_date') or ''
     L.append(f'매각기일 {md(bd)} · <span class="dday" data-d="{bd}"></span>' if bd else '매각기일 미정')
+    L += hall_lines(key, bd)
     cl = court_line(key, bd)
     if cl: L.append(cl)
     ut = unit_text(v)
@@ -805,6 +828,7 @@ def other_card(v):
     L = [f'<div class="t">{E(addr)} <span class="hh">{E(head)}</span></div>',
          f'<div>📅 {day_label(bd)} <span class="dday" data-d="{E(bd)}"></span> · 유찰 {v.get("fails") or 0}회'
          + (f' <span class="g s">· {E(v["court"])}</span>' if v.get('court') else '') + '</div>',
+         *[f'<div>{x}</div>' for x in hall_lines(v['key'], bd)],
          f'<div>💰 감정 {appr:.2f}억 → 최저 <b>{low:.2f}억</b> <span class="g">({low / appr * 100:.0f}%)</span></div>' if appr else '']
     sz = []
     if v['category'] == '건물' and v.get('land_area'):
@@ -844,6 +868,7 @@ def build(src, dst):
     d = json.load(open(src))
     COURT.clear(); COURT.update(load_court())
     VIEWS.clear(); VIEWS.update(load_views())
+    HALLS.clear(); HALLS.update(load_halls())
     now = datetime.now(KST); today = now.strftime('%Y-%m-%d')
     items = [v for v in d['items'].values() if keep(v)]
     pk = prev_keys(d.get('date') or today, os.path.dirname(src))
