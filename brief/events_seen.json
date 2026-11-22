@@ -154,6 +154,25 @@
   },
   "soon_sent": "2026-11-19"
  },
+ "https://event.alba.co.kr/event/719": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-23",
+  "item": {
+   "announce": "2026-12-07",
+   "checked": true,
+   "condition": "알바천국 개인회원 로그인, 앱",
+   "deadline": "2026-11-30",
+   "entry": "app",
+   "how": "알바천국 앱 이벤트 페이지에서 밸런스 게임 후 '유형 확인하고 챌린지 도전!' 누르기",
+   "kind": "기타",
+   "org": "알바천국",
+   "prize": "아이폰 듀오, 에어팟 5, 교촌치킨 세트, 요거트아이스크림 1만원권, 메가커피 음료 등 1,300명",
+   "start": "2026-10-12",
+   "title": "꿀알바 탐색 챌린지",
+   "url": "https://event.alba.co.kr/event/719",
+   "winners": 1300
+  }
+ },
  "https://forms.gle/2ShbkgbMqfi1okhCA": {
   "deadline": "2026-11-27",
   "first": "2026-11-21",
@@ -481,6 +500,26 @@
    "title": "2026년 지방규제합리화 우수사례 경진대회 국민투표(국민심사)",
    "url": "https://modu.go.kr/fron/jdgmn/jdgmnView.do?menu_id=393&qustnr_id=ca79b2f1456340ec9894847c50747a0d",
    "winners": 452
+  },
+  "soon_sent": "2026-11-23"
+ },
+ "https://modu.go.kr/front/qustnrNew/qustnrNewFrontView.do": {
+  "deadline": "2026-12-02",
+  "first": "2026-11-23",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "모두의광장 로그인",
+   "deadline": "2026-12-02",
+   "entry": "login",
+   "how": "로그인 후 제안·의견·투표·설문 중 하나에 참여하고 이벤트 설문 제출",
+   "kind": "공공기관",
+   "org": "행정안전부 국민참여정책과",
+   "prize": "온누리상품권 5만원 4명, 치킨 쿠폰 20명, 커피 쿠폰 280명",
+   "start": "2026-11-18",
+   "title": "모두의 광장 개편 기념 이벤트",
+   "url": "https://modu.go.kr/front/qustnrNew/qustnrNewFrontView.do?menu_id=421&qustnr_id=643fda170e704cc697601a0d0bac3e93",
+   "winners": 304
   }
  },
  "https://nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyDtl.ps": {
@@ -519,7 +558,8 @@
    "title": "한국영유아보육·교육진흥원 카카오톡 친구 추가 이벤트",
    "url": "https://pf.kakao.com/_MTanX",
    "winners": 100
-  }
+  },
+  "soon_sent": "2026-11-23"
  },
  "https://seoul.co.kr/event/2026SeoulAdAward/index.php": {
   "deadline": null,
@@ -771,7 +811,8 @@
    "title": "나만의 보습 꿀팁은? 댓글 이벤트",
    "url": "https://www.instagram.com/p/Df51Xh1zVh5/",
    "winners": 3
-  }
+  },
+  "soon_sent": "2026-11-23"
  },
  "https://www.instagram.com/p/Df6R7h6GQdg": {
   "deadline": "2026-11-26",
@@ -790,7 +831,8 @@
    "title": "국가유산채널 팔로워 4만 기념 이벤트",
    "url": "https://www.instagram.com/p/Df6R7h6GQdg",
    "winners": 20
-  }
+  },
+  "soon_sent": "2026-11-23"
  },
  "https://www.instagram.com/p/Df6XAV3AeyQ": {
   "deadline": "2026-11-27",
@@ -1096,6 +1138,25 @@
    "title": "별도장 꾸~욱 찍고 붕어빵 무료로 먹자!",
    "url": "https://www.kebhana.com/cont/news/news02/1529258_115431.jsp",
    "winners": null
+  }
+ },
+ "https://www.kita.net/board/notice/noticeDetail.do": {
+  "deadline": "2026-12-03",
+  "first": "2026-11-23",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "인스타그램",
+   "deadline": "2026-12-03",
+   "entry": "sns",
+   "how": "공지에 연결된 인스타그램 게시물에서 퀴즈 참여",
+   "kind": "기타",
+   "org": "한국무역협회",
+   "prize": "갤럭시탭 S11 1명, 백화점 상품권 20만원 3명, JBL 8명, 투썸 100명, 네이버페이 3천원 2,000명 (모음 사이트에 적힌 내용, 공식 공지는 이미지라 확인 못 함)",
+   "start": "2026-11-20",
+   "title": "수출 1조 달러 기념 대국민 Quiz 이벤트",
+   "url": "https://www.kita.net/board/notice/noticeDetail.do?postIndex=1874851",
+   "winners": 2112
   }
  },
  "https://www.lexus.co.kr/content/2026-nov-test-drive": {
