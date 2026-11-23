@@ -18,6 +18,25 @@
    "winners": 213
   }
  },
+ "https://arte.hunet.co.kr": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-03",
+   "checked": true,
+   "condition": "아르떼 회원가입(실명인증)",
+   "deadline": "2026-11-30",
+   "entry": "login",
+   "how": "아르떼 아카데미 무료 강좌를 100% 수강한 뒤 수료증 PDF를 응모 폼에 업로드",
+   "kind": "공공기관",
+   "org": "한국문화예술교육진흥원(아르떼)",
+   "prize": "네이버페이 포인트 3만원 20명",
+   "start": "2026-10-27",
+   "title": "2026 문화다양성 온라인 교육 이벤트",
+   "url": "https://arte.hunet.co.kr/",
+   "winners": 20
+  }
+ },
  "https://blog.naver.com/PostView.naver": {
   "deadline": "2026-12-15",
   "first": "2026-11-20",
@@ -94,6 +113,26 @@
    "title": "서울데이터허브 뉴스레터 '데토리' 구독 이벤트",
    "url": "https://data.seoul.go.kr/bsp/wgs/newsletter.do",
    "winners": 20
+  },
+  "soon_sent": "2026-11-24"
+ },
+ "https://dept.seongnam.go.kr/youth": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-04",
+   "checked": false,
+   "condition": "성남청년다해 회원가입",
+   "deadline": "2026-11-30",
+   "entry": "login",
+   "how": "성남청년다해 > 신청/참여 > 온라인 참여 > 퀴즈 이벤트에서 4지선다 정답 제출",
+   "kind": "공공기관",
+   "org": "성남시",
+   "prize": "편의점 기프티콘 5천원 500명",
+   "start": "2026-11-23",
+   "title": "성남청년다해 4분기 온라인 퀴즈 이벤트",
+   "url": "https://dept.seongnam.go.kr/youth",
+   "winners": 500
   }
  },
  "https://docs.google.com/forms/d/e/1FAIpQLSf4uoa4dVSDX57TNcGTh4P3wsywdR91Z_zhSrboc7YFV9PHwg/viewform": {
@@ -113,6 +152,25 @@
    "title": "2026 세계 토양의 날 챌린지(토양지킴이 왁뿌챌린지)",
    "url": "https://docs.google.com/forms/d/e/1FAIpQLSf4uoa4dVSDX57TNcGTh4P3wsywdR91Z_zhSrboc7YFV9PHwg/viewform",
    "winners": 100
+  }
+ },
+ "https://eapp.emart.com/news/event/progress_list_renew.do": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "이마트 앱 설치·로그인",
+   "deadline": "2026-11-30",
+   "entry": "app",
+   "how": "이마트 앱에서 하루 1회 출석 체크, 누적 출석하면 자동 응모",
+   "kind": "유통·쇼핑",
+   "org": "이마트",
+   "prize": "출석 횟수에 따른 경품 추첨 (세부 경품은 앱에서 확인)",
+   "start": "2026-11-01",
+   "title": "11월 출석체크",
+   "url": "https://eapp.emart.com/news/event/progress_list_renew.do?eventTp=E",
+   "winners": null
   }
  },
  "https://epeople.go.kr/cmmn/idea/redirect.do": {
@@ -190,7 +248,8 @@
    "title": "[2026 DMO 해멍프로젝트] 해남 사진 인증 이벤트",
    "url": "https://forms.gle/2ShbkgbMqfi1okhCA",
    "winners": 100
-  }
+  },
+  "soon_sent": "2026-11-24"
  },
  "https://forms.gle/CgFKFoZzv1U3XxD36": {
   "deadline": "2026-11-30",
@@ -539,7 +598,8 @@
    "title": "숨은 농다락을 찾아라!",
    "url": "https://nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyDtl.ps?colmnNo=153&infoNo=153&menuId=PS65355",
    "winners": 200
-  }
+  },
+  "soon_sent": "2026-11-24"
  },
  "https://pf.kakao.com/_MTanX": {
   "deadline": "2026-11-26",
@@ -655,6 +715,63 @@
    "title": "2026년 관광e배움터 하반기 수료왕 이벤트",
    "url": "https://touredu.visitkorea.or.kr/home/support/promotions/prgs/14567",
    "winners": 107
+  }
+ },
+ "https://url.kr/h7497m": {
+  "deadline": "2026-11-29",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-11-30",
+   "checked": false,
+   "condition": "유튜브·구글 계정",
+   "deadline": "2026-11-29",
+   "entry": "sns",
+   "how": "영상 시청 후 구독·좋아요·댓글, 공유한 뒤 구글폼 제출",
+   "kind": "기타",
+   "org": "히든 트립 2 제작진",
+   "prize": "김태래 친필 사인 ZB1 앨범 5명",
+   "start": "2026-11-19",
+   "title": "히든 트립 2 시청 이벤트 (김태래 문경 편)",
+   "url": "https://url.kr/h7497m",
+   "winners": 5
+  }
+ },
+ "https://url.kr/x3bhyu": {
+  "deadline": "2026-12-06",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-07",
+   "checked": false,
+   "condition": "유튜브·구글 계정",
+   "deadline": "2026-12-06",
+   "entry": "sns",
+   "how": "영상 시청 후 구독·좋아요·댓글, 공유한 뒤 구글폼 제출",
+   "kind": "기타",
+   "org": "히든 트립 2 제작진",
+   "prize": "이즈나 친필 사인 앨범 5명",
+   "start": "2026-11-20",
+   "title": "히든 트립 2 시청 이벤트 (이즈나 고양 편)",
+   "url": "https://url.kr/x3bhyu",
+   "winners": 5
+  }
+ },
+ "https://www.instagram.com/gyeonggi_jang": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-04",
+   "checked": false,
+   "condition": "인스타그램 계정",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "인스타그램 @gyeonggi_jang 팔로우, 이벤트 게시물 좋아요, '참여 완료' 댓글",
+   "kind": "공공기관",
+   "org": "경기도 컬처라운지 경기, 장",
+   "prize": "네이버페이 1만원 10명",
+   "start": "2026-11-20",
+   "title": "겨울맞이 팔로우 이벤트",
+   "url": "https://www.instagram.com/gyeonggi_jang/",
+   "winners": 10
   }
  },
  "https://www.instagram.com/imjung0411/p/Df6RABsjx8R": {
@@ -851,7 +968,8 @@
    "title": "가을 밸런스게임 댓글 이벤트",
    "url": "https://www.instagram.com/p/Df6XAV3AeyQ",
    "winners": 30
-  }
+  },
+  "soon_sent": "2026-11-24"
  },
  "https://www.instagram.com/p/Df6amWiH5-X": {
   "deadline": "2026-11-25",
@@ -985,6 +1103,26 @@
    "title": "요즘곡간 매거진 인스타 팔로우 이벤트 2차",
    "url": "https://www.instagram.com/p/Df9RaqGn_w8/",
    "winners": 5
+  },
+  "soon_sent": "2026-11-24"
+ },
+ "https://www.instagram.com/p/DfoD0ULmCby": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-07",
+   "checked": true,
+   "condition": "cpoint.or.kr 또는 카본페이 앱, 인스타그램 계정",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "탄소중립포인트 누리집이나 카본페이 앱에서 기후시민증을 발급받아 스티커로 꾸민 뒤, #굳티튜드 #기후행동으로 인스타그램에 올리고 구글폼 제출",
+   "kind": "공공기관",
+   "org": "기후에너지환경부",
+   "prize": "네이버페이 포인트 1만원 40명",
+   "start": "2026-11-11",
+   "title": "굳티튜드 기후시민증 인증 이벤트",
+   "url": "https://www.instagram.com/p/DfoD0ULmCby/",
+   "winners": 40
   }
  },
  "https://www.instagram.com/p/DfpU-OMH_HN": {
@@ -1102,6 +1240,25 @@
   },
   "soon_sent": "2026-11-20"
  },
+ "https://www.instagram.com/reel/Df4DYOcz2Q3": {
+  "deadline": "2026-11-29",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-09",
+   "checked": false,
+   "condition": "인스타그램 계정",
+   "deadline": "2026-11-29",
+   "entry": "sns",
+   "how": "인스타그램 계정 팔로우, 릴스 좋아요, 댓글 작성",
+   "kind": "공공기관",
+   "org": "연구개발특구진흥재단",
+   "prize": "투썸플레이스 모바일 상품권 5천원 6명",
+   "start": "2026-11-23",
+   "title": "특구재단 릴레이 이벤트 3탄 (릴스 댓글)",
+   "url": "https://www.instagram.com/reel/Df4DYOcz2Q3/",
+   "winners": 6
+  }
+ },
  "https://www.kca.go.kr/home/sub.do": {
   "deadline": "2026-12-25",
   "first": "2026-11-19",
@@ -1177,6 +1334,26 @@
    "url": "https://www.lexus.co.kr/content/2026-nov-test-drive/",
    "winners": 34
   }
+ },
+ "https://www.miryang.go.kr": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-11-30",
+   "checked": false,
+   "condition": null,
+   "deadline": "2026-11-27",
+   "entry": "form",
+   "how": "시 누리집에서 관광 퀴즈 3문항과 설문 2문항에 답한 뒤 배송 주소 입력",
+   "kind": "공공기관",
+   "org": "밀양시",
+   "prize": "얼음골사과·얼음골쌀·대추 선물세트·밀양한천 양갱 등 지역 농특산물 115명",
+   "start": "2026-11-16",
+   "title": "2026년 밀양시 대표누리집 퀴즈 이벤트",
+   "url": "https://www.miryang.go.kr",
+   "winners": 115
+  },
+  "soon_sent": "2026-11-24"
  },
  "https://www.nabo.go.kr/ko/fiscalQuiz/quiz.do": {
   "deadline": null,
@@ -1390,6 +1567,44 @@
   },
   "soon_sent": "2026-11-19"
  },
+ "https://youtu.be/6zVIFh3ePm4": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-01",
+   "checked": false,
+   "condition": "유튜브·구글 계정",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "영상 시청 후 구독·좋아요·댓글, 공유한 뒤 구글폼 제출",
+   "kind": "기타",
+   "org": "히든 트립 2 제작진",
+   "prize": "이즈나 친필 사인 앨범 5명",
+   "start": "2026-11-21",
+   "title": "히든 트립 2 시청 이벤트 (이즈나 한국음식 여행 편)",
+   "url": "https://youtu.be/6zVIFh3ePm4",
+   "winners": 5
+  }
+ },
+ "https://youtu.be/9YINR0VLio8": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-01",
+   "checked": false,
+   "condition": "유튜브·구글 계정",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "영상 시청 후 구독·좋아요·댓글, 공유한 뒤 구글폼 제출",
+   "kind": "기타",
+   "org": "히든 트립 2 제작진",
+   "prize": "김태래 친필 사인 ZB1 앨범 5명",
+   "start": "2026-11-20",
+   "title": "히든 트립 2 시청 이벤트 (김태래 뮤직비디오 편)",
+   "url": "https://youtu.be/9YINR0VLio8",
+   "winners": 5
+  }
+ },
  "https://youtu.be/Olh1lLHipEs": {
   "deadline": "2026-11-29",
   "first": "2026-11-21",
@@ -1428,6 +1643,25 @@
    "winners": 5
   }
  },
+ "https://youtu.be/rPfCz0joAmA": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-01",
+   "checked": false,
+   "condition": "유튜브·구글 계정",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "영상 시청 후 구독·좋아요·댓글, 공유한 뒤 구글폼 제출",
+   "kind": "기타",
+   "org": "히든 트립 2 제작진",
+   "prize": "이즈나 친필 사인 앨범 5명",
+   "start": "2026-11-21",
+   "title": "히든 트립 2 시청 이벤트 (이즈나 뮤직비디오 편)",
+   "url": "https://youtu.be/rPfCz0joAmA",
+   "winners": 5
+  }
+ },
  "https://youtu.be/vLcXqdzwsA4": {
   "deadline": "2026-12-02",
   "first": "2026-11-21",
@@ -1445,6 +1679,25 @@
    "title": "[EVENT] 의학 속 데이터 이야기 퀴즈 이벤트",
    "url": "https://youtu.be/vLcXqdzwsA4",
    "winners": 40
+  }
+ },
+ "https://youtu.be/zHXQF3WvtWw": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-24",
+  "item": {
+   "announce": "2026-12-01",
+   "checked": false,
+   "condition": "유튜브·구글 계정",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "영상 시청 후 구독·좋아요·댓글, 공유한 뒤 구글폼 제출",
+   "kind": "기타",
+   "org": "히든 트립 2 제작진",
+   "prize": "네이버페이 1만원 10명",
+   "start": "2026-11-21",
+   "title": "히든 트립 2 시청 이벤트 (김태래 부여 여행 브이로그 편)",
+   "url": "https://youtu.be/zHXQF3WvtWw",
+   "winners": 10
   }
  },
  "https://youtube.com/shorts/ue_FwgszrCg": {
