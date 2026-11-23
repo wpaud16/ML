@@ -145,10 +145,9 @@
   "need": "insta"
  },
  "https://seoul.co.kr/event/2026SeoulAdAward/index.php": {
-  "group": "proxy",
-  "mine": "",
-  "claude": "후보작 한줄평 (11/23 09시부터 응모 가능)",
-  "code": "YMTT"
+  "group": "self",
+  "mine": "서울신문 회원가입·로그인 + 배송 주소 + 뉴스레터·네이버 뉴스 구독",
+  "claude": "로그인해 두면 한줄평 3개 작성"
  },
  "https://www.youtube.com/post/UgkxPQM6qHPIfEFY-3bOR5Qzsu5JS5-vAqhD": {
   "group": "help",
@@ -237,5 +236,90 @@
   "group": "self",
   "mine": "내 아이 RSV 경험 사연 — 대신 지어 쓸 수 없음",
   "claude": ""
+ },
+ "https://www.instagram.com/p/Df6amWiH5-X": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "JT저축은행 팔로우·좋아요 + 정답 2개 댓글(카드뉴스 보고 답)",
+  "need": "insta"
+ },
+ "https://www.instagram.com/imjung0411/p/Df6RABsjx8R": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "기념관 팔로우 + 빈칸 정답 다섯 글자 댓글",
+  "need": "insta"
+ },
+ "https://www.instagram.com/p/Df6R7h6GQdg": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "팔로우 + 인상 깊은 콘텐츠 제목 댓글 + 댓글 캡처 → 네이버폼",
+  "need": "insta"
+ },
+ "https://www.instagram.com/p/Df51Xh1zVh5": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "브리타 팔로우·좋아요 + 보습 꿀팁 댓글",
+  "need": "insta"
+ },
+ "https://www.instagram.com/p/Df6XAV3AeyQ": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "국민통합위 팔로우·좋아요 + 선택 댓글 → 구글폼 인증",
+  "need": "insta"
+ },
+ "https://www.instagram.com/p/Df6rLmqCVkp": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "로컬100 팔로우·좋아요 + 여행자 유형 댓글",
+  "need": "insta"
+ },
+ "https://www.instagram.com/p/Df6mjUSjwKp": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "강원 팔로우·좋아요 + 친구 태그·응원 댓글",
+  "need": "insta"
+ },
+ "https://www.instagram.com/p/Df86QpqPPB-": {
+  "group": "help",
+  "mine": "인스타 로그인 한 번",
+  "claude": "굿데이부산 팔로우·좋아요 + 선택 댓글",
+  "need": "insta"
+ },
+ "https://www.kita.net/board/notice/noticeDetail.do": {
+  "group": "help",
+  "mine": "구글·인스타 로그인 한 번",
+  "claude": "구글폼 퀴즈 + 퀴즈 게시물 SNS 공유 캡처 제출",
+  "need": "google"
+ },
+ "https://www.instagram.com/p/Df8VwjQPZk0": {
+  "group": "help",
+  "mine": "구글·인스타 로그인 한 번",
+  "claude": "구글폼 퀴즈 + 퀴즈 게시물 SNS 공유 캡처 제출",
+  "need": "google"
+ },
+ "https://www.samsung.com/sec/event/lions-victory-faq": {
+  "group": "self",
+  "mine": "삼성닷컴 로그인 + 광고 수신 동의, 매일 응모",
+  "claude": ""
+ },
+ "https://www.samsung.com/sec/event/membership_quiz": {
+  "group": "self",
+  "mine": "삼성닷컴 멤버십 로그인 + 마케팅 동의 (주 1회)",
+  "claude": ""
+ },
+ "https://modu.go.kr/front/qustnrNew/qustnrNewFrontView.do": {
+  "group": "help",
+  "mine": "모두의광장 로그인",
+  "claude": "",
+  "need": "verify"
+ },
+ "https://korean.visitkorea.or.kr/detail/event_detail.do": {
+  "group": "self",
+  "mine": "대한민국 구석구석 로그인 + 배지 게임",
+  "claude": ""
+ },
+ "https://youtube.com/shorts/ue_FwgszrCg": {
+  "group": "x",
+  "x": "영상에 이벤트 안내 없음 (채용 안내 쇼츠)"
  }
 }
