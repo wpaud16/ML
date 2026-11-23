@@ -154,7 +154,7 @@ function sumOf(x){var c=x.e,t=c.querySelector('.t'),tx=c.textContent,nm='',tags=
  var sz=t&&(t.textContent.match(/전용 ([0-9.]+)㎡/)||t.textContent.match(/([0-9.]+)㎡/));
  if(tx.indexOf('✅ 정밀')>=0)tags.push('✅정밀');if(t&&t.textContent.indexOf('🛡 안전')>=0)tags.push('🛡안전');
  var cs=c.getAttribute('data-case')||'',p5=c.getAttribute('data-p50');
- var sub=[x.g].concat(sz?[(/전용/.test(sz[0])?'전용 ':'')+Math.round(+sz[1]/3.3058)+'평']:[]).concat(tags).filter(Boolean).join(' · ');
+ var sub=[x.g].concat(sz?[(/전용/.test(sz[0])?'전용 ':'')+(+sz[1]).toFixed(1).replace(/\.0$/,'')+'㎡']:[]).concat(tags).filter(Boolean).join(' · ');
  var lo=tx.match(/최저가? ([0-9.]+억)/),pc=tx.match(/최저가 [0-9.]+억 [(]시세 대비 ([0-9]+)%/),pa=tx.match(/최저 [0-9.]+억 [(]([0-9]+)%[)]/);
  var rs=tx.match(/📊 결과: 매각 ([0-9.]+억)/),rd=tx.match(/예상[(]50%[)] 대비 ([-+][0-9.]+%)/),rx=tx.match(/📊 결과: *([가-힣]+(?: 전)?)/),R;
  var PE=p5?'예상 '+p5+'억':'';
