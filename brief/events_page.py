@@ -600,6 +600,16 @@ def build(today):
         pcards = (f'<div class="askall"><button class="btn ask" onclick="askAll()">🤖 Claude가 바로 응모 {npx}건 한 번에 복사</button>'
                   '<div class="g s">복사한 글을 Claude Code 대화창에 붙여넣으면 한꺼번에 응모해요</div></div>') + pcards
     pcards = summary + pcards
+    try:   # 2026-11-23: 새벽에 폼까지 미리 채워 둔 것 → '응모해줘' 한마디면 제출 (local_runner/entry_prep.py)
+        sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'local_runner'))
+        import entry_prep
+        rdy, stk = entry_prep.summary()
+    except Exception:
+        rdy, stk = [], 0
+    if rdy:
+        li = ''.join(f'<div>· {E(t)}' + (f' <span class="g s">~{E(str(d)[5:])}</span>' if d else '') + '</div>' for t, d in rdy)
+        pcards = (f'<div class="askall"><button class="btn ask" data-req="준비된 이벤트 응모해줘" onclick="askProxy(this)">📮 오늘 응모 준비 {len(rdy)}건 · "응모해줘" 복사</button>'
+                  f'<div class="g s">폼은 미리 다 채워 뒀어요. 대화창에 붙여넣으면 바로 제출해요</div>{li}</div>') + pcards
     # 지역 행사: 시·도 칩, 시·도 > 시·군·구 묶음
     sidos = [s for s in SIDO_ORDER if any(x['_sido'] == s for x in F)] + sorted({x['_sido'] for x in F} - set(SIDO_ORDER))
     wk = sum(1 for x in F if x['_s'] <= ev.weekend_of(today)[1] and x['_e'] >= ev.weekend_of(today)[0])

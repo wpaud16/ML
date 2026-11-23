@@ -73,6 +73,18 @@ def life_sections(day, test):
         H += h; T += t
     except Exception:
         tb.print_exc(); fails.append('이벤트·행사 바로가기')
+    try:   # 2026-11-23: 새벽에 폼까지 채워 둔 이벤트 → 대화창에 '응모해줘' 한마디 (local_runner/entry_prep.py)
+        sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'local_runner'))
+        import entry_prep, html
+        rdy, stk = entry_prep.summary()
+        if rdy:
+            li = ''.join(f'<li>{html.escape(t)}' + (f' <span style="color:#888">(~{html.escape(str(d)[5:])})</span>' if d else '') + '</li>' for t, d in rdy)
+            H.append(f'<div style="border:2px solid #4c8bf5;border-radius:10px;padding:10px 12px;margin:12px 0">'
+                     f'<b>📮 오늘 응모 준비 {len(rdy)}건</b> — 폼은 다 채워 뒀어요. Claude 대화창에 <b>"응모해줘"</b> 한마디면 제출해요.'
+                     f'<ul style="margin:6px 0 0 18px;padding:0">{li}</ul></div>')
+            T.append(f'📮 오늘 응모 준비 {len(rdy)}건 — Claude 에 "응모해줘"\n' + '\n'.join(f'- {t}' for t, _ in rdy))
+    except Exception:
+        tb.print_exc()
     try:   # 2026-11-19: 대신 응모한 이벤트 당첨 확인 결과 (새 결과 있을 때만)
         import prize_check
         h, t, mark = prize_check.render()
