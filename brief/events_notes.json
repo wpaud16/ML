@@ -185,22 +185,22 @@
  "https://youtu.be/SBPzcdtYSfo": {
   "code": "GJEG",
   "group": "help",
-  "need": "google",
-  "mine": "구글(유튜브) 로그인 한 번",
+  "need": "insta",
+  "mine": "인스타(또는 X) 로그인 — 영상·퀴즈를 공개 게시물로 공유해야 함",
   "claude": "영상 구독·좋아요·댓글 → 캡처 → 구글폼 인증 (#HiddenTrip2 공유는 유튜브 공유 링크로)"
  },
  "https://forms.gle/F8Lup1dyuegwJYFd9": {
   "code": "7PWA",
   "group": "help",
-  "need": "google",
-  "mine": "구글(유튜브) 로그인 한 번",
+  "need": "insta",
+  "mine": "인스타(또는 X) 로그인 — 영상·퀴즈를 공개 게시물로 공유해야 함",
   "claude": "영상 구독·좋아요·댓글 → 캡처 → 구글폼 인증"
  },
  "https://forms.gle/X92aHfzi9XKi58UC8": {
   "code": "4DBG",
   "group": "help",
-  "need": "google",
-  "mine": "구글(유튜브) 로그인 한 번",
+  "need": "insta",
+  "mine": "인스타(또는 X) 로그인 — 영상·퀴즈를 공개 게시물로 공유해야 함",
   "claude": "영상 구독·좋아요·댓글 → 캡처 → 구글폼 인증"
  },
  "https://youtu.be/vLcXqdzwsA4": {
@@ -287,15 +287,15 @@
  },
  "https://www.kita.net/board/notice/noticeDetail.do": {
   "group": "help",
-  "mine": "구글·인스타 로그인 한 번",
+  "mine": "인스타(또는 X) 로그인 — 영상·퀴즈를 공개 게시물로 공유해야 함",
   "claude": "구글폼 퀴즈 + 퀴즈 게시물 SNS 공유 캡처 제출",
-  "need": "google"
+  "need": "insta"
  },
  "https://www.instagram.com/p/Df8VwjQPZk0": {
   "group": "help",
-  "mine": "구글·인스타 로그인 한 번",
+  "mine": "인스타(또는 X) 로그인 — 영상·퀴즈를 공개 게시물로 공유해야 함",
   "claude": "구글폼 퀴즈 + 퀴즈 게시물 SNS 공유 캡처 제출",
-  "need": "google"
+  "need": "insta"
  },
  "https://www.samsung.com/sec/event/lions-victory-faq": {
   "group": "self",
