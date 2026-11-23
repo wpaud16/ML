@@ -236,5 +236,33 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://www.instagram.com/p/DfpU-OMH_HN",
+  "title": "광진구시설관리공단 소식지 공감터 만족도 조사",
+  "org": "광진구시설관리공단",
+  "url": "https://naver.me/GKI07WRN",
+  "entered": "2026-11-23",
+  "announce": null,
+  "where": "당첨자 개별 연락",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "https://naver.me/GEdDsmzE",
+  "title": "광진구시설관리공단 뉴미디어 만족도 조사",
+  "org": "광진구시설관리공단",
+  "url": "https://naver.me/GEdDsmzE",
+  "entered": "2026-11-23",
+  "announce": null,
+  "where": "당첨자 개별 연락",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]

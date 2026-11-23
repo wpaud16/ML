@@ -1,6 +1,7 @@
 """네이버 폼 자동 작성 (2026-11-23 사용자 요청: 아침마다 대신 응모 준비 → '응모해줘' 한마디에 제출).
 - 이름·연락처·이메일·성별·연령대·거주지는 C:\\auction_pc\\.env (ENTRY_*) 에서만 읽는다. 저장소·출력에 남기지 않는다.
-- 답은 사실대로: 안 가 본 곳은 '없다', 처음 본 채널은 '처음', 평가형은 '보통'. 규칙에 없는 필수 질문·자유서술 필수면 멈춘다 (추측해서 쓰지 않음).
+- 안 가 본 곳은 '없다', 처음 본 채널은 '처음'. 평가형은 '좋은' 쪽(만족·그렇다). 규칙에 없는 질문은 추측해서 고르고,
+  필수 자유서술은 짧은 한 줄을 쓴다 (2026-11-23 사용자 요청).
 - fill(page, url, submit=False) → (상태, 줄들). 상태: ready(끝까지 채움, 제출 안 함) / done(제출됨) / stuck(멈춤)
 단독 실행: python nform.py URL [--submit]"""
 import os, re, sys
@@ -39,8 +40,23 @@ def rules(e):
         (r'개선', ['다양성', '없음']),
         (r'보고 싶은|원하는 콘텐츠|희망', ['카드뉴스', '정보']),
         (r'알고 (있|계)|인지|어느 정도 알', ['전혀', '모른다', '모름', '알지 못', '^아니']),
-        (r'.', ['^보통', '그저 그렇다', '^중간']),   # 만족도·평가형은 '보통'
+        (r'.', GOOD),   # 2026-11-23 사용자: 만족도·평가형은 '좋은' 쪽으로
     ]
+
+
+# 평가형 보기에서 '좋은' 쪽 (매우 X 보다 한 단계 아래를 먼저)
+GOOD = [r'^만족(함|한다|해요)?\.?$', r'^그렇다\.?$', r'^좋다\.?$', r'^좋음$', r'^도움이 된다', r'^흥미롭다', r'^편리하다', r'^적절하다',
+        r'^쉽다', r'^높다', r'^적정', r'^(예|네)$', r'^8점', r'^4점',r'^매우 만족', r'^매우 그렇다', r'^매우']
+FREE = '앞으로도 유익한 소식 기대할게요!'   # 필수 자유서술에 쓰는 짧은 답
+
+
+def guess(opts):
+    """규칙에 없는 질문: 좋은 쪽 보기 → 없으면 '기타'·'없음' 아닌 첫 보기 (2026-11-23 사용자: 추측해서 채우기)."""
+    for w in GOOD:
+        for o in opts:
+            if re.search(w, o):
+                return o
+    return next((o for o in opts if o and not re.search(r'^기타|^없|해당 없', o)), opts[0] if opts else None)
 
 
 def pick(R, title, opts):
@@ -82,9 +98,10 @@ def fill(pg, url, submit=False):
                 if not rows:
                     return 'stuck', L + [f'표 형식 모름: {title}']
                 heads = [h.inner_text().strip() for h in q.query_selector_all('thead th, [role=columnheader]')]
-                mid = next((i for i, h in enumerate(heads) if '보통' in h), None)
+                g = guess(heads)
+                mid = heads.index(g) if g in heads else None
                 if mid is None:
-                    return 'stuck', L + [f'표에 보통 칸 없음: {title}']
+                    return 'stuck', L + [f'표 머리글 모름: {title}']
                 for r in rows:
                     r.query_selector_all('label')[mid].evaluate('e => e.click()'); pg.wait_for_timeout(120)
                 L.append(f'{title} → 표 {len(rows)}행 모두 "{heads[mid]}"'); continue
@@ -93,7 +110,10 @@ def fill(pg, url, submit=False):
                 if not ch and not req:
                     L.append(f'(선택 문항 건너뜀) {title}'); continue
                 if not ch:
-                    return 'stuck', L + [f'모르는 질문: {title} | {" / ".join(opts)[:200]}']
+                    ch = guess(opts)
+                    if not ch:
+                        return 'stuck', L + [f'보기 없음: {title}']
+                    title += ' (추측)'
                 next(l for l in labels if l.inner_text().strip() == ch).evaluate('e => e.click()'); pg.wait_for_timeout(350)
                 etc = q.query_selector('textarea.nsv_survey_question_etc_input, input.nsv_survey_question_etc_input')
                 if etc and etc.is_visible():
@@ -104,10 +124,10 @@ def fill(pg, url, submit=False):
                 elif re.search(r'연락처|전화|휴대폰|핸드폰', title): val = phone
                 elif re.search(r'이메일|메일', title): val = mail
                 elif not req: L.append(f'(선택 문항 건너뜀) {title}'); continue
-                else: return 'stuck', L + [f'직접 써야 하는 질문: {title}']
+                else: val = FREE; title += ' (짧게 작성)'
                 if not val: return 'stuck', L + [f'내 정보 없음: {title}']
                 txt.fill(val); pg.wait_for_timeout(150)
-                L.append(f'{title} → (내 정보)')
+                L.append(f'{title} → {"(내 정보)" if val != FREE else FREE}')
             elif req:
                 return 'stuck', L + [f'형식 모름: {title}']
         nxt = pg.query_selector('button:has-text("다음")')
