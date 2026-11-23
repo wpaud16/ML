@@ -1,0 +1,141 @@
+{
+ "date": "11월 24일 (화)",
+ "tmin": "-3",
+ "tmax": "5",
+ "sky": "⛅ 구름 많음",
+ "sub": "일교차 8°",
+ "rain_title": "☀️ 오늘 비·눈 소식 없음",
+ "rain": [
+  [
+   "오늘",
+   "비·눈 소식 없음"
+  ]
+ ],
+ "level": "없음",
+ "hourly": [
+  {
+   "h": 6,
+   "t": 0,
+   "icon": "🌤",
+   "rain": false
+  },
+  {
+   "h": 9,
+   "t": 0,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 12,
+   "t": 1,
+   "icon": "🌤",
+   "rain": false
+  },
+  {
+   "h": 15,
+   "t": 1,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 18,
+   "t": -1,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 21,
+   "t": -2,
+   "icon": "☀️",
+   "rain": false
+  }
+ ],
+ "guide": "<b>아침 -3°, 낮 5°.</b> 하루 종일 기온 차가 크지 않아요.",
+ "footer": "날씨: Open-Meteo (기본 모델) · 서울 강동구 · 오늘 예보",
+ "looks": [
+  {
+   "title": "보아 플리스 재킷 + 맨투맨",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "맨투맨 · 네이비",
+     "color": "#2B3247",
+     "role": "top"
+    },
+    {
+     "name": "보아 플리스 재킷 · 크림",
+     "color": "#E8E1D0",
+     "role": "outer"
+    },
+    {
+     "name": "스트레이트 데님 · 인디고",
+     "color": "#34425E",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 블랙",
+     "color": "#242424",
+     "role": "shoes"
+    }
+   ],
+   "tip": "보아 재킷은 지퍼 반쯤 열기.",
+   "pin": "cream sherpa fleece jacket navy sweatshirt indigo jeans men winter outfit street style"
+  },
+  {
+   "title": "봄버 재킷 + 크림 니트",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "크루넥 니트 · 크림",
+     "color": "#E8E1D0",
+     "role": "top"
+    },
+    {
+     "name": "봄버 재킷 · 올리브",
+     "color": "#5E6146",
+     "role": "outer"
+    },
+    {
+     "name": "와이드 슬랙스 · 차콜",
+     "color": "#45474B",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 화이트",
+     "color": "#ECEBE6",
+     "role": "shoes"
+    }
+   ],
+   "tip": "봄버는 허리선 기장, 니트 밑단이 살짝 보이게.",
+   "pin": "olive bomber jacket cream crewneck sweater charcoal trousers men winter outfit korean style"
+  },
+  {
+   "title": "울 코트 + 터틀넥",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "터틀넥 니트 · 블랙",
+     "color": "#242424",
+     "role": "top"
+    },
+    {
+     "name": "싱글 울 코트 · 카멜",
+     "color": "#A88456",
+     "role": "outer"
+    },
+    {
+     "name": "울 슬랙스 · 차콜",
+     "color": "#45474B",
+     "role": "bottom"
+    },
+    {
+     "name": "더비 슈즈 · 블랙",
+     "color": "#242424",
+     "role": "shoes"
+    }
+   ],
+   "tip": "코트는 무릎 위 기장, 단추 열고 걸치기.",
+   "pin": "camel wool overcoat black turtleneck charcoal trousers men winter outfit minimal"
+  }
+ ]
+}
