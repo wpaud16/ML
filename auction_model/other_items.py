@@ -229,6 +229,18 @@ def main():
                 items[v['key']] = v; counts['shown'] += 1
             else:
                 counts[kind] += 1
+    if day > today:   # 2026-11-23: 저녁 실행이면 리치고가 오늘 매각 끝난 물건을 빼므로 이전 파일에서 오늘 기일 물건 유지
+        try:
+            prev = json.load(open(OUT, encoding='utf-8'))
+            kept = 0
+            for k, v in (prev.get('items') or {}).items():
+                if v.get('bidding_date') == today and v.get('category') in ENABLED and (items.get(k) or {}).get('bidding_date') != today:
+                    items[k] = v; kept += 1
+            counts['kept_today'] = kept
+        except FileNotFoundError:
+            pass
+        except Exception as e:
+            errors.append(f'오늘 물건 유지 실패: {type(e).__name__}: {e}')
     counts['by_category'] = {c: sum(v['category'] == c for v in items.values()) for c in ENABLED}
     out = dict(date=day, generated_at=now.isoformat(timespec='seconds'), station_source='카카오 로컬' if have_key else None,
                counts=counts, errors=errors, items=items)

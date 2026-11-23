@@ -533,6 +533,23 @@ def no_fake_date(rec, base):
     return rec
 
 
+def keep_today(items, failed, prev, today_s):
+    """2026-11-23 사용자 요청: 18시 이후(다음 날용) 실행이면 리치고가 오늘 매각이 끝난 물건의 기일을 지우거나 목록에서 뺌
+    → 이전 예측 파일(prev)에서 기일이 오늘인 물건을 그대로 가져와 유지 (캘린더 오늘 칸·결과 추적용). 유지한 건수 반환."""
+    kept = 0
+    for k, v in (prev.get('items') or {}).items():
+        if v.get('bidding_date') != today_s: continue
+        if (items.get(k) or {}).get('bidding_date') == today_s: continue
+        items[k] = v; kept += 1
+        failed[:] = [f for f in failed if f.get('key') != k]
+    has = {f.get('key') for f in failed if f.get('bidding_date') == today_s} | set(items)
+    for f in prev.get('failed') or []:
+        if f.get('bidding_date') == today_s and f.get('key') not in has:
+            failed[:] = [x for x in failed if x.get('key') != f.get('key')]
+            failed.append(f); kept += 1
+    return kept
+
+
 def main():
     now = datetime.now(KST)
     cache = json.load(open(MAP_PATH)) if os.path.exists(MAP_PATH) else {}
@@ -641,6 +658,14 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     # 결과 날짜: 18시 이후 실행은 다음 날 아침 메일용 (2026-11-05: 예약 실행 지연 대비 전날 21시부터 실행)
     day = (now + timedelta(hours=6)).date()
+    if day > now.date():   # 저녁 실행: 오늘 기일 물건은 이전 예측에서 유지 (tgt 계산 뒤라 임차인 조회 대상엔 안 들어감)
+        try:
+            prev = json.load(open(os.path.join(OUT_DIR, 'latest.json'), encoding='utf-8'))
+            print(f'오늘({now.date()}) 기일 물건 {keep_today(items, failed, prev, str(now.date()))}건 이전 예측에서 유지')
+        except FileNotFoundError:
+            pass
+        except Exception as e:
+            errors.append(f'오늘 물건 유지 실패: {type(e).__name__}: {e}')
     json.dump(dict(date=str(day), n=len(tgt), items=tgt), open(os.path.join(OUT_DIR, 'tenant_targets.json'), 'w'), ensure_ascii=False, indent=1)
     out = dict(generated_at=now.isoformat(timespec='seconds'), date=str(day), tenant_overrides=n_ten,
                model='앙상블(부스팅+군집별회귀)', config_built=cfg.get('built'),

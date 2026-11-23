@@ -13,9 +13,10 @@
   "rights": 97,
   "shown": 335,
   "by_category": {
-   "상가": 294,
+   "상가": 301,
    "건물": 41
-  }
+  },
+  "kept_today": 14
  },
  "errors": [],
  "items": {
@@ -20966,7 +20967,7 @@
    "appr_manwon": 121000,
    "low_manwon": 61952,
    "fails": 3,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 39,
    "land_area": 9.3,
    "court": "서울동부지방법원",
@@ -21041,7 +21042,7 @@
    "appr_manwon": 34550,
    "low_manwon": 22112,
    "fails": 2,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 122.79,
    "land_area": 51.66,
    "court": "서울동부지방법원",
@@ -21128,7 +21129,7 @@
    "appr_manwon": 35350,
    "low_manwon": 22624,
    "fails": 2,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 122.79,
    "land_area": 51.66,
    "court": "서울동부지방법원",
@@ -21215,7 +21216,7 @@
    "appr_manwon": 93500,
    "low_manwon": 93500,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 36.18,
    "land_area": 8.74,
    "court": "서울동부지방법원",
@@ -21272,7 +21273,7 @@
    "appr_manwon": 128000,
    "low_manwon": 65536,
    "fails": 8,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 301.34,
    "land_area": 93.5,
    "court": "서울동부지방법원",
@@ -21407,7 +21408,7 @@
    "appr_manwon": 134900,
    "low_manwon": 44204,
    "fails": 5,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 45.63,
    "land_area": 10.89,
    "court": "서울동부지방법원",
@@ -21494,7 +21495,7 @@
    "appr_manwon": 93500,
    "low_manwon": 93500,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 36.18,
    "land_area": 8.74,
    "court": "서울동부지방법원",
@@ -27267,6 +27268,669 @@
     },
     {
      "date": "2026-12-08",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경293[6]": {
+   "key": "2025타경293[6]",
+   "category": "상가",
+   "auction_id": "C33GUHJZ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 150-1 지앤지타워  지하층비103호",
+   "emd": "길동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 5700,
+   "low_manwon": 2334,
+   "fails": 4,
+   "bidding_date": "2026-11-23",
+   "area": 22.81,
+   "land_area": 8.13,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "길동",
+     "distance_m": 455,
+     "walk_min": 8,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "중앙보훈병원",
+     "distance_m": 844,
+     "walk_min": 14,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "길동",
+    "distance_m": 455,
+    "walk_min": 8,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 진출입이 용이하며, 인근에 버스정류장이 소재하는 등 대중교통 이용 편의도",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2018-08-30"
+   },
+   "history": [
+    {
+     "date": "2026-04-20",
+     "type": "매각기일",
+     "low_manwon": 5700,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-08",
+     "type": "매각기일",
+     "low_manwon": 4560,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각기일",
+     "low_manwon": 3648,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각기일",
+     "low_manwon": 2918,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "매각기일",
+     "low_manwon": 2334,
+     "result": "변경"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각기일",
+     "low_manwon": 2334,
+     "result": null
+    },
+    {
+     "date": "2026-11-30",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경293[8]": {
+   "key": "2025타경293[8]",
+   "category": "상가",
+   "auction_id": "C34CVAXQ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 150-1 지앤지타워  지하층비201호",
+   "emd": "길동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 56100,
+   "low_manwon": 22978,
+   "fails": 4,
+   "bidding_date": "2026-11-23",
+   "area": 300.48,
+   "land_area": 107.09,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "길동",
+     "distance_m": 455,
+     "walk_min": 8,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "중앙보훈병원",
+     "distance_m": 844,
+     "walk_min": 14,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "길동",
+    "distance_m": 455,
+    "walk_min": 8,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 진출입이 용이하며, 인근에 버스정류장이 소재하는 등 대중교통 이용 편의도",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2018-08-30"
+   },
+   "history": [
+    {
+     "date": "2026-04-20",
+     "type": "매각기일",
+     "low_manwon": 56100,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-08",
+     "type": "매각기일",
+     "low_manwon": 44880,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각기일",
+     "low_manwon": 35904,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각기일",
+     "low_manwon": 28723,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "매각기일",
+     "low_manwon": 22978,
+     "result": "변경"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각기일",
+     "low_manwon": 22978,
+     "result": null
+    },
+    {
+     "date": "2026-11-30",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경293[9]": {
+   "key": "2025타경293[9]",
+   "category": "상가",
+   "auction_id": "C38TPAWT",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 150-1 지앤지타워  지하층비202호",
+   "emd": "길동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 54700,
+   "low_manwon": 22405,
+   "fails": 4,
+   "bidding_date": "2026-11-23",
+   "area": 293.14,
+   "land_area": 104.47,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "길동",
+     "distance_m": 455,
+     "walk_min": 8,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "중앙보훈병원",
+     "distance_m": 844,
+     "walk_min": 14,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "길동",
+    "distance_m": 455,
+    "walk_min": 8,
+    "lines": [
+     "5호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 진출입이 용이하며, 인근에 버스정류장이 소재하는 등 대중교통 이용 편의도",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2018-08-30"
+   },
+   "history": [
+    {
+     "date": "2026-04-20",
+     "type": "매각기일",
+     "low_manwon": 54700,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-08",
+     "type": "매각기일",
+     "low_manwon": 43760,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각기일",
+     "low_manwon": 35008,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각기일",
+     "low_manwon": 28006,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "매각기일",
+     "low_manwon": 22405,
+     "result": "변경"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각기일",
+     "low_manwon": 22405,
+     "result": null
+    },
+    {
+     "date": "2026-11-30",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2024타경56259[2]": {
+   "key": "2024타경56259[2]",
+   "category": "상가",
+   "auction_id": "C56APSOK",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호대로157길 14, 3층338호 (천호동,나비빌딩)",
+   "emd": "천호동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가",
+   "appr_manwon": 1800,
+   "low_manwon": 377,
+   "fails": 7,
+   "bidding_date": "2026-11-23",
+   "area": 3.57,
+   "land_area": 0.77,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "천호",
+     "distance_m": 298,
+     "walk_min": 5,
+     "lines": [
+      "5호선",
+      "8호선"
+     ]
+    },
+    {
+     "name": "강동",
+     "distance_m": 521,
+     "walk_min": 9,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "천호",
+    "distance_m": 298,
+    "walk_min": 5,
+    "lines": [
+     "5호선",
+     "8호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "차량출입 자유롭고 인근에 지하철 5호선, 8호선 \"천호역\" 및 버스승강장이 소재하여 대중",
+   "rights": {
+    "base_right": "강제경매",
+    "base_date": "2024-05-23"
+   },
+   "history": [
+    {
+     "date": "2026-01-26",
+     "type": "매각기일",
+     "low_manwon": 1800,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-03-16",
+     "type": "매각기일",
+     "low_manwon": 1440,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-04-20",
+     "type": "매각기일",
+     "low_manwon": 1152,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-06-08",
+     "type": "매각기일",
+     "low_manwon": 921,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각기일",
+     "low_manwon": 737,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각기일",
+     "low_manwon": 589,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "매각기일",
+     "low_manwon": 471,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각기일",
+     "low_manwon": 377,
+     "result": null
+    },
+    {
+     "date": "2026-11-30",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경51390[1]": {
+   "key": "2025타경51390[1]",
+   "category": "상가",
+   "auction_id": "C24FGFHA",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 중곡동 32-1 플러스홈  지1층비01호",
+   "emd": "중곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 35400,
+   "low_manwon": 14499,
+   "fails": 4,
+   "bidding_date": "2026-11-23",
+   "area": 110.41,
+   "land_area": 34.93,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "중곡",
+     "distance_m": 233,
+     "walk_min": 4,
+     "lines": [
+      "7호선"
+     ]
+    },
+    {
+     "name": "군자",
+     "distance_m": 808,
+     "walk_min": 14,
+     "lines": [
+      "7호선",
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "중곡",
+    "distance_m": 233,
+    "walk_min": 4,
+    "lines": [
+     "7호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 출입이 가능하며, 인근에 지하철 7호선 '중곡역' 및 버스정류장이 소재하는 등 일반 대중교통 사정은 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2020-04-29"
+   },
+   "history": [
+    {
+     "date": "2026-06-08",
+     "type": "매각기일",
+     "low_manwon": 35400,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각기일",
+     "low_manwon": 28320,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각기일",
+     "low_manwon": 22656,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "매각기일",
+     "low_manwon": 18124,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각기일",
+     "low_manwon": 14499,
+     "result": null
+    },
+    {
+     "date": "2026-11-30",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경51390[2]": {
+   "key": "2025타경51390[2]",
+   "category": "상가",
+   "auction_id": "C31TSKGB",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 중곡동 32-1 플러스홈  1층102호",
+   "emd": "중곡동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가,오피스텔,근린",
+   "appr_manwon": 24800,
+   "low_manwon": 10158,
+   "fails": 4,
+   "bidding_date": "2026-11-23",
+   "area": 26.2,
+   "land_area": 13.93,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "중곡",
+     "distance_m": 233,
+     "walk_min": 4,
+     "lines": [
+      "7호선"
+     ]
+    },
+    {
+     "name": "군자",
+     "distance_m": 808,
+     "walk_min": 14,
+     "lines": [
+      "7호선",
+      "5호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "중곡",
+    "distance_m": 233,
+    "walk_min": 4,
+    "lines": [
+     "7호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량 출입이 가능하며, 인근에 지하철 7호선 '중곡역' 및 버스정류장이 소재하는 등 일반 대중교통 사정은 보통임.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2020-04-29"
+   },
+   "history": [
+    {
+     "date": "2026-06-08",
+     "type": "매각기일",
+     "low_manwon": 24800,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각기일",
+     "low_manwon": 19840,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각기일",
+     "low_manwon": 15872,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "매각기일",
+     "low_manwon": 12697,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각기일",
+     "low_manwon": 10158,
+     "result": null
+    },
+    {
+     "date": "2026-11-30",
+     "type": "매각결정기일",
+     "low_manwon": null,
+     "result": null
+    }
+   ]
+  },
+  "2025타경341[1]": {
+   "key": "2025타경341[1]",
+   "category": "상가",
+   "auction_id": "C39APIMP",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 문정동 634 가든파이브라이프  9층와이-9086호",
+   "emd": "문정동",
+   "type_details": [
+    "근린시설"
+   ],
+   "item_type": "상가",
+   "appr_manwon": 6600,
+   "low_manwon": 2703,
+   "fails": 4,
+   "bidding_date": "2026-11-23",
+   "area": 11.44,
+   "land_area": 3.29,
+   "court": "서울동부지방법원",
+   "stations": [
+    {
+     "name": "장지",
+     "distance_m": 151,
+     "walk_min": 3,
+     "lines": [
+      "8호선"
+     ]
+    },
+    {
+     "name": "복정",
+     "distance_m": 781,
+     "walk_min": 13,
+     "lines": [
+      "8호선"
+     ]
+    }
+   ],
+   "station": {
+    "name": "장지",
+    "distance_m": 151,
+    "walk_min": 3,
+    "lines": [
+     "8호선"
+    ]
+   },
+   "construct_year": null,
+   "traffic": "본건까지 차량접근이 가능하며 인근에 노선버스정류장 및 지하철 8호선「장지역」이 소재하는 등 제반 교통사정은 양호합니다.",
+   "rights": {
+    "base_right": "근저당권",
+    "base_date": "2014-12-15"
+   },
+   "history": [
+    {
+     "date": "2026-06-08",
+     "type": "매각기일",
+     "low_manwon": 6600,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-07-27",
+     "type": "매각기일",
+     "low_manwon": 5280,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-09-07",
+     "type": "매각기일",
+     "low_manwon": 4224,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-10-19",
+     "type": "매각기일",
+     "low_manwon": 3379,
+     "result": "유찰"
+    },
+    {
+     "date": "2026-11-23",
+     "type": "매각기일",
+     "low_manwon": 2703,
+     "result": null
+    },
+    {
+     "date": "2026-11-30",
      "type": "매각결정기일",
      "low_manwon": null,
      "result": null

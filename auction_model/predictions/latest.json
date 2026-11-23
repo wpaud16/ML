@@ -9,12 +9,12 @@
   "max_low_manwon": null
  },
  "counts": {
-  "predicted": 467,
+  "predicted": 475,
   "skipped": 621,
-  "failed": 331,
+  "failed": 335,
   "by_category": {
-   "아파트": 105,
-   "오피스텔": 362
+   "아파트": 108,
+   "오피스텔": 367
   }
  },
  "errors": [],
@@ -29714,111 +29714,111 @@
    "appr_manwon": 156000,
    "low_manwon": 99840,
    "fails": 2,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 83.06,
    "danji_id": "a7YZWFo",
    "danji_name": "올림픽선수기자촌",
    "name": "올림픽선수기자촌",
    "case": "2025타경52314",
-   "keyword": "토지거래허가구역,지분매각",
+   "keyword": "지분매각,토지거래허가구역",
    "pyeong": "34",
    "appr_eok": 15.6,
    "low_eok": 9.984,
-   "richgo_sise_eok": 27.975,
-   "model_sise_eok": 28.168,
-   "appr_vs_sise": 0.554,
+   "richgo_sise_eok": 27.957,
+   "model_sise_eok": 28.2,
+   "appr_vs_sise": 0.553,
    "m_sise": {
-    "mkt": 28.168,
-    "richgo": 27.975,
+    "mkt": 28.2,
+    "richgo": 27.957,
     "no_trade": false,
-    "n12": 28,
-    "w": 0.576,
+    "n12": 27,
+    "w": 0.574,
     "floor_bin": "고층",
     "fprem": 1.004,
-    "richgo_floor": 28.087,
-    "trade_w": 28.227,
-    "neff": 7.87,
-    "disp": 0.071,
+    "richgo_floor": 28.069,
+    "trade_w": 28.297,
+    "neff": 6.99,
+    "disp": 0.072,
     "last_trade": {
-     "date": "2026-11-14",
-     "price": 2760000000
+     "date": "2026-10-26",
+     "price": 2755000000
     }
    },
    "no_trade_12m": false,
    "sise": {
-    "richgo_eok": 27.98,
+    "richgo_eok": 27.96,
     "trade": {
-     "eok": 27.6,
-     "date": "2026-11-14",
-     "months_ago": 0.3,
-     "adj_eok": 27.6,
+     "eok": 27.55,
+     "date": "2026-10-26",
+     "months_ago": 0.9,
+     "adj_eok": 27.55,
      "trend_since_pct": 0.0
     },
     "offer": {
      "min_eok": 26.2,
-     "max_eok": 31.0,
-     "count": 51,
-     "rep_eok": 28.03
+     "max_eok": 31.5,
+     "count": 52,
+     "rep_eok": 28.1
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
-    "est_eok": 27.6,
+    "est_eok": 27.55,
     "range_eok": [
-     20.54,
-     27.98
+     20.24,
+     27.96
     ],
     "used": [
      "리치고",
      "실거래",
      "주변"
     ],
-    "spread_pct": 36.2,
+    "spread_pct": 38.1,
     "low_vs_est_pct": 36,
     "richgo_vs_est_pct": 0.7,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -26%"
+     "주변 단지 시세가 이 단지보다 -27%"
     ],
     "nearby": {
-     "eok": 20.54,
-     "ratio": 0.7391,
+     "eok": 20.24,
+     "ratio": 0.7291,
      "n_danji": 6,
      "basis": "방이동 연식 ±10년",
-     "per_pyeong_manwon": 6081,
-     "self_per_pyeong_manwon": 8228,
-     "price_date": "2026.11.23",
+     "per_pyeong_manwon": 5995,
+     "self_per_pyeong_manwon": 8222,
+     "price_date": "2026.11.16",
      "detail": [
       {
        "name": "코오롱",
        "age": 36,
-       "per_pyeong": 6799
+       "per_pyeong": 6819
       },
       {
        "name": "대림가락(방이대림)",
        "age": 42,
-       "per_pyeong": 6085
+       "per_pyeong": 6146
       },
       {
        "name": "잠실(방이)한양3차",
        "age": 42,
-       "per_pyeong": 6077
+       "per_pyeong": 5844
       },
       {
        "name": "신동아타워",
        "age": 32,
-       "per_pyeong": 3296
+       "per_pyeong": 3276
       },
       {
        "name": "올림픽베어스타운",
        "age": 31,
-       "per_pyeong": 6166
+       "per_pyeong": 6351
       }
      ]
     },
-    "nearby_vs_own_pct": -26.1,
+    "nearby_vs_own_pct": -27.1,
     "weighted": {
      "eok": 26.2,
      "cap_by_offer": true,
@@ -29826,88 +29826,88 @@
      "parts": [
       {
        "key": "trade3",
-       "eok": 27.55,
+       "eok": 27.52,
        "weight": 0.6,
-       "note": "최근 3개월 실거래 5건"
+       "note": "최근 3개월 실거래 4건"
       },
       {
        "key": "floor",
-       "eok": 27.95,
+       "eok": 28.12,
        "weight": 0.2,
-       "note": "층 보정 6개월 실거래 9건 (물건 16층)"
+       "note": "층 보정 6개월 실거래 8건 (물건 16층)"
       },
       {
        "key": "offer",
        "eok": 26.2,
        "weight": 0.15,
-       "note": "매물 최저 호가 (매물 51건)"
+       "note": "매물 최저 호가 (매물 52건)"
       },
       {
        "key": "appr",
-       "eok": 16.55,
+       "eok": 16.4,
        "weight": 0.05,
-       "note": "감정가 × 1년 시세 변동 +6.1%"
+       "note": "감정가 × 1년 시세 변동 +5.1%"
       }
      ]
     }
    },
    "model": "앙상블(운영+랜덤포레스트·LightGBM 8개)",
-   "jeonse_ratio": 0.33,
+   "jeonse_ratio": 0.326,
    "sgg_adj_pct": 0.9,
    "by_bidders": {
     "bid_by_prob_eok": {
      "1명": {
-      "40%": 18.76,
-      "45%": 18.9,
-      "50%": 19.04,
-      "55%": 19.17,
-      "60%": 19.29
+      "40%": 18.7,
+      "45%": 18.84,
+      "50%": 18.97,
+      "55%": 19.1,
+      "60%": 19.22
      },
      "2명": {
-      "40%": 19.61,
-      "45%": 19.69,
-      "50%": 19.77,
-      "55%": 19.84,
-      "60%": 19.92
+      "40%": 19.54,
+      "45%": 19.62,
+      "50%": 19.7,
+      "55%": 19.77,
+      "60%": 19.85
      },
      "3명": {
-      "40%": 20.1,
-      "45%": 20.23,
-      "50%": 20.36,
-      "55%": 20.49,
-      "60%": 20.62
+      "40%": 20.03,
+      "45%": 20.16,
+      "50%": 20.28,
+      "55%": 20.41,
+      "60%": 20.54
      },
      "5명": {
-      "40%": 20.76,
-      "45%": 20.9,
-      "50%": 21.02,
-      "55%": 21.13,
-      "60%": 21.24
+      "40%": 20.69,
+      "45%": 20.82,
+      "50%": 20.94,
+      "55%": 21.05,
+      "60%": 21.17
      },
      "8명": {
-      "40%": 21.55,
-      "45%": 21.67,
-      "50%": 21.78,
-      "55%": 21.9,
-      "60%": 22.01
+      "40%": 21.48,
+      "45%": 21.59,
+      "50%": 21.71,
+      "55%": 21.82,
+      "60%": 21.94
      },
      "13명": {
-      "40%": 22.12,
-      "45%": 22.25,
-      "50%": 22.37,
-      "55%": 22.5,
-      "60%": 22.62
+      "40%": 22.04,
+      "45%": 22.17,
+      "50%": 22.29,
+      "55%": 22.42,
+      "60%": 22.54
      }
     },
     "price_eok": {
-     "1명": 19.33,
-     "2명": 19.9,
-     "3명": 20.52,
-     "5명": 21.19,
-     "8명": 21.8,
-     "13명": 22.1
+     "1명": 19.26,
+     "2명": 19.83,
+     "3명": 20.44,
+     "5명": 21.11,
+     "8명": 21.72,
+     "13명": 22.02
     },
-    "expected_bidders": 17,
+    "expected_bidders": 16,
     "expected_range": [
      7,
      18
@@ -29926,231 +29926,226 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 238132,
-     "45%": 239910,
-     "50%": 241744,
-     "55%": 243650,
-     "60%": 245605
+     "40%": 237464,
+     "45%": 239237,
+     "50%": 241066,
+     "55%": 242966,
+     "60%": 244916
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 238132,
-    "45%": 239910,
-    "50%": 241744,
-    "55%": 243650,
-    "60%": 245605
+    "40%": 237464,
+    "45%": 239237,
+    "50%": 241066,
+    "55%": 242966,
+    "60%": 244916
    },
    "bid_by_prob_eok": {
-    "40%": 23.81,
-    "45%": 23.99,
-    "50%": 24.17,
-    "55%": 24.36,
-    "60%": 24.56
+    "40%": 23.75,
+    "45%": 23.92,
+    "50%": 24.11,
+    "55%": 24.3,
+    "60%": 24.49
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 232000,
+     "bid_eok": 23.2,
+     "prob": 26
+    },
+    {
      "bid_manwon": 232500,
      "bid_eok": 23.25,
-     "prob": 25
+     "prob": 27
     },
     {
      "bid_manwon": 233000,
      "bid_eok": 23.3,
-     "prob": 26
+     "prob": 28
     },
     {
      "bid_manwon": 233500,
      "bid_eok": 23.35,
-     "prob": 28
+     "prob": 29
     },
     {
      "bid_manwon": 234000,
      "bid_eok": 23.4,
-     "prob": 29
+     "prob": 30
     },
     {
      "bid_manwon": 234500,
      "bid_eok": 23.45,
-     "prob": 30
+     "prob": 32
     },
     {
      "bid_manwon": 235000,
      "bid_eok": 23.5,
-     "prob": 31
+     "prob": 33
     },
     {
      "bid_manwon": 235500,
      "bid_eok": 23.55,
-     "prob": 33
+     "prob": 34
     },
     {
      "bid_manwon": 236000,
      "bid_eok": 23.6,
-     "prob": 34
+     "prob": 36
     },
     {
      "bid_manwon": 236500,
      "bid_eok": 23.65,
-     "prob": 35
+     "prob": 37
     },
     {
      "bid_manwon": 237000,
      "bid_eok": 23.7,
-     "prob": 37
+     "prob": 39
     },
     {
      "bid_manwon": 237500,
      "bid_eok": 23.75,
-     "prob": 38
+     "prob": 40
     },
     {
      "bid_manwon": 238000,
      "bid_eok": 23.8,
-     "prob": 40
+     "prob": 42
     },
     {
      "bid_manwon": 238500,
      "bid_eok": 23.85,
-     "prob": 41
+     "prob": 43
     },
     {
      "bid_manwon": 239000,
      "bid_eok": 23.9,
-     "prob": 42
+     "prob": 44
     },
     {
      "bid_manwon": 239500,
      "bid_eok": 23.95,
-     "prob": 44
+     "prob": 46
     },
     {
      "bid_manwon": 240000,
      "bid_eok": 24.0,
-     "prob": 45
+     "prob": 47
     },
     {
      "bid_manwon": 240500,
      "bid_eok": 24.05,
-     "prob": 47
+     "prob": 48
     },
     {
      "bid_manwon": 241000,
      "bid_eok": 24.1,
-     "prob": 48
+     "prob": 50
     },
     {
      "bid_manwon": 241500,
      "bid_eok": 24.15,
-     "prob": 49
+     "prob": 51
     },
     {
      "bid_manwon": 242000,
      "bid_eok": 24.2,
-     "prob": 51
+     "prob": 52
     },
     {
      "bid_manwon": 242500,
      "bid_eok": 24.25,
-     "prob": 52
+     "prob": 54
     },
     {
      "bid_manwon": 243000,
      "bid_eok": 24.3,
-     "prob": 53
+     "prob": 55
     },
     {
      "bid_manwon": 243500,
      "bid_eok": 24.35,
-     "prob": 55
+     "prob": 56
     },
     {
      "bid_manwon": 244000,
      "bid_eok": 24.4,
-     "prob": 56
+     "prob": 58
     },
     {
      "bid_manwon": 244500,
      "bid_eok": 24.45,
-     "prob": 57
+     "prob": 59
     },
     {
      "bid_manwon": 245000,
      "bid_eok": 24.5,
-     "prob": 58
+     "prob": 60
     },
     {
      "bid_manwon": 245500,
      "bid_eok": 24.55,
-     "prob": 60
+     "prob": 61
     },
     {
      "bid_manwon": 246000,
      "bid_eok": 24.6,
-     "prob": 61
+     "prob": 63
     },
     {
      "bid_manwon": 246500,
      "bid_eok": 24.65,
-     "prob": 62
+     "prob": 64
     },
     {
      "bid_manwon": 247000,
      "bid_eok": 24.7,
-     "prob": 63
+     "prob": 65
     },
     {
      "bid_manwon": 247500,
      "bid_eok": 24.75,
-     "prob": 65
+     "prob": 66
     },
     {
      "bid_manwon": 248000,
      "bid_eok": 24.8,
-     "prob": 66
+     "prob": 68
     },
     {
      "bid_manwon": 248500,
      "bid_eok": 24.85,
-     "prob": 67
+     "prob": 69
     },
     {
      "bid_manwon": 249000,
      "bid_eok": 24.9,
-     "prob": 68
+     "prob": 70
     },
     {
      "bid_manwon": 249500,
      "bid_eok": 24.95,
-     "prob": 69
+     "prob": 71
     },
     {
      "bid_manwon": 250000,
      "bid_eok": 25.0,
-     "prob": 71
+     "prob": 72
     },
     {
      "bid_manwon": 250500,
      "bid_eok": 25.05,
-     "prob": 72
+     "prob": 73
     },
     {
      "bid_manwon": 251000,
      "bid_eok": 25.1,
-     "prob": 73
-    },
-    {
-     "bid_manwon": 251500,
-     "bid_eok": 25.15,
      "prob": 74
-    },
-    {
-     "bid_manwon": 252000,
-     "bid_eok": 25.2,
-     "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 241744,
-   "p50_ensemble_eok": 24.17,
+   "p50_ensemble_manwon": 241066,
+   "p50_ensemble_eok": 24.11,
    "model_error_note": "평균 오차 약 5.15% (최근 12개월 롤링)",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
@@ -30160,25 +30155,25 @@
    "within3_pct": 18,
    "precise": false,
    "acc": {
-    "shift_pct": 8.03,
+    "shift_pct": 7.82,
     "floor_applied": false,
     "members": {
-     "rf_X_leaf3": -0.1511,
-     "rf_X_d730": -0.145,
-     "rf_S4X": -0.1513,
-     "rf_X_leaf8": -0.1162,
-     "lgb_S4X_l1": -0.1007,
-     "rf_X_mae": -0.1148,
-     "rf_S4sise": -0.1829,
-     "lgb_X_dart": -0.1251,
-     "op": -0.2227
+     "rf_X_leaf3": -0.1537,
+     "rf_X_d730": -0.1459,
+     "rf_S4X": -0.1549,
+     "rf_X_leaf8": -0.1192,
+     "lgb_S4X_l1": -0.1137,
+     "rf_X_mae": -0.1195,
+     "rf_S4sise": -0.1845,
+     "lgb_X_dart": -0.129,
+     "op": -0.2248
     },
     "within3_th": 0.5402
    },
    "risk": {
     "keywords": [
-     "토지거래허가구역",
-     "지분매각"
+     "지분매각",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -30253,7 +30248,7 @@
    "appr_manwon": 304000,
    "low_manwon": 304000,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 83.06,
    "danji_id": "a7YZWFo",
    "danji_name": "올림픽선수기자촌",
@@ -30263,101 +30258,101 @@
    "pyeong": "34",
    "appr_eok": 30.4,
    "low_eok": 30.4,
-   "richgo_sise_eok": 27.975,
-   "model_sise_eok": 28.056,
-   "appr_vs_sise": 1.084,
+   "richgo_sise_eok": 27.957,
+   "model_sise_eok": 28.087,
+   "appr_vs_sise": 1.082,
    "m_sise": {
-    "mkt": 28.056,
-    "richgo": 27.975,
+    "mkt": 28.087,
+    "richgo": 27.957,
     "no_trade": false,
-    "n12": 28,
-    "w": 0.576,
+    "n12": 27,
+    "w": 0.574,
     "floor_bin": "중층",
     "fprem": 1.0,
-    "richgo_floor": 27.975,
-    "trade_w": 28.115,
-    "neff": 7.87,
-    "disp": 0.071,
+    "richgo_floor": 27.957,
+    "trade_w": 28.184,
+    "neff": 6.99,
+    "disp": 0.072,
     "last_trade": {
-     "date": "2026-11-14",
-     "price": 2760000000
+     "date": "2026-10-26",
+     "price": 2755000000
     }
    },
    "no_trade_12m": false,
    "sise": {
-    "richgo_eok": 27.98,
+    "richgo_eok": 27.96,
     "trade": {
-     "eok": 27.6,
-     "date": "2026-11-14",
-     "months_ago": 0.3,
-     "adj_eok": 27.6,
+     "eok": 27.55,
+     "date": "2026-10-26",
+     "months_ago": 0.9,
+     "adj_eok": 27.55,
      "trend_since_pct": 0.0
     },
     "offer": {
      "min_eok": 26.2,
-     "max_eok": 31.0,
-     "count": 51,
-     "rep_eok": 28.03
+     "max_eok": 31.5,
+     "count": 52,
+     "rep_eok": 28.1
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
-    "est_eok": 27.6,
+    "est_eok": 27.55,
     "range_eok": [
-     20.54,
-     27.98
+     20.24,
+     27.96
     ],
     "used": [
      "리치고",
      "실거래",
      "주변"
     ],
-    "spread_pct": 36.2,
+    "spread_pct": 38.1,
     "low_vs_est_pct": 110,
     "richgo_vs_est_pct": 0.7,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -26%"
+     "주변 단지 시세가 이 단지보다 -27%"
     ],
     "nearby": {
-     "eok": 20.54,
-     "ratio": 0.7391,
+     "eok": 20.24,
+     "ratio": 0.7291,
      "n_danji": 6,
      "basis": "방이동 연식 ±10년",
-     "per_pyeong_manwon": 6081,
-     "self_per_pyeong_manwon": 8228,
-     "price_date": "2026.11.23",
+     "per_pyeong_manwon": 5995,
+     "self_per_pyeong_manwon": 8222,
+     "price_date": "2026.11.16",
      "detail": [
       {
        "name": "코오롱",
        "age": 36,
-       "per_pyeong": 6799
+       "per_pyeong": 6819
       },
       {
        "name": "대림가락(방이대림)",
        "age": 42,
-       "per_pyeong": 6085
+       "per_pyeong": 6146
       },
       {
        "name": "잠실(방이)한양3차",
        "age": 42,
-       "per_pyeong": 6077
+       "per_pyeong": 5844
       },
       {
        "name": "신동아타워",
        "age": 32,
-       "per_pyeong": 3296
+       "per_pyeong": 3276
       },
       {
        "name": "올림픽베어스타운",
        "age": 31,
-       "per_pyeong": 6166
+       "per_pyeong": 6351
       }
      ]
     },
-    "nearby_vs_own_pct": -26.1,
+    "nearby_vs_own_pct": -27.1,
     "weighted": {
      "eok": 26.2,
      "cap_by_offer": true,
@@ -30365,33 +30360,33 @@
      "parts": [
       {
        "key": "trade3",
-       "eok": 27.55,
+       "eok": 27.52,
        "weight": 0.6,
-       "note": "최근 3개월 실거래 5건"
+       "note": "최근 3개월 실거래 4건"
       },
       {
        "key": "floor",
-       "eok": 27.95,
+       "eok": 28.12,
        "weight": 0.2,
-       "note": "층 보정 6개월 실거래 9건 (물건 13층)"
+       "note": "층 보정 6개월 실거래 8건 (물건 13층)"
       },
       {
        "key": "offer",
        "eok": 26.2,
        "weight": 0.15,
-       "note": "매물 최저 호가 (매물 51건)"
+       "note": "매물 최저 호가 (매물 52건)"
       },
       {
        "key": "appr",
-       "eok": 32.25,
+       "eok": 31.95,
        "weight": 0.05,
-       "note": "감정가 × 1년 시세 변동 +6.1%"
+       "note": "감정가 × 1년 시세 변동 +5.1%"
       }
      ]
     }
    },
    "model": "앙상블(운영+랜덤포레스트·LightGBM 8개)",
-   "jeonse_ratio": 0.33,
+   "jeonse_ratio": 0.326,
    "sgg_adj_pct": 0.9,
    "by_bidders": {
     "bid_by_prob_eok": {
@@ -30400,51 +30395,51 @@
       "45%": 30.4,
       "50%": 30.4,
       "55%": 30.4,
-      "60%": 30.46
+      "60%": 30.44
      },
      "2명": {
       "40%": 30.4,
       "45%": 30.4,
       "50%": 30.4,
-      "55%": 30.49,
-      "60%": 30.6
+      "55%": 30.47,
+      "60%": 30.58
      },
      "3명": {
-      "40%": 30.43,
-      "45%": 30.62,
-      "50%": 30.81,
-      "55%": 31.01,
-      "60%": 31.21
+      "40%": 30.41,
+      "45%": 30.6,
+      "50%": 30.79,
+      "55%": 30.99,
+      "60%": 31.18
      },
      "5명": {
-      "40%": 30.74,
-      "45%": 30.93,
-      "50%": 31.11,
-      "55%": 31.28,
-      "60%": 31.45
+      "40%": 30.72,
+      "45%": 30.91,
+      "50%": 31.09,
+      "55%": 31.26,
+      "60%": 31.43
      },
      "8명": {
-      "40%": 31.39,
-      "45%": 31.55,
-      "50%": 31.72,
-      "55%": 31.88,
-      "60%": 32.05
+      "40%": 31.36,
+      "45%": 31.53,
+      "50%": 31.7,
+      "55%": 31.86,
+      "60%": 32.03
      },
      "13명": {
-      "40%": 32.17,
-      "45%": 32.35,
-      "50%": 32.54,
-      "55%": 32.72,
-      "60%": 32.9
+      "40%": 32.14,
+      "45%": 32.33,
+      "50%": 32.51,
+      "55%": 32.7,
+      "60%": 32.88
      }
     },
     "price_eok": {
-     "1명": 30.52,
-     "2명": 30.57,
-     "3명": 31.05,
-     "5명": 31.36,
-     "8명": 31.75,
-     "13명": 32.14
+     "1명": 30.5,
+     "2명": 30.55,
+     "3명": 31.03,
+     "5명": 31.34,
+     "8명": 31.72,
+     "13명": 32.11
     },
     "expected_bidders": 2,
     "expected_range": [
@@ -30623,21 +30618,21 @@
    "model_error_note": "평균 오차 약 5.15% (최근 12개월 롤링), 정밀 물건 약 3.16%",
    "warnings": [],
    "notes": [],
-   "within3_pct": 70,
+   "within3_pct": 72,
    "precise": true,
    "acc": {
-    "shift_pct": 1.72,
+    "shift_pct": 1.84,
     "floor_applied": true,
     "members": {
-     "rf_X_leaf3": 0.0405,
+     "rf_X_leaf3": 0.0393,
      "rf_X_d730": 0.0636,
-     "rf_S4X": 0.068,
-     "rf_X_leaf8": 0.0657,
-     "lgb_S4X_l1": 0.0191,
-     "rf_X_mae": 0.0657,
-     "rf_S4sise": 0.0724,
-     "lgb_X_dart": 0.0669,
-     "op": 0.0732
+     "rf_S4X": 0.0677,
+     "rf_X_leaf8": 0.0656,
+     "lgb_S4X_l1": 0.02,
+     "rf_X_mae": 0.0658,
+     "rf_S4sise": 0.0728,
+     "lgb_X_dart": 0.0621,
+     "op": 0.0709
     },
     "within3_th": 0.5402
    },
@@ -43319,7 +43314,7 @@
    "appr_manwon": 84500,
    "low_manwon": 84500,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 98.75,
    "danji_id": "a6RHzeG",
    "danji_name": "위례센트로엘",
@@ -43329,21 +43324,21 @@
    "pyeong": "38",
    "appr_eok": 8.45,
    "low_eok": 8.45,
-   "richgo_sise_eok": 21.277,
-   "model_sise_eok": 21.194,
-   "appr_vs_sise": 0.399,
+   "richgo_sise_eok": 21.181,
+   "model_sise_eok": 21.138,
+   "appr_vs_sise": 0.4,
    "m_sise": {
-    "mkt": 21.194,
-    "richgo": 21.277,
+    "mkt": 21.138,
+    "richgo": 21.181,
     "no_trade": false,
-    "n12": 8,
-    "w": 0.562,
+    "n12": 9,
+    "w": 0.564,
     "floor_bin": "고층",
     "fprem": 1.004,
-    "richgo_floor": 21.362,
-    "trade_w": 21.063,
-    "neff": 3.05,
-    "disp": 0.028,
+    "richgo_floor": 21.266,
+    "trade_w": 21.039,
+    "neff": 3.13,
+    "disp": 0.031,
     "last_trade": {
      "date": "2026-10-27",
      "price": 2110000000
@@ -43351,7 +43346,7 @@
    },
    "no_trade_12m": false,
    "sise": {
-    "richgo_eok": 21.28,
+    "richgo_eok": 21.18,
     "trade": {
      "eok": 21.1,
      "date": "2026-10-27",
@@ -43366,64 +43361,64 @@
      "rep_eok": 22.66
     },
     "trend": {
-     "3m_pct": 3.4,
-     "6m_pct": 8.9,
-     "12m_pct": 22.3
+     "3m_pct": 3.1,
+     "6m_pct": 8.6,
+     "12m_pct": 22.0
     },
     "est_eok": 21.1,
     "range_eok": [
-     18.15,
-     21.28
+     18.03,
+     21.18
     ],
     "used": [
      "리치고",
      "실거래",
      "주변"
     ],
-    "spread_pct": 17.2,
+    "spread_pct": 17.5,
     "low_vs_est_pct": 40,
-    "richgo_vs_est_pct": 0.4,
+    "richgo_vs_est_pct": 0.2,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 -14%"
+     "주변 단지 시세가 이 단지보다 -15%"
     ],
     "nearby": {
-     "eok": 18.15,
-     "ratio": 0.8565,
+     "eok": 18.03,
+     "ratio": 0.8528,
      "n_danji": 12,
      "basis": "학암동 연식 ±10년",
-     "per_pyeong_manwon": 4796,
-     "self_per_pyeong_manwon": 5599,
-     "price_date": "2026.11.23",
+     "per_pyeong_manwon": 4752,
+     "self_per_pyeong_manwon": 5573,
+     "price_date": "2026.11.16",
      "detail": [
       {
        "name": "위례롯데캐슬",
        "age": 11,
-       "per_pyeong": 5042
+       "per_pyeong": 5025
       },
       {
        "name": "위례그린파크푸르지오",
        "age": 11,
-       "per_pyeong": 4613
+       "per_pyeong": 4619
       },
       {
        "name": "위례신도시신안인스빌아스트로",
        "age": 10,
-       "per_pyeong": 5642
+       "per_pyeong": 5658
       },
       {
        "name": "플로리체위례",
        "age": 12,
-       "per_pyeong": 5337
+       "per_pyeong": 5306
       },
       {
        "name": "위례로제비앙",
        "age": 6,
-       "per_pyeong": 5309
+       "per_pyeong": 5224
       }
      ]
     },
-    "nearby_vs_own_pct": -14.3,
+    "nearby_vs_own_pct": -14.7,
     "weighted": {
      "eok": 20.6,
      "cap_by_offer": false,
@@ -43449,15 +43444,15 @@
       },
       {
        "key": "appr",
-       "eok": 10.33,
+       "eok": 10.31,
        "weight": 0.05,
-       "note": "감정가 × 1년 시세 변동 +22.3%"
+       "note": "감정가 × 1년 시세 변동 +22.0%"
       }
      ]
     }
    },
    "model": "앙상블(운영+랜덤포레스트·LightGBM 8개)",
-   "jeonse_ratio": 0.406,
+   "jeonse_ratio": 0.413,
    "sgg_adj_pct": 0.2,
    "by_bidders": {
     "bid_by_prob_eok": {
@@ -43469,48 +43464,48 @@
       "60%": 15.41
      },
      "2명": {
-      "40%": 15.95,
-      "45%": 16.02,
-      "50%": 16.08,
-      "55%": 16.14,
-      "60%": 16.2
+      "40%": 15.92,
+      "45%": 15.99,
+      "50%": 16.05,
+      "55%": 16.11,
+      "60%": 16.17
      },
      "3명": {
-      "40%": 16.4,
-      "45%": 16.5,
-      "50%": 16.6,
-      "55%": 16.71,
-      "60%": 16.82
+      "40%": 16.37,
+      "45%": 16.47,
+      "50%": 16.58,
+      "55%": 16.68,
+      "60%": 16.79
      },
      "5명": {
-      "40%": 16.93,
-      "45%": 17.04,
-      "50%": 17.13,
-      "55%": 17.23,
-      "60%": 17.32
+      "40%": 16.89,
+      "45%": 17.0,
+      "50%": 17.1,
+      "55%": 17.19,
+      "60%": 17.28
      },
      "8명": {
-      "40%": 17.69,
-      "45%": 17.79,
-      "50%": 17.88,
-      "55%": 17.97,
-      "60%": 18.07
+      "40%": 17.66,
+      "45%": 17.75,
+      "50%": 17.84,
+      "55%": 17.94,
+      "60%": 18.03
      },
      "13명": {
-      "40%": 18.14,
-      "45%": 18.24,
-      "50%": 18.35,
-      "55%": 18.45,
-      "60%": 18.55
+      "40%": 18.1,
+      "45%": 18.2,
+      "50%": 18.3,
+      "55%": 18.41,
+      "60%": 18.51
      }
     },
     "price_eok": {
      "1명": 15.44,
-     "2명": 16.18,
-     "3명": 16.73,
-     "5명": 17.27,
-     "8명": 17.9,
-     "13명": 18.12
+     "2명": 16.16,
+     "3명": 16.7,
+     "5명": 17.24,
+     "8명": 17.86,
+     "13명": 18.08
     },
     "expected_bidders": 15,
     "expected_range": [
@@ -43520,7 +43515,7 @@
     "model_error_note": "인원을 알 때 평균 오차 약 3.76%",
     "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
    },
-   "gap_rule": 7.9,
+   "gap_rule": 8.2,
    "fail": {
     "prob_pct": 0,
     "level": "낮음",
@@ -43531,186 +43526,186 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 185696,
-     "45%": 187082,
-     "50%": 188512,
-     "55%": 189998,
-     "60%": 191523
+     "40%": 185336,
+     "45%": 186720,
+     "50%": 188147,
+     "55%": 189630,
+     "60%": 191153
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 185696,
-    "45%": 187082,
-    "50%": 188512,
-    "55%": 189998,
-    "60%": 191523
+    "40%": 185336,
+    "45%": 186720,
+    "50%": 188147,
+    "55%": 189630,
+    "60%": 191153
    },
    "bid_by_prob_eok": {
-    "40%": 18.57,
-    "45%": 18.71,
-    "50%": 18.85,
-    "55%": 19.0,
-    "60%": 19.15
+    "40%": 18.53,
+    "45%": 18.67,
+    "50%": 18.81,
+    "55%": 18.96,
+    "60%": 19.12
    },
    "prob_by_bid_5m": [
     {
+     "bid_manwon": 181000,
+     "bid_eok": 18.1,
+     "prob": 25
+    },
+    {
      "bid_manwon": 181500,
      "bid_eok": 18.15,
-     "prob": 26
+     "prob": 27
     },
     {
      "bid_manwon": 182000,
      "bid_eok": 18.2,
-     "prob": 27
+     "prob": 28
     },
     {
      "bid_manwon": 182500,
      "bid_eok": 18.25,
-     "prob": 29
+     "prob": 30
     },
     {
      "bid_manwon": 183000,
      "bid_eok": 18.3,
-     "prob": 30
+     "prob": 32
     },
     {
      "bid_manwon": 183500,
      "bid_eok": 18.35,
-     "prob": 32
+     "prob": 33
     },
     {
      "bid_manwon": 184000,
      "bid_eok": 18.4,
-     "prob": 34
+     "prob": 35
     },
     {
      "bid_manwon": 184500,
      "bid_eok": 18.45,
-     "prob": 36
+     "prob": 37
     },
     {
      "bid_manwon": 185000,
      "bid_eok": 18.5,
-     "prob": 37
+     "prob": 39
     },
     {
      "bid_manwon": 185500,
      "bid_eok": 18.55,
-     "prob": 39
+     "prob": 41
     },
     {
      "bid_manwon": 186000,
      "bid_eok": 18.6,
-     "prob": 41
+     "prob": 42
     },
     {
      "bid_manwon": 186500,
      "bid_eok": 18.65,
-     "prob": 43
+     "prob": 44
     },
     {
      "bid_manwon": 187000,
      "bid_eok": 18.7,
-     "prob": 45
+     "prob": 46
     },
     {
      "bid_manwon": 187500,
      "bid_eok": 18.75,
-     "prob": 46
+     "prob": 48
     },
     {
      "bid_manwon": 188000,
      "bid_eok": 18.8,
-     "prob": 48
+     "prob": 49
     },
     {
      "bid_manwon": 188500,
      "bid_eok": 18.85,
-     "prob": 50
+     "prob": 51
     },
     {
      "bid_manwon": 189000,
      "bid_eok": 18.9,
-     "prob": 52
+     "prob": 53
     },
     {
      "bid_manwon": 189500,
      "bid_eok": 18.95,
-     "prob": 53
+     "prob": 55
     },
     {
      "bid_manwon": 190000,
      "bid_eok": 19.0,
-     "prob": 55
+     "prob": 56
     },
     {
      "bid_manwon": 190500,
      "bid_eok": 19.05,
-     "prob": 57
+     "prob": 58
     },
     {
      "bid_manwon": 191000,
      "bid_eok": 19.1,
-     "prob": 58
+     "prob": 60
     },
     {
      "bid_manwon": 191500,
      "bid_eok": 19.15,
-     "prob": 60
+     "prob": 61
     },
     {
      "bid_manwon": 192000,
      "bid_eok": 19.2,
-     "prob": 62
+     "prob": 63
     },
     {
      "bid_manwon": 192500,
      "bid_eok": 19.25,
-     "prob": 63
+     "prob": 64
     },
     {
      "bid_manwon": 193000,
      "bid_eok": 19.3,
-     "prob": 65
+     "prob": 66
     },
     {
      "bid_manwon": 193500,
      "bid_eok": 19.35,
-     "prob": 66
+     "prob": 67
     },
     {
      "bid_manwon": 194000,
      "bid_eok": 19.4,
-     "prob": 68
+     "prob": 69
     },
     {
      "bid_manwon": 194500,
      "bid_eok": 19.45,
-     "prob": 69
+     "prob": 70
     },
     {
      "bid_manwon": 195000,
      "bid_eok": 19.5,
-     "prob": 71
+     "prob": 72
     },
     {
      "bid_manwon": 195500,
      "bid_eok": 19.55,
-     "prob": 72
+     "prob": 73
     },
     {
      "bid_manwon": 196000,
      "bid_eok": 19.6,
-     "prob": 74
-    },
-    {
-     "bid_manwon": 196500,
-     "bid_eok": 19.65,
      "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 188512,
-   "p50_ensemble_eok": 18.85,
+   "p50_ensemble_manwon": 188147,
+   "p50_ensemble_eok": 18.81,
    "model_error_note": "평균 오차 약 5.15% (최근 12개월 롤링)",
    "warnings": [
     "권리위험 키워드 — 학습 대상(일반 물건)과 달라 예측 신뢰 낮음",
@@ -43720,17 +43715,17 @@
    "within3_pct": 23,
    "precise": false,
    "acc": {
-    "shift_pct": -0.22,
+    "shift_pct": -0.15,
     "floor_applied": false,
     "members": {
-     "rf_X_leaf3": -0.1235,
-     "rf_X_d730": -0.1275,
-     "rf_S4X": -0.1346,
-     "rf_X_leaf8": -0.1102,
-     "lgb_S4X_l1": -0.0605,
-     "rf_X_mae": -0.0814,
-     "rf_S4sise": -0.1502,
-     "lgb_X_dart": -0.0926,
+     "rf_X_leaf3": -0.1204,
+     "rf_X_d730": -0.1235,
+     "rf_S4X": -0.1319,
+     "rf_X_leaf8": -0.1057,
+     "lgb_S4X_l1": -0.0785,
+     "rf_X_mae": -0.0816,
+     "rf_S4sise": -0.1484,
+     "lgb_X_dart": -0.0839,
      "op": -0.1076
     },
     "within3_th": 0.5402
@@ -43779,7 +43774,7 @@
    "appr_manwon": 90500,
    "low_manwon": 90500,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 98.96,
    "danji_id": "a5akpQo",
    "danji_name": "미사힐즈파크푸르지오3단지",
@@ -43789,20 +43784,20 @@
    "pyeong": "38",
    "appr_eok": 9.05,
    "low_eok": 9.05,
-   "richgo_sise_eok": 10.698,
-   "model_sise_eok": 10.315,
-   "appr_vs_sise": 0.877,
+   "richgo_sise_eok": 10.867,
+   "model_sise_eok": 10.384,
+   "appr_vs_sise": 0.872,
    "m_sise": {
-    "mkt": 10.315,
-    "richgo": 10.698,
+    "mkt": 10.384,
+    "richgo": 10.867,
     "no_trade": false,
     "n12": 24,
     "w": 0.586,
     "floor_bin": "중층",
     "fprem": 1.0,
-    "richgo_floor": 10.698,
+    "richgo_floor": 10.867,
     "trade_w": 10.044,
-    "neff": 8.53,
+    "neff": 8.6,
     "disp": 0.065,
     "last_trade": {
      "date": "2026-10-02",
@@ -43811,7 +43806,7 @@
    },
    "no_trade_12m": false,
    "sise": {
-    "richgo_eok": 10.7,
+    "richgo_eok": 10.87,
     "trade": {
      "eok": 10.0,
      "date": "2026-10-02",
@@ -43822,68 +43817,68 @@
     "offer": {
      "min_eok": 10.5,
      "max_eok": 13.0,
-     "count": 26,
-     "rep_eok": 11.38
+     "count": 28,
+     "rep_eok": 11.36
     },
     "trend": {
-     "3m_pct": 3.4,
-     "6m_pct": 8.9,
-     "12m_pct": 22.3
+     "3m_pct": 3.1,
+     "6m_pct": 8.6,
+     "12m_pct": 22.0
     },
-    "est_eok": 10.7,
+    "est_eok": 10.87,
     "range_eok": [
      10.0,
-     14.92
+     14.72
     ],
     "used": [
      "리치고",
      "실거래",
      "주변"
     ],
-    "spread_pct": 49.2,
-    "low_vs_est_pct": 85,
-    "richgo_vs_est_pct": 3.4,
+    "spread_pct": 47.2,
+    "low_vs_est_pct": 83,
+    "richgo_vs_est_pct": 4.2,
     "flags": [
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +44%"
+     "주변 단지 시세가 이 단지보다 +41%"
     ],
     "nearby": {
-     "eok": 14.92,
-     "ratio": 1.4419,
+     "eok": 14.72,
+     "ratio": 1.411,
      "n_danji": 11,
      "basis": "풍산동 연식 ±10년",
-     "per_pyeong_manwon": 4059,
-     "self_per_pyeong_manwon": 2815,
-     "price_date": "2026.11.23",
+     "per_pyeong_manwon": 4034,
+     "self_per_pyeong_manwon": 2859,
+     "price_date": "2026.11.16",
      "detail": [
       {
        "name": "미사강변동일하이빌",
        "age": 9,
-       "per_pyeong": 4744
+       "per_pyeong": 4752
       },
       {
        "name": "미사강변브라운스톤엔에이치에프",
        "age": 9,
-       "per_pyeong": 4656
-      },
-      {
-       "name": "미사강변아란티움",
-       "age": 9,
-       "per_pyeong": 3755
+       "per_pyeong": 4696
       },
       {
        "name": "e편한세상미사",
        "age": 9,
-       "per_pyeong": 3689
+       "per_pyeong": 3748
+      },
+      {
+       "name": "미사강변아란티움",
+       "age": 9,
+       "per_pyeong": 3680
       },
       {
        "name": "미사힐즈파크푸르지오2단지",
        "age": 9,
-       "per_pyeong": 3161
+       "per_pyeong": 3249
       }
      ]
     },
-    "nearby_vs_own_pct": 44.2,
+    "nearby_vs_own_pct": 41.1,
     "weighted": {
      "eok": 10.25,
      "cap_by_offer": false,
@@ -43905,56 +43900,56 @@
        "key": "offer",
        "eok": 10.5,
        "weight": 0.15,
-       "note": "매물 최저 호가 (매물 26건)"
+       "note": "매물 최저 호가 (매물 28건)"
       },
       {
        "key": "appr",
-       "eok": 11.07,
+       "eok": 11.04,
        "weight": 0.05,
-       "note": "감정가 × 1년 시세 변동 +22.3%"
+       "note": "감정가 × 1년 시세 변동 +22.0%"
       }
      ]
     }
    },
    "model": "앙상블(운영+랜덤포레스트·LightGBM 8개)",
-   "jeonse_ratio": 0.666,
+   "jeonse_ratio": 0.65,
    "sgg_adj_pct": 0.2,
    "by_bidders": {
     "bid_by_prob_eok": {
      "1명": {
-      "40%": 9.07,
-      "45%": 9.13,
-      "50%": 9.2,
-      "55%": 9.26,
-      "60%": 9.32
+      "40%": 9.08,
+      "45%": 9.15,
+      "50%": 9.21,
+      "55%": 9.27,
+      "60%": 9.33
      },
      "2명": {
-      "40%": 9.54,
-      "45%": 9.59,
-      "50%": 9.62,
-      "55%": 9.66,
-      "60%": 9.69
+      "40%": 9.56,
+      "45%": 9.6,
+      "50%": 9.63,
+      "55%": 9.67,
+      "60%": 9.71
      },
      "3명": {
-      "40%": 9.7,
-      "45%": 9.76,
-      "50%": 9.83,
-      "55%": 9.89,
-      "60%": 9.95
+      "40%": 9.72,
+      "45%": 9.78,
+      "50%": 9.84,
+      "55%": 9.9,
+      "60%": 9.96
      },
      "5명": {
-      "40%": 9.86,
-      "45%": 9.92,
-      "50%": 9.98,
-      "55%": 10.03,
-      "60%": 10.09
+      "40%": 9.87,
+      "45%": 9.93,
+      "50%": 9.99,
+      "55%": 10.04,
+      "60%": 10.1
      },
      "8명": {
-      "40%": 10.19,
-      "45%": 10.25,
-      "50%": 10.3,
-      "55%": 10.35,
-      "60%": 10.41
+      "40%": 10.2,
+      "45%": 10.26,
+      "50%": 10.31,
+      "55%": 10.36,
+      "60%": 10.42
      },
      "13명": {
       "40%": 10.54,
@@ -43965,24 +43960,24 @@
      }
     },
     "price_eok": {
-     "1명": 9.34,
-     "2명": 9.69,
-     "3명": 9.9,
-     "5명": 10.06,
-     "8명": 10.31,
+     "1명": 9.35,
+     "2명": 9.7,
+     "3명": 9.91,
+     "5명": 10.07,
+     "8명": 10.32,
      "13명": 10.53
     },
     "expected_bidders": 3,
     "expected_range": [
      2,
-     4
+     5
     ],
     "model_error_note": "인원을 알 때 평균 오차 약 3.76%",
     "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
    },
    "gap_rule": null,
    "fail": {
-    "prob_pct": 18,
+    "prob_pct": 20,
     "level": "낮음",
     "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
    },
@@ -43991,32 +43986,32 @@
     "applied": false,
     "adj_pct": 0.0,
     "bid_by_prob_manwon_raw": {
-     "40%": 96237,
-     "45%": 96956,
-     "50%": 97697,
-     "55%": 98467,
-     "60%": 99258
+     "40%": 96338,
+     "45%": 97057,
+     "50%": 97799,
+     "55%": 98570,
+     "60%": 99361
     }
    },
    "bid_by_prob_manwon": {
-    "40%": 96237,
-    "45%": 96956,
-    "50%": 97697,
-    "55%": 98467,
-    "60%": 99258
+    "40%": 96338,
+    "45%": 97057,
+    "50%": 97799,
+    "55%": 98570,
+    "60%": 99361
    },
    "bid_by_prob_eok": {
-    "40%": 9.62,
-    "45%": 9.7,
-    "50%": 9.77,
-    "55%": 9.85,
-    "60%": 9.93
+    "40%": 9.63,
+    "45%": 9.71,
+    "50%": 9.78,
+    "55%": 9.86,
+    "60%": 9.94
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 94000,
      "bid_eok": 9.4,
-     "prob": 26
+     "prob": 25
     },
     {
      "bid_manwon": 94500,
@@ -44026,12 +44021,12 @@
     {
      "bid_manwon": 95000,
      "bid_eok": 9.5,
-     "prob": 32
+     "prob": 31
     },
     {
      "bid_manwon": 95500,
      "bid_eok": 9.55,
-     "prob": 35
+     "prob": 34
     },
     {
      "bid_manwon": 96000,
@@ -44041,7 +44036,7 @@
     {
      "bid_manwon": 96500,
      "bid_eok": 9.65,
-     "prob": 42
+     "prob": 41
     },
     {
      "bid_manwon": 97000,
@@ -44051,12 +44046,12 @@
     {
      "bid_manwon": 97500,
      "bid_eok": 9.75,
-     "prob": 49
+     "prob": 48
     },
     {
      "bid_manwon": 98000,
      "bid_eok": 9.8,
-     "prob": 52
+     "prob": 51
     },
     {
      "bid_manwon": 98500,
@@ -44071,17 +44066,17 @@
     {
      "bid_manwon": 99500,
      "bid_eok": 9.95,
-     "prob": 62
+     "prob": 61
     },
     {
      "bid_manwon": 100000,
      "bid_eok": 10.0,
-     "prob": 65
+     "prob": 64
     },
     {
      "bid_manwon": 100500,
      "bid_eok": 10.05,
-     "prob": 68
+     "prob": 67
     },
     {
      "bid_manwon": 101000,
@@ -44094,26 +44089,26 @@
      "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 97697,
-   "p50_ensemble_eok": 9.77,
+   "p50_ensemble_manwon": 97799,
+   "p50_ensemble_eok": 9.78,
    "model_error_note": "평균 오차 약 5.15% (최근 12개월 롤링)",
    "warnings": [],
    "notes": [],
-   "within3_pct": 49,
+   "within3_pct": 50,
    "precise": false,
    "acc": {
-    "shift_pct": 1.5,
+    "shift_pct": 1.01,
     "floor_applied": false,
     "members": {
-     "rf_X_leaf3": -0.0455,
-     "rf_X_d730": -0.0505,
-     "rf_S4X": -0.0457,
-     "rf_X_leaf8": -0.0461,
-     "lgb_S4X_l1": -0.0317,
-     "rf_X_mae": -0.0535,
-     "rf_S4sise": -0.0445,
-     "lgb_X_dart": -0.0428,
-     "op": -0.0618
+     "rf_X_leaf3": -0.0498,
+     "rf_X_d730": -0.0584,
+     "rf_S4X": -0.0526,
+     "rf_X_leaf8": -0.0514,
+     "lgb_S4X_l1": -0.0522,
+     "rf_X_mae": -0.0545,
+     "rf_S4sise": -0.0499,
+     "lgb_X_dart": -0.0417,
+     "op": -0.0626
     },
     "within3_th": 0.5402
    },
@@ -44128,8 +44123,7 @@
     },
     "resale": false,
     "decision": "show",
-    "reason": "",
-    "tenant_cleared": true
+    "reason": ""
    },
    "court": "성남지원",
    "category": "아파트",
@@ -44137,7 +44131,7 @@
     "occupant": "채무자(소유자)점유",
     "closed_absent": true,
     "lessee_count": 0,
-    "spec_published": true,
+    "spec_published": false,
     "withdraw_signal": [
      {
       "label": "변경",
@@ -44153,24 +44147,10 @@
      }
     ]
    },
-   "tenant": {
-    "source": "법원 매각물건명세서",
-    "checked": "2026-11-23",
-    "assumed_manwon": 0,
-    "opposing_tenants": 0,
-    "unknown_deposit": 0,
-    "lines": [
-     "법원 명세서상 대항력 임차인 없음"
-    ],
-    "checks": null,
-    "flags": [],
-    "caution": null
-   },
    "safety": {
-    "grade": "안전",
+    "grade": "보통",
     "reasons": [
-     "법원 명세서 기준 인수 금액 0원",
-     "세금 교부청구 있음"
+     "리치고 기준 권리 문제 없음 · 법원 명세서 미확인"
     ]
    },
    "payback": null,
@@ -51479,7 +51459,7 @@
    "appr_manwon": 15500,
    "low_manwon": 852,
    "fails": 13,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 22.2,
    "danji_id": "a9jLONN",
    "danji_name": "다성이즈빌(388-7)",
@@ -51526,9 +51506,9 @@
      "rep_eok": 1.5
     },
     "trend": {
-     "3m_pct": 1.0,
-     "6m_pct": 13.7,
-     "12m_pct": 18.6
+     "3m_pct": 0.4,
+     "6m_pct": 13.2,
+     "12m_pct": 18.0
     },
     "nearby": {
      "eok": 1.25,
@@ -51568,37 +51548,32 @@
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
-    "40%": 9794,
-    "45%": 9888,
-    "50%": 9979,
-    "55%": 10073,
-    "60%": 10176
+    "40%": 9862,
+    "45%": 9956,
+    "50%": 10048,
+    "55%": 10143,
+    "60%": 10247
    },
    "bid_by_prob_eok": {
-    "40%": 0.98,
-    "45%": 0.99,
+    "40%": 0.99,
+    "45%": 1.0,
     "50%": 1.0,
     "55%": 1.01,
     "60%": 1.02
    },
    "prob_by_bid_5m": [
     {
-     "bid_manwon": 9500,
-     "bid_eok": 0.95,
-     "prob": 26
-    },
-    {
      "bid_manwon": 10000,
      "bid_eok": 1.0,
-     "prob": 51
+     "prob": 47
     },
     {
      "bid_manwon": 10500,
      "bid_eok": 1.05,
-     "prob": 73
+     "prob": 70
     }
    ],
-   "p50_ensemble_manwon": 9979,
+   "p50_ensemble_manwon": 10048,
    "p50_ensemble_eok": 1.0,
    "income": {
     "jeonse_manwon": 12857,
@@ -51607,7 +51582,7 @@
     "deposit_assumed_manwon": 1000,
     "rent_conversion_rate": 0.0606,
     "rent_basis": "같은 건물 다른 평형의 전세가율로 추정",
-    "gross_yield_pct_at_p50": 7.2
+    "gross_yield_pct_at_p50": 7.15
    },
    "fail": {
     "prob_pct": 0,
@@ -51620,7 +51595,7 @@
       "40%": 0.98,
       "45%": 0.99,
       "50%": 1.0,
-      "55%": 1.0,
+      "55%": 1.01,
       "60%": 1.01
      },
      "2명": {
@@ -51634,7 +51609,7 @@
       "40%": 0.98,
       "45%": 0.99,
       "50%": 0.99,
-      "55%": 1.0,
+      "55%": 1.01,
       "60%": 1.01
      },
      "5명": {
@@ -51645,11 +51620,11 @@
       "60%": 1.02
      },
      "8명 이상": {
-      "40%": 1.0,
+      "40%": 1.01,
       "45%": 1.01,
       "50%": 1.01,
       "55%": 1.03,
-      "60%": 1.03
+      "60%": 1.04
      }
     },
     "price_eok": {
@@ -51705,10 +51680,10 @@
     ]
    },
    "payback": {
-    "price_manwon": 9979,
+    "price_manwon": 10048,
     "monthly_rent_manwon": 60,
-    "months": 166,
-    "years": 13.9,
+    "months": 167,
+    "years": 14.0,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    },
    "kb": null
@@ -102149,7 +102124,7 @@
    "appr_manwon": 22000,
    "low_manwon": 9011,
    "fails": 4,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 24.58,
    "danji_id": "a0hVmbM",
    "danji_name": "송파파크하비오푸르지오",
@@ -102203,9 +102178,9 @@
      "rep_eok": 1.93
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
     "est_eok": 1.98,
     "range_eok": [
@@ -102255,11 +102230,11 @@
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
-    "40%": 12669,
-    "45%": 12790,
-    "50%": 12908,
-    "55%": 13030,
-    "60%": 13163
+    "40%": 12682,
+    "45%": 12803,
+    "50%": 12921,
+    "55%": 13043,
+    "60%": 13176
    },
    "bid_by_prob_eok": {
     "40%": 1.27,
@@ -102272,20 +102247,20 @@
     {
      "bid_manwon": 12500,
      "bid_eok": 1.25,
-     "prob": 34
+     "prob": 33
     },
     {
      "bid_manwon": 13000,
      "bid_eok": 1.3,
-     "prob": 54
+     "prob": 53
     },
     {
      "bid_manwon": 13500,
      "bid_eok": 1.35,
-     "prob": 71
+     "prob": 70
     }
    ],
-   "p50_ensemble_manwon": 12908,
+   "p50_ensemble_manwon": 12921,
    "p50_ensemble_eok": 1.29,
    "income": {
     "jeonse_manwon": 17600,
@@ -102379,7 +102354,7 @@
     ]
    },
    "payback": {
-    "price_manwon": 12908,
+    "price_manwon": 12921,
     "monthly_rent_manwon": 84,
     "months": 154,
     "years": 12.8,
@@ -102406,7 +102381,7 @@
    "appr_manwon": 19850,
    "low_manwon": 10163,
    "fails": 3,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 23.76,
    "danji_id": "a0hVmbM",
    "danji_name": "송파파크하비오푸르지오",
@@ -102436,7 +102411,7 @@
    ],
    "name": "송파파크하비오푸르지오",
    "case": "2025타경51966",
-   "keyword": "토지거래허가구역,토지별도등기,대항력있는임차인",
+   "keyword": "토지별도등기,대항력있는임차인,토지거래허가구역",
    "pyeong": "13",
    "appr_eok": 1.985,
    "low_eok": 1.016,
@@ -102449,7 +102424,7 @@
     "trade": {
      "eok": 1.9,
      "date": "2026-10-31",
-     "months_ago": 0.8,
+     "months_ago": 0.7,
      "adj_eok": 1.9,
      "trend_since_pct": 0.0
     },
@@ -102460,9 +102435,9 @@
      "rep_eok": 1.88
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
     "est_eok": 1.99,
     "range_eok": [
@@ -102509,15 +102484,15 @@
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
-    "40%": 12143,
-    "45%": 12260,
-    "50%": 12372,
-    "55%": 12489,
-    "60%": 12617
+    "40%": 12122,
+    "45%": 12239,
+    "50%": 12351,
+    "55%": 12468,
+    "60%": 12595
    },
    "bid_by_prob_eok": {
     "40%": 1.21,
-    "45%": 1.23,
+    "45%": 1.22,
     "50%": 1.24,
     "55%": 1.25,
     "60%": 1.26
@@ -102526,20 +102501,20 @@
     {
      "bid_manwon": 12000,
      "bid_eok": 1.2,
-     "prob": 34
+     "prob": 35
     },
     {
      "bid_manwon": 12500,
      "bid_eok": 1.25,
-     "prob": 55
+     "prob": 56
     },
     {
      "bid_manwon": 13000,
      "bid_eok": 1.3,
-     "prob": 72
+     "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 12372,
+   "p50_ensemble_manwon": 12351,
    "p50_ensemble_eok": 1.24,
    "income": {
     "jeonse_manwon": 20000,
@@ -102548,7 +102523,7 @@
     "deposit_assumed_manwon": 1000,
     "rent_conversion_rate": 0.0606,
     "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 9.31
+    "gross_yield_pct_at_p50": 9.32
    },
    "fail": {
     "prob_pct": 0,
@@ -102612,9 +102587,9 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
      "토지별도등기",
-     "대항력있는임차인"
+     "대항력있는임차인",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -102634,7 +102609,7 @@
     ]
    },
    "payback": {
-    "price_manwon": 12372,
+    "price_manwon": 12351,
     "monthly_rent_manwon": 96,
     "months": 129,
     "years": 10.7,
@@ -102661,7 +102636,7 @@
    "appr_manwon": 20700,
    "low_manwon": 20700,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 26.82,
    "danji_id": "a0jcdUq",
    "danji_name": "송파한화오벨리스크",
@@ -102683,20 +102658,20 @@
    ],
    "name": "송파한화오벨리스크",
    "case": "2025타경52408",
-   "keyword": "토지거래허가구역,대항력있는임차인",
+   "keyword": "대항력있는임차인,토지거래허가구역",
    "pyeong": "15",
    "appr_eok": 2.07,
    "low_eok": 2.07,
-   "richgo_sise_eok": 1.891,
-   "model_sise_eok": 1.891,
-   "appr_vs_sise": 1.095,
+   "richgo_sise_eok": 1.896,
+   "model_sise_eok": 1.896,
+   "appr_vs_sise": 1.092,
    "sise": {
-    "richgo_eok": 1.89,
+    "richgo_eok": 1.9,
     "richgo_source": "OFFER",
     "trade": {
      "eok": 1.8,
      "date": "2026-11-06",
-     "months_ago": 0.6,
+     "months_ago": 0.5,
      "adj_eok": 1.8,
      "trend_since_pct": 0.0
     },
@@ -102704,12 +102679,12 @@
      "min_eok": 1.73,
      "max_eok": 2.08,
      "count": null,
-     "rep_eok": 1.89
+     "rep_eok": 1.9
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
     "est_eok": 2.08,
     "range_eok": [
@@ -102722,7 +102697,7 @@
     ],
     "spread_pct": 30.6,
     "low_vs_est_pct": 100,
-    "richgo_vs_est_pct": 5.1,
+    "richgo_vs_est_pct": 5.3,
     "flags": [
      "출처 간 차이 큼",
      "주변 단지 시세가 이 단지보다 +31%"
@@ -102761,47 +102736,42 @@
    "bid_by_prob_manwon": {
     "40%": 20700,
     "45%": 20700,
-    "50%": 20864,
-    "55%": 21061,
-    "60%": 21277
+    "50%": 20700,
+    "55%": 20752,
+    "60%": 20964
    },
    "bid_by_prob_eok": {
     "40%": 2.07,
     "45%": 2.07,
-    "50%": 2.09,
-    "55%": 2.11,
-    "60%": 2.13
+    "50%": 2.07,
+    "55%": 2.08,
+    "60%": 2.1
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 21000,
      "bid_eok": 2.1,
-     "prob": 53
+     "prob": 61
     },
     {
      "bid_manwon": 21500,
      "bid_eok": 2.15,
-     "prob": 65
-    },
-    {
-     "bid_manwon": 22000,
-     "bid_eok": 2.2,
-     "prob": 74
+     "prob": 71
     }
    ],
-   "p50_ensemble_manwon": 20864,
-   "p50_ensemble_eok": 2.09,
+   "p50_ensemble_manwon": 20700,
+   "p50_ensemble_eok": 2.07,
    "income": {
     "jeonse_manwon": 19100,
-    "jeonse_ratio": 1.01,
+    "jeonse_ratio": 1.008,
     "est_monthly_rent_manwon": 91,
     "deposit_assumed_manwon": 1000,
     "rent_conversion_rate": 0.0606,
     "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 5.26
+    "gross_yield_pct_at_p50": 5.3
    },
    "fail": {
-    "prob_pct": 77,
+    "prob_pct": 75,
     "level": "높음",
     "note": "백테스트: 이 회차 유형 평균 유찰률 98.8% · 예측 정확도 98.8%"
    },
@@ -102810,45 +102780,45 @@
      "1명": {
       "40%": 2.07,
       "45%": 2.07,
-      "50%": 2.09,
-      "55%": 2.1,
-      "60%": 2.12
+      "50%": 2.07,
+      "55%": 2.07,
+      "60%": 2.09
      },
      "2명": {
       "40%": 2.07,
       "45%": 2.07,
-      "50%": 2.09,
-      "55%": 2.12,
-      "60%": 2.13
+      "50%": 2.07,
+      "55%": 2.09,
+      "60%": 2.11
      },
      "3명": {
       "40%": 2.07,
-      "45%": 2.08,
-      "50%": 2.08,
-      "55%": 2.11,
-      "60%": 2.12
+      "45%": 2.07,
+      "50%": 2.07,
+      "55%": 2.08,
+      "60%": 2.09
      },
      "5명": {
       "40%": 2.07,
-      "45%": 2.1,
-      "50%": 2.11,
-      "55%": 2.13,
-      "60%": 2.16
+      "45%": 2.07,
+      "50%": 2.08,
+      "55%": 2.11,
+      "60%": 2.13
      },
      "8명 이상": {
-      "40%": 2.12,
-      "45%": 2.13,
-      "50%": 2.14,
-      "55%": 2.17,
-      "60%": 2.19
+      "40%": 2.09,
+      "45%": 2.1,
+      "50%": 2.11,
+      "55%": 2.15,
+      "60%": 2.16
      }
     },
     "price_eok": {
-     "1명": 2.09,
-     "2명": 2.09,
-     "3명": 2.08,
-     "5명": 2.11,
-     "8명 이상": 2.14
+     "1명": 2.07,
+     "2명": 2.07,
+     "3명": 2.07,
+     "5명": 2.08,
+     "8명 이상": 2.11
     },
     "expected_bidders": 1,
     "expected_range": [
@@ -102862,8 +102832,8 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
-     "대항력있는임차인"
+     "대항력있는임차인",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -102897,7 +102867,7 @@
    },
    "tenant": {
     "source": "법원 매각물건명세서",
-    "checked": "2026-11-23",
+    "checked": "2026-11-20",
     "assumed_manwon": 2635,
     "opposing_tenants": 1,
     "unknown_deposit": 0,
@@ -102921,10 +102891,10 @@
     ]
    },
    "payback": {
-    "price_manwon": 20864,
+    "price_manwon": 20700,
     "monthly_rent_manwon": 91,
-    "months": 229,
-    "years": 19.1,
+    "months": 227,
+    "years": 19.0,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    },
    "kb": {
@@ -102948,7 +102918,7 @@
    "appr_manwon": 20000,
    "low_manwon": 16000,
    "fails": 1,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 25.88,
    "danji_id": "a0jcdUq",
    "danji_name": "송파한화오벨리스크",
@@ -102970,7 +102940,7 @@
    ],
    "name": "송파한화오벨리스크",
    "case": "2025타경52580",
-   "keyword": "토지거래허가구역,대항력있는임차인,HUG인수조건변경",
+   "keyword": "대항력있는임차인,토지거래허가구역,HUG인수조건변경",
    "pyeong": "14",
    "appr_eok": 2.0,
    "low_eok": 1.6,
@@ -102984,8 +102954,8 @@
      "eok": 1.7,
      "date": "2026-02-06",
      "months_ago": 9.5,
-     "adj_eok": 1.7,
-     "trend_since_pct": -0.1
+     "adj_eok": 1.68,
+     "trend_since_pct": -1.1
     },
     "offer": {
      "min_eok": 1.8,
@@ -102994,26 +102964,26 @@
      "rep_eok": 1.81
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
     "est_eok": 1.98,
     "range_eok": [
-     1.7,
+     1.68,
      2.27
     ],
     "used": [
      "실거래",
      "주변"
     ],
-    "spread_pct": 33.5,
+    "spread_pct": 35.1,
     "low_vs_est_pct": 81,
-    "richgo_vs_est_pct": 6.6,
+    "richgo_vs_est_pct": 7.6,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
      "출처 간 차이 큼",
-     "주변 단지 시세가 이 단지보다 +34%"
+     "주변 단지 시세가 이 단지보다 +35%"
     ],
     "nearby": {
      "eok": 2.27,
@@ -103043,28 +103013,28 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 33.5
+    "nearby_vs_own_pct": 35.1
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
-    "40%": 17007,
-    "45%": 17171,
-    "50%": 17329,
-    "55%": 17492,
-    "60%": 17671
+    "40%": 16985,
+    "45%": 17148,
+    "50%": 17305,
+    "55%": 17469,
+    "60%": 17647
    },
    "bid_by_prob_eok": {
     "40%": 1.7,
-    "45%": 1.72,
+    "45%": 1.71,
     "50%": 1.73,
     "55%": 1.75,
-    "60%": 1.77
+    "60%": 1.76
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 16500,
      "bid_eok": 1.65,
-     "prob": 26
+     "prob": 27
     },
     {
      "bid_manwon": 17000,
@@ -103074,7 +103044,7 @@
     {
      "bid_manwon": 17500,
      "bid_eok": 1.75,
-     "prob": 55
+     "prob": 56
     },
     {
      "bid_manwon": 18000,
@@ -103082,7 +103052,7 @@
      "prob": 68
     }
    ],
-   "p50_ensemble_manwon": 17329,
+   "p50_ensemble_manwon": 17305,
    "p50_ensemble_eok": 1.73,
    "income": {
     "jeonse_manwon": 19000,
@@ -103091,7 +103061,7 @@
     "deposit_assumed_manwon": 1000,
     "rent_conversion_rate": 0.0606,
     "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 6.29
+    "gross_yield_pct_at_p50": 6.3
    },
    "fail": {
     "prob_pct": 0,
@@ -103109,9 +103079,9 @@
      },
      "2명": {
       "40%": 1.71,
-      "45%": 1.72,
+      "45%": 1.73,
       "50%": 1.74,
-      "55%": 1.76,
+      "55%": 1.77,
       "60%": 1.78
      },
      "3명": {
@@ -103119,11 +103089,11 @@
       "45%": 1.73,
       "50%": 1.74,
       "55%": 1.76,
-      "60%": 1.76
+      "60%": 1.77
      },
      "5명": {
       "40%": 1.73,
-      "45%": 1.74,
+      "45%": 1.75,
       "50%": 1.76,
       "55%": 1.78,
       "60%": 1.8
@@ -103155,8 +103125,8 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
      "대항력있는임차인",
+     "토지거래허가구역",
      "HUG인수조건변경"
     ],
     "summary": {
@@ -103168,7 +103138,7 @@
     },
     "resale": false,
     "decision": "hide",
-    "reason": "보증금 인수 예상 약 4,144만 (법원 명세서 기준)"
+    "reason": "보증금 인수 예상 약 4,165만 (법원 명세서 기준)"
    },
    "court_info": {
     "occupant": "미상",
@@ -103198,11 +103168,11 @@
    "tenant": {
     "source": "법원 매각물건명세서",
     "checked": "2026-11-21",
-    "assumed_manwon": 4144,
+    "assumed_manwon": 4165,
     "opposing_tenants": 1,
     "unknown_deposit": 0,
     "lines": [
-     "대항력 임차인 보증금 20,000만 · 배당요구·확정일자 선순위 → 배당 15,856만"
+     "대항력 임차인 보증금 20,000만 · 배당요구·확정일자 선순위 → 배당 15,835만"
     ],
     "checks": {
      "배당요구": true,
@@ -103217,14 +103187,14 @@
    "safety": {
     "grade": "위험",
     "reasons": [
-     "보증금 인수 예상 약 4,144만 (법원 명세서 기준)"
+     "보증금 인수 예상 약 4,165만 (법원 명세서 기준)"
     ]
    },
    "payback": {
-    "price_manwon": 17329,
+    "price_manwon": 17305,
     "monthly_rent_manwon": 91,
     "months": 190,
-    "years": 15.9,
+    "years": 15.8,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    },
    "kb": {
@@ -103248,7 +103218,7 @@
    "appr_manwon": 17500,
    "low_manwon": 14000,
    "fails": 1,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 17.12,
    "danji_id": "a1YepFC",
    "danji_name": "잠실대명벨리온",
@@ -103278,15 +103248,15 @@
    ],
    "name": "잠실대명벨리온",
    "case": "2026타경50057",
-   "keyword": "토지거래허가구역,대항력있는임차인",
+   "keyword": "대항력있는임차인,토지거래허가구역",
    "pyeong": "12",
    "appr_eok": 1.75,
    "low_eok": 1.4,
-   "richgo_sise_eok": 1.7,
-   "model_sise_eok": 1.7,
-   "appr_vs_sise": 1.03,
+   "richgo_sise_eok": 1.706,
+   "model_sise_eok": 1.706,
+   "appr_vs_sise": 1.026,
    "sise": {
-    "richgo_eok": 1.7,
+    "richgo_eok": 1.71,
     "richgo_source": "OFFER",
     "trade": {
      "eok": 1.65,
@@ -103299,12 +103269,12 @@
      "min_eok": 1.5,
      "max_eok": 2.0,
      "count": null,
-     "rep_eok": 1.7
+     "rep_eok": 1.71
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
     "est_eok": 1.65,
     "range_eok": [
@@ -103316,51 +103286,56 @@
     ],
     "spread_pct": 0.0,
     "low_vs_est_pct": 85,
-    "richgo_vs_est_pct": 3.3,
+    "richgo_vs_est_pct": 3.7,
     "flags": []
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
-    "40%": 14340,
-    "45%": 14478,
-    "50%": 14611,
-    "55%": 14749,
-    "60%": 14900
+    "40%": 14387,
+    "45%": 14525,
+    "50%": 14659,
+    "55%": 14797,
+    "60%": 14949
    },
    "bid_by_prob_eok": {
-    "40%": 1.43,
+    "40%": 1.44,
     "45%": 1.45,
-    "50%": 1.46,
-    "55%": 1.47,
+    "50%": 1.47,
+    "55%": 1.48,
     "60%": 1.49
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 14000,
      "bid_eok": 1.4,
-     "prob": 29
+     "prob": 27
     },
     {
      "bid_manwon": 14500,
      "bid_eok": 1.45,
-     "prob": 46
+     "prob": 44
     },
     {
      "bid_manwon": 15000,
      "bid_eok": 1.5,
-     "prob": 63
+     "prob": 62
+    },
+    {
+     "bid_manwon": 15500,
+     "bid_eok": 1.55,
+     "prob": 75
     }
    ],
-   "p50_ensemble_manwon": 14611,
-   "p50_ensemble_eok": 1.46,
+   "p50_ensemble_manwon": 14659,
+   "p50_ensemble_eok": 1.47,
    "income": {
     "jeonse_manwon": 14000,
-    "jeonse_ratio": 0.824,
+    "jeonse_ratio": 0.82,
     "est_monthly_rent_manwon": 66,
     "deposit_assumed_manwon": 1000,
     "rent_conversion_rate": 0.0606,
     "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 5.39
+    "gross_yield_pct_at_p50": 5.37
    },
    "fail": {
     "prob_pct": 0,
@@ -103370,47 +103345,47 @@
    "by_bidders": {
     "bid_by_prob_eok": {
      "1명": {
-      "40%": 1.42,
-      "45%": 1.43,
-      "50%": 1.45,
-      "55%": 1.46,
-      "60%": 1.47
-     },
-     "2명": {
       "40%": 1.43,
       "45%": 1.44,
-      "50%": 1.46,
-      "55%": 1.48,
-      "60%": 1.49
-     },
-     "3명": {
-      "40%": 1.44,
-      "45%": 1.45,
       "50%": 1.46,
       "55%": 1.47,
       "60%": 1.48
      },
+     "2명": {
+      "40%": 1.44,
+      "45%": 1.45,
+      "50%": 1.47,
+      "55%": 1.49,
+      "60%": 1.5
+     },
+     "3명": {
+      "40%": 1.45,
+      "45%": 1.46,
+      "50%": 1.47,
+      "55%": 1.49,
+      "60%": 1.49
+     },
      "5명": {
-      "40%": 1.46,
-      "45%": 1.48,
-      "50%": 1.49,
-      "55%": 1.5,
-      "60%": 1.52
+      "40%": 1.47,
+      "45%": 1.49,
+      "50%": 1.5,
+      "55%": 1.51,
+      "60%": 1.53
      },
      "8명 이상": {
-      "40%": 1.5,
-      "45%": 1.5,
-      "50%": 1.51,
-      "55%": 1.53,
-      "60%": 1.54
+      "40%": 1.51,
+      "45%": 1.51,
+      "50%": 1.52,
+      "55%": 1.54,
+      "60%": 1.55
      }
     },
     "price_eok": {
-     "1명": 1.45,
-     "2명": 1.46,
-     "3명": 1.46,
-     "5명": 1.49,
-     "8명 이상": 1.51
+     "1명": 1.46,
+     "2명": 1.47,
+     "3명": 1.47,
+     "5명": 1.5,
+     "8명 이상": 1.52
     },
     "expected_bidders": 2,
     "expected_range": [
@@ -103424,8 +103399,8 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
-     "대항력있는임차인"
+     "대항력있는임차인",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -103436,7 +103411,7 @@
     },
     "resale": false,
     "decision": "hide",
-    "reason": "보증금 인수 예상 약 4,677만 (법원 명세서 기준)"
+    "reason": "보증금 인수 예상 약 4,633만 (법원 명세서 기준)"
    },
    "court_info": {
     "occupant": "미상",
@@ -103455,11 +103430,11 @@
    "tenant": {
     "source": "법원 매각물건명세서",
     "checked": "2026-11-22",
-    "assumed_manwon": 4677,
+    "assumed_manwon": 4633,
     "opposing_tenants": 1,
     "unknown_deposit": 0,
     "lines": [
-     "대항력 임차인 보증금 18,000만 · 배당요구·확정일자 선순위 → 배당 13,323만"
+     "대항력 임차인 보증금 18,000만 · 배당요구·확정일자 선순위 → 배당 13,367만"
     ],
     "checks": {
      "배당요구": true,
@@ -103474,14 +103449,14 @@
    "safety": {
     "grade": "위험",
     "reasons": [
-     "보증금 인수 예상 약 4,677만 (법원 명세서 기준)"
+     "보증금 인수 예상 약 4,633만 (법원 명세서 기준)"
     ]
    },
    "payback": {
-    "price_manwon": 14611,
+    "price_manwon": 14659,
     "monthly_rent_manwon": 66,
-    "months": 221,
-    "years": 18.4,
+    "months": 222,
+    "years": 18.5,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    },
    "kb": {
@@ -103505,7 +103480,7 @@
    "appr_manwon": 24600,
    "low_manwon": 24600,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 26.15,
    "danji_id": "a3dypWE",
    "danji_name": "엠스테이트",
@@ -103527,7 +103502,7 @@
    ],
    "name": "엠스테이트",
    "case": "2026타경50159",
-   "keyword": "토지거래허가구역,대항력있는임차인",
+   "keyword": "대항력있는임차인,토지거래허가구역",
    "pyeong": "15",
    "appr_eok": 2.46,
    "low_eok": 2.46,
@@ -103551,9 +103526,9 @@
      "rep_eok": 2.25
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
     "est_eok": 2.27,
     "range_eok": [
@@ -103602,36 +103577,36 @@
    "bid_by_prob_manwon": {
     "40%": 24600,
     "45%": 24600,
-    "50%": 24813,
-    "55%": 25047,
-    "60%": 25303
+    "50%": 24711,
+    "55%": 24944,
+    "60%": 25200
    },
    "bid_by_prob_eok": {
     "40%": 2.46,
     "45%": 2.46,
-    "50%": 2.48,
-    "55%": 2.5,
-    "60%": 2.53
+    "50%": 2.47,
+    "55%": 2.49,
+    "60%": 2.52
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 25000,
      "bid_eok": 2.5,
-     "prob": 54
+     "prob": 56
     },
     {
      "bid_manwon": 25500,
      "bid_eok": 2.55,
-     "prob": 63
+     "prob": 65
     },
     {
      "bid_manwon": 26000,
      "bid_eok": 2.6,
-     "prob": 71
+     "prob": 73
     }
    ],
-   "p50_ensemble_manwon": 24813,
-   "p50_ensemble_eok": 2.48,
+   "p50_ensemble_manwon": 24711,
+   "p50_ensemble_eok": 2.47,
    "income": {
     "jeonse_manwon": 24000,
     "jeonse_ratio": 1.066,
@@ -103639,10 +103614,10 @@
     "deposit_assumed_manwon": 1000,
     "rent_conversion_rate": 0.0606,
     "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 5.62
+    "gross_yield_pct_at_p50": 5.64
    },
    "fail": {
-    "prob_pct": 82,
+    "prob_pct": 81,
     "level": "높음",
     "note": "백테스트: 이 회차 유형 평균 유찰률 98.8% · 예측 정확도 98.8%"
    },
@@ -103703,8 +103678,8 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
-     "대항력있는임차인"
+     "대항력있는임차인",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -103734,7 +103709,7 @@
    },
    "tenant": {
     "source": "법원 매각물건명세서",
-    "checked": "2026-11-23",
+    "checked": "2026-11-20",
     "assumed_manwon": 0,
     "opposing_tenants": 1,
     "unknown_deposit": 0,
@@ -103759,9 +103734,9 @@
     ]
    },
    "payback": {
-    "price_manwon": 24813,
+    "price_manwon": 24711,
     "monthly_rent_manwon": 116,
-    "months": 214,
+    "months": 213,
     "years": 17.8,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    },
@@ -103786,7 +103761,7 @@
    "appr_manwon": 21400,
    "low_manwon": 21400,
    "fails": 0,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 25.74,
    "danji_id": "a0hVmbM",
    "danji_name": "송파파크하비오푸르지오",
@@ -103816,7 +103791,7 @@
    ],
    "name": "송파파크하비오푸르지오",
    "case": "2026타경50194",
-   "keyword": "토지거래허가구역,대항력있는임차인",
+   "keyword": "대항력있는임차인,토지거래허가구역",
    "pyeong": "14",
    "appr_eok": 2.14,
    "low_eok": 2.14,
@@ -103840,9 +103815,9 @@
      "rep_eok": 1.93
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
     "est_eok": 2.02,
     "range_eok": [
@@ -103895,8 +103870,8 @@
     "40%": 21400,
     "45%": 21400,
     "50%": 21400,
-    "55%": 21476,
-    "60%": 21696
+    "55%": 21472,
+    "60%": 21692
    },
    "bid_by_prob_eok": {
     "40%": 2.14,
@@ -103934,7 +103909,7 @@
     "gross_yield_pct_at_p50": 4.7
    },
    "fail": {
-    "prob_pct": 83,
+    "prob_pct": 81,
     "level": "높음",
     "note": "백테스트: 이 회차 유형 평균 유찰률 98.8% · 예측 정확도 98.8%"
    },
@@ -103969,7 +103944,7 @@
       "60%": 2.18
      },
      "8명 이상": {
-      "40%": 2.15,
+      "40%": 2.14,
       "45%": 2.15,
       "50%": 2.16,
       "55%": 2.2,
@@ -103995,8 +103970,8 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
-     "대항력있는임차인"
+     "대항력있는임차인",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -104006,14 +103981,14 @@
      "base_date": "2026-02-09"
     },
     "resale": false,
-    "decision": "hide",
-    "reason": "보증금 인수 예상 약 970만 (법원 명세서 기준)"
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
    },
    "court_info": {
     "occupant": "미상",
     "closed_absent": true,
     "lessee_count": 0,
-    "spec_published": true,
+    "spec_published": false,
     "withdraw_signal": [
      {
       "label": "변경",
@@ -104034,29 +104009,10 @@
      }
     ]
    },
-   "tenant": {
-    "source": "법원 매각물건명세서",
-    "checked": "2026-11-23",
-    "assumed_manwon": 970,
-    "opposing_tenants": 1,
-    "unknown_deposit": 0,
-    "lines": [
-     "대항력 임차인 보증금 21,000만 · 배당요구·확정일자 선순위 → 배당 20,030만"
-    ],
-    "checks": {
-     "배당요구": true,
-     "확정일자": true,
-     "순위": true,
-     "재원": false,
-     "전입유지": null
-    },
-    "flags": [],
-    "caution": null
-   },
    "safety": {
-    "grade": "위험",
+    "grade": "주의",
     "reasons": [
-     "보증금 인수 예상 약 970만 (법원 명세서 기준)"
+     "대항력 임차인: 키워드엔 있음·요약엔 없음"
     ]
    },
    "payback": {
@@ -104087,7 +104043,7 @@
    "appr_manwon": 23800,
    "low_manwon": 15232,
    "fails": 2,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 29.96,
    "danji_id": "a0jcdUq",
    "danji_name": "송파한화오벨리스크",
@@ -104109,7 +104065,7 @@
    ],
    "name": "송파한화오벨리스크",
    "case": "2025타경52119",
-   "keyword": "토지거래허가구역,토지별도등기,대항력있는임차인",
+   "keyword": "토지별도등기,대항력있는임차인,토지거래허가구역",
    "pyeong": "16",
    "appr_eok": 2.38,
    "low_eok": 1.523,
@@ -104122,9 +104078,9 @@
     "trade": {
      "eok": 2.38,
      "date": "2026-05-07",
-     "months_ago": 6.6,
-     "adj_eok": 2.46,
-     "trend_since_pct": 3.5
+     "months_ago": 6.5,
+     "adj_eok": 2.44,
+     "trend_since_pct": 2.5
     },
     "offer": {
      "min_eok": 2.02,
@@ -104133,25 +104089,25 @@
      "rep_eok": 2.08
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     },
-    "est_eok": 2.62,
+    "est_eok": 2.61,
     "range_eok": [
-     2.46,
+     2.44,
      2.78
     ],
     "used": [
      "실거래",
      "주변"
     ],
-    "spread_pct": 13.0,
+    "spread_pct": 13.9,
     "low_vs_est_pct": 58,
-    "richgo_vs_est_pct": -15.8,
+    "richgo_vs_est_pct": -15.0,
     "flags": [
      "최근 6개월 실거래 없음 (거래 적음)",
-     "주변 단지 시세가 이 단지보다 +13%"
+     "주변 단지 시세가 이 단지보다 +14%"
     ],
     "nearby": {
      "eok": 2.78,
@@ -104181,47 +104137,47 @@
       }
      ]
     },
-    "nearby_vs_own_pct": 13.0
+    "nearby_vs_own_pct": 13.9
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
-    "40%": 17560,
-    "45%": 17729,
-    "50%": 17892,
-    "55%": 18060,
-    "60%": 18245
+    "40%": 17515,
+    "45%": 17683,
+    "50%": 17846,
+    "55%": 18014,
+    "60%": 18198
    },
    "bid_by_prob_eok": {
-    "40%": 1.76,
+    "40%": 1.75,
     "45%": 1.77,
-    "50%": 1.79,
-    "55%": 1.81,
+    "50%": 1.78,
+    "55%": 1.8,
     "60%": 1.82
    },
    "prob_by_bid_5m": [
     {
      "bid_manwon": 17000,
      "bid_eok": 1.7,
-     "prob": 25
+     "prob": 26
     },
     {
      "bid_manwon": 17500,
      "bid_eok": 1.75,
-     "prob": 38
+     "prob": 40
     },
     {
      "bid_manwon": 18000,
      "bid_eok": 1.8,
-     "prob": 53
+     "prob": 55
     },
     {
      "bid_manwon": 18500,
      "bid_eok": 1.85,
-     "prob": 66
+     "prob": 67
     }
    ],
-   "p50_ensemble_manwon": 17892,
-   "p50_ensemble_eok": 1.79,
+   "p50_ensemble_manwon": 17846,
+   "p50_ensemble_eok": 1.78,
    "income": {
     "jeonse_manwon": 24000,
     "jeonse_ratio": 1.157,
@@ -104229,7 +104185,7 @@
     "deposit_assumed_manwon": 1000,
     "rent_conversion_rate": 0.0606,
     "rent_basis": "해당 평형 전세 시세",
-    "gross_yield_pct_at_p50": 7.79
+    "gross_yield_pct_at_p50": 7.81
    },
    "fail": {
     "prob_pct": 0,
@@ -104293,9 +104249,9 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
      "토지별도등기",
-     "대항력있는임차인"
+     "대항력있는임차인",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -104315,10 +104271,10 @@
     ]
    },
    "payback": {
-    "price_manwon": 17892,
+    "price_manwon": 17846,
     "monthly_rent_manwon": 116,
     "months": 154,
-    "years": 12.9,
+    "years": 12.8,
     "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
    },
    "kb": {
@@ -104342,7 +104298,7 @@
    "appr_manwon": 16000,
    "low_manwon": 8192,
    "fails": 3,
-   "bidding_date": "",
+   "bidding_date": "2026-11-23",
    "area": 15.67,
    "danji_id": "a8KbQww",
    "danji_name": "아주리센센트럴파크",
@@ -104372,7 +104328,7 @@
    ],
    "name": "아주리센센트럴파크",
    "case": "2025타경51933",
-   "keyword": "토지거래허가구역,대항력있는임차인",
+   "keyword": "대항력있는임차인,토지거래허가구역",
    "pyeong": "8",
    "appr_eok": 1.6,
    "low_eok": 0.819,
@@ -104389,15 +104345,15 @@
      "rep_eok": 1.55
     },
     "trend": {
-     "3m_pct": -0.7,
-     "6m_pct": 4.4,
-     "12m_pct": 6.1
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
     }
    },
    "model": "오피스텔 랜덤포레스트+부스팅",
    "bid_by_prob_manwon": {
     "40%": 9766,
-    "45%": 9860,
+    "45%": 9859,
     "50%": 9950,
     "55%": 10044,
     "60%": 10147
@@ -104449,42 +104405,42 @@
       "45%": 0.99,
       "50%": 1.0,
       "55%": 1.01,
-      "60%": 1.01
+      "60%": 1.02
      },
      "2명": {
       "40%": 0.98,
       "45%": 0.99,
       "50%": 1.0,
-      "55%": 1.01,
+      "55%": 1.02,
       "60%": 1.02
      },
      "3명": {
       "40%": 0.99,
-      "45%": 0.99,
+      "45%": 1.0,
       "50%": 1.0,
       "55%": 1.01,
-      "60%": 1.01
+      "60%": 1.02
      },
      "5명": {
       "40%": 0.99,
       "45%": 1.0,
-      "50%": 1.0,
-      "55%": 1.01,
+      "50%": 1.01,
+      "55%": 1.02,
       "60%": 1.03
      },
      "8명 이상": {
-      "40%": 1.01,
+      "40%": 1.02,
       "45%": 1.02,
       "50%": 1.02,
       "55%": 1.04,
-      "60%": 1.04
+      "60%": 1.05
      }
     },
     "price_eok": {
      "1명": 1.0,
      "2명": 1.0,
      "3명": 1.0,
-     "5명": 1.0,
+     "5명": 1.01,
      "8명 이상": 1.02
     },
     "expected_bidders": 3,
@@ -104499,8 +104455,8 @@
    "warnings": [],
    "risk": {
     "keywords": [
-     "토지거래허가구역",
-     "대항력있는임차인"
+     "대항력있는임차인",
+     "토지거래허가구역"
     ],
     "summary": {
      "registry": true,
@@ -126918,6 +126874,2526 @@
     "date": "2026-11-20",
     "basis": "현재"
    }
+  },
+  "2026타경50101[1]": {
+   "key": "2026타경50101[1]",
+   "auction_id": "C42BLWEB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 둔촌동 135-1 201동 10층1011호",
+   "appr_manwon": 100000,
+   "low_manwon": 80000,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 79.99,
+   "danji_id": "a5NIkDS",
+   "danji_name": "현대3차",
+   "name": "현대3차",
+   "case": "2026타경50101",
+   "keyword": "토지거래허가구역",
+   "pyeong": "27",
+   "appr_eok": 10.0,
+   "low_eok": 8.0,
+   "richgo_sise_eok": 11.975,
+   "model_sise_eok": 11.617,
+   "appr_vs_sise": 0.861,
+   "m_sise": {
+    "mkt": 11.617,
+    "richgo": 11.975,
+    "no_trade": false,
+    "n12": 4,
+    "w": 0.255,
+    "floor_bin": "고층",
+    "fprem": 1.004,
+    "richgo_floor": 12.023,
+    "trade_w": 10.427,
+    "neff": 0.79,
+    "disp": 0.041,
+    "last_trade": {
+     "date": "2026-06-29",
+     "price": 1050000000
+    }
+   },
+   "no_trade_12m": false,
+   "sise": {
+    "richgo_eok": 11.98,
+    "trade": {
+     "eok": 10.5,
+     "date": "2026-06-29",
+     "months_ago": 4.8,
+     "adj_eok": 10.59,
+     "trend_since_pct": 0.8
+    },
+    "trend": {
+     "3m_pct": 0.4,
+     "6m_pct": 13.2,
+     "12m_pct": 18.0
+    },
+    "est_eok": 11.24,
+    "range_eok": [
+     10.59,
+     11.98
+    ],
+    "used": [
+     "리치고",
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 13.1,
+    "low_vs_est_pct": 71,
+    "richgo_vs_est_pct": 6.1,
+    "flags": [
+     "리치고 시세가 종합보다 +6%"
+    ],
+    "nearby": {
+     "eok": 11.24,
+     "ratio": 0.9956,
+     "n_danji": 9,
+     "basis": "둔촌동 연식 ±10년",
+     "per_pyeong_manwon": 4261,
+     "self_per_pyeong_manwon": 4280,
+     "price_date": "2026.11.16",
+     "detail": [
+      {
+       "name": "현대2차",
+       "age": 39,
+       "per_pyeong": 4179
+      },
+      {
+       "name": "프라자",
+       "age": 43,
+       "per_pyeong": 4441
+      },
+      {
+       "name": "동아(94-16)",
+       "age": 35,
+       "per_pyeong": 4046
+      },
+      {
+       "name": "라이프",
+       "age": 34,
+       "per_pyeong": 4261
+      },
+      {
+       "name": "성원",
+       "age": 32,
+       "per_pyeong": 3201
+      }
+     ]
+    },
+    "nearby_vs_own_pct": -0.4,
+    "weighted": {
+     "eok": 10.74,
+     "cap_by_offer": false,
+     "floor": 10,
+     "parts": [
+      {
+       "key": "trade3",
+       "eok": 10.59,
+       "weight": 0.6,
+       "note": "3개월 거래 없음 → 2026-06 실거래(추세 보정)"
+      },
+      {
+       "key": "floor",
+       "eok": 10.92,
+       "weight": 0.2,
+       "note": "층 보정 6개월 실거래 1건 (물건 10층)"
+      },
+      {
+       "key": "appr",
+       "eok": 11.8,
+       "weight": 0.05,
+       "note": "감정가 × 1년 시세 변동 +18.0%"
+      }
+     ]
+    }
+   },
+   "model": "앙상블(운영+랜덤포레스트·LightGBM 8개)",
+   "jeonse_ratio": 0.426,
+   "sgg_adj_pct": 1.0,
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 8.88,
+      "45%": 8.95,
+      "50%": 9.01,
+      "55%": 9.07,
+      "60%": 9.13
+     },
+     "2명": {
+      "40%": 9.25,
+      "45%": 9.29,
+      "50%": 9.33,
+      "55%": 9.36,
+      "60%": 9.4
+     },
+     "3명": {
+      "40%": 9.52,
+      "45%": 9.58,
+      "50%": 9.64,
+      "55%": 9.7,
+      "60%": 9.76
+     },
+     "5명": {
+      "40%": 9.85,
+      "45%": 9.92,
+      "50%": 9.97,
+      "55%": 10.03,
+      "60%": 10.08
+     },
+     "8명": {
+      "40%": 10.27,
+      "45%": 10.33,
+      "50%": 10.38,
+      "55%": 10.43,
+      "60%": 10.49
+     },
+     "13명": {
+      "40%": 10.64,
+      "45%": 10.7,
+      "50%": 10.76,
+      "55%": 10.82,
+      "60%": 10.88
+     }
+    },
+    "price_eok": {
+     "1명": 9.15,
+     "2명": 9.39,
+     "3명": 9.72,
+     "5명": 10.05,
+     "8명": 10.39,
+     "13명": 10.63
+    },
+    "expected_bidders": 9,
+    "expected_range": [
+     5,
+     12
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 3.76%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "gap_rule": null,
+   "fail": {
+    "prob_pct": 1,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
+   },
+   "households": 160,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 106765,
+     "45%": 107561,
+     "50%": 108384,
+     "55%": 109238,
+     "60%": 110115
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 103562,
+    "45%": 104335,
+    "50%": 105132,
+    "55%": 105961,
+    "60%": 106812
+   },
+   "bid_by_prob_eok": {
+    "40%": 10.36,
+    "45%": 10.43,
+    "50%": 10.51,
+    "55%": 10.6,
+    "60%": 10.68
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 101500,
+     "bid_eok": 10.15,
+     "prob": 27
+    },
+    {
+     "bid_manwon": 102000,
+     "bid_eok": 10.2,
+     "prob": 30
+    },
+    {
+     "bid_manwon": 102500,
+     "bid_eok": 10.25,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 103000,
+     "bid_eok": 10.3,
+     "prob": 36
+    },
+    {
+     "bid_manwon": 103500,
+     "bid_eok": 10.35,
+     "prob": 40
+    },
+    {
+     "bid_manwon": 104000,
+     "bid_eok": 10.4,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 104500,
+     "bid_eok": 10.45,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 105000,
+     "bid_eok": 10.5,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 105500,
+     "bid_eok": 10.55,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 106000,
+     "bid_eok": 10.6,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 106500,
+     "bid_eok": 10.65,
+     "prob": 58
+    },
+    {
+     "bid_manwon": 107000,
+     "bid_eok": 10.7,
+     "prob": 61
+    },
+    {
+     "bid_manwon": 107500,
+     "bid_eok": 10.75,
+     "prob": 64
+    },
+    {
+     "bid_manwon": 108000,
+     "bid_eok": 10.8,
+     "prob": 67
+    },
+    {
+     "bid_manwon": 108500,
+     "bid_eok": 10.85,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 109000,
+     "bid_eok": 10.9,
+     "prob": 72
+    },
+    {
+     "bid_manwon": 109500,
+     "bid_eok": 10.95,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 105132,
+   "p50_ensemble_eok": 10.51,
+   "model_error_note": "평균 오차 약 5.15% (최근 12개월 롤링)",
+   "warnings": [],
+   "notes": [
+    "소규모 단지(160세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "within3_pct": 28,
+   "precise": false,
+   "acc": {
+    "shift_pct": 1.82,
+    "floor_applied": false,
+    "members": {
+     "rf_X_leaf3": -0.0928,
+     "rf_X_d730": -0.1014,
+     "rf_S4X": -0.0983,
+     "rf_X_leaf8": -0.0949,
+     "lgb_S4X_l1": -0.0602,
+     "rf_X_mae": -0.0927,
+     "rf_S4sise": -0.1015,
+     "lgb_X_dart": -0.0796,
+     "op": -0.1104
+    },
+    "within3_th": 0.5402
+   },
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2021-05-18"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": "",
+    "tenant_cleared": true
+   },
+   "court": "서울동부지방법원",
+   "category": "아파트",
+   "station": {
+    "name": "중앙보훈병원",
+    "distance_m": 362,
+    "walk_min": 6,
+    "lines": [
+     "9호선"
+    ]
+   },
+   "stations": [
+    {
+     "name": "중앙보훈병원",
+     "distance_m": 362,
+     "walk_min": 6,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "court_info": {
+    "occupant": "채무자(소유자)점유",
+    "closed_absent": true,
+    "lessee_count": 0,
+    "spec_published": true,
+    "withdraw_signal": [],
+    "notes": [
+     {
+      "label": "세금 교부청구",
+      "date": "2026-04-07",
+      "text": "교부권자 국(OOOOO) 교부청구 제출"
+     }
+    ]
+   },
+   "tenant": {
+    "source": "법원 매각물건명세서",
+    "checked": "2026-11-22",
+    "assumed_manwon": 0,
+    "opposing_tenants": 0,
+    "unknown_deposit": 0,
+    "lines": [
+     "법원 명세서상 대항력 임차인 없음"
+    ],
+    "checks": null,
+    "flags": [],
+    "caution": null
+   },
+   "safety": {
+    "grade": "안전",
+    "reasons": [
+     "법원 명세서 기준 인수 금액 0원",
+     "세금 교부청구 있음"
+    ]
+   },
+   "payback": null,
+   "kb": {
+    "kb_id": 330,
+    "kb_name": "현대(3차)",
+    "kb_area": 79.99,
+    "manwon": 102500,
+    "eok": 10.25,
+    "low": 97500,
+    "high": 107500,
+    "date": "2026-11-20",
+    "basis": "현재"
+   }
+  },
+  "2025타경52944[1]": {
+   "key": "2025타경52944[1]",
+   "auction_id": "C32ZBXIJ",
+   "region": "경기 성남시 중원구",
+   "address": "경기도 성남시 중원구 하대원동 115-3 성원초원아파트 101동 4층402호",
+   "appr_manwon": 62600,
+   "low_manwon": 43820,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 84.97,
+   "danji_id": "a6ATCKQ",
+   "danji_name": "성원초원",
+   "name": "성원초원",
+   "case": "2025타경52944",
+   "keyword": "토지거래허가구역",
+   "pyeong": "32",
+   "appr_eok": 6.26,
+   "low_eok": 4.382,
+   "richgo_sise_eok": 6.939,
+   "model_sise_eok": 6.883,
+   "appr_vs_sise": 0.909,
+   "m_sise": {
+    "mkt": 6.883,
+    "richgo": 6.939,
+    "no_trade": false,
+    "n12": 3,
+    "w": 0.3,
+    "floor_bin": "중층",
+    "fprem": 1.0,
+    "richgo_floor": 6.939,
+    "trade_w": 6.752,
+    "neff": 1.26,
+    "disp": 0.089,
+    "last_trade": {
+     "date": "2026-09-11",
+     "price": 730000000
+    }
+   },
+   "no_trade_12m": false,
+   "sise": {
+    "richgo_eok": 6.94,
+    "trade": {
+     "eok": 7.3,
+     "date": "2026-09-11",
+     "months_ago": 2.4,
+     "adj_eok": 7.37,
+     "trend_since_pct": 1.0
+    },
+    "offer": {
+     "min_eok": 7.0,
+     "max_eok": 7.5,
+     "count": 3,
+     "rep_eok": 7.17
+    },
+    "trend": {
+     "3m_pct": 3.6,
+     "6m_pct": 10.9,
+     "12m_pct": 26.5
+    },
+    "est_eok": 6.94,
+    "range_eok": [
+     6.63,
+     7.37
+    ],
+    "used": [
+     "리치고",
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 11.2,
+    "low_vs_est_pct": 63,
+    "richgo_vs_est_pct": -3.0,
+    "flags": [],
+    "nearby": {
+     "eok": 6.63,
+     "ratio": 0.9271,
+     "n_danji": 6,
+     "basis": "하대원동 연식 ±10년",
+     "per_pyeong_manwon": 1998,
+     "self_per_pyeong_manwon": 2155,
+     "price_date": "2026.11.16",
+     "detail": [
+      {
+       "name": "하대원현대",
+       "age": 32,
+       "per_pyeong": 2293
+      },
+      {
+       "name": "태연스카이빌",
+       "age": 25,
+       "per_pyeong": 2023
+      },
+      {
+       "name": "아튼빌",
+       "age": 24,
+       "per_pyeong": 3050
+      },
+      {
+       "name": "상일",
+       "age": 40,
+       "per_pyeong": 1767
+      },
+      {
+       "name": "대원",
+       "age": 41,
+       "per_pyeong": 1748
+      }
+     ]
+    },
+    "nearby_vs_own_pct": -7.3,
+    "weighted": {
+     "eok": 7.0,
+     "cap_by_offer": true,
+     "floor": 4,
+     "parts": [
+      {
+       "key": "trade3",
+       "eok": 7.3,
+       "weight": 0.6,
+       "note": "최근 3개월 실거래 1건"
+      },
+      {
+       "key": "floor",
+       "eok": 6.79,
+       "weight": 0.2,
+       "note": "층 보정 6개월 실거래 2건 (물건 4층)"
+      },
+      {
+       "key": "offer",
+       "eok": 7.0,
+       "weight": 0.15,
+       "note": "매물 최저 호가 (매물 3건)"
+      },
+      {
+       "key": "appr",
+       "eok": 7.92,
+       "weight": 0.05,
+       "note": "감정가 × 1년 시세 변동 +26.5%"
+      }
+     ]
+    }
+   },
+   "model": "앙상블(운영+랜덤포레스트·LightGBM 8개)",
+   "jeonse_ratio": 0.591,
+   "sgg_adj_pct": 0.7,
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 5.34,
+      "45%": 5.38,
+      "50%": 5.42,
+      "55%": 5.45,
+      "60%": 5.49
+     },
+     "2명": {
+      "40%": 5.51,
+      "45%": 5.53,
+      "50%": 5.55,
+      "55%": 5.57,
+      "60%": 5.59
+     },
+     "3명": {
+      "40%": 5.66,
+      "45%": 5.7,
+      "50%": 5.73,
+      "55%": 5.77,
+      "60%": 5.8
+     },
+     "5명": {
+      "40%": 5.84,
+      "45%": 5.88,
+      "50%": 5.91,
+      "55%": 5.95,
+      "60%": 5.98
+     },
+     "8명": {
+      "40%": 6.08,
+      "45%": 6.11,
+      "50%": 6.14,
+      "55%": 6.17,
+      "60%": 6.21
+     },
+     "13명": {
+      "40%": 6.26,
+      "45%": 6.3,
+      "50%": 6.33,
+      "55%": 6.37,
+      "60%": 6.4
+     }
+    },
+    "price_eok": {
+     "1명": 5.5,
+     "2명": 5.59,
+     "3명": 5.78,
+     "5명": 5.96,
+     "8명": 6.15,
+     "13명": 6.25
+    },
+    "expected_bidders": 11,
+    "expected_range": [
+     7,
+     12
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 3.76%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "gap_rule": null,
+   "fail": {
+    "prob_pct": 0,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 7.6% · 예측 정확도 91.4%"
+   },
+   "households": 281,
+   "small_danji_adj": {
+    "applied": true,
+    "adj_pct": -3.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 61508,
+     "45%": 61967,
+     "50%": 62441,
+     "55%": 62933,
+     "60%": 63438
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 59662,
+    "45%": 60108,
+    "50%": 60567,
+    "55%": 61045,
+    "60%": 61535
+   },
+   "bid_by_prob_eok": {
+    "40%": 5.97,
+    "45%": 6.01,
+    "50%": 6.06,
+    "55%": 6.1,
+    "60%": 6.15
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 58500,
+     "bid_eok": 5.85,
+     "prob": 28
+    },
+    {
+     "bid_manwon": 59000,
+     "bid_eok": 5.9,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 59500,
+     "bid_eok": 5.95,
+     "prob": 38
+    },
+    {
+     "bid_manwon": 60000,
+     "bid_eok": 6.0,
+     "prob": 44
+    },
+    {
+     "bid_manwon": 60500,
+     "bid_eok": 6.05,
+     "prob": 49
+    },
+    {
+     "bid_manwon": 61000,
+     "bid_eok": 6.1,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 61500,
+     "bid_eok": 6.15,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 62000,
+     "bid_eok": 6.2,
+     "prob": 65
+    },
+    {
+     "bid_manwon": 62500,
+     "bid_eok": 6.25,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 63000,
+     "bid_eok": 6.3,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 60567,
+   "p50_ensemble_eok": 6.06,
+   "model_error_note": "평균 오차 약 5.15% (최근 12개월 롤링)",
+   "warnings": [],
+   "notes": [
+    "소규모 단지(281세대) — 모델 가격 -3% 보정 적용. 시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인"
+   ],
+   "within3_pct": 28,
+   "precise": false,
+   "acc": {
+    "shift_pct": 4.44,
+    "floor_applied": false,
+    "members": {
+     "rf_X_leaf3": -0.1121,
+     "rf_X_d730": -0.1186,
+     "rf_S4X": -0.1169,
+     "rf_X_leaf8": -0.1279,
+     "lgb_S4X_l1": -0.1187,
+     "rf_X_mae": -0.1094,
+     "rf_S4sise": -0.1096,
+     "lgb_X_dart": -0.1075,
+     "op": -0.1639
+    },
+    "within3_th": 0.5402
+   },
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2021-10-15"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": ""
+   },
+   "court": "성남지원",
+   "category": "아파트",
+   "court_info": {
+    "occupant": "임차인(별지)점유",
+    "closed_absent": true,
+    "lessee_count": 1,
+    "spec_published": false,
+    "withdraw_signal": [
+     {
+      "label": "변경",
+      "date": "2026-07-15",
+      "text": "근저당권자 광OOOOOOOOOO OOO OOOOOOOOOOOOO 채권자및근저당권자변경신고서 제출"
+     }
+    ],
+    "notes": []
+   },
+   "safety": {
+    "grade": "보통",
+    "reasons": [
+     "리치고 기준 권리 문제 없음 · 법원 명세서 미확인"
+    ]
+   },
+   "payback": null,
+   "kb": {
+    "kb_id": 3400,
+    "kb_name": "성원초원",
+    "kb_area": 84.97,
+    "manwon": 68500,
+    "eok": 6.85,
+    "low": 65000,
+    "high": 71500,
+    "date": "2026-11-20",
+    "basis": "현재"
+   }
+  },
+  "2025타경53276[1]": {
+   "key": "2025타경53276[1]",
+   "auction_id": "C55IVWZQ",
+   "region": "경기 성남시 중원구",
+   "address": "경기도 성남시 중원구 은행동 550 121동 4층403호",
+   "appr_manwon": 79200,
+   "low_manwon": 79200,
+   "fails": 0,
+   "bidding_date": "2026-11-23",
+   "area": 83.82,
+   "danji_id": "a5SCpxE",
+   "danji_name": "은행주공1",
+   "name": "은행주공1",
+   "case": "2025타경53276",
+   "keyword": "토지거래허가구역",
+   "pyeong": "31",
+   "appr_eok": 7.92,
+   "low_eok": 7.92,
+   "richgo_sise_eok": 9.752,
+   "model_sise_eok": 9.29,
+   "appr_vs_sise": 0.853,
+   "m_sise": {
+    "mkt": 9.29,
+    "richgo": 9.752,
+    "no_trade": false,
+    "n12": 12,
+    "w": 0.477,
+    "floor_bin": "저층",
+    "fprem": 0.99,
+    "richgo_floor": 9.655,
+    "trade_w": 8.891,
+    "neff": 2.52,
+    "disp": 0.058,
+    "last_trade": {
+     "date": "2026-08-01",
+     "price": 965000000
+    }
+   },
+   "no_trade_12m": false,
+   "sise": {
+    "richgo_eok": 9.75,
+    "trade": {
+     "eok": 9.65,
+     "date": "2026-08-01",
+     "months_ago": 3.7,
+     "adj_eok": 9.85,
+     "trend_since_pct": 2.1
+    },
+    "offer": {
+     "min_eok": 11.0,
+     "max_eok": 11.0,
+     "count": 1,
+     "rep_eok": 11.0
+    },
+    "trend": {
+     "3m_pct": 3.6,
+     "6m_pct": 10.9,
+     "12m_pct": 26.5
+    },
+    "est_eok": 9.75,
+    "range_eok": [
+     9.57,
+     9.85
+    ],
+    "used": [
+     "리치고",
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 2.9,
+    "low_vs_est_pct": 81,
+    "richgo_vs_est_pct": -0.5,
+    "flags": [],
+    "nearby": {
+     "eok": 9.57,
+     "ratio": 0.9762,
+     "n_danji": 3,
+     "basis": "은행동 동 전체",
+     "per_pyeong_manwon": 3247,
+     "self_per_pyeong_manwon": 3326,
+     "price_date": "2026.11.16",
+     "detail": [
+      {
+       "name": "은행주공2",
+       "age": 40,
+       "per_pyeong": 4514
+      },
+      {
+       "name": "은행현대",
+       "age": 32,
+       "per_pyeong": 3247
+      },
+      {
+       "name": "두산위브",
+       "age": 24,
+       "per_pyeong": 3165
+      }
+     ]
+    },
+    "nearby_vs_own_pct": -2.3,
+    "weighted": {
+     "eok": 10.01,
+     "cap_by_offer": false,
+     "floor": 4,
+     "parts": [
+      {
+       "key": "trade3",
+       "eok": 9.85,
+       "weight": 0.6,
+       "note": "3개월 거래 없음 → 2026-08 실거래(추세 보정)"
+      },
+      {
+       "key": "floor",
+       "eok": 9.75,
+       "weight": 0.2,
+       "note": "층 보정 6개월 실거래 2건 (물건 4층)"
+      },
+      {
+       "key": "offer",
+       "eok": 11.0,
+       "weight": 0.15,
+       "note": "매물 최저 호가 (매물 1건)"
+      },
+      {
+       "key": "appr",
+       "eok": 10.02,
+       "weight": 0.05,
+       "note": "감정가 × 1년 시세 변동 +26.5%"
+      }
+     ]
+    }
+   },
+   "model": "앙상블(운영+랜덤포레스트·LightGBM 8개)",
+   "jeonse_ratio": 0.249,
+   "sgg_adj_pct": 0.7,
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 8.0,
+      "45%": 8.06,
+      "50%": 8.12,
+      "55%": 8.17,
+      "60%": 8.23
+     },
+     "2명": {
+      "40%": 8.28,
+      "45%": 8.31,
+      "50%": 8.34,
+      "55%": 8.38,
+      "60%": 8.41
+     },
+     "3명": {
+      "40%": 8.37,
+      "45%": 8.42,
+      "50%": 8.47,
+      "55%": 8.52,
+      "60%": 8.58
+     },
+     "5명": {
+      "40%": 8.56,
+      "45%": 8.61,
+      "50%": 8.66,
+      "55%": 8.71,
+      "60%": 8.76
+     },
+     "8명": {
+      "40%": 8.87,
+      "45%": 8.92,
+      "50%": 8.97,
+      "55%": 9.01,
+      "60%": 9.06
+     },
+     "13명": {
+      "40%": 9.2,
+      "45%": 9.25,
+      "50%": 9.31,
+      "55%": 9.36,
+      "60%": 9.41
+     }
+    },
+    "price_eok": {
+     "1명": 8.24,
+     "2명": 8.4,
+     "3명": 8.54,
+     "5명": 8.73,
+     "8명": 8.97,
+     "13명": 9.19
+    },
+    "expected_bidders": 4,
+    "expected_range": [
+     4,
+     9
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 3.76%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "gap_rule": null,
+   "fail": {
+    "prob_pct": 8,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 79.7% · 예측 정확도 86.4%"
+   },
+   "households": 1900,
+   "small_danji_adj": {
+    "applied": false,
+    "adj_pct": 0.0,
+    "bid_by_prob_manwon_raw": {
+     "40%": 86405,
+     "45%": 87049,
+     "50%": 87715,
+     "55%": 88406,
+     "60%": 89116
+    }
+   },
+   "bid_by_prob_manwon": {
+    "40%": 86405,
+    "45%": 87049,
+    "50%": 87715,
+    "55%": 88406,
+    "60%": 89116
+   },
+   "bid_by_prob_eok": {
+    "40%": 8.64,
+    "45%": 8.7,
+    "50%": 8.77,
+    "55%": 8.84,
+    "60%": 8.91
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 84500,
+     "bid_eok": 8.45,
+     "prob": 26
+    },
+    {
+     "bid_manwon": 85000,
+     "bid_eok": 8.5,
+     "prob": 29
+    },
+    {
+     "bid_manwon": 85500,
+     "bid_eok": 8.55,
+     "prob": 33
+    },
+    {
+     "bid_manwon": 86000,
+     "bid_eok": 8.6,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 86500,
+     "bid_eok": 8.65,
+     "prob": 41
+    },
+    {
+     "bid_manwon": 87000,
+     "bid_eok": 8.7,
+     "prob": 45
+    },
+    {
+     "bid_manwon": 87500,
+     "bid_eok": 8.75,
+     "prob": 48
+    },
+    {
+     "bid_manwon": 88000,
+     "bid_eok": 8.8,
+     "prob": 52
+    },
+    {
+     "bid_manwon": 88500,
+     "bid_eok": 8.85,
+     "prob": 56
+    },
+    {
+     "bid_manwon": 89000,
+     "bid_eok": 8.9,
+     "prob": 59
+    },
+    {
+     "bid_manwon": 89500,
+     "bid_eok": 8.95,
+     "prob": 63
+    },
+    {
+     "bid_manwon": 90000,
+     "bid_eok": 9.0,
+     "prob": 66
+    },
+    {
+     "bid_manwon": 90500,
+     "bid_eok": 9.05,
+     "prob": 69
+    },
+    {
+     "bid_manwon": 91000,
+     "bid_eok": 9.1,
+     "prob": 72
+    }
+   ],
+   "p50_ensemble_manwon": 87715,
+   "p50_ensemble_eok": 8.77,
+   "model_error_note": "평균 오차 약 5.15% (최근 12개월 롤링)",
+   "warnings": [],
+   "notes": [],
+   "within3_pct": 38,
+   "precise": false,
+   "acc": {
+    "shift_pct": -3.47,
+    "floor_applied": false,
+    "members": {
+     "rf_X_leaf3": -0.0614,
+     "rf_X_d730": -0.0646,
+     "rf_S4X": -0.0628,
+     "rf_X_leaf8": -0.0628,
+     "lgb_S4X_l1": -0.0422,
+     "rf_X_mae": -0.0619,
+     "rf_S4sise": -0.0543,
+     "lgb_X_dart": -0.026,
+     "op": -0.0147
+    },
+    "within3_th": 0.5402
+   },
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "근저당권",
+     "base_date": "2021-02-19"
+    },
+    "resale": false,
+    "decision": "show",
+    "reason": "",
+    "tenant_cleared": true
+   },
+   "court": "성남지원",
+   "category": "아파트",
+   "court_info": {
+    "occupant": "채무자(소유자)점유",
+    "closed_absent": true,
+    "lessee_count": 0,
+    "spec_published": true,
+    "withdraw_signal": [],
+    "notes": [
+     {
+      "label": "세금 교부청구",
+      "date": "2025-12-26",
+      "text": "교부권자 성OO OOO 교부청구 제출"
+     }
+    ]
+   },
+   "tenant": {
+    "source": "법원 매각물건명세서",
+    "checked": "2026-11-20",
+    "assumed_manwon": 0,
+    "opposing_tenants": 0,
+    "unknown_deposit": 0,
+    "lines": [
+     "법원 명세서상 대항력 임차인 없음"
+    ],
+    "checks": null,
+    "flags": [],
+    "caution": null
+   },
+   "safety": {
+    "grade": "안전",
+    "reasons": [
+     "법원 명세서 기준 인수 금액 0원",
+     "세금 교부청구 있음"
+    ]
+   },
+   "payback": null,
+   "kb": {
+    "kb_id": 3418,
+    "kb_name": "주공(1단지).",
+    "kb_area": 83.82,
+    "manwon": 94000,
+    "eok": 9.4,
+    "low": 88000,
+    "high": 98250,
+    "date": "2026-11-20",
+    "basis": "현재"
+   }
+  },
+  "2025타경52112[1]": {
+   "key": "2025타경52112[1]",
+   "category": "오피스텔",
+   "auction_id": "C45ZFWLQ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 415-16 청광플러스원큐브3차  5층511호",
+   "appr_manwon": 11900,
+   "low_manwon": 6092,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 17.69,
+   "danji_id": "a8aidHf",
+   "danji_name": "청광플러스원큐브3차",
+   "court": "서울동부지방법원",
+   "station": {
+    "name": "길동",
+    "distance_m": 346,
+    "walk_min": 6
+   },
+   "stations": [
+    {
+     "name": "길동",
+     "distance_m": 346,
+     "walk_min": 6,
+     "lines": [
+      "5호선"
+     ]
+    },
+    {
+     "name": "강동",
+     "distance_m": 370,
+     "walk_min": 7,
+     "lines": [
+      "5호선"
+     ]
+    }
+   ],
+   "name": "청광플러스원큐브3차",
+   "case": "2025타경52112",
+   "keyword": "대항력있는임차인,HUG인수조건변경",
+   "pyeong": "8",
+   "appr_eok": 1.19,
+   "low_eok": 0.609,
+   "richgo_sise_eok": 0.933,
+   "model_sise_eok": 0.933,
+   "appr_vs_sise": 1.275,
+   "sise": {
+    "richgo_eok": 0.93,
+    "richgo_source": "OFFER",
+    "trade": {
+     "eok": 0.92,
+     "date": "2025-11-29",
+     "months_ago": 11.8,
+     "adj_eok": 1.08,
+     "trend_since_pct": 17.1
+    },
+    "offer": {
+     "min_eok": 0.88,
+     "max_eok": 1.0,
+     "count": null,
+     "rep_eok": 0.93
+    },
+    "trend": {
+     "3m_pct": 0.4,
+     "6m_pct": 13.2,
+     "12m_pct": 18.0
+    },
+    "est_eok": 0.97,
+    "range_eok": [
+     0.85,
+     1.08
+    ],
+    "used": [
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 27.1,
+    "low_vs_est_pct": 63,
+    "richgo_vs_est_pct": -13.4,
+    "flags": [
+     "최근 6개월 실거래 없음 (거래 적음)",
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 -21%"
+    ],
+    "nearby": {
+     "eok": 0.85,
+     "n_danji": 3,
+     "basis": "같은 동 오피스텔 · 전용 ±30% · 12개월 실거래",
+     "per_m2_manwon": 482,
+     "detail": [
+      {
+       "name": "동구햇살",
+       "per_m2": 640
+      },
+      {
+       "name": "강동큐브2차",
+       "per_m2": 473
+      },
+      {
+       "name": "강동와이시티",
+       "per_m2": 482
+      }
+     ]
+    },
+    "nearby_vs_own_pct": -21.3
+   },
+   "model": "오피스텔 랜덤포레스트+부스팅",
+   "bid_by_prob_manwon": {
+    "40%": 6971,
+    "45%": 7037,
+    "50%": 7102,
+    "55%": 7169,
+    "60%": 7242
+   },
+   "bid_by_prob_eok": {
+    "40%": 0.7,
+    "45%": 0.7,
+    "50%": 0.71,
+    "55%": 0.72,
+    "60%": 0.72
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 7000,
+     "bid_eok": 0.7,
+     "prob": 42
+    },
+    {
+     "bid_manwon": 7500,
+     "bid_eok": 0.75,
+     "prob": 74
+    }
+   ],
+   "p50_ensemble_manwon": 7102,
+   "p50_ensemble_eok": 0.71,
+   "income": {
+    "jeonse_manwon": null,
+    "jeonse_ratio": null,
+    "est_monthly_rent_manwon": null,
+    "deposit_assumed_manwon": 1000,
+    "rent_conversion_rate": 0.0606,
+    "rent_basis": null,
+    "gross_yield_pct_at_p50": null
+   },
+   "fail": {
+    "prob_pct": 0,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 47.4% · 예측 정확도 75.5%"
+   },
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 0.7,
+      "45%": 0.71,
+      "50%": 0.71,
+      "55%": 0.72,
+      "60%": 0.73
+     },
+     "2명": {
+      "40%": 0.7,
+      "45%": 0.71,
+      "50%": 0.72,
+      "55%": 0.72,
+      "60%": 0.73
+     },
+     "3명": {
+      "40%": 0.71,
+      "45%": 0.71,
+      "50%": 0.71,
+      "55%": 0.72,
+      "60%": 0.73
+     },
+     "5명": {
+      "40%": 0.71,
+      "45%": 0.72,
+      "50%": 0.72,
+      "55%": 0.73,
+      "60%": 0.74
+     },
+     "8명 이상": {
+      "40%": 0.73,
+      "45%": 0.73,
+      "50%": 0.73,
+      "55%": 0.75,
+      "60%": 0.75
+     }
+    },
+    "price_eok": {
+     "1명": 0.71,
+     "2명": 0.72,
+     "3명": 0.71,
+     "5명": 0.72,
+     "8명 이상": 0.73
+    },
+    "expected_bidders": 2,
+    "expected_range": [
+     1,
+     3
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
+   "warnings": [],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "HUG인수조건변경"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "압류",
+     "base_date": "2023-03-28"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
+   },
+   "court_info": {
+    "occupant": "미상",
+    "closed_absent": true,
+    "lessee_count": 0,
+    "spec_published": false,
+    "withdraw_signal": [],
+    "notes": [
+     {
+      "label": "임차권등기",
+      "date": "2026-06-22",
+      "text": "임차권자 최OO 매각기일 및 매각결정기일통지서 발송 → 2026.06.23 송달간주"
+     },
+     {
+      "label": "세금 교부청구",
+      "date": "2025-12-05",
+      "text": "교부권자 용OO 교부청구 제출"
+     }
+    ]
+   },
+   "safety": {
+    "grade": "주의",
+    "reasons": [
+     "대항력 임차인: 키워드엔 있음·요약엔 없음"
+    ]
+   },
+   "payback": null,
+   "kb": null
+  },
+  "2025타경410[1]": {
+   "key": "2025타경410[1]",
+   "category": "오피스텔",
+   "auction_id": "C19ZRTGY",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 잠실동 175-12 올림픽타워  5층513호",
+   "appr_manwon": 33300,
+   "low_manwon": 17049,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 34.02,
+   "danji_id": "a9fFMjC",
+   "danji_name": "올림픽타워",
+   "court": "서울동부지방법원",
+   "station": {
+    "name": "종합운동장",
+    "distance_m": 350,
+    "walk_min": 6
+   },
+   "stations": [
+    {
+     "name": "종합운동장",
+     "distance_m": 350,
+     "walk_min": 6,
+     "lines": [
+      "2호선",
+      "9호선"
+     ]
+    },
+    {
+     "name": "잠실새내",
+     "distance_m": 573,
+     "walk_min": 10,
+     "lines": [
+      "2호선"
+     ]
+    }
+   ],
+   "name": "올림픽타워",
+   "case": "2025타경410",
+   "keyword": "토지거래허가구역",
+   "pyeong": "19",
+   "appr_eok": 3.33,
+   "low_eok": 1.705,
+   "richgo_sise_eok": 2.95,
+   "model_sise_eok": 2.95,
+   "appr_vs_sise": 1.129,
+   "sise": {
+    "richgo_eok": 2.95,
+    "richgo_source": "OFFER",
+    "trade": {
+     "eok": 2.2,
+     "date": "2026-10-29",
+     "months_ago": 0.8,
+     "adj_eok": 2.2,
+     "trend_since_pct": 0.0
+    },
+    "offer": {
+     "min_eok": 2.85,
+     "max_eok": 3.2,
+     "count": null,
+     "rep_eok": 2.95
+    },
+    "trend": {
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
+    },
+    "est_eok": 2.8,
+    "range_eok": [
+     2.2,
+     3.4
+    ],
+    "used": [
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 54.5,
+    "low_vs_est_pct": 61,
+    "richgo_vs_est_pct": 34.1,
+    "flags": [
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 +55%"
+    ],
+    "nearby": {
+     "eok": 3.4,
+     "n_danji": 2,
+     "basis": "같은 동 오피스텔 · 전용 ±30% · 12개월 실거래",
+     "per_m2_manwon": 998,
+     "detail": [
+      {
+       "name": "잠실아이파크",
+       "per_m2": 1065
+      },
+      {
+       "name": "위너스",
+       "per_m2": 932
+      }
+     ]
+    },
+    "nearby_vs_own_pct": 54.5
+   },
+   "model": "오피스텔 랜덤포레스트+부스팅",
+   "bid_by_prob_manwon": {
+    "40%": 19373,
+    "45%": 19559,
+    "50%": 19739,
+    "55%": 19925,
+    "60%": 20129
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.94,
+    "45%": 1.96,
+    "50%": 1.97,
+    "55%": 1.99,
+    "60%": 2.01
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 19000,
+     "bid_eok": 1.9,
+     "prob": 31
+    },
+    {
+     "bid_manwon": 19500,
+     "bid_eok": 1.95,
+     "prob": 43
+    },
+    {
+     "bid_manwon": 20000,
+     "bid_eok": 2.0,
+     "prob": 57
+    },
+    {
+     "bid_manwon": 20500,
+     "bid_eok": 2.05,
+     "prob": 68
+    }
+   ],
+   "p50_ensemble_manwon": 19739,
+   "p50_ensemble_eok": 1.97,
+   "income": {
+    "jeonse_manwon": 24700,
+    "jeonse_ratio": 0.837,
+    "est_monthly_rent_manwon": 120,
+    "deposit_assumed_manwon": 1000,
+    "rent_conversion_rate": 0.0606,
+    "rent_basis": "해당 평형 전세 시세",
+    "gross_yield_pct_at_p50": 7.28
+   },
+   "fail": {
+    "prob_pct": 0,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 47.4% · 예측 정확도 75.5%"
+   },
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 1.94,
+      "45%": 1.96,
+      "50%": 1.98,
+      "55%": 2.0,
+      "60%": 2.01
+     },
+     "2명": {
+      "40%": 1.94,
+      "45%": 1.96,
+      "50%": 1.98,
+      "55%": 2.01,
+      "60%": 2.02
+     },
+     "3명": {
+      "40%": 1.96,
+      "45%": 1.97,
+      "50%": 1.98,
+      "55%": 2.0,
+      "60%": 2.01
+     },
+     "5명": {
+      "40%": 1.96,
+      "45%": 1.98,
+      "50%": 1.99,
+      "55%": 2.02,
+      "60%": 2.04
+     },
+     "8명 이상": {
+      "40%": 2.02,
+      "45%": 2.02,
+      "50%": 2.03,
+      "55%": 2.06,
+      "60%": 2.08
+     }
+    },
+    "price_eok": {
+     "1명": 1.98,
+     "2명": 1.98,
+     "3명": 1.98,
+     "5명": 1.99,
+     "8명 이상": 2.03
+    },
+    "expected_bidders": 3,
+    "expected_range": [
+     1,
+     6
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
+   "warnings": [],
+   "risk": {
+    "keywords": [
+     "토지거래허가구역"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": true,
+     "right_risk": true,
+     "base_right": "근저당권",
+     "base_date": "2022-03-21"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "인수 권리: 요약엔 있음·키워드엔 없음"
+   },
+   "court_info": {
+    "occupant": "미상",
+    "closed_absent": true,
+    "lessee_count": 0,
+    "spec_published": true,
+    "withdraw_signal": [],
+    "notes": [
+     {
+      "label": "세금 교부청구",
+      "date": "2025-12-03",
+      "text": "교부권자 서OOOO OOO 교부청구 제출"
+     }
+    ]
+   },
+   "tenant": {
+    "source": "법원 매각물건명세서",
+    "checked": "2026-11-22",
+    "assumed_manwon": 0,
+    "opposing_tenants": 0,
+    "unknown_deposit": 0,
+    "lines": [
+     "법원 명세서상 대항력 임차인 없음"
+    ],
+    "checks": null,
+    "flags": [],
+    "caution": null
+   },
+   "safety": {
+    "grade": "주의",
+    "reasons": [
+     "인수 권리: 요약엔 있음·키워드엔 없음"
+    ]
+   },
+   "payback": {
+    "price_manwon": 19739,
+    "monthly_rent_manwon": 120,
+    "months": 164,
+    "years": 13.7,
+    "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
+   },
+   "kb": {
+    "kb_id": 16679,
+    "kb_name": "올림픽타워",
+    "kb_area": 34.02,
+    "manwon": 29250,
+    "eok": 2.92,
+    "low": 28000,
+    "high": 31250,
+    "date": "2026-11-20",
+    "basis": "현재"
+   }
+  },
+  "2025타경52604[1]": {
+   "key": "2025타경52604[1]",
+   "category": "오피스텔",
+   "auction_id": "C63FVFAL",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 문정동 622 송파한화오벨리스크  4층에이-415호",
+   "appr_manwon": 21700,
+   "low_manwon": 17360,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 29.96,
+   "danji_id": "a0jcdUq",
+   "danji_name": "송파한화오벨리스크",
+   "court": "서울동부지방법원",
+   "station": {
+    "name": "장지",
+    "distance_m": 600,
+    "walk_min": 10
+   },
+   "stations": [
+    {
+     "name": "장지",
+     "distance_m": 600,
+     "walk_min": 10,
+     "lines": [
+      "8호선"
+     ]
+    }
+   ],
+   "name": "송파한화오벨리스크",
+   "case": "2025타경52604",
+   "keyword": "위반건축물,대항력있는임차인,토지거래허가구역,HUG인수조건변경",
+   "pyeong": "16",
+   "appr_eok": 2.17,
+   "low_eok": 1.736,
+   "richgo_sise_eok": 2.075,
+   "model_sise_eok": 2.075,
+   "appr_vs_sise": 1.046,
+   "sise": {
+    "richgo_eok": 2.08,
+    "richgo_source": "OFFER",
+    "trade": {
+     "eok": 2.38,
+     "date": "2026-05-07",
+     "months_ago": 6.5,
+     "adj_eok": 2.44,
+     "trend_since_pct": 2.5
+    },
+    "offer": {
+     "min_eok": 2.02,
+     "max_eok": 2.13,
+     "count": null,
+     "rep_eok": 2.08
+    },
+    "trend": {
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
+    },
+    "est_eok": 2.61,
+    "range_eok": [
+     2.44,
+     2.78
+    ],
+    "used": [
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 13.9,
+    "low_vs_est_pct": 67,
+    "richgo_vs_est_pct": -15.0,
+    "flags": [
+     "최근 6개월 실거래 없음 (거래 적음)",
+     "주변 단지 시세가 이 단지보다 +14%"
+    ],
+    "nearby": {
+     "eok": 2.78,
+     "n_danji": 8,
+     "basis": "같은 동 오피스텔 · 전용 ±30% · 12개월 실거래",
+     "per_m2_manwon": 927,
+     "detail": [
+      {
+       "name": "문정아이파크",
+       "per_m2": 916
+      },
+      {
+       "name": "송파아이파크",
+       "per_m2": 939
+      },
+      {
+       "name": "르피에드문정",
+       "per_m2": 1544
+      },
+      {
+       "name": "문정오벨리스크",
+       "per_m2": 949
+      },
+      {
+       "name": "송파푸르지오시티",
+       "per_m2": 841
+      }
+     ]
+    },
+    "nearby_vs_own_pct": 13.9
+   },
+   "model": "오피스텔 랜덤포레스트+부스팅",
+   "bid_by_prob_manwon": {
+    "40%": 18298,
+    "45%": 18473,
+    "50%": 18643,
+    "55%": 18819,
+    "60%": 19012
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.83,
+    "45%": 1.85,
+    "50%": 1.86,
+    "55%": 1.88,
+    "60%": 1.9
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 18000,
+     "bid_eok": 1.8,
+     "prob": 32
+    },
+    {
+     "bid_manwon": 18500,
+     "bid_eok": 1.85,
+     "prob": 46
+    },
+    {
+     "bid_manwon": 19000,
+     "bid_eok": 1.9,
+     "prob": 60
+    },
+    {
+     "bid_manwon": 19500,
+     "bid_eok": 1.95,
+     "prob": 71
+    }
+   ],
+   "p50_ensemble_manwon": 18643,
+   "p50_ensemble_eok": 1.86,
+   "income": {
+    "jeonse_manwon": 24000,
+    "jeonse_ratio": 1.157,
+    "est_monthly_rent_manwon": 116,
+    "deposit_assumed_manwon": 1000,
+    "rent_conversion_rate": 0.0606,
+    "rent_basis": "해당 평형 전세 시세",
+    "gross_yield_pct_at_p50": 7.48
+   },
+   "fail": {
+    "prob_pct": 0,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 47.4% · 예측 정확도 75.5%"
+   },
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 1.82,
+      "45%": 1.84,
+      "50%": 1.85,
+      "55%": 1.87,
+      "60%": 1.88
+     },
+     "2명": {
+      "40%": 1.84,
+      "45%": 1.86,
+      "50%": 1.88,
+      "55%": 1.9,
+      "60%": 1.92
+     },
+     "3명": {
+      "40%": 1.86,
+      "45%": 1.87,
+      "50%": 1.88,
+      "55%": 1.9,
+      "60%": 1.91
+     },
+     "5명": {
+      "40%": 1.87,
+      "45%": 1.89,
+      "50%": 1.91,
+      "55%": 1.93,
+      "60%": 1.95
+     },
+     "8명 이상": {
+      "40%": 1.92,
+      "45%": 1.92,
+      "50%": 1.93,
+      "55%": 1.96,
+      "60%": 1.98
+     }
+    },
+    "price_eok": {
+     "1명": 1.85,
+     "2명": 1.88,
+     "3명": 1.88,
+     "5명": 1.91,
+     "8명 이상": 1.93
+    },
+    "expected_bidders": 1,
+    "expected_range": [
+     1,
+     3
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
+   "warnings": [],
+   "risk": {
+    "keywords": [
+     "위반건축물",
+     "대항력있는임차인",
+     "토지거래허가구역",
+     "HUG인수조건변경"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "강제경매",
+     "base_date": "2026-01-05"
+    },
+    "resale": false,
+    "decision": "check",
+    "reason": "대항력 임차인: 키워드엔 있음·요약엔 없음"
+   },
+   "court_info": {
+    "occupant": "미상",
+    "closed_absent": true,
+    "lessee_count": 0,
+    "spec_published": false,
+    "withdraw_signal": [
+     {
+      "label": "변경",
+      "date": "2026-06-19",
+      "text": "채권자 주OOOOOOO 인수조건변경확약서(대항력포기확약서및매각기일변경신청) 제출"
+     }
+    ],
+    "notes": [
+     {
+      "label": "임차권등기",
+      "date": "2026-09-10",
+      "text": "주택임차권자 강OO 매각기일 및 매각결정기일통지서 발송 → 2026.09.11 송달간주"
+     },
+     {
+      "label": "세금 교부청구",
+      "date": "2026-03-11",
+      "text": "교부권자 서OOOO OOO 교부청구 제출"
+     }
+    ]
+   },
+   "safety": {
+    "grade": "주의",
+    "reasons": [
+     "대항력 임차인: 키워드엔 있음·요약엔 없음"
+    ]
+   },
+   "payback": {
+    "price_manwon": 18643,
+    "monthly_rent_manwon": 116,
+    "months": 161,
+    "years": 13.4,
+    "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
+   },
+   "kb": {
+    "kb_id": 24894,
+    "kb_name": "송파한화오벨리스크",
+    "kb_area": 29.96,
+    "manwon": 23250,
+    "eok": 2.33,
+    "low": 22500,
+    "high": 24000,
+    "date": "2026-11-20",
+    "basis": "현재"
+   }
+  },
+  "2025타경52357[1]": {
+   "key": "2025타경52357[1]",
+   "category": "오피스텔",
+   "auction_id": "C78TJUIB",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 방이동 47 잠실헤리츠  5층515호",
+   "appr_manwon": 20800,
+   "low_manwon": 13312,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 20.97,
+   "danji_id": "a1UutpZ",
+   "danji_name": "잠실헤리츠",
+   "court": "서울동부지방법원",
+   "station": {
+    "name": "몽촌토성",
+    "distance_m": 142,
+    "walk_min": 3
+   },
+   "stations": [
+    {
+     "name": "몽촌토성",
+     "distance_m": 142,
+     "walk_min": 3,
+     "lines": [
+      "8호선"
+     ]
+    },
+    {
+     "name": "한성백제",
+     "distance_m": 254,
+     "walk_min": 5,
+     "lines": [
+      "9호선"
+     ]
+    }
+   ],
+   "name": "잠실헤리츠",
+   "case": "2025타경52357",
+   "keyword": "대항력있는임차인,HUG인수조건변경",
+   "pyeong": "13",
+   "appr_eok": 2.08,
+   "low_eok": 1.331,
+   "richgo_sise_eok": 2.039,
+   "model_sise_eok": 2.039,
+   "appr_vs_sise": 1.02,
+   "sise": {
+    "richgo_eok": 2.04,
+    "richgo_source": "OFFER",
+    "trade": {
+     "eok": 1.65,
+     "date": "2026-10-08",
+     "months_ago": 1.5,
+     "adj_eok": 1.65,
+     "trend_since_pct": 0.0
+    },
+    "offer": {
+     "min_eok": 1.75,
+     "max_eok": 2.3,
+     "count": null,
+     "rep_eok": 2.04
+    },
+    "trend": {
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
+    },
+    "est_eok": 1.46,
+    "range_eok": [
+     1.26,
+     1.65
+    ],
+    "used": [
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 31.0,
+    "low_vs_est_pct": 91,
+    "richgo_vs_est_pct": 23.9,
+    "flags": [
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 -24%"
+    ],
+    "nearby": {
+     "eok": 1.26,
+     "n_danji": 3,
+     "basis": "같은 동 오피스텔 · 전용 ±30% · 12개월 실거래",
+     "per_m2_manwon": 600,
+     "detail": [
+      {
+       "name": "파크캐슬",
+       "per_m2": 1183
+      },
+      {
+       "name": "쌩모리빌",
+       "per_m2": 600
+      },
+      {
+       "name": "벨리시모",
+       "per_m2": 558
+      }
+     ]
+    },
+    "nearby_vs_own_pct": -23.6
+   },
+   "model": "오피스텔 랜덤포레스트+부스팅",
+   "bid_by_prob_manwon": {
+    "40%": 14575,
+    "45%": 14715,
+    "50%": 14850,
+    "55%": 14990,
+    "60%": 15143
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.46,
+    "45%": 1.47,
+    "50%": 1.49,
+    "55%": 1.5,
+    "60%": 1.51
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 14500,
+     "bid_eok": 1.45,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 15000,
+     "bid_eok": 1.5,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 15500,
+     "bid_eok": 1.55,
+     "prob": 70
+    }
+   ],
+   "p50_ensemble_manwon": 14850,
+   "p50_ensemble_eok": 1.49,
+   "income": {
+    "jeonse_manwon": 21600,
+    "jeonse_ratio": 1.059,
+    "est_monthly_rent_manwon": 104,
+    "deposit_assumed_manwon": 1000,
+    "rent_conversion_rate": 0.0606,
+    "rent_basis": "해당 평형 전세 시세",
+    "gross_yield_pct_at_p50": 8.41
+   },
+   "fail": {
+    "prob_pct": 0,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 47.4% · 예측 정확도 75.5%"
+   },
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 1.46,
+      "45%": 1.47,
+      "50%": 1.49,
+      "55%": 1.5,
+      "60%": 1.51
+     },
+     "2명": {
+      "40%": 1.46,
+      "45%": 1.48,
+      "50%": 1.49,
+      "55%": 1.51,
+      "60%": 1.52
+     },
+     "3명": {
+      "40%": 1.48,
+      "45%": 1.49,
+      "50%": 1.5,
+      "55%": 1.51,
+      "60%": 1.52
+     },
+     "5명": {
+      "40%": 1.49,
+      "45%": 1.51,
+      "50%": 1.52,
+      "55%": 1.54,
+      "60%": 1.56
+     },
+     "8명 이상": {
+      "40%": 1.54,
+      "45%": 1.54,
+      "50%": 1.55,
+      "55%": 1.57,
+      "60%": 1.58
+     }
+    },
+    "price_eok": {
+     "1명": 1.49,
+     "2명": 1.49,
+     "3명": 1.5,
+     "5명": 1.52,
+     "8명 이상": 1.55
+    },
+    "expected_bidders": 2,
+    "expected_range": [
+     1,
+     5
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
+   "warnings": [],
+   "risk": {
+    "keywords": [
+     "대항력있는임차인",
+     "HUG인수조건변경"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "강제경매",
+     "base_date": "2025-11-14"
+    },
+    "resale": false,
+    "decision": "hide",
+    "reason": "보증금 인수 예상 약 6,454만 (법원 명세서 기준)"
+   },
+   "court_info": {
+    "occupant": "미상",
+    "closed_absent": true,
+    "lessee_count": 0,
+    "spec_published": true,
+    "withdraw_signal": [],
+    "notes": [
+     {
+      "label": "임차권등기",
+      "date": "2026-08-12",
+      "text": "임차권자 신OO 매각기일 및 매각결정기일통지서 발송 → 2026.08.13 송달간주"
+     },
+     {
+      "label": "세금 교부청구",
+      "date": "2026-01-22",
+      "text": "교부권자 서OOOO OOO 교부청구 제출"
+     }
+    ]
+   },
+   "tenant": {
+    "source": "법원 매각물건명세서",
+    "checked": "2026-11-22",
+    "assumed_manwon": 6454,
+    "opposing_tenants": 1,
+    "unknown_deposit": 0,
+    "lines": [
+     "대항력 임차인 보증금 20,000만 · 배당요구·확정일자 선순위 → 배당 13,546만"
+    ],
+    "checks": {
+     "배당요구": true,
+     "확정일자": true,
+     "순위": true,
+     "재원": false,
+     "전입유지": null
+    },
+    "flags": [],
+    "caution": null
+   },
+   "safety": {
+    "grade": "위험",
+    "reasons": [
+     "보증금 인수 예상 약 6,454만 (법원 명세서 기준)"
+    ]
+   },
+   "payback": {
+    "price_manwon": 14850,
+    "monthly_rent_manwon": 104,
+    "months": 143,
+    "years": 11.9,
+    "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
+   },
+   "kb": {
+    "kb_id": 30637,
+    "kb_name": "잠실헤리츠",
+    "kb_area": 20.97,
+    "manwon": 20150,
+    "eok": 2.02,
+    "low": 18800,
+    "high": 21500,
+    "date": "2026-11-20",
+    "basis": "현재"
+   }
+  },
+  "2025타경52222[1]": {
+   "key": "2025타경52222[1]",
+   "category": "오피스텔",
+   "auction_id": "C89CXBVL",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 문정동 622 송파한화오벨리스크  6층비-604호",
+   "appr_manwon": 19700,
+   "low_manwon": 12608,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 26.82,
+   "danji_id": "a0jcdUq",
+   "danji_name": "송파한화오벨리스크",
+   "court": "서울동부지방법원",
+   "station": {
+    "name": "장지",
+    "distance_m": 600,
+    "walk_min": 10
+   },
+   "stations": [
+    {
+     "name": "장지",
+     "distance_m": 600,
+     "walk_min": 10,
+     "lines": [
+      "8호선"
+     ]
+    }
+   ],
+   "name": "송파한화오벨리스크",
+   "case": "2025타경52222",
+   "keyword": "토지별도등기,대항력있는임차인,토지거래허가구역,HUG인수조건변경",
+   "pyeong": "15",
+   "appr_eok": 1.97,
+   "low_eok": 1.261,
+   "richgo_sise_eok": 1.896,
+   "model_sise_eok": 1.896,
+   "appr_vs_sise": 1.039,
+   "sise": {
+    "richgo_eok": 1.9,
+    "richgo_source": "OFFER",
+    "trade": {
+     "eok": 1.8,
+     "date": "2026-11-06",
+     "months_ago": 0.5,
+     "adj_eok": 1.8,
+     "trend_since_pct": 0.0
+    },
+    "offer": {
+     "min_eok": 1.73,
+     "max_eok": 2.08,
+     "count": null,
+     "rep_eok": 1.9
+    },
+    "trend": {
+     "3m_pct": -1.7,
+     "6m_pct": 3.4,
+     "12m_pct": 5.1
+    },
+    "est_eok": 2.08,
+    "range_eok": [
+     1.8,
+     2.35
+    ],
+    "used": [
+     "실거래",
+     "주변"
+    ],
+    "spread_pct": 30.6,
+    "low_vs_est_pct": 61,
+    "richgo_vs_est_pct": 5.3,
+    "flags": [
+     "출처 간 차이 큼",
+     "주변 단지 시세가 이 단지보다 +31%"
+    ],
+    "nearby": {
+     "eok": 2.35,
+     "n_danji": 8,
+     "basis": "같은 동 오피스텔 · 전용 ±30% · 12개월 실거래",
+     "per_m2_manwon": 876,
+     "detail": [
+      {
+       "name": "문정아이파크",
+       "per_m2": 887
+      },
+      {
+       "name": "송파아이파크",
+       "per_m2": 872
+      },
+      {
+       "name": "르피에드문정",
+       "per_m2": 1544
+      },
+      {
+       "name": "문정오벨리스크",
+       "per_m2": 961
+      },
+      {
+       "name": "송파푸르지오시티",
+       "per_m2": 841
+      }
+     ]
+    },
+    "nearby_vs_own_pct": 30.6
+   },
+   "model": "오피스텔 랜덤포레스트+부스팅",
+   "bid_by_prob_manwon": {
+    "40%": 14093,
+    "45%": 14228,
+    "50%": 14359,
+    "55%": 14494,
+    "60%": 14642
+   },
+   "bid_by_prob_eok": {
+    "40%": 1.41,
+    "45%": 1.42,
+    "50%": 1.44,
+    "55%": 1.45,
+    "60%": 1.46
+   },
+   "prob_by_bid_5m": [
+    {
+     "bid_manwon": 14000,
+     "bid_eok": 1.4,
+     "prob": 37
+    },
+    {
+     "bid_manwon": 14500,
+     "bid_eok": 1.45,
+     "prob": 55
+    },
+    {
+     "bid_manwon": 15000,
+     "bid_eok": 1.5,
+     "prob": 70
+    }
+   ],
+   "p50_ensemble_manwon": 14359,
+   "p50_ensemble_eok": 1.44,
+   "income": {
+    "jeonse_manwon": 19100,
+    "jeonse_ratio": 1.008,
+    "est_monthly_rent_manwon": 91,
+    "deposit_assumed_manwon": 1000,
+    "rent_conversion_rate": 0.0606,
+    "rent_basis": "해당 평형 전세 시세",
+    "gross_yield_pct_at_p50": 7.64
+   },
+   "fail": {
+    "prob_pct": 0,
+    "level": "낮음",
+    "note": "백테스트: 이 회차 유형 평균 유찰률 47.4% · 예측 정확도 75.5%"
+   },
+   "by_bidders": {
+    "bid_by_prob_eok": {
+     "1명": {
+      "40%": 1.42,
+      "45%": 1.43,
+      "50%": 1.45,
+      "55%": 1.46,
+      "60%": 1.47
+     },
+     "2명": {
+      "40%": 1.42,
+      "45%": 1.44,
+      "50%": 1.45,
+      "55%": 1.47,
+      "60%": 1.48
+     },
+     "3명": {
+      "40%": 1.44,
+      "45%": 1.44,
+      "50%": 1.45,
+      "55%": 1.47,
+      "60%": 1.47
+     },
+     "5명": {
+      "40%": 1.45,
+      "45%": 1.47,
+      "50%": 1.47,
+      "55%": 1.49,
+      "60%": 1.51
+     },
+     "8명 이상": {
+      "40%": 1.5,
+      "45%": 1.5,
+      "50%": 1.51,
+      "55%": 1.53,
+      "60%": 1.54
+     }
+    },
+    "price_eok": {
+     "1명": 1.45,
+     "2명": 1.45,
+     "3명": 1.45,
+     "5명": 1.47,
+     "8명 이상": 1.51
+    },
+    "expected_bidders": 4,
+    "expected_range": [
+     1,
+     5
+    ],
+    "model_error_note": "인원을 알 때 평균 오차 약 5.87%",
+    "note": "N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용"
+   },
+   "model_error_note": "평균 오차 약 6.38% (최근 12개월 롤링), 확률 오차 약 ±5%p",
+   "warnings": [],
+   "risk": {
+    "keywords": [
+     "토지별도등기",
+     "대항력있는임차인",
+     "토지거래허가구역",
+     "HUG인수조건변경"
+    ],
+    "summary": {
+     "registry": true,
+     "tenant_risk": false,
+     "right_risk": false,
+     "base_right": "강제경매",
+     "base_date": "2025-10-17"
+    },
+    "resale": false,
+    "decision": "hide",
+    "reason": "특수물건(토지별도등기)"
+   },
+   "safety": {
+    "grade": "위험",
+    "reasons": [
+     "특수물건(토지별도등기)"
+    ]
+   },
+   "payback": {
+    "price_manwon": 14359,
+    "monthly_rent_manwon": 91,
+    "months": 158,
+    "years": 13.1,
+    "basis": "낙찰확률 50% 가격 ÷ (월세 × 12) · 대출·세금·비용 제외 단순 계산"
+   },
+   "kb": {
+    "kb_id": 24894,
+    "kb_name": "송파한화오벨리스크",
+    "kb_area": 26.82,
+    "manwon": 19350,
+    "eok": 1.94,
+    "low": 18500,
+    "high": 20000,
+    "date": "2026-11-20",
+    "basis": "현재"
+   }
   }
  },
  "failed": [
@@ -128271,45 +130747,6 @@
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
-   "key": "2026타경50227[1]",
-   "category": "오피스텔",
-   "auction_id": "C02BVCXB",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호동 166-94 다성이즈빌  4층402호",
-   "appr_manwon": 35700,
-   "low_manwon": 35700,
-   "fails": 0,
-   "bidding_date": "",
-   "area": 35.49,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경52216[1]",
-   "category": "오피스텔",
-   "auction_id": "C06MNWKA",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호동 167-73 에스아이팰리스  7층702호",
-   "appr_manwon": 21400,
-   "low_manwon": 17120,
-   "fails": 1,
-   "bidding_date": "",
-   "area": 17.48,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경52531[1]",
-   "category": "오피스텔",
-   "auction_id": "C06RKQGH",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 길동 413-37 아스테르오피스텔  13층1303호",
-   "appr_manwon": 12700,
-   "low_manwon": 10160,
-   "fails": 1,
-   "bidding_date": "",
-   "area": 15.98,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
    "key": "2025타경52134[1]",
    "category": "오피스텔",
    "auction_id": "C11IYRSK",
@@ -128336,71 +130773,6 @@
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
-   "key": "2025타경52257[1]",
-   "category": "오피스텔",
-   "auction_id": "C19PKFKN",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호동 167-102 다성이즈빌  7층702호",
-   "appr_manwon": 18100,
-   "low_manwon": 11584,
-   "fails": 2,
-   "bidding_date": "",
-   "area": 20.66,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경51583[1]",
-   "category": "오피스텔",
-   "auction_id": "C31ZKTYF",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 성내동 12-17 천호역 아름채  2층204호",
-   "appr_manwon": 35100,
-   "low_manwon": 28080,
-   "fails": 1,
-   "bidding_date": "",
-   "area": 41.99,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경52141[1]",
-   "category": "오피스텔",
-   "auction_id": "C39PUQFO",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호동 287-32  5층502호",
-   "appr_manwon": 24800,
-   "low_manwon": 12697,
-   "fails": 3,
-   "bidding_date": "",
-   "area": 35.22,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경51583[3]",
-   "category": "오피스텔",
-   "auction_id": "C45VFWXY",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 성내동 12-17 천호역 아름채  2층201호",
-   "appr_manwon": 35100,
-   "low_manwon": 28080,
-   "fails": 1,
-   "bidding_date": "",
-   "area": 41.99,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2026타경50076[1]",
-   "category": "오피스텔",
-   "auction_id": "C47WFFOG",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호동 562 스카이캐슬라  4층402호",
-   "appr_manwon": 20300,
-   "low_manwon": 20300,
-   "fails": 1,
-   "bidding_date": "",
-   "area": 20.31,
-   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
-  },
-  {
    "key": "2025타경52092[1]",
    "category": "오피스텔",
    "auction_id": "C55GETMJ",
@@ -128411,19 +130783,6 @@
    "fails": 2,
    "bidding_date": "",
    "area": 17.48,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경51583[2]",
-   "category": "오피스텔",
-   "auction_id": "C58RDIYX",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 성내동 12-17 천호역 아름채  2층203호",
-   "appr_manwon": 40800,
-   "low_manwon": 32640,
-   "fails": 1,
-   "bidding_date": "",
-   "area": 49.73,
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
@@ -128438,19 +130797,6 @@
    "bidding_date": "",
    "area": 39.14,
    "reason": "단지 못 찾음 (확인 14곳)"
-  },
-  {
-   "key": "2025타경52166[1]",
-   "category": "오피스텔",
-   "auction_id": "C98FDIDZ",
-   "region": "서울 강동구",
-   "address": "서울특별시 강동구 천호동 167-157 예건네스빌  2층205호",
-   "appr_manwon": 17200,
-   "low_manwon": 11008,
-   "fails": 2,
-   "bidding_date": "",
-   "area": 18.96,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
    "key": "2026타경10090[1]",
@@ -131079,32 +133425,6 @@
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   },
   {
-   "key": "2026타경50113[1]",
-   "category": "오피스텔",
-   "auction_id": "C02JEUKC",
-   "region": "서울 송파구",
-   "address": "서울특별시 송파구 문정동 620 송파푸르지오시티  2층211호",
-   "appr_manwon": 18700,
-   "low_manwon": 14960,
-   "fails": 1,
-   "bidding_date": "",
-   "area": null,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
-   "key": "2025타경52306[1]",
-   "category": "오피스텔",
-   "auction_id": "C51YWOUH",
-   "region": "서울 송파구",
-   "address": "서울특별시 송파구 방이동 50 잠실엘퍼스트오피스텔  18층1810호",
-   "appr_manwon": 21700,
-   "low_manwon": 21700,
-   "fails": 0,
-   "bidding_date": "",
-   "area": 18.07,
-   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
-  },
-  {
    "key": "2025타경12539[1]",
    "category": "오피스텔",
    "auction_id": "C04XYVZP",
@@ -131726,6 +134046,214 @@
    "fails": 2,
    "bidding_date": "",
    "area": 33.82,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2026타경50227[1]",
+   "category": "오피스텔",
+   "auction_id": "C02BVCXB",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호동 166-94 다성이즈빌  4층402호",
+   "appr_manwon": 35700,
+   "low_manwon": 35700,
+   "fails": 0,
+   "bidding_date": "2026-11-23",
+   "area": 35.49,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경52216[1]",
+   "category": "오피스텔",
+   "auction_id": "C06MNWKA",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호동 167-73 에스아이팰리스  7층702호",
+   "appr_manwon": 21400,
+   "low_manwon": 17120,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 17.48,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경52531[1]",
+   "category": "오피스텔",
+   "auction_id": "C06RKQGH",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 길동 413-37 아스테르오피스텔  13층1303호",
+   "appr_manwon": 12700,
+   "low_manwon": 10160,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 15.98,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경52257[1]",
+   "category": "오피스텔",
+   "auction_id": "C19PKFKN",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호동 167-102 다성이즈빌  7층702호",
+   "appr_manwon": 18100,
+   "low_manwon": 11584,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 20.66,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경51583[1]",
+   "category": "오피스텔",
+   "auction_id": "C31ZKTYF",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 12-17 천호역 아름채  2층204호",
+   "appr_manwon": 35100,
+   "low_manwon": 28080,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 41.99,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경52141[1]",
+   "category": "오피스텔",
+   "auction_id": "C39PUQFO",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호동 287-32  5층502호",
+   "appr_manwon": 24800,
+   "low_manwon": 12697,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 35.22,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경51583[3]",
+   "category": "오피스텔",
+   "auction_id": "C45VFWXY",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 12-17 천호역 아름채  2층201호",
+   "appr_manwon": 35100,
+   "low_manwon": 28080,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 41.99,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2026타경50076[1]",
+   "category": "오피스텔",
+   "auction_id": "C47WFFOG",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호동 562 스카이캐슬라  4층402호",
+   "appr_manwon": 20300,
+   "low_manwon": 20300,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 20.31,
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  },
+  {
+   "key": "2025타경51583[2]",
+   "category": "오피스텔",
+   "auction_id": "C58RDIYX",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 성내동 12-17 천호역 아름채  2층203호",
+   "appr_manwon": 40800,
+   "low_manwon": 32640,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": 49.73,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경52166[1]",
+   "category": "오피스텔",
+   "auction_id": "C98FDIDZ",
+   "region": "서울 강동구",
+   "address": "서울특별시 강동구 천호동 167-157 예건네스빌  2층205호",
+   "appr_manwon": 17200,
+   "low_manwon": 11008,
+   "fails": 2,
+   "bidding_date": "2026-11-23",
+   "area": 18.96,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2024타경454[5]",
+   "category": "오피스텔",
+   "auction_id": "C30TKZSJ",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 능동로37길 9, 5층501호 (중곡동,평강오피스텔)",
+   "appr_manwon": 33600,
+   "low_manwon": 17203,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 25,
+   "reason": "예측 실패: JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 140787 (char 140786)"
+  },
+  {
+   "key": "2024타경454[7]",
+   "category": "오피스텔",
+   "auction_id": "C65FPGRA",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 능동로37길 9, 5층503호 (중곡동,평강오피스텔)",
+   "appr_manwon": 38100,
+   "low_manwon": 19507,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 28.4,
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  },
+  {
+   "key": "2024타경454[8]",
+   "category": "오피스텔",
+   "auction_id": "C70XYFJX",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 능동로37길 9, 7층701호 (중곡동,평강오피스텔)",
+   "appr_manwon": 34200,
+   "low_manwon": 17510,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 25,
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  },
+  {
+   "key": "2024타경454[6]",
+   "category": "오피스텔",
+   "auction_id": "C79XSKMK",
+   "region": "서울 광진구",
+   "address": "서울특별시 광진구 능동로37길 9, 5층502호 (중곡동,평강오피스텔)",
+   "appr_manwon": 32300,
+   "low_manwon": 16537,
+   "fails": 3,
+   "bidding_date": "2026-11-23",
+   "area": 24.05,
+   "reason": "예측 실패: {\"error\": \"no matching pyeong price on complex page\"}"
+  },
+  {
+   "key": "2026타경50113[1]",
+   "category": "오피스텔",
+   "auction_id": "C02JEUKC",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 문정동 620 송파푸르지오시티  2층211호",
+   "appr_manwon": 18700,
+   "low_manwon": 14960,
+   "fails": 1,
+   "bidding_date": "2026-11-23",
+   "area": null,
+   "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
+  },
+  {
+   "key": "2025타경52306[1]",
+   "category": "오피스텔",
+   "auction_id": "C51YWOUH",
+   "region": "서울 송파구",
+   "address": "서울특별시 송파구 방이동 50 잠실엘퍼스트오피스텔  18층1810호",
+   "appr_manwon": 21700,
+   "low_manwon": 21700,
+   "fails": 0,
+   "bidding_date": "2026-11-23",
+   "area": 18.07,
    "reason": "단지 못 찾음 (7일 내 재시도 안 함)"
   }
  ],
