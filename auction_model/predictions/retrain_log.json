@@ -18,5 +18,32 @@
   "apt_mape_after": 5.73,
   "bid_mape_after": 4.04,
   "ot_mape_after": 6.38
+ },
+ {
+  "date": "2026-11-24",
+  "apt_since": "2026-11-02",
+  "ot_since": "2026-10-30",
+  "apt_pages": 1208,
+  "ot_pages": 814,
+  "apt_found": 89,
+  "apt_added": 64,
+  "ot_found": 137,
+  "ot_added": 91,
+  "collect_min": 2.5,
+  "apt_mape_before": 5.29,
+  "bid_mape_before": 3.76,
+  "ot_mape_before": 6.38,
+  "acc_mape_new": 4.35,
+  "acc_mape_precise": 3.05,
+  "fail_rounds_added": {
+   "apt": 0,
+   "ot": 286
+  },
+  "fail_ot_acc": 83.1,
+  "apt_n_train": 1477,
+  "ot_n_train": 809,
+  "apt_mape_after": 5.26,
+  "bid_mape_after": 3.81,
+  "ot_mape_after": 6.46
  }
 ]
