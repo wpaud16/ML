@@ -21,11 +21,18 @@ COMMENT_PROMPT = """유튜브 이벤트 참여용 댓글 한 줄을 써줘. 사�
 영상 제목: {vtitle}
 영상 설명: {vdesc}
 
+말투 (사용자 본인 말투 — 짧고 편한 해요체, 꾸밈 적고 솔직하게, 느낌표 가끔):
+- "정답 사망원인통계! 죽음의 기록이 다른 사람의 생명을 지키는 데이터가 된다는 게 인상 깊었어요."
+- "AI로 꿈을 그려내는 이야기가 따뜻해서 좋았어요. 노래도 계속 귀에 맴돌아요!"
+- "혼자가 아니라 함께 돌보는 사회가 되면 좋겠어요. 발달장애인 당사자분들과 가족분들 늘 응원합니다!"
+- "나에게 사진이란 지나가면 다시 오지 않는 순간을 붙잡아 두는 일기 같아요."
+
 규칙:
-- 한국어 1~2문장, 30~90자. 존댓말, 담백하고 자연스럽게. 이모지는 0~1개.
-- 이벤트가 요구하는 내용(정답·응원·소감·기대평 등)을 정확히 담기. 정답이 필요하면 웹 검색으로 확인.
-- 겪지 않은 경험·가족·직업 등 사실을 지어내지 말 것. 링크·해시태그·광고·정치·종교·남 비방 금지.
-- 사진·사연·개인정보를 요구하는 등 댓글로만 할 수 없으면 ok=false.
+- 한국어 1~2문장, 30~90자. 위 말투 그대로. 이모지는 0~1개. 광고 문구·과한 칭찬·AI 같은 딱딱한 문장 금지.
+- 이벤트가 요구하는 내용(정답·응원·소감·기대평·질문 답 등)을 정확히 담기. 정답이 필요하면 웹 검색으로 확인.
+- 요구가 애매하면 영상 제목·설명에서 구체적인 내용 하나를 집어 소감+응원으로 자연스럽게 쓰기 (건너뛰지 말 것).
+- 겪지 않은 경험·가족·직업 등 사실을 지어내지 말 것 ("저도 그래요", "공감돼요"처럼 같은 경험을 암시하는 말도 피하기). 링크·해시태그·광고·정치·종교·남 비방 금지.
+- ok=false 는 사진·사연·개인정보처럼 댓글로는 정말 할 수 없는 걸 요구할 때만.
 JSON 하나만 출력: {{"ok": true, "comment": "댓글"}}"""
 
 BAD = re.compile(r'https?://|#\S|010-?\d|@\w|광고|정치|대통령|선거|종교')
@@ -52,8 +59,13 @@ def quiz_answers(title, text, lines):
 
 
 def comment_text(title, text, vtitle, vdesc):
-    out = _cli(COMMENT_PROMPT.format(title=title, text=(text or '')[:1500], vtitle=vtitle, vdesc=(vdesc or '')[:1200]), 'comment') or {}
-    c = re.sub(r'\s+', ' ', str(out.get('comment') or '')).strip()
-    if not out.get('ok') or not (15 <= len(c) <= 150) or BAD.search(c):
-        return None
-    return c
+    """2026-11-25 사용자: 내 말투로, 애매해도 잘 써서 달기. 응답이 규칙에 안 맞으면 한 번 더 받아 봄."""
+    p = COMMENT_PROMPT.format(title=title, text=(text or '')[:1500], vtitle=vtitle, vdesc=(vdesc or '')[:1200])
+    for i in range(2):
+        out = _cli(p if i == 0 else p + '\n\n(앞 답이 규칙에 안 맞았어. 30~90자, 링크·해시태그·@ 없이 다시.)', 'comment') or {}
+        c = re.sub(r'\s+', ' ', str(out.get('comment') or '')).strip()
+        if out.get('ok') is False and c == '':
+            return None   # 댓글로는 할 수 없는 이벤트
+        if 15 <= len(c) <= 150 and not BAD.search(c):
+            return c
+    return None
