@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""빌라·상가·건물 경매 목록 (2026-11-16 사용자 요청: 웹페이지에 아파트·오피스텔처럼 탭 추가). 예측 모델은 없음 — 사실만.
+"""빌라·상가·건물 경매 목록 (2026-11-16 사용자 요청: 웹페이지에 아파트·오피스텔처럼 탭 추가).
+2026-11-24~: 각 물건에 pred = other_model.predict(...) (예상 낙찰가·낙찰확률별 입찰가·유찰 확률).
 
 조건 (사용자 결정 2026-11-16):
   🏘 빌라 = 서울 25개 구 다세대·연립, 역 도보 15분(직선 920m) 이내
@@ -20,6 +21,7 @@ sys.path.insert(0, HERE)
 from batch_predict import get, next_data, auction_detail, sold_already, sold_recent  # noqa: E402
 from villa_log import GU as SEOUL_GU  # noqa: E402   서울 25개 구 전체 (오피스텔 GUI 지역과 별개)
 import search_cfg  # noqa: E402
+import other_model  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
 OUT = os.path.join(HERE, 'predictions', 'others.json')
@@ -217,7 +219,18 @@ def main():
         if not ok:
             return 'rights', None
         r = pg.get('rights') or {}
-        return 'ok', dict(base, construct_year=pg.get('constructYear'), traffic=traffic_line(pg),
+        hl = sorted(pg.get('historyList') or [], key=lambda h: h.get('appointedDayAt') or '')
+        prev_low = next((h['lowestSellingPrice'] / 1e4 for h in reversed(hl) if h.get('appointedDayType') == '매각기일'
+                         and h.get('results') == '유찰' and h.get('lowestSellingPrice')
+                         and (h.get('appointedDayAt') or '')[:10] < base['bidding_date']), None)
+        resale = any(h.get('results') == '미납' for h in hl)
+        try:   # 2026-11-24: 상가·건물 낙찰가 모델 (other_model.py)
+            pred = other_model.predict(cat, '서울', it['_gu'], base['appr_manwon'], base['low_manwon'], base['fails'] or 0,
+                                       base['area'], base['land_area'], base['address'], base['type_details'],
+                                       pg.get('appraisalSummary'), resale, base['bidding_date'], prev_low, base['court'])
+        except Exception as e:
+            pred = dict(error=f'{type(e).__name__}: {e}')
+        return 'ok', dict(base, construct_year=pg.get('constructYear'), traffic=traffic_line(pg), pred=pred,
                           rights=dict(base_right=(r.get('baseRight') or {}).get('type'), base_date=((r.get('baseRight') or {}).get('date') or '')[:10]),
                           history=[dict(date=h.get('appointedDayAt'), type=h.get('appointedDayType'),
                                         low_manwon=int(h['lowestSellingPrice'] / 1e4) if h.get('lowestSellingPrice') else None, result=h.get('results'))

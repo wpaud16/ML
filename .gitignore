@@ -11,3 +11,6 @@ outfit/.skip
 .env
 local_runner/logs/
 brief/cheongyak_cache/
+
+# other_model.py 학습 결과 (노트북 hist 로만 학습, 용량 큼) — config.json 만 올림
+auction_model/other_model/model.pkl

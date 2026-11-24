@@ -823,7 +823,7 @@ def load_others(pred_dir):
 
 
 def other_card(v):
-    """빌라·상가·건물 카드 — 예측 없이 사실만 (2026-11-16)."""
+    """빌라·상가·건물 카드 — 사실 (2026-11-16) + 상가·건물 낙찰가 모델 예측 v['pred'] (2026-11-24)."""
     addr = re.sub(r'^서울특별시\s+\S+구\s+', '', v.get('address') or '').strip()
     bd = v.get('bidding_date') or ''
     appr, low = (v.get('appr_manwon') or 0) / 1e4, (v.get('low_manwon') or 0) / 1e4
@@ -853,9 +853,24 @@ def other_card(v):
              + (f' <span class="g s">(말소기준 {E(r.get("base_right") or "")} {E(r.get("base_date") or "")})</span>' if r.get('base_right') else '') + '</div>')
     if v.get('traffic'):
         L.append(f'<div class="g s">🚌 감정평가서 교통: {E(v["traffic"][:120])}</div>')
+    p50 = None
+    pr = v.get('pred') or {}
+    if pr.get('p50_manwon') and low:   # 2026-11-24 상가·건물 낙찰가 모델 (other_model.py)
+        p50 = pr['p50_manwon'] / 1e4
+        bp = pr.get('bid_by_prob_manwon') or {}
+        mw = lambda m: f'{m / 1e4:.2f}억' if m >= 1e4 else f'{int(m):,}만'   # 1억 미만은 만원 단위
+        L.append(f'<div class="sec">🎯 예상 낙찰가(50%) <b>{mw(pr["p50_manwon"])}</b> <span class="g">(최저 대비 +{(p50 / low - 1) * 100:.0f}%'
+                 + (f' · 감정 {p50 / appr * 100:.0f}%' if appr else '') + ')</span>'
+                 + (f'<br>🎲 이번 회차 유찰 확률 약 {pr["fail_pct"]}%' if pr.get('fail_pct') is not None else '')
+                 + '<br><span class="s">낙찰확률별 입찰가: ' + ' · '.join(f'{k} {mw(bp[k])}' for k in bp) + '</span>'
+                 + (('<br><span class="s g">입찰가별 낙찰확률: ' + ' · '.join(f'{mw(g["bid_manwon"])} {g["prob"]}%' for g in pr['prob_by_bid']) + '</span>') if pr.get('prob_by_bid') else '')
+                 + f'<br><span class="g s">📐 과거 상가·건물 낙찰 학습 · 평균 오차 약 {pr.get("mape")}% (±10% 안 {pr.get("within10")}%) · 응찰자 수에 따라 크게 달라져 아파트보다 오차 큼</span></div>')
+    elif pr.get('error'):
+        L.append(f'<div class="g s">🎯 예상 낙찰가 계산 실패 ({E(pr["error"][:80])})</div>')
     L.append(f'<div class="s"><a href="https://m.richgo.ai/auctionMobile/{E(v.get("auction_id") or "")}">상세 보기 →</a></div>')
     gu = (v.get('region') or '').split(' ', 1)[-1]
-    return f'<div class="card" data-d="{E(bd)}" data-gu="{E(gu)}" data-case="{E(v["key"].replace("[1]", ""))}">' + ''.join(x for x in L if x) + '</div>'
+    return (f'<div class="card" data-d="{E(bd)}" data-gu="{E(gu)}" data-case="{E(v["key"].replace("[1]", ""))}"'
+            + (f' data-p50="{p50:.2f}"' if p50 else '') + '>' + ''.join(x for x in L if x) + '</div>')
 
 
 def prev_keys(day, pred_dir):
