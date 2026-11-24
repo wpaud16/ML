@@ -50,6 +50,20 @@ def latest_cache(kind, today):
 
 
 # ---------------- 응모 이벤트 ----------------
+INSTA = re.compile(r'인스타|instagram|릴스|리그램', re.I)
+
+
+def is_insta(it):
+    """인스타 계정이 있어야 하는 이벤트 (원문이 인스타거나, 조건·확인 메모에 인스타)."""
+    if INSTA.search(' '.join(str(it.get(k) or '') for k in ('url', 'title', 'how', 'condition', 'where'))):
+        return True
+    try:
+        n = json.load(open(NOTES, encoding='utf-8')).get(ev.key_of(it)) or {}
+    except Exception:
+        n = {}
+    return n.get('need') == 'insta' or bool(INSTA.search(str(n.get('mine') or '')))
+
+
 def prize_items(today):
     """지금 응모 가능한 이벤트 전부: 오늘(또는 최근) 검색 결과 + 보낸 기록(seen) 중 마감 안 지난 것."""
     seen = json.load(open(ev.SEEN, encoding='utf-8')) if os.path.exists(ev.SEEN) else {}
@@ -64,6 +78,7 @@ def prize_items(today):
         if k not in out and s.get('item'):
             out[k] = dict(s['item'], _first=s.get('first'))
     res = []
+    done = done_map()
     for k, it in out.items():
         dl = ev._d(it.get('deadline'))
         st = ev._d(it.get('start'))
@@ -73,6 +88,8 @@ def prize_items(today):
         if not dl and (today - first).days > 21:   # 마감일 모르는 건 3주까지만
             continue
         if st and st > today + dt.timedelta(days=7):
+            continue
+        if is_insta(it) and k not in done:   # 2026-11-25 사용자: 인스타 관련은 안 함 → 빼기
             continue
         res.append(dict(it, _dl=dl, _new=(today - first).days <= 0, _cats=cats_of(it)[:1]))   # 경품 종류도 하나만 (칸 중복 없게)
     far = dt.date(9999, 1, 1)
@@ -106,14 +123,15 @@ def proxy_ok(it):
 
 
 # 2026-11-21 사용자 요청: '바로 할 수 있는 것'이 모호 → 누가 무엇을 하면 되는지로만 나눔 (칸 하나씩)
-GROUPS = {'proxy': '🤖 Claude가 바로 응모', 'google': '🔑 구글 로그인만 → Claude', 'insta': '🔑 인스타 로그인만 → Claude',
-          'verify': '🪪 본인인증·로그인만 직접 → Claude', 'help': '🤝 내 몫 확인 필요', 'self': '👤 직접만 가능', 'done': '✅ 응모 완료'}
-GROUP_TIP = {'proxy': "요청 복사 → Claude 대화창에 붙여넣으면 끝",
-             'google': "PC에서 응모용 창을 열어 구글에 한 번만 로그인해 두면 유튜브 구독·좋아요·댓글·폼까지 Claude가 다 해요",
-             'insta': "응모용 창에서 인스타에 한 번만 로그인해 두면 팔로우·댓글·폼까지 Claude가 다 해요",
-             'verify': "Claude가 창을 열어 두면 본인인증(또는 비밀번호)만 직접 → 나머지는 Claude",
-             'help': "아직 원문을 안 봐서 내 몫이 뭔지 모름 → 요청하면 Claude가 확인",
-             'self': "앱·현장 방문·본인 사진·사연·회원가입·매일 응모처럼 Claude가 대신 못 하는 것"}
+# 2026-11-25 사용자: Claude가 다 시도 → 응모한 건 완료 칸, 안 되는 것 / 내가 할 것 구분. 인스타는 안 함 (insta 칸은 비어 있음)
+GROUPS = {'proxy': '🤖 Claude가 응모 중', 'google': '🙋 내가 할 것: 구글 로그인', 'insta': '🔑 인스타 (안 함)',
+          'verify': '🙋 내가 할 것: 본인인증·로그인', 'help': '🔎 아직 확인 전', 'self': '❌ Claude가 못 함', 'done': '✅ 응모 완료'}
+GROUP_TIP = {'proxy': "아침에 Claude가 시도 중 — 응모되면 ✅ 응모 완료로 옮겨져요",
+             'google': "PC 응모용 창에서 구글 로그인 한 번 → 유튜브·폼은 Claude",
+             'insta': "",
+             'verify': "본인인증(또는 로그인)만 하면 퀴즈·폼·제출은 Claude — 카드의 '요청 복사'로 불러 주세요",
+             'help': "다음 아침 시도 때 Claude가 원문을 열어 보고 칸을 옮겨요",
+             'self': "앱·현장 방문·강의 수강·회원가입·공개 SNS 공유·마감 등 — 하고 싶으면 직접"}
 # 2026-11-19 사용자 요청: 팔로우·캡처·로그인 같은 본인 몫만 해서 넘겨주면 나머지(정답 찾기·폼 작성·업로드·제출)는 Claude 가
 HELP_HARD = re.compile(r'현장|방문|사전\s*등록|행사\s*등록|참가\s*신청|앱\s*설치|어플|오프라인|회원\s*가입|신규\s*가입', re.I)
 MINE = [(r'팔로우', '팔로우'), (r'구독', '구독'), (r'좋아요', '좋아요'), (r'댓글', '댓글'), (r'리그램|공유|게시(?!물)|해시태그', 'SNS 게시·공유'),
@@ -176,13 +194,13 @@ def group_of(it):
         return g
     if g == 'x' or (dn and dn.startswith('x:')):
         return 'self'
+    # 2026-11-25 사용자: 못 하는 걸 '바로 응모' 칸에 넣지 말 것 → 원문 확인(아침 응모 시도)으로 막힘 없다고 본 것만
+    st = prep_of(it).get('status') if not dn else None
+    if st in ('ready', 'quiz'):
+        return 'proxy'
+    if st == 'verify':
+        return 'verify'
     if not dn and proxy_ok(it):
-        # 2026-11-25 사용자: 못 하는 걸 '바로 응모' 칸에 넣지 말 것 → 원문 확인(아침 응모 준비)으로 막힘 없다고 본 것만
-        st = prep_of(it).get('status')
-        if st == 'ready':
-            return 'proxy'
-        if st == 'verify':
-            return 'verify'
         return 'help'
     if dn and dn.startswith('h:'):   # 들어가 보니 본인 몫(로그인 등)이 있던 것
         return 'help'
@@ -222,7 +240,7 @@ def prize_card(it, today):
         except Exception:
             pass
     elif et == 'self':
-        badges = '<span class="ent">👤 직접만 가능</span>'
+        badges = '<span class="ent">❌ Claude가 못 함</span>'
         if ev.entry_type(it) in ev.ENTRY and ev.entry_type(it) not in ('form', 'web'):
             badges += f'<span class="cat">{E(ev.ENTRY[ev.entry_type(it)])}</span>'
     else:
@@ -230,7 +248,7 @@ def prize_card(it, today):
     badges += ''.join(f'<span class="cat">{E(CAT_LABEL[c])}</span>' for c in it['_cats'])
     nt = note_of(it)
     if dn and dn.startswith('x:'):   # 들어가 보니 대신 못 하는 이벤트 (사유)
-        badges += f'<span class="cat">🙅 대신 응모 불가 · {E(dn[2:])}</span>'
+        badges += f'<span class="cat">이유 · {E(dn[2:])}</span>'
     elif nt.get('x'):
         badges += f'<span class="cat">🙅 {E(nt["x"])}</span>'
     if it['_new']:
@@ -272,7 +290,9 @@ def prize_card(it, today):
     elif et == 'help':
         rows.insert(-1, f'<div>👤 내가 할 일(추정): <b>{E(" · ".join(mine_of(it)))}</b> → 나머지는 Claude <span class="g s">(원문 미확인)</span></div>')
     elif et == 'proxy':
-        rows.insert(-1, '<div>👤 내가 할 일: <b>없음</b> <span class="g s">(원문 미확인 · 막히면 알려드려요)</span></div>')
+        rows.insert(-1, '<div>👤 내가 할 일: <b>없음</b></div>')
+    elif et == 'verify' and mine_of(it):
+        rows.insert(-1, f'<div>🙋 내가 할 일: <b>{E(" · ".join(mine_of(it)))}</b> → 나머지는 Claude</div>')
     rows.append(go)
     return (f'<div class="card" data-entry="{et}" data-proxy="{1 if px else 0}" data-cats="{" ".join(it["_cats"])}" data-soon="{1 if n <= 3 else 0}" data-new="{1 if it["_new"] else 0}">'
             + ''.join(rows) + '</div>')
@@ -609,9 +629,10 @@ def build(today):
                     for k in GROUP_TIP if ecnt[k])
     login_cmd = ''
     if ecnt['google'] or ecnt['insta']:
-        login_cmd = ('<div class="g s">🔑 응모용 창 열기 (PC 터미널): <code>python C:\\auction_pc\\ML\\local_runner\\entry_login.py google instagram</code>'
+        login_cmd = ('<div class="g s">🔑 응모용 창 열기 (PC 터미널): <code>python C:\\auction_pc\\ML\\local_runner\\entry_login.py google</code>'
                      ' → 로그인하고 창 닫기 → 이 페이지의 요청 복사</div>')
-    summary = (f'<div class="summary"><div><b>지금 상황</b> · 응모 완료 {ecnt["done"]}건 · 남은 {len(P) - ecnt["done"]}건</div>{srows}{login_cmd}</div>')
+    summary = (f'<div class="summary"><div><b>지금 상황</b> · ✅ 응모 완료 {ecnt["done"]}건 · 🙋 내가 할 것 {ecnt["verify"] + ecnt["google"]}건'
+               f' · ❌ 못 함 {ecnt["self"]}건 <span class="g s">(인스타 이벤트는 뺌)</span></div>{srows}{login_cmd}</div>')
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(CAT_LABEL[k])}<i>{cnt[k]}</i></button>'
                for k in [c for c, _, _ in CATS] + ['etc'] if cnt[k]]
     pcards = ''.join(prize_card(x, today) for x in P) or ''

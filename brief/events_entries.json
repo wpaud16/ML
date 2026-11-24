@@ -348,5 +348,33 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://linkmix.co.kr/edunia202422",
+  "title": "2026 디지털윤리 퀴즈 (성인 대상)",
+  "org": "방송미디어통신위원회·한국지능정보사회진흥원 (운영 티엠티교육그룹)",
+  "url": "https://linkmix.co.kr/edunia202422",
+  "entered": "2026-11-25",
+  "announce": "2026-12-01",
+  "where": "정답자 선착순 기프티콘 문자 (영상 2개 모두 응모)",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "https://form.naver.com/response/5reTTVdV3nO",
+  "title": "2026 하반기 한국전기연구원 SNS 만족도 조사",
+  "org": "한국전기연구원",
+  "url": "https://form.naver.com/response/5reTTVdV3nO",
+  "entered": "2026-11-25",
+  "announce": "2026-12-16",
+  "where": "당첨자 연락",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]

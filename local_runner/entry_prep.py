@@ -14,7 +14,12 @@ BASE = os.path.dirname(REPO)
 OUT = os.path.join(BASE, 'entry', 'ready.json')
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(REPO, 'brief'))
-FORM = re.compile(r'https?://(?:naver\.me/[A-Za-z0-9]+|form\.naver\.com/response/[A-Za-z0-9_-]+)')
+FORM = re.compile(r'https?://(?:naver\.me/[A-Za-z0-9]+|form\.naver\.com/response/[A-Za-z0-9_-]+|forms\.gle/[A-Za-z0-9]+|docs\.google\.com/forms/d/(?:e/)?[A-Za-z0-9_-]+/viewform)')
+QUIZ = re.compile(r'퀴즈|정답|문제|quiz', re.I)
+
+
+def is_google(u):
+    return bool(re.search(r'forms\.gle|docs\.google\.com/forms', u or ''))
 # 2026-11-25: 밀양 퀴즈(실명인증)·아름다운가게(전회원 대상)를 '바로 응모'에 넣었다가 사용자 지적 → 응모 화면까지 들어가 막힘 확인
 VERIFY = [(re.compile(r'실명\s*인증|본인\s*(인증|확인)|휴대폰\s*인증|아이핀|I-?PIN|checkplus|nice\.co\.kr', re.I), '본인인증(휴대폰 PASS·보안문자 직접)'),
           (re.compile(r'전\s*회원|회원\s*(대상|전용|만)|로그인\s*(후|이 필요|하셔야|해\s*주세요)|로그인이 필요'), '사이트 로그인(회원 대상)')]
@@ -39,9 +44,29 @@ def summary(today=None):
     import events_page as p
     done = p.done_map()
     its = load().get('items') or {}
-    ready = [(v['title'], v.get('deadline')) for k, v in its.items() if v.get('status') == 'ready' and k not in done]
+    ready = [(v['title'], v.get('deadline')) for k, v in its.items() if v.get('status') in ('ready', 'quiz') and k not in done]
     stuck = sum(1 for k, v in its.items() if v.get('status') == 'stuck' and k not in done)
     return ready, stuck
+
+
+def report(today=None):
+    """메일용 (2026-11-25): 오늘 응모한 것 / 내가 할 것 / 못 하는 것. 제목만."""
+    import events_page as p, events as ev
+    today = today or dt.date.today()
+    items, _ = p.prize_items(today)
+    done = p.done_map(); t = today.isoformat()
+    out = {'done': [], 'mine': [], 'no': [], 'quiz': []}
+    for x in items:
+        k = ev.key_of(x); g = p.group_of(x)
+        if done.get(k) == t:
+            out['done'].append(x['title'])
+        elif g in ('verify', 'google'):
+            out['mine'].append(f"{x['title']} — {p.note_of(x).get('mine') or ' · '.join(p.mine_of(x))}")
+        elif g == 'proxy':
+            out['quiz'].append(x['title'])
+        elif g == 'self' and x.get('_new'):
+            out['no'].append(x['title'])
+    return out
 
 
 def page_text(pg):
@@ -126,9 +151,16 @@ def main():
                 elif NEEDS_ME.search(text + ' ' + (x.get('how') or '') + ' ' + (x.get('condition') or '')):
                     rec.update(status='needs_me', form=form, reason='내 계정 몫: ' + ', '.join(sorted(set(NEEDS_ME.findall(text + (x.get('how') or ''))))))
                 else:
-                    st, L = nform.fill(pg, form, submit=False)
+                    if is_google(form):
+                        import gform
+                        st, L = gform.fill(pg, form, submit=False, yt=nform.env().get('ENTRY_YT', ''))
+                    else:
+                        st, L = nform.fill(pg, form, submit=False)
                     rec.update(status=st if st != 'done' else 'already', form=form, answers=L,
                                reason=(L[-1] if st == 'stuck' and L else ''))
+                    # 퀴즈인데 정답을 추측으로 고른 게 있으면 자동 제출 안 함 → Claude 가 대화에서 정답 찾고 제출
+                    if st == 'ready' and QUIZ.search(title + ' ' + (x.get('how') or '')) and any('(추측)' in l for l in L):
+                        rec.update(status='quiz', reason='퀴즈 정답 확인 필요')
             except Exception as e:
                 rec.update(status='error', reason=str(e)[:150])
             its[k] = rec

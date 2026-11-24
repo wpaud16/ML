@@ -314,12 +314,23 @@
   "need": "verify"
  },
  "https://korean.visitkorea.or.kr/detail/event_detail.do": {
-  "group": "self",
-  "mine": "대한민국 구석구석 로그인 + 배지 게임",
-  "claude": ""
+  "group": "help",
+  "mine": "대한민국 구석구석 로그인 + 배송 주소 (OX퀴즈 정답은 Claude)",
+  "claude": "",
+  "need": "verify"
  },
  "https://youtube.com/shorts/ue_FwgszrCg": {
   "group": "x",
   "x": "영상에 이벤트 안내 없음 (채용 안내 쇼츠)"
+ },
+ "https://www.miryang.go.kr": {
+  "group": "help",
+  "need": "verify",
+  "mine": "실명인증(휴대폰 PASS + 보안문자) + 배송 주소 (퀴즈는 Claude)"
+ },
+ "https://share.beautifulstore.org/event/161": {
+  "group": "help",
+  "need": "verify",
+  "mine": "아름다운가게 회원 로그인 (퀴즈는 Claude)"
  }
 }

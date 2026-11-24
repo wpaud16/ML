@@ -275,10 +275,11 @@ def s_outfit():
     if os.path.exists(skip):
         return
     s_events_now()   # 응모 이벤트·지역 행사 검색 결과가 없으면 지금 (2026-11-18)
-    try:   # 2026-11-23: 대신 응모 준비 (폼 미리 채워 보기만, 제출은 사용자가 '응모해줘' 했을 때)
+    try:   # 2026-11-25 사용자: 매일 다 시도해서 할 수 있는 건 응모까지 (원문 확인 → 폼 채우기 → 제출 → 응모 완료 칸)
         run([sys.executable, 'entry_prep.py'], cwd=HERE, timeout=20 * 60, check=False)
+        run([sys.executable, 'entry_submit.py'], cwd=HERE, timeout=15 * 60, check=False)
     except Exception as e:
-        log(f'응모 준비 실패(무시): {e}')
+        log(f'자동 응모 실패(무시): {e}')
     try:   # 응모 이벤트·지역 행사 웹페이지 (events/index.html, 2026-11-18)
         run([sys.executable, 'events_page.py'], cwd=os.path.join(REPO, 'brief'), timeout=300)
     except Exception as e:

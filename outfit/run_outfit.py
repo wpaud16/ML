@@ -76,13 +76,15 @@ def life_sections(day, test):
     try:   # 2026-11-23: 새벽에 폼까지 채워 둔 이벤트 → 대화창에 '응모해줘' 한마디 (local_runner/entry_prep.py)
         sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'local_runner'))
         import entry_prep, html
-        rdy, stk = entry_prep.summary()
-        if rdy:
-            li = ''.join(f'<li>{html.escape(t)}' + (f' <span style="color:#888">(~{html.escape(str(d)[5:])})</span>' if d else '') + '</li>' for t, d in rdy)
-            H.append(f'<div style="border:2px solid #4c8bf5;border-radius:10px;padding:10px 12px;margin:12px 0">'
-                     f'<b>📮 오늘 응모 준비 {len(rdy)}건</b> — 폼은 다 채워 뒀어요. Claude 대화창에 <b>"응모해줘"</b> 한마디면 제출해요.'
-                     f'<ul style="margin:6px 0 0 18px;padding:0">{li}</ul></div>')
-            T.append(f'📮 오늘 응모 준비 {len(rdy)}건 — Claude 에 "응모해줘"\n' + '\n'.join(f'- {t}' for t, _ in rdy))
+        r = entry_prep.report()   # 2026-11-25: 오늘 응모한 것 / 내가 할 것 / 못 하는 것 구분
+        secs = [('✅ 오늘 Claude가 응모함', r['done']), ('🧩 퀴즈 정답 확인 후 응모 — Claude 대화창에 "퀴즈 응모해줘"', r['quiz']),
+                ('🙋 내가 할 것 (이것만 하면 나머지는 Claude)', r['mine']), ('❌ 새로 찾았지만 Claude가 못 함', r['no'])]
+        secs = [(h, xs) for h, xs in secs if xs]
+        if secs:
+            body = ''.join(f'<div style="margin-top:6px"><b>{html.escape(h)} {len(xs)}건</b><ul style="margin:4px 0 0 18px;padding:0">'
+                           + ''.join(f'<li>{html.escape(x)}</li>' for x in xs) + '</ul></div>' for h, xs in secs)
+            H.append(f'<div style="border:2px solid #4c8bf5;border-radius:10px;padding:10px 12px;margin:12px 0"><b>📮 이벤트 응모</b>{body}</div>')
+            T.append('📮 이벤트 응모\n' + '\n'.join(f'{h} {len(xs)}건\n' + '\n'.join(f'- {x}' for x in xs) for h, xs in secs))
     except Exception:
         tb.print_exc()
     try:   # 2026-11-19: 대신 응모한 이벤트 당첨 확인 결과 (새 결과 있을 때만)

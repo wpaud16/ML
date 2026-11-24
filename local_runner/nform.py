@@ -70,8 +70,9 @@ def pick(R, title, opts):
     return None
 
 
-def fill(pg, url, submit=False):
-    e = env(); R = rules(e)
+def fill(pg, url, submit=False, files=None):
+    """files: 사진 첨부 문항에 올릴 파일 (구독·팔로우 캡처 등). 없으면 첨부 문항에서 멈춤."""
+    e = env(); R = rules(e); files = list(files or [])
     name, phone, mail = e['ENTRY_NAME'], re.sub(r'\D', '', e['ENTRY_PHONE']), e.get('ENTRY_EMAIL', '')
     L = []
     pg.goto(url, wait_until='domcontentloaded', timeout=40000); pg.wait_for_timeout(5000)
@@ -93,6 +94,19 @@ def fill(pg, url, submit=False):
             labels = q.query_selector_all('label')
             opts = [l.inner_text().strip() for l in labels]
             txt = q.query_selector('input[type=text], input[type=tel], input[type=email], textarea')
+            fin = q.query_selector('input[type=file]')
+            if fin:   # 2026-11-25: 캡처 첨부
+                if not files:
+                    if req: return 'stuck', L + [f'첨부할 캡처 필요: {title}']
+                    continue
+                f = files.pop(0)
+                try:
+                    with pg.expect_response(lambda r: r.request.method == 'POST' and 'upload' in r.url.lower(), timeout=30000):
+                        fin.set_input_files(f)
+                except Exception:
+                    pg.wait_for_timeout(4000)
+                pg.wait_for_timeout(1500)
+                L.append(f'{title} → 캡처 첨부 ({os.path.basename(f)})'); continue
             if labels and not any(opts):   # 표(행렬)형: 행마다 '보통'
                 rows = [r for r in q.query_selector_all('tr, [role=row]') if r.query_selector('input')]
                 if not rows:
@@ -128,6 +142,15 @@ def fill(pg, url, submit=False):
                 if not val: return 'stuck', L + [f'내 정보 없음: {title}']
                 txt.fill(val); pg.wait_for_timeout(150)
                 L.append(f'{title} → {"(내 정보)" if val != FREE else FREE}')
+            elif q.query_selector('.nsv_survey_question_dropdown'):   # 2026-11-25: 드롭다운 (연령대 등)
+                dopts = [o.inner_text().strip() for o in q.query_selector_all('[role=option]')]
+                ch = pick(R, title, dopts) or (guess(dopts) if req else None)
+                if not ch:
+                    if req: return 'stuck', L + [f'드롭다운 보기 모름: {title}']
+                    continue
+                q.query_selector('.nsv_button_question_dropdown').click(); pg.wait_for_timeout(400)
+                next(o for o in q.query_selector_all('[role=option]') if o.inner_text().strip() == ch).click(); pg.wait_for_timeout(300)
+                L.append(f'{title} → {"(내 정보)" if mine else ch}')
             elif req:
                 return 'stuck', L + [f'형식 모름: {title}']
         nxt = pg.query_selector('button:has-text("다음")')
