@@ -8,7 +8,7 @@
   "announce": null,
   "where": null,
   "status": "pending",
-  "checked": null,
+  "checked": "2026-11-25",
   "result_url": null,
   "note": null,
   "reported": false
@@ -22,7 +22,7 @@
   "announce": null,
   "where": null,
   "status": "pending",
-  "checked": null,
+  "checked": "2026-11-25",
   "result_url": null,
   "note": null,
   "reported": false
@@ -119,11 +119,11 @@
   "entered": "2026-11-20",
   "announce": "2026-11-24",
   "where": "인스타 DM",
-  "status": "pending",
-  "checked": "2026-11-24",
-  "result_url": null,
-  "note": null,
-  "reported": false
+  "status": "manual",
+  "checked": "2026-11-25",
+  "result_url": "https://www.instagram.com/channel_jca/p/DgHhV7bksoH/",
+  "note": "명단이 이미지라 직접 확인이 필요해요",
+  "reported": true
  },
  {
   "key": "https://www.instagram.com/p/Dfy3QBBiWZS",

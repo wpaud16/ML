@@ -231,6 +231,82 @@
    "winners": 1300
   }
  },
+ "https://event.refurlab.com": {
+  "deadline": "2026-12-22",
+  "first": "2026-11-25",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "리퍼연구소 회원가입(만 14세 이상)·휴대폰 인증",
+   "deadline": "2026-12-22",
+   "entry": "login",
+   "how": "보유 기기·상태 선택해 시세 확인 → 휴대폰 인증 → 룰렛 돌리기",
+   "kind": "기업",
+   "org": "리퍼연구소 ((주)도구모음)",
+   "prize": "아이패드 11세대(중고 S급), 아이폰 13(중고 A급), 애플펜슬, 커피 쿠폰, 포인트 등",
+   "start": "2026-11-24",
+   "title": "서랍 속 노트북·태블릿 시세 확인하면 100% 당첨 룰렛",
+   "url": "https://event.refurlab.com/",
+   "winners": null
+  }
+ },
+ "https://form.naver.com/response/5RJbFtDBf7Z": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": "2026-12-08",
+   "checked": false,
+   "condition": "인스타그램 팔로우, 네이버 로그인",
+   "deadline": null,
+   "entry": "sns",
+   "how": "@korail_culture 팔로우·게시물 좋아요 후 팔로우 캡처를 네이버폼으로 제출",
+   "kind": "공공기관",
+   "org": "코레일",
+   "prize": "편의점 모바일 상품권 5천원 50명",
+   "start": "2026-11-19",
+   "title": "전주 철도문화전 인스타그램 팔로우 EVENT",
+   "url": "https://form.naver.com/response/5RJbFtDBf7Z",
+   "winners": 50
+  }
+ },
+ "https://form.naver.com/response/5reTTVdV3nO": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": "2026-12-16",
+   "checked": false,
+   "condition": "SNS 팔로우",
+   "deadline": null,
+   "entry": "sns",
+   "how": "KERI SNS 채널 1개 이상 팔로우 후 네이버폼 설문 제출",
+   "kind": "공공기관",
+   "org": "한국전기연구원",
+   "prize": "네이버페이 5천원 20명",
+   "start": "2026-11-16",
+   "title": "2026 하반기 한국전기연구원 SNS 만족도 조사",
+   "url": "https://form.naver.com/response/5reTTVdV3nO",
+   "winners": 20
+  }
+ },
+ "https://form.naver.com/response/DLAjc16azUk": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": "카카오톡 채널 추가",
+   "deadline": null,
+   "entry": "sns",
+   "how": "카카오톡 채널 친구 추가 후 네이버폼 제출",
+   "kind": "공공기관",
+   "org": "한국영유아보육·교육진흥원",
+   "prize": "맥도날드 1만원 상품권 100명",
+   "start": "2026-11-20",
+   "title": "한국영유아보육·교육진흥원 카카오톡 채널 친구 추가 이벤트",
+   "url": "https://form.naver.com/response/DLAjc16azUk",
+   "winners": 100
+  }
+ },
  "https://forms.gle/2ShbkgbMqfi1okhCA": {
   "deadline": "2026-11-27",
   "first": "2026-11-21",
@@ -406,6 +482,25 @@
   },
   "soon_sent": "2026-11-22"
  },
+ "https://forms.gle/y3HUJ4GPnAe6gmqt7": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-25",
+  "item": {
+   "announce": "2026-12-04",
+   "checked": true,
+   "condition": "유튜브 구독·좋아요·댓글",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "보건복지부TV 유튜브 구독·영상 좋아요·응원 댓글 후 구글폼 제출",
+   "kind": "공공기관",
+   "org": "보건복지부",
+   "prize": "배달의민족 1만원 모바일 금액권 100명",
+   "start": "2026-11-16",
+   "title": "2026 발달장애인 인식개선 영상 시청 & 댓글 응원 이벤트",
+   "url": "https://forms.gle/y3HUJ4GPnAe6gmqt7",
+   "winners": 100
+  }
+ },
  "https://harpersbazaar.co.kr/event/detail/242": {
   "deadline": "2026-12-06",
   "first": "2026-11-19",
@@ -464,6 +559,44 @@
   },
   "soon_sent": "2026-11-21"
  },
+ "https://ktcloud.webinow.kr/observability/registration": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": "사전등록",
+   "deadline": null,
+   "entry": "form",
+   "how": "웨비나 사전등록 후 12/2 시청·설문 응답",
+   "kind": "기업",
+   "org": "kt cloud (운영 웨이온)",
+   "prize": "스타벅스 아메리카노 선착순 50명, 록시땅 핸드크림 추첨 10명",
+   "start": null,
+   "title": "kt cloud 웨비나 '클라우드 운영, 보이는 만큼 달라진다'",
+   "url": "https://ktcloud.webinow.kr/observability/registration",
+   "winners": 60
+  }
+ },
+ "https://linkmix.co.kr/edunia202422": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": null,
+   "deadline": null,
+   "entry": "form",
+   "how": "참여 링크에서 영상 시청 후 퀴즈 풀기",
+   "kind": "공공기관",
+   "org": "방송미디어통신위원회·한국지능정보사회진흥원 (운영 티엠티교육그룹)",
+   "prize": "선착순 2,000명 아메리카노 모바일 쿠폰",
+   "start": "2026-11-16",
+   "title": "2026 디지털윤리 퀴즈 (성인 대상)",
+   "url": "https://linkmix.co.kr/edunia202422",
+   "winners": 2000
+  }
+ },
  "https://love.seoul.go.kr/event/20169": {
   "deadline": "2026-11-25",
   "first": "2026-11-21",
@@ -483,6 +616,25 @@
    "winners": 5
   },
   "soon_sent": "2026-11-22"
+ },
+ "https://m.site.naver.com/2keax": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": "지식배움터 회원가입, 첫 수료자만",
+   "deadline": null,
+   "entry": "login",
+   "how": "지식배움터 AI 학습관 강의 첫 수료",
+   "kind": "공공기관",
+   "org": "소상공인시장진흥공단",
+   "prize": "선착순 3,000명 디지털 온누리상품권 5천원(100번째마다 5만원 30명), 추첨 700명 5천원",
+   "start": "2026-11-11",
+   "title": "소상공인 지식배움터 첫 수료 이벤트",
+   "url": "https://m.site.naver.com/2keax",
+   "winners": 3700
+  }
  },
  "https://mcfamily.or.kr/posts/notice/15078": {
   "deadline": "2026-12-06",
@@ -542,6 +694,26 @@
    "winners": 1200
   }
  },
+ "https://minsim.io/sponsored-quizzes/cmw1hf6h100315u018q4un0zm": {
+  "deadline": "2026-11-28",
+  "first": "2026-11-25",
+  "item": {
+   "announce": "2026-11-28",
+   "checked": true,
+   "condition": "민심마켓 앱 설치·회원가입(만 14세 이상)",
+   "deadline": "2026-11-28",
+   "entry": "app",
+   "how": "앱에서 퀴즈(초성 힌트) 정답 입력",
+   "kind": "유통·쇼핑",
+   "org": "민심마켓 (경품 제공 어텐티)",
+   "prize": "어텐티 케어 크림 60ml 10명",
+   "start": "2026-11-14",
+   "title": "어텐티 정답 맞히고 케어 크림 받기",
+   "url": "https://minsim.io/sponsored-quizzes/cmw1hf6h100315u018q4un0zm",
+   "winners": 10
+  },
+  "soon_sent": "2026-11-25"
+ },
  "https://modu.go.kr/fron/jdgmn/jdgmnView.do": {
   "deadline": "2026-11-30",
   "first": "2026-11-19",
@@ -579,6 +751,25 @@
    "title": "모두의 광장 개편 기념 이벤트",
    "url": "https://modu.go.kr/front/qustnrNew/qustnrNewFrontView.do?menu_id=421&qustnr_id=643fda170e704cc697601a0d0bac3e93",
    "winners": 304
+  }
+ },
+ "https://naver.me/xoG9HPGN": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": "2026-12-15",
+   "checked": false,
+   "condition": null,
+   "deadline": null,
+   "entry": "form",
+   "how": "'마음건강' 4행시를 네이버폼으로 제출",
+   "kind": "공공기관",
+   "org": "노원구보건소",
+   "prize": "건강간식 기프티콘 200명",
+   "start": "2026-11-20",
+   "title": "2026 건강도시 릴레이 이벤트_마음건강편 (4행시)",
+   "url": "https://naver.me/xoG9HPGN",
+   "winners": 200
   }
  },
  "https://nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyDtl.ps": {
@@ -621,6 +812,25 @@
   },
   "soon_sent": "2026-11-23"
  },
+ "https://poomang.com/t/cpgi1_test": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": "2026-12-07",
+   "checked": false,
+   "condition": "KLACC 인스타그램 팔로우",
+   "deadline": null,
+   "entry": "sns",
+   "how": "자가진단 테스트 후 결과 캡처를 인스타 게시물 댓글로 인증",
+   "kind": "공공기관",
+   "org": "강원랜드 마음채움센터(KLACC)",
+   "prize": "네이버페이 1만원 20명",
+   "start": "2026-11-11",
+   "title": "[KLACC] 내 마음의 브레이크 테스트2 댓글 인증 이벤트",
+   "url": "https://poomang.com/t/cpgi1_test?c=3",
+   "winners": 20
+  }
+ },
  "https://seoul.co.kr/event/2026SeoulAdAward/index.php": {
   "deadline": null,
   "first": "2026-11-20",
@@ -638,6 +848,25 @@
    "title": "2026 서울광고대상 한줄평 독자 이벤트",
    "url": "https://seoul.co.kr/event/2026SeoulAdAward/index.php",
    "winners": 1000
+  }
+ },
+ "https://share.beautifulstore.org/event/161": {
+  "deadline": null,
+  "first": "2026-11-25",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": null,
+   "deadline": null,
+   "entry": "form",
+   "how": "이벤트 페이지 객관식 퀴즈 정답 제출",
+   "kind": "기타",
+   "org": "아름다운가게",
+   "prize": "기프티콘 10명",
+   "start": "2026-11-12",
+   "title": "[아름다운가게] 겨울맞이 옷장정리 방법 퀴즈",
+   "url": "https://share.beautifulstore.org/event/161",
+   "winners": 10
   }
  },
  "https://signal.askcuri.com/v/030db12b-8106-4cfe-bb30-5f72bafe6a82": {
