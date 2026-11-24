@@ -750,11 +750,14 @@ function sumOf(x){var c=x.e,t=c.querySelector('.t'),tx=c.textContent,nm='',tags=
  return '<span class="ic">'+x.lab.split(' ')[0]+'</span><span class="nm">'+(c.querySelector('.new')?'<i class="nw">N</i>':'')+esc(nm)
   +(cs?'<span class="sb">'+esc(cs)+'</span>':'')+'<span class="sb">'+esc(sub)+'</span></span><span class="pr">'+R+'</span><span class="ar">▾</span>';}
 function cal(){var box=D.getElementById('cal');box.innerHTML='';var y=YM[0],m=YM[1],cur=y+'-'+p2(m+1),tm=TD.slice(0,7),ks=Object.keys(BY).sort();
- var MS=ks.map(function(k){return k.slice(0,7);}).concat([tm]).filter(function(v,i,a){return a.indexOf(v)==i;}).sort(),mi=MS.indexOf(cur);
- function goM(s){if(s){YM=[+s.slice(0,4),+s.slice(5,7)-1];cal();setH();}}
+ /* ‹ › 는 바로 앞·뒤 달로 이동 (물건 있는 달만 건너뛰면 11월 ‹ 가 1월로 튐), 물건이 있는 첫 달~마지막 달 범위 안에서만 */
+ var MS=ks.map(function(k){return k.slice(0,7);}).concat([tm]).sort(),lo=MS[0],hi=MS[MS.length-1];
+ function ymOf(n){var yy=y+Math.floor((m+n)/12),mm=((m+n)%12+12)%12;return yy+'-'+p2(mm+1);}
+ var pm=ymOf(-1),nm=ymOf(1);
+ function goM(s){YM=[+s.slice(0,4),+s.slice(5,7)-1];cal();setH();}
  var hd=D.createElement('div');hd.className='cal-hd';
- var pv=D.createElement('button');pv.type='button';pv.textContent='‹';pv.disabled=mi<=0;pv.onclick=function(){goM(MS[mi-1]);};
- var nx=D.createElement('button');nx.type='button';nx.textContent='›';nx.disabled=mi<0||mi>=MS.length-1;nx.onclick=function(){goM(MS[mi+1]);};
+ var pv=D.createElement('button');pv.type='button';pv.textContent='‹';pv.disabled=pm<lo;pv.onclick=function(){goM(pm);};
+ var nx=D.createElement('button');nx.type='button';nx.textContent='›';nx.disabled=nm>hi;nx.onclick=function(){goM(nm);};
  var tt=D.createElement('b');tt.textContent=y+'.'+(m+1);hd.appendChild(pv);hd.appendChild(tt);hd.appendChild(nx);box.appendChild(hd);
  /* 주말 기일 물건이 있는 달만 토·일 칸도 (보통 법원 경매는 평일) */
  var wk=[],w=null,last=new Date(Date.UTC(y,m+1,0)).getUTCDate(),C7=ks.some(function(k){var g=new Date(k+'T00:00:00Z').getUTCDay();return k.slice(0,7)==cur&&(g==0||g==6)&&(SHOWPAST||cur!=tm||k>=TD);});
