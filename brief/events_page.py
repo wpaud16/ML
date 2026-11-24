@@ -131,6 +131,9 @@ def mine_of(it):
     dn = done_map().get(ev.key_of(it)) or ''
     if dn.startswith('h:'):
         return [dn[2:]]
+    pr = prep_of(it)
+    if pr.get('status') == 'verify' and pr.get('reason'):
+        return [pr['reason']]
     t = ' '.join(str(it.get(k) or '') for k in ('title', 'how', 'condition'))
     out = [lab for p, lab in MINE if re.search(p, t)]
     if re.search(r'팔로우|구독|좋아요|공유|게시(?!물)', t) and '캡처' not in out:
@@ -150,6 +153,16 @@ def note_of(it):
         return {}
 
 
+PREP = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'entry', 'ready.json')   # local_runner/entry_prep.py 결과 (저장소 밖)
+
+
+def prep_of(it):
+    try:
+        return (json.load(open(PREP, encoding='utf-8')).get('items') or {}).get(ev.key_of(it)) or {}
+    except Exception:
+        return {}
+
+
 def group_of(it):
     """응모 방식 칸 (하나만): 응모 완료 > (원문 확인 메모) > 대신 응모 가능 > 캡처 주면 대신 > 원래 응모 방식."""
     dn = done_map().get(ev.key_of(it))
@@ -164,7 +177,13 @@ def group_of(it):
     if g == 'x' or (dn and dn.startswith('x:')):
         return 'self'
     if not dn and proxy_ok(it):
-        return 'proxy'
+        # 2026-11-25 사용자: 못 하는 걸 '바로 응모' 칸에 넣지 말 것 → 원문 확인(아침 응모 준비)으로 막힘 없다고 본 것만
+        st = prep_of(it).get('status')
+        if st == 'ready':
+            return 'proxy'
+        if st == 'verify':
+            return 'verify'
+        return 'help'
     if dn and dn.startswith('h:'):   # 들어가 보니 본인 몫(로그인 등)이 있던 것
         return 'help'
     if not dn and help_ok(it):

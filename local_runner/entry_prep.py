@@ -15,6 +15,9 @@ OUT = os.path.join(BASE, 'entry', 'ready.json')
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(REPO, 'brief'))
 FORM = re.compile(r'https?://(?:naver\.me/[A-Za-z0-9]+|form\.naver\.com/response/[A-Za-z0-9_-]+)')
+# 2026-11-25: 밀양 퀴즈(실명인증)·아름다운가게(전회원 대상)를 '바로 응모'에 넣었다가 사용자 지적 → 응모 화면까지 들어가 막힘 확인
+VERIFY = [(re.compile(r'실명\s*인증|본인\s*(인증|확인)|휴대폰\s*인증|아이핀|I-?PIN|checkplus|nice\.co\.kr', re.I), '본인인증(휴대폰 PASS·보안문자 직접)'),
+          (re.compile(r'전\s*회원|회원\s*(대상|전용|만)|로그인\s*(후|이 필요|하셔야|해\s*주세요)|로그인이 필요'), '사이트 로그인(회원 대상)')]
 NEEDS_ME = re.compile(r'팔로우|구독|좋아요|댓글|공유|리그램|태그|캡[처쳐]|인증샷|업로드|첨부|스토리|게시물\s*작성|로그인 후|회원\s*가입')
 
 
@@ -39,6 +42,42 @@ def summary(today=None):
     ready = [(v['title'], v.get('deadline')) for k, v in its.items() if v.get('status') == 'ready' and k not in done]
     stuck = sum(1 for k, v in its.items() if v.get('status') == 'stuck' and k not in done)
     return ready, stuck
+
+
+def page_text(pg):
+    try:
+        return pg.evaluate("document.body.innerText+' '+[...document.images].map(i=>i.alt).join(' ')")[:15000] + ' ' + pg.url
+    except Exception:
+        return ''
+
+
+def dig(pg, url, title, hops=3):
+    """원문 → 이벤트로 이어지는 링크(제목 낱말·이벤트·퀴즈·응모)를 최대 3번 따라가 (누리집 → 팝업 → 응모 화면) 응모 화면 글까지 모음."""
+    words = [w for w in re.findall(r'[가-힣A-Za-z0-9]{2,}', title) if w not in ('이벤트', '2026년', '2026')]
+    pg.goto(url, wait_until='domcontentloaded', timeout=35000); pg.wait_for_timeout(3500)
+    texts, seen = [page_text(pg)], {pg.url}
+    for _ in range(hops):
+        links = pg.evaluate("[...document.querySelectorAll('a')].map(a=>[a.href,(a.innerText||'')+' '+(a.title||'')+' '+[...a.querySelectorAll('img')].map(i=>i.alt).join(' ')])")
+        best = None
+        for h, t in links:
+            if not h.startswith('http') or h in seen:
+                continue
+            sc = sum(w in t for w in words) + (1 if re.search(r'이벤트|퀴즈|응모|참여', t) else 0)
+            if sc >= 2 and (not best or sc > best[0]):
+                best = (sc, h)
+        if not best:
+            break
+        seen.add(best[1])
+        try:
+            pg.goto(best[1], wait_until='domcontentloaded', timeout=35000); pg.wait_for_timeout(3000)
+        except Exception:
+            break
+        texts.append(page_text(pg))
+    return '\n'.join(texts)
+
+
+def blocker(text):
+    return next((lab for r, lab in VERIFY if r.search(text)), '')
 
 
 def main():
@@ -77,7 +116,12 @@ def main():
                     links = pg.evaluate("[...document.querySelectorAll('a')].map(a=>a.href)")
                     m = FORM.search(text) or next((FORM.match(h) for h in links if FORM.match(h)), None)
                     form = m.group(0) if m else ''
-                if not form:
+                    if not form and 'instagram.com' not in u:
+                        text = dig(pg, u, title)
+                b = blocker(text)
+                if b:
+                    rec.update(status='verify', form=form, reason=b)
+                elif not form:
                     rec.update(status='noform', reason='네이버 폼 링크 없음 (다른 방식 응모)')
                 elif NEEDS_ME.search(text + ' ' + (x.get('how') or '') + ' ' + (x.get('condition') or '')):
                     rec.update(status='needs_me', form=form, reason='내 계정 몫: ' + ', '.join(sorted(set(NEEDS_ME.findall(text + (x.get('how') or ''))))))
