@@ -724,7 +724,7 @@ var CATS=[['apt','🏢 아파트'],['ot','🏬 오피스텔'],['shop','🏪 상�
 var TD=new Date(Date.now()+9*3600e3).toISOString().slice(0,10);
 function p2(n){return ('0'+n).slice(-2);}
 var F={cats:['apt','ot'],gus:[]};try{var s=JSON.parse(load('myf')||'null');if(s&&s.cats)F=s;}catch(e){}
-var SRC=[];CATS.forEach(function(c){$$('#'+c[0]+'-soon .card,#'+c[0]+'-later .card,#past-'+c[0]+' .card').forEach(function(e){SRC.push({c:c[0],lab:c[1],e:e,d:e.getAttribute('data-d')||'',g:e.getAttribute('data-gu')||''});});});
+var SRC=[];CATS.forEach(function(c){$$('#'+c[0]+'-soon .card,#'+c[0]+'-later .card,#past-'+c[0]+' .card,#'+c[0]+'-nt .card').forEach(function(e){SRC.push({c:c[0],lab:c[1],e:e,d:e.getAttribute('data-d')||'',g:e.getAttribute('data-gu')||'',nt:!!e.closest('#'+c[0]+'-nt')});});});   /* 2026-11-24: 실거래 없음(참고)도 캘린더에 */
 var gcnt={};SRC.forEach(function(x){if(x.g&&x.d>=TD)gcnt[x.g]=(gcnt[x.g]||0)+1;});F.gus.forEach(function(g){if(!(g in gcnt))gcnt[g]=0;});var GUS=Object.keys(gcnt).sort();var tmp=null;
 function chip(box,val,lab,n,sel){var b=D.createElement('button');b.type='button';b.innerHTML=lab+(n!=null?'<i>'+n+'</i>':'');
  b.classList.toggle('on',sel.indexOf(val)>=0);b.onclick=function(){var i=sel.indexOf(val);if(i>=0)sel.splice(i,1);else sel.push(val);b.classList.toggle('on',i<0);};box.appendChild(b);}
@@ -737,7 +737,7 @@ function esc(s){return s.replace(/[&<>"]/g,function(x){return {'&':'&amp;','<':'
 function sumOf(x){var c=x.e,t=c.querySelector('.t'),tx=c.textContent,nm='',tags=[];
  if(t){var q=t.cloneNode(true);q.querySelectorAll('.hh,.new').forEach(function(e){e.remove();});nm=q.textContent.split('·')[0].trim();}
  var sz=t&&(t.textContent.match(/전용 ([0-9.]+)㎡/)||t.textContent.match(/([0-9.]+)㎡/));
- if(tx.indexOf('✅ 정밀')>=0)tags.push('✅정밀');if(t&&t.textContent.indexOf('🛡 안전')>=0)tags.push('🛡안전');
+ if(x.nt)tags.push('🔍실거래 없음');if(tx.indexOf('✅ 정밀')>=0)tags.push('✅정밀');if(t&&t.textContent.indexOf('🛡 안전')>=0)tags.push('🛡안전');
  var cs=c.getAttribute('data-case')||'',p5=c.getAttribute('data-p50');
  var sub=[x.g].concat(sz?[(/전용/.test(sz[0])?'전용 ':'')+(+sz[1]).toFixed(1).replace(/\.0$/,'')+'㎡']:[]).concat(tags).filter(Boolean).join(' · ');
  var lo=tx.match(/최저가? ([0-9.]+억)/),pc=tx.match(/최저가 [0-9.]+억 [(]시세 대비 ([0-9]+)%/),pa=tx.match(/최저 [0-9.]+억 [(]([0-9]+)%[)]/);
