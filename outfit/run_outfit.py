@@ -73,20 +73,7 @@ def life_sections(day, test):
         H += h; T += t
     except Exception:
         tb.print_exc(); fails.append('이벤트·행사 바로가기')
-    try:   # 2026-11-23: 새벽에 폼까지 채워 둔 이벤트 → 대화창에 '응모해줘' 한마디 (local_runner/entry_prep.py)
-        sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'local_runner'))
-        import entry_prep, html
-        r = entry_prep.report()   # 2026-11-25: 오늘 응모한 것 / 내가 할 것 / 못 하는 것 구분
-        secs = [('✅ 오늘 Claude가 응모함', r['done']), ('🧩 퀴즈 정답 확인 후 응모 — Claude 대화창에 "퀴즈 응모해줘"', r['quiz']),
-                ('🙋 내가 할 것 (이것만 하면 나머지는 Claude)', r['mine']), ('❌ 새로 찾았지만 Claude가 못 함', r['no'])]
-        secs = [(h, xs) for h, xs in secs if xs]
-        if secs:
-            body = ''.join(f'<div style="margin-top:6px"><b>{html.escape(h)} {len(xs)}건</b><ul style="margin:4px 0 0 18px;padding:0">'
-                           + ''.join(f'<li>{html.escape(x)}</li>' for x in xs) + '</ul></div>' for h, xs in secs)
-            H.append(f'<div style="border:2px solid #4c8bf5;border-radius:10px;padding:10px 12px;margin:12px 0"><b>📮 이벤트 응모</b>{body}</div>')
-            T.append('📮 이벤트 응모\n' + '\n'.join(f'{h} {len(xs)}건\n' + '\n'.join(f'- {x}' for x in xs) for h, xs in secs))
-    except Exception:
-        tb.print_exc()
+    # 2026-11-25 사용자: 자동 응모 결과는 메일에 넣지 말고 이벤트 웹페이지에만 (events_page.py 맨 위 '오늘 응모')
     try:   # 2026-11-19: 대신 응모한 이벤트 당첨 확인 결과 (새 결과 있을 때만)
         import prize_check
         h, t, mark = prize_check.render()

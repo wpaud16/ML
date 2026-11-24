@@ -20,6 +20,44 @@ QUIZ = re.compile(r'퀴즈|정답|문제|quiz', re.I)
 
 def is_google(u):
     return bool(re.search(r'forms\.gle|docs\.google\.com/forms', u or ''))
+
+
+YT = re.compile(r'https?://(?:youtu\.be/[\w-]{6,}|(?:www\.|m\.)?youtube\.com/(?:watch\?v=[\w-]{6,}|shorts/[\w-]{6,}))')
+YT_OK = {'구독', '좋아요', '댓글', '캡처', '캡쳐', '업로드', '첨부', '인증샷'}   # 유튜브 몫 + 그 캡처 올리기까지는 Claude 가
+SHOTS = os.path.join(BASE, 'entry', 'shots')
+
+
+def fill_form(pg, form, files=None, extra=None, submit=False):
+    import nform
+    if is_google(form):
+        import gform
+        return gform.fill(pg, form, extra=extra, submit=submit, yt=nform.env().get('ENTRY_YT', ''))
+    return nform.fill(pg, form, submit=submit, files=files, extra=extra)
+
+
+def do_youtube(pg, k, video, needs, title, cond):
+    """2026-11-25 사용자: 댓글도 Claude 가 (이상한 댓글 말고). 구독·좋아요·댓글 + 캡처. → (캡처 파일들, 오류)"""
+    import yt, entry_ai, hashlib
+    os.makedirs(SHOTS, exist_ok=True)
+    h = hashlib.md5(k.encode()).hexdigest()[:8]
+    files = []
+    pg.goto(video, wait_until='domcontentloaded', timeout=40000); pg.wait_for_timeout(5000)
+    vtitle = pg.title().replace(' - YouTube', '')
+    vdesc = pg.evaluate("(document.querySelector('meta[name=description]')||{}).content||''")
+    if '구독' in needs:
+        f = os.path.join(SHOTS, f'{h}_sub.png'); yt.subscribe(pg, video, f); files.append(f)
+    if '좋아요' in needs:
+        yt.like(pg, video)
+    if '댓글' in needs:
+        c = entry_ai.comment_text(title, cond, vtitle, vdesc)
+        if not c:
+            return files, '댓글 문구를 정하지 못함 (조건이 애매하거나 Claude 응답 없음)'
+        f = os.path.join(SHOTS, f'{h}_comment.png')
+        if not yt.comment(pg, video, c, f):
+            return files, '댓글 등록 확인 안 됨'
+        files.append(f)
+        print(f'  댓글: {c}', flush=True)
+    return files, ''
 # 2026-11-25: 밀양 퀴즈(실명인증)·아름다운가게(전회원 대상)를 '바로 응모'에 넣었다가 사용자 지적 → 응모 화면까지 들어가 막힘 확인
 VERIFY = [(re.compile(r'실명\s*인증|본인\s*(인증|확인)|휴대폰\s*인증|아이핀|I-?PIN|checkplus|nice\.co\.kr', re.I), '본인인증(휴대폰 PASS·보안문자 직접)'),
           (re.compile(r'전\s*회원|회원\s*(대상|전용|만)|로그인\s*(후|이 필요|하셔야|해\s*주세요)|로그인이 필요'), '사이트 로그인(회원 대상)')]
@@ -130,45 +168,64 @@ def main():
             k = ev.key_of(x); title = x.get('title') or ''
             rec = dict(title=title, url=x.get('url'), org=x.get('org'), deadline=x.get('deadline'), announce=x.get('announce'),
                        checked=today.isoformat())
+            old = its.get(k) or {}
             try:
                 u = x['url']
+                pg.goto(u, wait_until='domcontentloaded', timeout=35000); pg.wait_for_timeout(3500)
+                og = pg.evaluate("(document.querySelector('meta[property=\"og:description\"]')||{}).content||''")
+                text = og if len(og) > 80 else pg.evaluate('document.body.innerText')[:6000]
+                links = pg.evaluate("[...document.querySelectorAll('a')].map(a=>a.href)")
                 if FORM.match(u):
-                    form, text = u, ''
+                    form = u
                 else:
-                    pg.goto(u, wait_until='domcontentloaded', timeout=35000); pg.wait_for_timeout(3500)
-                    og = pg.evaluate("(document.querySelector('meta[property=\"og:description\"]')||{}).content||''")
-                    text = og if len(og) > 80 else pg.evaluate('document.body.innerText')[:6000]
-                    links = pg.evaluate("[...document.querySelectorAll('a')].map(a=>a.href)")
                     m = FORM.search(text) or next((FORM.match(h) for h in links if FORM.match(h)), None)
                     form = m.group(0) if m else ''
-                    if not form and 'instagram.com' not in u:
+                    if not form and 'instagram.com' not in u and not YT.match(u):
                         text = dig(pg, u, title)
+                vm = YT.match(u) or YT.search(text) or next((YT.match(h) for h in links if YT.match(h)), None)
+                video = vm.group(0) if vm else ''
+                cond = text + ' ' + (x.get('how') or '') + ' ' + (x.get('condition') or '')
+                needs = set(NEEDS_ME.findall(cond))
+                yt_ok = bool(needs) and needs <= YT_OK and bool(video)   # 유튜브 구독·좋아요·댓글(+캡처)만 필요한 것
                 b = blocker(text)
                 if b:
                     rec.update(status='verify', form=form, reason=b)
-                elif not form:
-                    rec.update(status='noform', reason='네이버 폼 링크 없음 (다른 방식 응모)')
-                elif NEEDS_ME.search(text + ' ' + (x.get('how') or '') + ' ' + (x.get('condition') or '')):
-                    rec.update(status='needs_me', form=form, reason='내 계정 몫: ' + ', '.join(sorted(set(NEEDS_ME.findall(text + (x.get('how') or ''))))))
+                elif needs and not yt_ok:
+                    rec.update(status='needs_me', form=form, reason='내 계정 몫: ' + ', '.join(sorted(needs))
+                               + ('' if video or not needs <= YT_OK else ' (영상 링크 못 찾음)'))
+                elif not form and not (yt_ok and '댓글' in needs):
+                    rec.update(status='noform', reason='응모 폼 링크 없음 (다른 방식 응모)')
                 else:
-                    if is_google(form):
-                        import gform
-                        st, L = gform.fill(pg, form, submit=False, yt=nform.env().get('ENTRY_YT', ''))
+                    files, yerr = [], ''
+                    if yt_ok:
+                        if old.get('yt_done'):
+                            files = old.get('files') or []
+                        else:
+                            files, yerr = do_youtube(pg, k, video, needs, title, cond)
+                        rec.update(video=video, files=files, yt_done=not yerr)
+                    if yerr:
+                        rec.update(status='stuck', form=form, reason=yerr)
+                    elif not form:   # 댓글만 달면 되는 이벤트
+                        rec.update(status='ready', form='', reason='댓글로 응모')
                     else:
-                        st, L = nform.fill(pg, form, submit=False)
-                    rec.update(status=st if st != 'done' else 'already', form=form, answers=L,
-                               reason=(L[-1] if st == 'stuck' and L else ''))
-                    # 퀴즈인데 정답을 추측으로 고른 게 있으면 자동 제출 안 함 → Claude 가 대화에서 정답 찾고 제출
-                    if st == 'ready' and QUIZ.search(title + ' ' + (x.get('how') or '')) and any('(추측)' in l for l in L):
-                        rec.update(status='quiz', reason='퀴즈 정답 확인 필요')
+                        st, L = fill_form(pg, form, files, old.get('extra') or [])
+                        extra = old.get('extra') or []
+                        # 2026-11-25 사용자: 퀴즈 정답 추측도 Claude 가 → 추측한 문항은 Claude CLI 로 정답 확인 후 다시 채움
+                        if st == 'ready' and any('(추측)' in l for l in L) and QUIZ.search(title + ' ' + cond + ' '.join(L)):
+                            import entry_ai
+                            extra = entry_ai.quiz_answers(title, cond, L) or []
+                            if extra:
+                                st, L = fill_form(pg, form, files, extra)
+                        rec.update(status=st if st != 'done' else 'already', form=form, answers=L, extra=extra,
+                                   reason=(L[-1] if st == 'stuck' and L else ''))
             except Exception as e:
                 rec.update(status='error', reason=str(e)[:150])
             its[k] = rec
             print(f"[{rec['status']}] {title[:40]} {rec.get('reason', '')[:80]}", flush=True)
             save(d)
             time.sleep(2)
-            if time.time() - t0 > 15 * 60:
-                print('시간 한도(15분) → 나머지는 내일'); break
+            if time.time() - t0 > 30 * 60:
+                print('시간 한도(30분) → 나머지는 내일'); break
         ctx.close()
     save(d)
     r, s = summary()

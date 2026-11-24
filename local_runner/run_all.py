@@ -276,7 +276,8 @@ def s_outfit():
         return
     s_events_now()   # 응모 이벤트·지역 행사 검색 결과가 없으면 지금 (2026-11-18)
     try:   # 2026-11-25 사용자: 매일 다 시도해서 할 수 있는 건 응모까지 (원문 확인 → 폼 채우기 → 제출 → 응모 완료 칸)
-        run([sys.executable, 'entry_prep.py'], cwd=HERE, timeout=20 * 60, check=False)
+        find_claude()   # 퀴즈 정답·유튜브 댓글은 Claude CLI (entry_ai.py)
+        run([sys.executable, 'entry_prep.py'], cwd=HERE, timeout=40 * 60, check=False)
         run([sys.executable, 'entry_submit.py'], cwd=HERE, timeout=15 * 60, check=False)
     except Exception as e:
         log(f'자동 응모 실패(무시): {e}')

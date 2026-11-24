@@ -376,5 +376,19 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://forms.gle/y3HUJ4GPnAe6gmqt7",
+  "title": "2026 발달장애인 인식개선 영상 시청 & 댓글 응원 이벤트",
+  "org": "보건복지부",
+  "url": "https://forms.gle/y3HUJ4GPnAe6gmqt7",
+  "entered": "2026-11-25",
+  "announce": "2026-12-04",
+  "where": "유튜브 고정댓글",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]

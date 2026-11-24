@@ -631,8 +631,11 @@ def build(today):
     if ecnt['google'] or ecnt['insta']:
         login_cmd = ('<div class="g s">🔑 응모용 창 열기 (PC 터미널): <code>python C:\\auction_pc\\ML\\local_runner\\entry_login.py google</code>'
                      ' → 로그인하고 창 닫기 → 이 페이지의 요청 복사</div>')
+    dm = done_map()
+    tod = [x['title'] for x in P if dm.get(ev.key_of(x)) == today.isoformat()]
+    tod_html = (f'<div class="srow"><b>✅ 오늘 Claude가 응모함 {len(tod)}건</b><div class="s">' + ' · '.join(E(t) for t in tod) + '</div></div>') if tod else ''
     summary = (f'<div class="summary"><div><b>지금 상황</b> · ✅ 응모 완료 {ecnt["done"]}건 · 🙋 내가 할 것 {ecnt["verify"] + ecnt["google"]}건'
-               f' · ❌ 못 함 {ecnt["self"]}건 <span class="g s">(인스타 이벤트는 뺌)</span></div>{srows}{login_cmd}</div>')
+               f' · ❌ 못 함 {ecnt["self"]}건 <span class="g s">(인스타 이벤트는 뺌 · 매일 아침 Claude가 새 이벤트를 다 시도)</span></div>{tod_html}{srows}{login_cmd}</div>')
     pchips += [f'<button class="chip" onclick="pick(\'prize\',\'{k}\',this)">{E(CAT_LABEL[k])}<i>{cnt[k]}</i></button>'
                for k in [c for c, _, _ in CATS] + ['etc'] if cnt[k]]
     pcards = ''.join(prize_card(x, today) for x in P) or ''

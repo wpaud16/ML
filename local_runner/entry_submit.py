@@ -1,7 +1,7 @@
 """준비된 이벤트 제출 (2026-11-23 → 2026-11-25 사용자: 매일 다 시도해서 할 수 있는 건 다 하고 응모 완료 칸에 추가).
 06:00 생활 메일 작업(run_all s_outfit)에서 entry_prep.py 다음에 자동으로 돈다.
 entry_prep 이 'ready' 로 둔 네이버·구글 폼만 제출한다 (계정 몫·본인인증·퀴즈 추측이 없는 것).
-'quiz'(정답 추측)는 자동 제출하지 않는다 — Claude 가 대화에서 정답을 찾아 gform/nform 으로 낸다.
+퀴즈 정답·유튜브 댓글은 entry_prep 이 Claude CLI(entry_ai.py)로 정해 둔 것을 쓴다.
 제출하면 events_done.json·당첨 확인(prize_check) 기록 → 이벤트 페이지 다시 만들고 push.
 사용: python entry_submit.py [--dry] [--only 제목일부]"""
 import argparse, datetime as dt, json, os, subprocess, sys, time
@@ -30,10 +30,10 @@ def main():
             pg = ctx.new_page()
             for k, v in todo:
                 try:
-                    if ep.is_google(v['form']):
-                        st, L = gform.fill(pg, v['form'], submit=not a.dry, yt=nform.env().get('ENTRY_YT', ''))
+                    if not v.get('form'):   # 댓글로 응모하는 이벤트 — 댓글은 entry_prep 에서 이미 닮
+                        st, L = ('done' if v.get('yt_done') else 'stuck'), ['유튜브 댓글로 응모']
                     else:
-                        st, L = nform.fill(pg, v['form'], submit=not a.dry)
+                        st, L = ep.fill_form(pg, v['form'], v.get('files'), v.get('extra'), submit=not a.dry)
                 except Exception as e:
                     st, L = 'stuck', [f'오류: {str(e)[:120]}']
                 v['status'] = {'done': 'submitted', 'ready': 'ready'}.get(st, 'stuck')
@@ -43,7 +43,8 @@ def main():
                 if st == 'done' and not a.dry:
                     ok.append(v['title'])
                     done[k] = dt.date.today().isoformat()
-                    pc.add(k, v['title'], v['form'], v.get('org') or '', v.get('announce'), '폼에 적은 연락처로 개별 연락')
+                    pc.add(k, v['title'], v.get('form') or v.get('video') or v.get('url'), v.get('org') or '', v.get('announce'),
+                           '폼에 적은 연락처로 개별 연락' if v.get('form') else '영상 댓글로 발표')
                 ep.save(d)
                 time.sleep(3)
             ctx.close()

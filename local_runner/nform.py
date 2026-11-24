@@ -70,9 +70,10 @@ def pick(R, title, opts):
     return None
 
 
-def fill(pg, url, submit=False, files=None):
-    """files: 사진 첨부 문항에 올릴 파일 (구독·팔로우 캡처 등). 없으면 첨부 문항에서 멈춤."""
-    e = env(); R = rules(e); files = list(files or [])
+def fill(pg, url, submit=False, files=None, extra=None):
+    """files: 사진 첨부 문항에 올릴 파일 (구독·팔로우 캡처 등). 없으면 첨부 문항에서 멈춤.
+    extra: [(질문 정규식, 보기 정규식 또는 글)] — 퀴즈 정답·댓글 닉네임 등."""
+    e = env(); R = rules(e); files = list(files or []); extra = list(extra or [])
     name, phone, mail = e['ENTRY_NAME'], re.sub(r'\D', '', e['ENTRY_PHONE']), e.get('ENTRY_EMAIL', '')
     L = []
     pg.goto(url, wait_until='domcontentloaded', timeout=40000); pg.wait_for_timeout(5000)
@@ -119,6 +120,14 @@ def fill(pg, url, submit=False, files=None):
                 for r in rows:
                     r.query_selector_all('label')[mid].evaluate('e => e.click()'); pg.wait_for_timeout(120)
                 L.append(f'{title} → 표 {len(rows)}행 모두 "{heads[mid]}"'); continue
+            ex = next((a for qr, a in extra if re.search(qr, title)), None)   # 2026-11-25: 퀴즈 정답 등 이벤트별 답
+            if labels and ex is not None and any(o and re.search(ex, o) for o in opts):
+                ch = next(o for o in opts if o and re.search(ex, o))
+                next(l for l in labels if l.inner_text().strip() == ch).evaluate('e => e.click()'); pg.wait_for_timeout(350)
+                L.append(f'{title} → {ch}   [보기: {" / ".join(o[:25] for o in opts)}]'); continue
+            if txt and ex is not None and not labels:
+                txt.fill(ex); pg.wait_for_timeout(150)
+                L.append(f'{title} → {ex}'); continue
             if labels:
                 ch = pick(R, title, opts)
                 if not ch and not req:
@@ -127,14 +136,15 @@ def fill(pg, url, submit=False, files=None):
                     ch = guess(opts)
                     if not ch:
                         return 'stuck', L + [f'보기 없음: {title}']
-                    title += ' (추측)'
+                    title += f' (추측)   [보기: {" / ".join(o[:25] for o in opts)}]'
                 next(l for l in labels if l.inner_text().strip() == ch).evaluate('e => e.click()'); pg.wait_for_timeout(350)
                 etc = q.query_selector('textarea.nsv_survey_question_etc_input, input.nsv_survey_question_etc_input')
                 if etc and etc.is_visible():
                     etc.fill('이벤트 안내 보고 처음 들어왔어요'); ch += ' (이벤트 안내 보고 처음 들어왔어요)'
                 L.append(f'{title} → {"(내 정보)" if mine else ch}')
             elif txt:
-                if re.search(r'이름|성함|성명', title): val = name
+                if re.search(r'유튜브|닉네임|핸들|채널\s*(명|이름|아이디)', title) and e.get('ENTRY_YT'): val = e['ENTRY_YT']
+                elif re.search(r'이름|성함|성명', title): val = name
                 elif re.search(r'연락처|전화|휴대폰|핸드폰', title): val = phone
                 elif re.search(r'이메일|메일', title): val = mail
                 elif not req: L.append(f'(선택 문항 건너뜀) {title}'); continue
