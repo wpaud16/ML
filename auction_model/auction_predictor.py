@@ -112,6 +112,8 @@ BID = ['l_bid', 'bid1', 'bid2']
 MEMBERS['부스팅_인원'] = ('gb', S4 + BID, 365)      # 전체 사례로 학습 (인원 없는 사례는 중앙값으로 채움)
 MEMBERS['군집_인원'] = ('cluster', S1 + BID, 365)   # 인원 기록 있는 사례만 학습
 BID_SCEN = [1, 2, 3, 5, 8, 13]
+# 표시용: 대표 인원 → 학습 구간(bid_group) 라벨. by_bidders['row_labels'] 로 저장 (키·값은 그대로, 2026-11-25)
+BID_LABEL = {1: '1명', 2: '2명', 3: '3~4명', 5: '5~7명', 8: '8~12명', 13: '13명 이상'}
 
 
 _FIT = {}   # 학습 결과 캐시 (2026-11-05 속도 개선: 배치에서 물건마다 같은 학습을 반복하던 것)
@@ -485,6 +487,7 @@ def bidder_scenarios(df, row, T, low, mkt, adj=0.0, cfg=None):
                                               min_samples_leaf=25, random_state=0).fit(X.fillna(mdn), y, sample_weight=wt)
             est[k] = max(1, int(round(float(np.exp(m.predict(xr)[0])))))
         return dict(bid_by_prob_eok=by_prob, price_eok=med,
+                    row_labels={f'{n}명': BID_LABEL[n] for n in BID_SCEN},
                     expected_bidders=est['p50'], expected_range=[est['p25'], max(est['p50'], est['p75'])],
                     model_error_note=f"인원을 알 때 평균 오차 약 {br['mape']}%",
                     note='N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용')

@@ -122,6 +122,34 @@ def exp_row(cat, n):
     return '1명' if n <= 1 else '2명' if n <= 2 else '3명' if n <= 4 else '5명' if n <= 7 else '8명' if n <= 12 else '13명'
 
 
+# 인원 표 행 = 대표 인원 키 → (구간 최소, 최대, 표시 라벨). 모델 학습 구간(auction_predictor.bid_group / officetel_model.ot_bid_group)과 같음 (2026-11-25)
+_BINS_APT = [('1명', 1, 1, '1명'), ('2명', 2, 2, '2명'), ('3명', 3, 4, '3~4명'), ('5명', 5, 7, '5~7명'),
+             ('8명', 8, 12, '8~12명'), ('13명', 13, None, '13명 이상')]
+_BINS_OT = [('1명', 1, 1, '1명'), ('2명', 2, 2, '2명'), ('3명', 3, 4, '3~4명'), ('5명', 5, 7, '5~7명'), ('8명 이상', 8, None, '8명 이상')]
+
+
+def _bins(cat):
+    return _BINS_OT if cat == '오피스텔' else _BINS_APT
+
+
+def row_label(cat, key, bb=None):
+    """표시용 인원 구간 라벨. 예측 파일의 row_labels 우선, 없으면(이전 파일) 구간표로."""
+    lab = ((bb or {}).get('row_labels') or {}).get(key)
+    return lab or next((b[3] for b in _bins(cat) if b[0] == key), key)
+
+
+def near_row(cat, n, r=None):
+    """예상 인원이 구간 최댓값(폭 2 이상 구간)이거나 예상 범위(25~75%) 상단이 다음 구간에 걸치면 그 다음 구간 키."""
+    if n is None: return None
+    bins = _bins(cat); key = exp_row(cat, n)
+    i = next((j for j, b in enumerate(bins) if b[0] == key), None)
+    if i is None or i + 1 >= len(bins): return None
+    lo, hi = bins[i][1], bins[i][2]
+    edge = hi > lo and n >= hi
+    over = bool(r) and len(r) == 2 and r[1] is not None and r[1] > hi
+    return bins[i + 1][0] if (edge or over) else None
+
+
 def gap_warn(v):
     """감정 후 시세가 많이 오른 물건 (2026-11-05 백테스트: 감정가<시세 85% & 1년 +8%↑ 76건, 실제가가 예측보다 평균 +2.2%,
     3건 중 1건은 5% 넘게 높음 — 2024타경3470 +15%). 모델 입력으로는 개선이 없어 경고로만 표시."""
@@ -158,22 +186,25 @@ def bidder_table(v, seoul):
         n = bb.get('expected_bidders'); r = bb.get('expected_range') or []
         if n is not None:
             head += f' <span class="n">· 예상 약 {n}명' + (f' (보통 {r[0]}~{r[1]}명)' if len(r) == 2 else '') + '</span>'
-        rows = list(bb['bid_by_prob_eok'].items()); ex = exp_row(v.get('category'), n)
+        cat = v.get('category')
+        rows = list(bb['bid_by_prob_eok'].items()); ex = exp_row(cat, n); nr = near_row(cat, n, r)
         if v.get('bid_by_prob_eok'):   # 인원 가정 없는 종합 예측 = 성적표 '예상(50%)' 기준 (2026-11-08 사용자 요청)
             rows = [('종합', v['bid_by_prob_eok'])] + rows
     else:
-        rows = [('예측', v['bid_by_prob_eok'])]; ex = None
+        rows = [('예측', v['bid_by_prob_eok'])]; ex = nr = n = None; cat = v.get('category')
     t = ['<table><col style="width:19%"><col><col><col><col><col>', '<tr><th>인원</th>' + ''.join(f'<th>{p}</th>' for p in probs) + '</tr>']
     for lab, vals in rows:
-        hi = lab == ex
-        cells = [f'<td class="lab{" hi" if hi else ""}">{"▶ " if hi else ""}{E(lab)}</td>']
+        hi = lab == ex; lt = (not hi) and lab == nr
+        shown = lab if lab in ('종합', '예측') else row_label(cat, lab, bb)   # 2026-11-25: 대표 인원 대신 학습 구간 라벨
+        mark = '▶ ' if hi else ('▷ ' if lt else '')
+        cells = [f'<td class="lab{" hi" if hi else (" nr" if lt else "")}">{mark}{E(shown)}</td>']
         for p in probs:
             cls = ' hi' if (hi or p == '50%') else ''   # 2026-11-11 사용자 요청: 88% 이하 초록 칸 제거
             pc = pct_of(v, vals.get(p))   # 2026-11-05 사용자 요청: 입찰가마다 시세 대비 %
             cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}' + (f'<br><span class="sub">{pc}</span>' if pc else '') + '</td>')
         t.append('<tr>' + ''.join(cells) + '</tr>')
     t.append('</table>')
-    note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준) · ▶ 예상 인원 · 모델 오차 약 ±6% · 확률 ±5%p'
+    note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준)' + (f' · ※ ▶는 예상 인원(약 {n}명)이 속한 구간' if ex else '') + (' · ▷는 예상 범위가 걸친 구간' if ex and nr else '') + ' · 모델 오차 약 ±6% · 확률 ±5%p'
     f = v.get('fail') or {}
     if seoul and f.get('level') in ('보통', '높음'):
         note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"
@@ -562,7 +593,7 @@ def scorecard(rows, cat, tracked=None):
         lines = [('종합', f'<b>{p50:.2f}</b>{star}' + pc(p50m, sise, tr_, kb_), dcell(d1))]
         if e50:
             d2 = (r['actual_manwon'] / (e50 * 1e4) - 1) * 100 if sold_ else None
-            lines.append((E(lab), f'<b>{e50:.2f}</b>' + pc(e50 * 1e4, sise, tr_, kb_), dcell(d2)))
+            lines.append((E(row_label(r['category'], lab, bb)), f'<b>{e50:.2f}</b>' + pc(e50 * 1e4, sise, tr_, kb_), dcell(d2)))
         act = (f'<b class="big">{r["actual_manwon"] / 1e4:.2f}</b>' + pc(r['actual_manwon'], sise, tr_, kb_)) if sold_ else f'<span class="sub">{E(r.get("status") or "결과대기")}</span>'
         if r.get('source') == '법원': act += '<div class="sub">(법원 확인)</div>'
         ppl = f'<b class="big">{b if b is not None else "-"}</b><div class="sub">예상<br>{f"{x}명" if x is not None else "-"}</div>'
@@ -625,7 +656,7 @@ h3{font-size:15px;margin:16px 0 8px}
 .sec{margin-top:10px}
 table{border-collapse:collapse;width:100%;max-width:560px;table-layout:fixed;margin:8px 0;font-size:14px;text-align:center;background:#000;color:#fff;border:2px solid #fff}
 th,td{background:#000;color:#fff;border:1px solid #fff;padding:9px 2px}
-td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333} td.good,td.hi.good{background:rgba(46,204,113,0.35)}
+td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333} td.nr{background:#262626} td.good,td.hi.good{background:rgba(46,204,113,0.35)}
 a{color:#1a73e8}
 .sub{font-size:11px;color:#BBBBBB}
 table.sc{font-size:12.5px;border:1px solid #555;line-height:1.35}

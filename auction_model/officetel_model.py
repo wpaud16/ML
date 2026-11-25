@@ -159,6 +159,8 @@ import threading
 BID_CSV = os.path.join(HERE, 'officetel', 'ot_bidders.csv')   # auction_id, bidders
 OT_BID_SCEN = [1, 2, 3, 5, 8]
 OT_BID_LABEL = {1: '1명', 2: '2명', 3: '3명', 5: '5명', 8: '8명 이상'}
+# 표시용 구간 라벨 (ot_bid_group 기준). by_bidders['row_labels'] = {기존 키: 라벨} (2026-11-25)
+OT_ROW_LABEL = {1: '1명', 2: '2명', 3: '3~4명', 5: '5~7명', 8: '8명 이상'}
 _BCACHE, _BLOCK = {}, threading.Lock()
 
 
@@ -250,7 +252,9 @@ def bidder_scenarios(df, row, T, low, mkt, cfg):
             out[OT_BID_LABEL[n]] = qs; price[OT_BID_LABEL[n]] = qs['50%']
         xe = _Xe(row).fillna(emed)
         e = {q: float(np.exp(m.predict(xe)[0])) for q, m in em.items()}
-        return dict(bid_by_prob_eok=out, price_eok=price, expected_bidders=int(round(e[0.5])),
+        return dict(bid_by_prob_eok=out, price_eok=price,
+                    row_labels={OT_BID_LABEL[n]: OT_ROW_LABEL[n] for n in OT_BID_SCEN},
+                    expected_bidders=int(round(e[0.5])),
                     expected_range=[max(1, int(round(e[0.25]))), max(1, int(round(e[0.75])))],
                     model_error_note=f"인원을 알 때 평균 오차 약 {br['mape']}%",
                     note='N명이 입찰한다고 가정할 때 낙찰확률별 입찰가. 인원은 당일에야 알 수 있어 예상 인원은 참고용')
