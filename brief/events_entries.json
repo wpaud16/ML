@@ -50,7 +50,7 @@
   "announce": null,
   "where": "https://nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyMain.ps?menuId=PS65355",
   "status": "pending",
-  "checked": null,
+  "checked": "2026-11-26",
   "result_url": null,
   "note": null,
   "reported": false
@@ -78,7 +78,7 @@
   "announce": "2026-11-26",
   "where": null,
   "status": "pending",
-  "checked": null,
+  "checked": "2026-11-26",
   "result_url": null,
   "note": null,
   "reported": false
@@ -92,7 +92,7 @@
   "announce": null,
   "where": null,
   "status": "pending",
-  "checked": null,
+  "checked": "2026-11-26",
   "result_url": null,
   "note": null,
   "reported": false
@@ -274,7 +274,7 @@
   "announce": "2026-11-26",
   "where": "당첨자 문자",
   "status": "pending",
-  "checked": null,
+  "checked": "2026-11-26",
   "result_url": null,
   "note": null,
   "reported": false
