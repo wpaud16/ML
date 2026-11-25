@@ -1,0 +1,141 @@
+{
+ "date": "11월 26일 (목)",
+ "tmin": "5",
+ "tmax": "14",
+ "sky": "⛅ 구름 많음",
+ "sub": "일교차 9°",
+ "rain_title": "☀️ 오늘 비·눈 소식 없음",
+ "rain": [
+  [
+   "오늘",
+   "비·눈 소식 없음"
+  ]
+ ],
+ "level": "없음",
+ "hourly": [
+  {
+   "h": 6,
+   "t": 6,
+   "icon": "⛅",
+   "rain": false
+  },
+  {
+   "h": 9,
+   "t": 8,
+   "icon": "⛅",
+   "rain": false
+  },
+  {
+   "h": 12,
+   "t": 13,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 15,
+   "t": 14,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 18,
+   "t": 11,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 21,
+   "t": 9,
+   "icon": "☀️",
+   "rain": false
+  }
+ ],
+ "guide": "<b>아침 5°, 낮 14°.</b> 일교차 9° — <b>벗기 쉬운 겉옷</b>으로 레이어드하세요.",
+ "footer": "날씨: Open-Meteo (기본 모델) · 서울 강동구 · 오늘 예보",
+ "looks": [
+  {
+   "title": "해링턴 재킷 + 옥스퍼드",
+   "kind": "shirt",
+   "items": [
+    {
+     "name": "옥스퍼드 셔츠 · 라이트블루",
+     "color": "#B9C7D8",
+     "role": "top"
+    },
+    {
+     "name": "해링턴 재킷 · 네이비",
+     "color": "#2B3247",
+     "role": "outer"
+    },
+    {
+     "name": "와이드 슬랙스 · 그레이",
+     "color": "#A9A9A6",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 화이트",
+     "color": "#ECEBE6",
+     "role": "shoes"
+    }
+   ],
+   "tip": "재킷 지퍼는 가슴 아래까지만.",
+   "pin": "navy harrington jacket light blue oxford shirt grey trousers men fall outfit korean style"
+  },
+  {
+   "title": "네이비 블레이저 + 화이트 셔츠",
+   "kind": "shirt",
+   "items": [
+    {
+     "name": "옥스퍼드 셔츠 · 화이트",
+     "color": "#F1EFE8",
+     "role": "top"
+    },
+    {
+     "name": "언컨 블레이저 · 네이비",
+     "color": "#2B3247",
+     "role": "outer"
+    },
+    {
+     "name": "와이드 슬랙스 · 그레이",
+     "color": "#A9A9A6",
+     "role": "bottom"
+    },
+    {
+     "name": "로퍼 · 다크브라운",
+     "color": "#4A3125",
+     "role": "shoes"
+    }
+   ],
+   "tip": "블레이저 단추는 열고, 셔츠 단추 하나 풀기.",
+   "pin": "navy blazer white oxford shirt grey trousers men fall outfit street style"
+  },
+  {
+   "title": "크루넥 니트 + 셔츠 깃",
+   "kind": "shirt",
+   "items": [
+    {
+     "name": "크루넥 니트 · 네이비",
+     "color": "#2B3247",
+     "role": "top"
+    },
+    {
+     "name": "옥스퍼드 셔츠 · 라이트블루",
+     "color": "#B9C7D8",
+     "role": "top"
+    },
+    {
+     "name": "치노 팬츠 · 베이지",
+     "color": "#C8B79A",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 화이트",
+     "color": "#ECEBE6",
+     "role": "shoes"
+    }
+   ],
+   "tip": "니트 위로 셔츠 깃만 살짝, 밑단도 2cm.",
+   "pin": "navy crewneck sweater light blue oxford shirt beige chinos men fall outfit korean style"
+  }
+ ]
+}
