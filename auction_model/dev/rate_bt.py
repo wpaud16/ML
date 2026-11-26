@@ -13,13 +13,17 @@ import auction_predictor as ap
 
 BR = json.load(open(os.path.join(ROOT, 'bank_rate.json'), encoding='utf-8'))
 LAG = 2
-VARS = {'없음': [], '기준금리': ['rate', 'rate_chg6'], '은행금리': ['bank', 'bank_chg6'], '둘다': ['rate', 'rate_chg6', 'bank', 'bank_chg6']}
-RATE_COLS = ['rate', 'rate_chg6', 'bank', 'bank_chg6']
+VARS = {'없음': [], '기준금리': ['rate', 'rate_chg6'], '은행금리': ['bank', 'bank_chg6'], '둘다': ['rate', 'rate_chg6', 'bank', 'bank_chg6'],
+        # 2026-11-26 추가: 은행채 (산금채 1년), 은행채 5년 대용 국고채 5년. 시장금리라 전월 평균(1개월 전) 사용
+        '은행채1년': ['bond1', 'bond1_chg6'], '국고채5년': ['bond5', 'bond5_chg6'], '기준+채권': ['rate', 'rate_chg6', 'bond1', 'bond5']}
+if os.environ.get('VARIANTS'):
+    VARS = {k: VARS[k] for k in os.environ['VARIANTS'].split(',')}
+RATE_COLS = ['rate', 'rate_chg6', 'bank', 'bank_chg6', 'bond1', 'bond1_chg6', 'bond5', 'bond5_chg6']
 OUT = os.path.join(HERE, 'rate_bt_result.json')
 
 
-def bank_at(t, kind='mortgage'):
-    s = BR[kind]; t = pd.Timestamp(t) - pd.DateOffset(months=LAG)
+def bank_at(t, kind='mortgage', lag=LAG):
+    s = BR[kind]; t = pd.Timestamp(t) - pd.DateOffset(months=lag)
     k = t.strftime('%Y-%m')
     if k in s: return s[k]
     ks = sorted(s); return s[ks[0]] if k < ks[0] else s[ks[-1]]
@@ -31,6 +35,9 @@ def add_rates(d, col='date', kind='mortgage'):
     d['rate_chg6'] = [ap.rate_at(x) - ap.rate_at(x - pd.DateOffset(months=6)) for x in t]
     d['bank'] = [bank_at(x, kind) for x in t]
     d['bank_chg6'] = [bank_at(x, kind) - bank_at(x - pd.DateOffset(months=6), kind) for x in t]
+    for c, k in (('bond1', 'kdb1y'), ('bond5', 'ktb5y')):
+        d[c] = [bank_at(x, k, 1) for x in t]
+        d[c + '_chg6'] = [bank_at(x, k, 1) - bank_at(x - pd.DateOffset(months=6), k, 1) for x in t]
     return d
 
 
@@ -54,7 +61,7 @@ _prep0 = ap.prep
 
 def prep_bank(d):
     X = _prep0(d)
-    for c in ('bank', 'bank_chg6'):
+    for c in RATE_COLS[2:]:
         X[c] = d[c].values if c in d else np.nan
     return X
 
@@ -136,6 +143,6 @@ if __name__ == '__main__':
     res = json.load(open(OUT, encoding='utf-8')) if os.path.exists(OUT) else {}
     for w in which:
         t0 = time.time()
-        res[w] = globals()['bt_' + w]()
+        res[w] = {**(res.get(w) or {}), **globals()['bt_' + w]()}   # 변형 일부만 돌려도 기존 결과에 합침
         res[w + '_sec'] = round(time.time() - t0)
         json.dump(res, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
