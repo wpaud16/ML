@@ -390,5 +390,19 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://health.kdca.go.kr/healthinfo/biz/health/ntcnInfo/notice/noticeView.do",
+  "title": "일상 속 건강 궁금증, 톡(Talk) 터놓고 이야기해 주세요!",
+  "org": "질병관리청(국가건강정보포털)",
+  "url": "https://naver.me/Faeul7Fa",
+  "entered": "2026-11-26",
+  "announce": "2026-12-16",
+  "where": "폼에 적은 이메일로 개별 안내 · 질병관리청 블로그 공지",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]
