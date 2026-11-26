@@ -17,7 +17,9 @@ import numpy as np
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-HIST = os.environ.get('HIST_DIR') or os.path.join(os.path.dirname(os.path.dirname(HERE)), 'hist')
+sys.path.insert(0, HERE)
+import rates as _rates
+HIST =os.environ.get('HIST_DIR') or os.path.join(os.path.dirname(os.path.dirname(HERE)), 'hist')
 MDIR = os.path.join(HERE, 'other_model')
 HARD = {'지분': r'지분\s*(?:매각|경매|만)|\d+\s*분의\s*\d+\s*지분\s*(?:매각|경매)', '유치권': r'유치권',
         '법정지상권': r'법정지상권', '대지권없음': r'대지권\s*(?:없|미등기)', '건물만': r'건물만\s*(?:매각|경매)',
@@ -27,7 +29,8 @@ TXT = {'tx_vacant': r'공실|미사용|비어\s*있', 'tx_lease': r'임대\s*중
        'tx_hosp': r'병원|의원|학원|근린생활시설\(학원', 'tx_sub': r'지하철|전철|역\s'}
 TD = ('근린시설', '근린주택', '다가구주택', '대지', '도로')
 FEATS = ['cat_b', 'seoul', 'incheon', 'sgg_c', 'log_appr', 'low_ratio', 'log_low', 'fails', 'log_area', 'log_land', 'land_per_area',
-         'floor', 'basement', 'ground', 'resale', 'month_i', 'step', 'court_c', 'log_appr_m2', 'rel_appr_m2'] + list(TXT) + ['td_' + t for t in TD]
+         'floor', 'basement', 'ground', 'resale', 'month_i', 'step', 'court_c', 'log_appr_m2', 'rel_appr_m2'] + list(TXT) + ['td_' + t for t in TD] \
+    + ['bond1', 'bond1_chg6']   # 2026-11-26 사용자 결정: 은행채(산금채 1년) 금리 (백테스트 10.90% → 10.87%, dev/rate_bt.py)
 
 
 def _floor(addr):
@@ -55,7 +58,8 @@ def feat_row(cat, sd, sgg, appr, low, fails, area, land, address, td, appraisal,
              basement=int(f < 0) if f == f else 0, ground=int(f == 1) if f == f else 0, resale=int(bool(resale)),
              month_i=(int(when[:4]) - 2025) * 12 + int(when[5:7]) if when else np.nan,
              step=(prev_low / low) if prev_low and low else 1.0,   # 직전 회차 최저가 / 이번 최저가 (저감률 20%·30%)
-             court_key=court or '', log_appr_m2=math.log(appr / area) if area else np.nan)
+             court_key=court or '', log_appr_m2=math.log(appr / area) if area else np.nan,
+             bond1=_rates.at('kdb1y', when) if when else np.nan, bond1_chg6=_rates.chg6('kdb1y', when) if when else np.nan)
     for k, p in TXT.items():
         d[k] = int(bool(re.search(p, t)))
     for x in TD:

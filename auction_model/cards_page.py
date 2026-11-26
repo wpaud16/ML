@@ -219,6 +219,18 @@ def rec_row(prices_manwon, key, ncol, sise_won=None, fail_pct=None):
             f'{warn}<div class="rb">{w:,}원</div><span class="sub">{sub}</span>' + (f'<br><span class="sub">{alt}</span>' if alt else '') + '</td></tr>')
 
 
+def rate_note():
+    """2026-11-26 사용자 결정: 모델마다 백테스트가 가장 좋았던 금리 사용 → 재학습 때마다 기존 방식과 오차 비교 한 줄."""
+    try:
+        L = json.load(open(os.path.join(HERE, 'predictions', 'rate_compare.json'), encoding='utf-8'))
+    except Exception:
+        return ''
+    nm = {'apt': '아파트', 'ot': '오피스텔', 'other': '상가·건물'}
+    parts = [f"{nm[k]} {x['used']} {x['used_mape']}% vs 기존 {x['old']} {x['old_mape']}%"
+             for k, x in L.items() if k in nm and x.get('used_mape') is not None]
+    return ('🏦 금리 입력 백테스트 오차 (낮을수록 좋음) · ' + ' · '.join(parts) + '<br>') if parts else ''
+
+
 def base_sise(v):
     """입찰가 % 기준 시세(억): 예측에 쓴 모델 시세 (아파트 M, 오피스텔 리치고)."""
     return v.get('model_sise_eok') or v.get('richgo_sise_eok')
@@ -1133,6 +1145,7 @@ def build(src, dst):
             '🏦 KB 시세 = KB부동산 매매 일반가(전용면적이 가장 가까운 평형, ±2㎡) · 하한~상한 = KB 하위·상위 평균가 · 모델 입력 아님, 참고·성적표 비교용<br>'
             '⚖ 가중 시세 = 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(상한) · 감정가 시차 보정 5% (직거래 제외) — 참고용<br>'
             '🎲 유찰 확률 = 회차별 낙찰·유찰 이력으로 학습한 모델 · 📈 회수기간(오피스텔) = 낙찰확률 50% 가격 ÷ (추정 월세 × 12), 대출·세금·비용 제외 단순 계산<br>'
+            + rate_note() +
             '⚠️ 주거용 오피스텔은 세법상 주택 수에 들어갈 수 있어요 — 세무사·은행에 확인<br>'
             '🏪 상가·🏙 건물 =리치고 경매 목록 중 등기 요약상 인수 권리·대항력 임차인 없는 물건 · 역 거리 = 카카오 지도 주소 좌표 기준 직선거리 · 낙찰가 예측 없음, 법원 명세서 미확인<br>'
             '👤 임차인·⚖️ 문건 = 법원경매정보(매각물건명세서·현황조사서·문건송달내역) 수집분 · 역 도보시간은 직선거리 기준 추정<br>'

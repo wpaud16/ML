@@ -94,6 +94,11 @@ def prep(d):
     X['lag_m'] = d.lag_m.clip(upper=60); X['heat'] = d.heat; X['l_mkt'] = np.log(d.mkt)
     X['tohu'] = d.tohu_r; X['rate'] = d.rate; X['rate_chg6'] = d.rate_chg6
     X['regulated'] = d.regulated; X['loan_ratio'] = d.loan_ratio
+    # 2026-11-26: 은행채·은행 대출금리 (rates.py) — 매각일 기준
+    if 'date' in d:
+        import rates
+        R = rates.add(pd.DataFrame({'date': d['date'].values}, index=d.index))
+        for c in ('bond1', 'bond1_chg6', 'bank', 'bank_chg6'): X[c] = R[c].values
     nb = d['bidders'] if 'bidders' in d else pd.Series(np.nan, index=d.index)
     X['l_bid'] = np.log(nb); X['bid1'] = (nb == 1).astype(float).where(nb.notna())
     X['bid2'] = (nb == 2).astype(float).where(nb.notna())
@@ -105,7 +110,17 @@ POL = ['rate', 'rate_chg6', 'tohu', 'regulated', 'loan_ratio']
 S1 = S0 + ['age', 'l_hh', 'heat'] + POL
 S3 = S1 + ['jeonse', 'py_share', 'lag_m', 'l_mkt']
 S4 = S3 + ['mom3', 'mom6', 'mom12', 'dd24']
-MEMBERS = {'부스팅_감쇠': ('gb', S4, 365), '군집별회귀': ('cluster', S1, 365)}
+
+
+def with_rate(cols, new):
+    """피처 목록의 기준금리(rate, rate_chg6)를 다른 금리 열로 바꿈."""
+    return [c for c in cols if c not in ('rate', 'rate_chg6')] + list(new)
+
+
+# 2026-11-26 사용자 결정: 아파트 낙찰가 앙상블은 은행채(산금채 1년) 금리 사용 (백테스트 4.671% → 4.639%, dev/rate_bt.py).
+# S1~S4(기준금리)는 인원·정확도 모델 등 다른 곳에서 그대로 씀.
+APT_RATE = ['bond1', 'bond1_chg6']
+MEMBERS = {'부스팅_감쇠': ('gb', with_rate(S4, APT_RATE), 365), '군집별회귀': ('cluster', with_rate(S1, APT_RATE), 365)}
 ENSEMBLE = ['부스팅_감쇠', '군집별회귀']
 # 입찰 인원 시나리오 모델 (2026-11-02 백테스트 743건: 평균 오차 5.12% → 인원 알 때 4.07%)
 BID = ['l_bid', 'bid1', 'bid2']

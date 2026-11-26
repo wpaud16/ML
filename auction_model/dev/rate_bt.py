@@ -86,15 +86,15 @@ def bt_apt(start='2024-01-01'):
 def bt_ot(start='2024-07-01'):
     import officetel_model as om
     ap.prep = prep_bank
-    df = add_rates(om.load_train()); S3, S4 = list(ap.S3), list(ap.S4); out = {}
+    df = add_rates(om.load_train()); R0 = list(om.OT_RATE); out = {}
     for v in VARS:
-        ap.S3, ap.S4 = swap(S3, v), swap(S4, v)
+        om.OT_RATE = VARS[v]   # 2026-11-26: 운영 fit_models 가 ap.with_rate(S3/S4, OT_RATE) 를 씀
         res = []
         for T in pd.date_range(start, df.date.max(), freq='MS'):
             tr, te = df[df.date < T], df[(df.date >= T) & (df.date < T + pd.DateOffset(months=1))]
             if len(te) and len(tr) >= 60: res += list(te.y.values - om.fit_predict(tr, te, T))
         out[v] = stats(res); print('ot', v, out[v], flush=True)
-    ap.S3, ap.S4 = S3, S4; ap.prep = _prep0
+    om.OT_RATE = R0; ap.prep = _prep0
     return out
 
 
@@ -128,14 +128,32 @@ def bt_other():
     S, F = om.build()
     S = add_rates(S, kind='sme'); F = add_rates(F, kind='sme')
     print('other 낙찰', len(S), S.date.min(), '~', S.date.max(), '/ 회차', len(F), flush=True)
-    F0 = list(om.FEATS); out = {}
+    F0 = [c for c in om.FEATS if c not in RATE_COLS]; FS = list(om.FEATS); out = {}
     for v in VARS:
         om.FEATS[:] = F0 + VARS[v]
         B, FB, rep = om.backtest(S, F, verbose=False)
         out[v] = {k: rep[k] for k in ('전체', '상가', '건물', '유찰') if k in rep}
         print('other', v, json.dumps(out[v], ensure_ascii=False), flush=True)
-    om.FEATS[:] = F0
+    om.FEATS[:] = FS
     return out
+
+
+# 2026-11-26: 운영 금리 vs 기존(기준금리) 비교를 재학습 때마다 기록 → 경매 페이지 아래 한 줄 (cards_page.rate_note)
+LOG = os.path.join(ROOT, 'predictions', 'rate_compare.json')
+USED = {'apt': '은행채1년', 'ot': '은행금리', 'other': '은행채1년'}
+OLD = {'apt': '기준금리', 'ot': '기준금리', 'other': '없음'}
+
+
+def log_compare(w, r):
+    if w not in USED or USED[w] not in r or OLD[w] not in r: return
+    g = lambda x: x.get('mape') if 'mape' in x else (x.get('전체') or {}).get('mape')
+    try:
+        L = json.load(open(LOG, encoding='utf-8'))
+    except Exception:
+        L = {}
+    L[w] = dict(date=time.strftime('%Y-%m-%d'), used=USED[w], used_mape=g(r[USED[w]]), old=OLD[w], old_mape=g(r[OLD[w]]),
+                n=(r[USED[w]].get('n') or (r[USED[w]].get('전체') or {}).get('n')))
+    json.dump(L, open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
 
 if __name__ == '__main__':
@@ -146,3 +164,4 @@ if __name__ == '__main__':
         res[w] = {**(res.get(w) or {}), **globals()['bt_' + w]()}   # 변형 일부만 돌려도 기존 결과에 합침
         res[w + '_sec'] = round(time.time() - t0)
         json.dump(res, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        log_compare(w, res[w])

@@ -59,9 +59,12 @@ def _X(x, cols):
     return X[list(cols) + EXTRA]
 
 
+OT_RATE = ['bank', 'bank_chg6']   # 2026-11-26 사용자 결정: 은행 주택담보대출 금리 (백테스트 6.047% → 6.026%, dev/rate_bt.py)
+
+
 def fit_models(tr, T):
     models = []
-    for kind, cols in [('rf', ap.S3), ('gb', ap.S4)]:
+    for kind, cols in [('rf', ap.with_rate(ap.S3, OT_RATE)), ('gb', ap.with_rate(ap.S4, OT_RATE))]:
         Xtr = _X(tr, cols); med = Xtr.median(); Xtr = Xtr.fillna(med).fillna(0)
         wt = np.exp(-((pd.Timestamp(T) - tr.date).dt.days.values) / 365)
         if kind == 'rf':

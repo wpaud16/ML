@@ -215,6 +215,10 @@ def s_hist():
     if dt.datetime.now(KST).weekday() == 0:
         try:
             run([sys.executable, 'other_model.py', 'train'], cwd=os.path.join(REPO, 'auction_model'), timeout=40 * 60, check=False)
+            # 2026-11-26: 은행채 금리 vs 금리 없음(기존) 비교 → predictions/rate_compare.json
+            os.environ['VARIANTS'] = '없음,은행채1년'
+            run([sys.executable, os.path.join('dev', 'rate_bt.py'), 'other'], cwd=os.path.join(REPO, 'auction_model'), timeout=30 * 60, check=False)
+            os.environ.pop('VARIANTS', None)
         except Exception as e:
             log(f'상가·건물 모델 재학습 실패(무시): {e}')
 
@@ -256,7 +260,7 @@ def s_page():
 
 def s_push_auction():
     push(['auction_model/predictions', 'auction_model/page', 'auction_model/molit_cache', 'auction_model/danji_map.json',
-          'auction_model/villa', 'auction_model/officetel', 'auction_model/other_model', 'auction_model/geo_cache.json', 'auction_model/kb_cache.json', 'auction_model/search_regions.json', 'local_runner/schedule.json'], f'auction: 예측 결과 {today()} (노트북)')
+          'auction_model/villa', 'auction_model/officetel', 'auction_model/other_model', 'auction_model/predictions/rate_compare.json', 'auction_model/geo_cache.json', 'auction_model/kb_cache.json', 'auction_model/search_regions.json', 'local_runner/schedule.json'], f'auction: 예측 결과 {today()} (노트북)')
 
 
 def mail_env():

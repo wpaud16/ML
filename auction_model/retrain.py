@@ -186,6 +186,10 @@ def main(dry=False):
                 collect_min=round((datetime.now() - t0).total_seconds() / 60, 1))
     print(json.dumps(info, ensure_ascii=False))
     if dry: return info
+    try:   # 2026-11-26: 은행채·대출금리 월별 갱신 (rates.py, 한국은행 ECOS 공개 키)
+        sys.path.insert(0, os.path.join(HERE, 'dev')); import bank_rate_collect; bank_rate_collect.main()
+    except Exception as e:
+        info['bank_rate_error'] = f'{type(e).__name__}: {e}'[:200]
     cfg_a = json.load(open(os.path.join(HERE, 'auction_config.json')))
     cfg_o = json.load(open(os.path.join(HERE, 'officetel', 'ot_config.json')))
     info.update(apt_mape_before=cfg_a.get('mape_recent'), bid_mape_before=(cfg_a.get('bidder_resid') or {}).get('mape'),
@@ -224,6 +228,12 @@ def main(dry=False):
     info.update(apt_n_train=int(len(pd.read_csv(APT_TRAIN))), ot_n_train=int(len(pd.read_csv(OT_TRAIN))),
                 apt_mape_after=cfg_a.get('mape_recent'), bid_mape_after=(cfg_a.get('bidder_resid') or {}).get('mape'),
                 ot_mape_after=cfg_o.get('mape_recent'))
+    try:   # 2026-11-26: 운영 금리 vs 기존 기준금리 백테스트 비교 → predictions/rate_compare.json (경매 페이지 아래 표시)
+        import subprocess
+        subprocess.run([sys.executable, os.path.join('dev', 'rate_bt.py'), 'apt', 'ot'], cwd=HERE, timeout=60 * 60,
+                       env={**os.environ, 'VARIANTS': '기준금리,은행금리,은행채1년', 'PYTHONUTF8': '1'})
+    except Exception as e:
+        info['rate_compare_error'] = f'{type(e).__name__}: {e}'[:200]
     log = json.load(open(LOG)) if os.path.exists(LOG) else []
     log.append(info)
     json.dump(log, open(LOG, 'w'), ensure_ascii=False, indent=1)
