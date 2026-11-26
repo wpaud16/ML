@@ -23,7 +23,8 @@ TABLE = ('border-collapse:collapse;width:100%;max-width:560px;table-layout:fixed
 CLS = {'card': 'border:1px solid #888888;border-radius:10px;padding:12px 14px;margin-bottom:12px',
        't': 'font-weight:bold;font-size:15px', 'hh': 'font-weight:normal;color:#777;font-size:12px',
        'g': 'color:#777', 's': 'font-size:12px', 'n': 'font-weight:normal;font-size:13px',
-       'warn': 'color:#d93025;font-size:12px', 'sec': 'margin-top:10px'}
+       'warn': 'color:#d93025;font-size:12px', 'sec': 'margin-top:10px',
+       'failx': 'color:#d93025;font-weight:bold;font-size:13px'}   # 2026-11-26 추천 칸 유찰 예상
 HEADS = ['사건번호', '법원', '구', '주소/단지명', '전용㎡', '감정가(만원)', '최저가(만원)', '최저가율', '매각기일', '유찰',
          '상태', '권리판정', '추정시세(만원)', '상세URL', '처음알림일', '마지막확인일', '비고']
 

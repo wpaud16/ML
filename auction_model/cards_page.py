@@ -201,17 +201,22 @@ def rec_bids(prices_manwon, key):
     return out
 
 
-def rec_row(prices_manwon, key, ncol, sise_won=None):
+FAIL_HI = 70   # 2026-11-26 사용자 요청: 이번 회차 유찰 확률이 높으면(fail_model '높음' 기준 70%↑) 추천 칸에 유찰 예상 표시
+
+
+def rec_row(prices_manwon, key, ncol, sise_won=None, fail_pct=None):
     """표 맨 아래 병합 행: 🏷 추천(1원 단위) | 기본 50% 금액 · 확률 · 시세 대비 / 보수 45% · 적극 55%."""
     r = rec_bids(prices_manwon, key)
     if 50 not in r: return ''
+    warn = (f'<div class="failx">⚠ 유찰 예상 · 이번 회차 유찰 확률 {fail_pct}% — 다음 회차까지 기다려 보는 것도 방법</div>'
+            if fail_pct is not None and fail_pct >= FAIL_HI else '')
     pt = lambda p: f' ({p:.0f}%)' if p is not None else ''
     w, p = r[50]
     sub = ' · '.join(x for x in ['기본' + (f' · 낙찰확률 약 {p:.0f}%' if p is not None else ''),
                                  f'시세 대비 {w / sise_won * 100:.1f}%' if sise_won else ''] if x)
     alt = ' · '.join(f'{lab} {r[q][0]:,}원{pt(r[q][1])}' for q, lab in ((45, '보수'), (55, '적극')) if q in r)
     return (f'<tr class="rec"><td class="lab">🏷 추천<br><span class="sub">1원 단위</span></td><td colspan="{ncol}">'
-            f'<div class="rb">{w:,}원</div><span class="sub">{sub}</span>' + (f'<br><span class="sub">{alt}</span>' if alt else '') + '</td></tr>')
+            f'{warn}<div class="rb">{w:,}원</div><span class="sub">{sub}</span>' + (f'<br><span class="sub">{alt}</span>' if alt else '') + '</td></tr>')
 
 
 def base_sise(v):
@@ -259,10 +264,11 @@ def bidder_table(v, seoul):
             cells.append(f'<td class="{cls.strip()}">{eok(vals.get(p))}' + (f'<br><span class="sub">{pc}</span>' if pc else '') + '</td>')
         t.append('<tr>' + ''.join(cells) + '</tr>')
     bs = base_sise(v)
-    t.append(rec_row(v.get('bid_by_prob_manwon'), v.get('key', ''), len(probs), bs * 1e8 if bs else None))   # 2026-11-25
+    f = v.get('fail') or {}
+    t.append(rec_row(v.get('bid_by_prob_manwon'), v.get('key', ''), len(probs), bs * 1e8 if bs else None,
+                     None if f.get('error') else f.get('prob_pct')))   # 2026-11-25 / 유찰 예상 2026-11-26
     t.append('</table>')
     note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준)' + (f' · ※ ▶는 예상 인원(약 {n}명)이 속한 구간' if ex else '') + (' · ▷는 예상 범위가 걸친 구간' if ex and nr else '') + ' · 모델 오차 약 ±6% · 확률 ±5%p'
-    f = v.get('fail') or {}
     if seoul and f.get('level') in ('보통', '높음'):
         note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"
     return head + ''.join(t) + f'<div class="g s">{note}</div>'
@@ -725,7 +731,7 @@ th,td{background:#000;color:#fff;border:1px solid #fff;padding:9px 2px}
 td.lab,th:first-child{white-space:nowrap} td.hi{font-weight:bold;background:#333} td.nr{background:#262626}
 td.lab{white-space:normal;word-break:keep-all}
 .kv{display:grid;grid-template-columns:22px 1fr;gap:0 2px;line-height:1.45;margin:2px 0}
-tr.rec td{background:#0f3d24;border-top:2px solid #2ecc71} tr.rec .rb{font-size:18px;font-weight:bold;letter-spacing:.3px;color:#fff} td.good,td.hi.good{background:rgba(46,204,113,0.35)}
+tr.rec td{background:#0f3d24;border-top:2px solid #2ecc71} tr.rec .rb{font-size:18px;font-weight:bold;letter-spacing:.3px;color:#fff} tr.rec .failx{color:#ffcf5c;font-weight:bold;font-size:13px;margin-bottom:2px} td.good,td.hi.good{background:rgba(46,204,113,0.35)}
 a{color:#1a73e8}
 .sub{font-size:11px;color:#BBBBBB}
 table.sc{font-size:12.5px;border:1px solid #555;line-height:1.35}
@@ -965,7 +971,7 @@ def other_card(v):
         # 2026-11-25: 낙찰확률별 입찰가를 표로 + 맨 아래 1원 단위 추천 병합 행 (아파트 카드와 같은 모양)
         tb = ('<table><tr><th></th>' + ''.join(f'<th>{k}</th>' for k in bp) + '</tr><tr><td class="lab">입찰가</td>'
               + ''.join(f'<td class="{"hi" if k == "50%" else ""}">{mw(bp[k])}<br><span class="sub">+{(bp[k] / 1e4 / low - 1) * 100:.0f}%</span></td>' for k in bp)
-              + '</tr>' + rec_row(bp, v['key'], len(bp)) + '</table><span class="g s">아래 % = 최저가 대비</span><br>') if bp else ''
+              + '</tr>' + rec_row(bp, v['key'], len(bp), fail_pct=pr.get('fail_pct')) + '</table><span class="g s">아래 % = 최저가 대비</span><br>') if bp else ''
         L.append(f'<div class="sec">🎯 예상 낙찰가(50%) <b>{mw(pr["p50_manwon"])}</b> <span class="g">(최저 대비 +{(p50 / low - 1) * 100:.0f}%'
                  + (f' · 감정 {p50 / appr * 100:.0f}%' if appr else '') + ')</span>' + tb
                  + (('<span class="s g">입찰가별 낙찰확률: ' + ' · '.join(f'{mw(g["bid_manwon"])} {g["prob"]}%' for g in pr['prob_by_bid']) + '</span><br>') if pr.get('prob_by_bid') else '')
