@@ -201,7 +201,7 @@ def rec_bids(prices_manwon, key):
     return out
 
 
-FAIL_HI = 70   # 2026-11-26 사용자 요청: 이번 회차 유찰 확률이 높으면(fail_model '높음' 기준 70%↑) 추천 칸에 유찰 예상 표시
+FAIL_HI = 50   # 2026-11-26 사용자 요청: 이번 회차 유찰 확률 50%↑이면 추천 칸에 유찰 예상 표시 (처음 70% → 같은 날 50%로)
 
 
 def rec_row(prices_manwon, key, ncol, sise_won=None, fail_pct=None):
@@ -501,8 +501,8 @@ def card(v, today, cid=None, res=None):
     for ln, sx in (('5호선', s5), ('8호선', s8)):
         if cat == '아파트' and sx and sx['name'].removesuffix('역') not in names and sx['name'] not in names and sx['distance_m'] <= 920:
             stt = (stt + ' · ' if stt else '') + f"{ln} {E(sx['name'].removesuffix('역'))} {sx['walk_min']}분"
-    if stt: s.append(f'🚇 {stt}')
     if s: L.append(kv('🎯', ' · '.join(s)))
+    if stt: L.append(kv('🚇', stt))   # 2026-11-26 사용자 요청: 시세 줄에 붙이면 어중간하게 줄바꿈돼서 역은 따로 한 줄
     if cat == '오피스텔':
         inc = v.get('income') or {}
         if inc.get('est_monthly_rent_manwon'):
