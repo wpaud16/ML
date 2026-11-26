@@ -35,7 +35,8 @@
    "title": "2026 문화다양성 온라인 교육 이벤트",
    "url": "https://arte.hunet.co.kr/",
    "winners": 20
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://blog.naver.com/PostView.naver": {
   "deadline": "2026-12-15",
@@ -96,6 +97,26 @@
   },
   "soon_sent": "2026-11-21"
  },
+ "https://campaigns.do/galaxies/pension-reform-2026": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "SNS 또는 이메일 로그인",
+   "deadline": "2026-11-27",
+   "entry": "login",
+   "how": "11문항 투표 후 전화번호 입력",
+   "kind": "기타",
+   "org": "공적연금강화국민행동(빠띠)",
+   "prize": "네이버페이 5만원 2명, 배달 기프티콘 3만원 3명, 커피쿠폰 30명",
+   "start": "2026-11-10",
+   "title": "연금개혁, 무엇을 먼저 지켜야 할까요? 은하투표",
+   "url": "https://campaigns.do/galaxies/pension-reform-2026",
+   "winners": 35
+  },
+  "soon_sent": "2026-11-27"
+ },
  "https://data.seoul.go.kr/bsp/wgs/newsletter.do": {
   "deadline": "2026-11-27",
   "first": "2026-11-19",
@@ -133,6 +154,45 @@
    "title": "성남청년다해 4분기 온라인 퀴즈 이벤트",
    "url": "https://dept.seongnam.go.kr/youth",
    "winners": 500
+  },
+  "soon_sent": "2026-11-27"
+ },
+ "https://docs.google.com/forms/d/e/1FAIpQLSeDl_hIC9DCHxzFqlGv19vJM89mvcWLiQ96UTYsRHRW3eQw6g/viewform": {
+  "deadline": "2026-12-20",
+  "first": "2026-11-27",
+  "item": {
+   "announce": "2026-12-23",
+   "checked": false,
+   "condition": "인스타그램 팔로우",
+   "deadline": "2026-12-20",
+   "entry": "sns",
+   "how": "인스타 팔로우·좋아요·댓글 후 설문 폼 제출",
+   "kind": "공공기관",
+   "org": "연구개발특구진흥재단",
+   "prize": "네이버페이 2,000원 100명",
+   "start": "2026-11-13",
+   "title": "연구개발특구 옥외광고 만족도 조사",
+   "url": "https://docs.google.com/forms/d/e/1FAIpQLSeDl_hIC9DCHxzFqlGv19vJM89mvcWLiQ96UTYsRHRW3eQw6g/viewform",
+   "winners": 100
+  }
+ },
+ "https://docs.google.com/forms/d/e/1FAIpQLSeEaEMtLgJFRwHCiMzlbY49U3-SlUkSEMUFR3FgHa_Tb6E56A/viewform": {
+  "deadline": "2026-12-06",
+  "first": "2026-11-27",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": "유튜브 구독·댓글",
+   "deadline": "2026-12-06",
+   "entry": "sns",
+   "how": "유튜브 구독, 영상 1·2편 좋아요·댓글 후 인증 폼 제출",
+   "kind": "공공기관",
+   "org": "전남광주경제자유구역청",
+   "prize": "다이소 2,000원 쿠폰 100명",
+   "start": "2026-11-26",
+   "title": "JG톡파원 유튜브 시청 이벤트",
+   "url": "https://docs.google.com/forms/d/e/1FAIpQLSeEaEMtLgJFRwHCiMzlbY49U3-SlUkSEMUFR3FgHa_Tb6E56A/viewform",
+   "winners": 100
   }
  },
  "https://docs.google.com/forms/d/e/1FAIpQLSf4uoa4dVSDX57TNcGTh4P3wsywdR91Z_zhSrboc7YFV9PHwg/viewform": {
@@ -171,7 +231,8 @@
    "title": "2026 발달장애인 인식개선 영상 시청 & 댓글 응원 이벤트",
    "url": "https://docs.google.com/forms/d/e/1FAIpQLSfgEHLClQvOW8wiDEqbvm7-Wkn8iO1imhieV4NDnAI8Gb0sKQ/viewform",
    "winners": 100
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://eapp.emart.com/news/event/progress_list_renew.do": {
   "deadline": "2026-11-30",
@@ -190,6 +251,26 @@
    "title": "11월 출석체크",
    "url": "https://eapp.emart.com/news/event/progress_list_renew.do?eventTp=E",
    "winners": null
+  },
+  "soon_sent": "2026-11-27"
+ },
+ "https://edu.sbiz.or.kr/edu/board/noticeView.do": {
+  "deadline": "2026-12-06",
+  "first": "2026-11-27",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "회원가입·로그인, 기존 수료 이력 없는 사람",
+   "deadline": "2026-12-06",
+   "entry": "login",
+   "how": "지식배움터 로그인 후 AI 학습관 강의 1개 수료",
+   "kind": "공공기관",
+   "org": "소상공인시장진흥공단(소상공인 지식배움터)",
+   "prize": "디지털 온누리상품권 5천원 선착순 3,000명, 5만원 30명(100번째마다), 5천원 추첨 700명",
+   "start": "2026-11-11",
+   "title": "지식배움터 첫 수료 이벤트",
+   "url": "https://edu.sbiz.or.kr/edu/board/noticeView.do?bbsNo=21623",
+   "winners": 3700
   }
  },
  "https://epeople.go.kr/cmmn/idea/redirect.do": {
@@ -209,7 +290,8 @@
    "title": "관세국경인재개발원 기관 인지도 설문조사",
    "url": "https://epeople.go.kr/cmmn/idea/redirect.do?ideaRegNo=1AE-2611-0000729",
    "winners": 50
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://event-giftbiz.kakao.com/apply/2026102818205926423": {
   "deadline": "2026-11-22",
@@ -248,7 +330,8 @@
    "title": "꿀알바 탐색 챌린지",
    "url": "https://event.alba.co.kr/event/719",
    "winners": 1300
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://event.refurlab.com": {
   "deadline": "2026-12-22",
@@ -383,7 +466,8 @@
    "title": "앵콜 W브릿지 신규 회원가입 이벤트",
    "url": "https://forms.gle/CgFKFoZzv1U3XxD36",
    "winners": 600
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://forms.gle/F8Lup1dyuegwJYFd9": {
   "deadline": "2026-11-30",
@@ -402,7 +486,8 @@
    "title": "제로베이스원 김태래 사인앨범 증정 이벤트 (히든 트립 2 뮤직비디오)",
    "url": "https://forms.gle/F8Lup1dyuegwJYFd9",
    "winners": 5
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://forms.gle/JrbSJfc4R15BAt84A": {
   "deadline": "2026-11-23",
@@ -539,7 +624,8 @@
    "title": "2026 발달장애인 인식개선 영상 시청 & 댓글 응원 이벤트",
    "url": "https://forms.gle/y3HUJ4GPnAe6gmqt7",
    "winners": 100
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://harpersbazaar.co.kr/event/detail/242": {
   "deadline": "2026-12-06",
@@ -578,6 +664,26 @@
    "url": "https://health.kdca.go.kr/healthinfo/biz/health/ntcnInfo/notice/noticeView.do?notice_sn=281",
    "winners": 50
   }
+ },
+ "https://kops.or.kr/portal/board/kopsNotice/boardDetail.do": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": "2026-12-04",
+   "checked": true,
+   "condition": "대상: KOPS 포털 이용자",
+   "deadline": "2026-11-27",
+   "entry": "form",
+   "how": "온라인 설문(모아폼) 응답 및 개인정보 동의",
+   "kind": "공공기관",
+   "org": "의료기관평가인증원 중앙환자안전센터",
+   "prize": "모바일 문화상품권 1만원 200명",
+   "start": "2026-11-16",
+   "title": "2026년 환자안전사고 보고·환류체계 이용자 만족도 조사",
+   "url": "https://kops.or.kr/portal/board/kopsNotice/boardDetail.do?bbsId=kopsNotice&ctgryId=&nttNo=20000000007156&tmplatTyCode=J",
+   "winners": 200
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://korean.visitkorea.or.kr/detail/event_detail.do": {
   "deadline": null,
@@ -695,6 +801,26 @@
    "winners": 3700
   }
  },
+ "https://makers.kakao.com/promotion/1925": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "카카오메이커스 앱",
+   "deadline": "2026-11-27",
+   "entry": "app",
+   "how": "메이커스 앱에서 투표 후 페이지 공유",
+   "kind": "유통·쇼핑",
+   "org": "카카오메이커스",
+   "prize": "호박고구마 3kg 50명, 동물복지 유정 초란 40구 50명 (이긴 쪽 투표자 전원 5천원 쿠폰)",
+   "start": "2026-11-23",
+   "title": "발견파 vs 알뜰파, 당신의 선택은? 투표 이벤트",
+   "url": "https://makers.kakao.com/promotion/1925",
+   "winners": 100
+  },
+  "soon_sent": "2026-11-27"
+ },
  "https://mcfamily.or.kr/posts/notice/15078": {
   "deadline": "2026-12-06",
   "first": "2026-11-19",
@@ -772,6 +898,26 @@
    "winners": 10
   },
   "soon_sent": "2026-11-25"
+ },
+ "https://miryang.go.kr/data/popup/20261117/popup.html": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": "2026-11-30",
+   "checked": true,
+   "condition": null,
+   "deadline": "2026-11-27",
+   "entry": "form",
+   "how": "퀴즈 5문항 정답과 배송용 인적사항 제출",
+   "kind": "공공기관",
+   "org": "밀양시",
+   "prize": "얼음골 사과 5kg 25명, 얼음골쌀 10kg 30명, 대추 선물세트 30명, 한천 양갱 30명",
+   "start": "2026-11-16",
+   "title": "2026년 밀양시 대표누리집 퀴즈 이벤트",
+   "url": "https://miryang.go.kr/data/popup/20261117/popup.html",
+   "winners": 115
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://modu.go.kr/fron/jdgmn/jdgmnView.do": {
   "deadline": "2026-11-30",
@@ -985,7 +1131,8 @@
    "title": "2026 문화다양성 온라인 교육 이벤트",
    "url": "https://tally.so/r/VpL2rN",
    "winners": 20
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://touredu.visitkorea.or.kr/home/support/promotions/prgs/14567": {
   "deadline": "2026-12-13",
@@ -1062,7 +1209,8 @@
    "title": "겨울맞이 팔로우 이벤트",
    "url": "https://www.instagram.com/gyeonggi_jang/",
    "winners": 10
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.instagram.com/imjung0411/p/Df6RABsjx8R": {
   "deadline": "2026-11-25",
@@ -1161,7 +1309,8 @@
    "title": "2026 국가물산업클러스터 SNS 채널 만족도 조사",
    "url": "https://www.instagram.com/p/Df1kNLwD01H",
    "winners": 70
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.instagram.com/p/Df3QJWhIDCP": {
   "deadline": "2026-11-29",
@@ -1200,7 +1349,8 @@
    "title": "울주군 인스타그램 2만 팔로워 기념 만족도 조사",
    "url": "https://www.instagram.com/p/Df4QSy4mcou",
    "winners": 230
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.instagram.com/p/Df51Xh1zVh5": {
   "deadline": "2026-11-26",
@@ -1398,6 +1548,46 @@
   },
   "soon_sent": "2026-11-24"
  },
+ "https://www.instagram.com/p/Df9Uk5pCqyE": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": "2026-12-01",
+   "checked": true,
+   "condition": "인스타그램 팔로우",
+   "deadline": "2026-11-27",
+   "entry": "sns",
+   "how": "인스타 @kt.corp 팔로우·좋아요 후 기억에 남는 책과 이유 댓글",
+   "kind": "기업",
+   "org": "KT",
+   "prize": "BHC 뿌링클+콜라 10명, 투썸플레이스 1만원권 30명",
+   "start": "2026-11-20",
+   "title": "인생을 바꾼 책 댓글 이벤트",
+   "url": "https://www.instagram.com/p/Df9Uk5pCqyE",
+   "winners": 40
+  },
+  "soon_sent": "2026-11-27"
+ },
+ "https://www.instagram.com/p/DfN-IfDk5c3": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": "2026-12-07",
+   "checked": true,
+   "condition": "인스타그램 팔로우·공유",
+   "deadline": "2026-11-27",
+   "entry": "sns",
+   "how": "한국가스안전공사·도시가스사 팔로우 후 퀴즈 정답 댓글, 친구에게 공유",
+   "kind": "공공기관",
+   "org": "한국가스안전공사",
+   "prize": "CU 1만원 상품권 300명, 신세계상품권 5만원 약 50명(추가 추첨)",
+   "start": "2026-11-02",
+   "title": "가스안전 릴레이 퀴즈",
+   "url": "https://www.instagram.com/p/DfN-IfDk5c3/",
+   "winners": 300
+  },
+  "soon_sent": "2026-11-27"
+ },
  "https://www.instagram.com/p/DfoD0ULmCby": {
   "deadline": "2026-11-30",
   "first": "2026-11-24",
@@ -1415,7 +1605,8 @@
    "title": "굳티튜드 기후시민증 인증 이벤트",
    "url": "https://www.instagram.com/p/DfoD0ULmCby/",
    "winners": 40
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.instagram.com/p/DfpU-OMH_HN": {
   "deadline": "2026-11-29",
@@ -1454,7 +1645,8 @@
    "title": "2026 I LOVE WOOD 캠페인 대국민 설문조사",
    "url": "https://www.instagram.com/p/Dfx6WEsGYME",
    "winners": 100
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.instagram.com/p/Dfy3QBBiWZS": {
   "deadline": "2026-11-30",
@@ -1473,7 +1665,8 @@
    "title": "백년다방 9호 독자 참여 이벤트",
    "url": "https://www.instagram.com/p/Dfy3QBBiWZS",
    "winners": 50
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.instagram.com/p/DfyJMbHADH_": {
   "deadline": "2026-12-06",
@@ -1534,6 +1727,46 @@
   },
   "soon_sent": "2026-11-20"
  },
+ "https://www.instagram.com/p/DgFAcZsPfgW": {
+  "deadline": "2026-11-28",
+  "first": "2026-11-27",
+  "item": {
+   "announce": null,
+   "checked": true,
+   "condition": "인스타그램 댓글",
+   "deadline": "2026-11-28",
+   "entry": "sns",
+   "how": "퀴즈 2개 풀고 '참여완료' 댓글, 화면 캡처 후 구글폼 제출",
+   "kind": "공공기관",
+   "org": "대한무역투자진흥공사(KOTRA)",
+   "prize": "수출 1조 달러 기념 여행 키트 50명",
+   "start": "2026-11-23",
+   "title": "도전! 수출벨 2탄",
+   "url": "https://www.instagram.com/p/DgFAcZsPfgW",
+   "winners": 50
+  },
+  "soon_sent": "2026-11-27"
+ },
+ "https://www.instagram.com/p/DgJg-HWk_zY": {
+  "deadline": "2026-11-30",
+  "first": "2026-11-27",
+  "item": {
+   "announce": "2026-12-03",
+   "checked": true,
+   "condition": "인스타그램 팔로우",
+   "deadline": "2026-11-30",
+   "entry": "sns",
+   "how": "인스타 @kiria_official 팔로우·좋아요 후 '로보토피아' 5행시 댓글",
+   "kind": "공공기관",
+   "org": "한국로봇산업진흥원",
+   "prize": "모바일 커피 기프티콘 30명",
+   "start": "2026-11-25",
+   "title": "로보토피아 5행시 이벤트",
+   "url": "https://www.instagram.com/p/DgJg-HWk_zY/",
+   "winners": 30
+  },
+  "soon_sent": "2026-11-27"
+ },
  "https://www.instagram.com/reel/Df4DYOcz2Q3": {
   "deadline": "2026-11-29",
   "first": "2026-11-24",
@@ -1590,7 +1823,8 @@
    "title": "별도장 꾸~욱 찍고 붕어빵 무료로 먹자!",
    "url": "https://www.kebhana.com/cont/news/news02/1529258_115431.jsp",
    "winners": null
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.kita.net/board/notice/noticeDetail.do": {
   "deadline": "2026-12-03",
@@ -1647,7 +1881,8 @@
    "title": "렉서스 11월 전국 시승회",
    "url": "https://www.lexus.co.kr/content/2026-nov-test-drive/",
    "winners": 34
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.miryang.go.kr": {
   "deadline": "2026-11-27",
@@ -1783,7 +2018,8 @@
    "title": "삼성위크 삼성전자 멤버십 퀴즈",
    "url": "https://www.samsung.com/sec/event/membership_quiz/",
    "winners": 880
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.samsung.com/sec/event/samsungsale/2611": {
   "deadline": "2026-11-30",
@@ -1802,7 +2038,8 @@
    "title": "삼성전자와 함께하는 코리아 그랜드 페스티벌 퀴즈 이벤트",
    "url": "https://www.samsung.com/sec/event/samsungsale/2611/",
    "winners": 500
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.wbridge.or.kr/platform/gnrl/notice/selectNoticeView.do": {
   "deadline": "2026-11-30",
@@ -1821,7 +2058,8 @@
    "title": "(앵콜) W브릿지 신규 회원가입 이벤트",
    "url": "https://www.wbridge.or.kr/platform/gnrl/notice/selectNoticeView.do?ntt_sn=101102&div_code=11",
    "winners": 600
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://www.youtube.com/post/UgkxPQM6qHPIfEFY-3bOR5Qzsu5JS5-vAqhD": {
   "deadline": null,
@@ -1842,6 +2080,26 @@
    "winners": 100
   }
  },
+ "https://www.youtube.com/post/UgkxV9g7vq3NTQqvq3wiMsEzAbkjlSXfsfvO": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": null,
+   "checked": false,
+   "condition": "유튜브 라이브 시청",
+   "deadline": "2026-11-27",
+   "entry": "sns",
+   "how": "11/27 16시 유튜브 라이브 시청 후 OX 퀴즈 폼 제출",
+   "kind": "금융",
+   "org": "삼성증권",
+   "prize": "투썸 아메리카노 1,000명",
+   "start": "2026-11-27",
+   "title": "채권투자 라이브 퀴즈 이벤트",
+   "url": "https://www.youtube.com/post/UgkxV9g7vq3NTQqvq3wiMsEzAbkjlSXfsfvO",
+   "winners": 1000
+  },
+  "soon_sent": "2026-11-27"
+ },
  "https://www.youtube.com/watch": {
   "deadline": "2026-12-02",
   "first": "2026-11-19",
@@ -1861,6 +2119,26 @@
    "winners": 40
   },
   "soon_sent": "2026-11-26"
+ },
+ "https://xn--le5b23c9wbqa.com/communication/event.php": {
+  "deadline": "2026-11-27",
+  "first": "2026-11-27",
+  "item": {
+   "announce": "2026-12-04",
+   "checked": true,
+   "condition": null,
+   "deadline": "2026-11-27",
+   "entry": "form",
+   "how": "지진해일 행동요령 O/X 퀴즈 답을 구글폼으로 제출",
+   "kind": "공공기관",
+   "org": "행정안전부",
+   "prize": "모바일 상품권 5,000원 30명",
+   "start": "2026-11-16",
+   "title": "2026 지진안전 누리집 11월 퀴즈 EVENT",
+   "url": "https://xn--le5b23c9wbqa.com/communication/event.php?code=event02&idx=5364&page=1&ptype=view",
+   "winners": 30
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://yfcon.kr": {
   "deadline": "2026-11-22",
@@ -1899,7 +2177,8 @@
    "title": "히든 트립 2 시청 이벤트 (이즈나 한국음식 여행 편)",
    "url": "https://youtu.be/6zVIFh3ePm4",
    "winners": 5
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://youtu.be/9YINR0VLio8": {
   "deadline": "2026-11-30",
@@ -1918,7 +2197,8 @@
    "title": "히든 트립 2 시청 이벤트 (김태래 뮤직비디오 편)",
    "url": "https://youtu.be/9YINR0VLio8",
    "winners": 5
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://youtu.be/Olh1lLHipEs": {
   "deadline": "2026-11-29",
@@ -1977,7 +2257,8 @@
    "title": "히든 트립 2 시청 이벤트 (이즈나 뮤직비디오 편)",
    "url": "https://youtu.be/rPfCz0joAmA",
    "winners": 5
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://youtu.be/vLcXqdzwsA4": {
   "deadline": "2026-12-02",
@@ -2015,7 +2296,8 @@
    "title": "히든 트립 2 시청 이벤트 (김태래 부여 여행 브이로그 편)",
    "url": "https://youtu.be/zHXQF3WvtWw",
    "winners": 10
-  }
+  },
+  "soon_sent": "2026-11-27"
  },
  "https://youtube.com/shorts/ue_FwgszrCg": {
   "deadline": null,
