@@ -78,7 +78,7 @@
   "announce": "2026-11-26",
   "where": null,
   "status": "pending",
-  "checked": "2026-11-26",
+  "checked": "2026-11-27",
   "result_url": null,
   "note": null,
   "reported": false
@@ -274,7 +274,7 @@
   "announce": "2026-11-26",
   "where": "당첨자 문자",
   "status": "pending",
-  "checked": "2026-11-26",
+  "checked": "2026-11-27",
   "result_url": null,
   "note": null,
   "reported": false
@@ -344,7 +344,7 @@
   "announce": "2026-11-27",
   "where": "당첨자 연락",
   "status": "pending",
-  "checked": null,
+  "checked": "2026-11-27",
   "result_url": null,
   "note": null,
   "reported": false
@@ -399,6 +399,20 @@
   "entered": "2026-11-26",
   "announce": "2026-12-16",
   "where": "폼에 적은 이메일로 개별 안내 · 질병관리청 블로그 공지",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
+ },
+ {
+  "key": "https://www.youtube.com/post/UgkxV9g7vq3NTQqvq3wiMsEzAbkjlSXfsfvO",
+  "title": "채권투자 라이브 퀴즈 이벤트",
+  "org": "삼성증권",
+  "url": "https://www.youtube.com/watch?v=UYdM_5-nMd0",
+  "entered": "2026-11-27",
+  "announce": null,
+  "where": "영상 댓글로 발표",
   "status": "pending",
   "checked": null,
   "result_url": null,
