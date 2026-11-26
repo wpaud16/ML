@@ -16079,7 +16079,7 @@
   "kb_date": null
  },
  "2026타경4782[1]|2026-11-25": {
-  "source": "법원",
+  "source": "리치고",
   "key": "2026타경4782[1]",
   "auction_id": "C22PBLJM",
   "category": "아파트",
@@ -16108,8 +16108,8 @@
   "kb_manwon": 137000,
   "kb_date": "2026-11-20",
   "actual_manwon": 131000,
-  "bidders": null,
-  "second_manwon": null,
+  "bidders": 4,
+  "second_manwon": 123111,
   "diff_pct": 1.9,
   "band": "60% 초과",
   "closest": {
