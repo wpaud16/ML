@@ -95,7 +95,7 @@ def summary_row(v, today, new=False, court=None):
          + (f" · 🚇 {cp.station_text(v, short=True)}" if cp.station_text(v, short=True) else '')
     w3 = v.get('within3_pct')   # 2026-11-15: 예측 ±3% 안 확률, 상위 20% = 정밀
     l3 = f"🎯 예상 낙찰가 50%: <b>{p50:.2f}억</b>" + (f' (시세 대비 {p50 / bs * 100:.1f}%)' if bs else '') + (f' · 👥 {n}명 입찰 예상' if n else '') \
-         + ((' · <b>✅ 정밀</b>' if v.get('precise') else '') + f' · 📐 3% 안 {w3}%' if w3 is not None else '') \
+         + ((f' · <b>{cp.precise_label(v)}</b>' if v.get('precise') else '') + f' · 📐 3% 안 {w3}%' if w3 is not None else '') \
          + f' · <a style="color:#1a73e8" href="https://m.richgo.ai/auctionMobile/{E(v["auction_id"])}">상세</a>'
     warn = '<br><span style="color:#d93025;font-size:12px">⚠ 감정 후 시세 상승 — 실제가가 예측보다 높을 수 있음</span>' if gw else ''
     tag = '<span style="color:#d93025;font-weight:bold;font-size:12px">New</span> ' if new else ''

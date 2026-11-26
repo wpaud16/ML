@@ -219,6 +219,13 @@ def rec_row(prices_manwon, key, ncol, sise_won=None, fail_pct=None):
             f'{warn}<div class="rb">{w:,}원</div><span class="sub">{sub}</span>' + (f'<br><span class="sub">{alt}</span>' if alt else '') + '</td></tr>')
 
 
+def precise_label(v):
+    """2026-11-26 사용자 결정: 정밀은 '낙찰된다면' 기준이라 유찰 예상(FAIL_HI↑)과 같이 뜨면 '정밀(낙찰 시)'로."""
+    f = v.get('fail') or {}
+    hi = not f.get('error') and (f.get('prob_pct') or 0) >= FAIL_HI
+    return '✅ 정밀(낙찰 시)' if hi else '✅ 정밀'
+
+
 def rate_note():
     """2026-11-26 사용자 결정: 모델마다 백테스트가 가장 좋았던 금리 사용 → 재학습 때마다 기존 방식과 오차 비교 한 줄."""
     try:
@@ -506,7 +513,7 @@ def card(v, today, cid=None, res=None):
     s = [f'시세 <b>{bs:.2f}억</b>'] if bs else []
     if (v.get('kb') or {}).get('eok'): s.append(f"KB {v['kb']['eok']:.2f}억")
     if v.get('within3_pct') is not None:   # 2026-11-15: 예측이 실제 ±3% 안에 들 확률, 상위 20% = 정밀 (acc_model.py)
-        s.append(('<b>✅ 정밀</b> ' if v.get('precise') else '') + f"3% 안 확률 {v['within3_pct']}%")
+        s.append((f'<b>{precise_label(v)}</b> ' if v.get('precise') else '') + f"3% 안 확률 {v['within3_pct']}%")
     stt = station_text(v, short=True)
     s8 = v.get('station8'); s5 = v.get('station5')
     names = {x['name'] for x in (v.get('stations') or [])} | {(v.get('station') or {}).get('name')}
@@ -855,7 +862,7 @@ function esc(s){return s.replace(/[&<>"]/g,function(x){return {'&':'&amp;','<':'
 function sumOf(x){var c=x.e,t=c.querySelector('.t'),tx=c.textContent,nm='',tags=[];
  if(t){var q=t.cloneNode(true);q.querySelectorAll('.hh,.new').forEach(function(e){e.remove();});nm=q.textContent.split('·')[0].trim();}
  var sz=t&&(t.textContent.match(/전용 ([0-9.]+)㎡/)||t.textContent.match(/([0-9.]+)㎡/));
- if(x.nt)tags.push('🔍실거래 없음');if(tx.indexOf('✅ 정밀')>=0)tags.push('✅정밀');if(t&&t.textContent.indexOf('🛡 안전')>=0)tags.push('🛡안전');
+ if(x.nt)tags.push('🔍실거래 없음');if(tx.indexOf('✅ 정밀(낙찰 시)')>=0)tags.push('✅정밀(낙찰 시)');else if(tx.indexOf('✅ 정밀')>=0)tags.push('✅정밀');if(t&&t.textContent.indexOf('🛡 안전')>=0)tags.push('🛡안전');
  var cs=c.getAttribute('data-case')||'',p5=c.getAttribute('data-p50');
  var sub=[x.g].concat(sz?[(/전용/.test(sz[0])?'전용 ':'')+(+sz[1]).toFixed(1).replace(/\.0$/,'')+'㎡']:[]).concat(tags).filter(Boolean).join(' · ');
  var lo=tx.match(/최저가? ([0-9.]+억)/),pc=tx.match(/최저가 [0-9.]+억 [(]시세 대비 ([0-9]+)%/),pa=tx.match(/최저 [0-9.]+억 [(]([0-9]+)%[)]/);
@@ -1140,7 +1147,7 @@ def build(src, dst):
             '🛡 안전 = 법원 매각물건명세서로 인수 금액 0원 확인 · 보통 = 리치고 기준 권리 문제 없음(명세서 미확인) · 주의·위험은 숨김<br>'
             '🎯 모델 시세(아파트) = 리치고 시세와 국토부 실거래(최근 12개월, 최근일수록 가중, 층 보정)를 거래 수·흩어진 정도에 따라 섞은 값 — 입찰가와 % 의 기준<br>'
             '🏢 아파트 입찰가 = 앙상블 모델(부스팅+군집별 회귀) + 랜덤포레스트·LightGBM 8개 평균, 최저가 +1% 아래는 올림 (2026-11-15~, 백테스트 평균 오차 4.6→4.3%) · 🏬 오피스텔 = 랜덤포레스트+부스팅(시세는 리치고) · 확률 오차 약 ±5%p<br>'
-            '📐 3% 안 확률 = 예상 낙찰가(50%)가 실제 낙찰가 ±3% 안에 들 확률 · ✅ 정밀 = 그 확률 상위 20%(백테스트 평균 오차 약 2.8%), 정밀 물건 입찰가표는 정밀 물건끼리의 오차로 계산<br>'
+            '📐 3% 안 확률 = 예상 낙찰가(50%)가 실제 낙찰가 ±3% 안에 들 확률 · ✅ 정밀 = 그 확률 상위 20%(백테스트 평균 오차 약 2.8%, 낙찰된 경우 기준 — 유찰 예상과 같이 뜨면 &#39;정밀(낙찰 시)&#39;), 정밀 물건 입찰가표는 정밀 물건끼리의 오차로 계산<br>'
             '🏷 매매 시세(종합) = 최근 12개월 실거래(추세 보정) · 리치고 추정시세 · 주변 단지 시세(같은 동)의 중앙값 (호가 제외) — 참고용<br>'
             '🏦 KB 시세 = KB부동산 매매 일반가(전용면적이 가장 가까운 평형, ±2㎡) · 하한~상한 = KB 하위·상위 평균가 · 모델 입력 아님, 참고·성적표 비교용<br>'
             '⚖ 가중 시세 = 최근 3개월 같은 평형 실거래 60% · 층 보정 실거래 20% · 매물 최저 호가 15%(상한) · 감정가 시차 보정 5% (직거래 제외) — 참고용<br>'
