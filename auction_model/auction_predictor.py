@@ -470,8 +470,11 @@ def calibrate_bidders(start='2024-07-01'):
     print({k: len(v) for k, v in pools.items()}, 'mape', cfg['bidder_resid']['mape'], 'n', cfg['bidder_resid']['n'])
 
 
-def bidder_scenarios(df, row, T, low, mkt, adj=0.0, cfg=None):
-    """입찰 인원별 낙찰확률 40~60% 입찰가 + 중앙값 + 예상 입찰 인원(25~75% 범위)."""
+def bidder_scenarios(df, row, T, low, mkt, adj=0.0, cfg=None, anchor_won=None):
+    """입찰 인원별 낙찰확률 40~60% 입찰가 + 중앙값 + 예상 입찰 인원(25~75% 범위).
+    anchor_won (2026-11-28 사용자 결정 A안): 종합 50% 가격(원). 예상 인원 정확한 값(예: 15명)의 50% 가격이 이 값이 되도록
+    표 전체를 같은 비율로 이동 → 추천가와 ▶ 예상 인원 줄이 같아지고, 인원별 차이는 유지. 백테스트(dev/unify_bt 결과,
+    아파트 751건): 추천가 오차 4.70% 그대로, 실제 인원을 알 때 인원표 오차 3.80→3.96%."""
     try:
         cfg = cfg or json.load(open(os.path.join(HERE, 'auction_config.json')))
         br = cfg.get('bidder_resid')
@@ -501,7 +504,21 @@ def bidder_scenarios(df, row, T, low, mkt, adj=0.0, cfg=None):
             m = HistGradientBoostingRegressor(loss='quantile', quantile=qq, max_iter=200, learning_rate=0.04, max_depth=3,
                                               min_samples_leaf=25, random_state=0).fit(X.fillna(mdn), y, sample_weight=wt)
             est[k] = max(1, int(round(float(np.exp(m.predict(xr)[0])))))
-        return dict(bid_by_prob_eok=by_prob, price_eok=med,
+        anchored = None
+        if anchor_won:
+            ne = est['p50']
+            ze = float(bidder_center(tr, row.assign(bidders=[ne]), T)[0]) + np.log(1 + adj)
+            pe = br['pools'].get(str(bid_group(ne))) or []
+            if len(pe) < 30: pe = br['all']
+            r = float(anchor_won) / price_at(pe, ze, 0.5)
+            by_prob = {n: {q: round(max(low, x * 1e8 * r) / 1e8, 2) for q, x in row_.items()} for n, row_ in by_prob.items()}
+            med = {n: round(max(low, x * 1e8 * r) / 1e8, 2) for n, x in med.items()}
+            # ▶ 줄(예상 인원이 속한 구간)은 대표 인원(5명 등) 대신 예상 인원 그대로(7명 등)로 계산 → 50% = 추천가
+            gk = f'{bid_group(ne)}명'
+            by_prob[gk] = {f'{q}%': round(max(low, price_at(pe, ze, q / 100) * r) / 1e8, 2) for q in PROB_LEVELS}
+            med[gk] = round(max(low, mkt * np.exp(ze) * r) / 1e8, 2)
+            anchored = dict(ratio=round(r, 4), n=ne)
+        return dict(bid_by_prob_eok=by_prob, price_eok=med, anchored=anchored,
                     row_labels={f'{n}명': BID_LABEL[n] for n in BID_SCEN},
                     expected_bidders=est['p50'], expected_range=[est['p25'], max(est['p50'], est['p75'])],
                     model_error_note=f"인원을 알 때 평균 오차 약 {br['mape']}%",
@@ -587,7 +604,8 @@ def predict_dict(danji, auction_id, df=None, cfg=None):
     if small:
         notes.append(f'소규모 단지({int(hh)}세대) — 모델 가격 {SMALL_ADJ * 100:.0f}% 보정 적용. '
                      f'시세가 높게 잡히기 쉬우니 최근 실거래가·과거 낙찰가로 한 번 더 확인')
-    bidders = bidder_scenarios(df, row, T, low, mkt, float(np.exp(c - c_ens)) - 1, cfg)   # 운영 보정 + 새 앙상블 이동분
+    bidders = bidder_scenarios(df, row, T, low, mkt, float(np.exp(c - c_ens)) - 1, cfg,
+                               anchor_won=prices['50%'] * 1e4)   # 운영 보정 + 새 앙상블 이동분, ▶ 예상 인원 줄 = 추천가 (2026-11-28)
     _jr = row.jeonse_ratio.iloc[0]
     if _jr != _jr and 'jeonse_ratio_bldg' in row: _jr = row.jeonse_ratio_bldg.iloc[0]
     out = dict(info, model='앙상블(부스팅+군집별회귀)',

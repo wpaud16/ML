@@ -151,7 +151,7 @@ def predict_dict(ot_id, auction_id, is_check=0, df=None, cfg=None, models=None):
                 bid_by_prob_manwon=prices, bid_by_prob_eok={k: round(v / 1e4, 2) for k, v in prices.items()},
                 prob_by_bid_5m=table, p50_ensemble_manwon=prices['50%'], p50_ensemble_eok=round(prices['50%'] / 1e4, 2),
                 income=income, fail=ap._fail_info('ot', row),
-                by_bidders=bidder_scenarios(df, row, T, low, mkt, cfg),
+                by_bidders=bidder_scenarios(df, row, T, low, mkt, cfg, anchor_won=prices['50%'] * 1e4),
                 model_error_note=f"평균 오차 약 {cfg['mape_recent']}% (최근 12개월 롤링), 확률 오차 약 ±5%p", warnings=[])
 
 
@@ -235,7 +235,7 @@ def calibrate_bidders(start='2024-07-01'):
     print({k: len(v) for k, v in cfg['bidder_resid']['pools'].items()}, 'mape', cfg['bidder_resid']['mape'])
 
 
-def bidder_scenarios(df, row, T, low, mkt, cfg):
+def bidder_scenarios(df, row, T, low, mkt, cfg, anchor_won=None):
     """오피스텔 입찰 인원별 낙찰확률 40~60% 입찰가 + 예상 인원."""
     try:
         br = cfg.get('bidder_resid')
@@ -255,7 +255,20 @@ def bidder_scenarios(df, row, T, low, mkt, cfg):
             out[OT_BID_LABEL[n]] = qs; price[OT_BID_LABEL[n]] = qs['50%']
         xe = _Xe(row).fillna(emed)
         e = {q: float(np.exp(m.predict(xe)[0])) for q, m in em.items()}
-        return dict(bid_by_prob_eok=out, price_eok=price,
+        anchored = None
+        if anchor_won:   # 2026-11-28 A안: 예상 인원(정확한 값)의 50% 가격 = 종합 50% 가격이 되게 표 전체 같은 비율로 이동
+            ne = max(1, int(round(e[0.5])))
+            ce = float(_pred_bid(bm, row.assign(bidders=float(ne)))[0])
+            pe = br['pools'].get(str(ot_bid_group(ne))) or []
+            if len(pe) < 30: pe = br['all']
+            r = float(anchor_won) / max(low, mkt * float(np.exp(ce + np.quantile(pe, 0.5))))
+            out = {k: {q: round(max(low, x * 1e8 * r) / 1e8, 2) for q, x in v.items()} for k, v in out.items()}
+            # ▶ 줄은 대표 인원 대신 예상 인원 그대로로 계산 → 50% = 추천가
+            out[OT_BID_LABEL[ot_bid_group(ne)]] = {f'{q}%': round(max(low, mkt * float(np.exp(ce + np.quantile(pe, q / 100))) * r) / 1e8, 2)
+                                                  for q in ap.PROB_LEVELS}
+            price = {k: v['50%'] for k, v in out.items()}
+            anchored = dict(ratio=round(r, 4), n=ne)
+        return dict(bid_by_prob_eok=out, price_eok=price, anchored=anchored,
                     row_labels={OT_BID_LABEL[n]: OT_ROW_LABEL[n] for n in OT_BID_SCEN},
                     expected_bidders=int(round(e[0.5])),
                     expected_range=[max(1, int(round(e[0.25]))), max(1, int(round(e[0.75])))],

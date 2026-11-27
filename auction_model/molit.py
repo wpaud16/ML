@@ -34,6 +34,7 @@ CODE = {('서울', '종로구'): '11110', ('서울', '중구'): '11140', ('서�
         ('경기', '이천시'): '41500', ('경기', '안성시'): '41550', ('경기', '김포시'): '41570', ('경기', '광주시'): '41610', ('경기', '양주시'): '41630',
         ('경기', '포천시'): '41650', ('경기', '여주시'): '41670', ('경기', '양평군'): '41830'}
 _MEM = {}
+_STALE = {}   # 시군구 코드 → 최근 달 재다운로드 실패로 이전 캐시를 쓴 경우 메모
 import threading
 _LOCK = threading.Lock()   # 배치가 여러 스레드로 물건을 처리해도 같은 시군구를 한 번만 받는다
 
@@ -82,11 +83,18 @@ def _load(sd, sgg, lawd, months, refresh_recent, today):
         for ym in want:
             if ym in have and ym not in recent: continue
             rows, page = [], 1
-            while True:
-                items, total = _call(lawd, ym, page)
-                rows += [{c: x.get(c, '') for c in COLS} | {'ym': ym} for x in items]
-                if page * 1000 >= total: break
-                page += 1
+            try:
+                while True:
+                    items, total = _call(lawd, ym, page)
+                    rows += [{c: x.get(c, '') for c in COLS} | {'ym': ym} for x in items]
+                    if page * 1000 >= total: break
+                    page += 1
+            except Exception as e:
+                # 2026-11-28: 최근 달 재다운로드가 API 장애로 실패하면 시군구 전체를 버리고 리치고로 떨어지던 문제
+                # (그날 108건 모델 시세가 리치고로 바뀜, 삼부 추천가 8.23→8.42억). 그 달은 전날 캐시를 그대로 쓴다.
+                if ym not in have: raise
+                _STALE[lawd] = f'{ym} 다시 받기 실패 → 이전 캐시 사용'
+                parts.append(old[old.ym == ym]); continue
             parts.append(pd.DataFrame(rows, columns=COLS + ['ym']))
         new = pd.concat(parts, ignore_index=True) if parts else old
         new = new[new.ym >= want[0]]
@@ -145,6 +153,8 @@ def m_sise(sd, sgg, emd, jibun_addr, area, address, richgo_won, today=None, lag_
         out['note'] = f'국토부 실패: {str(e)[:80]}'; return out
     if m is None or not len(m):
         out['note'] = '국토부 자료 없음'; return out
+    st = _STALE.get(CODE.get((sd, sgg)))
+    if st: out['note'] = f'국토부 {st}'
     jb = (jibun_addr or '').split()[-1] if jibun_addr else None
     # 읍·면 지역: 국토부 umdNm = '오남읍 양지리', 리치고 emd = '오남읍' 또는 '양지리' → 띄어쓰기 단위로 비교 (2026-11-05 수정)
     same = m.umdNm.map(lambda u: u == emd or emd in str(u).split()) if emd else m.umdNm.map(lambda u: False)

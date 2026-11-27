@@ -267,10 +267,11 @@ def bidder_table(v, seoul):
             head += f' <span class="n">· 예상 약 {n}명' + (f' (보통 {r[0]}~{r[1]}명)' if len(r) == 2 else '') + '</span>'
         cat = v.get('category')
         rows = list(bb['bid_by_prob_eok'].items()); ex = exp_row(cat, n); nr = near_row(cat, n, r)
-        if v.get('bid_by_prob_eok'):   # 인원 가정 없는 종합 예측 = 성적표 '예상(50%)' 기준 (2026-11-08 사용자 요청)
+        anch = bool(bb.get('anchored'))   # 2026-11-28 A안: ▶ 예상 인원 줄 = 추천가 → 종합 행은 같은 값이라 뺌
+        if v.get('bid_by_prob_eok') and not anch:   # 인원 가정 없는 종합 예측 = 성적표 '예상(50%)' 기준 (2026-11-08 사용자 요청)
             rows = [('종합', v['bid_by_prob_eok'])] + rows
     else:
-        rows = [('예측', v['bid_by_prob_eok'])]; ex = nr = n = None; cat = v.get('category')
+        rows = [('예측', v['bid_by_prob_eok'])]; ex = nr = n = None; cat = v.get('category'); anch = False
     t = ['<table><col style="width:19%"><col><col><col><col><col>', '<tr><th>인원</th>' + ''.join(f'<th>{p}</th>' for p in probs) + '</tr>']
     for lab, vals in rows:
         hi = lab == ex; lt = (not hi) and lab == nr
@@ -287,7 +288,8 @@ def bidder_table(v, seoul):
     t.append(rec_row(v.get('bid_by_prob_manwon'), v.get('key', ''), len(probs), bs * 1e8 if bs else None,
                      None if f.get('error') else f.get('prob_pct')))   # 2026-11-25 / 유찰 예상 2026-11-26
     t.append('</table>')
-    note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · 종합 = 인원 가정 없는 전체 예측(성적표 기준)' + (f' · ※ ▶는 예상 인원(약 {n}명)이 속한 구간' if ex else '') + (' · ▷는 예상 범위가 걸친 구간' if ex and nr else '') + ' · 모델 오차 약 ±6% · 확률 ±5%p'
+    note = '단위 억 · 아래 % = 모델 시세' + (f' {base_sise(v):.2f}억' if base_sise(v) else '') + ' 대비 · ' + (
+        f'▶ 예상 인원(약 {n}명) 50% = 추천가, 다른 줄은 인원 차이만큼 이동' if anch else '종합 = 인원 가정 없는 전체 예측(성적표 기준)') + (f' · ※ ▶는 예상 인원(약 {n}명)이 속한 구간' if ex else '') + (' · ▷는 예상 범위가 걸친 구간' if ex and nr else '') + ' · 모델 오차 약 ±6% · 확률 ±5%p'
     if seoul and f.get('level') in ('보통', '높음'):
         note += f" · 유찰 시 다음 최저가 {v['low_manwon'] * 0.8 / 1e4:.2f}억"
     return head + ''.join(t) + f'<div class="g s">{note}</div>'
