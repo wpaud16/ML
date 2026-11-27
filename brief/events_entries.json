@@ -418,5 +418,19 @@
   "result_url": null,
   "note": null,
   "reported": false
+ },
+ {
+  "key": "https://www.korea.kr/etc/byulbyulList.do",
+  "title": "뉴스레터 솔직히 어떠세요? (정책브리핑 뉴스레터 설문 이벤트)",
+  "org": "대한민국 정책브리핑(문화체육관광부)",
+  "url": "https://www.korea.kr/etc/byulbyulList.do?issue=JFKcPFHcDGJ000&period=ing",
+  "entered": "2026-11-28",
+  "announce": "2026-12-09",
+  "where": "정책브리핑 누리집 공지 · 당첨자 문자(기프티콘)",
+  "status": "pending",
+  "checked": null,
+  "result_url": null,
+  "note": null,
+  "reported": false
  }
 ]
