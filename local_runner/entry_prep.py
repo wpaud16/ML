@@ -35,9 +35,10 @@ def fill_form(pg, form, files=None, extra=None, submit=False):
     return nform.fill(pg, form, submit=submit, files=files, extra=extra)
 
 
-def do_youtube(pg, k, video, needs, title, cond):
-    """2026-11-25 사용자: 댓글도 Claude 가 (이상한 댓글 말고). 구독·좋아요·댓글 + 캡처. → (캡처 파일들, 오류)"""
-    import yt, entry_ai, hashlib
+def do_youtube(pg, k, video, needs, title, cond, x=None):
+    """2026-11-25 사용자: 댓글도 Claude 가 (이상한 댓글 말고). 구독·좋아요·댓글 + 캡처. → (캡처 파일들, 오류)
+    2026-11-28: 구독한 채널은 unsub 장부에 적어 발표 뒤 자동 해지."""
+    import yt, entry_ai, hashlib, unsub
     os.makedirs(SHOTS, exist_ok=True)
     h = hashlib.md5(k.encode()).hexdigest()[:8]
     files = []
@@ -45,7 +46,11 @@ def do_youtube(pg, k, video, needs, title, cond):
     vtitle = pg.title().replace(' - YouTube', '')
     vdesc = pg.evaluate("(document.querySelector('meta[name=description]')||{}).content||''")
     if '구독' in needs:
+        ch = unsub.yt_channel(pg)
         f = os.path.join(SHOTS, f'{h}_sub.png'); yt.subscribe(pg, video, f); files.append(f)
+        if ch:
+            x = x or {}
+            unsub.add('youtube', ch, title, x.get('announce'), x.get('deadline'))
     if '좋아요' in needs:
         yt.like(pg, video)
     if '댓글' in needs:
@@ -201,7 +206,7 @@ def main():
                         if old.get('yt_done'):
                             files = old.get('files') or []
                         else:
-                            files, yerr = do_youtube(pg, k, video, needs, title, cond)
+                            files, yerr = do_youtube(pg, k, video, needs, title, cond, x)
                         rec.update(video=video, files=files, yt_done=not yerr)
                     if yerr:
                         rec.update(status='stuck', form=form, reason=yerr)

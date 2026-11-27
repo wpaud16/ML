@@ -283,6 +283,8 @@ def s_outfit():
         find_claude()   # 퀴즈 정답·유튜브 댓글은 Claude CLI (entry_ai.py)
         run([sys.executable, 'entry_prep.py'], cwd=HERE, timeout=40 * 60, check=False)
         run([sys.executable, 'entry_submit.py'], cwd=HERE, timeout=15 * 60, check=False)
+        # 2026-11-28 사용자: 이벤트 때문에 한 구독은 끝나면 취소 → 발표 + 3일에 해지 (unsub.py 장부)
+        run([sys.executable, 'unsub.py'], cwd=HERE, timeout=10 * 60, check=False)
     except Exception as e:
         log(f'자동 응모 실패(무시): {e}')
     try:   # 응모 이벤트·지역 행사 웹페이지 (events/index.html, 2026-11-18)
