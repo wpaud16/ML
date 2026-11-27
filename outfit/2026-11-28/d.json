@@ -1,0 +1,141 @@
+{
+ "date": "11월 28일 (토)",
+ "tmin": "1",
+ "tmax": "9",
+ "sky": "⛅ 구름 많음",
+ "sub": "일교차 8°",
+ "rain_title": "☀️ 오늘 비·눈 소식 없음",
+ "rain": [
+  [
+   "오늘",
+   "비·눈 소식 없음"
+  ]
+ ],
+ "level": "없음",
+ "hourly": [
+  {
+   "h": 6,
+   "t": 5,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 9,
+   "t": 5,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 12,
+   "t": 7,
+   "icon": "☀️",
+   "rain": false
+  },
+  {
+   "h": 15,
+   "t": 7,
+   "icon": "🌤",
+   "rain": false
+  },
+  {
+   "h": 18,
+   "t": 4,
+   "icon": "🌤",
+   "rain": false
+  },
+  {
+   "h": 21,
+   "t": 2,
+   "icon": "☀️",
+   "rain": false
+  }
+ ],
+ "guide": "<b>아침 1°, 낮 9°.</b> 하루 종일 기온 차가 크지 않아요.",
+ "footer": "날씨: Open-Meteo (기본 모델) · 서울 강동구 · 오늘 예보",
+ "looks": [
+  {
+   "title": "숏 패딩 + 그레이 니트",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "크루넥 니트 · 그레이",
+     "color": "#A9A9A6",
+     "role": "top"
+    },
+    {
+     "name": "숏 패딩 · 블랙",
+     "color": "#242424",
+     "role": "outer"
+    },
+    {
+     "name": "와이드 슬랙스 · 차콜",
+     "color": "#45474B",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 화이트",
+     "color": "#ECEBE6",
+     "role": "shoes"
+    }
+   ],
+   "tip": "숏 패딩은 엉덩이 위 기장, 바지는 넉넉하게.",
+   "pin": "black short puffer jacket grey crewneck sweater charcoal trousers men winter outfit street style"
+  },
+  {
+   "title": "더플코트 + 후드",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "후드 스웻셔츠 · 그레이",
+     "color": "#A9A9A6",
+     "role": "top"
+    },
+    {
+     "name": "더플코트 · 네이비",
+     "color": "#2B3247",
+     "role": "outer"
+    },
+    {
+     "name": "치노 팬츠 · 베이지",
+     "color": "#C8B79A",
+     "role": "bottom"
+    },
+    {
+     "name": "스니커즈 · 화이트",
+     "color": "#ECEBE6",
+     "role": "shoes"
+    }
+   ],
+   "tip": "후드는 코트 깃 밖으로 꺼내 캐주얼하게.",
+   "pin": "navy duffle coat grey hoodie beige chinos men winter outfit korean style"
+  },
+  {
+   "title": "피코트 + 크림 터틀넥",
+   "kind": "tee",
+   "items": [
+    {
+     "name": "터틀넥 니트 · 크림",
+     "color": "#E8E1D0",
+     "role": "top"
+    },
+    {
+     "name": "피코트 · 네이비",
+     "color": "#2B3247",
+     "role": "outer"
+    },
+    {
+     "name": "울 슬랙스 · 그레이",
+     "color": "#A9A9A6",
+     "role": "bottom"
+    },
+    {
+     "name": "더비 슈즈 · 블랙",
+     "color": "#242424",
+     "role": "shoes"
+    }
+   ],
+   "tip": "피코트는 단추 잠그면 더 단정해요.",
+   "pin": "navy peacoat cream turtleneck grey trousers men winter outfit smart casual"
+  }
+ ]
+}
