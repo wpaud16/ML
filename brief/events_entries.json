@@ -8,7 +8,7 @@
   "announce": null,
   "where": null,
   "status": "pending",
-  "checked": "2026-11-25",
+  "checked": "2026-11-28",
   "result_url": null,
   "note": null,
   "reported": false
@@ -22,7 +22,7 @@
   "announce": null,
   "where": null,
   "status": "pending",
-  "checked": "2026-11-25",
+  "checked": "2026-11-28",
   "result_url": null,
   "note": null,
   "reported": false
@@ -344,7 +344,7 @@
   "announce": "2026-11-27",
   "where": "당첨자 연락",
   "status": "pending",
-  "checked": "2026-11-27",
+  "checked": "2026-11-28",
   "result_url": null,
   "note": null,
   "reported": false
