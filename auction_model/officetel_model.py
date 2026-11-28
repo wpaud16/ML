@@ -264,7 +264,7 @@ def bidder_scenarios(df, row, T, low, mkt, cfg, anchor_won=None):
             r = float(anchor_won) / max(low, mkt * float(np.exp(ce + np.quantile(pe, 0.5))))
             out = {k: {q: round(max(low, x * 1e8 * r) / 1e8, 2) for q, x in v.items()} for k, v in out.items()}
             # ▶ 줄은 대표 인원 대신 예상 인원 그대로로 계산 → 50% = 추천가
-            out[OT_BID_LABEL[ot_bid_group(ne)]] = {f'{q}%': round(max(low, mkt * float(np.exp(ce + np.quantile(pe, q / 100))) * r) / 1e8, 2)
+            out[OT_BID_LABEL[ot_bid_group(ne)]] = {f'{q}%': round(max(low, max(low, mkt * float(np.exp(ce + np.quantile(pe, q / 100)))) * r) / 1e8, 2)
                                                   for q in ap.PROB_LEVELS}
             price = {k: v['50%'] for k, v in out.items()}
             anchored = dict(ratio=round(r, 4), n=ne)
